@@ -1,7 +1,7 @@
 class AppConstants {
   static const String appName = 'GarageGo';
-  static const String appVersion = '1.0.0';
-  static const String appTagline = 'Vehicle & Fleet Garage Manager';
+  static const String appVersion = '1.1.0';
+  static const String appTagline = 'Personal Vehicle Garage & Fleet Maintenance Manager';
   static const String appDomain = 'https://garagego.faishal.id';
   static const String fleetHome = 'https://faishal.id';
 
@@ -10,6 +10,9 @@ class AppConstants {
   static const String keyActiveVehicleId = 'garagego_active_vehicle_id';
   static const String keyServiceLogs = 'garagego_service_logs';
   static const String keyFuelLogs = 'garagego_fuel_logs';
+  static const String keyMaintenanceSchedules = 'garagego_maintenance_schedules';
+  static const String keyVehicleDocuments = 'garagego_vehicle_documents';
+  static const String keyInspectionChecklists = 'garagego_inspection_checklists';
 
   // Validation Limits (§VAL)
   static const int minVehicleNameLength = 2;

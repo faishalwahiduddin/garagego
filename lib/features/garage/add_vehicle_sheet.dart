@@ -62,9 +62,16 @@ class _AddVehicleSheetState extends ConsumerState<AddVehicleSheet> {
       taxDueDate: _taxDueDate,
       oilIntervalKm: interval,
       lastOilOdometer: odo,
+      estimatedAnnualTax: _selectedType == VehicleType.car ? 3500000 : 350000,
     );
 
     ref.read(vehiclesProvider.notifier).addVehicle(newVehicle);
+    ref.read(maintenanceSchedulesProvider.notifier).loadPresetsForVehicle(newVehicle);
+    final defaultDocs = VehicleDocument.defaultDocumentsFor(newVehicle);
+    for (final d in defaultDocs) {
+      ref.read(vehicleDocumentsProvider.notifier).addDocument(d);
+    }
+
     Navigator.pop(context);
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(content: Text('Kendaraan "${newVehicle.name}" berhasil ditambahkan ke garasi!')),

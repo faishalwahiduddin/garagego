@@ -36,12 +36,17 @@ class NavigationShell extends StatelessWidget {
             NavigationDestination(
               icon: Icon(Icons.build_outlined),
               selectedIcon: Icon(Icons.build, color: AppColors.primaryLight),
-              label: 'Servis',
+              label: 'Perawatan',
             ),
             NavigationDestination(
               icon: Icon(Icons.local_gas_station_outlined),
               selectedIcon: Icon(Icons.local_gas_station, color: AppColors.primaryLight),
               label: 'BBM',
+            ),
+            NavigationDestination(
+              icon: Icon(Icons.folder_shared_outlined),
+              selectedIcon: Icon(Icons.folder_shared, color: AppColors.primaryLight),
+              label: 'Brankas',
             ),
             NavigationDestination(
               icon: Icon(Icons.settings_outlined),

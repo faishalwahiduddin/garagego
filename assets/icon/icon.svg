@@ -1,196 +1,112 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg width="1024" height="1024" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <!-- Background: Deep Midnight Asphalt Slate -->
+    <!-- Background: High-Energy Automotive Racing Amber -->
     <linearGradient id="ggBg" x1="0" y1="0" x2="1024" y2="1024" gradientUnits="userSpaceOnUse">
-      <stop offset="0%" stop-color="#0F172A"/>
-      <stop offset="50%" stop-color="#0A0F1D"/>
-      <stop offset="100%" stop-color="#030712"/>
-    </linearGradient>
-
-    <!-- Fiery Racing Amber Radial Glow -->
-    <radialGradient id="ggGlow" cx="512" cy="480" r="620" gradientUnits="userSpaceOnUse">
-      <stop offset="0%" stop-color="#F97316" stop-opacity="0.42"/>
-      <stop offset="35%" stop-color="#EA580C" stop-opacity="0.18"/>
-      <stop offset="70%" stop-color="#C2410C" stop-opacity="0.04"/>
-      <stop offset="100%" stop-color="#0F172A" stop-opacity="0"/>
-    </radialGradient>
-
-    <!-- Edge Vignette -->
-    <radialGradient id="ggVignette" cx="512" cy="512" r="720" gradientUnits="userSpaceOnUse">
-      <stop offset="55%" stop-color="#000000" stop-opacity="0"/>
-      <stop offset="100%" stop-color="#000000" stop-opacity="0.55"/>
-    </radialGradient>
-
-    <!-- Racing Amber Body Gradient -->
-    <linearGradient id="carBody" x1="512" y1="360" x2="512" y2="680" gradientUnits="userSpaceOnUse">
-      <stop offset="0%" stop-color="#FDBA74"/>
-      <stop offset="15%" stop-color="#FB923C"/>
-      <stop offset="50%" stop-color="#F97316"/>
-      <stop offset="85%" stop-color="#EA580C"/>
+      <stop offset="0%" stop-color="#EA580C"/>
+      <stop offset="50%" stop-color="#C2410C"/>
       <stop offset="100%" stop-color="#9A3412"/>
     </linearGradient>
 
-    <!-- Titanium Chrome Wrench Gradient -->
-    <linearGradient id="ggChrome" x1="160" y1="730" x2="864" y2="730" gradientUnits="userSpaceOnUse">
+    <!-- Warm Golden Ambient Glow -->
+    <radialGradient id="ggGlow" cx="512" cy="440" r="640" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FDBA74" stop-opacity="0.45"/>
+      <stop offset="45%" stop-color="#FB923C" stop-opacity="0.18"/>
+      <stop offset="85%" stop-color="#C2410C" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Dial Gauge Background -->
+    <linearGradient id="dialBg" x1="512" y1="200" x2="512" y2="760" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#1E293B"/>
+      <stop offset="60%" stop-color="#0F172A"/>
+      <stop offset="100%" stop-color="#020617"/>
+    </linearGradient>
+
+    <!-- Polished Chrome Wrench -->
+    <linearGradient id="wrenchChrome" x1="200" y1="200" x2="800" y2="800" gradientUnits="userSpaceOnUse">
       <stop offset="0%" stop-color="#FFFFFF"/>
-      <stop offset="20%" stop-color="#E2E8F0"/>
+      <stop offset="25%" stop-color="#F1F5F9"/>
       <stop offset="50%" stop-color="#94A3B8"/>
-      <stop offset="80%" stop-color="#E2E8F0"/>
+      <stop offset="75%" stop-color="#E2E8F0"/>
       <stop offset="100%" stop-color="#FFFFFF"/>
     </linearGradient>
 
-    <!-- Golden Oil / Honey Amber Gradient -->
-    <linearGradient id="ggGold" x1="512" y1="300" x2="512" y2="380" gradientUnits="userSpaceOnUse">
-      <stop offset="0%" stop-color="#FFFBEB"/>
-      <stop offset="25%" stop-color="#FEF08A"/>
-      <stop offset="55%" stop-color="#F59E0B"/>
-      <stop offset="85%" stop-color="#D97706"/>
-      <stop offset="100%" stop-color="#92400E"/>
+    <!-- Needle Gradient -->
+    <linearGradient id="needleGrad" x1="512" y1="512" x2="710" y2="330" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#EF4444"/>
+      <stop offset="100%" stop-color="#F87171"/>
     </linearGradient>
 
-    <!-- Cyan Headlight Glow -->
-    <linearGradient id="ggCyan" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="#FFFFFF"/>
-      <stop offset="40%" stop-color="#38BDF8"/>
-      <stop offset="100%" stop-color="#0284C7"/>
-    </linearGradient>
-
-    <!-- Drop Shadow Filters -->
-    <filter id="ggShadow" x="-20%" y="-20%" width="140%" height="150%">
-      <feDropShadow dx="0" dy="26" stdDeviation="30" flood-color="#000000" flood-opacity="0.80"/>
-      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#C2410C" flood-opacity="0.45"/>
+    <!-- Drop Shadows -->
+    <filter id="dialShadow" x="-20%" y="-20%" width="140%" height="150%">
+      <feDropShadow dx="0" dy="32" stdDeviation="34" flood-color="#431407" flood-opacity="0.75"/>
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#000000" flood-opacity="0.4"/>
     </filter>
 
-    <filter id="wrenchShadow" x="-20%" y="-20%" width="140%" height="140%">
-      <feDropShadow dx="0" dy="16" stdDeviation="18" flood-color="#000000" flood-opacity="0.75"/>
+    <filter id="wrenchShadow" x="-20%" y="-20%" width="140%" height="150%">
+      <feDropShadow dx="0" dy="16" stdDeviation="18" flood-color="#000000" flood-opacity="0.55"/>
     </filter>
 
     <!-- Top Gloss Sheen -->
-    <linearGradient id="ggSheen" x1="0" y1="0" x2="0" y2="340" gradientUnits="userSpaceOnUse">
+    <linearGradient id="topSheen" x1="0" y1="0" x2="0" y2="340" gradientUnits="userSpaceOnUse">
       <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.14"/>
       <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
     </linearGradient>
   </defs>
 
-  <!-- Base Canvas -->
+  <!-- Background -->
   <rect width="1024" height="1024" fill="url(#ggBg)"/>
   <rect width="1024" height="1024" fill="url(#ggGlow)"/>
-  <rect width="1024" height="1024" fill="url(#ggVignette)"/>
 
-  <!-- Background Precision Gauge Rings -->
-  <g opacity="0.30">
-    <circle cx="512" cy="500" r="390" fill="none" stroke="#334155" stroke-width="3" stroke-dasharray="12 16"/>
-    <circle cx="512" cy="500" r="360" fill="none" stroke="#F97316" stroke-width="2" stroke-dasharray="24 8" opacity="0.6"/>
+  <!-- ==================== TACHOMETER / SPEEDOMETER GAUGE ==================== -->
+  <g filter="url(#dialShadow)">
+    <!-- Outer Chrome Bezel Rim -->
+    <circle cx="512" cy="512" r="284" fill="url(#dialBg)" stroke="#FFFFFF" stroke-width="12"/>
+    <circle cx="512" cy="512" r="268" fill="none" stroke="#475569" stroke-width="3"/>
+
+    <!-- Tachometer Speed Arc (Cyan -> Amber -> Redline) -->
+    <path d="M 288 640 A 244 244 0 1 1 736 640" fill="none" stroke="#334155" stroke-width="20" stroke-linecap="round"/>
+    <path d="M 288 640 A 244 244 0 0 1 448 288" fill="none" stroke="#38BDF8" stroke-width="20" stroke-linecap="round"/>
+    <path d="M 448 288 A 244 244 0 0 1 636 332" fill="none" stroke="#F59E0B" stroke-width="20" stroke-linecap="round"/>
+    <path d="M 636 332 A 244 244 0 0 1 736 640" fill="none" stroke="#EF4444" stroke-width="20" stroke-linecap="round"/>
+
+    <!-- Precision Tick Marks -->
+    <circle cx="512" cy="274" r="7" fill="#FFFFFF"/>
+    <circle cx="340" cy="374" r="6" fill="#38BDF8"/>
+    <circle cx="276" cy="512" r="6" fill="#38BDF8"/>
+    <circle cx="684" cy="374" r="6" fill="#EF4444"/>
+    <circle cx="748" cy="512" r="6" fill="#EF4444"/>
   </g>
 
-  <!-- ==================== TACHOMETER GAUGE BEZEL ==================== -->
-  <g filter="url(#ggShadow)">
-    <!-- Outer Heavy Dark Industrial Rim -->
-    <circle cx="512" cy="500" r="320" fill="#111827" stroke="#334155" stroke-width="6"/>
-    <!-- Outer Track / Gauge Ring -->
-    <circle cx="512" cy="500" r="300" fill="#070B16" stroke="#F97316" stroke-width="3.5"/>
-
-    <!-- Speedometer Calibration Ticks -->
-    <g stroke="#94A3B8" stroke-width="4.5" stroke-linecap="round" opacity="0.85">
-      <line x1="298" y1="714" x2="318" y2="694"/>
-      <line x1="240" y1="568" x2="268" y2="562"/>
-      <line x1="240" y1="432" x2="268" y2="438"/>
-      <line x1="298" y1="286" x2="318" y2="306"/>
-      <line x1="444" y1="228" x2="450" y2="256"/>
-      <line x1="580" y1="228" x2="574" y2="256"/>
-      <line x1="726" y1="286" x2="706" y2="306" stroke="#EF4444" stroke-width="6"/>
-      <line x1="784" y1="432" x2="756" y2="438" stroke="#EF4444" stroke-width="6"/>
-      <line x1="784" y1="568" x2="756" y2="562" stroke="#EF4444" stroke-width="6"/>
-      <line x1="726" y1="714" x2="706" y2="694" stroke="#EF4444" stroke-width="6"/>
-    </g>
-
-    <!-- Redline High-RPM Danger Arc (Right Side) -->
-    <path d="M 680 320 A 270 270 0 0 1 740 590" fill="none" stroke="#EF4444" stroke-width="8" stroke-linecap="round" opacity="0.9"/>
-  </g>
-
-  <!-- ==================== TOP HERO SERVICE MEDALLION: GOLD OIL / DIAGNOSTIC ==================== -->
-  <g filter="url(#wrenchShadow)" transform="translate(512, 310)">
-    <circle cx="0" cy="0" r="54" fill="#0B1120" stroke="url(#ggGold)" stroke-width="6"/>
-    <circle cx="0" cy="0" r="42" fill="url(#ggGold)"/>
-    <!-- Golden Motor Oil Droplet & Spark -->
-    <path d="M 0 -22 C 14 -2, 18 10, 18 18 C 18 28, 10 36, 0 36 C -10 36, -18 28, -18 18 C -18 10, -14 -2, 0 -22 Z" fill="#0B1120"/>
-    <ellipse cx="-4" cy="18" rx="4" ry="8" fill="#FEF08A" opacity="0.9"/>
-  </g>
-
-  <!-- ==================== SUPERCAR FRONT SILHOUETTE (LOW-SLUNG WIDE GT) ==================== -->
-  <g filter="url(#ggShadow)">
-    <!-- Aerodynamic Low-Slung GT Body -->
-    <path d="M 230 610 
-             C 230 560, 270 544, 320 536 
-             L 364 452 
-             C 384 412, 436 394, 512 394 
-             C 588 394, 640 412, 660 452 
-             L 704 536 
-             C 754 544, 794 560, 794 610 
-             L 794 650 
-             C 794 670, 778 682, 754 682 
-             L 738 682 
-             C 724 682, 712 670, 712 654 
-             L 312 654 
-             C 312 670, 300 682, 286 682 
-             L 270 682 
-             C 246 682, 230 670, 230 650 Z" 
-          fill="url(#carBody)" stroke="#FEF08A" stroke-width="4.5"/>
-
-    <!-- Low-Slung Aggressive Windshield -->
-    <path d="M 374 456 
-             C 392 424, 438 408, 512 408 
-             C 586 408, 632 424, 650 456 
-             L 686 524 
-             L 338 524 Z" 
-          fill="#070C18" stroke="#38BDF8" stroke-width="3"/>
-    <!-- Glass Reflections -->
-    <polygon points="380,462 426,462 376,520 348,520" fill="#38BDF8" opacity="0.45"/>
-    <polygon points="450,462 474,462 434,520 412,520" fill="#38BDF8" opacity="0.30"/>
-
-    <!-- Hood Sculpt Lines (Power Bulge) -->
-    <path d="M 436 524 L 452 580 L 512 586 L 572 580 L 588 524" fill="none" stroke="#FDBA74" stroke-width="3" opacity="0.7"/>
-
-    <!-- Sharp Horizontal LED DRL Lightbars -->
-    <!-- Left Lightbar -->
-    <path d="M 264 570 L 370 560 L 362 582 L 274 590 Z" fill="url(#ggCyan)"/>
-    <ellipse cx="316" cy="574" rx="36" ry="5" fill="#FFFFFF"/>
-    <!-- Right Lightbar -->
-    <path d="M 760 570 L 654 560 L 662 582 L 750 590 Z" fill="url(#ggCyan)"/>
-    <ellipse cx="708" cy="574" rx="36" ry="5" fill="#FFFFFF"/>
-
-    <!-- Main Front Hexagonal Intake Grille -->
-    <polygon points="370,594 654,594 640,644 384,644" fill="#04070E" stroke="#475569" stroke-width="3"/>
-    <line x1="376" y1="610" x2="648" y2="610" stroke="#F97316" stroke-width="2.5" opacity="0.7"/>
-    <line x1="380" y1="628" x2="644" y2="628" stroke="#F97316" stroke-width="2.5" opacity="0.7"/>
-
-    <!-- Wheels & Front Splitter -->
-    <path d="M 280 654 L 744 654 L 760 674 L 264 674 Z" fill="#0F172A" stroke="#475569" stroke-width="2.5"/>
-    <rect x="214" y="598" width="22" height="54" rx="8" fill="#0B0F19" stroke="#334155" stroke-width="2"/>
-    <rect x="788" y="598" width="22" height="54" rx="8" fill="#0B0F19" stroke="#334155" stroke-width="2"/>
-  </g>
-
-  <!-- ==================== HORIZONTAL CHROME SERVICE WRENCH (PEDESTAL) ==================== -->
-  <g filter="url(#wrenchShadow)" transform="translate(512, 730)">
+  <!-- ==================== HERO PRECISION CHROME SERVICE WRENCH ==================== -->
+  <!-- Angled across the lower center of the gauge (-36 deg) -->
+  <g filter="url(#wrenchShadow)" transform="rotate(-36 512 512)">
     <!-- Wrench Shaft -->
-    <rect x="-260" y="-16" width="520" height="32" rx="12" fill="url(#ggChrome)" stroke="#FFFFFF" stroke-width="2.5"/>
-    <rect x="-180" y="-8" width="360" height="16" rx="6" fill="#1E293B" opacity="0.4"/>
+    <rect x="220" y="492" width="584" height="40" rx="14" fill="url(#wrenchChrome)" stroke="#FFFFFF" stroke-width="3"/>
+    <rect x="320" y="504" width="384" height="16" rx="8" fill="#64748B" opacity="0.35"/>
 
-    <!-- Left Open Jaw Head -->
-    <g transform="translate(-260, 0)">
-      <circle cx="-16" cy="0" r="44" fill="url(#ggChrome)" stroke="#FFFFFF" stroke-width="2.5"/>
-      <!-- Jaws Cutout -->
-      <polygon points="-60,-18 -16,-18 -16,18 -60,18" fill="#090D1A"/>
+    <!-- Left Open-Jaw Head -->
+    <g transform="translate(220, 512)">
+      <circle cx="-16" cy="0" r="52" fill="url(#wrenchChrome)" stroke="#FFFFFF" stroke-width="3"/>
+      <polygon points="-72,-20 -16,-20 -16,20 -72,20" fill="#C2410C"/>
     </g>
 
     <!-- Right Box-End Ring Head -->
-    <g transform="translate(260, 0)">
-      <circle cx="16" cy="0" r="44" fill="url(#ggChrome)" stroke="#FFFFFF" stroke-width="2.5"/>
-      <circle cx="16" cy="0" r="24" fill="#090D1A" stroke="#94A3B8" stroke-width="3"/>
+    <g transform="translate(804, 512)">
+      <circle cx="16" cy="0" r="52" fill="url(#wrenchChrome)" stroke="#FFFFFF" stroke-width="3"/>
+      <circle cx="16" cy="0" r="30" fill="#C2410C" stroke="#64748B" stroke-width="3"/>
     </g>
   </g>
 
-  <!-- Top Gloss Sheen -->
-  <rect width="1024" height="340" fill="url(#ggSheen)"/>
+  <!-- ==================== TACHOMETER NEEDLE & CENTER HUB (ON TOP) ==================== -->
+  <g filter="url(#wrenchShadow)">
+    <!-- Dynamic Tachometer Needle Pointing Upwards to Redline -->
+    <polygon points="506,512 512,308 518,512" fill="url(#needleGrad)"/>
+    <circle cx="512" cy="512" r="34" fill="#0F172A" stroke="#FFFFFF" stroke-width="5"/>
+    <circle cx="512" cy="512" r="22" fill="#EF4444"/>
+    <circle cx="512" cy="512" r="9" fill="#FFFFFF"/>
+  </g>
+
+  <!-- Top Sheen Gloss -->
+  <rect width="1024" height="340" fill="url(#topSheen)"/>
 </svg>

@@ -5,9 +5,65 @@ import '../../core/constants/app_colors.dart';
 import '../../core/constants/app_constants.dart';
 import '../../core/models/vehicle.dart';
 import '../../core/providers/app_providers.dart';
+import '../../core/providers/locale_provider.dart';
+import '../../core/providers/theme_provider.dart';
 
 class SettingsScreen extends ConsumerWidget {
   const SettingsScreen({super.key});
+
+  static const Map<String, ({String name, String nativeName})> _languages = {
+    'id': (name: 'Indonesian', nativeName: 'Bahasa Indonesia'),
+    'en': (name: 'English', nativeName: 'English'),
+    'ar': (name: 'Arabic', nativeName: 'العربية'),
+    'jv': (name: 'Javanese', nativeName: 'Basa Jawa'),
+    'su': (name: 'Sundanese', nativeName: 'Basa Sunda'),
+    'zh': (name: 'Chinese', nativeName: '中文 (简体)'),
+    'ja': (name: 'Japanese', nativeName: '日本語'),
+    'es': (name: 'Spanish', nativeName: 'Español'),
+  };
+
+  static const Map<String, ({String title, String desc, String badge})> _licenseTexts = {
+    'id': (
+      title: 'Lisensi Penggunaan',
+      desc: 'Bebas digunakan untuk keperluan personal dan non-profit.',
+      badge: 'Personal & Non-Profit',
+    ),
+    'en': (
+      title: 'Usage License',
+      desc: 'Free to use for personal and non-profit use.',
+      badge: 'Personal & Non-Profit',
+    ),
+    'ar': (
+      title: 'ترخيص الاستخدام',
+      desc: 'مجاني للاستخدام الشخصي وغير الربحي.',
+      badge: 'شخصي وغير ربحي',
+    ),
+    'jv': (
+      title: 'Lisensi Panganggo',
+      desc: 'Bebas dienggo kanggo kaperluan pribadi lan non-profit.',
+      badge: 'Pribadi & Non-Profit',
+    ),
+    'su': (
+      title: 'Lisensi Pamakean',
+      desc: 'Bebas dianggo pikeun kaperluan pribadi jeung non-profit.',
+      badge: 'Pribadi & Non-Profit',
+    ),
+    'zh': (
+      title: '使用许可',
+      desc: '个人及非营利性用途免费使用。',
+      badge: '个人与非营利',
+    ),
+    'ja': (
+      title: '利用規約・ライセンス',
+      desc: '個人および非営利目的での利用は無料です。',
+      badge: '個人・非営利',
+    ),
+    'es': (
+      title: 'Licencia de Uso',
+      desc: 'Gratis para uso personal y sin fines de lucro.',
+      badge: 'Personal y Sin Fines de Lucro',
+    ),
+  };
 
   void _showExportJsonDialog(BuildContext context, WidgetRef ref) {
     final storage = ref.read(localStorageServiceProvider);
@@ -210,6 +266,10 @@ class SettingsScreen extends ConsumerWidget {
     final vehicles = ref.watch(vehiclesProvider);
     final active = ref.watch(activeVehicleProvider);
     final storage = ref.watch(localStorageServiceProvider);
+    final currentLocale = ref.watch(localeProvider);
+    final themeMode = ref.watch(themeModeProvider);
+    final langCode = currentLocale.languageCode;
+    final license = _licenseTexts[langCode] ?? _licenseTexts['en']!;
 
     return Scaffold(
       appBar: AppBar(
@@ -242,6 +302,65 @@ class SettingsScreen extends ConsumerWidget {
                   ),
                 ),
               )),
+          const SizedBox(height: 20),
+
+          // Tampilan & Bahasa
+          const Text('Tampilan & Bahasa', style: TextStyle(fontSize: 14, fontWeight: FontWeight.w700, color: Color(0xFF94A3B8))),
+          const SizedBox(height: 10),
+          Card(
+            child: Padding(
+              padding: const EdgeInsets.all(16),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Row(
+                    children: [
+                      const Icon(Icons.palette_outlined, color: AppColors.primaryLight, size: 20),
+                      const SizedBox(width: 10),
+                      const Expanded(
+                        child: Text(
+                          'Mode Tema',
+                          style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600, color: Colors.white),
+                        ),
+                      ),
+                      SegmentedButton<ThemeMode>(
+                        segments: const [
+                          ButtonSegment(
+                            value: ThemeMode.system,
+                            icon: Icon(Icons.brightness_auto, size: 16),
+                          ),
+                          ButtonSegment(
+                            value: ThemeMode.light,
+                            icon: Icon(Icons.light_mode, size: 16),
+                          ),
+                          ButtonSegment(
+                            value: ThemeMode.dark,
+                            icon: Icon(Icons.dark_mode, size: 16),
+                          ),
+                        ],
+                        selected: {themeMode},
+                        onSelectionChanged: (selected) {
+                          ref.read(themeModeProvider.notifier).setThemeMode(selected.first);
+                        },
+                      ),
+                    ],
+                  ),
+                  const Divider(color: AppColors.border, height: 24),
+                  ListTile(
+                    contentPadding: EdgeInsets.zero,
+                    leading: const Icon(Icons.translate, color: AppColors.primaryLight, size: 20),
+                    title: const Text('Bahasa Aplikasi', style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600, color: Colors.white)),
+                    subtitle: Text(
+                      '${_languages[langCode]?.nativeName ?? langCode} (${_languages[langCode]?.name ?? langCode})',
+                      style: const TextStyle(fontSize: 12, color: Color(0xFF94A3B8)),
+                    ),
+                    trailing: const Icon(Icons.chevron_right, color: Color(0xFF94A3B8)),
+                    onTap: () => _showLanguageModal(context, ref, currentLocale),
+                  ),
+                ],
+              ),
+            ),
+          ),
           const SizedBox(height: 20),
 
           // 2. Data Portability & Backup
@@ -339,13 +458,14 @@ class SettingsScreen extends ConsumerWidget {
           ),
           const SizedBox(height: 24),
 
-          // 4. About App
-          const Text('Tentang Aplikasi & Privasi', style: TextStyle(fontSize: 14, fontWeight: FontWeight.w700, color: Color(0xFF94A3B8))),
+          // 4. About App & License
+          const Text('Tentang Aplikasi & Lisensi', style: TextStyle(fontSize: 14, fontWeight: FontWeight.w700, color: Color(0xFF94A3B8))),
           const SizedBox(height: 10),
           Card(
             child: Padding(
               padding: const EdgeInsets.all(16),
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   _buildAboutRow('Aplikasi', AppConstants.appName),
                   const Divider(color: AppColors.border, height: 24),
@@ -355,13 +475,89 @@ class SettingsScreen extends ConsumerWidget {
                   const Divider(color: AppColors.border, height: 24),
                   _buildAboutRow('Domain', 'garagego.faishal.id'),
                   const Divider(color: AppColors.border, height: 24),
-                  _buildAboutRow('Ekosistem', 'faishal.id Lifestyle Utility Fleet'),
+                  _buildAboutRow('Identitas', 'id.faishal.garagego'),
+                  const Divider(color: AppColors.border, height: 24),
+                  _buildAboutRow('Ekosistem', 'Lifestyle Utility Fleet'),
+                  const Divider(color: AppColors.border, height: 24),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        license.title,
+                        style: const TextStyle(fontSize: 13, fontWeight: FontWeight.bold, color: Colors.white),
+                      ),
+                      Container(
+                        padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
+                        decoration: BoxDecoration(
+                          color: AppColors.primary.withValues(alpha: 0.15),
+                          borderRadius: BorderRadius.circular(8),
+                          border: Border.all(color: AppColors.primary.withValues(alpha: 0.3)),
+                        ),
+                        child: Text(
+                          license.badge,
+                          style: const TextStyle(
+                            fontSize: 11,
+                            fontWeight: FontWeight.bold,
+                            color: AppColors.primaryLight,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 6),
+                  Text(
+                    license.desc,
+                    style: const TextStyle(fontSize: 12, color: Color(0xFF94A3B8), height: 1.4),
+                  ),
                 ],
               ),
             ),
           ),
+          const SizedBox(height: 32),
         ],
       ),
+    );
+  }
+
+  void _showLanguageModal(BuildContext context, WidgetRef ref, Locale currentLocale) {
+    showModalBottomSheet(
+      context: context,
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
+      ),
+      builder: (ctx) {
+        return SafeArea(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              const Padding(
+                padding: EdgeInsets.all(16),
+                child: Text(
+                  'Pilih Bahasa / Select Language',
+                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                ),
+              ),
+              const Divider(height: 1),
+              Expanded(
+                child: ListView(
+                  children: _languages.entries.map((entry) {
+                    final isSelected = entry.key == currentLocale.languageCode;
+                    return ListTile(
+                      title: Text(entry.value.nativeName),
+                      subtitle: Text(entry.value.name),
+                      trailing: isSelected ? const Icon(Icons.check, color: AppColors.primaryLight) : null,
+                      onTap: () {
+                        ref.read(localeProvider.notifier).setLocale(Locale(entry.key));
+                        Navigator.pop(ctx);
+                      },
+                    );
+                  }).toList(),
+                ),
+              ),
+            ],
+          ),
+        );
+      },
     );
   }
 

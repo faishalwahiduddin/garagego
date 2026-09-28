@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../constants/app_constants.dart';
 import '../models/vehicle.dart';
@@ -326,6 +327,18 @@ class LocalStorageService {
       buffer.writeln('"${f.id}","$dateStr",${f.odometer},${f.liters.toStringAsFixed(2)},${f.pricePerLiter.toStringAsFixed(0)},${f.totalCost.toStringAsFixed(0)},"${f.fuelType}",${f.isFullTank},"$cleanStation"');
     }
     return buffer.toString();
+  }
+
+  ThemeMode getThemeMode() {
+    final mode = _prefs.getString('theme_mode');
+    if (mode == 'light') return ThemeMode.light;
+    if (mode == 'dark') return ThemeMode.dark;
+    return ThemeMode.system;
+  }
+
+  Future<bool> saveThemeMode(ThemeMode mode) async {
+    final str = mode == ThemeMode.light ? 'light' : (mode == ThemeMode.dark ? 'dark' : 'system');
+    return _prefs.setString('theme_mode', str);
   }
 
   Future<bool> clearAllData() async {

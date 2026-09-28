@@ -7,6 +7,8 @@ import '../utils/validators.dart';
 class LocalStorageService {
   final SharedPreferences _prefs;
 
+  SharedPreferences get prefs => _prefs;
+
   LocalStorageService(this._prefs);
 
   static Future<LocalStorageService> init() async {

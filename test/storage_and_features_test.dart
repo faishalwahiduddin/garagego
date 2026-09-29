@@ -34,19 +34,20 @@ void main() {
       expect(fuels, isNotEmpty);
     });
 
-    test('JSON Backup export and import round-trip preserves all entities', () async {
-      final backupJson = storage.exportBackupJson();
-      expect(backupJson, contains('"version"'));
-      expect(backupJson, contains('"vehicles"'));
-      expect(backupJson, contains('"maintenanceSchedules"'));
-      expect(backupJson, contains('"vehicleDocuments"'));
+    test('Custom format Backup export and import round-trip preserves all entities', () async {
+      final backup = storage.exportBackupJson();
+      expect(backup.startsWith('FSBK1#GARAGEGO#'), isTrue);
+      expect(backup, isNot(contains('Toyota Innova'))); // Obfuscated custom format
+
+      // Raw JSON is rejected to prevent tampering
+      expect(() => storage.importBackupJson('{"vehicles": []}'), throwsFormatException);
 
       // Clear storage
       await storage.clearAllData();
       expect(storage.getVehicles(), isEmpty);
 
       // Restore from backup
-      final success = await storage.importBackupJson(backupJson);
+      final success = await storage.importBackupJson(backup);
       expect(success, isTrue);
 
       final restoredVehicles = storage.getVehicles();

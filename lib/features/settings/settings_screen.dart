@@ -156,7 +156,7 @@ class SettingsScreen extends ConsumerWidget {
                 maxLines: 8,
                 style: TextStyle(fontFamily: 'monospace', fontSize: 11),
                 decoration: InputDecoration(
-                  hintText: '{\n  "version": "1.1.0",\n  "vehicles": [...]\n}',
+                  hintText: 'FSBK1#GARAGEGO#...',
                 ),
               ),
             ],

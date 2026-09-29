@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../constants/app_constants.dart';
 import '../models/vehicle.dart';
+import '../utils/backup_codec.dart';
 import '../utils/validators.dart';
 
 class LocalStorageService {
@@ -238,14 +239,17 @@ class LocalStorageService {
       'vehicleDocuments': getVehicleDocuments().map((d) => d.toJson()).toList(),
       'inspectionChecklists': getInspectionChecklists().map((c) => c.toJson()).toList(),
     };
-    return const JsonEncoder.withIndent('  ').convert(data);
+    return FleetBackupCodec.encode(
+      appTag: 'GARAGEGO',
+      data: data,
+    );
   }
 
   Future<bool> importBackupJson(String jsonString) async {
-    final decoded = jsonDecode(jsonString);
-    if (decoded is! Map<String, dynamic>) {
-      throw const FormatException('Format backup tidak valid: Bukan objek JSON utama');
-    }
+    final decoded = FleetBackupCodec.decode(
+      appTag: 'GARAGEGO',
+      encoded: jsonString,
+    );
 
     if (decoded['vehicles'] is! List) {
       throw const FormatException('Data kendaraan tidak ditemukan dalam berkas backup');

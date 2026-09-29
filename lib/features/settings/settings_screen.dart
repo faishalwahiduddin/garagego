@@ -8,6 +8,7 @@ import '../../core/models/vehicle.dart';
 import '../../core/providers/app_providers.dart';
 import '../../core/providers/locale_provider.dart';
 import '../../core/providers/theme_provider.dart';
+import '../garage/add_vehicle_sheet.dart';
 
 class SettingsScreen extends ConsumerWidget {
   const SettingsScreen({super.key});
@@ -67,18 +68,22 @@ class SettingsScreen extends ConsumerWidget {
   };
 
   void _showExportJsonDialog(BuildContext context, WidgetRef ref) {
+    final l10n = AppLocalizations.of(context)!;
     final storage = ref.read(localStorageServiceProvider);
     final jsonStr = storage.exportBackupJson();
 
     showDialog(
       context: context,
       builder: (ctx) => AlertDialog(
-        backgroundColor: AppColors.bgSurface,
+        backgroundColor: context.cardBg,
         title: Row(
           children: [
-            Icon(Icons.file_download_outlined, color: AppColors.primaryLight, size: 22),
-            SizedBox(width: 8),
-            Text(AppLocalizations.of(context)!.eksporBackupJson, style: TextStyle(color: Colors.white, fontSize: 16, fontWeight: FontWeight.w700)),
+            const Icon(Icons.file_download_outlined, color: AppColors.primary, size: 22),
+            const SizedBox(width: 8),
+            Text(
+              l10n.eksporBackupJson,
+              style: TextStyle(color: context.textPrimary, fontSize: 16, fontWeight: FontWeight.w700),
+            ),
           ],
         ),
         content: SizedBox(
@@ -87,22 +92,23 @@ class SettingsScreen extends ConsumerWidget {
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              Text(AppLocalizations.of(context)!.cadanganLengkapSeluruhDataGara,
-                style: TextStyle(color: Color(0xFF94A3B8), fontSize: 12),
+              Text(
+                l10n.cadanganLengkapSeluruhDataGara,
+                style: TextStyle(color: context.textSecondary, fontSize: 12),
               ),
-              SizedBox(height: 12),
+              const SizedBox(height: 12),
               Container(
                 height: 180,
-                padding: EdgeInsets.all(10),
+                padding: const EdgeInsets.all(10),
                 decoration: BoxDecoration(
-                  color: AppColors.bgDark,
+                  color: context.surfaceBg,
                   borderRadius: BorderRadius.circular(8),
-                  border: Border.all(color: AppColors.border),
+                  border: Border.all(color: context.borderColor),
                 ),
                 child: SingleChildScrollView(
                   child: SelectableText(
                     jsonStr,
-                    style: TextStyle(fontFamily: 'monospace', fontSize: 10, color: Color(0xFFCBD5E1)),
+                    style: TextStyle(fontFamily: 'monospace', fontSize: 10, color: context.textPrimary),
                   ),
                 ),
               ),
@@ -110,17 +116,20 @@ class SettingsScreen extends ConsumerWidget {
           ),
         ),
         actions: [
-          TextButton(onPressed: () => Navigator.pop(ctx), child: Text(AppLocalizations.of(context)!.tutup)),
+          TextButton(
+            onPressed: () => Navigator.pop(ctx),
+            child: Text(l10n.tutup, style: TextStyle(color: context.textSecondary)),
+          ),
           ElevatedButton.icon(
             onPressed: () {
               Clipboard.setData(ClipboardData(text: jsonStr));
               Navigator.pop(ctx);
               ScaffoldMessenger.of(context).showSnackBar(
-                SnackBar(content: Text(AppLocalizations.of(context)!.salinanJsonBackupBerhasilDisal)),
+                SnackBar(content: Text(l10n.salinanJsonBackupBerhasilDisal)),
               );
             },
-            icon: Icon(Icons.copy, size: 16),
-            label: Text(AppLocalizations.of(context)!.salinKeClipboard),
+            icon: const Icon(Icons.copy, size: 16),
+            label: Text(l10n.salinKeClipboard),
           ),
         ],
       ),
@@ -128,17 +137,21 @@ class SettingsScreen extends ConsumerWidget {
   }
 
   void _showImportJsonDialog(BuildContext context, WidgetRef ref) {
-    final textController = TextEditingController();
+    final l10n = AppLocalizations.of(context)!;
+    final controller = TextEditingController();
 
     showDialog(
       context: context,
       builder: (ctx) => AlertDialog(
-        backgroundColor: AppColors.bgSurface,
+        backgroundColor: context.cardBg,
         title: Row(
           children: [
-            Icon(Icons.file_upload_outlined, color: AppColors.accent, size: 22),
-            SizedBox(width: 8),
-            Text(AppLocalizations.of(context)!.imporPulihkanBackupJson, style: TextStyle(color: Colors.white, fontSize: 16, fontWeight: FontWeight.w700)),
+            const Icon(Icons.file_upload_outlined, color: AppColors.accent, size: 22),
+            const SizedBox(width: 8),
+            Text(
+              l10n.imporPulihkanBackupJson,
+              style: TextStyle(color: context.textPrimary, fontSize: 16, fontWeight: FontWeight.w700),
+            ),
           ],
         ),
         content: SizedBox(
@@ -147,94 +160,20 @@ class SettingsScreen extends ConsumerWidget {
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              Text(AppLocalizations.of(context)!.tempelkanTeksDataJsonCadanganY,
-                style: TextStyle(color: Color(0xFF94A3B8), fontSize: 12),
+              Text(
+                l10n.tempelkanTeksDataJsonCadanganY,
+                style: TextStyle(color: context.textSecondary, fontSize: 12),
               ),
-              SizedBox(height: 12),
+              const SizedBox(height: 12),
               TextField(
-                controller: textController,
+                controller: controller,
                 maxLines: 8,
-                style: TextStyle(fontFamily: 'monospace', fontSize: 11),
+                style: TextStyle(fontFamily: 'monospace', fontSize: 11, color: context.textPrimary),
                 decoration: InputDecoration(
-                  hintText: 'FSBK1#GARAGEGO#...',
-                ),
-              ),
-            ],
-          ),
-        ),
-        actions: [
-          TextButton(onPressed: () => Navigator.pop(ctx), child: Text(AppLocalizations.of(context)!.batal)),
-          ElevatedButton(
-            onPressed: () async {
-              final raw = textController.text.trim();
-              if (raw.isEmpty) {
-                ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(content: Text(AppLocalizations.of(context)!.teksJsonTidakBolehKosong)),
-                );
-                return;
-              }
-
-              try {
-                final storage = ref.read(localStorageServiceProvider);
-                await storage.importBackupJson(raw);
-
-                ref.invalidate(vehiclesProvider);
-                ref.invalidate(activeVehicleIdProvider);
-                ref.invalidate(serviceLogsProvider);
-                ref.invalidate(fuelLogsProvider);
-                ref.invalidate(maintenanceSchedulesProvider);
-                ref.invalidate(vehicleDocumentsProvider);
-                ref.invalidate(inspectionChecklistsProvider);
-
-                if (context.mounted) {
-                  Navigator.pop(ctx);
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(content: Text(AppLocalizations.of(context)!.dataCadanganBerhasilDipulihkan)),
-                  );
-                }
-              } catch (e) {
-                if (context.mounted) {
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(content: Text(AppLocalizations.of(context)!.gagalMemulihkanBackup(e.toString()))),
-                  );
-                }
-              }
-            },
-            child: Text(AppLocalizations.of(context)!.pulihkanData),
-          ),
-        ],
-      ),
-    );
-  }
-
-  void _showCsvExportDialog(BuildContext context, WidgetRef ref, String title, String csvData) {
-    showDialog(
-      context: context,
-      builder: (ctx) => AlertDialog(
-        backgroundColor: AppColors.bgSurface,
-        title: Text(title, style: TextStyle(color: Colors.white, fontSize: 16, fontWeight: FontWeight.w700)),
-        content: SizedBox(
-          width: 500,
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              Text(AppLocalizations.of(context)!.dataFormatCsvSiapDieksporKeExc,
-                style: TextStyle(color: Color(0xFF94A3B8), fontSize: 12),
-              ),
-              SizedBox(height: 12),
-              Container(
-                height: 180,
-                padding: EdgeInsets.all(10),
-                decoration: BoxDecoration(
-                  color: AppColors.bgDark,
-                  borderRadius: BorderRadius.circular(8),
-                  border: Border.all(color: AppColors.border),
-                ),
-                child: SingleChildScrollView(
-                  child: SelectableText(
-                    csvData,
-                    style: TextStyle(fontFamily: 'monospace', fontSize: 10, color: Color(0xFFCBD5E1)),
+                  hintText: '{"version": 1, "exportedAt": ...}',
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(8),
+                    borderSide: BorderSide(color: context.borderColor),
                   ),
                 ),
               ),
@@ -242,17 +181,100 @@ class SettingsScreen extends ConsumerWidget {
           ),
         ),
         actions: [
-          TextButton(onPressed: () => Navigator.pop(ctx), child: Text(AppLocalizations.of(context)!.tutup)),
+          TextButton(
+            onPressed: () => Navigator.pop(ctx),
+            child: Text(l10n.batal, style: TextStyle(color: context.textSecondary)),
+          ),
+          ElevatedButton(
+            onPressed: () async {
+              final text = controller.text.trim();
+              if (text.isEmpty) {
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(content: Text(l10n.teksJsonTidakBolehKosong)),
+                );
+                return;
+              }
+
+              final storage = ref.read(localStorageServiceProvider);
+              final success = await storage.importBackupJson(text);
+              if (context.mounted) {
+                Navigator.pop(ctx);
+                if (success) {
+                  ref.invalidate(vehiclesProvider);
+                  ref.invalidate(activeVehicleIdProvider);
+                  ref.invalidate(serviceLogsProvider);
+                  ref.invalidate(fuelLogsProvider);
+                  ref.invalidate(maintenanceSchedulesProvider);
+                  ref.invalidate(vehicleDocumentsProvider);
+                  ref.invalidate(inspectionChecklistsProvider);
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(content: Text(l10n.dataCadanganBerhasilDipulihkan)),
+                  );
+                } else {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(content: Text(l10n.gagalMemulihkanBackup(Localizations.localeOf(context).languageCode == 'id' ? 'Format JSON tidak valid atau struktur rusak' : 'Invalid JSON format'))),
+                  );
+                }
+              }
+            },
+            child: Text(l10n.pulihkanData),
+          ),
+        ],
+      ),
+    );
+  }
+
+  void _showCsvExportDialog(BuildContext context, WidgetRef ref, String title, String csvData) {
+    final l10n = AppLocalizations.of(context)!;
+    showDialog(
+      context: context,
+      builder: (ctx) => AlertDialog(
+        backgroundColor: context.cardBg,
+        title: Text(title, style: TextStyle(color: context.textPrimary, fontSize: 16, fontWeight: FontWeight.w700)),
+        content: SizedBox(
+          width: 500,
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Text(
+                l10n.dataFormatCsvSiapDieksporKeExc,
+                style: TextStyle(color: context.textSecondary, fontSize: 12),
+              ),
+              const SizedBox(height: 12),
+              Container(
+                height: 180,
+                padding: const EdgeInsets.all(10),
+                decoration: BoxDecoration(
+                  color: context.surfaceBg,
+                  borderRadius: BorderRadius.circular(8),
+                  border: Border.all(color: context.borderColor),
+                ),
+                child: SingleChildScrollView(
+                  child: SelectableText(
+                    csvData,
+                    style: TextStyle(fontFamily: 'monospace', fontSize: 10, color: context.textPrimary),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(ctx),
+            child: Text(l10n.tutup, style: TextStyle(color: context.textSecondary)),
+          ),
           ElevatedButton.icon(
             onPressed: () {
               Clipboard.setData(ClipboardData(text: csvData));
               Navigator.pop(ctx);
               ScaffoldMessenger.of(context).showSnackBar(
-                SnackBar(content: Text(AppLocalizations.of(context)!.dataCsvBerhasilDisalinKeClipbo)),
+                SnackBar(content: Text(l10n.dataCsvBerhasilDisalinKeClipbo)),
               );
             },
-            icon: Icon(Icons.copy, size: 16),
-            label: Text(AppLocalizations.of(context)!.salinCsv),
+            icon: const Icon(Icons.copy, size: 16),
+            label: Text(l10n.salinCsv),
           ),
         ],
       ),
@@ -261,6 +283,7 @@ class SettingsScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final l10n = AppLocalizations.of(context)!;
     final vehicles = ref.watch(vehiclesProvider);
     final active = ref.watch(activeVehicleProvider);
     final storage = ref.watch(localStorageServiceProvider);
@@ -271,56 +294,121 @@ class SettingsScreen extends ConsumerWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text(AppLocalizations.of(context)!.pengaturanGarasi),
+        title: Text(
+          l10n.pengaturanGarasi,
+          style: TextStyle(fontWeight: FontWeight.w800, fontSize: 18, color: context.textPrimary),
+        ),
       ),
       body: ListView(
-        padding: EdgeInsets.symmetric(horizontal: 16, vertical: 20),
+        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
         children: [
           // 1. Vehicle Fleet Management
-          Text(AppLocalizations.of(context)!.daftarKendaraanDiGarasi, style: TextStyle(fontSize: 14, fontWeight: FontWeight.w700, color: Color(0xFF94A3B8))),
-          SizedBox(height: 10),
-          ...vehicles.map((v) => Padding(
-                padding: EdgeInsets.only(bottom: 8),
-                child: Card(
-                  child: ListTile(
-                    leading: Icon(
-                      v.type == VehicleType.car ? Icons.directions_car : Icons.two_wheeler,
-                      color: v.type == VehicleType.car ? AppColors.carColor : AppColors.motoColor,
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                l10n.daftarKendaraanDiGarasi,
+                style: TextStyle(fontSize: 14, fontWeight: FontWeight.w700, color: context.textSecondary),
+              ),
+              TextButton.icon(
+                onPressed: () {
+                  showModalBottomSheet(
+                    context: context,
+                    isScrollControlled: true,
+                    backgroundColor: context.cardBg,
+                    shape: const RoundedRectangleBorder(
+                      borderRadius: BorderRadius.vertical(top: Radius.circular(24)),
                     ),
-                    title: Text(v.name, style: TextStyle(fontWeight: FontWeight.w700, color: Colors.white, fontSize: 14)),
-                    subtitle: Text('${v.plateNumber} • Odo: ${v.currentOdometer} km', style: TextStyle(fontSize: 12, color: Color(0xFF94A3B8))),
-                    trailing: vehicles.length > 1
-                        ? IconButton(
-                            icon: Icon(Icons.delete_outline, color: AppColors.danger, size: 20),
-                            onPressed: () {
-                              ref.read(vehiclesProvider.notifier).deleteVehicle(v.id);
-                            },
-                          )
-                        : null,
+                    builder: (_) => const AddVehicleSheet(),
+                  );
+                },
+                icon: const Icon(Icons.add_rounded, size: 16),
+                label: Text(l10n.tambahKendaraan, style: const TextStyle(fontSize: 12, fontWeight: FontWeight.w700)),
+              ),
+            ],
+          ),
+          const SizedBox(height: 6),
+          ...vehicles.map((v) {
+            final isCar = v.type == VehicleType.car;
+            final brandColor = isCar ? AppColors.carColor : AppColors.motoColor;
+
+            return Padding(
+              padding: const EdgeInsets.only(bottom: 8),
+              child: Card(
+                child: ListTile(
+                  contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
+                  leading: Container(
+                    width: 40,
+                    height: 40,
+                    decoration: BoxDecoration(
+                      color: brandColor.withValues(alpha: 0.12),
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: Icon(
+                      isCar ? Icons.directions_car : Icons.two_wheeler,
+                      color: brandColor,
+                      size: 22,
+                    ),
                   ),
+                  title: Text(
+                    v.name,
+                    style: TextStyle(fontWeight: FontWeight.w700, color: context.textPrimary, fontSize: 14),
+                  ),
+                  subtitle: Text(
+                    '${v.plateNumber} • Odo: ${v.currentOdometer} km',
+                    style: TextStyle(fontSize: 12, color: context.textSecondary),
+                  ),
+                  trailing: vehicles.length > 1
+                      ? IconButton(
+                          icon: const Icon(Icons.delete_outline, color: AppColors.danger, size: 20),
+                          onPressed: () {
+                            ref.read(vehiclesProvider.notifier).deleteVehicle(v.id);
+                          },
+                        )
+                      : null,
                 ),
-              )),
-          SizedBox(height: 20),
+              ),
+            );
+          }),
+          const SizedBox(height: 20),
 
           // Tampilan & Bahasa
-          Text(AppLocalizations.of(context)!.tampilanBahasa, style: TextStyle(fontSize: 14, fontWeight: FontWeight.w700, color: Color(0xFF94A3B8))),
-          SizedBox(height: 10),
+          Text(
+            l10n.tampilanBahasa,
+            style: TextStyle(fontSize: 14, fontWeight: FontWeight.w700, color: context.textSecondary),
+          ),
+          const SizedBox(height: 10),
           Card(
             child: Padding(
-              padding: EdgeInsets.all(16),
+              padding: const EdgeInsets.all(16),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Row(
                     children: [
-                      Icon(Icons.palette_outlined, color: AppColors.primaryLight, size: 20),
-                      SizedBox(width: 10),
+                      Container(
+                        padding: const EdgeInsets.all(6),
+                        decoration: BoxDecoration(
+                          color: AppColors.primary.withValues(alpha: 0.12),
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                        child: const Icon(Icons.palette_outlined, color: AppColors.primary, size: 18),
+                      ),
+                      const SizedBox(width: 10),
                       Expanded(
-                        child: Text(AppLocalizations.of(context)!.modeTema,
-                          style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600, color: Colors.white),
+                        child: Text(
+                          l10n.modeTema,
+                          style: TextStyle(fontSize: 14, fontWeight: FontWeight.w700, color: context.textPrimary),
                         ),
                       ),
                       SegmentedButton<ThemeMode>(
+                        style: SegmentedButton.styleFrom(
+                          visualDensity: VisualDensity.compact,
+                          selectedBackgroundColor: AppColors.primary,
+                          selectedForegroundColor: Colors.white,
+                          foregroundColor: context.textSecondary,
+                          backgroundColor: context.surfaceBg,
+                        ),
                         segments: const [
                           ButtonSegment(
                             value: ThemeMode.system,
@@ -342,91 +430,176 @@ class SettingsScreen extends ConsumerWidget {
                       ),
                     ],
                   ),
-                  Divider(color: AppColors.border, height: 24),
+                  Divider(color: context.borderColor, height: 24),
                   ListTile(
                     contentPadding: EdgeInsets.zero,
-                    leading: Icon(Icons.translate, color: AppColors.primaryLight, size: 20),
-                    title: Text(AppLocalizations.of(context)!.bahasaAplikasi, style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600, color: Colors.white)),
+                    leading: Container(
+                      padding: const EdgeInsets.all(6),
+                      decoration: BoxDecoration(
+                        color: AppColors.accent.withValues(alpha: 0.12),
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                      child: const Icon(Icons.translate, color: AppColors.accent, size: 18),
+                    ),
+                    title: Text(
+                      l10n.bahasaAplikasi,
+                      style: TextStyle(fontSize: 14, fontWeight: FontWeight.w700, color: context.textPrimary),
+                    ),
                     subtitle: Text(
                       '${_languages[langCode]?.nativeName ?? langCode} (${_languages[langCode]?.name ?? langCode})',
-                      style: TextStyle(fontSize: 12, color: Color(0xFF94A3B8)),
+                      style: TextStyle(fontSize: 12, color: context.textSecondary),
                     ),
-                    trailing: Icon(Icons.chevron_right, color: Color(0xFF94A3B8)),
+                    trailing: Icon(Icons.chevron_right, color: context.textMuted),
                     onTap: () => _showLanguageModal(context, ref, currentLocale),
                   ),
                 ],
               ),
             ),
           ),
-          SizedBox(height: 20),
+          const SizedBox(height: 20),
 
           // 2. Data Portability & Backup
-          Text(AppLocalizations.of(context)!.portabilitasCadanganData, style: TextStyle(fontSize: 14, fontWeight: FontWeight.w700, color: Color(0xFF94A3B8))),
-          SizedBox(height: 10),
+          Text(
+            l10n.portabilitasCadanganData,
+            style: TextStyle(fontSize: 14, fontWeight: FontWeight.w700, color: context.textSecondary),
+          ),
+          const SizedBox(height: 10),
           Card(
             child: Column(
               children: [
                 ListTile(
-                  leading: Icon(Icons.file_download_outlined, color: AppColors.primaryLight),
-                  title: Text(AppLocalizations.of(context)!.eksporCadanganJson, style: TextStyle(color: Colors.white, fontSize: 14, fontWeight: FontWeight.w600)),
-                  subtitle: Text(AppLocalizations.of(context)!.cadangkanSeluruhKendaraanServi, style: TextStyle(fontSize: 12, color: Color(0xFF94A3B8))),
+                  leading: Container(
+                    padding: const EdgeInsets.all(8),
+                    decoration: BoxDecoration(
+                      color: AppColors.primary.withValues(alpha: 0.1),
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                    child: const Icon(Icons.file_download_outlined, color: AppColors.primary, size: 20),
+                  ),
+                  title: Text(
+                    l10n.eksporCadanganJson,
+                    style: TextStyle(color: context.textPrimary, fontSize: 14, fontWeight: FontWeight.w700),
+                  ),
+                  subtitle: Text(
+                    l10n.cadangkanSeluruhKendaraanServi,
+                    style: TextStyle(fontSize: 12, color: context.textSecondary),
+                  ),
                   onTap: () => _showExportJsonDialog(context, ref),
                 ),
-                Divider(color: AppColors.border, height: 1),
+                Divider(color: context.borderColor, height: 1),
                 ListTile(
-                  leading: Icon(Icons.file_upload_outlined, color: AppColors.accent),
-                  title: Text(AppLocalizations.of(context)!.pulihkanDariBackupJson, style: TextStyle(color: Colors.white, fontSize: 14, fontWeight: FontWeight.w600)),
-                  subtitle: Text(AppLocalizations.of(context)!.kembalikanDataDariBerkasCadang, style: TextStyle(fontSize: 12, color: Color(0xFF94A3B8))),
+                  leading: Container(
+                    padding: const EdgeInsets.all(8),
+                    decoration: BoxDecoration(
+                      color: AppColors.accent.withValues(alpha: 0.1),
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                    child: const Icon(Icons.file_upload_outlined, color: AppColors.accent, size: 20),
+                  ),
+                  title: Text(
+                    l10n.pulihkanDariBackupJson,
+                    style: TextStyle(color: context.textPrimary, fontSize: 14, fontWeight: FontWeight.w700),
+                  ),
+                  subtitle: Text(
+                    l10n.kembalikanDataDariBerkasCadang,
+                    style: TextStyle(fontSize: 12, color: context.textSecondary),
+                  ),
                   onTap: () => _showImportJsonDialog(context, ref),
                 ),
-                Divider(color: AppColors.border, height: 1),
+                Divider(color: context.borderColor, height: 1),
                 ListTile(
-                  leading: Icon(Icons.table_chart_outlined, color: AppColors.success),
-                  title: Text(AppLocalizations.of(context)!.eksporCsvRiwayatServis, style: TextStyle(color: Colors.white, fontSize: 14, fontWeight: FontWeight.w600)),
-                  subtitle: Text(AppLocalizations.of(context)!.eksporFormatTabelSpreadsheetUn, style: TextStyle(fontSize: 12, color: Color(0xFF94A3B8))),
+                  leading: Container(
+                    padding: const EdgeInsets.all(8),
+                    decoration: BoxDecoration(
+                      color: AppColors.success.withValues(alpha: 0.1),
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                    child: const Icon(Icons.table_chart_outlined, color: AppColors.success, size: 20),
+                  ),
+                  title: Text(
+                    l10n.eksporCsvRiwayatServis,
+                    style: TextStyle(color: context.textPrimary, fontSize: 14, fontWeight: FontWeight.w700),
+                  ),
+                  subtitle: Text(
+                    l10n.eksporFormatTabelSpreadsheetUn,
+                    style: TextStyle(fontSize: 12, color: context.textSecondary),
+                  ),
                   onTap: () {
                     final csv = storage.exportServiceLogsCsv(active?.id);
-                    _showCsvExportDialog(context, ref, 'Ekspor CSV Riwayat Servis', csv);
+                    _showCsvExportDialog(context, ref, l10n.eksporCsvRiwayatServis, csv);
                   },
                 ),
-                Divider(color: AppColors.border, height: 1),
+                Divider(color: context.borderColor, height: 1),
                 ListTile(
-                  leading: Icon(Icons.receipt_long_outlined, color: AppColors.warning),
-                  title: Text(AppLocalizations.of(context)!.eksporCsvRiwayatBbm, style: TextStyle(color: Colors.white, fontSize: 14, fontWeight: FontWeight.w600)),
-                  subtitle: Text(AppLocalizations.of(context)!.eksporSeluruhPengisianBbmKeFor, style: TextStyle(fontSize: 12, color: Color(0xFF94A3B8))),
+                  leading: Container(
+                    padding: const EdgeInsets.all(8),
+                    decoration: BoxDecoration(
+                      color: AppColors.warning.withValues(alpha: 0.1),
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                    child: const Icon(Icons.receipt_long_outlined, color: AppColors.warning, size: 20),
+                  ),
+                  title: Text(
+                    l10n.eksporCsvRiwayatBbm,
+                    style: TextStyle(color: context.textPrimary, fontSize: 14, fontWeight: FontWeight.w700),
+                  ),
+                  subtitle: Text(
+                    l10n.eksporSeluruhPengisianBbmKeFor,
+                    style: TextStyle(fontSize: 12, color: context.textSecondary),
+                  ),
                   onTap: () {
                     final csv = storage.exportFuelLogsCsv(active?.id);
-                    _showCsvExportDialog(context, ref, 'Ekspor CSV Riwayat BBM', csv);
+                    _showCsvExportDialog(context, ref, l10n.eksporCsvRiwayatBbm, csv);
                   },
                 ),
               ],
             ),
           ),
-          SizedBox(height: 20),
+          const SizedBox(height: 20),
 
           // 3. Reset Data
-          Text(AppLocalizations.of(context)!.aturUlangData, style: TextStyle(fontSize: 14, fontWeight: FontWeight.w700, color: Color(0xFF94A3B8))),
-          SizedBox(height: 10),
+          Text(
+            l10n.aturUlangData,
+            style: TextStyle(fontSize: 14, fontWeight: FontWeight.w700, color: context.textSecondary),
+          ),
+          const SizedBox(height: 10),
           Card(
             child: ListTile(
-              leading: Icon(Icons.delete_sweep_outlined, color: AppColors.danger),
-              title: Text(AppLocalizations.of(context)!.resetDataGarasi, style: TextStyle(color: Colors.white, fontSize: 14)),
-              subtitle: Text(AppLocalizations.of(context)!.menghapusSemuaLogServisBbmDanR, style: TextStyle(fontSize: 12, color: Color(0xFF94A3B8))),
+              leading: Container(
+                padding: const EdgeInsets.all(8),
+                decoration: BoxDecoration(
+                  color: AppColors.danger.withValues(alpha: 0.1),
+                  borderRadius: BorderRadius.circular(8),
+                ),
+                child: const Icon(Icons.delete_sweep_outlined, color: AppColors.danger, size: 20),
+              ),
+              title: Text(
+                l10n.resetDataGarasi,
+                style: const TextStyle(color: AppColors.danger, fontSize: 14, fontWeight: FontWeight.w700),
+              ),
+              subtitle: Text(
+                l10n.menghapusSemuaLogServisBbmDanR,
+                style: TextStyle(fontSize: 12, color: context.textSecondary),
+              ),
               onTap: () async {
                 final confirm = await showDialog<bool>(
                   context: context,
                   builder: (ctx) => AlertDialog(
-                    backgroundColor: AppColors.bgSurface,
-                    title: Text(AppLocalizations.of(context)!.resetSeluruhData, style: TextStyle(color: Colors.white)),
-                    content: Text(AppLocalizations.of(context)!.tindakanIniAkanMengosongkanSem,
-                      style: TextStyle(color: Color(0xFF94A3B8)),
+                    backgroundColor: context.cardBg,
+                    title: Text(l10n.resetSeluruhData, style: TextStyle(color: context.textPrimary, fontWeight: FontWeight.w700)),
+                    content: Text(
+                      l10n.tindakanIniAkanMengosongkanSem,
+                      style: TextStyle(color: context.textSecondary),
                     ),
                     actions: [
-                      TextButton(onPressed: () => Navigator.pop(ctx, false), child: Text(AppLocalizations.of(context)!.batal)),
+                      TextButton(
+                        onPressed: () => Navigator.pop(ctx, false),
+                        child: Text(l10n.batal, style: TextStyle(color: context.textSecondary)),
+                      ),
                       ElevatedButton(
                         onPressed: () => Navigator.pop(ctx, true),
                         style: ElevatedButton.styleFrom(backgroundColor: AppColors.danger),
-                        child: Text(AppLocalizations.of(context)!.reset),
+                        child: Text(l10n.reset),
                       ),
                     ],
                   ),
@@ -445,81 +618,86 @@ class SettingsScreen extends ConsumerWidget {
                   ref.invalidate(inspectionChecklistsProvider);
                   if (context.mounted) {
                     ScaffoldMessenger.of(context).showSnackBar(
-                      SnackBar(content: Text(AppLocalizations.of(context)!.dataGarasiBerhasilDiresetKeSta)),
+                      SnackBar(content: Text(l10n.dataGarasiBerhasilDiresetKeSta)),
                     );
                   }
                 }
               },
             ),
           ),
-          SizedBox(height: 24),
+          const SizedBox(height: 24),
 
           // 4. About App & License
-          Text(AppLocalizations.of(context)!.tentangAplikasiLisensi, style: TextStyle(fontSize: 14, fontWeight: FontWeight.w700, color: Color(0xFF94A3B8))),
-          SizedBox(height: 10),
+          Text(
+            l10n.tentangAplikasiLisensi,
+            style: TextStyle(fontSize: 14, fontWeight: FontWeight.w700, color: context.textSecondary),
+          ),
+          const SizedBox(height: 10),
           Card(
             child: Padding(
-              padding: EdgeInsets.all(16),
+              padding: const EdgeInsets.all(16),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  _buildAboutRow('Aplikasi', AppConstants.appName),
-                  Divider(color: AppColors.border, height: 24),
-                  _buildAboutRow('Versi', '${AppConstants.appVersion}+1'),
-                  Divider(color: AppColors.border, height: 24),
-                  _buildAboutRow('Arsitektur', '100% Offline-First (No Server/No Tracking)'),
-                  Divider(color: AppColors.border, height: 24),
-                  _buildAboutRow('Domain', 'garagego.faishal.id'),
-                  Divider(color: AppColors.border, height: 24),
-                  _buildAboutRow('Identitas', 'id.faishal.garagego'),
-                  Divider(color: AppColors.border, height: 24),
-                  _buildAboutRow('Ekosistem', 'Lifestyle Utility Fleet'),
-                  Divider(color: AppColors.border, height: 24),
+                  _buildAboutRow(context, langCode == 'id' ? 'Aplikasi' : 'Application', AppConstants.appName),
+                  Divider(color: context.borderColor, height: 20),
+                  _buildAboutRow(context, langCode == 'id' ? 'Versi' : 'Version', '${AppConstants.appVersion}+1'),
+                  Divider(color: context.borderColor, height: 20),
+                  _buildAboutRow(context, langCode == 'id' ? 'Arsitektur' : 'Architecture', '100% Offline-First (No Server/No Tracking)'),
+                  Divider(color: context.borderColor, height: 20),
+                  _buildAboutRow(context, langCode == 'id' ? 'Domain' : 'Domain', 'garagego.faishal.id'),
+                  Divider(color: context.borderColor, height: 20),
+                  _buildAboutRow(context, langCode == 'id' ? 'Identitas' : 'Package ID', 'id.faishal.garagego'),
+                  Divider(color: context.borderColor, height: 20),
+                  _buildAboutRow(context, langCode == 'id' ? 'Ekosistem' : 'Ecosystem', 'Lifestyle Utility Fleet'),
+                  Divider(color: context.borderColor, height: 20),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
                         license.title,
-                        style: TextStyle(fontSize: 13, fontWeight: FontWeight.bold, color: Colors.white),
+                        style: TextStyle(fontSize: 13, fontWeight: FontWeight.bold, color: context.textPrimary),
                       ),
                       Container(
-                        padding: EdgeInsets.symmetric(horizontal: 8, vertical: 3),
+                        padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
                         decoration: BoxDecoration(
-                          color: AppColors.primary.withValues(alpha: 0.15),
+                          color: AppColors.primary.withValues(alpha: 0.12),
                           borderRadius: BorderRadius.circular(8),
                           border: Border.all(color: AppColors.primary.withValues(alpha: 0.3)),
                         ),
                         child: Text(
                           license.badge,
-                          style: TextStyle(
+                          style: const TextStyle(
                             fontSize: 11,
                             fontWeight: FontWeight.bold,
-                            color: AppColors.primaryLight,
+                            color: AppColors.primary,
                           ),
                         ),
                       ),
                     ],
                   ),
-                  SizedBox(height: 6),
+                  const SizedBox(height: 6),
                   Text(
                     license.desc,
-                    style: TextStyle(fontSize: 12, color: Color(0xFF94A3B8), height: 1.4),
+                    style: TextStyle(fontSize: 12, color: context.textSecondary, height: 1.4),
                   ),
                 ],
               ),
             ),
           ),
-          SizedBox(height: 32),
+          const SizedBox(height: 32),
         ],
       ),
     );
   }
 
   void _showLanguageModal(BuildContext context, WidgetRef ref, Locale currentLocale) {
+    final l10n = AppLocalizations.of(context)!;
     showModalBottomSheet(
       context: context,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
+      backgroundColor: context.cardBg,
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(top: Radius.circular(24)),
       ),
       builder: (ctx) {
         return SafeArea(
@@ -527,20 +705,27 @@ class SettingsScreen extends ConsumerWidget {
             mainAxisSize: MainAxisSize.min,
             children: [
               Padding(
-                padding: EdgeInsets.all(16),
-                child: Text(AppLocalizations.of(context)!.pilihBahasaSelectLanguage,
-                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                padding: const EdgeInsets.all(16),
+                child: Text(
+                  l10n.pilihBahasaSelectLanguage,
+                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: context.textPrimary),
                 ),
               ),
-              Divider(height: 1),
+              Divider(height: 1, color: context.borderColor),
               Expanded(
                 child: ListView(
                   children: _languages.entries.map((entry) {
                     final isSelected = entry.key == currentLocale.languageCode;
                     return ListTile(
-                      title: Text(entry.value.nativeName),
-                      subtitle: Text(entry.value.name),
-                      trailing: isSelected ? Icon(Icons.check, color: AppColors.primaryLight) : null,
+                      title: Text(
+                        entry.value.nativeName,
+                        style: TextStyle(
+                          color: isSelected ? AppColors.primary : context.textPrimary,
+                          fontWeight: isSelected ? FontWeight.w700 : FontWeight.w500,
+                        ),
+                      ),
+                      subtitle: Text(entry.value.name, style: TextStyle(color: context.textSecondary, fontSize: 12)),
+                      trailing: isSelected ? const Icon(Icons.check, color: AppColors.primary) : null,
                       onTap: () {
                         ref.read(localeProvider.notifier).setLocale(Locale(entry.key));
                         Navigator.pop(ctx);
@@ -556,12 +741,12 @@ class SettingsScreen extends ConsumerWidget {
     );
   }
 
-  Widget _buildAboutRow(String label, String value) {
+  Widget _buildAboutRow(BuildContext context, String label, String value) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Text(label, style: TextStyle(fontSize: 13, color: Color(0xFF94A3B8))),
-        Text(value, style: TextStyle(fontSize: 13, fontWeight: FontWeight.w600, color: Colors.white)),
+        Text(label, style: TextStyle(fontSize: 13, color: context.textSecondary)),
+        Text(value, style: TextStyle(fontSize: 13, fontWeight: FontWeight.w600, color: context.textPrimary)),
       ],
     );
   }

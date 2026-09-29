@@ -2,6 +2,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../models/vehicle.dart';
 import '../services/analytics_service.dart';
 import '../storage/local_storage_service.dart';
+import 'locale_provider.dart';
 
 final localStorageServiceProvider = Provider<LocalStorageService>((ref) {
   throw UnimplementedError('localStorageServiceProvider must be provided');
@@ -193,8 +194,8 @@ class MaintenanceSchedulesNotifier extends Notifier<List<MaintenanceSchedule>> {
     await ref.read(serviceLogsProvider.notifier).addLog(serviceLog);
   }
 
-  Future<void> loadPresetsForVehicle(Vehicle vehicle) async {
-    final presets = MaintenanceSchedule.defaultPresetsFor(vehicle);
+  Future<void> loadPresetsForVehicle(Vehicle vehicle, {bool isEnglish = false}) async {
+    final presets = MaintenanceSchedule.defaultPresetsFor(vehicle, isEnglish: isEnglish);
     // Remove existing presets for this vehicle and replace
     final nonPresets = state.where((s) => s.vehicleId != vehicle.id || !s.isPreset).toList();
     state = [...nonPresets, ...presets];
@@ -305,10 +306,13 @@ final vehicleHealthScoreProvider = Provider<VehicleHealthResult?>((ref) {
   if (active == null) return null;
   final schedules = ref.watch(activeMaintenanceSchedulesProvider);
   final documents = ref.watch(activeVehicleDocumentsProvider);
+  final locale = ref.watch(localeProvider);
+  final isEnglish = locale.languageCode != 'id';
   return AnalyticsService.computeHealthScore(
     vehicle: active,
     schedules: schedules,
     documents: documents,
+    isEnglish: isEnglish,
   );
 });
 

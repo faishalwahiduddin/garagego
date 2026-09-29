@@ -12,165 +12,221 @@ class GloveboxScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final l10n = AppLocalizations.of(context)!;
     final active = ref.watch(activeVehicleProvider);
     final documents = ref.watch(activeVehicleDocumentsProvider);
     final currency = NumberFormat.currency(locale: 'id_ID', symbol: 'Rp ', decimalDigits: 0);
 
     return Scaffold(
       appBar: AppBar(
-        title: Text(active != null ? 'Brankas: ${active.name}' : 'Brankas & Pajak'),
+        title: Text(
+          active != null ? '${l10n.navGlovebox}: ${active.name}' : '${l10n.navGlovebox} & ${l10n.pajakStnk}',
+          style: TextStyle(fontWeight: FontWeight.w800, fontSize: 18, color: context.textPrimary),
+        ),
         actions: [
           if (active != null)
             IconButton(
-              icon: Icon(Icons.add_circle_outline, color: AppColors.primaryLight),
-              tooltip: AppLocalizations.of(context)!.tambahDokumen,
+              icon: Container(
+                padding: const EdgeInsets.all(6),
+                decoration: BoxDecoration(
+                  color: AppColors.primary.withValues(alpha: 0.1),
+                  shape: BoxShape.circle,
+                ),
+                child: const Icon(Icons.add, color: AppColors.primary, size: 18),
+              ),
+              tooltip: l10n.tambahDokumen,
               onPressed: () {
                 showModalBottomSheet(
                   context: context,
                   isScrollControlled: true,
-                  backgroundColor: AppColors.bgCard,
+                  backgroundColor: context.cardBg,
+                  shape: const RoundedRectangleBorder(
+                    borderRadius: BorderRadius.vertical(top: Radius.circular(24)),
+                  ),
                   builder: (_) => AddDocumentSheet(vehicle: active),
                 );
               },
             ),
+          const SizedBox(width: 8),
         ],
       ),
       body: active == null
-          ? Center(child: Text(AppLocalizations.of(context)!.pilihAtauTambahKendaraanTerleb))
+          ? Center(
+              child: Text(
+                l10n.pilihAtauTambahKendaraanTerleb,
+                style: TextStyle(color: context.textSecondary),
+              ),
+            )
           : SingleChildScrollView(
-              padding: EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
               child: Center(
                 child: ConstrainedBox(
-                  constraints: BoxConstraints(maxWidth: 800),
+                  constraints: const BoxConstraints(maxWidth: 800),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
-                      // Header Card: Summary of Taxes & Documents
-                      Container(
-                        padding: EdgeInsets.all(18),
-                        decoration: BoxDecoration(
-                          gradient: LinearGradient(
-                            colors: [
-                              AppColors.primaryDark.withValues(alpha: 0.3),
-                              AppColors.bgSurface,
+                      // Header Card: Clean Digital Glovebox Vault Summary
+                      Card(
+                        color: context.cardBg,
+                        child: Padding(
+                          padding: const EdgeInsets.all(16),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Row(
+                                children: [
+                                  Container(
+                                    width: 44,
+                                    height: 44,
+                                    decoration: BoxDecoration(
+                                      color: AppColors.primary.withValues(alpha: 0.12),
+                                      borderRadius: BorderRadius.circular(12),
+                                    ),
+                                    child: const Icon(Icons.folder_shared_outlined, color: AppColors.primary, size: 22),
+                                  ),
+                                  const SizedBox(width: 12),
+                                  Expanded(
+                                    child: Column(
+                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      children: [
+                                        Text(
+                                          'Digital Glovebox — ${active.name}',
+                                          style: TextStyle(
+                                            fontSize: 16,
+                                            fontWeight: FontWeight.w800,
+                                            color: context.textPrimary,
+                                            letterSpacing: -0.3,
+                                          ),
+                                        ),
+                                        const SizedBox(height: 2),
+                                        Text(
+                                          '${active.plateNumber} • ${documents.length} ${Localizations.localeOf(context).languageCode == 'id' ? 'Dokumen Terdaftar' : 'Registered Documents'}',
+                                          style: TextStyle(fontSize: 12, color: context.textSecondary),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              const SizedBox(height: 14),
+                              Row(
+                                children: [
+                                  Expanded(
+                                    child: Container(
+                                      padding: const EdgeInsets.all(12),
+                                      decoration: BoxDecoration(
+                                        color: context.surfaceBg,
+                                        borderRadius: BorderRadius.circular(10),
+                                        border: Border.all(color: context.borderColor),
+                                      ),
+                                      child: Column(
+                                        crossAxisAlignment: CrossAxisAlignment.start,
+                                        children: [
+                                          Text(
+                                            l10n.pajakPkbTahunan,
+                                            style: TextStyle(fontSize: 11, fontWeight: FontWeight.w600, color: context.textSecondary),
+                                          ),
+                                          const SizedBox(height: 4),
+                                          Text(
+                                            l10n.daysRemaining(active.daysUntilTaxDue.toString()),
+                                            style: TextStyle(
+                                              fontSize: 14,
+                                              fontWeight: FontWeight.w800,
+                                              color: active.isTaxClose ? AppColors.danger : AppColors.success,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                  const SizedBox(width: 10),
+                                  Expanded(
+                                    child: Container(
+                                      padding: const EdgeInsets.all(12),
+                                      decoration: BoxDecoration(
+                                        color: context.surfaceBg,
+                                        borderRadius: BorderRadius.circular(10),
+                                        border: Border.all(color: context.borderColor),
+                                      ),
+                                      child: Column(
+                                        crossAxisAlignment: CrossAxisAlignment.start,
+                                        children: [
+                                          Text(
+                                            l10n.gantiPelat5Th,
+                                            style: TextStyle(fontSize: 11, fontWeight: FontWeight.w600, color: context.textSecondary),
+                                          ),
+                                          const SizedBox(height: 4),
+                                          Text(
+                                            l10n.daysRemaining(active.daysUntilPlateDue.toString()),
+                                            style: TextStyle(
+                                              fontSize: 14,
+                                              fontWeight: FontWeight.w800,
+                                              color: active.isPlateClose ? AppColors.warning : context.textPrimary,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
                             ],
-                            begin: Alignment.topLeft,
-                            end: Alignment.bottomRight,
                           ),
-                          borderRadius: BorderRadius.circular(16),
-                          border: Border.all(color: AppColors.primary.withValues(alpha: 0.3)),
-                        ),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Row(
-                              children: [
-                                Icon(Icons.folder_shared_outlined, color: AppColors.primaryLight, size: 24),
-                                SizedBox(width: 10),
-                                Expanded(
-                                  child: Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
-                                    children: [
-                                      Text(
-                                        'Digital Glovebox — ${active.name}',
-                                        style: TextStyle(fontSize: 16, fontWeight: FontWeight.w800, color: Colors.white),
-                                      ),
-                                      Text(
-                                        '${active.plateNumber} • ${documents.length} Dokumen Terdaftar',
-                                        style: TextStyle(fontSize: 12, color: Color(0xFF94A3B8)),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ],
-                            ),
-                            SizedBox(height: 14),
-                            Row(
-                              children: [
-                                Expanded(
-                                  child: Container(
-                                    padding: EdgeInsets.all(12),
-                                    decoration: BoxDecoration(
-                                      color: AppColors.bgDark,
-                                      borderRadius: BorderRadius.circular(10),
-                                    ),
-                                    child: Column(
-                                      crossAxisAlignment: CrossAxisAlignment.start,
-                                      children: [
-                                        Text(AppLocalizations.of(context)!.pajakPkbTahunan, style: TextStyle(fontSize: 11, color: Color(0xFF94A3B8))),
-                                        SizedBox(height: 4),
-                                        Text(
-                                          '${active.daysUntilTaxDue} Hari Lagi',
-                                          style: TextStyle(
-                                            fontSize: 14,
-                                            fontWeight: FontWeight.w800,
-                                            color: active.isTaxClose ? AppColors.danger : AppColors.success,
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                                SizedBox(width: 10),
-                                Expanded(
-                                  child: Container(
-                                    padding: EdgeInsets.all(12),
-                                    decoration: BoxDecoration(
-                                      color: AppColors.bgDark,
-                                      borderRadius: BorderRadius.circular(10),
-                                    ),
-                                    child: Column(
-                                      crossAxisAlignment: CrossAxisAlignment.start,
-                                      children: [
-                                        Text(AppLocalizations.of(context)!.gantiPelat5Th, style: TextStyle(fontSize: 11, color: Color(0xFF94A3B8))),
-                                        SizedBox(height: 4),
-                                        Text(
-                                          '${active.daysUntilPlateDue} Hari Lagi',
-                                          style: TextStyle(
-                                            fontSize: 14,
-                                            fontWeight: FontWeight.w800,
-                                            color: active.isPlateClose ? AppColors.warning : Colors.white,
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ],
                         ),
                       ),
-                      SizedBox(height: 20),
+                      const SizedBox(height: 20),
 
-                      Text(AppLocalizations.of(context)!.daftarMasaBerlakuDokumenLisens,
-                        style: TextStyle(fontSize: 14, fontWeight: FontWeight.w700, color: Color(0xFF94A3B8)),
+                      Text(
+                        l10n.daftarMasaBerlakuDokumenLisens,
+                        style: TextStyle(
+                          fontSize: 14,
+                          fontWeight: FontWeight.w700,
+                          color: context.textSecondary,
+                        ),
                       ),
-                      SizedBox(height: 10),
+                      const SizedBox(height: 10),
 
                       if (documents.isEmpty)
                         Card(
                           child: Padding(
-                            padding: EdgeInsets.all(24),
+                            padding: const EdgeInsets.all(32),
                             child: Column(
                               children: [
-                                Icon(Icons.description_outlined, size: 40, color: Color(0xFF64748B)),
-                                SizedBox(height: 12),
-                                Text(AppLocalizations.of(context)!.belumAdaDokumenTercatat, style: TextStyle(color: Colors.white, fontWeight: FontWeight.w700)),
-                                SizedBox(height: 4),
-                                Text(AppLocalizations.of(context)!.simpanTanggalJatuhTempoStnkAsu, style: TextStyle(color: Color(0xFF94A3B8), fontSize: 12), textAlign: TextAlign.center),
-                                SizedBox(height: 16),
+                                Container(
+                                  width: 64,
+                                  height: 64,
+                                  decoration: BoxDecoration(
+                                    color: AppColors.primary.withValues(alpha: 0.1),
+                                    shape: BoxShape.circle,
+                                  ),
+                                  child: const Icon(Icons.description_outlined, size: 32, color: AppColors.primary),
+                                ),
+                                const SizedBox(height: 16),
+                                Text(
+                                  l10n.belumAdaDokumenTercatat,
+                                  style: TextStyle(color: context.textPrimary, fontWeight: FontWeight.w800, fontSize: 16),
+                                ),
+                                const SizedBox(height: 6),
+                                Text(
+                                  l10n.simpanTanggalJatuhTempoStnkAsu,
+                                  style: TextStyle(color: context.textSecondary, fontSize: 12),
+                                  textAlign: TextAlign.center,
+                                ),
+                                const SizedBox(height: 18),
                                 ElevatedButton.icon(
                                   onPressed: () {
                                     showModalBottomSheet(
                                       context: context,
                                       isScrollControlled: true,
-                                      backgroundColor: AppColors.bgCard,
+                                      backgroundColor: context.cardBg,
+                                      shape: const RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.vertical(top: Radius.circular(24)),
+                                      ),
                                       builder: (_) => AddDocumentSheet(vehicle: active),
                                     );
                                   },
-                                  icon: Icon(Icons.add),
-                                  label: Text(AppLocalizations.of(context)!.tambahDokumenPertama),
+                                  icon: const Icon(Icons.add, size: 16),
+                                  label: Text(l10n.tambahDokumenPertama),
                                 ),
                               ],
                             ),
@@ -182,15 +238,16 @@ class GloveboxScreen extends ConsumerWidget {
                           Color statusColor;
                           String statusText;
 
+                          final isId = Localizations.localeOf(context).languageCode == 'id';
                           if (doc.isExpired) {
                             statusColor = AppColors.danger;
-                            statusText = 'Kedaluwarsa ${-days} hari lalu';
+                            statusText = isId ? 'Kedaluwarsa ${-days} hari lalu' : 'Expired ${-days} days ago';
                           } else if (doc.isDueSoon) {
                             statusColor = AppColors.warning;
-                            statusText = 'Jatuh tempo $days hari lagi';
+                            statusText = isId ? 'Jatuh tempo $days hari lagi' : 'Due in $days days';
                           } else {
                             statusColor = AppColors.success;
-                            statusText = '$days hari lagi';
+                            statusText = isId ? '$days hari lagi' : '$days days remaining';
                           }
 
                           IconData iconData;
@@ -215,86 +272,113 @@ class GloveboxScreen extends ConsumerWidget {
                           }
 
                           return Padding(
-                            padding: EdgeInsets.only(bottom: 12),
+                            padding: const EdgeInsets.only(bottom: 12),
                             child: Card(
                               child: Padding(
-                                padding: EdgeInsets.all(16),
+                                padding: const EdgeInsets.all(16),
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Row(
                                       children: [
                                         Container(
-                                          padding: EdgeInsets.all(8),
+                                          width: 38,
+                                          height: 38,
                                           decoration: BoxDecoration(
-                                            color: statusColor.withValues(alpha: 0.15),
-                                            borderRadius: BorderRadius.circular(8),
+                                            color: statusColor.withValues(alpha: 0.12),
+                                            borderRadius: BorderRadius.circular(10),
                                           ),
                                           child: Icon(iconData, size: 20, color: statusColor),
                                         ),
-                                        SizedBox(width: 12),
+                                        const SizedBox(width: 12),
                                         Expanded(
                                           child: Column(
                                             crossAxisAlignment: CrossAxisAlignment.start,
                                             children: [
-                                              Text(doc.title, style: TextStyle(fontSize: 14, fontWeight: FontWeight.w700, color: Colors.white)),
+                                              Text(
+                                                doc.title,
+                                                style: TextStyle(
+                                                  fontSize: 14,
+                                                  fontWeight: FontWeight.w700,
+                                                  color: context.textPrimary,
+                                                ),
+                                              ),
                                               if (doc.documentNumber.isNotEmpty)
-                                                Text(doc.documentNumber, style: TextStyle(fontSize: 12, color: Color(0xFF94A3B8))),
+                                                Text(
+                                                  doc.documentNumber,
+                                                  style: TextStyle(fontSize: 12, color: context.textSecondary),
+                                                ),
                                             ],
                                           ),
                                         ),
                                         Container(
-                                          padding: EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                                          padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                                           decoration: BoxDecoration(
-                                            color: statusColor.withValues(alpha: 0.15),
+                                            color: statusColor.withValues(alpha: 0.12),
                                             borderRadius: BorderRadius.circular(6),
-                                            border: Border.all(color: statusColor.withValues(alpha: 0.4)),
                                           ),
                                           child: Text(
                                             statusText,
-                                            style: TextStyle(fontSize: 11, fontWeight: FontWeight.w800, color: statusColor),
+                                            style: TextStyle(fontSize: 11, fontWeight: FontWeight.w700, color: statusColor),
                                           ),
                                         ),
                                       ],
                                     ),
-                                    SizedBox(height: 12),
+                                    const SizedBox(height: 12),
                                     Row(
                                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                       children: [
                                         Text(
-                                          'Masa Berlaku: ${doc.expiryDate.day}/${doc.expiryDate.month}/${doc.expiryDate.year}',
-                                          style: TextStyle(fontSize: 12, color: Color(0xFFCBD5E1)),
+                                          Localizations.localeOf(context).languageCode == 'id'
+                                              ? 'Masa Berlaku: ${doc.expiryDate.day}/${doc.expiryDate.month}/${doc.expiryDate.year}'
+                                              : 'Valid until: ${doc.expiryDate.day}/${doc.expiryDate.month}/${doc.expiryDate.year}',
+                                          style: TextStyle(fontSize: 12, color: context.textSecondary),
                                         ),
                                         if (doc.cost > 0)
                                           Text(
                                             currency.format(doc.cost),
-                                            style: TextStyle(fontSize: 13, fontWeight: FontWeight.w700, color: AppColors.accent),
+                                            style: const TextStyle(
+                                              fontSize: 13,
+                                              fontWeight: FontWeight.w800,
+                                              color: AppColors.primary,
+                                            ),
                                           ),
                                       ],
                                     ),
                                     if (doc.notes.isNotEmpty) ...[
-                                      SizedBox(height: 6),
-                                      Text(doc.notes, style: TextStyle(fontSize: 11, color: Color(0xFF94A3B8))),
+                                      const SizedBox(height: 6),
+                                      Text(doc.notes, style: TextStyle(fontSize: 11, color: context.textMuted)),
                                     ],
-                                    Divider(color: AppColors.border, height: 20),
+                                    Divider(color: context.borderColor, height: 18),
                                     Row(
                                       mainAxisAlignment: MainAxisAlignment.end,
                                       children: [
                                         TextButton.icon(
+                                          style: TextButton.styleFrom(
+                                            visualDensity: VisualDensity.compact,
+                                            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+                                          ),
                                           onPressed: () {
                                             showModalBottomSheet(
                                               context: context,
                                               isScrollControlled: true,
-                                              backgroundColor: AppColors.bgCard,
+                                              backgroundColor: context.cardBg,
+                                              shape: const RoundedRectangleBorder(
+                                                borderRadius: BorderRadius.vertical(top: Radius.circular(24)),
+                                              ),
                                               builder: (_) => AddDocumentSheet(vehicle: active, initialDoc: doc),
                                             );
                                           },
-                                          icon: Icon(Icons.edit_outlined, size: 16),
-                                          label: Text(AppLocalizations.of(context)!.ubah, style: TextStyle(fontSize: 12)),
+                                          icon: const Icon(Icons.edit_outlined, size: 15, color: AppColors.primary),
+                                          label: Text(
+                                            l10n.ubah,
+                                            style: const TextStyle(fontSize: 12, color: AppColors.primary, fontWeight: FontWeight.w700),
+                                          ),
                                         ),
-                                        SizedBox(width: 8),
+                                        const SizedBox(width: 8),
                                         IconButton(
-                                          icon: Icon(Icons.delete_outline, size: 18, color: AppColors.danger),
+                                          icon: const Icon(Icons.delete_outline, size: 18, color: AppColors.danger),
+                                          visualDensity: VisualDensity.compact,
                                           onPressed: () {
                                             ref.read(vehicleDocumentsProvider.notifier).deleteDocument(doc.id);
                                           },

@@ -290,556 +290,526 @@ class AppLocalizationsJa extends AppLocalizations {
   String get privacyNotice => 'データはお使いのデバイスに100%安全にローカル保存されます。';
 
   @override
-  String get aksiCepat => 'Aksi Cepat';
+  String get aksiCepat => 'クイック操作';
 
   @override
-  String get aksiCepatGarasi => 'Aksi Cepat ガレージ';
+  String get aksiCepatGarasi => 'ガレージ・クイック操作';
 
   @override
-  String get aturUlangData => 'Atur Ulang Data';
+  String get aturUlangData => 'データのリセット';
 
   @override
   String get aturPengingatGantiOliFilterRem =>
-      'Atur pengingat ganti oli, filter, rem, dan sparepart.';
+      'オイル、フィルター、ブレーキ、消耗品の定期交換リマインダーを設定します。';
 
   @override
-  String get audit10PoinKeselamatanJalanMud =>
-      'Audit 10-poin keselamatan jalan & mudik';
+  String get audit10PoinKeselamatanJalanMud => 'ロングドライブ＆日常点検の10項目安全点検';
 
   @override
-  String get auditKelayakanJalanKeselamatan =>
-      'Audit kelayakan jalan & keselamatan sebelum perjalanan mudik atau harian.';
+  String get auditKelayakanJalanKeselamatan => '遠出や日々の運転前の安全運行基準チェック。';
 
   @override
-  String get bahasaAplikasi => 'Bahasa Aplikasi';
+  String get bahasaAplikasi => 'アプリの言語';
 
   @override
   String get batal => 'キャンセル';
 
   @override
-  String get belumAdaCatatanBbm => 'Belum Ada Catatan BBM';
+  String get belumAdaCatatanBbm => '給油記録がありません';
 
   @override
-  String get belumAdaDokumenTercatat => 'Belum Ada Dokumen Tercatat';
+  String get belumAdaDokumenTercatat => '書類が登録されていません';
 
   @override
-  String get belumAdaHasilCeklis => 'Belum Ada Hasil Ceklis';
+  String get belumAdaHasilCeklis => '点検履歴がありません';
 
   @override
-  String get belumAdaJadwalServis => 'Belum Ada Jadwal Servis';
+  String get belumAdaJadwalServis => '整備スケジュールがありません';
 
   @override
-  String get belumAdaRiwayatServis => 'Belum Ada Riwayat Servis';
+  String get belumAdaRiwayatServis => '整備履歴がありません';
 
   @override
-  String get belumAdaCatatanServis => 'Belum ada catatan servis.';
+  String get belumAdaCatatanServis => '記録された整備履歴はありません。';
 
   @override
-  String get belumAdaJadwalPerawatanBerkala =>
-      'Belum ada jadwal perawatan berkala.';
+  String get belumAdaJadwalPerawatanBerkala => '定期点検スケジュールはまだ設定されていません。';
 
   @override
-  String get biayaKm => 'Biaya / KM';
+  String get biayaKm => 'コスト / km';
 
   @override
-  String get biayaTotalRp => 'Biaya Total (Rp)';
+  String get biayaTotalRp => '合計費用';
 
   @override
-  String get biayaPerKm => 'Biaya per KM';
+  String get biayaPerKm => 'kmあたりの費用';
 
   @override
-  String get bukaBrankas => 'Buka Brankas';
+  String get bukaBrankas => '書類箱を開く';
 
   @override
   String get cadanganLengkapSeluruhDataGara =>
-      'Cadangan lengkap seluruh data ガレージ, jadwal servis, dokumen, dan log BBM dapat disalin ke clipboard di bawah:';
+      '車両、点検、書類、給油を含む全データをクリップボードにコピーできます：';
 
   @override
-  String get cadangkanSeluruhKendaraanServi =>
-      'Cadangkan seluruh 車両, servis, BBM, dan jadwal';
+  String get cadangkanSeluruhKendaraanServi => '全車両、整備、給油、スケジュールを一括バックアップ';
 
   @override
-  String get cariRiwayatServisAtauBengkel =>
-      'Cari riwayat servis atau bengkel...';
+  String get cariRiwayatServisAtauBengkel => '整備履歴や整備工場を検索...';
 
   @override
-  String get catatPengisianBbm => 'Catat Pengisian BBM';
+  String get catatPengisianBbm => '給油を記録';
 
   @override
-  String get catatPengisianPertama => 'Catat Pengisian Pertama';
+  String get catatPengisianPertama => '初回の給油を記録';
 
   @override
-  String get catatServisBaru => 'Catat Servis Baru';
+  String get catatServisBaru => '新規整備を記録';
 
   @override
-  String get catatServisPertama => 'Catat Servis Pertama';
+  String get catatServisPertama => '初回の整備を記録';
 
   @override
   String get catatStrukPengisianBensinUntuk =>
-      'Catat struk pengisian bensin untuk memantau konsumsi km/L dan cost/km.';
+      'レシートを記録して燃費(km/L)と走行単価を把握しましょう。';
 
   @override
-  String get catatanOpsional => 'Catatan (Opsional)';
+  String get catatanOpsional => 'メモ (任意)';
 
   @override
-  String get catatanLokasiBerkasFisik => 'Catatan / Lokasi Berkas Fisik';
+  String get catatanLokasiBerkasFisik => '備考 / 原本の保管場所';
 
   @override
-  String get catatanBbmBerhasilDisimpan => 'Catatan BBM berhasil disimpan!';
+  String get catatanBbmBerhasilDisimpan => '給油記録を保存しました！';
 
   @override
-  String get catatanPemeriksaOpsional => 'Catatan Pemeriksa (Opsional)';
+  String get catatanPemeriksaOpsional => '点検者メモ (任意)';
 
   @override
-  String get catatanSparepartPengerjaan => 'Catatan Sparepart / Pengerjaan';
+  String get catatanSparepartPengerjaan => '交換部品 / 作業内容';
 
   @override
-  String get catatanServisBerhasilDitambahk =>
-      'Catatan servis berhasil ditambahkan!';
+  String get catatanServisBerhasilDitambahk => '整備記録を追加しました！';
 
   @override
-  String get catatanTambahanKondisiKendaraa => 'Catatan tambahan kondisi 車両...';
+  String get catatanTambahanKondisiKendaraa => '車両状態に関する追記メモ...';
 
   @override
-  String get ceklisKondisiKendaraan => 'Ceklis Kondisi 車両';
+  String get ceklisKondisiKendaraan => '車両状態チェックリスト';
 
   @override
-  String get checklistInspeksiKendaraan => 'Checklist Inspeksi 車両';
+  String get checklistInspeksiKendaraan => '車両安全点検チェックリスト';
 
   @override
-  String get counterOliBerhasilDiresetKeOdo =>
-      'Counter oli berhasil direset ke odometer saat ini!';
+  String get counterOliBerhasilDiresetKeOdo => 'オイルカウンターを現在の走行距離にリセットしました！';
 
   @override
-  String get daftarKendaraanDiGarasi => 'Daftar 車両 di ガレージ';
+  String get daftarKendaraanDiGarasi => 'ガレージの車両一覧';
 
   @override
-  String get daftarMasaBerlakuDokumenLisens =>
-      'Daftar Masa Berlaku Dokumen & Lisensi';
+  String get daftarMasaBerlakuDokumenLisens => '書類・免許証の有効期限一覧';
 
   @override
-  String get dataCsvBerhasilDisalinKeClipbo =>
-      'Data CSV berhasil disalin ke Clipboard!';
+  String get dataCsvBerhasilDisalinKeClipbo => 'CSVデータをクリップボードにコピーしました！';
 
   @override
-  String get dataCadanganBerhasilDipulihkan =>
-      'Data cadangan berhasil dipulihkan ke ガレージ!';
+  String get dataCadanganBerhasilDipulihkan => 'バックアップからデータを正常に復元しました！';
 
   @override
-  String get dataFormatCsvSiapDieksporKeExc =>
-      'Data format CSV siap diekspor ke Excel / Spreadsheet:';
+  String get dataFormatCsvSiapDieksporKeExc => 'Excelや表計算ソフト用のCSVデータ：';
 
   @override
-  String get dataGarasiBerhasilDiresetKeSta =>
-      'Data ガレージ berhasil direset ke standar.';
+  String get dataGarasiBerhasilDiresetKeSta => 'ガレージデータを初期状態にリセットしました。';
 
   @override
-  String get diperlukanUntukAkurasiKalkulas =>
-      'Diperlukan untuk akurasi kalkulasi km/L';
+  String get diperlukanUntukAkurasiKalkulas => '正確な燃費(km/L)計算のために必要です';
 
   @override
   String get dualTriggerReminderAlarmAkanAk =>
-      'Dual-Trigger Reminder: Alarm akan aktif jika jarak (km) ATAU waktu (bulan) tercapai.';
+      'デュアルトリガー通知: 走行距離(km)または期間(月)のどちらかに達すると通知されます。';
 
   @override
-  String get eksporBackupJson => 'Ekspor Backup JSON';
+  String get eksporBackupJson => 'JSONバックアップ書き出し';
 
   @override
-  String get eksporCsvRiwayatBbm => 'Ekspor CSV Riwayat BBM';
+  String get eksporCsvRiwayatBbm => '給油履歴をCSV書き出し';
 
   @override
-  String get eksporCsvRiwayatServis => 'Ekspor CSV Riwayat Servis';
+  String get eksporCsvRiwayatServis => '整備履歴をCSV書き出し';
 
   @override
-  String get eksporCadanganJson => 'Ekspor Cadangan JSON';
+  String get eksporCadanganJson => 'JSONバックアップ書き出し';
 
   @override
-  String get eksporFormatTabelSpreadsheetUn =>
-      'Ekspor format tabel spreadsheet untuk pencatatan bengkel';
+  String get eksporFormatTabelSpreadsheetUn => '整備工場記録用の表形式CSV書き出し';
 
   @override
-  String get eksporSeluruhPengisianBbmKeFor =>
-      'Ekspor seluruh pengisian BBM ke format CSV spreadsheet';
+  String get eksporSeluruhPengisianBbmKeFor => '全給油記録をCSVスプレッドシート形式で書き出し';
 
   @override
-  String get estimasiBiayaPremiRp => 'Estimasi Biaya / Premi (Rp)';
+  String get estimasiBiayaPremiRp => '概算費用 / 保険料';
 
   @override
-  String get gantiPelat5Th => 'Ganti Pelat 5 Th';
+  String get gantiPelat5Th => '車検・ナンバー更新 (5年)';
 
   @override
-  String get garasiMasihKosong => 'ガレージ Masih Kosong';
+  String get garasiMasihKosong => 'ガレージに車両がありません';
 
   @override
-  String get hargaSatuanRpLiter => 'Harga Satuan (Rp/Liter)';
+  String get hargaSatuanRpLiter => '給油単価 (/L)';
 
   @override
-  String get hasilCeklisInspeksiBerhasilDis =>
-      'Hasil ceklis inspeksi berhasil disimpan!';
+  String get hasilCeklisInspeksiBerhasilDis => '点検チェック結果を保存しました！';
 
   @override
-  String get hitungKonsumsiKmLDanBiayaBensi =>
-      'Hitung konsumsi km/L dan biaya bensin';
+  String get hitungKonsumsiKmLDanBiayaBensi => '燃費(km/L)とガソリン代を自動計算';
 
   @override
-  String get imporPulihkanBackupJson => 'Impor / Pulihkan Backup JSON';
+  String get imporPulihkanBackupJson => 'JSONバックアップから復元';
 
   @override
-  String get intervalJarakKm => 'Interval Jarak (km)';
+  String get intervalJarakKm => '距離間隔 (km)';
 
   @override
-  String get intervalOliKm => 'Interval Oli (km)';
+  String get intervalOliKm => 'オイル交換間隔 (km)';
 
   @override
-  String get intervalWaktu => 'Interval Waktu';
+  String get intervalWaktu => '期間間隔';
 
   @override
-  String get isiTangkiPenuhFullTank => 'Isi Tangki Penuh (Full Tank)?';
+  String get isiTangkiPenuhFullTank => '満タン給油ですか？';
 
   @override
-  String get jadwalServisMendatang => 'Jadwal Servis Mendatang';
+  String get jadwalServisMendatang => '今後の整備予定';
 
   @override
-  String get jenisBahanBakar => 'Jenis Bahan Bakar';
+  String get jenisBahanBakar => '燃料の種類';
 
   @override
-  String get jenisDokumen => 'Jenis Dokumen';
+  String get jenisDokumen => '書類の種別';
 
   @override
-  String get judulKeteranganDokumen => 'Judul / Keterangan Dokumen';
+  String get judulKeteranganDokumen => '書類名 / 説明';
 
   @override
-  String get kategori => 'Kategori:';
+  String get kategori => 'カテゴリー:';
 
   @override
-  String get kembalikanDataDariBerkasCadang =>
-      'Kembalikan data dari berkas cadangan JSON yang valid';
+  String get kembalikanDataDariBerkasCadang => '有効なJSONバックアップファイルからデータを復元';
 
   @override
-  String get kilometerOdometerKm => 'Kilometer Odometer (km)';
+  String get kilometerOdometerKm => 'オドメーター走行距離 (km)';
 
   @override
-  String get konfirmasiReset => 'Konfirmasi Reset';
+  String get konfirmasiReset => 'リセットの確認';
 
   @override
-  String get konsumsiBbm => 'Konsumsi BBM';
+  String get konsumsiBbm => '燃費管理';
 
   @override
   String get lakukanInspeksi10PoinBanRemOli =>
-      'Lakukan inspeksi 10 poin ban, rem, oli, lampu, dan aki.';
+      'タイヤ、ブレーキ、オイル、灯火類、バッテリーの10項目を点検します。';
 
   @override
-  String get lihatSemua => 'Lihat Semua';
+  String get lihatSemua => 'すべて表示';
 
   @override
-  String get lisensiPamakean => 'Lisensi Pamakean';
+  String get lisensiPamakean => '利用規約・ライセンス';
 
   @override
-  String get lisensiPanganggo => 'Lisensi Panganggo';
+  String get lisensiPanganggo => '利用規約・ライセンス';
 
   @override
-  String get lisensiPenggunaan => 'Lisensi Penggunaan';
+  String get lisensiPenggunaan => '利用規約・ライセンス';
 
   @override
-  String get menghapusSemuaLogServisBbmDanR =>
-      'Menghapus semua log servis, BBM, dan riwayat ガレージ';
+  String get menghapusSemuaLogServisBbmDanR => 'すべての整備記録、給油記録、車両履歴を消去します';
 
   @override
-  String get mobil => 'Mobil';
+  String get mobil => '四輪車';
 
   @override
-  String get mobilAtauMotorKeluargaBaru => 'Mobil atau motor keluarga baru';
+  String get mobilAtauMotorKeluargaBaru => '新しいクルマやバイクを追加';
 
   @override
-  String get modeTema => 'Mode Tema';
+  String get modeTema => 'テーマ設定';
 
   @override
-  String get motor => 'Motor';
+  String get motor => '二輪車';
 
   @override
-  String get mulaiCeklis => 'Mulai Ceklis';
+  String get mulaiCeklis => '点検開始';
 
   @override
-  String get mulaiInspeksiPertama => 'Mulai Inspeksi Pertama';
+  String get mulaiInspeksiPertama => '初回の点検を開始';
 
   @override
-  String get namaModelKendaraan => 'Nama / Model 車両';
+  String get namaModelKendaraan => '車両名 / 車種';
 
   @override
-  String get namaBengkelToko => 'Nama Bengkel / Toko';
+  String get namaBengkelToko => '整備工場 / ディーラー名';
 
   @override
-  String get namaBengkelTokoOpsional => 'Nama Bengkel / Toko (Opsional)';
+  String get namaBengkelTokoOpsional => '整備工場 / ショップ名 (任意)';
 
   @override
-  String get namaPekerjaanKomponen => 'Nama Pekerjaan / Komponen';
+  String get namaPekerjaanKomponen => '整備内容 / 部品名';
 
   @override
-  String get namaSpbuLokasi => 'Nama SPBU / Lokasi';
+  String get namaSpbuLokasi => '給油スタンド / 場所';
 
   @override
-  String get nomorDokumenNoPolisNoPolisi =>
-      'Nomor Dokumen / No. Polis / No. Polisi';
+  String get nomorDokumenNoPolisNoPolisi => '書類番号 / 保険証券番号 / 車両番号';
 
   @override
-  String get nomorPelatPolisi => 'Nomor Pelat Polisi';
+  String get nomorPelatPolisi => 'ナンバープレート番号';
 
   @override
-  String get odometerPengerjaanKm => 'Odometer Pengerjaan (km)';
+  String get odometerPengerjaanKm => '作業時の走行距離 (km)';
 
   @override
-  String get odometerSaatIniKm => 'Odometer Saat Ini (km)';
+  String get odometerSaatIniKm => '現在の走行距離 (km)';
 
   @override
-  String get odometerTerakhirDikerjakanKm =>
-      'Odometer Terakhir Dikerjakan (km)';
+  String get odometerTerakhirDikerjakanKm => '前回整備時の走行距離 (km)';
 
   @override
-  String get opsiJadwal => 'Opsi Jadwal';
+  String get opsiJadwal => 'スケジュール設定';
 
   @override
-  String get pkbTahunan => 'PKB Tahunan';
+  String get pkbTahunan => '年次自動車税';
 
   @override
-  String get pajakStnk => 'Pajak & STNK';
+  String get pajakStnk => '税金・車検証';
 
   @override
-  String get pajakPkbTahunan => 'Pajak PKB Tahunan';
+  String get pajakPkbTahunan => '自動車税種別割';
 
   @override
-  String get pekerjaanServis => 'Pekerjaan / Servis';
+  String get pekerjaanServis => '整備・作業内容';
 
   @override
-  String get pelat5Th => 'Pelat 5 Th';
+  String get pelat5Th => 'ナンバー5年更新';
 
   @override
-  String get pengaturanGarasi => 'Pengaturan ガレージ';
+  String get pengaturanGarasi => 'ガレージ設定';
 
   @override
-  String get penggantianOliMesinResetCounte =>
-      'Penggantian Oli Mesin (Reset Counter)';
+  String get penggantianOliMesinResetCounte => 'エンジンオイル交換（カウンターリセット）';
 
   @override
-  String get pilihBahasaSelectLanguage => 'Pilih Bahasa / Select Language';
+  String get pilihBahasaSelectLanguage => '言語を選択';
 
   @override
-  String get pilihAtauBuatKendaraanTerlebih =>
-      'Pilih atau buat 車両 terlebih dahulu.';
+  String get pilihAtauBuatKendaraanTerlebih => '初めに車両を選択または追加してください。';
 
   @override
-  String get pilihAtauTambahKendaraanTerleb =>
-      'Pilih atau 追加 車両 terlebih dahulu.';
+  String get pilihAtauTambahKendaraanTerleb => '初めに車両を選択または追加してください。';
 
   @override
-  String get portabilitasCadanganData => 'Portabilitas & Cadangan Data';
+  String get portabilitasCadanganData => 'データの移行とバックアップ';
 
   @override
-  String get pulihkanData => 'Pulihkan Data';
+  String get pulihkanData => 'データを復元';
 
   @override
-  String get pulihkanDariBackupJson => 'Pulihkan dari Backup JSON';
+  String get pulihkanDariBackupJson => 'JSONバックアップから復元';
 
   @override
-  String get rataRataEfisiensi => 'Rata-Rata Efisiensi';
+  String get rataRataEfisiensi => '平均燃費';
 
   @override
-  String get rekorIritTerbaik => 'Rekor Irit Terbaik';
+  String get rekorIritTerbaik => '最高燃費記録';
 
   @override
-  String get resetCounterOliMesin => 'Reset Counter Oli Mesin';
+  String get resetCounterOliMesin => 'オイルカウンターをリセット';
 
   @override
-  String get resetDataGarasi => 'Reset Data ガレージ';
+  String get resetDataGarasi => 'ガレージデータを初期化';
 
   @override
-  String get resetOli => 'Reset Oli';
+  String get resetOli => 'オイルをリセット';
 
   @override
-  String get resetSeluruhData => 'Reset Seluruh Data?';
+  String get resetSeluruhData => 'すべてのデータを初期化しますか？';
 
   @override
-  String get rincianPartYangDiganti => 'Rincian part yang diganti...';
+  String get rincianPartYangDiganti => '交換した部品や整備の詳細...';
 
   @override
-  String get riwayatLengkap => 'Riwayat Lengkap';
+  String get riwayatLengkap => '全履歴';
 
   @override
-  String get riwayatPengisianBahanBakar => 'Riwayat Pengisian Bahan Bakar';
+  String get riwayatPengisianBahanBakar => '給油履歴一覧';
 
   @override
-  String get salinCsv => 'Salin CSV';
+  String get salinCsv => 'CSVをコピー';
 
   @override
-  String get salinKeClipboard => 'Salin ke Clipboard';
+  String get salinKeClipboard => 'クリップボードにコピー';
 
   @override
-  String get salinanJsonBackupBerhasilDisal =>
-      'Salinan JSON backup berhasil disalin ke Clipboard!';
+  String get salinanJsonBackupBerhasilDisal => 'JSONバックアップをクリップボードにコピーしました！';
 
   @override
-  String get servisTerakhir => 'Servis Terakhir';
+  String get servisTerakhir => '直近の整備';
 
   @override
-  String get setPengingatBerkalaGantiPartKm =>
-      'Set pengingat berkala ganti part km/bulan';
+  String get setPengingatBerkalaGantiPartKm => '走行距離または月数で定期点検リマインダーを設定';
 
   @override
   String get simpan => '保存';
 
   @override
-  String get simpanAuditInspeksi => '保存 Audit Inspeksi';
+  String get simpanAuditInspeksi => '点検結果を保存';
 
   @override
-  String get simpanKeGarasi => '保存 ke ガレージ';
+  String get simpanKeGarasi => 'ガレージに保存';
 
   @override
-  String get simpanRiwayatBengkelDanGantiOl =>
-      '保存 riwayat bengkel dan ganti oli';
+  String get simpanRiwayatBengkelDanGantiOl => 'ショップ履歴とオイル交換を記録';
 
   @override
-  String get simpanTanggalJatuhTempoStnkAsu =>
-      '保存 tanggal jatuh tempo STNK, asuransi, dan dokumen 車両 Anda.';
+  String get simpanTanggalJatuhTempoStnkAsu => '車検、自動車税、保険の満期日を安全に保管します。';
 
   @override
-  String get statusOliMesin => 'Status Oli Mesin';
+  String get statusOliMesin => 'エンジンオイルの状態';
 
   @override
-  String get tahunPembuatan => 'Tahun Pembuatan';
+  String get tahunPembuatan => '年式（製造年）';
 
   @override
-  String get tambahDokumen => '追加 Dokumen';
+  String get tambahDokumen => '書類を追加';
 
   @override
-  String get tambahDokumenPertama => '追加 Dokumen Pertama';
+  String get tambahDokumenPertama => '最初の書類を追加';
 
   @override
-  String get tambahJadwalBaru => '追加 Jadwal Baru';
+  String get tambahJadwalBaru => '新規スケジュールを追加';
 
   @override
-  String get tambahJadwalPerawatan => '追加 Jadwal Perawatan';
+  String get tambahJadwalPerawatan => '点検スケジュールを追加';
 
   @override
-  String get tambahKendaraan => '追加 車両';
+  String get tambahKendaraan => '車両を追加';
 
   @override
-  String get tambahKendaraanBaru => '追加 車両 Baru';
+  String get tambahKendaraanBaru => '新規車両を追加';
 
   @override
-  String get tampilanBahasa => 'Tampilan & Bahasa';
+  String get tampilanBahasa => '外観と言語';
 
   @override
-  String get tandaiSelesai => 'Tandai Selesai';
+  String get tandaiSelesai => '完了にする';
 
   @override
-  String get tandaiSelesaiReset => 'Tandai Selesai / Reset';
+  String get tandaiSelesaiReset => '完了にしてリセット';
 
   @override
   String get tandaiSelesaiAkanMeresetHitung =>
-      'Tandai selesai akan mereset hitungan interval dan otomatis mencatat ke Riwayat Servis.';
+      '完了にするとインターバルカウンターがリセットされ、整備履歴に自動記録されます。';
 
   @override
-  String get tanggalMasaBerlakuJatuhTempo =>
-      'Tanggal Masa Berlaku / Jatuh Tempo';
+  String get tanggalMasaBerlakuJatuhTempo => '有効期限 / 満了日';
 
   @override
-  String get tanggalTerakhirDikerjakan => 'Tanggal Terakhir Dikerjakan';
+  String get tanggalTerakhirDikerjakan => '前回実施日';
 
   @override
-  String get teksJsonTidakBolehKosong => 'Teks JSON tidak boleh kosong!';
+  String get teksJsonTidakBolehKosong => 'JSONテキストが空です！';
 
   @override
   String get tempelkanTeksDataJsonCadanganY =>
-      'Tempelkan teks data JSON cadangan yang pernah diekspor sebelumnya:';
+      '以前書き出したJSONバックアップデータをここに貼り付けてください：';
 
   @override
-  String get tentangAplikasiLisensi => 'Tentang Aplikasi & Lisensi';
+  String get tentangAplikasiLisensi => 'アプリについて & ライセンス';
 
   @override
-  String get termasukGantiOli => 'Termasuk Ganti Oli?';
+  String get termasukGantiOli => 'オイル交換を含める';
 
   @override
   String get tindakanIniAkanMengosongkanSem =>
-      'Tindakan ini akan mengosongkan semua data dan mengembalikan contoh awal ガレージ.';
+      'この操作を行うとすべての記録が消去され、初期サンプルデータに戻ります。';
 
   @override
-  String get totalBiayaRp => 'Total Biaya (Rp)';
+  String get totalBiayaRp => '合計費用';
 
   @override
-  String get totalBiayaTco => 'Total Biaya (TCO)';
+  String get totalBiayaTco => '総保有コスト (TCO)';
 
   @override
-  String get totalBiayaBengkel => 'Total Biaya Bengkel';
+  String get totalBiayaBengkel => '整備費用合計';
 
   @override
-  String get totalBiayaKepemilikanTco => 'Total Biaya Kepemilikan (TCO)';
+  String get totalBiayaKepemilikanTco => '総保有コスト (TCO)';
 
   @override
-  String get totalPengeluaranBbm => 'Total Pengeluaran BBM';
+  String get totalPengeluaranBbm => '給油代合計';
 
   @override
   String get tutup => '閉じる';
 
   @override
-  String get ubah => 'Ubah';
+  String get ubah => '編集';
 
   @override
-  String get volumeLiterKwh => 'Volume (Liter / kWh)';
+  String get volumeLiterKwh => '給油・充電量 (L / kWh)';
 
   @override
   String gagalMemulihkanBackup(String error) {
-    return 'Failed to restore backup: $error';
+    return 'バックアップの復元に失敗しました: $error';
   }
 
   @override
-  String get misalPajakPkbTahunanStnk2026 => 'E.g.: Annual Vehicle Tax 2026';
+  String get misalPajakPkbTahunanStnk2026 => '例: 2026年度 自動車税';
 
   @override
-  String get hintPlatB1234 => 'B 1234 ABC';
+  String get hintPlatB1234 => '品川 500 あ 12-34';
 
   @override
-  String get misalStnkDiDompet =>
-      'E.g.: Registration in wallet, Title in cabinet';
+  String get misalStnkDiDompet => '例: 車検証は車内、自賠責証明書はファイル保管';
 
   @override
-  String get misalKurasMinyakRem => 'E.g.: Flush Brake Fluid DOT 4';
+  String get misalKurasMinyakRem => '例: ブレーキフルード DOT4 全量交換';
 
   @override
   String selesaikanJadwal(String title) {
-    return 'Complete: $title';
+    return '完了: $title';
   }
 
   @override
   String jadwalCount(String count) {
-    return 'Schedules ($count)';
+    return 'スケジュール ($count)';
   }
 
   @override
   String riwayatCount(String count) {
-    return 'History ($count)';
+    return '履歴 ($count)';
   }
 
   @override
   String inspeksiCount(String count) {
-    return 'Inspections ($count)';
+    return '点検 ($count)';
   }
 
   @override
   String rekomendasiPabrikBerhasilDimuat(String label) {
-    return 'Factory recommendation $label loaded!';
+    return '$label の標準推奨プランを読み込みました！';
   }
 
   @override
   String muatStandarPabrik(String label) {
-    return 'Load Factory Standard ($label)';
+    return 'メーカー標準プランを読み込む ($label)';
   }
 
   @override
   String odometerValue(String odo) {
-    return 'Odometer: $odo km';
+    return '走行距離: $odo km';
   }
 
   @override
   String kendaraanBerhasilDitambahkan(String name) {
-    return 'Vehicle $name successfully added to garage!';
+    return '車両 $name をガレージに追加しました！';
   }
 }

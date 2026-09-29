@@ -1,3 +1,5 @@
+import 'package:flutter/widgets.dart';
+
 enum VehicleType {
   car('Mobil', 'Roda Empat'),
   motorcycle('Motor', 'Roda Dua');
@@ -5,6 +7,16 @@ enum VehicleType {
   final String label;
   final String sublabel;
   const VehicleType(this.label, this.sublabel);
+
+  String getLocalizedLabel(BuildContext context) {
+    final isId = Localizations.localeOf(context).languageCode == 'id';
+    switch (this) {
+      case VehicleType.car:
+        return isId ? 'Mobil' : 'Car';
+      case VehicleType.motorcycle:
+        return isId ? 'Motor' : 'Motorcycle';
+    }
+  }
 }
 
 enum ScheduleUrgency {
@@ -15,6 +27,18 @@ enum ScheduleUrgency {
   final String label;
   final int colorValue;
   const ScheduleUrgency(this.label, this.colorValue);
+
+  String getLocalizedLabel(BuildContext context) {
+    final isId = Localizations.localeOf(context).languageCode == 'id';
+    switch (this) {
+      case ScheduleUrgency.safe:
+        return isId ? 'Aman' : 'Safe';
+      case ScheduleUrgency.dueSoon:
+        return isId ? 'Segera' : 'Due Soon';
+      case ScheduleUrgency.overdue:
+        return isId ? 'Terlewat' : 'Overdue';
+    }
+  }
 }
 
 enum DocumentType {
@@ -28,6 +52,26 @@ enum DocumentType {
 
   final String label;
   const DocumentType(this.label);
+
+  String getLocalizedLabel(BuildContext context) {
+    final isId = Localizations.localeOf(context).languageCode == 'id';
+    switch (this) {
+      case DocumentType.stnkTahunan:
+        return isId ? 'Pajak PKB Tahunan' : 'Annual Vehicle Tax';
+      case DocumentType.stnkLimaTahunan:
+        return isId ? 'Ganti Pelat & STNK 5 Th' : '5-Year Plate & Registration';
+      case DocumentType.asuransi:
+        return isId ? 'Asuransi Kendaraan' : 'Vehicle Insurance';
+      case DocumentType.ujiEmisi:
+        return isId ? 'Uji Emisi / KIR' : 'Emissions Test / Inspection';
+      case DocumentType.sim:
+        return isId ? 'SIM Pengemudi' : "Driver's License";
+      case DocumentType.bpkb:
+        return isId ? 'BPKB Kendaraan' : 'Vehicle Title (BPKB)';
+      case DocumentType.lainnya:
+        return isId ? 'Dokumen Lainnya' : 'Other Document';
+    }
+  }
 }
 
 class Vehicle {
@@ -384,15 +428,15 @@ class MaintenanceSchedule {
         isPreset: json['isPreset'] as bool? ?? false,
       );
 
-  static List<MaintenanceSchedule> defaultPresetsFor(Vehicle v) {
+  static List<MaintenanceSchedule> defaultPresetsFor(Vehicle v, {bool isEnglish = false}) {
     final now = DateTime.now();
     if (v.type == VehicleType.car) {
       return [
         MaintenanceSchedule(
           id: 'preset_${v.id}_oil',
           vehicleId: v.id,
-          title: 'Ganti Oli Mesin Sintetik',
-          category: 'Oli & Pelumas',
+          title: isEnglish ? 'Synthetic Engine Oil Change' : 'Ganti Oli Mesin Sintetik',
+          category: isEnglish ? 'Oil & Fluids' : 'Oli & Pelumas',
           intervalKm: 5000,
           intervalMonths: 6,
           lastPerformedOdometer: v.lastOilOdometer,
@@ -402,8 +446,8 @@ class MaintenanceSchedule {
         MaintenanceSchedule(
           id: 'preset_${v.id}_filter_oil',
           vehicleId: v.id,
-          title: 'Ganti Filter Oli Mesin',
-          category: 'Oli & Filter',
+          title: isEnglish ? 'Engine Oil Filter Replacement' : 'Ganti Filter Oli Mesin',
+          category: isEnglish ? 'Oil & Filter' : 'Oli & Filter',
           intervalKm: 10000,
           intervalMonths: 12,
           lastPerformedOdometer: (v.lastOilOdometer > 10000 ? v.lastOilOdometer - 10000 : 0),
@@ -413,8 +457,8 @@ class MaintenanceSchedule {
         MaintenanceSchedule(
           id: 'preset_${v.id}_filter_air',
           vehicleId: v.id,
-          title: 'Filter Udara & AC Kabin',
-          category: 'Filter & Udara',
+          title: isEnglish ? 'Air Filter & Cabin AC Filter' : 'Filter Udara & AC Kabin',
+          category: isEnglish ? 'Filters' : 'Filter & Udara',
           intervalKm: 10000,
           intervalMonths: 12,
           lastPerformedOdometer: (v.currentOdometer > 8000 ? v.currentOdometer - 8000 : 0),
@@ -424,8 +468,8 @@ class MaintenanceSchedule {
         MaintenanceSchedule(
           id: 'preset_${v.id}_brake_fluid',
           vehicleId: v.id,
-          title: 'Kuras Minyak Rem & Kampas',
-          category: 'Pengereman',
+          title: isEnglish ? 'Brake Fluid Flush & Brake Pads' : 'Kuras Minyak Rem & Kampas',
+          category: isEnglish ? 'Brakes' : 'Pengereman',
           intervalKm: 20000,
           intervalMonths: 24,
           lastPerformedOdometer: 10000,
@@ -435,8 +479,8 @@ class MaintenanceSchedule {
         MaintenanceSchedule(
           id: 'preset_${v.id}_tire_rotation',
           vehicleId: v.id,
-          title: 'Rotasi Ban & Spooring Balancing',
-          category: 'Ban & Suspensi',
+          title: isEnglish ? 'Tire Rotation & Wheel Alignment' : 'Rotasi Ban & Spooring Balancing',
+          category: isEnglish ? 'Tires & Wheels' : 'Ban & Suspensi',
           intervalKm: 10000,
           intervalMonths: 6,
           lastPerformedOdometer: 15000,
@@ -446,8 +490,8 @@ class MaintenanceSchedule {
         MaintenanceSchedule(
           id: 'preset_${v.id}_spark_plugs',
           vehicleId: v.id,
-          title: 'Ganti Busi Iridium',
-          category: 'Pengapian',
+          title: isEnglish ? 'Iridium Spark Plugs' : 'Ganti Busi Iridium',
+          category: isEnglish ? 'Ignition' : 'Pengapian',
           intervalKm: 40000,
           intervalMonths: 36,
           lastPerformedOdometer: 0,
@@ -460,8 +504,8 @@ class MaintenanceSchedule {
         MaintenanceSchedule(
           id: 'preset_${v.id}_moto_oil',
           vehicleId: v.id,
-          title: 'Ganti Oli Mesin Matic/Manual',
-          category: 'Oli & Pelumas',
+          title: isEnglish ? 'Motorcycle Engine Oil Change' : 'Ganti Oli Mesin Matic/Manual',
+          category: isEnglish ? 'Oil & Fluids' : 'Oli & Pelumas',
           intervalKm: 2500,
           intervalMonths: 3,
           lastPerformedOdometer: v.lastOilOdometer,
@@ -471,8 +515,8 @@ class MaintenanceSchedule {
         MaintenanceSchedule(
           id: 'preset_${v.id}_gear_oil',
           vehicleId: v.id,
-          title: 'Ganti Oli Gardan (Gear Oil)',
-          category: 'Oli & Transmisi',
+          title: isEnglish ? 'Final Drive Gear Oil' : 'Ganti Oli Gardan (Gear Oil)',
+          category: isEnglish ? 'Transmission' : 'Oli & Transmisi',
           intervalKm: 6000,
           intervalMonths: 6,
           lastPerformedOdometer: 10000,
@@ -482,8 +526,8 @@ class MaintenanceSchedule {
         MaintenanceSchedule(
           id: 'preset_${v.id}_vbelt',
           vehicleId: v.id,
-          title: 'Servis CVT, V-Belt & Roller',
-          category: 'Transmisi CVT',
+          title: isEnglish ? 'CVT Service, V-Belt & Rollers' : 'Servis CVT, V-Belt & Roller',
+          category: isEnglish ? 'Transmission' : 'Transmisi CVT',
           intervalKm: 20000,
           intervalMonths: 24,
           lastPerformedOdometer: 0,
@@ -493,8 +537,8 @@ class MaintenanceSchedule {
         MaintenanceSchedule(
           id: 'preset_${v.id}_moto_brakes',
           vehicleId: v.id,
-          title: 'Cek & Ganti Kampas Rem',
-          category: 'Pengereman',
+          title: isEnglish ? 'Front & Rear Brake Pads Inspection' : 'Cek & Ganti Kampas Rem',
+          category: isEnglish ? 'Brakes' : 'Pengereman',
           intervalKm: 10000,
           intervalMonths: 12,
           lastPerformedOdometer: 8000,
@@ -504,8 +548,8 @@ class MaintenanceSchedule {
         MaintenanceSchedule(
           id: 'preset_${v.id}_moto_spark',
           vehicleId: v.id,
-          title: 'Ganti Busi Motor',
-          category: 'Pengapian',
+          title: isEnglish ? 'Motorcycle Spark Plug' : 'Ganti Busi Motor',
+          category: isEnglish ? 'Ignition' : 'Pengapian',
           intervalKm: 8000,
           intervalMonths: 10,
           lastPerformedOdometer: 8000,
@@ -688,28 +732,108 @@ class InspectionChecklist {
         inspectorNotes: json['inspectorNotes'] as String? ?? '',
       );
 
-  static List<InspectionItem> generateDefaultItems(VehicleType type) {
+  static List<InspectionItem> generateDefaultItems(VehicleType type, {bool isEnglish = false}) {
     if (type == VehicleType.car) {
       return [
-        InspectionItem(id: 'i1', label: 'Dipstick Level & Kejernihan Oli Mesin', category: 'Mesin & Cairan', isChecked: true),
-        InspectionItem(id: 'i2', label: 'Level Air Reservoir Radiator Coolant', category: 'Mesin & Cairan', isChecked: true),
-        InspectionItem(id: 'i3', label: 'Level Minyak Rem & Minyak Kopling/Power Steering', category: 'Mesin & Cairan', isChecked: true),
-        InspectionItem(id: 'i4', label: 'Tekanan Udara & Alur Ketebalan 4 Ban + Ban Serep', category: 'Roda & Pengereman', isChecked: true),
-        InspectionItem(id: 'i5', label: 'Kondisi Kampas Rem & Daya Cengkeram Rem Tangan', category: 'Roda & Pengereman', isChecked: true),
-        InspectionItem(id: 'i6', label: 'Lampu Utama, Lampu Rem, Sein & Lampu Hazard', category: 'Lampu & Kelistrikan', isChecked: true),
-        InspectionItem(id: 'i7', label: 'Kondisi Terminal & Tegangan Indikator Aki (12V)', category: 'Lampu & Kelistrikan', isChecked: true),
-        InspectionItem(id: 'i8', label: 'Karet Wiper & Air Tabung Washer Kaca Depan', category: 'Keselamatan', isChecked: true),
-        InspectionItem(id: 'i9', label: 'Dongkrak, Kunci Roda, Segitiga Pengaman & Kotak P3K', category: 'Keselamatan', isChecked: true),
+        InspectionItem(
+          id: 'i1',
+          label: isEnglish ? 'Dipstick Level & Engine Oil Clarity' : 'Dipstick Level & Kejernihan Oli Mesin',
+          category: isEnglish ? 'Engine & Fluids' : 'Mesin & Cairan',
+          isChecked: true,
+        ),
+        InspectionItem(
+          id: 'i2',
+          label: isEnglish ? 'Radiator Coolant Reservoir Level' : 'Level Air Reservoir Radiator Coolant',
+          category: isEnglish ? 'Engine & Fluids' : 'Mesin & Cairan',
+          isChecked: true,
+        ),
+        InspectionItem(
+          id: 'i3',
+          label: isEnglish ? 'Brake & Clutch / Power Steering Fluid Level' : 'Level Minyak Rem & Minyak Kopling/Power Steering',
+          category: isEnglish ? 'Engine & Fluids' : 'Mesin & Cairan',
+          isChecked: true,
+        ),
+        InspectionItem(
+          id: 'i4',
+          label: isEnglish ? 'Tire Pressure & Tread Depth (4 Tires + Spare)' : 'Tekanan Udara & Alur Ketebalan 4 Ban + Ban Serep',
+          category: isEnglish ? 'Wheels & Brakes' : 'Roda & Pengereman',
+          isChecked: true,
+        ),
+        InspectionItem(
+          id: 'i5',
+          label: isEnglish ? 'Brake Pads Condition & Handbrake Grip' : 'Kondisi Kampas Rem & Daya Cengkeram Rem Tangan',
+          category: isEnglish ? 'Wheels & Brakes' : 'Roda & Pengereman',
+          isChecked: true,
+        ),
+        InspectionItem(
+          id: 'i6',
+          label: isEnglish ? 'Headlights, Brake Lights, Turn Signals & Hazard' : 'Lampu Utama, Lampu Rem, Sein & Lampu Hazard',
+          category: isEnglish ? 'Lights & Electrical' : 'Lampu & Kelistrikan',
+          isChecked: true,
+        ),
+        InspectionItem(
+          id: 'i7',
+          label: isEnglish ? 'Battery Terminals & 12V Voltage Indicator' : 'Kondisi Terminal & Tegangan Indikator Aki (12V)',
+          category: isEnglish ? 'Lights & Electrical' : 'Lampu & Kelistrikan',
+          isChecked: true,
+        ),
+        InspectionItem(
+          id: 'i8',
+          label: isEnglish ? 'Windshield Wipers & Washer Fluid Level' : 'Karet Wiper & Air Tabung Washer Kaca Depan',
+          category: isEnglish ? 'Safety' : 'Keselamatan',
+          isChecked: true,
+        ),
+        InspectionItem(
+          id: 'i9',
+          label: isEnglish ? 'Jack, Lug Wrench, Warning Triangle & First Aid Kit' : 'Dongkrak, Kunci Roda, Segitiga Pengaman & Kotak P3K',
+          category: isEnglish ? 'Safety' : 'Keselamatan',
+          isChecked: true,
+        ),
       ];
     } else {
       return [
-        InspectionItem(id: 'm1', label: 'Ketinggian & Kualitas Oli Mesin', category: 'Mesin & Pelumas', isChecked: true),
-        InspectionItem(id: 'm2', label: 'Kondisi Oli Gardan / Ketegangan Rantai Roda', category: 'Transmisi & Penggerak', isChecked: true),
-        InspectionItem(id: 'm3', label: 'Tekanan Angin Ban Depan & Belakang', category: 'Roda & Kemudi', isChecked: true),
-        InspectionItem(id: 'm4', label: 'Ketebalan Kampas Rem Depan & Belakang', category: 'Pengereman', isChecked: true),
-        InspectionItem(id: 'm5', label: 'Lampu Depan, Lampu Belakang & Lampu Sein', category: 'Kelistrikan', isChecked: true),
-        InspectionItem(id: 'm6', label: 'Fungsi Klakson & Starter Elektrik (Kondisi Aki)', category: 'Kelistrikan', isChecked: true),
-        InspectionItem(id: 'm7', label: 'Spion Kanan & Kiri serta Kunci Kelengkapan', category: 'Kelengkapan', isChecked: true),
+        InspectionItem(
+          id: 'm1',
+          label: isEnglish ? 'Engine Oil Level & Condition' : 'Ketinggian & Kualitas Oli Mesin',
+          category: isEnglish ? 'Engine & Fluids' : 'Mesin & Pelumas',
+          isChecked: true,
+        ),
+        InspectionItem(
+          id: 'm2',
+          label: isEnglish ? 'Final Drive Oil / Drive Chain Slack' : 'Kondisi Oli Gardan / Ketegangan Rantai Roda',
+          category: isEnglish ? 'Drivetrain' : 'Transmisi & Penggerak',
+          isChecked: true,
+        ),
+        InspectionItem(
+          id: 'm3',
+          label: isEnglish ? 'Front & Rear Tire Pressures' : 'Tekanan Angin Ban Depan & Belakang',
+          category: isEnglish ? 'Wheels & Steering' : 'Roda & Kemudi',
+          isChecked: true,
+        ),
+        InspectionItem(
+          id: 'm4',
+          label: isEnglish ? 'Front & Rear Brake Pads Thickness' : 'Ketebalan Kampas Rem Depan & Belakang',
+          category: isEnglish ? 'Brakes' : 'Pengereman',
+          isChecked: true,
+        ),
+        InspectionItem(
+          id: 'm5',
+          label: isEnglish ? 'Headlight, Taillight & Turn Signals' : 'Lampu Depan, Lampu Belakang & Lampu Sein',
+          category: isEnglish ? 'Electrical' : 'Kelistrikan',
+          isChecked: true,
+        ),
+        InspectionItem(
+          id: 'm6',
+          label: isEnglish ? 'Horn & Electric Starter Operation' : 'Fungsi Klakson & Starter Elektrik (Kondisi Aki)',
+          category: isEnglish ? 'Electrical' : 'Kelistrikan',
+          isChecked: true,
+        ),
+        InspectionItem(
+          id: 'm7',
+          label: isEnglish ? 'Rearview Mirrors & Toolkit' : 'Spion Kanan & Kiri serta Kunci Kelengkapan',
+          category: isEnglish ? 'Equipment' : 'Kelengkapan',
+          isChecked: true,
+        ),
       ];
     }
   }

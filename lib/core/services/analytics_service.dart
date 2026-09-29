@@ -76,6 +76,7 @@ class AnalyticsService {
     required Vehicle vehicle,
     required List<MaintenanceSchedule> schedules,
     required List<VehicleDocument> documents,
+    bool isEnglish = false,
   }) {
     int score = 100;
     final List<String> warnings = [];
@@ -85,31 +86,47 @@ class AnalyticsService {
     final kmUntilOil = vehicle.kmUntilNextOilChange;
     if (kmUntilOil < 0) {
       score -= 25;
-      warnings.add('Ganti oli mesin sudah terlewat ${-kmUntilOil} km');
+      warnings.add(isEnglish
+          ? 'Engine oil change is overdue by ${-kmUntilOil} km'
+          : 'Ganti oli mesin sudah terlewat ${-kmUntilOil} km');
     } else if (kmUntilOil <= 500) {
       score -= 10;
-      warnings.add('Ganti oli mesin perlu dilakukan dalam $kmUntilOil km lagi');
+      warnings.add(isEnglish
+          ? 'Engine oil change due in $kmUntilOil km'
+          : 'Ganti oli mesin perlu dilakukan dalam $kmUntilOil km lagi');
     } else {
-      goodPoints.add('Interval oli mesin dalam kondisi prima');
+      goodPoints.add(isEnglish
+          ? 'Engine oil interval is optimal'
+          : 'Interval oli mesin dalam kondisi prima');
     }
 
     // 2. Tax & Plate status check (max deduction 25)
     if (vehicle.daysUntilTaxDue < 0) {
       score -= 20;
-      warnings.add('Pajak STNK tahunan telah lewat jatuh tempo');
+      warnings.add(isEnglish
+          ? 'Annual vehicle tax is overdue'
+          : 'Pajak STNK tahunan telah lewat jatuh tempo');
     } else if (vehicle.daysUntilTaxDue <= 14) {
       score -= 8;
-      warnings.add('Pajak STNK tahunan jatuh tempo dalam ${vehicle.daysUntilTaxDue} hari');
+      warnings.add(isEnglish
+          ? 'Annual vehicle tax due in ${vehicle.daysUntilTaxDue} days'
+          : 'Pajak STNK tahunan jatuh tempo dalam ${vehicle.daysUntilTaxDue} hari');
     } else {
-      goodPoints.add('Pajak PKB tahunan aktif & aman');
+      goodPoints.add(isEnglish
+          ? 'Annual vehicle tax is active & safe'
+          : 'Pajak PKB tahunan aktif & aman');
     }
 
     if (vehicle.daysUntilPlateDue < 0) {
       score -= 15;
-      warnings.add('Masa berlaku pelat 5 tahunan telah habis');
+      warnings.add(isEnglish
+          ? '5-year license plate has expired'
+          : 'Masa berlaku pelat 5 tahunan telah habis');
     } else if (vehicle.daysUntilPlateDue <= 30) {
       score -= 5;
-      warnings.add('Pelat 5 tahunan perlu diperpanjang dalam ${vehicle.daysUntilPlateDue} hari');
+      warnings.add(isEnglish
+          ? '5-year license plate renewal due in ${vehicle.daysUntilPlateDue} days'
+          : 'Pelat 5 tahunan perlu diperpanjang dalam ${vehicle.daysUntilPlateDue} hari');
     }
 
     // 3. Periodic maintenance schedules check
@@ -119,10 +136,10 @@ class AnalyticsService {
       final u = s.urgency(vehicle.currentOdometer);
       if (u == ScheduleUrgency.overdue) {
         overdueCount++;
-        warnings.add('${s.title} sudah terlewat');
+        warnings.add(isEnglish ? '${s.title} is overdue' : '${s.title} sudah terlewat');
       } else if (u == ScheduleUrgency.dueSoon) {
         dueSoonCount++;
-        warnings.add('${s.title} mendekati batas servis');
+        warnings.add(isEnglish ? '${s.title} is due soon' : '${s.title} mendekati batas servis');
       }
     }
 
@@ -136,13 +153,13 @@ class AnalyticsService {
     String statusText;
     int statusColor;
     if (score >= 85) {
-      statusText = 'Sangat Prima';
+      statusText = isEnglish ? 'Prime' : 'Sangat Prima';
       statusColor = 0xFF10B981; // Green
     } else if (score >= 60) {
-      statusText = 'Perlu Perhatian';
+      statusText = isEnglish ? 'Attention' : 'Perlu Perhatian';
       statusColor = 0xFFF59E0B; // Amber
     } else {
-      statusText = 'Kritis / Servis Segera';
+      statusText = isEnglish ? 'Critical / Due Soon' : 'Kritis / Servis Segera';
       statusColor = 0xFFEF4444; // Red
     }
 

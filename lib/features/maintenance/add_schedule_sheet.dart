@@ -89,20 +89,27 @@ class _AddScheduleSheetState extends ConsumerState<AddScheduleSheet> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    isEditing ? 'Ubah Jadwal Perawatan' : 'Tambah Jadwal Perawatan',
-                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.w800, color: Colors.white),
+                    isEditing
+                        ? (Localizations.localeOf(context).languageCode == 'id' ? 'Ubah Jadwal Perawatan' : 'Edit Maintenance Schedule')
+                        : AppLocalizations.of(context)!.tambahJadwalPerawatan,
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.w800,
+                      color: context.textPrimary,
+                    ),
                   ),
                   IconButton(
-                    icon: Icon(Icons.close, color: Color(0xFF94A3B8)),
+                    icon: Icon(Icons.close, color: context.textSecondary),
                     onPressed: () => Navigator.pop(context),
                   ),
                 ],
               ),
-              SizedBox(height: 6),
-              Text(AppLocalizations.of(context)!.dualTriggerReminderAlarmAkanAk,
-                style: TextStyle(fontSize: 12, color: AppColors.primaryLight.withValues(alpha: 0.9)),
+              const SizedBox(height: 6),
+              Text(
+                AppLocalizations.of(context)!.dualTriggerReminderAlarmAkanAk,
+                style: const TextStyle(fontSize: 12, color: AppColors.primary, fontWeight: FontWeight.w500),
               ),
-              SizedBox(height: 16),
+              const SizedBox(height: 16),
 
               // Title
               TextFormField(
@@ -111,30 +118,44 @@ class _AddScheduleSheetState extends ConsumerState<AddScheduleSheet> {
                   labelText: AppLocalizations.of(context)!.namaPekerjaanKomponen,
                   hintText: AppLocalizations.of(context)!.misalKurasMinyakRem,
                 ),
-                validator: (v) => v == null || v.trim().isEmpty ? 'Nama pekerjaan wajib diisi' : null,
+                validator: (v) => v == null || v.trim().isEmpty
+                    ? (Localizations.localeOf(context).languageCode == 'id' ? 'Nama pekerjaan wajib diisi' : 'Service name is required')
+                    : null,
               ),
-              SizedBox(height: 12),
+              const SizedBox(height: 14),
 
               // Category Selector Chips
-              Text(AppLocalizations.of(context)!.kategori, style: TextStyle(fontSize: 12, color: Color(0xFF94A3B8))),
-              SizedBox(height: 6),
+              Text(
+                AppLocalizations.of(context)!.kategori,
+                style: TextStyle(fontSize: 12, fontWeight: FontWeight.w600, color: context.textSecondary),
+              ),
+              const SizedBox(height: 8),
               Wrap(
-                spacing: 6,
-                runSpacing: 6,
+                spacing: 8,
+                runSpacing: 8,
                 children: _suggestedCategories.map((cat) {
                   final isSelected = _categoryController.text == cat;
                   return ChoiceChip(
-                    label: Text(cat, style: TextStyle(fontSize: 11, color: isSelected ? Colors.white : Color(0xFFCBD5E1))),
+                    label: Text(cat),
+                    labelStyle: TextStyle(
+                      fontSize: 11,
+                      fontWeight: isSelected ? FontWeight.w700 : FontWeight.w500,
+                      color: isSelected ? Colors.white : context.textSecondary,
+                    ),
                     selected: isSelected,
                     selectedColor: AppColors.primary,
-                    backgroundColor: AppColors.bgSurface,
+                    backgroundColor: context.surfaceBg,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(16),
+                      side: BorderSide(color: isSelected ? AppColors.primary : context.borderColor),
+                    ),
                     onSelected: (selected) {
                       if (selected) setState(() => _categoryController.text = cat);
                     },
                   );
                 }).toList(),
               ),
-              SizedBox(height: 14),
+              const SizedBox(height: 16),
 
               // Dual-Trigger Row: Interval KM and Interval Months
               Row(
@@ -150,12 +171,14 @@ class _AddScheduleSheetState extends ConsumerState<AddScheduleSheet> {
                       ),
                       validator: (val) {
                         final parsed = int.tryParse(val ?? '');
-                        if (parsed == null || parsed <= 0) return 'Wajib > 0';
+                        if (parsed == null || parsed <= 0) {
+                          return Localizations.localeOf(context).languageCode == 'id' ? 'Wajib > 0' : 'Must be > 0';
+                        }
                         return null;
                       },
                     ),
                   ),
-                  SizedBox(width: 12),
+                  const SizedBox(width: 12),
                   Expanded(
                     child: TextFormField(
                       controller: _intervalMonthsController,
@@ -167,14 +190,16 @@ class _AddScheduleSheetState extends ConsumerState<AddScheduleSheet> {
                       ),
                       validator: (val) {
                         final parsed = int.tryParse(val ?? '');
-                        if (parsed == null || parsed <= 0) return 'Wajib > 0';
+                        if (parsed == null || parsed <= 0) {
+                          return Localizations.localeOf(context).languageCode == 'id' ? 'Wajib > 0' : 'Must be > 0';
+                        }
                         return null;
                       },
                     ),
                   ),
                 ],
               ),
-              SizedBox(height: 14),
+              const SizedBox(height: 14),
 
               // Last Performed Odometer
               TextFormField(
@@ -186,7 +211,7 @@ class _AddScheduleSheetState extends ConsumerState<AddScheduleSheet> {
                 ),
                 validator: (val) => AppValidators.validateOdometer(int.tryParse(val ?? '')),
               ),
-              SizedBox(height: 14),
+              const SizedBox(height: 14),
 
               // Last Performed Date Picker
               InkWell(
@@ -204,15 +229,15 @@ class _AddScheduleSheetState extends ConsumerState<AddScheduleSheet> {
                 child: InputDecorator(
                   decoration: InputDecoration(
                     labelText: AppLocalizations.of(context)!.tanggalTerakhirDikerjakan,
-                    suffixIcon: Icon(Icons.calendar_today, size: 18),
+                    suffixIcon: Icon(Icons.calendar_today, size: 18, color: context.textSecondary),
                   ),
                   child: Text(
                     '${_lastDate.day}/${_lastDate.month}/${_lastDate.year}',
-                    style: TextStyle(color: Colors.white, fontSize: 14),
+                    style: TextStyle(color: context.textPrimary, fontSize: 14),
                   ),
                 ),
               ),
-              SizedBox(height: 22),
+              const SizedBox(height: 22),
 
               // Submit Button
               ElevatedButton(
@@ -240,11 +265,19 @@ class _AddScheduleSheetState extends ConsumerState<AddScheduleSheet> {
                   Navigator.pop(context);
                   ScaffoldMessenger.of(context).showSnackBar(
                     SnackBar(
-                      content: Text(isEditing ? 'Jadwal berhasil diperbarui!' : 'Jadwal perawatan berhasil disimpan!'),
+                      content: Text(
+                        isEditing
+                            ? (Localizations.localeOf(context).languageCode == 'id' ? 'Jadwal berhasil diperbarui!' : 'Schedule updated successfully!')
+                            : (Localizations.localeOf(context).languageCode == 'id' ? 'Jadwal perawatan berhasil disimpan!' : 'Maintenance schedule saved successfully!'),
+                      ),
                     ),
                   );
                 },
-                child: Text(isEditing ? 'Perbarui Jadwal' : 'Simpan Jadwal Perawatan'),
+                child: Text(
+                  isEditing
+                      ? (Localizations.localeOf(context).languageCode == 'id' ? 'Perbarui Jadwal' : 'Update Schedule')
+                      : (Localizations.localeOf(context).languageCode == 'id' ? 'Simpan Jadwal Perawatan' : 'Save Maintenance Schedule'),
+                ),
               ),
             ],
           ),

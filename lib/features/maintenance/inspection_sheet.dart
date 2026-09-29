@@ -19,14 +19,30 @@ class _InspectionSheetState extends ConsumerState<InspectionSheet> {
   late TextEditingController _notesController;
   late TextEditingController _titleController;
 
+  bool _initialized = false;
+
   @override
   void initState() {
     super.initState();
     _items = InspectionChecklist.generateDefaultItems(widget.vehicle.type);
     _notesController = TextEditingController();
-    _titleController = TextEditingController(
-      text: 'Inspeksi Pra-Perjalanan (${widget.vehicle.type == VehicleType.car ? "Mobil" : "Motor"})',
-    );
+    _titleController = TextEditingController();
+  }
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    if (!_initialized) {
+      final isId = Localizations.localeOf(context).languageCode == 'id';
+      _items = InspectionChecklist.generateDefaultItems(widget.vehicle.type, isEnglish: !isId);
+      final typeLabel = widget.vehicle.type == VehicleType.car
+          ? (isId ? 'Mobil' : 'Car')
+          : (isId ? 'Motor' : 'Motorcycle');
+      _titleController.text = isId
+          ? 'Inspeksi Pra-Perjalanan ($typeLabel)'
+          : 'Pre-Trip Inspection ($typeLabel)';
+      _initialized = true;
+    }
   }
 
   @override
@@ -41,10 +57,11 @@ class _InspectionSheetState extends ConsumerState<InspectionSheet> {
     final passedCount = _items.where((i) => i.isChecked).length;
     final totalCount = _items.length;
     final percentage = totalCount > 0 ? (passedCount / totalCount) : 0.0;
+    final l10n = AppLocalizations.of(context)!;
 
     return Container(
       height: MediaQuery.of(context).size.height * 0.85,
-      padding: EdgeInsets.symmetric(horizontal: 20, vertical: 16),
+      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
@@ -53,26 +70,40 @@ class _InspectionSheetState extends ConsumerState<InspectionSheet> {
             children: [
               Row(
                 children: [
-                  Icon(Icons.fact_check_outlined, color: AppColors.primary, size: 24),
-                  SizedBox(width: 8),
-                  Text(AppLocalizations.of(context)!.ceklisKondisiKendaraan, style: TextStyle(fontSize: 17, fontWeight: FontWeight.w800, color: Colors.white)),
+                  Container(
+                    padding: const EdgeInsets.all(6),
+                    decoration: BoxDecoration(
+                      color: AppColors.primary.withValues(alpha: 0.12),
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                    child: const Icon(Icons.fact_check_outlined, color: AppColors.primary, size: 20),
+                  ),
+                  const SizedBox(width: 10),
+                  Text(
+                    l10n.ceklisKondisiKendaraan,
+                    style: TextStyle(
+                      fontSize: 17,
+                      fontWeight: FontWeight.w800,
+                      color: context.textPrimary,
+                    ),
+                  ),
                 ],
               ),
               IconButton(
-                icon: Icon(Icons.close, color: Color(0xFF94A3B8)),
+                icon: Icon(Icons.close, color: context.textSecondary),
                 onPressed: () => Navigator.pop(context),
               ),
             ],
           ),
-          SizedBox(height: 8),
+          const SizedBox(height: 12),
 
           // Progress Header
           Container(
-            padding: EdgeInsets.all(14),
+            padding: const EdgeInsets.all(14),
             decoration: BoxDecoration(
-              color: AppColors.bgSurface,
+              color: context.surfaceBg,
               borderRadius: BorderRadius.circular(12),
-              border: Border.all(color: AppColors.border),
+              border: Border.all(color: context.borderColor),
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -81,8 +112,10 @@ class _InspectionSheetState extends ConsumerState<InspectionSheet> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      'Kelayakan: $passedCount dari $totalCount Poin Lolos',
-                      style: TextStyle(fontSize: 13, fontWeight: FontWeight.w700, color: Colors.white),
+                      Localizations.localeOf(context).languageCode == 'id'
+                          ? 'Kelayakan: $passedCount dari $totalCount Poin Lolos'
+                          : 'Roadworthiness: $passedCount of $totalCount Points Passed',
+                      style: TextStyle(fontSize: 13, fontWeight: FontWeight.w700, color: context.textPrimary),
                     ),
                     Text(
                       '${(percentage * 100).toStringAsFixed(0)}%',
@@ -94,18 +127,20 @@ class _InspectionSheetState extends ConsumerState<InspectionSheet> {
                     ),
                   ],
                 ),
-                SizedBox(height: 8),
-                LinearProgressIndicator(
-                  value: percentage,
-                  minHeight: 8,
-                  backgroundColor: AppColors.bgCard,
-                  color: percentage == 1.0 ? AppColors.success : (percentage >= 0.7 ? AppColors.warning : AppColors.danger),
+                const SizedBox(height: 8),
+                ClipRRect(
                   borderRadius: BorderRadius.circular(4),
+                  child: LinearProgressIndicator(
+                    value: percentage,
+                    minHeight: 6,
+                    backgroundColor: context.borderColor,
+                    color: percentage == 1.0 ? AppColors.success : (percentage >= 0.7 ? AppColors.warning : AppColors.danger),
+                  ),
                 ),
               ],
             ),
           ),
-          SizedBox(height: 12),
+          const SizedBox(height: 12),
 
           // List of Inspection Items
           Expanded(
@@ -114,28 +149,28 @@ class _InspectionSheetState extends ConsumerState<InspectionSheet> {
               itemBuilder: (context, index) {
                 final item = _items[index];
                 return Padding(
-                  padding: EdgeInsets.only(bottom: 8),
+                  padding: const EdgeInsets.only(bottom: 8),
                   child: Container(
                     decoration: BoxDecoration(
-                      color: AppColors.bgCard,
+                      color: context.cardBg,
                       borderRadius: BorderRadius.circular(10),
                       border: Border.all(
-                        color: item.isChecked ? AppColors.success.withValues(alpha: 0.3) : AppColors.border,
+                        color: item.isChecked ? AppColors.success.withValues(alpha: 0.4) : context.borderColor,
                       ),
                     ),
                     child: CheckboxListTile(
-                      contentPadding: EdgeInsets.symmetric(horizontal: 12, vertical: 4),
+                      contentPadding: const EdgeInsets.symmetric(horizontal: 12, vertical: 2),
                       title: Text(
                         item.label,
                         style: TextStyle(
                           fontSize: 13,
                           fontWeight: FontWeight.w600,
-                          color: item.isChecked ? Colors.white : Color(0xFFCBD5E1),
+                          color: item.isChecked ? context.textPrimary : context.textSecondary,
                         ),
                       ),
                       subtitle: Text(
                         item.category,
-                        style: TextStyle(fontSize: 11, color: Color(0xFF94A3B8)),
+                        style: TextStyle(fontSize: 11, color: context.textMuted),
                       ),
                       value: item.isChecked,
                       activeColor: AppColors.success,
@@ -152,16 +187,16 @@ class _InspectionSheetState extends ConsumerState<InspectionSheet> {
           ),
 
           // Inspector Notes Field
-          SizedBox(height: 8),
+          const SizedBox(height: 8),
           TextField(
             controller: _notesController,
             decoration: InputDecoration(
-              hintText: AppLocalizations.of(context)!.catatanTambahanKondisiKendaraa,
-              labelText: AppLocalizations.of(context)!.catatanPemeriksaOpsional,
+              hintText: l10n.catatanTambahanKondisiKendaraa,
+              labelText: l10n.catatanPemeriksaOpsional,
               isDense: true,
             ),
           ),
-          SizedBox(height: 14),
+          const SizedBox(height: 14),
 
           // Action Buttons
           ElevatedButton.icon(
@@ -179,11 +214,11 @@ class _InspectionSheetState extends ConsumerState<InspectionSheet> {
               ref.read(inspectionChecklistsProvider.notifier).addChecklist(checklist);
               Navigator.pop(context);
               ScaffoldMessenger.of(context).showSnackBar(
-                SnackBar(content: Text(AppLocalizations.of(context)!.hasilCeklisInspeksiBerhasilDis)),
+                SnackBar(content: Text(l10n.hasilCeklisInspeksiBerhasilDis)),
               );
             },
-            icon: Icon(Icons.check_circle_outline),
-            label: Text(AppLocalizations.of(context)!.simpanAuditInspeksi),
+            icon: const Icon(Icons.check_circle_outline, size: 18),
+            label: Text(l10n.simpanAuditInspeksi),
           ),
         ],
       ),

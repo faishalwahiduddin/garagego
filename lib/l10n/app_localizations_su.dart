@@ -12,13 +12,13 @@ class AppLocalizationsSu extends AppLocalizations {
   String get appName => 'GarageGo';
 
   @override
-  String get appDescription => 'Manajer Garasi, Sérvis & BBM Tutumpakan';
+  String get appDescription => 'Manajer Garasi, Servis & BBM Kandaraan';
 
   @override
   String get settings => 'Setélan';
 
   @override
-  String get appearance => 'Pidangan';
+  String get appearance => 'Pintonan';
 
   @override
   String get theme => 'Téma';
@@ -81,10 +81,10 @@ class AppLocalizationsSu extends AppLocalizations {
   String get edit => 'Édit';
 
   @override
-  String get add => 'Tambih';
+  String get add => 'Tambah';
 
   @override
-  String get search => 'Milari';
+  String get search => 'Pilari';
 
   @override
   String get filter => 'Saring';
@@ -108,31 +108,31 @@ class AppLocalizationsSu extends AppLocalizations {
   String get navGarage => 'Garasi';
 
   @override
-  String get navMaintenance => 'Kaurus';
+  String get navMaintenance => 'Pangropéa';
 
   @override
   String get navFuel => 'BBM';
 
   @override
-  String get navGlovebox => 'Brankas';
+  String get navGlovebox => 'Kotak Surat';
 
   @override
   String get navSettings => 'Setélan';
 
   @override
-  String get vehiclesTitle => 'Daptar Tutumpakan di Garasi';
+  String get vehiclesTitle => 'Daptar Kandaraan di Garasi';
 
   @override
-  String get addVehicle => 'Tambih Tutumpakan';
+  String get addVehicle => 'Tambah Kandaraan';
 
   @override
-  String get editVehicle => 'Édit Tutumpakan';
+  String get editVehicle => 'Édit Kandaraan';
 
   @override
-  String get vehicleName => 'Nami Tutumpakan';
+  String get vehicleName => 'Nami Kandaraan';
 
   @override
-  String get plateNumber => 'Plat Nomer';
+  String get plateNumber => 'Pelat Nomer';
 
   @override
   String get odometer => 'Odometer (km)';
@@ -144,13 +144,13 @@ class AppLocalizationsSu extends AppLocalizations {
   String get motorcycle => 'Motor';
 
   @override
-  String get vehicleType => 'Jinis Tutumpakan';
+  String get vehicleType => 'Jinis Kandaraan';
 
   @override
   String get brand => 'Merek / Pabrikan';
 
   @override
-  String get modelYear => 'Taun Pabrik';
+  String get modelYear => 'Taun Pabrikan';
 
   @override
   String get fuelType => 'Jinis BBM';
@@ -159,25 +159,25 @@ class AppLocalizationsSu extends AppLocalizations {
   String get oilCapacity => 'Kapasitas Oli (L)';
 
   @override
-  String get activeVehicle => 'Tutumpakan Aktip';
+  String get activeVehicle => 'Kandaraan Aktif';
 
   @override
-  String get setActive => 'Jadikeun Aktip';
+  String get setActive => 'Jantenkeun Aktif';
 
   @override
-  String get noVehicles => 'Teu acan aya tutumpakan di garasi';
+  String get noVehicles => 'Teu acan aya kandaraan di garasi';
 
   @override
-  String get maintenanceTitle => 'Jadwal & Runtuyan Sérvis';
+  String get maintenanceTitle => 'Jadwal & Riwajat Servis';
 
   @override
-  String get addServiceLog => 'Catet Sérvis Énggal';
+  String get addServiceLog => 'Catet Servis Anyar';
 
   @override
-  String get serviceDate => 'Kaping Sérvis';
+  String get serviceDate => 'Tanggal Servis';
 
   @override
-  String get serviceCost => 'Biaya Sérvis';
+  String get serviceCost => 'Biaya Servis';
 
   @override
   String get workshop => 'Béngkél';
@@ -186,13 +186,13 @@ class AppLocalizationsSu extends AppLocalizations {
   String get notes => 'Catetan';
 
   @override
-  String get isOilChange => 'Ganti Oli Mesin';
+  String get isOilChange => 'Kaasup Gentos Oli';
 
   @override
-  String get serviceSchedule => 'Jadwal Sérvis Rutin';
+  String get serviceSchedule => 'Jadwal Servis';
 
   @override
-  String get addSchedule => 'Tambih Jadwal';
+  String get addSchedule => 'Tambah Jadwal';
 
   @override
   String get oilLifeRemaining => 'Sésa Umur Oli';
@@ -213,40 +213,40 @@ class AppLocalizationsSu extends AppLocalizations {
   String get startInspection => 'Mimitian Mariksa';
 
   @override
-  String get fuelTitle => 'Catetan Ngeusian BBM';
+  String get fuelTitle => 'Log Eusi BBM';
 
   @override
-  String get addFuelLog => 'Catet Ngeusian BBM';
+  String get addFuelLog => 'Catet BBM';
 
   @override
-  String get liters => 'Volume (Liter)';
+  String get liters => 'Liter';
 
   @override
-  String get totalCost => 'Jumlah Biaya';
+  String get totalCost => 'Total Biaya';
 
   @override
-  String get pricePerLiter => 'Pangaos per Liter';
+  String get pricePerLiter => 'Pangaos Saban Liter';
 
   @override
-  String get fullTank => 'Pinuh (Full Tank)';
+  String get fullTank => 'Eusi Pinuh';
 
   @override
   String get gasStation => 'SPBU';
 
   @override
-  String get fuelEfficiency => 'Rata-rata Konsumsi BBM';
+  String get fuelEfficiency => 'Efisiensi BBM';
 
   @override
-  String get costPerKm => 'Biaya per Kilométer';
+  String get costPerKm => 'Biaya saban KM';
 
   @override
-  String get noFuelLogs => 'Teu Acan Aya Catetan BBM';
+  String get noFuelLogs => 'Teu acan aya catetan BBM';
 
   @override
-  String get gloveboxTitle => 'Brankas Dokumén & Pajeg';
+  String get gloveboxTitle => 'Kotak Surat & Dokumén';
 
   @override
-  String get addDocument => 'Tambih Dokumén';
+  String get addDocument => 'Tambah Dokumén';
 
   @override
   String get stnkTaxExpiry => 'Jatuh Témpo Pajeg STNK';
@@ -255,21 +255,21 @@ class AppLocalizationsSu extends AppLocalizations {
   String get stnk5YearExpiry => 'Jatuh Témpo STNK 5 Taun';
 
   @override
-  String get simExpiry => 'Mangsa Laku SIM';
+  String get simExpiry => 'Kadaluwarsa SIM';
 
   @override
   String get insuranceExpiry => 'Asuransi Tutumpakan';
 
   @override
   String daysRemaining(Object count) {
-    return '$count dinten nyésa';
+    return 'Dinten deui';
   }
 
   @override
-  String get expired => 'Parantos Kadaluwarsa';
+  String get expired => 'Kasep / Kadaluwarsa';
 
   @override
-  String get noDocuments => 'Teu Acan Aya Dokumén Kacatet';
+  String get noDocuments => 'Teu acan aya dokumén';
 
   @override
   String get dataManagement => 'Ngatur Data & Cadangan';
@@ -281,7 +281,7 @@ class AppLocalizationsSu extends AppLocalizations {
   String get importBackup => 'Pulihkeun Cadangan (JSON)';
 
   @override
-  String get exportCsv => 'Ékspor ka CSV';
+  String get exportCsv => 'Ékspor kana CSV';
 
   @override
   String get resetAllData => 'Reset Sadaya Data';
@@ -290,200 +290,200 @@ class AppLocalizationsSu extends AppLocalizations {
   String get privacyNotice => 'Data 100% disimpen sacara lokal dina alat.';
 
   @override
-  String get aksiCepat => 'Aksi Cepat';
+  String get aksiCepat => 'Tindakan Gancang';
 
   @override
-  String get aksiCepatGarasi => 'Aksi Cepat Garasi';
+  String get aksiCepatGarasi => 'Tindakan Gancang Garasi';
 
   @override
-  String get aturUlangData => 'Atur Ulang Data';
+  String get aturUlangData => 'Tata Deui Data';
 
   @override
   String get aturPengingatGantiOliFilterRem =>
-      'Atur pengingat ganti oli, filter, rem, dan sparepart.';
+      'Atur panginget ganti oli, saringan, rem, sareng sparepart.';
 
   @override
   String get audit10PoinKeselamatanJalanMud =>
-      'Audit 10-poin keselamatan jalan & mudik';
+      'Audit 10-poin kasalametan jalan & mudik';
 
   @override
   String get auditKelayakanJalanKeselamatan =>
-      'Audit kelayakan jalan & keselamatan sebelum perjalanan mudik atau harian.';
+      'Audit kalayakan jalan & kasalametan sateuacan lalampahan mudik atanapi sadidinten.';
 
   @override
-  String get bahasaAplikasi => 'Bahasa Aplikasi';
+  String get bahasaAplikasi => 'Basa Aplikasi';
 
   @override
   String get batal => 'Batal';
 
   @override
-  String get belumAdaCatatanBbm => 'Belum Ada Catatan BBM';
+  String get belumAdaCatatanBbm => 'Teu Acan Aya Catetan BBM';
 
   @override
-  String get belumAdaDokumenTercatat => 'Belum Ada Dokumen Tercatat';
+  String get belumAdaDokumenTercatat => 'Teu Acan Aya Dokumén Kacatet';
 
   @override
-  String get belumAdaHasilCeklis => 'Belum Ada Hasil Ceklis';
+  String get belumAdaHasilCeklis => 'Teu Acan Aya Hasil Céklist';
 
   @override
-  String get belumAdaJadwalServis => 'Belum Ada Jadwal Servis';
+  String get belumAdaJadwalServis => 'Teu Acan Aya Jadwal Servis';
 
   @override
-  String get belumAdaRiwayatServis => 'Belum Ada Riwayat Servis';
+  String get belumAdaRiwayatServis => 'Teu Acan Aya Riwajat Servis';
 
   @override
-  String get belumAdaCatatanServis => 'Belum ada catatan servis.';
+  String get belumAdaCatatanServis => 'Teu acan aya catetan servis.';
 
   @override
   String get belumAdaJadwalPerawatanBerkala =>
-      'Belum ada jadwal perawatan berkala.';
+      'Teu acan aya jadwal pangropéa rutin.';
 
   @override
   String get biayaKm => 'Biaya / KM';
 
   @override
-  String get biayaTotalRp => 'Biaya Total (Rp)';
+  String get biayaTotalRp => 'Total Biaya (Rp)';
 
   @override
-  String get biayaPerKm => 'Biaya per KM';
+  String get biayaPerKm => 'Biaya saban KM';
 
   @override
-  String get bukaBrankas => 'Buka Brankas';
+  String get bukaBrankas => 'Buka Brankas Dokumén';
 
   @override
   String get cadanganLengkapSeluruhDataGara =>
-      'Cadangan lengkap seluruh data Garasi, jadwal servis, dokumen, dan log BBM dapat disalin ke clipboard di bawah:';
+      'Cadangan lengkep sadaya data Garasi, jadwal servis, dokumén, sareng log BBM tiasa disalin kana clipboard di handap:';
 
   @override
   String get cadangkanSeluruhKendaraanServi =>
-      'Cadangkan seluruh Kandaraan, servis, BBM, dan jadwal';
+      'Cadangkeun sadaya kandaraan, servis, BBM, sareng jadwal';
 
   @override
   String get cariRiwayatServisAtauBengkel =>
-      'Cari riwayat servis atau bengkel...';
+      'Pilari riwajat servis atanapi béngkél...';
 
   @override
-  String get catatPengisianBbm => 'Catat Pengisian BBM';
+  String get catatPengisianBbm => 'Catet Ngeusian BBM';
 
   @override
-  String get catatPengisianPertama => 'Catat Pengisian Pertama';
+  String get catatPengisianPertama => 'Catet Ngeusian Kahiji';
 
   @override
-  String get catatServisBaru => 'Catat Servis Baru';
+  String get catatServisBaru => 'Catet Servis Anyar';
 
   @override
-  String get catatServisPertama => 'Catat Servis Pertama';
+  String get catatServisPertama => 'Catet Servis Kahiji';
 
   @override
   String get catatStrukPengisianBensinUntuk =>
-      'Catat struk pengisian bensin untuk memantau konsumsi km/L dan cost/km.';
+      'Catet struk ngeusian béngsin kanggo ngawas konsumsi km/L sareng biaya/km.';
 
   @override
-  String get catatanOpsional => 'Catatan (Opsional)';
+  String get catatanOpsional => 'Catetan (Pilihan)';
 
   @override
-  String get catatanLokasiBerkasFisik => 'Catatan / Lokasi Berkas Fisik';
+  String get catatanLokasiBerkasFisik => 'Catetan / Lokasi Berkas Fisik';
 
   @override
-  String get catatanBbmBerhasilDisimpan => 'Catatan BBM berhasil disimpan!';
+  String get catatanBbmBerhasilDisimpan => 'Catetan BBM parantos disimpen!';
 
   @override
-  String get catatanPemeriksaOpsional => 'Catatan Pemeriksa (Opsional)';
+  String get catatanPemeriksaOpsional => 'Catetan Pamariksa (Pilihan)';
 
   @override
-  String get catatanSparepartPengerjaan => 'Catatan Sparepart / Pengerjaan';
+  String get catatanSparepartPengerjaan => 'Catetan Sparepart / Pagawéan';
 
   @override
   String get catatanServisBerhasilDitambahk =>
-      'Catatan servis berhasil ditambahkan!';
+      'Catetan servis parantos ditambihkeun!';
 
   @override
   String get catatanTambahanKondisiKendaraa =>
-      'Catatan tambahan kondisi Kandaraan...';
+      'Catetan tambihan kaayaan kandaraan...';
 
   @override
-  String get ceklisKondisiKendaraan => 'Ceklis Kondisi Kandaraan';
+  String get ceklisKondisiKendaraan => 'Céklist Kaayaan Kandaraan';
 
   @override
-  String get checklistInspeksiKendaraan => 'Checklist Inspeksi Kandaraan';
+  String get checklistInspeksiKendaraan => 'Céklist Pamariksaan Kandaraan';
 
   @override
   String get counterOliBerhasilDiresetKeOdo =>
-      'Counter oli berhasil direset ke odometer saat ini!';
+      'Pangitung oli parantos direset kana odometer danget ieu!';
 
   @override
-  String get daftarKendaraanDiGarasi => 'Daftar Kandaraan di Garasi';
+  String get daftarKendaraanDiGarasi => 'Daptar Kandaraan di Garasi';
 
   @override
   String get daftarMasaBerlakuDokumenLisens =>
-      'Daftar Masa Berlaku Dokumen & Lisensi';
+      'Daptar Mangsa Lumaku Dokumén & Lisénsi';
 
   @override
   String get dataCsvBerhasilDisalinKeClipbo =>
-      'Data CSV berhasil disalin ke Clipboard!';
+      'Data CSV parantos disalin kana Clipboard!';
 
   @override
   String get dataCadanganBerhasilDipulihkan =>
-      'Data cadangan berhasil dipulihkan ke Garasi!';
+      'Data cadangan parantos dipulihkeun kana Garasi!';
 
   @override
   String get dataFormatCsvSiapDieksporKeExc =>
-      'Data format CSV siap diekspor ke Excel / Spreadsheet:';
+      'Data format CSV siap diékspor kana Excel / Spreadsheet:';
 
   @override
   String get dataGarasiBerhasilDiresetKeSta =>
-      'Data Garasi berhasil direset ke standar.';
+      'Data Garasi parantos direset kana standar.';
 
   @override
   String get diperlukanUntukAkurasiKalkulas =>
-      'Diperlukan untuk akurasi kalkulasi km/L';
+      'Peryogi kanggo katepatan kalkulasi km/L';
 
   @override
   String get dualTriggerReminderAlarmAkanAk =>
-      'Dual-Trigger Reminder: Alarm akan aktif jika jarak (km) ATAU waktu (bulan) tercapai.';
+      'Panginget Dual-Trigger: Béwara bakal hurung saupami jarak (km) ATAWA waktos (sasih) parantos kahontal.';
 
   @override
-  String get eksporBackupJson => 'Ekspor Backup JSON';
+  String get eksporBackupJson => 'Ékspor Cadangan JSON';
 
   @override
-  String get eksporCsvRiwayatBbm => 'Ekspor CSV Riwayat BBM';
+  String get eksporCsvRiwayatBbm => 'Ékspor CSV Riwajat BBM';
 
   @override
-  String get eksporCsvRiwayatServis => 'Ekspor CSV Riwayat Servis';
+  String get eksporCsvRiwayatServis => 'Ékspor CSV Riwajat Servis';
 
   @override
-  String get eksporCadanganJson => 'Ekspor Cadangan JSON';
+  String get eksporCadanganJson => 'Ékspor Cadangan JSON';
 
   @override
   String get eksporFormatTabelSpreadsheetUn =>
-      'Ekspor format tabel spreadsheet untuk pencatatan bengkel';
+      'Ékspor format tabél spreadsheet kanggo catetan béngkél';
 
   @override
   String get eksporSeluruhPengisianBbmKeFor =>
-      'Ekspor seluruh pengisian BBM ke format CSV spreadsheet';
+      'Ékspor sadaya catetan BBM kana format CSV spreadsheet';
 
   @override
-  String get estimasiBiayaPremiRp => 'Estimasi Biaya / Premi (Rp)';
+  String get estimasiBiayaPremiRp => 'Tarkiran Biaya / Premi (Rp)';
 
   @override
-  String get gantiPelat5Th => 'Ganti Pelat 5 Th';
+  String get gantiPelat5Th => 'Gentos Pelat 5 Taun';
 
   @override
   String get garasiMasihKosong => 'Garasi Masih Kosong';
 
   @override
-  String get hargaSatuanRpLiter => 'Harga Satuan (Rp/Liter)';
+  String get hargaSatuanRpLiter => 'Pangaos Saban Liter (Rp/Liter)';
 
   @override
   String get hasilCeklisInspeksiBerhasilDis =>
-      'Hasil ceklis inspeksi berhasil disimpan!';
+      'Hasil céklist pamariksaan parantos disimpen!';
 
   @override
   String get hitungKonsumsiKmLDanBiayaBensi =>
-      'Hitung konsumsi km/L dan biaya bensin';
+      'Itung konsumsi km/L sareng biaya béngsin';
 
   @override
-  String get imporPulihkanBackupJson => 'Impor / Pulihkan Backup JSON';
+  String get imporPulihkanBackupJson => 'Impor / Pulihkeun Cadangan JSON';
 
   @override
   String get intervalJarakKm => 'Interval Jarak (km)';
@@ -492,32 +492,32 @@ class AppLocalizationsSu extends AppLocalizations {
   String get intervalOliKm => 'Interval Oli (km)';
 
   @override
-  String get intervalWaktu => 'Interval Waktu';
+  String get intervalWaktu => 'Interval Waktos';
 
   @override
-  String get isiTangkiPenuhFullTank => 'Isi Tangki Penuh (Full Tank)?';
+  String get isiTangkiPenuhFullTank => 'Eusi Tangki Pinuh (Full Tank)?';
 
   @override
-  String get jadwalServisMendatang => 'Jadwal Servis Mendatang';
+  String get jadwalServisMendatang => 'Jadwal Servis Nu Bakal Datang';
 
   @override
-  String get jenisBahanBakar => 'Jenis Bahan Bakar';
+  String get jenisBahanBakar => 'Jinis Bahan Bakar';
 
   @override
-  String get jenisDokumen => 'Jenis Dokumen';
+  String get jenisDokumen => 'Jinis Dokumén';
 
   @override
-  String get judulKeteranganDokumen => 'Judul / Keterangan Dokumen';
+  String get judulKeteranganDokumen => 'Judul / Katerangan Dokumén';
 
   @override
-  String get kategori => 'Kategori:';
+  String get kategori => 'Kategori';
 
   @override
   String get kembalikanDataDariBerkasCadang =>
-      'Kembalikan data dari berkas cadangan JSON yang valid';
+      'Mulihkeun data tina berkas cadangan JSON anu sah';
 
   @override
-  String get kilometerOdometerKm => 'Kilometer Odometer (km)';
+  String get kilometerOdometerKm => 'Kilométer Odometer (km)';
 
   @override
   String get konfirmasiReset => 'Konfirmasi Reset';
@@ -527,19 +527,19 @@ class AppLocalizationsSu extends AppLocalizations {
 
   @override
   String get lakukanInspeksi10PoinBanRemOli =>
-      'Lakukan inspeksi 10 poin ban, rem, oli, lampu, dan aki.';
+      'Laksanakeun pamariksaan 10 poin ban, rem, oli, lampu, sareng aki.';
 
   @override
-  String get lihatSemua => 'Lihat Semua';
+  String get lihatSemua => 'Tingali Sadayana';
 
   @override
-  String get lisensiPamakean => 'Lisensi Pamakean';
+  String get lisensiPamakean => 'Lisénsi Pamakéan';
 
   @override
-  String get lisensiPanganggo => 'Lisensi Panganggo';
+  String get lisensiPanganggo => 'Lisénsi Pamakéan';
 
   @override
-  String get lisensiPenggunaan => 'Lisensi Penggunaan';
+  String get lisensiPenggunaan => 'Lisénsi Pamakéan';
 
   @override
   String get menghapusSemuaLogServisBbmDanR =>
@@ -549,79 +549,79 @@ class AppLocalizationsSu extends AppLocalizations {
   String get mobil => 'Mobil';
 
   @override
-  String get mobilAtauMotorKeluargaBaru => 'Mobil atau motor keluarga baru';
+  String get mobilAtauMotorKeluargaBaru =>
+      'Mobil atanapi motor kulawarga anyar';
 
   @override
-  String get modeTema => 'Mode Tema';
+  String get modeTema => 'Mode Téma';
 
   @override
   String get motor => 'Motor';
 
   @override
-  String get mulaiCeklis => 'Mulai Ceklis';
+  String get mulaiCeklis => 'Mimitian Céklist';
 
   @override
-  String get mulaiInspeksiPertama => 'Mulai Inspeksi Pertama';
+  String get mulaiInspeksiPertama => 'Mimitian Pamariksaan Kahiji';
 
   @override
   String get namaModelKendaraan => 'Nama / Model Kandaraan';
 
   @override
-  String get namaBengkelToko => 'Nama Bengkel / Toko';
+  String get namaBengkelToko => 'Nami Béngkél / Toko';
 
   @override
-  String get namaBengkelTokoOpsional => 'Nama Bengkel / Toko (Opsional)';
+  String get namaBengkelTokoOpsional => 'Nami Béngkél / Toko (Pilihan)';
 
   @override
-  String get namaPekerjaanKomponen => 'Nama Pekerjaan / Komponen';
+  String get namaPekerjaanKomponen => 'Nami Pagawéan / Komponén';
 
   @override
-  String get namaSpbuLokasi => 'Nama SPBU / Lokasi';
+  String get namaSpbuLokasi => 'Nami SPBU / Lokasi';
 
   @override
   String get nomorDokumenNoPolisNoPolisi =>
-      'Nomor Dokumen / No. Polis / No. Polisi';
+      'Nomer Dokumén / No. Polis / Nomer Pelat';
 
   @override
-  String get nomorPelatPolisi => 'Nomor Pelat Polisi';
+  String get nomorPelatPolisi => 'Nomer Pelat Kandaraan';
 
   @override
-  String get odometerPengerjaanKm => 'Odometer Pengerjaan (km)';
+  String get odometerPengerjaanKm => 'Odometer Pagawéan (km)';
 
   @override
-  String get odometerSaatIniKm => 'Odometer Saat Ini (km)';
+  String get odometerSaatIniKm => 'Odometer Danget Ieu (km)';
 
   @override
-  String get odometerTerakhirDikerjakanKm =>
-      'Odometer Terakhir Dikerjakan (km)';
+  String get odometerTerakhirDikerjakanKm => 'Odometer Pamungkas Digawéan (km)';
 
   @override
-  String get opsiJadwal => 'Opsi Jadwal';
+  String get opsiJadwal => 'Pilihan Jadwal';
 
   @override
-  String get pkbTahunan => 'PKB Tahunan';
+  String get pkbTahunan => 'PKB Taunan';
 
   @override
-  String get pajakStnk => 'Pajak & STNK';
+  String get pajakStnk => 'Pajeg STNK';
 
   @override
-  String get pajakPkbTahunan => 'Pajak PKB Tahunan';
+  String get pajakPkbTahunan => 'Pajeg PKB Taunan';
 
   @override
-  String get pekerjaanServis => 'Pekerjaan / Servis';
+  String get pekerjaanServis => 'Pagawéan / Servis';
 
   @override
-  String get pelat5Th => 'Pelat 5 Th';
+  String get pelat5Th => 'Pelat 5 Taun';
 
   @override
-  String get pengaturanGarasi => 'Pengaturan Garasi';
+  String get pengaturanGarasi => 'Setélan Garasi';
 
   @override
   String get penggantianOliMesinResetCounte =>
-      'Penggantian Oli Mesin (Reset Counter)';
+      'Gentos Oli Mesin (Reset Pangitung)';
 
   @override
-  String get pilihBahasaSelectLanguage => 'Pilih Bahasa / Select Language';
+  String get pilihBahasaSelectLanguage => 'Pilih Basa';
 
   @override
   String get pilihAtauBuatKendaraanTerlebih =>
@@ -635,19 +635,19 @@ class AppLocalizationsSu extends AppLocalizations {
   String get portabilitasCadanganData => 'Portabilitas & Cadangan Data';
 
   @override
-  String get pulihkanData => 'Pulihkan Data';
+  String get pulihkanData => 'Pulihkeun Data';
 
   @override
-  String get pulihkanDariBackupJson => 'Pulihkan dari Backup JSON';
+  String get pulihkanDariBackupJson => 'Pulihkeun tina Cadangan JSON';
 
   @override
   String get rataRataEfisiensi => 'Rata-Rata Efisiensi';
 
   @override
-  String get rekorIritTerbaik => 'Rekor Irit Terbaik';
+  String get rekorIritTerbaik => 'Rékor Pangiritna';
 
   @override
-  String get resetCounterOliMesin => 'Reset Counter Oli Mesin';
+  String get resetCounterOliMesin => 'Reset Pangitung Oli Mesin';
 
   @override
   String get resetDataGarasi => 'Reset Data Garasi';
@@ -656,33 +656,33 @@ class AppLocalizationsSu extends AppLocalizations {
   String get resetOli => 'Reset Oli';
 
   @override
-  String get resetSeluruhData => 'Reset Seluruh Data?';
+  String get resetSeluruhData => 'Reset Sadaya Data?';
 
   @override
-  String get rincianPartYangDiganti => 'Rincian part yang diganti...';
+  String get rincianPartYangDiganti => 'Rincian suku cadang anu digentos...';
 
   @override
-  String get riwayatLengkap => 'Riwayat Lengkap';
+  String get riwayatLengkap => 'Riwajat Lengkep';
 
   @override
-  String get riwayatPengisianBahanBakar => 'Riwayat Pengisian Bahan Bakar';
+  String get riwayatPengisianBahanBakar => 'Riwajat Ngeusian BBM';
 
   @override
   String get salinCsv => 'Salin CSV';
 
   @override
-  String get salinKeClipboard => 'Salin ke Clipboard';
+  String get salinKeClipboard => 'Salin kana Clipboard';
 
   @override
   String get salinanJsonBackupBerhasilDisal =>
-      'Salinan JSON backup berhasil disalin ke Clipboard!';
+      'Salinan JSON cadangan parantos disalin kana Clipboard!';
 
   @override
-  String get servisTerakhir => 'Servis Terakhir';
+  String get servisTerakhir => 'Servis Pamungkas';
 
   @override
   String get setPengingatBerkalaGantiPartKm =>
-      'Set pengingat berkala ganti part km/bulan';
+      'Setél panginget rutin gentos komponén km/sasih';
 
   @override
   String get simpan => 'Simpen';
@@ -705,58 +705,58 @@ class AppLocalizationsSu extends AppLocalizations {
   String get statusOliMesin => 'Status Oli Mesin';
 
   @override
-  String get tahunPembuatan => 'Tahun Pembuatan';
+  String get tahunPembuatan => 'Taun Dijieun';
 
   @override
-  String get tambahDokumen => 'Tambih Dokumen';
+  String get tambahDokumen => 'Tambah Dokumén';
 
   @override
-  String get tambahDokumenPertama => 'Tambih Dokumen Pertama';
+  String get tambahDokumenPertama => 'Tambah Dokumén Kahiji';
 
   @override
-  String get tambahJadwalBaru => 'Tambih Jadwal Baru';
+  String get tambahJadwalBaru => 'Tambah Jadwal Anyar';
 
   @override
-  String get tambahJadwalPerawatan => 'Tambih Jadwal Perawatan';
+  String get tambahJadwalPerawatan => 'Tambah Jadwal Pangropéa';
 
   @override
-  String get tambahKendaraan => 'Tambih Kandaraan';
+  String get tambahKendaraan => 'Tambah Kandaraan';
 
   @override
-  String get tambahKendaraanBaru => 'Tambih Kandaraan Baru';
+  String get tambahKendaraanBaru => 'Tambah Kandaraan Anyar';
 
   @override
-  String get tampilanBahasa => 'Tampilan & Bahasa';
+  String get tampilanBahasa => 'Pintonan & Basa';
 
   @override
-  String get tandaiSelesai => 'Tandai Selesai';
+  String get tandaiSelesai => 'Tandaan Réngsé';
 
   @override
-  String get tandaiSelesaiReset => 'Tandai Selesai / Reset';
+  String get tandaiSelesaiReset => 'Tandaan Réngsé / Reset';
 
   @override
   String get tandaiSelesaiAkanMeresetHitung =>
-      'Tandai selesai akan mereset hitungan interval dan otomatis mencatat ke Riwayat Servis.';
+      'Nandaan réngsé bakal nga-reset itungan interval sareng otomatis kacatet kana Riwajat Servis.';
 
   @override
   String get tanggalMasaBerlakuJatuhTempo =>
-      'Tanggal Masa Berlaku / Jatuh Tempo';
+      'Tanggal Mangsa Lumaku / Jatuh Témpo';
 
   @override
-  String get tanggalTerakhirDikerjakan => 'Tanggal Terakhir Dikerjakan';
+  String get tanggalTerakhirDikerjakan => 'Tanggal Pamungkas Digawéan';
 
   @override
-  String get teksJsonTidakBolehKosong => 'Teks JSON tidak boleh kosong!';
+  String get teksJsonTidakBolehKosong => 'Téks JSON teu kénging kosong!';
 
   @override
   String get tempelkanTeksDataJsonCadanganY =>
-      'Tempelkan teks data JSON cadangan yang pernah diekspor sebelumnya:';
+      'Témpélkeun téks data JSON cadangan anu kungsi diékspor:';
 
   @override
-  String get tentangAplikasiLisensi => 'Tentang Aplikasi & Lisensi';
+  String get tentangAplikasiLisensi => 'Ngeunaan Aplikasi & Lisénsi';
 
   @override
-  String get termasukGantiOli => 'Termasuk Ganti Oli?';
+  String get termasukGantiOli => 'Kaasup Gentos Oli?';
 
   @override
   String get tindakanIniAkanMengosongkanSem =>
@@ -769,26 +769,26 @@ class AppLocalizationsSu extends AppLocalizations {
   String get totalBiayaTco => 'Total Biaya (TCO)';
 
   @override
-  String get totalBiayaBengkel => 'Total Biaya Bengkel';
+  String get totalBiayaBengkel => 'Total Biaya Béngkél';
 
   @override
-  String get totalBiayaKepemilikanTco => 'Total Biaya Kepemilikan (TCO)';
+  String get totalBiayaKepemilikanTco => 'Total Biaya Kapamilikan (TCO)';
 
   @override
-  String get totalPengeluaranBbm => 'Total Pengeluaran BBM';
+  String get totalPengeluaranBbm => 'Total Pangaluaran BBM';
 
   @override
   String get tutup => 'Tutup';
 
   @override
-  String get ubah => 'Ubah';
+  String get ubah => 'Robih';
 
   @override
   String get volumeLiterKwh => 'Volume (Liter / kWh)';
 
   @override
   String gagalMemulihkanBackup(String error) {
-    return 'Failed to restore backup: $error';
+    return 'Gagal mulihkeun cadangan: $error';
   }
 
   @override
@@ -806,41 +806,41 @@ class AppLocalizationsSu extends AppLocalizations {
 
   @override
   String selesaikanJadwal(String title) {
-    return 'Complete: $title';
+    return 'Rengsekeun: $title?';
   }
 
   @override
   String jadwalCount(String count) {
-    return 'Schedules ($count)';
+    return '$count Jadwal';
   }
 
   @override
   String riwayatCount(String count) {
-    return 'History ($count)';
+    return '$count Riwajat';
   }
 
   @override
   String inspeksiCount(String count) {
-    return 'Inspections ($count)';
+    return '$count Pamariksaan';
   }
 
   @override
   String rekomendasiPabrikBerhasilDimuat(String label) {
-    return 'Factory recommendation $label loaded!';
+    return 'Rekomendasi pabrik kanggo $label parantos dimuat!';
   }
 
   @override
   String muatStandarPabrik(String label) {
-    return 'Load Factory Standard ($label)';
+    return 'Muat Standar $label';
   }
 
   @override
   String odometerValue(String odo) {
-    return 'Odometer: $odo km';
+    return '$odo km';
   }
 
   @override
   String kendaraanBerhasilDitambahkan(String name) {
-    return 'Vehicle $name successfully added to garage!';
+    return 'Kandaraan \"$name\" parantos ditambihkeun!';
   }
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:garagego/l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../core/constants/app_colors.dart';
 import '../../core/models/vehicle.dart';
@@ -34,7 +35,7 @@ class _AddDocumentSheetState extends ConsumerState<AddDocumentSheet> {
     _costController = TextEditingController(text: d != null ? d.cost.toStringAsFixed(0) : '0');
     _notesController = TextEditingController(text: d?.notes ?? '');
     _selectedType = d?.type ?? DocumentType.stnkTahunan;
-    _expiryDate = d?.expiryDate ?? DateTime.now().add(const Duration(days: 365));
+    _expiryDate = d?.expiryDate ?? DateTime.now().add(Duration(days: 365));
   }
 
   @override
@@ -69,22 +70,22 @@ class _AddDocumentSheetState extends ConsumerState<AddDocumentSheet> {
                 children: [
                   Text(
                     isEditing ? 'Ubah Dokumen' : 'Tambah Dokumen Garasi',
-                    style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w800, color: Colors.white),
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.w800, color: Colors.white),
                   ),
                   IconButton(
-                    icon: const Icon(Icons.close, color: Color(0xFF94A3B8)),
+                    icon: Icon(Icons.close, color: Color(0xFF94A3B8)),
                     onPressed: () => Navigator.pop(context),
                   ),
                 ],
               ),
-              const SizedBox(height: 14),
+              SizedBox(height: 14),
 
               DropdownButtonFormField<DocumentType>(
                 initialValue: _selectedType,
-                decoration: const InputDecoration(labelText: 'Jenis Dokumen'),
+                decoration: InputDecoration(labelText: AppLocalizations.of(context)!.jenisDokumen),
                 dropdownColor: AppColors.bgCard,
                 items: DocumentType.values
-                    .map((t) => DropdownMenuItem(value: t, child: Text(t.label, style: const TextStyle(color: Colors.white))))
+                    .map((t) => DropdownMenuItem(value: t, child: Text(t.label, style: TextStyle(color: Colors.white))))
                     .toList(),
                 onChanged: (val) {
                   if (val != null) {
@@ -97,26 +98,26 @@ class _AddDocumentSheetState extends ConsumerState<AddDocumentSheet> {
                   }
                 },
               ),
-              const SizedBox(height: 12),
+              SizedBox(height: 12),
 
               TextFormField(
                 controller: _titleController,
-                decoration: const InputDecoration(
-                  labelText: 'Judul / Keterangan Dokumen',
+                decoration: InputDecoration(
+                  labelText: AppLocalizations.of(context)!.judulKeteranganDokumen,
                   hintText: 'Misal: Pajak PKB Tahunan STNK 2026',
                 ),
                 validator: (v) => v == null || v.trim().isEmpty ? 'Judul dokumen wajib diisi' : null,
               ),
-              const SizedBox(height: 12),
+              SizedBox(height: 12),
 
               TextFormField(
                 controller: _docNumberController,
-                decoration: const InputDecoration(
-                  labelText: 'Nomor Dokumen / No. Polis / No. Polisi',
+                decoration: InputDecoration(
+                  labelText: AppLocalizations.of(context)!.nomorDokumenNoPolisNoPolisi,
                   hintText: 'B 1234 ABC',
                 ),
               ),
-              const SizedBox(height: 12),
+              SizedBox(height: 12),
 
               // Expiry Date Picker
               InkWell(
@@ -125,45 +126,45 @@ class _AddDocumentSheetState extends ConsumerState<AddDocumentSheet> {
                     context: context,
                     initialDate: _expiryDate,
                     firstDate: DateTime(2000),
-                    lastDate: DateTime.now().add(const Duration(days: 365 * 10)),
+                    lastDate: DateTime.now().add(Duration(days: 365 * 10)),
                   );
                   if (picked != null) {
                     setState(() => _expiryDate = picked);
                   }
                 },
                 child: InputDecorator(
-                  decoration: const InputDecoration(
-                    labelText: 'Tanggal Masa Berlaku / Jatuh Tempo',
+                  decoration: InputDecoration(
+                    labelText: AppLocalizations.of(context)!.tanggalMasaBerlakuJatuhTempo,
                     suffixIcon: Icon(Icons.event, size: 18),
                   ),
                   child: Text(
                     '${_expiryDate.day}/${_expiryDate.month}/${_expiryDate.year}',
-                    style: const TextStyle(color: Colors.white, fontSize: 14),
+                    style: TextStyle(color: Colors.white, fontSize: 14),
                   ),
                 ),
               ),
-              const SizedBox(height: 12),
+              SizedBox(height: 12),
 
               TextFormField(
                 controller: _costController,
                 keyboardType: TextInputType.number,
-                decoration: const InputDecoration(
-                  labelText: 'Estimasi Biaya / Premi (Rp)',
+                decoration: InputDecoration(
+                  labelText: AppLocalizations.of(context)!.estimasiBiayaPremiRp,
                   hintText: '2500000',
                 ),
                 validator: (val) => AppValidators.validateCost(double.tryParse(val ?? '')),
               ),
-              const SizedBox(height: 12),
+              SizedBox(height: 12),
 
               TextFormField(
                 controller: _notesController,
                 maxLines: 2,
-                decoration: const InputDecoration(
-                  labelText: 'Catatan / Lokasi Berkas Fisik',
+                decoration: InputDecoration(
+                  labelText: AppLocalizations.of(context)!.catatanLokasiBerkasFisik,
                   hintText: 'Misal: STNK di dompet, BPKB di lemari arsip',
                 ),
               ),
-              const SizedBox(height: 22),
+              SizedBox(height: 22),
 
               ElevatedButton(
                 onPressed: () {

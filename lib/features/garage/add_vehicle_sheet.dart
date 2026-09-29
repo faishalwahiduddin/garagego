@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:garagego/l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../core/constants/app_colors.dart';
 import '../../core/models/vehicle.dart';
@@ -21,7 +22,7 @@ class _AddVehicleSheetState extends ConsumerState<AddVehicleSheet> {
   final _intervalController = TextEditingController(text: '5000');
 
   VehicleType _selectedType = VehicleType.car;
-  DateTime _taxDueDate = DateTime.now().add(const Duration(days: 365));
+  DateTime _taxDueDate = DateTime.now().add(Duration(days: 365));
 
   @override
   void dispose() {
@@ -97,19 +98,19 @@ class _AddVehicleSheetState extends ConsumerState<AddVehicleSheet> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  const Text('Tambah Kendaraan Baru', style: TextStyle(fontSize: 17, fontWeight: FontWeight.w700, color: Colors.white)),
-                  IconButton(onPressed: () => Navigator.pop(context), icon: const Icon(Icons.close, size: 20)),
+                  Text(AppLocalizations.of(context)!.tambahKendaraanBaru, style: TextStyle(fontSize: 17, fontWeight: FontWeight.w700, color: Colors.white)),
+                  IconButton(onPressed: () => Navigator.pop(context), icon: Icon(Icons.close, size: 20)),
                 ],
               ),
-              const SizedBox(height: 16),
+              SizedBox(height: 16),
 
               // Type Selector
               Row(
                 children: [
                   Expanded(
                     child: ChoiceChip(
-                      avatar: const Icon(Icons.directions_car, size: 16),
-                      label: const Text('Mobil'),
+                      avatar: Icon(Icons.directions_car, size: 16),
+                      label: Text(AppLocalizations.of(context)!.mobil),
                       selected: _selectedType == VehicleType.car,
                       selectedColor: AppColors.primary,
                       onSelected: (val) {
@@ -122,11 +123,11 @@ class _AddVehicleSheetState extends ConsumerState<AddVehicleSheet> {
                       },
                     ),
                   ),
-                  const SizedBox(width: 12),
+                  SizedBox(width: 12),
                   Expanded(
                     child: ChoiceChip(
-                      avatar: const Icon(Icons.two_wheeler, size: 16),
-                      label: const Text('Motor'),
+                      avatar: Icon(Icons.two_wheeler, size: 16),
+                      label: Text(AppLocalizations.of(context)!.motor),
                       selected: _selectedType == VehicleType.motorcycle,
                       selectedColor: AppColors.primary,
                       onSelected: (val) {
@@ -141,30 +142,30 @@ class _AddVehicleSheetState extends ConsumerState<AddVehicleSheet> {
                   ),
                 ],
               ),
-              const SizedBox(height: 14),
+              SizedBox(height: 14),
 
               TextFormField(
                 controller: _nameController,
-                decoration: const InputDecoration(labelText: 'Nama / Model Kendaraan', hintText: 'Misal: Honda HR-V / Yamaha NMAX'),
+                decoration: InputDecoration(labelText: AppLocalizations.of(context)!.namaModelKendaraan, hintText: 'Misal: Honda HR-V / Yamaha NMAX'),
                 validator: AppValidators.validateVehicleName,
               ),
-              const SizedBox(height: 12),
+              SizedBox(height: 12),
 
               Row(
                 children: [
                   Expanded(
                     child: TextFormField(
                       controller: _plateController,
-                      decoration: const InputDecoration(labelText: 'Nomor Pelat Polisi', hintText: 'B 1234 CD'),
+                      decoration: InputDecoration(labelText: AppLocalizations.of(context)!.nomorPelatPolisi, hintText: 'B 1234 CD'),
                       validator: AppValidators.validatePlateNumber,
                     ),
                   ),
-                  const SizedBox(width: 12),
+                  SizedBox(width: 12),
                   Expanded(
                     child: TextFormField(
                       controller: _yearController,
                       keyboardType: TextInputType.number,
-                      decoration: const InputDecoration(labelText: 'Tahun Pembuatan', hintText: '2023'),
+                      decoration: InputDecoration(labelText: AppLocalizations.of(context)!.tahunPembuatan, hintText: '2023'),
                       validator: (val) {
                         final y = int.tryParse(val ?? '');
                         if (y == null || y < 1970 || y > DateTime.now().year + 1) {
@@ -176,7 +177,7 @@ class _AddVehicleSheetState extends ConsumerState<AddVehicleSheet> {
                   ),
                 ],
               ),
-              const SizedBox(height: 12),
+              SizedBox(height: 12),
 
               Row(
                 children: [
@@ -184,28 +185,28 @@ class _AddVehicleSheetState extends ConsumerState<AddVehicleSheet> {
                     child: TextFormField(
                       controller: _odoController,
                       keyboardType: TextInputType.number,
-                      decoration: const InputDecoration(labelText: 'Odometer Saat Ini (km)', hintText: '15000'),
+                      decoration: InputDecoration(labelText: AppLocalizations.of(context)!.odometerSaatIniKm, hintText: '15000'),
                       validator: (val) => AppValidators.validateOdometer(int.tryParse(val ?? '')),
                     ),
                   ),
-                  const SizedBox(width: 12),
+                  SizedBox(width: 12),
                   Expanded(
                     child: TextFormField(
                       controller: _intervalController,
                       keyboardType: TextInputType.number,
-                      decoration: const InputDecoration(labelText: 'Interval Oli (km)', hintText: '5000'),
+                      decoration: InputDecoration(labelText: AppLocalizations.of(context)!.intervalOliKm, hintText: '5000'),
                     ),
                   ),
                 ],
               ),
-              const SizedBox(height: 14),
+              SizedBox(height: 14),
 
               // Tax Due Date
               InkWell(
                 onTap: _pickTaxDate,
                 borderRadius: BorderRadius.circular(12),
                 child: Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
+                  padding: EdgeInsets.symmetric(horizontal: 16, vertical: 14),
                   decoration: BoxDecoration(
                     color: AppColors.bgSurface,
                     borderRadius: BorderRadius.circular(12),
@@ -213,25 +214,25 @@ class _AddVehicleSheetState extends ConsumerState<AddVehicleSheet> {
                   ),
                   child: Row(
                     children: [
-                      const Icon(Icons.event_outlined, size: 18, color: AppColors.primaryLight),
-                      const SizedBox(width: 10),
+                      Icon(Icons.event_outlined, size: 18, color: AppColors.primaryLight),
+                      SizedBox(width: 10),
                       Text(
                         'Jatuh Tempo Pajak: ${_taxDueDate.day.toString().padLeft(2, '0')}-${_taxDueDate.month.toString().padLeft(2, '0')}-${_taxDueDate.year}',
-                        style: const TextStyle(fontSize: 13, color: Colors.white),
+                        style: TextStyle(fontSize: 13, color: Colors.white),
                       ),
-                      const Spacer(),
-                      const Icon(Icons.edit, size: 16, color: Color(0xFF94A3B8)),
+                      Spacer(),
+                      Icon(Icons.edit, size: 16, color: Color(0xFF94A3B8)),
                     ],
                   ),
                 ),
               ),
-              const SizedBox(height: 20),
+              SizedBox(height: 20),
 
               ElevatedButton(
                 onPressed: _save,
-                child: const Text('Simpan ke Garasi'),
+                child: Text(AppLocalizations.of(context)!.simpanKeGarasi),
               ),
-              const SizedBox(height: 24),
+              SizedBox(height: 24),
             ],
           ),
         ),

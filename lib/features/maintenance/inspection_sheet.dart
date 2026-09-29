@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:garagego/l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../core/constants/app_colors.dart';
 import '../../core/models/vehicle.dart';
@@ -43,31 +44,31 @@ class _InspectionSheetState extends ConsumerState<InspectionSheet> {
 
     return Container(
       height: MediaQuery.of(context).size.height * 0.85,
-      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
+      padding: EdgeInsets.symmetric(horizontal: 20, vertical: 16),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              const Row(
+              Row(
                 children: [
                   Icon(Icons.fact_check_outlined, color: AppColors.primary, size: 24),
                   SizedBox(width: 8),
-                  Text('Ceklis Kondisi Kendaraan', style: TextStyle(fontSize: 17, fontWeight: FontWeight.w800, color: Colors.white)),
+                  Text(AppLocalizations.of(context)!.ceklisKondisiKendaraan, style: TextStyle(fontSize: 17, fontWeight: FontWeight.w800, color: Colors.white)),
                 ],
               ),
               IconButton(
-                icon: const Icon(Icons.close, color: Color(0xFF94A3B8)),
+                icon: Icon(Icons.close, color: Color(0xFF94A3B8)),
                 onPressed: () => Navigator.pop(context),
               ),
             ],
           ),
-          const SizedBox(height: 8),
+          SizedBox(height: 8),
 
           // Progress Header
           Container(
-            padding: const EdgeInsets.all(14),
+            padding: EdgeInsets.all(14),
             decoration: BoxDecoration(
               color: AppColors.bgSurface,
               borderRadius: BorderRadius.circular(12),
@@ -81,7 +82,7 @@ class _InspectionSheetState extends ConsumerState<InspectionSheet> {
                   children: [
                     Text(
                       'Kelayakan: $passedCount dari $totalCount Poin Lolos',
-                      style: const TextStyle(fontSize: 13, fontWeight: FontWeight.w700, color: Colors.white),
+                      style: TextStyle(fontSize: 13, fontWeight: FontWeight.w700, color: Colors.white),
                     ),
                     Text(
                       '${(percentage * 100).toStringAsFixed(0)}%',
@@ -93,7 +94,7 @@ class _InspectionSheetState extends ConsumerState<InspectionSheet> {
                     ),
                   ],
                 ),
-                const SizedBox(height: 8),
+                SizedBox(height: 8),
                 LinearProgressIndicator(
                   value: percentage,
                   minHeight: 8,
@@ -104,7 +105,7 @@ class _InspectionSheetState extends ConsumerState<InspectionSheet> {
               ],
             ),
           ),
-          const SizedBox(height: 12),
+          SizedBox(height: 12),
 
           // List of Inspection Items
           Expanded(
@@ -113,7 +114,7 @@ class _InspectionSheetState extends ConsumerState<InspectionSheet> {
               itemBuilder: (context, index) {
                 final item = _items[index];
                 return Padding(
-                  padding: const EdgeInsets.only(bottom: 8),
+                  padding: EdgeInsets.only(bottom: 8),
                   child: Container(
                     decoration: BoxDecoration(
                       color: AppColors.bgCard,
@@ -123,18 +124,18 @@ class _InspectionSheetState extends ConsumerState<InspectionSheet> {
                       ),
                     ),
                     child: CheckboxListTile(
-                      contentPadding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
+                      contentPadding: EdgeInsets.symmetric(horizontal: 12, vertical: 4),
                       title: Text(
                         item.label,
                         style: TextStyle(
                           fontSize: 13,
                           fontWeight: FontWeight.w600,
-                          color: item.isChecked ? Colors.white : const Color(0xFFCBD5E1),
+                          color: item.isChecked ? Colors.white : Color(0xFFCBD5E1),
                         ),
                       ),
                       subtitle: Text(
                         item.category,
-                        style: const TextStyle(fontSize: 11, color: Color(0xFF94A3B8)),
+                        style: TextStyle(fontSize: 11, color: Color(0xFF94A3B8)),
                       ),
                       value: item.isChecked,
                       activeColor: AppColors.success,
@@ -151,16 +152,16 @@ class _InspectionSheetState extends ConsumerState<InspectionSheet> {
           ),
 
           // Inspector Notes Field
-          const SizedBox(height: 8),
+          SizedBox(height: 8),
           TextField(
             controller: _notesController,
-            decoration: const InputDecoration(
-              hintText: 'Catatan tambahan kondisi kendaraan...',
-              labelText: 'Catatan Pemeriksa (Opsional)',
+            decoration: InputDecoration(
+              hintText: AppLocalizations.of(context)!.catatanTambahanKondisiKendaraa,
+              labelText: AppLocalizations.of(context)!.catatanPemeriksaOpsional,
               isDense: true,
             ),
           ),
-          const SizedBox(height: 14),
+          SizedBox(height: 14),
 
           // Action Buttons
           ElevatedButton.icon(
@@ -178,11 +179,11 @@ class _InspectionSheetState extends ConsumerState<InspectionSheet> {
               ref.read(inspectionChecklistsProvider.notifier).addChecklist(checklist);
               Navigator.pop(context);
               ScaffoldMessenger.of(context).showSnackBar(
-                const SnackBar(content: Text('Hasil ceklis inspeksi berhasil disimpan!')),
+                SnackBar(content: Text(AppLocalizations.of(context)!.hasilCeklisInspeksiBerhasilDis)),
               );
             },
-            icon: const Icon(Icons.check_circle_outline),
-            label: const Text('Simpan Audit Inspeksi'),
+            icon: Icon(Icons.check_circle_outline),
+            label: Text(AppLocalizations.of(context)!.simpanAuditInspeksi),
           ),
         ],
       ),

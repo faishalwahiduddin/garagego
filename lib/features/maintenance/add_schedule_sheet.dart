@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:garagego/l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../core/constants/app_colors.dart';
 import '../../core/models/vehicle.dart';
@@ -89,42 +90,41 @@ class _AddScheduleSheetState extends ConsumerState<AddScheduleSheet> {
                 children: [
                   Text(
                     isEditing ? 'Ubah Jadwal Perawatan' : 'Tambah Jadwal Perawatan',
-                    style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w800, color: Colors.white),
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.w800, color: Colors.white),
                   ),
                   IconButton(
-                    icon: const Icon(Icons.close, color: Color(0xFF94A3B8)),
+                    icon: Icon(Icons.close, color: Color(0xFF94A3B8)),
                     onPressed: () => Navigator.pop(context),
                   ),
                 ],
               ),
-              const SizedBox(height: 6),
-              Text(
-                'Dual-Trigger Reminder: Alarm akan aktif jika jarak (km) ATAU waktu (bulan) tercapai.',
+              SizedBox(height: 6),
+              Text(AppLocalizations.of(context)!.dualTriggerReminderAlarmAkanAk,
                 style: TextStyle(fontSize: 12, color: AppColors.primaryLight.withValues(alpha: 0.9)),
               ),
-              const SizedBox(height: 16),
+              SizedBox(height: 16),
 
               // Title
               TextFormField(
                 controller: _titleController,
-                decoration: const InputDecoration(
-                  labelText: 'Nama Pekerjaan / Komponen',
+                decoration: InputDecoration(
+                  labelText: AppLocalizations.of(context)!.namaPekerjaanKomponen,
                   hintText: 'Misal: Kuras Minyak Rem DOT 4',
                 ),
                 validator: (v) => v == null || v.trim().isEmpty ? 'Nama pekerjaan wajib diisi' : null,
               ),
-              const SizedBox(height: 12),
+              SizedBox(height: 12),
 
               // Category Selector Chips
-              const Text('Kategori:', style: TextStyle(fontSize: 12, color: Color(0xFF94A3B8))),
-              const SizedBox(height: 6),
+              Text(AppLocalizations.of(context)!.kategori, style: TextStyle(fontSize: 12, color: Color(0xFF94A3B8))),
+              SizedBox(height: 6),
               Wrap(
                 spacing: 6,
                 runSpacing: 6,
                 children: _suggestedCategories.map((cat) {
                   final isSelected = _categoryController.text == cat;
                   return ChoiceChip(
-                    label: Text(cat, style: TextStyle(fontSize: 11, color: isSelected ? Colors.white : const Color(0xFFCBD5E1))),
+                    label: Text(cat, style: TextStyle(fontSize: 11, color: isSelected ? Colors.white : Color(0xFFCBD5E1))),
                     selected: isSelected,
                     selectedColor: AppColors.primary,
                     backgroundColor: AppColors.bgSurface,
@@ -134,7 +134,7 @@ class _AddScheduleSheetState extends ConsumerState<AddScheduleSheet> {
                   );
                 }).toList(),
               ),
-              const SizedBox(height: 14),
+              SizedBox(height: 14),
 
               // Dual-Trigger Row: Interval KM and Interval Months
               Row(
@@ -143,8 +143,8 @@ class _AddScheduleSheetState extends ConsumerState<AddScheduleSheet> {
                     child: TextFormField(
                       controller: _intervalKmController,
                       keyboardType: TextInputType.number,
-                      decoration: const InputDecoration(
-                        labelText: 'Interval Jarak (km)',
+                      decoration: InputDecoration(
+                        labelText: AppLocalizations.of(context)!.intervalJarakKm,
                         hintText: '5000',
                         suffixText: 'km',
                       ),
@@ -155,13 +155,13 @@ class _AddScheduleSheetState extends ConsumerState<AddScheduleSheet> {
                       },
                     ),
                   ),
-                  const SizedBox(width: 12),
+                  SizedBox(width: 12),
                   Expanded(
                     child: TextFormField(
                       controller: _intervalMonthsController,
                       keyboardType: TextInputType.number,
-                      decoration: const InputDecoration(
-                        labelText: 'Interval Waktu',
+                      decoration: InputDecoration(
+                        labelText: AppLocalizations.of(context)!.intervalWaktu,
                         hintText: '6',
                         suffixText: 'bln',
                       ),
@@ -174,19 +174,19 @@ class _AddScheduleSheetState extends ConsumerState<AddScheduleSheet> {
                   ),
                 ],
               ),
-              const SizedBox(height: 14),
+              SizedBox(height: 14),
 
               // Last Performed Odometer
               TextFormField(
                 controller: _lastOdoController,
                 keyboardType: TextInputType.number,
-                decoration: const InputDecoration(
-                  labelText: 'Odometer Terakhir Dikerjakan (km)',
+                decoration: InputDecoration(
+                  labelText: AppLocalizations.of(context)!.odometerTerakhirDikerjakanKm,
                   hintText: '20000',
                 ),
                 validator: (val) => AppValidators.validateOdometer(int.tryParse(val ?? '')),
               ),
-              const SizedBox(height: 14),
+              SizedBox(height: 14),
 
               // Last Performed Date Picker
               InkWell(
@@ -202,17 +202,17 @@ class _AddScheduleSheetState extends ConsumerState<AddScheduleSheet> {
                   }
                 },
                 child: InputDecorator(
-                  decoration: const InputDecoration(
-                    labelText: 'Tanggal Terakhir Dikerjakan',
+                  decoration: InputDecoration(
+                    labelText: AppLocalizations.of(context)!.tanggalTerakhirDikerjakan,
                     suffixIcon: Icon(Icons.calendar_today, size: 18),
                   ),
                   child: Text(
                     '${_lastDate.day}/${_lastDate.month}/${_lastDate.year}',
-                    style: const TextStyle(color: Colors.white, fontSize: 14),
+                    style: TextStyle(color: Colors.white, fontSize: 14),
                   ),
                 ),
               ),
-              const SizedBox(height: 22),
+              SizedBox(height: 22),
 
               // Submit Button
               ElevatedButton(

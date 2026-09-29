@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:garagego/l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:intl/intl.dart';
@@ -17,28 +18,27 @@ class GarageDashboardScreen extends ConsumerWidget {
     showModalBottomSheet(
       context: context,
       backgroundColor: AppColors.bgSurface,
-      shape: const RoundedRectangleBorder(
+      shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
       ),
       builder: (ctx) => Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 20),
+        padding: EdgeInsets.symmetric(horizontal: 16, vertical: 20),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            const Text(
-              'Aksi Cepat Garasi',
+            Text(AppLocalizations.of(context)!.aksiCepatGarasi,
               style: TextStyle(fontSize: 17, fontWeight: FontWeight.w800, color: Colors.white),
             ),
-            const SizedBox(height: 16),
+            SizedBox(height: 16),
             ListTile(
               leading: Container(
-                padding: const EdgeInsets.all(8),
+                padding: EdgeInsets.all(8),
                 decoration: BoxDecoration(color: AppColors.primary.withValues(alpha: 0.15), borderRadius: BorderRadius.circular(8)),
-                child: const Icon(Icons.build_outlined, color: AppColors.primaryLight),
+                child: Icon(Icons.build_outlined, color: AppColors.primaryLight),
               ),
-              title: const Text('Catat Servis Baru', style: TextStyle(color: Colors.white, fontWeight: FontWeight.w600)),
-              subtitle: const Text('Simpan riwayat bengkel dan ganti oli', style: TextStyle(fontSize: 12, color: Color(0xFF94A3B8))),
+              title: Text(AppLocalizations.of(context)!.catatServisBaru, style: TextStyle(color: Colors.white, fontWeight: FontWeight.w600)),
+              subtitle: Text(AppLocalizations.of(context)!.simpanRiwayatBengkelDanGantiOl, style: TextStyle(fontSize: 12, color: Color(0xFF94A3B8))),
               onTap: () {
                 Navigator.pop(ctx);
                 context.go('/maintenance');
@@ -46,12 +46,12 @@ class GarageDashboardScreen extends ConsumerWidget {
             ),
             ListTile(
               leading: Container(
-                padding: const EdgeInsets.all(8),
+                padding: EdgeInsets.all(8),
                 decoration: BoxDecoration(color: AppColors.warning.withValues(alpha: 0.15), borderRadius: BorderRadius.circular(8)),
-                child: const Icon(Icons.local_gas_station_outlined, color: AppColors.warning),
+                child: Icon(Icons.local_gas_station_outlined, color: AppColors.warning),
               ),
-              title: const Text('Catat Pengisian BBM', style: TextStyle(color: Colors.white, fontWeight: FontWeight.w600)),
-              subtitle: const Text('Hitung konsumsi km/L dan biaya bensin', style: TextStyle(fontSize: 12, color: Color(0xFF94A3B8))),
+              title: Text(AppLocalizations.of(context)!.catatPengisianBbm, style: TextStyle(color: Colors.white, fontWeight: FontWeight.w600)),
+              subtitle: Text(AppLocalizations.of(context)!.hitungKonsumsiKmLDanBiayaBensi, style: TextStyle(fontSize: 12, color: Color(0xFF94A3B8))),
               onTap: () {
                 Navigator.pop(ctx);
                 context.go('/fuel');
@@ -60,12 +60,12 @@ class GarageDashboardScreen extends ConsumerWidget {
             if (active != null)
               ListTile(
                 leading: Container(
-                  padding: const EdgeInsets.all(8),
+                  padding: EdgeInsets.all(8),
                   decoration: BoxDecoration(color: AppColors.accent.withValues(alpha: 0.15), borderRadius: BorderRadius.circular(8)),
-                  child: const Icon(Icons.schedule, color: AppColors.accent),
+                  child: Icon(Icons.schedule, color: AppColors.accent),
                 ),
-                title: const Text('Tambah Jadwal Perawatan', style: TextStyle(color: Colors.white, fontWeight: FontWeight.w600)),
-                subtitle: const Text('Set pengingat berkala ganti part km/bulan', style: TextStyle(fontSize: 12, color: Color(0xFF94A3B8))),
+                title: Text(AppLocalizations.of(context)!.tambahJadwalPerawatan, style: TextStyle(color: Colors.white, fontWeight: FontWeight.w600)),
+                subtitle: Text(AppLocalizations.of(context)!.setPengingatBerkalaGantiPartKm, style: TextStyle(fontSize: 12, color: Color(0xFF94A3B8))),
                 onTap: () {
                   Navigator.pop(ctx);
                   showModalBottomSheet(
@@ -79,12 +79,12 @@ class GarageDashboardScreen extends ConsumerWidget {
             if (active != null)
               ListTile(
                 leading: Container(
-                  padding: const EdgeInsets.all(8),
+                  padding: EdgeInsets.all(8),
                   decoration: BoxDecoration(color: AppColors.success.withValues(alpha: 0.15), borderRadius: BorderRadius.circular(8)),
-                  child: const Icon(Icons.fact_check_outlined, color: AppColors.success),
+                  child: Icon(Icons.fact_check_outlined, color: AppColors.success),
                 ),
-                title: const Text('Checklist Inspeksi Kendaraan', style: TextStyle(color: Colors.white, fontWeight: FontWeight.w600)),
-                subtitle: const Text('Audit 10-poin keselamatan jalan & mudik', style: TextStyle(fontSize: 12, color: Color(0xFF94A3B8))),
+                title: Text(AppLocalizations.of(context)!.checklistInspeksiKendaraan, style: TextStyle(color: Colors.white, fontWeight: FontWeight.w600)),
+                subtitle: Text(AppLocalizations.of(context)!.audit10PoinKeselamatanJalanMud, style: TextStyle(fontSize: 12, color: Color(0xFF94A3B8))),
                 onTap: () {
                   Navigator.pop(ctx);
                   showModalBottomSheet(
@@ -97,19 +97,19 @@ class GarageDashboardScreen extends ConsumerWidget {
               ),
             ListTile(
               leading: Container(
-                padding: const EdgeInsets.all(8),
+                padding: EdgeInsets.all(8),
                 decoration: BoxDecoration(color: AppColors.carColor.withValues(alpha: 0.15), borderRadius: BorderRadius.circular(8)),
-                child: const Icon(Icons.directions_car, color: AppColors.carColor),
+                child: Icon(Icons.directions_car, color: AppColors.carColor),
               ),
-              title: const Text('Tambah Kendaraan Baru', style: TextStyle(color: Colors.white, fontWeight: FontWeight.w600)),
-              subtitle: const Text('Mobil atau motor keluarga baru', style: TextStyle(fontSize: 12, color: Color(0xFF94A3B8))),
+              title: Text(AppLocalizations.of(context)!.tambahKendaraanBaru, style: TextStyle(color: Colors.white, fontWeight: FontWeight.w600)),
+              subtitle: Text(AppLocalizations.of(context)!.mobilAtauMotorKeluargaBaru, style: TextStyle(fontSize: 12, color: Color(0xFF94A3B8))),
               onTap: () {
                 Navigator.pop(ctx);
                 showModalBottomSheet(
                   context: context,
                   isScrollControlled: true,
                   backgroundColor: AppColors.bgCard,
-                  builder: (_) => const AddVehicleSheet(),
+                  builder: (_) => AddVehicleSheet(),
                 );
               },
             ),
@@ -124,13 +124,13 @@ class GarageDashboardScreen extends ConsumerWidget {
       context: context,
       builder: (ctx) => AlertDialog(
         backgroundColor: AppColors.bgSurface,
-        title: const Text('Reset Counter Oli Mesin', style: TextStyle(color: Colors.white, fontSize: 16, fontWeight: FontWeight.w700)),
+        title: Text(AppLocalizations.of(context)!.resetCounterOliMesin, style: TextStyle(color: Colors.white, fontSize: 16, fontWeight: FontWeight.w700)),
         content: Text(
           'Counter penggantian oli untuk ${v.name} akan diatur ulang ke odometer saat ini (${NumberFormat('#,###', 'id_ID').format(v.currentOdometer)} km).',
-          style: const TextStyle(color: Color(0xFF94A3B8), fontSize: 13),
+          style: TextStyle(color: Color(0xFF94A3B8), fontSize: 13),
         ),
         actions: [
-          TextButton(onPressed: () => Navigator.pop(ctx), child: const Text('Batal')),
+          TextButton(onPressed: () => Navigator.pop(ctx), child: Text(AppLocalizations.of(context)!.batal)),
           ElevatedButton(
             onPressed: () async {
               final updated = v.copyWith(lastOilOdometer: v.currentOdometer);
@@ -142,7 +142,7 @@ class GarageDashboardScreen extends ConsumerWidget {
                 vehicleId: v.id,
                 date: DateTime.now(),
                 odometer: v.currentOdometer,
-                title: 'Penggantian Oli Mesin (Reset Counter)',
+                title: AppLocalizations.of(context)!.penggantianOliMesinResetCounte,
                 cost: 0,
                 notes: 'Reset counter interval oli mesin',
                 isOilChange: true,
@@ -153,11 +153,11 @@ class GarageDashboardScreen extends ConsumerWidget {
               if (context.mounted) {
                 Navigator.pop(ctx);
                 ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(content: Text('Counter oli berhasil direset ke odometer saat ini!')),
+                  SnackBar(content: Text(AppLocalizations.of(context)!.counterOliBerhasilDiresetKeOdo)),
                 );
               }
             },
-            child: const Text('Konfirmasi Reset'),
+            child: Text(AppLocalizations.of(context)!.konfirmasiReset),
           ),
         ],
       ),
@@ -178,7 +178,7 @@ class GarageDashboardScreen extends ConsumerWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Row(
+        title: Row(
           children: [
             Icon(Icons.garage_outlined, color: AppColors.primary, size: 24),
             SizedBox(width: 10),
@@ -187,17 +187,17 @@ class GarageDashboardScreen extends ConsumerWidget {
         ),
         actions: [
           IconButton(
-            icon: const Icon(Icons.add_circle_outline, color: AppColors.primaryLight),
-            tooltip: 'Tambah Kendaraan',
+            icon: Icon(Icons.add_circle_outline, color: AppColors.primaryLight),
+            tooltip: AppLocalizations.of(context)!.tambahKendaraan,
             onPressed: () {
               showModalBottomSheet(
                 context: context,
                 isScrollControlled: true,
                 backgroundColor: AppColors.bgCard,
-                shape: const RoundedRectangleBorder(
+                shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
                 ),
-                builder: (_) => const AddVehicleSheet(),
+                builder: (_) => AddVehicleSheet(),
               );
             },
           ),
@@ -205,8 +205,8 @@ class GarageDashboardScreen extends ConsumerWidget {
       ),
       floatingActionButton: FloatingActionButton.extended(
         backgroundColor: AppColors.primary,
-        icon: const Icon(Icons.bolt, color: Colors.white),
-        label: const Text('Aksi Cepat', style: TextStyle(fontWeight: FontWeight.w700, color: Colors.white)),
+        icon: Icon(Icons.bolt, color: Colors.white),
+        label: Text(AppLocalizations.of(context)!.aksiCepat, style: TextStyle(fontWeight: FontWeight.w700, color: Colors.white)),
         onPressed: () => _showQuickActions(context, ref, activeVehicle),
       ),
       body: vehicles.isEmpty
@@ -214,30 +214,30 @@ class GarageDashboardScreen extends ConsumerWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  const Icon(Icons.directions_car_outlined, size: 50, color: Color(0xFF64748B)),
-                  const SizedBox(height: 12),
-                  const Text('Garasi Masih Kosong', style: TextStyle(fontSize: 16, fontWeight: FontWeight.w700, color: Colors.white)),
-                  const SizedBox(height: 16),
+                  Icon(Icons.directions_car_outlined, size: 50, color: Color(0xFF64748B)),
+                  SizedBox(height: 12),
+                  Text(AppLocalizations.of(context)!.garasiMasihKosong, style: TextStyle(fontSize: 16, fontWeight: FontWeight.w700, color: Colors.white)),
+                  SizedBox(height: 16),
                   ElevatedButton.icon(
                     onPressed: () {
                       showModalBottomSheet(
                         context: context,
                         isScrollControlled: true,
                         backgroundColor: AppColors.bgCard,
-                        builder: (_) => const AddVehicleSheet(),
+                        builder: (_) => AddVehicleSheet(),
                       );
                     },
-                    icon: const Icon(Icons.add),
-                    label: const Text('Tambah Kendaraan'),
+                    icon: Icon(Icons.add),
+                    label: Text(AppLocalizations.of(context)!.tambahKendaraan),
                   ),
                 ],
               ),
             )
           : SingleChildScrollView(
-              padding: const EdgeInsets.only(left: 16, right: 16, top: 16, bottom: 80),
+              padding: EdgeInsets.only(left: 16, right: 16, top: 16, bottom: 80),
               child: Center(
                 child: ConstrainedBox(
-                  constraints: const BoxConstraints(maxWidth: 800),
+                  constraints: BoxConstraints(maxWidth: 800),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
@@ -247,7 +247,7 @@ class GarageDashboardScreen extends ConsumerWidget {
                         child: ListView.separated(
                           scrollDirection: Axis.horizontal,
                           itemCount: vehicles.length,
-                          separatorBuilder: (ctx, i) => const SizedBox(width: 8),
+                          separatorBuilder: (ctx, i) => SizedBox(width: 8),
                           itemBuilder: (context, index) {
                             final v = vehicles[index];
                             final isSelected = v.id == activeVehicle?.id;
@@ -272,28 +272,28 @@ class GarageDashboardScreen extends ConsumerWidget {
                           },
                         ),
                       ),
-                      const SizedBox(height: 16),
+                      SizedBox(height: 16),
 
                       if (activeVehicle != null) ...[
                         // 1. Vehicle Health Score & Hero Card
                         _buildHealthHeroCard(context, ref, activeVehicle, healthResult),
-                        const SizedBox(height: 16),
+                        SizedBox(height: 16),
 
                         // 2. High-Density Metric Row
                         Row(
                           children: [
                             Expanded(
                               child: _buildMetricCard(
-                                title: 'Odometer',
+                                title: AppLocalizations.of(context)!.odometer,
                                 value: '${NumberFormat('#,###', 'id_ID').format(activeVehicle.currentOdometer)} km',
                                 icon: Icons.speed,
                                 iconColor: AppColors.accent,
                               ),
                             ),
-                            const SizedBox(width: 10),
+                            SizedBox(width: 10),
                             Expanded(
                               child: _buildMetricCard(
-                                title: 'Biaya / KM',
+                                title: AppLocalizations.of(context)!.biayaKm,
                                 value: fuelEfficiency.averageCostPerKm > 0
                                     ? 'Rp ${fuelEfficiency.averageCostPerKm.toStringAsFixed(0)}/km'
                                     : '—',
@@ -303,12 +303,12 @@ class GarageDashboardScreen extends ConsumerWidget {
                             ),
                           ],
                         ),
-                        const SizedBox(height: 10),
+                        SizedBox(height: 10),
                         Row(
                           children: [
                             Expanded(
                               child: _buildMetricCard(
-                                title: 'Konsumsi BBM',
+                                title: AppLocalizations.of(context)!.konsumsiBbm,
                                 value: fuelEfficiency.averageKmPerLiter > 0
                                     ? '${fuelEfficiency.averageKmPerLiter.toStringAsFixed(1)} km/L'
                                     : '— km/L',
@@ -316,10 +316,10 @@ class GarageDashboardScreen extends ConsumerWidget {
                                 iconColor: AppColors.warning,
                               ),
                             ),
-                            const SizedBox(width: 10),
+                            SizedBox(width: 10),
                             Expanded(
                               child: _buildMetricCard(
-                                title: 'Total Biaya (TCO)',
+                                title: AppLocalizations.of(context)!.totalBiayaTco,
                                 value: currency.format(tco.totalCost),
                                 icon: Icons.account_balance_wallet_outlined,
                                 iconColor: AppColors.success,
@@ -327,23 +327,23 @@ class GarageDashboardScreen extends ConsumerWidget {
                             ),
                           ],
                         ),
-                        const SizedBox(height: 16),
+                        SizedBox(height: 16),
 
                         // 3. Oil Status Card with Reset Oil Button
                         _buildOilStatusCard(context, ref, activeVehicle),
-                        const SizedBox(height: 16),
+                        SizedBox(height: 16),
 
                         // 4. Tax & Document Expiry Card
                         _buildTaxReminderCard(context, activeVehicle),
-                        const SizedBox(height: 16),
+                        SizedBox(height: 16),
 
                         // 5. Total Cost of Ownership (TCO) Breakdown
                         _buildTcoBreakdownCard(context, tco, currency),
-                        const SizedBox(height: 16),
+                        SizedBox(height: 16),
 
                         // 6. Upcoming Maintenance Alerts
                         _buildUpcomingMaintenanceCard(context, activeVehicle, schedules),
-                        const SizedBox(height: 16),
+                        SizedBox(height: 16),
 
                         // 7. Recent Service List Preview
                         _buildRecentServicesCard(context, serviceLogs, currency),
@@ -369,17 +369,17 @@ class GarageDashboardScreen extends ConsumerWidget {
       color: AppColors.bgSurface,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(18),
-        side: const BorderSide(color: AppColors.border, width: 1.5),
+        side: BorderSide(color: AppColors.border, width: 1.5),
       ),
       child: Padding(
-        padding: const EdgeInsets.all(18),
+        padding: EdgeInsets.all(18),
         child: Column(
           children: [
             Row(
               children: [
                 // Vehicle Icon
                 Container(
-                  padding: const EdgeInsets.all(10),
+                  padding: EdgeInsets.all(10),
                   decoration: BoxDecoration(
                     color: (v.type == VehicleType.car ? AppColors.carColor : AppColors.motoColor).withValues(alpha: 0.2),
                     borderRadius: BorderRadius.circular(12),
@@ -390,13 +390,13 @@ class GarageDashboardScreen extends ConsumerWidget {
                     size: 28,
                   ),
                 ),
-                const SizedBox(width: 14),
+                SizedBox(width: 14),
                 Expanded(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(v.name, style: const TextStyle(fontSize: 17, fontWeight: FontWeight.w800, color: Colors.white)),
-                      Text('${v.plateNumber} • Tahun ${v.manufactureYear}', style: const TextStyle(fontSize: 12, color: Color(0xFF94A3B8))),
+                      Text(v.name, style: TextStyle(fontSize: 17, fontWeight: FontWeight.w800, color: Colors.white)),
+                      Text('${v.plateNumber} • Tahun ${v.manufactureYear}', style: TextStyle(fontSize: 12, color: Color(0xFF94A3B8))),
                     ],
                   ),
                 ),
@@ -422,7 +422,7 @@ class GarageDashboardScreen extends ConsumerWidget {
                         ),
                       ],
                     ),
-                    const SizedBox(height: 4),
+                    SizedBox(height: 4),
                     Text(
                       health?.statusText ?? 'Prima',
                       style: TextStyle(fontSize: 10, fontWeight: FontWeight.w700, color: color),
@@ -432,9 +432,9 @@ class GarageDashboardScreen extends ConsumerWidget {
               ],
             ),
             if (health != null && health.warnings.isNotEmpty) ...[
-              const SizedBox(height: 14),
+              SizedBox(height: 14),
               Container(
-                padding: const EdgeInsets.all(10),
+                padding: EdgeInsets.all(10),
                 decoration: BoxDecoration(
                   color: AppColors.danger.withValues(alpha: 0.1),
                   borderRadius: BorderRadius.circular(8),
@@ -442,12 +442,12 @@ class GarageDashboardScreen extends ConsumerWidget {
                 ),
                 child: Row(
                   children: [
-                    const Icon(Icons.warning_amber_rounded, size: 18, color: AppColors.danger),
-                    const SizedBox(width: 8),
+                    Icon(Icons.warning_amber_rounded, size: 18, color: AppColors.danger),
+                    SizedBox(width: 8),
                     Expanded(
                       child: Text(
                         health.warnings.first,
-                        style: const TextStyle(fontSize: 11, color: Color(0xFFFECACA), fontWeight: FontWeight.w600),
+                        style: TextStyle(fontSize: 11, color: Color(0xFFFECACA), fontWeight: FontWeight.w600),
                         maxLines: 2,
                         overflow: TextOverflow.ellipsis,
                       ),
@@ -468,34 +468,34 @@ class GarageDashboardScreen extends ConsumerWidget {
 
     return Card(
       child: Padding(
-        padding: const EdgeInsets.all(16),
+        padding: EdgeInsets.all(16),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                const Row(
+                Row(
                   children: [
                     Icon(Icons.oil_barrel_outlined, size: 18, color: AppColors.accent),
                     SizedBox(width: 8),
-                    Text('Status Oli Mesin', style: TextStyle(fontSize: 14, fontWeight: FontWeight.w700, color: Colors.white)),
+                    Text(AppLocalizations.of(context)!.statusOliMesin, style: TextStyle(fontSize: 14, fontWeight: FontWeight.w700, color: Colors.white)),
                   ],
                 ),
                 TextButton.icon(
                   onPressed: () => _showResetOilDialog(context, ref, v),
-                  icon: const Icon(Icons.refresh, size: 15, color: AppColors.primaryLight),
-                  label: const Text('Reset Oli', style: TextStyle(fontSize: 12, color: AppColors.primaryLight, fontWeight: FontWeight.w700)),
+                  icon: Icon(Icons.refresh, size: 15, color: AppColors.primaryLight),
+                  label: Text(AppLocalizations.of(context)!.resetOli, style: TextStyle(fontSize: 12, color: AppColors.primaryLight, fontWeight: FontWeight.w700)),
                 ),
               ],
             ),
-            const SizedBox(height: 8),
+            SizedBox(height: 8),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
                   'Interval: tiap ${NumberFormat('#,###', 'id_ID').format(v.oilIntervalKm)} km',
-                  style: const TextStyle(fontSize: 12, color: Color(0xFF94A3B8)),
+                  style: TextStyle(fontSize: 12, color: Color(0xFF94A3B8)),
                 ),
                 Text(
                   isOilOverdue ? 'Terlewat ${-remainingOilKm} km' : 'Sisa $remainingOilKm km lagi',
@@ -507,7 +507,7 @@ class GarageDashboardScreen extends ConsumerWidget {
                 ),
               ],
             ),
-            const SizedBox(height: 8),
+            SizedBox(height: 8),
             LinearProgressIndicator(
               value: (1.0 - (remainingOilKm / v.oilIntervalKm)).clamp(0.0, 1.0),
               backgroundColor: AppColors.bgDark,
@@ -524,34 +524,34 @@ class GarageDashboardScreen extends ConsumerWidget {
   Widget _buildTaxReminderCard(BuildContext context, Vehicle v) {
     return Card(
       child: Padding(
-        padding: const EdgeInsets.all(16),
+        padding: EdgeInsets.all(16),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Row(
               children: [
-                const Icon(Icons.badge_outlined, size: 18, color: AppColors.warning),
-                const SizedBox(width: 8),
-                const Text('Pajak & STNK', style: TextStyle(fontSize: 14, fontWeight: FontWeight.w700, color: Colors.white)),
-                const Spacer(),
+                Icon(Icons.badge_outlined, size: 18, color: AppColors.warning),
+                SizedBox(width: 8),
+                Text(AppLocalizations.of(context)!.pajakStnk, style: TextStyle(fontSize: 14, fontWeight: FontWeight.w700, color: Colors.white)),
+                Spacer(),
                 TextButton(
                   onPressed: () => context.go('/glovebox'),
-                  child: const Text('Buka Brankas', style: TextStyle(fontSize: 12, color: AppColors.primaryLight)),
+                  child: Text(AppLocalizations.of(context)!.bukaBrankas, style: TextStyle(fontSize: 12, color: AppColors.primaryLight)),
                 ),
               ],
             ),
-            const SizedBox(height: 8),
+            SizedBox(height: 8),
             Row(
               children: [
                 Expanded(
                   child: Container(
-                    padding: const EdgeInsets.all(10),
+                    padding: EdgeInsets.all(10),
                     decoration: BoxDecoration(color: AppColors.bgSurface, borderRadius: BorderRadius.circular(8)),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        const Text('PKB Tahunan', style: TextStyle(fontSize: 11, color: Color(0xFF94A3B8))),
-                        const SizedBox(height: 2),
+                        Text(AppLocalizations.of(context)!.pkbTahunan, style: TextStyle(fontSize: 11, color: Color(0xFF94A3B8))),
+                        SizedBox(height: 2),
                         Text(
                           '${v.daysUntilTaxDue} hari lagi',
                           style: TextStyle(fontSize: 13, fontWeight: FontWeight.w800, color: v.isTaxClose ? AppColors.danger : AppColors.success),
@@ -560,16 +560,16 @@ class GarageDashboardScreen extends ConsumerWidget {
                     ),
                   ),
                 ),
-                const SizedBox(width: 8),
+                SizedBox(width: 8),
                 Expanded(
                   child: Container(
-                    padding: const EdgeInsets.all(10),
+                    padding: EdgeInsets.all(10),
                     decoration: BoxDecoration(color: AppColors.bgSurface, borderRadius: BorderRadius.circular(8)),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        const Text('Pelat 5 Th', style: TextStyle(fontSize: 11, color: Color(0xFF94A3B8))),
-                        const SizedBox(height: 2),
+                        Text(AppLocalizations.of(context)!.pelat5Th, style: TextStyle(fontSize: 11, color: Color(0xFF94A3B8))),
+                        SizedBox(height: 2),
                         Text(
                           '${v.daysUntilPlateDue} hari lagi',
                           style: TextStyle(fontSize: 13, fontWeight: FontWeight.w800, color: v.isPlateClose ? AppColors.warning : Colors.white),
@@ -589,18 +589,18 @@ class GarageDashboardScreen extends ConsumerWidget {
   Widget _buildTcoBreakdownCard(BuildContext context, TCOResult tco, NumberFormat currency) {
     return Card(
       child: Padding(
-        padding: const EdgeInsets.all(16),
+        padding: EdgeInsets.all(16),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Row(
+            Row(
               children: [
                 Icon(Icons.pie_chart_outline, size: 18, color: AppColors.primaryLight),
                 SizedBox(width: 8),
-                Text('Total Biaya Kepemilikan (TCO)', style: TextStyle(fontSize: 14, fontWeight: FontWeight.w700, color: Colors.white)),
+                Text(AppLocalizations.of(context)!.totalBiayaKepemilikanTco, style: TextStyle(fontSize: 14, fontWeight: FontWeight.w700, color: Colors.white)),
               ],
             ),
-            const SizedBox(height: 14),
+            SizedBox(height: 14),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -622,12 +622,12 @@ class GarageDashboardScreen extends ConsumerWidget {
         Row(
           children: [
             Container(width: 8, height: 8, decoration: BoxDecoration(color: color, shape: BoxShape.circle)),
-            const SizedBox(width: 6),
-            Text(label, style: const TextStyle(fontSize: 11, color: Color(0xFF94A3B8))),
+            SizedBox(width: 6),
+            Text(label, style: TextStyle(fontSize: 11, color: Color(0xFF94A3B8))),
           ],
         ),
-        const SizedBox(height: 4),
-        Text(amount, style: const TextStyle(fontSize: 13, fontWeight: FontWeight.w800, color: Colors.white)),
+        SizedBox(height: 4),
+        Text(amount, style: TextStyle(fontSize: 13, fontWeight: FontWeight.w800, color: Colors.white)),
       ],
     );
   }
@@ -637,29 +637,29 @@ class GarageDashboardScreen extends ConsumerWidget {
 
     return Card(
       child: Padding(
-        padding: const EdgeInsets.all(16),
+        padding: EdgeInsets.all(16),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                const Row(
+                Row(
                   children: [
                     Icon(Icons.alarm, size: 18, color: AppColors.accent),
                     SizedBox(width: 8),
-                    Text('Jadwal Servis Mendatang', style: TextStyle(fontSize: 14, fontWeight: FontWeight.w700, color: Colors.white)),
+                    Text(AppLocalizations.of(context)!.jadwalServisMendatang, style: TextStyle(fontSize: 14, fontWeight: FontWeight.w700, color: Colors.white)),
                   ],
                 ),
                 TextButton(
                   onPressed: () => context.go('/maintenance'),
-                  child: const Text('Lihat Semua', style: TextStyle(fontSize: 12, color: AppColors.primaryLight)),
+                  child: Text(AppLocalizations.of(context)!.lihatSemua, style: TextStyle(fontSize: 12, color: AppColors.primaryLight)),
                 ),
               ],
             ),
-            const SizedBox(height: 8),
+            SizedBox(height: 8),
             if (nearest.isEmpty)
-              const Text('Belum ada jadwal perawatan berkala.', style: TextStyle(color: Color(0xFF94A3B8), fontSize: 12))
+              Text(AppLocalizations.of(context)!.belumAdaJadwalPerawatanBerkala, style: TextStyle(color: Color(0xFF94A3B8), fontSize: 12))
             else
               ...nearest.map((s) {
                 final urgency = s.urgency(v.currentOdometer);
@@ -667,17 +667,17 @@ class GarageDashboardScreen extends ConsumerWidget {
                 Color c = urgency == ScheduleUrgency.overdue ? AppColors.danger : (urgency == ScheduleUrgency.dueSoon ? AppColors.warning : AppColors.success);
 
                 return Padding(
-                  padding: const EdgeInsets.only(bottom: 8),
+                  padding: EdgeInsets.only(bottom: 8),
                   child: Row(
                     children: [
                       Container(
-                        padding: const EdgeInsets.all(6),
+                        padding: EdgeInsets.all(6),
                         decoration: BoxDecoration(color: c.withValues(alpha: 0.15), borderRadius: BorderRadius.circular(6)),
                         child: Icon(Icons.build_circle_outlined, size: 16, color: c),
                       ),
-                      const SizedBox(width: 10),
+                      SizedBox(width: 10),
                       Expanded(
-                        child: Text(s.title, style: const TextStyle(fontSize: 12, fontWeight: FontWeight.w600, color: Colors.white)),
+                        child: Text(s.title, style: TextStyle(fontSize: 12, fontWeight: FontWeight.w600, color: Colors.white)),
                       ),
                       Text(
                         km < 0 ? 'Lewat ${-km} km' : 'Sisa $km km',
@@ -696,53 +696,53 @@ class GarageDashboardScreen extends ConsumerWidget {
   Widget _buildRecentServicesCard(BuildContext context, List<ServiceLog> serviceLogs, NumberFormat currency) {
     return Card(
       child: Padding(
-        padding: const EdgeInsets.all(16),
+        padding: EdgeInsets.all(16),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                const Row(
+                Row(
                   children: [
                     Icon(Icons.history, size: 18, color: AppColors.primaryLight),
                     SizedBox(width: 8),
-                    Text('Servis Terakhir', style: TextStyle(fontSize: 14, fontWeight: FontWeight.w700, color: Colors.white)),
+                    Text(AppLocalizations.of(context)!.servisTerakhir, style: TextStyle(fontSize: 14, fontWeight: FontWeight.w700, color: Colors.white)),
                   ],
                 ),
                 TextButton(
                   onPressed: () => context.go('/maintenance'),
-                  child: const Text('Riwayat Lengkap', style: TextStyle(fontSize: 12, color: AppColors.primaryLight)),
+                  child: Text(AppLocalizations.of(context)!.riwayatLengkap, style: TextStyle(fontSize: 12, color: AppColors.primaryLight)),
                 ),
               ],
             ),
-            const SizedBox(height: 8),
+            SizedBox(height: 8),
             if (serviceLogs.isEmpty)
-              const Text('Belum ada catatan servis.', style: TextStyle(color: Color(0xFF94A3B8), fontSize: 13))
+              Text(AppLocalizations.of(context)!.belumAdaCatatanServis, style: TextStyle(color: Color(0xFF94A3B8), fontSize: 13))
             else
               ...serviceLogs.take(3).map((log) => Padding(
-                    padding: const EdgeInsets.only(bottom: 10),
+                    padding: EdgeInsets.only(bottom: 10),
                     child: Row(
                       children: [
                         Container(
-                          padding: const EdgeInsets.all(8),
+                          padding: EdgeInsets.all(8),
                           decoration: BoxDecoration(
                             color: AppColors.primary.withValues(alpha: 0.15),
                             borderRadius: BorderRadius.circular(8),
                           ),
-                          child: const Icon(Icons.build_outlined, size: 16, color: AppColors.primaryLight),
+                          child: Icon(Icons.build_outlined, size: 16, color: AppColors.primaryLight),
                         ),
-                        const SizedBox(width: 12),
+                        SizedBox(width: 12),
                         Expanded(
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text(log.title, style: const TextStyle(fontSize: 13, fontWeight: FontWeight.w600, color: Colors.white)),
-                              Text('${NumberFormat('#,###', 'id_ID').format(log.odometer)} km • ${log.date.day}/${log.date.month}/${log.date.year}', style: const TextStyle(fontSize: 11, color: Color(0xFF94A3B8))),
+                              Text(log.title, style: TextStyle(fontSize: 13, fontWeight: FontWeight.w600, color: Colors.white)),
+                              Text('${NumberFormat('#,###', 'id_ID').format(log.odometer)} km • ${log.date.day}/${log.date.month}/${log.date.year}', style: TextStyle(fontSize: 11, color: Color(0xFF94A3B8))),
                             ],
                           ),
                         ),
-                        Text(currency.format(log.cost), style: const TextStyle(fontSize: 13, fontWeight: FontWeight.w700, color: AppColors.accent)),
+                        Text(currency.format(log.cost), style: TextStyle(fontSize: 13, fontWeight: FontWeight.w700, color: AppColors.accent)),
                       ],
                     ),
                   )),
@@ -760,19 +760,19 @@ class GarageDashboardScreen extends ConsumerWidget {
   }) {
     return Card(
       child: Padding(
-        padding: const EdgeInsets.all(14),
+        padding: EdgeInsets.all(14),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Row(
               children: [
                 Icon(icon, size: 16, color: iconColor),
-                const SizedBox(width: 6),
-                Text(title, style: const TextStyle(fontSize: 11, color: Color(0xFF94A3B8))),
+                SizedBox(width: 6),
+                Text(title, style: TextStyle(fontSize: 11, color: Color(0xFF94A3B8))),
               ],
             ),
-            const SizedBox(height: 6),
-            Text(value, style: const TextStyle(fontSize: 15, fontWeight: FontWeight.w800, color: Colors.white)),
+            SizedBox(height: 6),
+            Text(value, style: TextStyle(fontSize: 15, fontWeight: FontWeight.w800, color: Colors.white)),
           ],
         ),
       ),

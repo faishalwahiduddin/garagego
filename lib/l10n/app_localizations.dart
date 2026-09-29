@@ -667,6 +667,924 @@ abstract class AppLocalizations {
   /// In id, this message translates to:
   /// **'Data 100% tersimpan lokal di perangkat tanpa cloud eksternal.'**
   String get privacyNotice;
+
+  /// No description provided for @aksiCepat.
+  ///
+  /// In id, this message translates to:
+  /// **'Aksi Cepat'**
+  String get aksiCepat;
+
+  /// No description provided for @aksiCepatGarasi.
+  ///
+  /// In id, this message translates to:
+  /// **'Aksi Cepat Garasi'**
+  String get aksiCepatGarasi;
+
+  /// No description provided for @aturUlangData.
+  ///
+  /// In id, this message translates to:
+  /// **'Atur Ulang Data'**
+  String get aturUlangData;
+
+  /// No description provided for @aturPengingatGantiOliFilterRem.
+  ///
+  /// In id, this message translates to:
+  /// **'Atur pengingat ganti oli, filter, rem, dan sparepart.'**
+  String get aturPengingatGantiOliFilterRem;
+
+  /// No description provided for @audit10PoinKeselamatanJalanMud.
+  ///
+  /// In id, this message translates to:
+  /// **'Audit 10-poin keselamatan jalan & mudik'**
+  String get audit10PoinKeselamatanJalanMud;
+
+  /// No description provided for @auditKelayakanJalanKeselamatan.
+  ///
+  /// In id, this message translates to:
+  /// **'Audit kelayakan jalan & keselamatan sebelum perjalanan mudik atau harian.'**
+  String get auditKelayakanJalanKeselamatan;
+
+  /// No description provided for @bahasaAplikasi.
+  ///
+  /// In id, this message translates to:
+  /// **'Bahasa Aplikasi'**
+  String get bahasaAplikasi;
+
+  /// No description provided for @batal.
+  ///
+  /// In id, this message translates to:
+  /// **'Batal'**
+  String get batal;
+
+  /// No description provided for @belumAdaCatatanBbm.
+  ///
+  /// In id, this message translates to:
+  /// **'Belum Ada Catatan BBM'**
+  String get belumAdaCatatanBbm;
+
+  /// No description provided for @belumAdaDokumenTercatat.
+  ///
+  /// In id, this message translates to:
+  /// **'Belum Ada Dokumen Tercatat'**
+  String get belumAdaDokumenTercatat;
+
+  /// No description provided for @belumAdaHasilCeklis.
+  ///
+  /// In id, this message translates to:
+  /// **'Belum Ada Hasil Ceklis'**
+  String get belumAdaHasilCeklis;
+
+  /// No description provided for @belumAdaJadwalServis.
+  ///
+  /// In id, this message translates to:
+  /// **'Belum Ada Jadwal Servis'**
+  String get belumAdaJadwalServis;
+
+  /// No description provided for @belumAdaRiwayatServis.
+  ///
+  /// In id, this message translates to:
+  /// **'Belum Ada Riwayat Servis'**
+  String get belumAdaRiwayatServis;
+
+  /// No description provided for @belumAdaCatatanServis.
+  ///
+  /// In id, this message translates to:
+  /// **'Belum ada catatan servis.'**
+  String get belumAdaCatatanServis;
+
+  /// No description provided for @belumAdaJadwalPerawatanBerkala.
+  ///
+  /// In id, this message translates to:
+  /// **'Belum ada jadwal perawatan berkala.'**
+  String get belumAdaJadwalPerawatanBerkala;
+
+  /// No description provided for @biayaKm.
+  ///
+  /// In id, this message translates to:
+  /// **'Biaya / KM'**
+  String get biayaKm;
+
+  /// No description provided for @biayaTotalRp.
+  ///
+  /// In id, this message translates to:
+  /// **'Biaya Total (Rp)'**
+  String get biayaTotalRp;
+
+  /// No description provided for @biayaPerKm.
+  ///
+  /// In id, this message translates to:
+  /// **'Biaya per KM'**
+  String get biayaPerKm;
+
+  /// No description provided for @bukaBrankas.
+  ///
+  /// In id, this message translates to:
+  /// **'Buka Brankas'**
+  String get bukaBrankas;
+
+  /// No description provided for @cadanganLengkapSeluruhDataGara.
+  ///
+  /// In id, this message translates to:
+  /// **'Cadangan lengkap seluruh data garasi, jadwal servis, dokumen, dan log BBM dapat disalin ke clipboard di bawah:'**
+  String get cadanganLengkapSeluruhDataGara;
+
+  /// No description provided for @cadangkanSeluruhKendaraanServi.
+  ///
+  /// In id, this message translates to:
+  /// **'Cadangkan seluruh kendaraan, servis, BBM, dan jadwal'**
+  String get cadangkanSeluruhKendaraanServi;
+
+  /// No description provided for @cariRiwayatServisAtauBengkel.
+  ///
+  /// In id, this message translates to:
+  /// **'Cari riwayat servis atau bengkel...'**
+  String get cariRiwayatServisAtauBengkel;
+
+  /// No description provided for @catatPengisianBbm.
+  ///
+  /// In id, this message translates to:
+  /// **'Catat Pengisian BBM'**
+  String get catatPengisianBbm;
+
+  /// No description provided for @catatPengisianPertama.
+  ///
+  /// In id, this message translates to:
+  /// **'Catat Pengisian Pertama'**
+  String get catatPengisianPertama;
+
+  /// No description provided for @catatServisBaru.
+  ///
+  /// In id, this message translates to:
+  /// **'Catat Servis Baru'**
+  String get catatServisBaru;
+
+  /// No description provided for @catatServisPertama.
+  ///
+  /// In id, this message translates to:
+  /// **'Catat Servis Pertama'**
+  String get catatServisPertama;
+
+  /// No description provided for @catatStrukPengisianBensinUntuk.
+  ///
+  /// In id, this message translates to:
+  /// **'Catat struk pengisian bensin untuk memantau konsumsi km/L dan cost/km.'**
+  String get catatStrukPengisianBensinUntuk;
+
+  /// No description provided for @catatanOpsional.
+  ///
+  /// In id, this message translates to:
+  /// **'Catatan (Opsional)'**
+  String get catatanOpsional;
+
+  /// No description provided for @catatanLokasiBerkasFisik.
+  ///
+  /// In id, this message translates to:
+  /// **'Catatan / Lokasi Berkas Fisik'**
+  String get catatanLokasiBerkasFisik;
+
+  /// No description provided for @catatanBbmBerhasilDisimpan.
+  ///
+  /// In id, this message translates to:
+  /// **'Catatan BBM berhasil disimpan!'**
+  String get catatanBbmBerhasilDisimpan;
+
+  /// No description provided for @catatanPemeriksaOpsional.
+  ///
+  /// In id, this message translates to:
+  /// **'Catatan Pemeriksa (Opsional)'**
+  String get catatanPemeriksaOpsional;
+
+  /// No description provided for @catatanSparepartPengerjaan.
+  ///
+  /// In id, this message translates to:
+  /// **'Catatan Sparepart / Pengerjaan'**
+  String get catatanSparepartPengerjaan;
+
+  /// No description provided for @catatanServisBerhasilDitambahk.
+  ///
+  /// In id, this message translates to:
+  /// **'Catatan servis berhasil ditambahkan!'**
+  String get catatanServisBerhasilDitambahk;
+
+  /// No description provided for @catatanTambahanKondisiKendaraa.
+  ///
+  /// In id, this message translates to:
+  /// **'Catatan tambahan kondisi kendaraan...'**
+  String get catatanTambahanKondisiKendaraa;
+
+  /// No description provided for @ceklisKondisiKendaraan.
+  ///
+  /// In id, this message translates to:
+  /// **'Ceklis Kondisi Kendaraan'**
+  String get ceklisKondisiKendaraan;
+
+  /// No description provided for @checklistInspeksiKendaraan.
+  ///
+  /// In id, this message translates to:
+  /// **'Checklist Inspeksi Kendaraan'**
+  String get checklistInspeksiKendaraan;
+
+  /// No description provided for @counterOliBerhasilDiresetKeOdo.
+  ///
+  /// In id, this message translates to:
+  /// **'Counter oli berhasil direset ke odometer saat ini!'**
+  String get counterOliBerhasilDiresetKeOdo;
+
+  /// No description provided for @daftarKendaraanDiGarasi.
+  ///
+  /// In id, this message translates to:
+  /// **'Daftar Kendaraan di Garasi'**
+  String get daftarKendaraanDiGarasi;
+
+  /// No description provided for @daftarMasaBerlakuDokumenLisens.
+  ///
+  /// In id, this message translates to:
+  /// **'Daftar Masa Berlaku Dokumen & Lisensi'**
+  String get daftarMasaBerlakuDokumenLisens;
+
+  /// No description provided for @dataCsvBerhasilDisalinKeClipbo.
+  ///
+  /// In id, this message translates to:
+  /// **'Data CSV berhasil disalin ke Clipboard!'**
+  String get dataCsvBerhasilDisalinKeClipbo;
+
+  /// No description provided for @dataCadanganBerhasilDipulihkan.
+  ///
+  /// In id, this message translates to:
+  /// **'Data cadangan berhasil dipulihkan ke garasi!'**
+  String get dataCadanganBerhasilDipulihkan;
+
+  /// No description provided for @dataFormatCsvSiapDieksporKeExc.
+  ///
+  /// In id, this message translates to:
+  /// **'Data format CSV siap diekspor ke Excel / Spreadsheet:'**
+  String get dataFormatCsvSiapDieksporKeExc;
+
+  /// No description provided for @dataGarasiBerhasilDiresetKeSta.
+  ///
+  /// In id, this message translates to:
+  /// **'Data garasi berhasil direset ke standar.'**
+  String get dataGarasiBerhasilDiresetKeSta;
+
+  /// No description provided for @diperlukanUntukAkurasiKalkulas.
+  ///
+  /// In id, this message translates to:
+  /// **'Diperlukan untuk akurasi kalkulasi km/L'**
+  String get diperlukanUntukAkurasiKalkulas;
+
+  /// No description provided for @dualTriggerReminderAlarmAkanAk.
+  ///
+  /// In id, this message translates to:
+  /// **'Dual-Trigger Reminder: Alarm akan aktif jika jarak (km) ATAU waktu (bulan) tercapai.'**
+  String get dualTriggerReminderAlarmAkanAk;
+
+  /// No description provided for @eksporBackupJson.
+  ///
+  /// In id, this message translates to:
+  /// **'Ekspor Backup JSON'**
+  String get eksporBackupJson;
+
+  /// No description provided for @eksporCsvRiwayatBbm.
+  ///
+  /// In id, this message translates to:
+  /// **'Ekspor CSV Riwayat BBM'**
+  String get eksporCsvRiwayatBbm;
+
+  /// No description provided for @eksporCsvRiwayatServis.
+  ///
+  /// In id, this message translates to:
+  /// **'Ekspor CSV Riwayat Servis'**
+  String get eksporCsvRiwayatServis;
+
+  /// No description provided for @eksporCadanganJson.
+  ///
+  /// In id, this message translates to:
+  /// **'Ekspor Cadangan JSON'**
+  String get eksporCadanganJson;
+
+  /// No description provided for @eksporFormatTabelSpreadsheetUn.
+  ///
+  /// In id, this message translates to:
+  /// **'Ekspor format tabel spreadsheet untuk pencatatan bengkel'**
+  String get eksporFormatTabelSpreadsheetUn;
+
+  /// No description provided for @eksporSeluruhPengisianBbmKeFor.
+  ///
+  /// In id, this message translates to:
+  /// **'Ekspor seluruh pengisian BBM ke format CSV spreadsheet'**
+  String get eksporSeluruhPengisianBbmKeFor;
+
+  /// No description provided for @estimasiBiayaPremiRp.
+  ///
+  /// In id, this message translates to:
+  /// **'Estimasi Biaya / Premi (Rp)'**
+  String get estimasiBiayaPremiRp;
+
+  /// No description provided for @gantiPelat5Th.
+  ///
+  /// In id, this message translates to:
+  /// **'Ganti Pelat 5 Th'**
+  String get gantiPelat5Th;
+
+  /// No description provided for @garasiMasihKosong.
+  ///
+  /// In id, this message translates to:
+  /// **'Garasi Masih Kosong'**
+  String get garasiMasihKosong;
+
+  /// No description provided for @hargaSatuanRpLiter.
+  ///
+  /// In id, this message translates to:
+  /// **'Harga Satuan (Rp/Liter)'**
+  String get hargaSatuanRpLiter;
+
+  /// No description provided for @hasilCeklisInspeksiBerhasilDis.
+  ///
+  /// In id, this message translates to:
+  /// **'Hasil ceklis inspeksi berhasil disimpan!'**
+  String get hasilCeklisInspeksiBerhasilDis;
+
+  /// No description provided for @hitungKonsumsiKmLDanBiayaBensi.
+  ///
+  /// In id, this message translates to:
+  /// **'Hitung konsumsi km/L dan biaya bensin'**
+  String get hitungKonsumsiKmLDanBiayaBensi;
+
+  /// No description provided for @imporPulihkanBackupJson.
+  ///
+  /// In id, this message translates to:
+  /// **'Impor / Pulihkan Backup JSON'**
+  String get imporPulihkanBackupJson;
+
+  /// No description provided for @intervalJarakKm.
+  ///
+  /// In id, this message translates to:
+  /// **'Interval Jarak (km)'**
+  String get intervalJarakKm;
+
+  /// No description provided for @intervalOliKm.
+  ///
+  /// In id, this message translates to:
+  /// **'Interval Oli (km)'**
+  String get intervalOliKm;
+
+  /// No description provided for @intervalWaktu.
+  ///
+  /// In id, this message translates to:
+  /// **'Interval Waktu'**
+  String get intervalWaktu;
+
+  /// No description provided for @isiTangkiPenuhFullTank.
+  ///
+  /// In id, this message translates to:
+  /// **'Isi Tangki Penuh (Full Tank)?'**
+  String get isiTangkiPenuhFullTank;
+
+  /// No description provided for @jadwalServisMendatang.
+  ///
+  /// In id, this message translates to:
+  /// **'Jadwal Servis Mendatang'**
+  String get jadwalServisMendatang;
+
+  /// No description provided for @jenisBahanBakar.
+  ///
+  /// In id, this message translates to:
+  /// **'Jenis Bahan Bakar'**
+  String get jenisBahanBakar;
+
+  /// No description provided for @jenisDokumen.
+  ///
+  /// In id, this message translates to:
+  /// **'Jenis Dokumen'**
+  String get jenisDokumen;
+
+  /// No description provided for @judulKeteranganDokumen.
+  ///
+  /// In id, this message translates to:
+  /// **'Judul / Keterangan Dokumen'**
+  String get judulKeteranganDokumen;
+
+  /// No description provided for @kategori.
+  ///
+  /// In id, this message translates to:
+  /// **'Kategori:'**
+  String get kategori;
+
+  /// No description provided for @kembalikanDataDariBerkasCadang.
+  ///
+  /// In id, this message translates to:
+  /// **'Kembalikan data dari berkas cadangan JSON yang valid'**
+  String get kembalikanDataDariBerkasCadang;
+
+  /// No description provided for @kilometerOdometerKm.
+  ///
+  /// In id, this message translates to:
+  /// **'Kilometer Odometer (km)'**
+  String get kilometerOdometerKm;
+
+  /// No description provided for @konfirmasiReset.
+  ///
+  /// In id, this message translates to:
+  /// **'Konfirmasi Reset'**
+  String get konfirmasiReset;
+
+  /// No description provided for @konsumsiBbm.
+  ///
+  /// In id, this message translates to:
+  /// **'Konsumsi BBM'**
+  String get konsumsiBbm;
+
+  /// No description provided for @lakukanInspeksi10PoinBanRemOli.
+  ///
+  /// In id, this message translates to:
+  /// **'Lakukan inspeksi 10 poin ban, rem, oli, lampu, dan aki.'**
+  String get lakukanInspeksi10PoinBanRemOli;
+
+  /// No description provided for @lihatSemua.
+  ///
+  /// In id, this message translates to:
+  /// **'Lihat Semua'**
+  String get lihatSemua;
+
+  /// No description provided for @lisensiPamakean.
+  ///
+  /// In id, this message translates to:
+  /// **'Lisensi Pamakean'**
+  String get lisensiPamakean;
+
+  /// No description provided for @lisensiPanganggo.
+  ///
+  /// In id, this message translates to:
+  /// **'Lisensi Panganggo'**
+  String get lisensiPanganggo;
+
+  /// No description provided for @lisensiPenggunaan.
+  ///
+  /// In id, this message translates to:
+  /// **'Lisensi Penggunaan'**
+  String get lisensiPenggunaan;
+
+  /// No description provided for @menghapusSemuaLogServisBbmDanR.
+  ///
+  /// In id, this message translates to:
+  /// **'Menghapus semua log servis, BBM, dan riwayat garasi'**
+  String get menghapusSemuaLogServisBbmDanR;
+
+  /// No description provided for @mobil.
+  ///
+  /// In id, this message translates to:
+  /// **'Mobil'**
+  String get mobil;
+
+  /// No description provided for @mobilAtauMotorKeluargaBaru.
+  ///
+  /// In id, this message translates to:
+  /// **'Mobil atau motor keluarga baru'**
+  String get mobilAtauMotorKeluargaBaru;
+
+  /// No description provided for @modeTema.
+  ///
+  /// In id, this message translates to:
+  /// **'Mode Tema'**
+  String get modeTema;
+
+  /// No description provided for @motor.
+  ///
+  /// In id, this message translates to:
+  /// **'Motor'**
+  String get motor;
+
+  /// No description provided for @mulaiCeklis.
+  ///
+  /// In id, this message translates to:
+  /// **'Mulai Ceklis'**
+  String get mulaiCeklis;
+
+  /// No description provided for @mulaiInspeksiPertama.
+  ///
+  /// In id, this message translates to:
+  /// **'Mulai Inspeksi Pertama'**
+  String get mulaiInspeksiPertama;
+
+  /// No description provided for @namaModelKendaraan.
+  ///
+  /// In id, this message translates to:
+  /// **'Nama / Model Kendaraan'**
+  String get namaModelKendaraan;
+
+  /// No description provided for @namaBengkelToko.
+  ///
+  /// In id, this message translates to:
+  /// **'Nama Bengkel / Toko'**
+  String get namaBengkelToko;
+
+  /// No description provided for @namaBengkelTokoOpsional.
+  ///
+  /// In id, this message translates to:
+  /// **'Nama Bengkel / Toko (Opsional)'**
+  String get namaBengkelTokoOpsional;
+
+  /// No description provided for @namaPekerjaanKomponen.
+  ///
+  /// In id, this message translates to:
+  /// **'Nama Pekerjaan / Komponen'**
+  String get namaPekerjaanKomponen;
+
+  /// No description provided for @namaSpbuLokasi.
+  ///
+  /// In id, this message translates to:
+  /// **'Nama SPBU / Lokasi'**
+  String get namaSpbuLokasi;
+
+  /// No description provided for @nomorDokumenNoPolisNoPolisi.
+  ///
+  /// In id, this message translates to:
+  /// **'Nomor Dokumen / No. Polis / No. Polisi'**
+  String get nomorDokumenNoPolisNoPolisi;
+
+  /// No description provided for @nomorPelatPolisi.
+  ///
+  /// In id, this message translates to:
+  /// **'Nomor Pelat Polisi'**
+  String get nomorPelatPolisi;
+
+  /// No description provided for @odometerPengerjaanKm.
+  ///
+  /// In id, this message translates to:
+  /// **'Odometer Pengerjaan (km)'**
+  String get odometerPengerjaanKm;
+
+  /// No description provided for @odometerSaatIniKm.
+  ///
+  /// In id, this message translates to:
+  /// **'Odometer Saat Ini (km)'**
+  String get odometerSaatIniKm;
+
+  /// No description provided for @odometerTerakhirDikerjakanKm.
+  ///
+  /// In id, this message translates to:
+  /// **'Odometer Terakhir Dikerjakan (km)'**
+  String get odometerTerakhirDikerjakanKm;
+
+  /// No description provided for @opsiJadwal.
+  ///
+  /// In id, this message translates to:
+  /// **'Opsi Jadwal'**
+  String get opsiJadwal;
+
+  /// No description provided for @pkbTahunan.
+  ///
+  /// In id, this message translates to:
+  /// **'PKB Tahunan'**
+  String get pkbTahunan;
+
+  /// No description provided for @pajakStnk.
+  ///
+  /// In id, this message translates to:
+  /// **'Pajak & STNK'**
+  String get pajakStnk;
+
+  /// No description provided for @pajakPkbTahunan.
+  ///
+  /// In id, this message translates to:
+  /// **'Pajak PKB Tahunan'**
+  String get pajakPkbTahunan;
+
+  /// No description provided for @pekerjaanServis.
+  ///
+  /// In id, this message translates to:
+  /// **'Pekerjaan / Servis'**
+  String get pekerjaanServis;
+
+  /// No description provided for @pelat5Th.
+  ///
+  /// In id, this message translates to:
+  /// **'Pelat 5 Th'**
+  String get pelat5Th;
+
+  /// No description provided for @pengaturanGarasi.
+  ///
+  /// In id, this message translates to:
+  /// **'Pengaturan Garasi'**
+  String get pengaturanGarasi;
+
+  /// No description provided for @penggantianOliMesinResetCounte.
+  ///
+  /// In id, this message translates to:
+  /// **'Penggantian Oli Mesin (Reset Counter)'**
+  String get penggantianOliMesinResetCounte;
+
+  /// No description provided for @pilihBahasaSelectLanguage.
+  ///
+  /// In id, this message translates to:
+  /// **'Pilih Bahasa / Select Language'**
+  String get pilihBahasaSelectLanguage;
+
+  /// No description provided for @pilihAtauBuatKendaraanTerlebih.
+  ///
+  /// In id, this message translates to:
+  /// **'Pilih atau buat kendaraan terlebih dahulu.'**
+  String get pilihAtauBuatKendaraanTerlebih;
+
+  /// No description provided for @pilihAtauTambahKendaraanTerleb.
+  ///
+  /// In id, this message translates to:
+  /// **'Pilih atau tambah kendaraan terlebih dahulu.'**
+  String get pilihAtauTambahKendaraanTerleb;
+
+  /// No description provided for @portabilitasCadanganData.
+  ///
+  /// In id, this message translates to:
+  /// **'Portabilitas & Cadangan Data'**
+  String get portabilitasCadanganData;
+
+  /// No description provided for @pulihkanData.
+  ///
+  /// In id, this message translates to:
+  /// **'Pulihkan Data'**
+  String get pulihkanData;
+
+  /// No description provided for @pulihkanDariBackupJson.
+  ///
+  /// In id, this message translates to:
+  /// **'Pulihkan dari Backup JSON'**
+  String get pulihkanDariBackupJson;
+
+  /// No description provided for @rataRataEfisiensi.
+  ///
+  /// In id, this message translates to:
+  /// **'Rata-Rata Efisiensi'**
+  String get rataRataEfisiensi;
+
+  /// No description provided for @rekorIritTerbaik.
+  ///
+  /// In id, this message translates to:
+  /// **'Rekor Irit Terbaik'**
+  String get rekorIritTerbaik;
+
+  /// No description provided for @resetCounterOliMesin.
+  ///
+  /// In id, this message translates to:
+  /// **'Reset Counter Oli Mesin'**
+  String get resetCounterOliMesin;
+
+  /// No description provided for @resetDataGarasi.
+  ///
+  /// In id, this message translates to:
+  /// **'Reset Data Garasi'**
+  String get resetDataGarasi;
+
+  /// No description provided for @resetOli.
+  ///
+  /// In id, this message translates to:
+  /// **'Reset Oli'**
+  String get resetOli;
+
+  /// No description provided for @resetSeluruhData.
+  ///
+  /// In id, this message translates to:
+  /// **'Reset Seluruh Data?'**
+  String get resetSeluruhData;
+
+  /// No description provided for @rincianPartYangDiganti.
+  ///
+  /// In id, this message translates to:
+  /// **'Rincian part yang diganti...'**
+  String get rincianPartYangDiganti;
+
+  /// No description provided for @riwayatLengkap.
+  ///
+  /// In id, this message translates to:
+  /// **'Riwayat Lengkap'**
+  String get riwayatLengkap;
+
+  /// No description provided for @riwayatPengisianBahanBakar.
+  ///
+  /// In id, this message translates to:
+  /// **'Riwayat Pengisian Bahan Bakar'**
+  String get riwayatPengisianBahanBakar;
+
+  /// No description provided for @salinCsv.
+  ///
+  /// In id, this message translates to:
+  /// **'Salin CSV'**
+  String get salinCsv;
+
+  /// No description provided for @salinKeClipboard.
+  ///
+  /// In id, this message translates to:
+  /// **'Salin ke Clipboard'**
+  String get salinKeClipboard;
+
+  /// No description provided for @salinanJsonBackupBerhasilDisal.
+  ///
+  /// In id, this message translates to:
+  /// **'Salinan JSON backup berhasil disalin ke Clipboard!'**
+  String get salinanJsonBackupBerhasilDisal;
+
+  /// No description provided for @servisTerakhir.
+  ///
+  /// In id, this message translates to:
+  /// **'Servis Terakhir'**
+  String get servisTerakhir;
+
+  /// No description provided for @setPengingatBerkalaGantiPartKm.
+  ///
+  /// In id, this message translates to:
+  /// **'Set pengingat berkala ganti part km/bulan'**
+  String get setPengingatBerkalaGantiPartKm;
+
+  /// No description provided for @simpan.
+  ///
+  /// In id, this message translates to:
+  /// **'Simpan'**
+  String get simpan;
+
+  /// No description provided for @simpanAuditInspeksi.
+  ///
+  /// In id, this message translates to:
+  /// **'Simpan Audit Inspeksi'**
+  String get simpanAuditInspeksi;
+
+  /// No description provided for @simpanKeGarasi.
+  ///
+  /// In id, this message translates to:
+  /// **'Simpan ke Garasi'**
+  String get simpanKeGarasi;
+
+  /// No description provided for @simpanRiwayatBengkelDanGantiOl.
+  ///
+  /// In id, this message translates to:
+  /// **'Simpan riwayat bengkel dan ganti oli'**
+  String get simpanRiwayatBengkelDanGantiOl;
+
+  /// No description provided for @simpanTanggalJatuhTempoStnkAsu.
+  ///
+  /// In id, this message translates to:
+  /// **'Simpan tanggal jatuh tempo STNK, asuransi, dan dokumen kendaraan Anda.'**
+  String get simpanTanggalJatuhTempoStnkAsu;
+
+  /// No description provided for @statusOliMesin.
+  ///
+  /// In id, this message translates to:
+  /// **'Status Oli Mesin'**
+  String get statusOliMesin;
+
+  /// No description provided for @tahunPembuatan.
+  ///
+  /// In id, this message translates to:
+  /// **'Tahun Pembuatan'**
+  String get tahunPembuatan;
+
+  /// No description provided for @tambahDokumen.
+  ///
+  /// In id, this message translates to:
+  /// **'Tambah Dokumen'**
+  String get tambahDokumen;
+
+  /// No description provided for @tambahDokumenPertama.
+  ///
+  /// In id, this message translates to:
+  /// **'Tambah Dokumen Pertama'**
+  String get tambahDokumenPertama;
+
+  /// No description provided for @tambahJadwalBaru.
+  ///
+  /// In id, this message translates to:
+  /// **'Tambah Jadwal Baru'**
+  String get tambahJadwalBaru;
+
+  /// No description provided for @tambahJadwalPerawatan.
+  ///
+  /// In id, this message translates to:
+  /// **'Tambah Jadwal Perawatan'**
+  String get tambahJadwalPerawatan;
+
+  /// No description provided for @tambahKendaraan.
+  ///
+  /// In id, this message translates to:
+  /// **'Tambah Kendaraan'**
+  String get tambahKendaraan;
+
+  /// No description provided for @tambahKendaraanBaru.
+  ///
+  /// In id, this message translates to:
+  /// **'Tambah Kendaraan Baru'**
+  String get tambahKendaraanBaru;
+
+  /// No description provided for @tampilanBahasa.
+  ///
+  /// In id, this message translates to:
+  /// **'Tampilan & Bahasa'**
+  String get tampilanBahasa;
+
+  /// No description provided for @tandaiSelesai.
+  ///
+  /// In id, this message translates to:
+  /// **'Tandai Selesai'**
+  String get tandaiSelesai;
+
+  /// No description provided for @tandaiSelesaiReset.
+  ///
+  /// In id, this message translates to:
+  /// **'Tandai Selesai / Reset'**
+  String get tandaiSelesaiReset;
+
+  /// No description provided for @tandaiSelesaiAkanMeresetHitung.
+  ///
+  /// In id, this message translates to:
+  /// **'Tandai selesai akan mereset hitungan interval dan otomatis mencatat ke Riwayat Servis.'**
+  String get tandaiSelesaiAkanMeresetHitung;
+
+  /// No description provided for @tanggalMasaBerlakuJatuhTempo.
+  ///
+  /// In id, this message translates to:
+  /// **'Tanggal Masa Berlaku / Jatuh Tempo'**
+  String get tanggalMasaBerlakuJatuhTempo;
+
+  /// No description provided for @tanggalTerakhirDikerjakan.
+  ///
+  /// In id, this message translates to:
+  /// **'Tanggal Terakhir Dikerjakan'**
+  String get tanggalTerakhirDikerjakan;
+
+  /// No description provided for @teksJsonTidakBolehKosong.
+  ///
+  /// In id, this message translates to:
+  /// **'Teks JSON tidak boleh kosong!'**
+  String get teksJsonTidakBolehKosong;
+
+  /// No description provided for @tempelkanTeksDataJsonCadanganY.
+  ///
+  /// In id, this message translates to:
+  /// **'Tempelkan teks data JSON cadangan yang pernah diekspor sebelumnya:'**
+  String get tempelkanTeksDataJsonCadanganY;
+
+  /// No description provided for @tentangAplikasiLisensi.
+  ///
+  /// In id, this message translates to:
+  /// **'Tentang Aplikasi & Lisensi'**
+  String get tentangAplikasiLisensi;
+
+  /// No description provided for @termasukGantiOli.
+  ///
+  /// In id, this message translates to:
+  /// **'Termasuk Ganti Oli?'**
+  String get termasukGantiOli;
+
+  /// No description provided for @tindakanIniAkanMengosongkanSem.
+  ///
+  /// In id, this message translates to:
+  /// **'Tindakan ini akan mengosongkan semua data dan mengembalikan contoh awal garasi.'**
+  String get tindakanIniAkanMengosongkanSem;
+
+  /// No description provided for @totalBiayaRp.
+  ///
+  /// In id, this message translates to:
+  /// **'Total Biaya (Rp)'**
+  String get totalBiayaRp;
+
+  /// No description provided for @totalBiayaTco.
+  ///
+  /// In id, this message translates to:
+  /// **'Total Biaya (TCO)'**
+  String get totalBiayaTco;
+
+  /// No description provided for @totalBiayaBengkel.
+  ///
+  /// In id, this message translates to:
+  /// **'Total Biaya Bengkel'**
+  String get totalBiayaBengkel;
+
+  /// No description provided for @totalBiayaKepemilikanTco.
+  ///
+  /// In id, this message translates to:
+  /// **'Total Biaya Kepemilikan (TCO)'**
+  String get totalBiayaKepemilikanTco;
+
+  /// No description provided for @totalPengeluaranBbm.
+  ///
+  /// In id, this message translates to:
+  /// **'Total Pengeluaran BBM'**
+  String get totalPengeluaranBbm;
+
+  /// No description provided for @tutup.
+  ///
+  /// In id, this message translates to:
+  /// **'Tutup'**
+  String get tutup;
+
+  /// No description provided for @ubah.
+  ///
+  /// In id, this message translates to:
+  /// **'Ubah'**
+  String get ubah;
+
+  /// No description provided for @volumeLiterKwh.
+  ///
+  /// In id, this message translates to:
+  /// **'Volume (Liter / kWh)'**
+  String get volumeLiterKwh;
 }
 
 class _AppLocalizationsDelegate

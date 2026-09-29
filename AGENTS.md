@@ -53,3 +53,18 @@ flutter build appbundle --release                           # Android App Bundle
 3. **Kalkulasi Akurat & Transparan**: Perhitungan efisiensi BBM (km/L) dan jadwal jatuh tempo servis/pajak dihitung on-device dengan validasi ketat.
 4. **Validasi Wajib (§VAL)**: Nilai odometer tidak boleh negatif atau mundur secara tidak wajar, harga dan liter BBM wajib numerik positif, nama kendaraan tidak boleh kosong.
 5. **Tanpa backend, tanpa akun**: Langsung siap dipakai tanpa registrasi, tanpa iklan berbayar.
+
+<!-- jules-design-skills:begin -->
+## Jules design skills (in-repo)
+
+Before UI redesign work (including Jules cloud sessions), read and run:
+
+1. `.agents/skills/impeccable/SKILL.md` — then:
+   `.agents/skills/impeccable/scripts/impeccable context`
+2. `.agents/skills/ui-ux-pro-max/SKILL.md` — then e.g.:
+   `python3 .agents/skills/ui-ux-pro-max/scripts/search.py "<query>" --stack flutter`
+   Use `--design-system` for product-wide direction.
+
+These trees are committed so remote agents (Jules) can load them after clone.
+<!-- jules-design-skills:end -->
+

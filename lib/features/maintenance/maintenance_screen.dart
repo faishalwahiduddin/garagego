@@ -160,7 +160,7 @@ class _MaintenanceScreenState extends ConsumerState<MaintenanceScreen> with Sing
       context: context,
       builder: (ctx) => AlertDialog(
         backgroundColor: AppColors.bgSurface,
-        title: Text('Selesaikan: ${schedule.title}', style: TextStyle(color: Colors.white, fontSize: 16, fontWeight: FontWeight.w700)),
+        title: Text(AppLocalizations.of(context)!.selesaikanJadwal(schedule.title), style: const TextStyle(color: Colors.white, fontSize: 16, fontWeight: FontWeight.w700)),
         content: Form(
           key: formKey,
           child: Column(
@@ -613,7 +613,7 @@ class _MaintenanceScreenState extends ConsumerState<MaintenanceScreen> with Sing
                               SizedBox(height: 10),
                               Text(log.title, style: TextStyle(fontSize: 15, fontWeight: FontWeight.w700, color: Colors.white)),
                               SizedBox(height: 4),
-                              Text('Odometer: ${NumberFormat('#,###', 'id_ID').format(log.odometer)} km', style: TextStyle(fontSize: 12, color: Color(0xFFCBD5E1), fontWeight: FontWeight.w600)),
+                              Text(AppLocalizations.of(context)!.odometerValue(NumberFormat('#,###', 'id_ID').format(log.odometer)), style: const TextStyle(fontSize: 12, color: Color(0xFFCBD5E1), fontWeight: FontWeight.w600)),
                               if (log.notes.isNotEmpty) ...[
                                 SizedBox(height: 6),
                                 Text(log.notes, style: TextStyle(fontSize: 12, color: Color(0xFF94A3B8))),
@@ -747,7 +747,7 @@ class _MaintenanceScreenState extends ConsumerState<MaintenanceScreen> with Sing
                               SizedBox(height: 8),
                               Text(item.title, style: TextStyle(fontSize: 15, fontWeight: FontWeight.w700, color: Colors.white)),
                               SizedBox(height: 4),
-                              Text('Odometer: ${NumberFormat('#,###', 'id_ID').format(item.odometer)} km', style: TextStyle(fontSize: 12, color: Color(0xFFCBD5E1))),
+                              Text(AppLocalizations.of(context)!.odometerValue(NumberFormat('#,###', 'id_ID').format(item.odometer)), style: const TextStyle(fontSize: 12, color: Color(0xFFCBD5E1))),
                               if (item.inspectorNotes.isNotEmpty) ...[
                                 SizedBox(height: 6),
                                 Text(item.inspectorNotes, style: TextStyle(fontSize: 12, color: Color(0xFF94A3B8))),

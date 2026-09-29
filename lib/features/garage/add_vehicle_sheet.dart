@@ -75,7 +75,7 @@ class _AddVehicleSheetState extends ConsumerState<AddVehicleSheet> {
 
     Navigator.pop(context);
     ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(content: Text('Kendaraan "${newVehicle.name}" berhasil ditambahkan ke garasi!')),
+      SnackBar(content: Text(AppLocalizations.of(context)!.kendaraanBerhasilDitambahkan(newVehicle.name))),
     );
   }
 

@@ -1585,6 +1585,84 @@ abstract class AppLocalizations {
   /// In id, this message translates to:
   /// **'Volume (Liter / kWh)'**
   String get volumeLiterKwh;
+
+  /// No description provided for @gagalMemulihkanBackup.
+  ///
+  /// In id, this message translates to:
+  /// **'Gagal memulihkan backup: {error}'**
+  String gagalMemulihkanBackup(String error);
+
+  /// No description provided for @misalPajakPkbTahunanStnk2026.
+  ///
+  /// In id, this message translates to:
+  /// **'Misal: Pajak PKB Tahunan STNK 2026'**
+  String get misalPajakPkbTahunanStnk2026;
+
+  /// No description provided for @hintPlatB1234.
+  ///
+  /// In id, this message translates to:
+  /// **'B 1234 ABC'**
+  String get hintPlatB1234;
+
+  /// No description provided for @misalStnkDiDompet.
+  ///
+  /// In id, this message translates to:
+  /// **'Misal: STNK di dompet, BPKB di lemari arsip'**
+  String get misalStnkDiDompet;
+
+  /// No description provided for @misalKurasMinyakRem.
+  ///
+  /// In id, this message translates to:
+  /// **'Misal: Kuras Minyak Rem DOT 4'**
+  String get misalKurasMinyakRem;
+
+  /// No description provided for @selesaikanJadwal.
+  ///
+  /// In id, this message translates to:
+  /// **'Selesaikan: {title}'**
+  String selesaikanJadwal(String title);
+
+  /// No description provided for @jadwalCount.
+  ///
+  /// In id, this message translates to:
+  /// **'Jadwal ({count})'**
+  String jadwalCount(String count);
+
+  /// No description provided for @riwayatCount.
+  ///
+  /// In id, this message translates to:
+  /// **'Riwayat ({count})'**
+  String riwayatCount(String count);
+
+  /// No description provided for @inspeksiCount.
+  ///
+  /// In id, this message translates to:
+  /// **'Inspeksi ({count})'**
+  String inspeksiCount(String count);
+
+  /// No description provided for @rekomendasiPabrikBerhasilDimuat.
+  ///
+  /// In id, this message translates to:
+  /// **'Rekomendasi pabrik {label} berhasil dimuat!'**
+  String rekomendasiPabrikBerhasilDimuat(String label);
+
+  /// No description provided for @muatStandarPabrik.
+  ///
+  /// In id, this message translates to:
+  /// **'Muat Standar Pabrik ({label})'**
+  String muatStandarPabrik(String label);
+
+  /// No description provided for @odometerValue.
+  ///
+  /// In id, this message translates to:
+  /// **'Odometer: {odo} km'**
+  String odometerValue(String odo);
+
+  /// No description provided for @kendaraanBerhasilDitambahkan.
+  ///
+  /// In id, this message translates to:
+  /// **'Kendaraan {name} berhasil ditambahkan ke garasi!'**
+  String kendaraanBerhasilDitambahkan(String name);
 }
 
 class _AppLocalizationsDelegate

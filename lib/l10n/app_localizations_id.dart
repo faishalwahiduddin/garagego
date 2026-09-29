@@ -787,4 +787,62 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String get volumeLiterKwh => 'Volume (Liter / kWh)';
+
+  @override
+  String gagalMemulihkanBackup(String error) {
+    return 'Gagal memulihkan backup: $error';
+  }
+
+  @override
+  String get misalPajakPkbTahunanStnk2026 =>
+      'Misal: Pajak PKB Tahunan STNK 2026';
+
+  @override
+  String get hintPlatB1234 => 'B 1234 ABC';
+
+  @override
+  String get misalStnkDiDompet => 'Misal: STNK di dompet, BPKB di lemari arsip';
+
+  @override
+  String get misalKurasMinyakRem => 'Misal: Kuras Minyak Rem DOT 4';
+
+  @override
+  String selesaikanJadwal(String title) {
+    return 'Selesaikan: $title';
+  }
+
+  @override
+  String jadwalCount(String count) {
+    return 'Jadwal ($count)';
+  }
+
+  @override
+  String riwayatCount(String count) {
+    return 'Riwayat ($count)';
+  }
+
+  @override
+  String inspeksiCount(String count) {
+    return 'Inspeksi ($count)';
+  }
+
+  @override
+  String rekomendasiPabrikBerhasilDimuat(String label) {
+    return 'Rekomendasi pabrik $label berhasil dimuat!';
+  }
+
+  @override
+  String muatStandarPabrik(String label) {
+    return 'Muat Standar Pabrik ($label)';
+  }
+
+  @override
+  String odometerValue(String odo) {
+    return 'Odometer: $odo km';
+  }
+
+  @override
+  String kendaraanBerhasilDitambahkan(String name) {
+    return 'Kendaraan $name berhasil ditambahkan ke garasi!';
+  }
 }

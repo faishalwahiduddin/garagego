@@ -109,7 +109,7 @@ class _AddScheduleSheetState extends ConsumerState<AddScheduleSheet> {
                 controller: _titleController,
                 decoration: InputDecoration(
                   labelText: AppLocalizations.of(context)!.namaPekerjaanKomponen,
-                  hintText: 'Misal: Kuras Minyak Rem DOT 4',
+                  hintText: AppLocalizations.of(context)!.misalKurasMinyakRem,
                 ),
                 validator: (v) => v == null || v.trim().isEmpty ? 'Nama pekerjaan wajib diisi' : null,
               ),

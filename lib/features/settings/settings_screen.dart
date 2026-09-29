@@ -195,7 +195,7 @@ class SettingsScreen extends ConsumerWidget {
               } catch (e) {
                 if (context.mounted) {
                   ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(content: Text('Gagal memulihkan backup: ${e.toString()}')),
+                    SnackBar(content: Text(AppLocalizations.of(context)!.gagalMemulihkanBackup(e.toString()))),
                   );
                 }
               }

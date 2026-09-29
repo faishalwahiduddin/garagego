@@ -244,5 +244,81 @@
   "totalPengeluaranBbm": "Total Pengeluaran BBM",
   "tutup": "Cerrar",
   "ubah": "Ubah",
-  "volumeLiterKwh": "Volume (Liter / kWh)"
+  "volumeLiterKwh": "Volume (Liter / kWh)",
+  "gagalMemulihkanBackup": "Failed to restore backup: {error}",
+  "@gagalMemulihkanBackup": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "misalPajakPkbTahunanStnk2026": "E.g.: Annual Vehicle Tax 2026",
+  "hintPlatB1234": "B 1234 ABC",
+  "misalStnkDiDompet": "E.g.: Registration in wallet, Title in cabinet",
+  "misalKurasMinyakRem": "E.g.: Flush Brake Fluid DOT 4",
+  "selesaikanJadwal": "Complete: {title}",
+  "@selesaikanJadwal": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "jadwalCount": "Schedules ({count})",
+  "@jadwalCount": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "riwayatCount": "History ({count})",
+  "@riwayatCount": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "inspeksiCount": "Inspections ({count})",
+  "@inspeksiCount": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "rekomendasiPabrikBerhasilDimuat": "Factory recommendation {label} loaded!",
+  "@rekomendasiPabrikBerhasilDimuat": {
+    "placeholders": {
+      "label": {
+        "type": "String"
+      }
+    }
+  },
+  "muatStandarPabrik": "Load Factory Standard ({label})",
+  "@muatStandarPabrik": {
+    "placeholders": {
+      "label": {
+        "type": "String"
+      }
+    }
+  },
+  "odometerValue": "Odometer: {odo} km",
+  "@odometerValue": {
+    "placeholders": {
+      "odo": {
+        "type": "String"
+      }
+    }
+  },
+  "kendaraanBerhasilDitambahkan": "Vehicle {name} successfully added to garage!",
+  "@kendaraanBerhasilDitambahkan": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  }
 }

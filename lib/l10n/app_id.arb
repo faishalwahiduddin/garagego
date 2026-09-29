@@ -244,5 +244,81 @@
   "totalPengeluaranBbm": "Total Pengeluaran BBM",
   "tutup": "Tutup",
   "ubah": "Ubah",
-  "volumeLiterKwh": "Volume (Liter / kWh)"
+  "volumeLiterKwh": "Volume (Liter / kWh)",
+  "gagalMemulihkanBackup": "Gagal memulihkan backup: {error}",
+  "@gagalMemulihkanBackup": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "misalPajakPkbTahunanStnk2026": "Misal: Pajak PKB Tahunan STNK 2026",
+  "hintPlatB1234": "B 1234 ABC",
+  "misalStnkDiDompet": "Misal: STNK di dompet, BPKB di lemari arsip",
+  "misalKurasMinyakRem": "Misal: Kuras Minyak Rem DOT 4",
+  "selesaikanJadwal": "Selesaikan: {title}",
+  "@selesaikanJadwal": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "jadwalCount": "Jadwal ({count})",
+  "@jadwalCount": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "riwayatCount": "Riwayat ({count})",
+  "@riwayatCount": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "inspeksiCount": "Inspeksi ({count})",
+  "@inspeksiCount": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "rekomendasiPabrikBerhasilDimuat": "Rekomendasi pabrik {label} berhasil dimuat!",
+  "@rekomendasiPabrikBerhasilDimuat": {
+    "placeholders": {
+      "label": {
+        "type": "String"
+      }
+    }
+  },
+  "muatStandarPabrik": "Muat Standar Pabrik ({label})",
+  "@muatStandarPabrik": {
+    "placeholders": {
+      "label": {
+        "type": "String"
+      }
+    }
+  },
+  "odometerValue": "Odometer: {odo} km",
+  "@odometerValue": {
+    "placeholders": {
+      "odo": {
+        "type": "String"
+      }
+    }
+  },
+  "kendaraanBerhasilDitambahkan": "Kendaraan {name} berhasil ditambahkan ke garasi!",
+  "@kendaraanBerhasilDitambahkan": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  }
 }

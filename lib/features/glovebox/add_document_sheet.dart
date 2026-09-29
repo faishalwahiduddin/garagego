@@ -104,7 +104,7 @@ class _AddDocumentSheetState extends ConsumerState<AddDocumentSheet> {
                 controller: _titleController,
                 decoration: InputDecoration(
                   labelText: AppLocalizations.of(context)!.judulKeteranganDokumen,
-                  hintText: 'Misal: Pajak PKB Tahunan STNK 2026',
+                  hintText: AppLocalizations.of(context)!.misalPajakPkbTahunanStnk2026,
                 ),
                 validator: (v) => v == null || v.trim().isEmpty ? 'Judul dokumen wajib diisi' : null,
               ),
@@ -114,7 +114,7 @@ class _AddDocumentSheetState extends ConsumerState<AddDocumentSheet> {
                 controller: _docNumberController,
                 decoration: InputDecoration(
                   labelText: AppLocalizations.of(context)!.nomorDokumenNoPolisNoPolisi,
-                  hintText: 'B 1234 ABC',
+                  hintText: AppLocalizations.of(context)!.hintPlatB1234,
                 ),
               ),
               SizedBox(height: 12),
@@ -161,7 +161,7 @@ class _AddDocumentSheetState extends ConsumerState<AddDocumentSheet> {
                 maxLines: 2,
                 decoration: InputDecoration(
                   labelText: AppLocalizations.of(context)!.catatanLokasiBerkasFisik,
-                  hintText: 'Misal: STNK di dompet, BPKB di lemari arsip',
+                  hintText: AppLocalizations.of(context)!.misalStnkDiDompet,
                 ),
               ),
               SizedBox(height: 22),

@@ -785,4 +785,62 @@ class AppLocalizationsSu extends AppLocalizations {
 
   @override
   String get volumeLiterKwh => 'Volume (Liter / kWh)';
+
+  @override
+  String gagalMemulihkanBackup(String error) {
+    return 'Failed to restore backup: $error';
+  }
+
+  @override
+  String get misalPajakPkbTahunanStnk2026 => 'E.g.: Annual Vehicle Tax 2026';
+
+  @override
+  String get hintPlatB1234 => 'B 1234 ABC';
+
+  @override
+  String get misalStnkDiDompet =>
+      'E.g.: Registration in wallet, Title in cabinet';
+
+  @override
+  String get misalKurasMinyakRem => 'E.g.: Flush Brake Fluid DOT 4';
+
+  @override
+  String selesaikanJadwal(String title) {
+    return 'Complete: $title';
+  }
+
+  @override
+  String jadwalCount(String count) {
+    return 'Schedules ($count)';
+  }
+
+  @override
+  String riwayatCount(String count) {
+    return 'History ($count)';
+  }
+
+  @override
+  String inspeksiCount(String count) {
+    return 'Inspections ($count)';
+  }
+
+  @override
+  String rekomendasiPabrikBerhasilDimuat(String label) {
+    return 'Factory recommendation $label loaded!';
+  }
+
+  @override
+  String muatStandarPabrik(String label) {
+    return 'Load Factory Standard ($label)';
+  }
+
+  @override
+  String odometerValue(String odo) {
+    return 'Odometer: $odo km';
+  }
+
+  @override
+  String kendaraanBerhasilDitambahkan(String name) {
+    return 'Vehicle $name successfully added to garage!';
+  }
 }

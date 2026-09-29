@@ -67,7 +67,7 @@ class _MaintenanceScreenState extends ConsumerState<MaintenanceScreen> with Sing
                   SizedBox(height: 12),
                   DropdownButtonFormField<String>(
                     initialValue: category,
-                    decoration: InputDecoration(labelText: 'Kategori'),
+                    decoration: InputDecoration(labelText: AppLocalizations.of(context)!.kategori),
                     dropdownColor: AppColors.bgCard,
                     items: categories.map((c) => DropdownMenuItem(value: c, child: Text(c, style: TextStyle(color: Colors.white)))).toList(),
                     onChanged: (val) {
@@ -244,7 +244,7 @@ class _MaintenanceScreenState extends ConsumerState<MaintenanceScreen> with Sing
                 children: [
                   Icon(Icons.schedule, size: 16),
                   SizedBox(width: 6),
-                  Text('Jadwal (${schedules.length})'),
+                  Text(AppLocalizations.of(context)!.jadwalCount(schedules.length.toString())),
                 ],
               ),
             ),
@@ -254,7 +254,7 @@ class _MaintenanceScreenState extends ConsumerState<MaintenanceScreen> with Sing
                 children: [
                   Icon(Icons.history, size: 16),
                   SizedBox(width: 6),
-                  Text('Riwayat (${serviceLogs.length})'),
+                  Text(AppLocalizations.of(context)!.riwayatCount(serviceLogs.length.toString())),
                 ],
               ),
             ),
@@ -264,7 +264,7 @@ class _MaintenanceScreenState extends ConsumerState<MaintenanceScreen> with Sing
                 children: [
                   Icon(Icons.fact_check_outlined, size: 16),
                   SizedBox(width: 6),
-                  Text('Inspeksi (${inspections.length})'),
+                  Text(AppLocalizations.of(context)!.inspeksiCount(inspections.length.toString())),
                 ],
               ),
             ),
@@ -332,7 +332,7 @@ class _MaintenanceScreenState extends ConsumerState<MaintenanceScreen> with Sing
                   if (val == 'preset') {
                     ref.read(maintenanceSchedulesProvider.notifier).loadPresetsForVehicle(active);
                     ScaffoldMessenger.of(context).showSnackBar(
-                      SnackBar(content: Text('Rekomendasi pabrik ${active.type.label} berhasil dimuat!')),
+                      SnackBar(content: Text(AppLocalizations.of(context)!.rekomendasiPabrikBerhasilDimuat(active.type.label))),
                     );
                   } else if (val == 'add') {
                     showModalBottomSheet(
@@ -360,7 +360,7 @@ class _MaintenanceScreenState extends ConsumerState<MaintenanceScreen> with Sing
                       children: [
                         Icon(Icons.auto_awesome, size: 18, color: AppColors.accent),
                         SizedBox(width: 8),
-                        Text('Muat Standar Pabrik (${active.type.label})'),
+                        Text(AppLocalizations.of(context)!.muatStandarPabrik(active.type.label)),
                       ],
                     ),
                   ),
@@ -388,7 +388,7 @@ class _MaintenanceScreenState extends ConsumerState<MaintenanceScreen> with Sing
                           ref.read(maintenanceSchedulesProvider.notifier).loadPresetsForVehicle(active);
                         },
                         icon: Icon(Icons.auto_awesome),
-                        label: Text('Muat Standar Pabrik (${active.type.label})'),
+                        label: Text(AppLocalizations.of(context)!.muatStandarPabrik(active.type.label)),
                       ),
                     ],
                   ),

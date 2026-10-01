@@ -320,5 +320,7 @@
         "type": "String"
       }
     }
-  }
+  },
+  "timezone": "Zona Waktu",
+  "timezoneAuto": "Otomatis (ikut perangkat)"
 }

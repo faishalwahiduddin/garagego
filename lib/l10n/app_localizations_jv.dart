@@ -843,4 +843,10 @@ class AppLocalizationsJv extends AppLocalizations {
   String kendaraanBerhasilDitambahkan(String name) {
     return 'Titihan \"$name\" kasil katambahaken!';
   }
+
+  @override
+  String get timezone => 'Zona Waktu';
+
+  @override
+  String get timezoneAuto => 'Otomatis (ikut perangkat)';
 }

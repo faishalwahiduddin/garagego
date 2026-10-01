@@ -805,4 +805,10 @@ class AppLocalizationsZh extends AppLocalizations {
   String kendaraanBerhasilDitambahkan(String name) {
     return '车辆 $name 已成功添加到车库！';
   }
+
+  @override
+  String get timezone => 'Zona Waktu';
+
+  @override
+  String get timezoneAuto => 'Otomatis (ikut perangkat)';
 }

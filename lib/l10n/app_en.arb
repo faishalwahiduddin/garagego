@@ -320,5 +320,7 @@
         "type": "String"
       }
     }
-  }
+  },
+  "timezone": "Time Zone",
+  "timezoneAuto": "Automatic (follow device)"
 }

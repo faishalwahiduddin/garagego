@@ -1,5 +1,27 @@
 import 'package:flutter/widgets.dart';
 
+import '../utils/app_timezone.dart';
+
+/// Storage contract (§TZ): every stored instant is UTC (`Z` string), every
+/// instant a human reads is shown in the SELECTED zone (Settings manual zone,
+/// or the device zone while on Auto) through `AppTimeZone`.
+///
+/// Legacy values written before this contract (naive device-local ISO
+/// strings) decode as UTC — a one-time reinterpretation on first read, then
+/// re-encoded as `Z` on the next save. Garbage still throws loud.
+DateTime _decodeDate(Object? raw) {
+  final parsed = AppTimeZone.parseUtc(raw);
+  if (parsed == null) throw FormatException('Not a UTC instant: $raw');
+  return parsed;
+}
+
+DateTime? _decodeDateOpt(Object? raw) => raw == null ? null : _decodeDate(raw);
+
+String _encodeDate(DateTime instant) => AppTimeZone.encodeForPrefs(instant);
+
+String? _encodeDateOpt(DateTime? instant) =>
+    instant == null ? null : AppTimeZone.encodeForPrefs(instant);
+
 enum VehicleType {
   car('Mobil', 'Roda Empat'),
   motorcycle('Motor', 'Roda Dua');
@@ -200,12 +222,12 @@ class Vehicle {
         'plateNumber': plateNumber,
         'currentOdometer': currentOdometer,
         'manufactureYear': manufactureYear,
-        'taxDueDate': taxDueDate.toIso8601String(),
+        'taxDueDate': _encodeDate(taxDueDate),
         'oilIntervalKm': oilIntervalKm,
         'lastOilOdometer': lastOilOdometer,
-        'plateDueDate': plateDueDate?.toIso8601String(),
+        'plateDueDate': _encodeDateOpt(plateDueDate),
         'estimatedAnnualTax': estimatedAnnualTax,
-        'insuranceExpiryDate': insuranceExpiryDate?.toIso8601String(),
+        'insuranceExpiryDate': _encodeDateOpt(insuranceExpiryDate),
         'insuranceProvider': insuranceProvider,
         'insurancePolicyNumber': insurancePolicyNumber,
       };
@@ -220,12 +242,12 @@ class Vehicle {
         plateNumber: json['plateNumber'] as String,
         currentOdometer: (json['currentOdometer'] as num).toInt(),
         manufactureYear: (json['manufactureYear'] as num).toInt(),
-        taxDueDate: DateTime.parse(json['taxDueDate'] as String),
+        taxDueDate: _decodeDate(json['taxDueDate']),
         oilIntervalKm: (json['oilIntervalKm'] as num?)?.toInt() ?? 5000,
         lastOilOdometer: (json['lastOilOdometer'] as num?)?.toInt() ?? 0,
-        plateDueDate: json['plateDueDate'] != null ? DateTime.parse(json['plateDueDate'] as String) : null,
+        plateDueDate: _decodeDateOpt(json['plateDueDate']),
         estimatedAnnualTax: (json['estimatedAnnualTax'] as num?)?.toDouble() ?? 0,
-        insuranceExpiryDate: json['insuranceExpiryDate'] != null ? DateTime.parse(json['insuranceExpiryDate'] as String) : null,
+        insuranceExpiryDate: _decodeDateOpt(json['insuranceExpiryDate']),
         insuranceProvider: json['insuranceProvider'] as String? ?? '',
         insurancePolicyNumber: json['insurancePolicyNumber'] as String? ?? '',
       );
@@ -259,7 +281,7 @@ class ServiceLog {
   Map<String, dynamic> toJson() => {
         'id': id,
         'vehicleId': vehicleId,
-        'date': date.toIso8601String(),
+        'date': _encodeDate(date),
         'odometer': odometer,
         'title': title,
         'cost': cost,
@@ -272,7 +294,7 @@ class ServiceLog {
   factory ServiceLog.fromJson(Map<String, dynamic> json) => ServiceLog(
         id: json['id'] as String,
         vehicleId: json['vehicleId'] as String,
-        date: DateTime.parse(json['date'] as String),
+        date: _decodeDate(json['date']),
         odometer: (json['odometer'] as num).toInt(),
         title: json['title'] as String,
         cost: (json['cost'] as num).toDouble(),
@@ -311,7 +333,7 @@ class FuelLog {
   Map<String, dynamic> toJson() => {
         'id': id,
         'vehicleId': vehicleId,
-        'date': date.toIso8601String(),
+        'date': _encodeDate(date),
         'odometer': odometer,
         'liters': liters,
         'pricePerLiter': pricePerLiter,
@@ -323,7 +345,7 @@ class FuelLog {
   factory FuelLog.fromJson(Map<String, dynamic> json) => FuelLog(
         id: json['id'] as String,
         vehicleId: json['vehicleId'] as String,
-        date: DateTime.parse(json['date'] as String),
+        date: _decodeDate(json['date']),
         odometer: (json['odometer'] as num).toInt(),
         liters: (json['liters'] as num).toDouble(),
         pricePerLiter: (json['pricePerLiter'] as num).toDouble(),
@@ -412,7 +434,7 @@ class MaintenanceSchedule {
         'intervalKm': intervalKm,
         'intervalMonths': intervalMonths,
         'lastPerformedOdometer': lastPerformedOdometer,
-        'lastPerformedDate': lastPerformedDate.toIso8601String(),
+        'lastPerformedDate': _encodeDate(lastPerformedDate),
         'isPreset': isPreset,
       };
 
@@ -424,7 +446,7 @@ class MaintenanceSchedule {
         intervalKm: (json['intervalKm'] as num).toInt(),
         intervalMonths: (json['intervalMonths'] as num).toInt(),
         lastPerformedOdometer: (json['lastPerformedOdometer'] as num).toInt(),
-        lastPerformedDate: DateTime.parse(json['lastPerformedDate'] as String),
+        lastPerformedDate: _decodeDate(json['lastPerformedDate']),
         isPreset: json['isPreset'] as bool? ?? false,
       );
 
@@ -597,7 +619,7 @@ class VehicleDocument {
         'title': title,
         'type': type.name,
         'documentNumber': documentNumber,
-        'expiryDate': expiryDate.toIso8601String(),
+        'expiryDate': _encodeDate(expiryDate),
         'cost': cost,
         'notes': notes,
       };
@@ -611,7 +633,7 @@ class VehicleDocument {
           orElse: () => DocumentType.lainnya,
         ),
         documentNumber: json['documentNumber'] as String? ?? '',
-        expiryDate: DateTime.parse(json['expiryDate'] as String),
+        expiryDate: _decodeDate(json['expiryDate']),
         cost: (json['cost'] as num?)?.toDouble() ?? 0,
         notes: json['notes'] as String? ?? '',
       );
@@ -713,7 +735,7 @@ class InspectionChecklist {
   Map<String, dynamic> toJson() => {
         'id': id,
         'vehicleId': vehicleId,
-        'date': date.toIso8601String(),
+        'date': _encodeDate(date),
         'odometer': odometer,
         'title': title,
         'items': items.map((i) => i.toJson()).toList(),
@@ -723,7 +745,7 @@ class InspectionChecklist {
   factory InspectionChecklist.fromJson(Map<String, dynamic> json) => InspectionChecklist(
         id: json['id'] as String,
         vehicleId: json['vehicleId'] as String,
-        date: DateTime.parse(json['date'] as String),
+        date: _decodeDate(json['date']),
         odometer: (json['odometer'] as num).toInt(),
         title: json['title'] as String,
         items: (json['items'] as List)

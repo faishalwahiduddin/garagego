@@ -838,4 +838,10 @@ class AppLocalizationsAr extends AppLocalizations {
   String kendaraanBerhasilDitambahkan(String name) {
     return 'تمت إضافة المركبة $name إلى الكراج بنجاح!';
   }
+
+  @override
+  String get timezone => 'Zona Waktu';
+
+  @override
+  String get timezoneAuto => 'Otomatis (ikut perangkat)';
 }

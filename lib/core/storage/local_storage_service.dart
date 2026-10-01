@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../constants/app_constants.dart';
 import '../models/vehicle.dart';
+import '../utils/app_timezone.dart';
 import '../utils/backup_codec.dart';
 import '../utils/validators.dart';
 
@@ -230,7 +231,7 @@ class LocalStorageService {
   String exportBackupJson() {
     final data = {
       'version': AppConstants.appVersion,
-      'exportedAt': DateTime.now().toIso8601String(),
+      'exportedAt': AppTimeZone.encodeForPrefs(AppTimeZone.nowUtc()),
       'vehicles': getVehicles().map((v) => v.toJson()).toList(),
       'activeVehicleId': getActiveVehicleId(),
       'serviceLogs': getServiceLogs().map((s) => s.toJson()).toList(),

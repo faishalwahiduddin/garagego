@@ -5,6 +5,8 @@ import 'package:intl/intl.dart';
 import '../../core/constants/app_colors.dart';
 import '../../core/models/vehicle.dart';
 import '../../core/providers/app_providers.dart';
+import '../../core/providers/timezone_provider.dart';
+import '../../core/utils/app_timezone.dart';
 import '../../core/utils/validators.dart';
 import 'add_schedule_sheet.dart';
 import 'inspection_sheet.dart';
@@ -379,6 +381,9 @@ class _MaintenanceScreenState extends ConsumerState<MaintenanceScreen> with Sing
 
   Widget _buildSchedulesTab(BuildContext context, Vehicle active, List<MaintenanceSchedule> schedules) {
     final l10n = AppLocalizations.of(context)!;
+    // Stored instants are UTC; display in the selected zone (§TZ).
+    final loc = ref.watch(timezoneLocationProvider);
+    final localeCode = AppTimeZone.intlLocale(Localizations.localeOf(context).languageCode);
     List<MaintenanceSchedule> filtered = schedules;
     if (_scheduleFilter == ScheduleFilterOption.attention) {
       filtered = schedules
@@ -646,8 +651,8 @@ class _MaintenanceScreenState extends ConsumerState<MaintenanceScreen> with Sing
                               const SizedBox(height: 8),
                               Text(
                                 Localizations.localeOf(context).languageCode == 'id'
-                                    ? 'Setiap ${NumberFormat('#,###', 'id_ID').format(item.intervalKm)} km atau ${item.intervalMonths} bulan • Terakhir: ${item.lastPerformedOdometer} km (${item.lastPerformedDate.day}/${item.lastPerformedDate.month}/${item.lastPerformedDate.year})'
-                                    : 'Every ${NumberFormat('#,###', 'en_US').format(item.intervalKm)} km or ${item.intervalMonths} months • Last: ${item.lastPerformedOdometer} km (${item.lastPerformedDate.day}/${item.lastPerformedDate.month}/${item.lastPerformedDate.year})',
+                                    ? 'Setiap ${NumberFormat('#,###', 'id_ID').format(item.intervalKm)} km atau ${item.intervalMonths} bulan • Terakhir: ${item.lastPerformedOdometer} km (${AppTimeZone.formatDate(item.lastPerformedDate, loc, locale: localeCode)})'
+                                    : 'Every ${NumberFormat('#,###', 'en_US').format(item.intervalKm)} km or ${item.intervalMonths} months • Last: ${item.lastPerformedOdometer} km (${AppTimeZone.formatDate(item.lastPerformedDate, loc, locale: localeCode)})',
                                 style: TextStyle(fontSize: 11, color: context.textMuted),
                               ),
                               Divider(color: context.borderColor, height: 20),
@@ -676,6 +681,9 @@ class _MaintenanceScreenState extends ConsumerState<MaintenanceScreen> with Sing
 
   Widget _buildHistoryTab(BuildContext context, Vehicle active, List<ServiceLog> logs, NumberFormat currency) {
     final l10n = AppLocalizations.of(context)!;
+    // Stored instants are UTC; display in the selected zone (§TZ).
+    final loc = ref.watch(timezoneLocationProvider);
+    final localeCode = AppTimeZone.intlLocale(Localizations.localeOf(context).languageCode);
     final filtered = logs.where((l) {
       if (_serviceSearch.isEmpty) return true;
       return l.title.toLowerCase().contains(_serviceSearch.toLowerCase()) ||
@@ -777,7 +785,7 @@ class _MaintenanceScreenState extends ConsumerState<MaintenanceScreen> with Sing
                                   ] else
                                     const Spacer(),
                                   Text(
-                                    '${log.date.day}/${log.date.month}/${log.date.year}',
+                                    AppTimeZone.formatDate(log.date, loc, locale: localeCode),
                                     style: TextStyle(fontSize: 12, color: context.textSecondary),
                                   ),
                                   IconButton(
@@ -836,6 +844,9 @@ class _MaintenanceScreenState extends ConsumerState<MaintenanceScreen> with Sing
 
   Widget _buildInspectionsTab(BuildContext context, Vehicle active, List<InspectionChecklist> inspections) {
     final l10n = AppLocalizations.of(context)!;
+    // Stored instants are UTC; display in the selected zone (§TZ).
+    final loc = ref.watch(timezoneLocationProvider);
+    final localeCode = AppTimeZone.intlLocale(Localizations.localeOf(context).languageCode);
     return Column(
       children: [
         Padding(
@@ -952,7 +963,7 @@ class _MaintenanceScreenState extends ConsumerState<MaintenanceScreen> with Sing
                                   ),
                                   const Spacer(),
                                   Text(
-                                    '${item.date.day}/${item.date.month}/${item.date.year}',
+                                    AppTimeZone.formatDate(item.date, loc, locale: localeCode),
                                     style: TextStyle(fontSize: 12, color: context.textSecondary),
                                   ),
                                   IconButton(

@@ -5,6 +5,8 @@ import 'package:intl/intl.dart';
 import '../../core/constants/app_colors.dart';
 import '../../core/models/vehicle.dart';
 import '../../core/providers/app_providers.dart';
+import '../../core/providers/timezone_provider.dart';
+import '../../core/utils/app_timezone.dart';
 import '../../core/utils/validators.dart';
 
 class FuelLogsScreen extends ConsumerWidget {
@@ -168,6 +170,9 @@ class FuelLogsScreen extends ConsumerWidget {
     final logs = ref.watch(activeFuelLogsProvider);
     final efficiencySummary = ref.watch(activeFuelEfficiencyProvider);
     final currency = NumberFormat.currency(locale: 'id_ID', symbol: 'Rp ', decimalDigits: 0);
+    // Stored instants are UTC; display in the selected zone (§TZ).
+    final loc = ref.watch(timezoneLocationProvider);
+    final localeCode = AppTimeZone.intlLocale(Localizations.localeOf(context).languageCode);
 
     return Scaffold(
       appBar: AppBar(
@@ -349,7 +354,7 @@ class FuelLogsScreen extends ConsumerWidget {
                                         ),
                                         const Spacer(),
                                         Text(
-                                          '${log.date.day}/${log.date.month}/${log.date.year}',
+                                          AppTimeZone.formatDate(log.date, loc, locale: localeCode),
                                           style: TextStyle(fontSize: 12, color: context.textSecondary),
                                         ),
                                         IconButton(

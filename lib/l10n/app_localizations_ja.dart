@@ -812,4 +812,10 @@ class AppLocalizationsJa extends AppLocalizations {
   String kendaraanBerhasilDitambahkan(String name) {
     return '車両 $name をガレージに追加しました！';
   }
+
+  @override
+  String get timezone => 'Zona Waktu';
+
+  @override
+  String get timezoneAuto => 'Otomatis (ikut perangkat)';
 }

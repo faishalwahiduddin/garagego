@@ -845,4 +845,10 @@ class AppLocalizationsId extends AppLocalizations {
   String kendaraanBerhasilDitambahkan(String name) {
     return 'Kendaraan $name berhasil ditambahkan ke garasi!';
   }
+
+  @override
+  String get timezone => 'Zona Waktu';
+
+  @override
+  String get timezoneAuto => 'Otomatis (ikut perangkat)';
 }

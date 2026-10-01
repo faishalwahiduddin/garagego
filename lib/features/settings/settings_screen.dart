@@ -8,6 +8,8 @@ import '../../core/models/vehicle.dart';
 import '../../core/providers/app_providers.dart';
 import '../../core/providers/locale_provider.dart';
 import '../../core/providers/theme_provider.dart';
+import '../../core/providers/timezone_provider.dart';
+import '../../core/utils/app_timezone.dart';
 import '../garage/add_vehicle_sheet.dart';
 
 class SettingsScreen extends ConsumerWidget {
@@ -452,6 +454,33 @@ class SettingsScreen extends ConsumerWidget {
                     trailing: Icon(Icons.chevron_right, color: context.textMuted),
                     onTap: () => _showLanguageModal(context, ref, currentLocale),
                   ),
+                  Divider(color: context.borderColor, height: 24),
+                  Semantics(
+                    button: true,
+                    label: l10n.timezone,
+                    child: ListTile(
+                      key: const Key('btn-timezone'),
+                      contentPadding: EdgeInsets.zero,
+                      leading: Container(
+                        padding: const EdgeInsets.all(6),
+                        decoration: BoxDecoration(
+                          color: AppColors.primary.withValues(alpha: 0.12),
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                        child: const Icon(Icons.schedule, color: AppColors.primary, size: 18),
+                      ),
+                      title: Text(
+                        l10n.timezone,
+                        style: TextStyle(fontSize: 14, fontWeight: FontWeight.w700, color: context.textPrimary),
+                      ),
+                      subtitle: Text(
+                        _currentTimezoneLabel(ref, l10n),
+                        style: TextStyle(fontSize: 12, color: context.textSecondary),
+                      ),
+                      trailing: Icon(Icons.chevron_right, color: context.textMuted),
+                      onTap: () => _showTimezoneModal(context, ref),
+                    ),
+                  ),
                 ],
               ),
             ),
@@ -688,6 +717,107 @@ class SettingsScreen extends ConsumerWidget {
           const SizedBox(height: 32),
         ],
       ),
+    );
+  }
+
+  String _currentTimezoneLabel(WidgetRef ref, AppLocalizations l10n) {
+    final now = AppTimeZone.nowUtc();
+    final manual = ref.watch(timezoneProvider);
+    if (manual != null) {
+      return '$manual (${AppTimeZone.zoneShortLabel(manual, now)})';
+    }
+    final device = ref.watch(timezoneNameProvider);
+    return '${l10n.timezoneAuto} · $device '
+        '(${AppTimeZone.offsetLabel(device, now)})';
+  }
+
+  void _showTimezoneModal(BuildContext context, WidgetRef ref) {
+    final l10n = AppLocalizations.of(context)!;
+    showModalBottomSheet(
+      context: context,
+      backgroundColor: context.cardBg,
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(top: Radius.circular(24)),
+      ),
+      builder: (ctx) {
+        final now = AppTimeZone.nowUtc();
+        final current = ref.read(timezoneProvider);
+        final device = ref.read(timezoneNameProvider);
+        final autoLabel = '${l10n.timezoneAuto} · $device '
+            '(${AppTimeZone.offsetLabel(device, now)})';
+        return SafeArea(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(16),
+                child: Text(
+                  l10n.timezone,
+                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: context.textPrimary),
+                ),
+              ),
+              Divider(height: 1, color: context.borderColor),
+              Flexible(
+                child: ListView(
+                  shrinkWrap: true,
+                  children: [
+                    Semantics(
+                      button: true,
+                      selected: current == null,
+                      label: autoLabel,
+                      child: ListTile(
+                        key: const Key('timezone-option-auto'),
+                        title: Text(
+                          autoLabel,
+                          style: TextStyle(
+                            color: current == null ? AppColors.primary : context.textPrimary,
+                            fontWeight: current == null ? FontWeight.w700 : FontWeight.w500,
+                          ),
+                        ),
+                        trailing: current == null ? const Icon(Icons.check, color: AppColors.primary) : null,
+                        onTap: () {
+                          final zone = ref.read(timezoneProvider.notifier);
+                          // §VAL: resetToAuto drops the key; no raw string stored.
+                          zone.resetToAuto();
+                          Navigator.pop(ctx);
+                        },
+                      ),
+                    ),
+                    for (final zone in kCuratedZones)
+                      Semantics(
+                        button: true,
+                        selected: zone.iana == current,
+                        label: zone.iana,
+                        child: ListTile(
+                          key: Key('timezone-option-${zone.iana}'),
+                          title: Text(
+                            zone.shortLabel == null
+                                ? '${zone.iana} (${AppTimeZone.offsetLabel(zone.iana, now)})'
+                                : '${zone.iana} (${zone.shortLabel}, ${AppTimeZone.offsetLabel(zone.iana, now)})',
+                            style: TextStyle(
+                              color: zone.iana == current ? AppColors.primary : context.textPrimary,
+                              fontWeight: zone.iana == current ? FontWeight.w700 : FontWeight.w500,
+                            ),
+                          ),
+                          trailing: zone.iana == current ? const Icon(Icons.check, color: AppColors.primary) : null,
+                          onTap: () {
+                            try {
+                              ref.read(timezoneProvider.notifier).setZone(zone.iana);
+                            } on ArgumentError {
+                              // Unresolvable IANA name: keep the current choice.
+                              return;
+                            }
+                            Navigator.pop(ctx);
+                          },
+                        ),
+                      ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        );
+      },
     );
   }
 

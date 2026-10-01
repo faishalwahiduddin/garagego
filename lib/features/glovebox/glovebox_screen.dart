@@ -5,6 +5,8 @@ import 'package:intl/intl.dart';
 import '../../core/constants/app_colors.dart';
 import '../../core/models/vehicle.dart';
 import '../../core/providers/app_providers.dart';
+import '../../core/providers/timezone_provider.dart';
+import '../../core/utils/app_timezone.dart';
 import 'add_document_sheet.dart';
 
 class GloveboxScreen extends ConsumerWidget {
@@ -16,6 +18,9 @@ class GloveboxScreen extends ConsumerWidget {
     final active = ref.watch(activeVehicleProvider);
     final documents = ref.watch(activeVehicleDocumentsProvider);
     final currency = NumberFormat.currency(locale: 'id_ID', symbol: 'Rp ', decimalDigits: 0);
+    // Stored instants are UTC; display in the selected zone (§TZ).
+    final loc = ref.watch(timezoneLocationProvider);
+    final localeCode = AppTimeZone.intlLocale(Localizations.localeOf(context).languageCode);
 
     return Scaffold(
       appBar: AppBar(
@@ -330,8 +335,8 @@ class GloveboxScreen extends ConsumerWidget {
                                       children: [
                                         Text(
                                           Localizations.localeOf(context).languageCode == 'id'
-                                              ? 'Masa Berlaku: ${doc.expiryDate.day}/${doc.expiryDate.month}/${doc.expiryDate.year}'
-                                              : 'Valid until: ${doc.expiryDate.day}/${doc.expiryDate.month}/${doc.expiryDate.year}',
+                                              ? 'Masa Berlaku: ${AppTimeZone.formatDate(doc.expiryDate, loc, locale: localeCode)}'
+                                              : 'Valid until: ${AppTimeZone.formatDate(doc.expiryDate, loc, locale: localeCode)}',
                                           style: TextStyle(fontSize: 12, color: context.textSecondary),
                                         ),
                                         if (doc.cost > 0)

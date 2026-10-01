@@ -1663,6 +1663,18 @@ abstract class AppLocalizations {
   /// In id, this message translates to:
   /// **'Kendaraan {name} berhasil ditambahkan ke garasi!'**
   String kendaraanBerhasilDitambahkan(String name);
+
+  /// No description provided for @timezone.
+  ///
+  /// In id, this message translates to:
+  /// **'Zona Waktu'**
+  String get timezone;
+
+  /// No description provided for @timezoneAuto.
+  ///
+  /// In id, this message translates to:
+  /// **'Otomatis (ikut perangkat)'**
+  String get timezoneAuto;
 }
 
 class _AppLocalizationsDelegate

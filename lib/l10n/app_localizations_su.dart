@@ -843,4 +843,10 @@ class AppLocalizationsSu extends AppLocalizations {
   String kendaraanBerhasilDitambahkan(String name) {
     return 'Kandaraan \"$name\" parantos ditambihkeun!';
   }
+
+  @override
+  String get timezone => 'Zona Waktu';
+
+  @override
+  String get timezoneAuto => 'Otomatis (ikut perangkat)';
 }

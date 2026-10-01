@@ -3,11 +3,16 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:garagego/core/providers/app_providers.dart';
 import 'package:garagego/core/providers/locale_provider.dart';
 import 'package:garagego/core/storage/local_storage_service.dart';
+import 'package:garagego/core/utils/app_timezone.dart';
 import 'package:garagego/l10n/app_localizations.dart';
 import 'package:garagego/main.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 void main() {
+  // Production calls this in main() before runApp; widget tests bypass
+  // main() so they must init the tz database themselves.
+  setUpAll(AppTimeZone.initAppTimeZones);
+
   testWidgets('GarageGoApp smoke test', (WidgetTester tester) async {
     SharedPreferences.setMockInitialValues({});
     final storageService = await LocalStorageService.init();

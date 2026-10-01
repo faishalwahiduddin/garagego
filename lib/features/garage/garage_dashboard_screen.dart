@@ -6,7 +6,9 @@ import 'package:intl/intl.dart';
 import '../../core/constants/app_colors.dart';
 import '../../core/models/vehicle.dart';
 import '../../core/providers/app_providers.dart';
+import '../../core/providers/timezone_provider.dart';
 import '../../core/services/analytics_service.dart';
+import '../../core/utils/app_timezone.dart';
 import '../maintenance/add_schedule_sheet.dart';
 import '../maintenance/inspection_sheet.dart';
 import 'add_vehicle_sheet.dart';
@@ -503,7 +505,7 @@ class GarageDashboardScreen extends ConsumerWidget {
                         const SizedBox(height: 14),
 
                         // 7. Recent Service List Preview
-                        _buildRecentServicesCard(context, serviceLogs, currency),
+                        _buildRecentServicesCard(context, ref, serviceLogs, currency),
                       ],
                     ],
                   ),
@@ -1077,8 +1079,11 @@ class GarageDashboardScreen extends ConsumerWidget {
     );
   }
 
-  Widget _buildRecentServicesCard(BuildContext context, List<ServiceLog> serviceLogs, NumberFormat currency) {
+  Widget _buildRecentServicesCard(BuildContext context, WidgetRef ref, List<ServiceLog> serviceLogs, NumberFormat currency) {
     final l10n = AppLocalizations.of(context)!;
+    // Stored instants are UTC; display in the selected zone (§TZ).
+    final loc = ref.watch(timezoneLocationProvider);
+    final localeCode = AppTimeZone.intlLocale(Localizations.localeOf(context).languageCode);
     return Card(
       child: Padding(
         padding: const EdgeInsets.all(16),
@@ -1173,7 +1178,7 @@ class GarageDashboardScreen extends ConsumerWidget {
                                 ),
                                 const SizedBox(height: 2),
                                 Text(
-                                  '${NumberFormat('#,###', 'id_ID').format(log.odometer)} km • ${log.date.day}/${log.date.month}/${log.date.year}',
+                                  '${NumberFormat('#,###', 'id_ID').format(log.odometer)} km • ${AppTimeZone.formatDate(log.date, loc, locale: localeCode)}',
                                   style: TextStyle(fontSize: 11, color: context.textSecondary),
                                 ),
                               ],

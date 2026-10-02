@@ -678,8 +678,6 @@ class SettingsScreen extends ConsumerWidget {
                   Divider(color: context.borderColor, height: 20),
                   _buildAboutRow(context, langCode == 'id' ? 'Identitas' : 'Package ID', 'id.faishal.garagego'),
                   Divider(color: context.borderColor, height: 20),
-                  _buildAboutRow(context, langCode == 'id' ? 'Ekosistem' : 'Ecosystem', 'Lifestyle Utility Fleet'),
-                  Divider(color: context.borderColor, height: 20),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [

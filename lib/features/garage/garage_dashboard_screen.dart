@@ -9,9 +9,11 @@ import '../../core/providers/app_providers.dart';
 import '../../core/providers/timezone_provider.dart';
 import '../../core/services/analytics_service.dart';
 import '../../core/utils/app_timezone.dart';
+import '../gamification/presentation/widgets/garage_achievements_card.dart';
 import '../maintenance/add_schedule_sheet.dart';
 import '../maintenance/inspection_sheet.dart';
 import 'add_vehicle_sheet.dart';
+import 'widgets/garage_share_dialog.dart';
 
 class GarageDashboardScreen extends ConsumerWidget {
   const GarageDashboardScreen({super.key});
@@ -95,6 +97,22 @@ class GarageDashboardScreen extends ConsumerWidget {
                       isScrollControlled: true,
                       backgroundColor: context.cardBg,
                       builder: (_) => InspectionSheet(vehicle: active),
+                    );
+                  },
+                ),
+              if (active != null)
+                _buildQuickActionTile(
+                  context: context,
+                  icon: Icons.share_rounded,
+                  iconColor: AppColors.primary,
+                  title: 'Bagikan Paspor Kendaraan',
+                  subtitle: 'Bagikan kartu status, skor kesehatan, & riwayat ke sosmed',
+                  onTap: () {
+                    Navigator.pop(ctx);
+                    GarageShareDialog.show(
+                      context,
+                      vehicle: active,
+                      health: ref.read(vehicleHealthScoreProvider),
                     );
                   },
                 ),
@@ -256,6 +274,23 @@ class GarageDashboardScreen extends ConsumerWidget {
           ],
         ),
         actions: [
+          if (activeVehicle != null)
+            IconButton(
+              icon: Container(
+                padding: const EdgeInsets.all(6),
+                decoration: BoxDecoration(
+                  color: AppColors.primary.withValues(alpha: 0.1),
+                  shape: BoxShape.circle,
+                ),
+                child: const Icon(Icons.share_rounded, color: AppColors.primary, size: 18),
+              ),
+              tooltip: 'Bagikan Paspor Kendaraan',
+              onPressed: () => GarageShareDialog.show(
+                context,
+                vehicle: activeVehicle,
+                health: healthResult,
+              ),
+            ),
           IconButton(
             icon: Container(
               padding: const EdgeInsets.all(6),
@@ -432,6 +467,10 @@ class GarageDashboardScreen extends ConsumerWidget {
                       if (activeVehicle != null) ...[
                         // 1. Vehicle Health Score & Hero Card
                         _buildHealthHeroCard(context, ref, activeVehicle, healthResult),
+                        const SizedBox(height: 14),
+
+                        // Gamification: Maintenance Rank & Discipline Badges
+                        const GarageAchievementsCard(),
                         const SizedBox(height: 14),
 
                         // 2. High-Density Metric Grid
@@ -657,6 +696,28 @@ class GarageDashboardScreen extends ConsumerWidget {
                 ),
               ),
             ],
+            const SizedBox(height: 10),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                TextButton.icon(
+                  style: TextButton.styleFrom(
+                    visualDensity: VisualDensity.compact,
+                    foregroundColor: AppColors.primary,
+                  ),
+                  icon: const Icon(Icons.share_rounded, size: 15),
+                  label: const Text(
+                    'Bagikan Paspor Kendaraan',
+                    style: TextStyle(fontSize: 12, fontWeight: FontWeight.w700),
+                  ),
+                  onPressed: () => GarageShareDialog.show(
+                    context,
+                    vehicle: v,
+                    health: health,
+                  ),
+                ),
+              ],
+            ),
           ],
         ),
       ),

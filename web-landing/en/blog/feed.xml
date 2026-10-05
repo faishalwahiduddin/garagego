@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Blog — GarageGo</title>
+    <link>https://garagego.faishal.id/en/blog/</link>
+    <description>GarageGo blog: guides to service history, oil reminders, fuel logs, and car-bike STNK tax — offline and private.</description>
+    <language>en</language>
+    <lastBuildDate>Sun, 04 Oct 2026 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>Car and Bike Service History: Tidy Year After Year — GarageGo</title>
+      <link>https://garagego.faishal.id/en/blog/riwayat-servis-mobil-motor/</link>
+      <guid isPermaLink="true">https://garagego.faishal.id/en/blog/riwayat-servis-mobil-motor/</guid>
+      <pubDate>Sun, 04 Oct 2026 00:00:00 +0000</pubDate>
+      <description>Log car and bike service history with date, mileage, workshop, and cost. Tidy year-after-year history with offline GarageGo. Tables and FAQ inside.</description>
+    </item>
+    <item>
+      <title>Oil-Change Reminders: By Distance or Time — GarageGo</title>
+      <link>https://garagego.faishal.id/en/blog/pengingat-ganti-oli/</link>
+      <guid isPermaLink="true">https://garagego.faishal.id/en/blog/pengingat-ganti-oli/</guid>
+      <pubDate>Sun, 04 Oct 2026 00:00:00 +0000</pubDate>
+      <description>Oil-change reminders by mileage or time interval keep car and bike engines guarded. Set oil schedules with offline GarageGo. Tables and FAQ inside.</description>
+    </item>
+    <item>
+      <title>Yearly STNK Tax: Never Miss the Deadline — GarageGo</title>
+      <link>https://garagego.faishal.id/en/blog/pajak-stnk-tahunan/</link>
+      <guid isPermaLink="true">https://garagego.faishal.id/en/blog/pajak-stnk-tahunan/</guid>
+      <pubDate>Sun, 04 Oct 2026 00:00:00 +0000</pubDate>
+      <description>Yearly and five-yearly STNK tax reminders per vehicle so deadlines never slip. Register dates, get reminded, pay on time with GarageGo.</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Blog — GarageGo</title>
+    <link>https://garagego.faishal.id/jv/blog/</link>
+    <description>Blog GarageGo: pandhuan riwayat servis, pangeling ganti oli, cathetan BBM, lan pajak STNK mobil-motor — offline lan privat.</description>
+    <language>jv</language>
+    <lastBuildDate>Sun, 04 Oct 2026 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>Riwayat Servis Mobil lan Motor: Rapi Saka Taun ke Taun — GarageGo</title>
+      <link>https://garagego.faishal.id/jv/blog/riwayat-servis-mobil-motor/</link>
+      <guid isPermaLink="true">https://garagego.faishal.id/jv/blog/riwayat-servis-mobil-motor/</guid>
+      <pubDate>Sun, 04 Oct 2026 00:00:00 +0000</pubDate>
+      <description>Catheten riwayat servis mobil lan motor lengkap karo tanggal, kilometer, bengkel, lan biaya. Riwayat rapi saka taun ke taun nganggo GarageGo offline.</description>
+    </item>
+    <item>
+      <title>Pangeling Ganti Oli: Manut Jarak utawa Wektu — GarageGo</title>
+      <link>https://garagego.faishal.id/jv/blog/pengingat-ganti-oli/</link>
+      <guid isPermaLink="true">https://garagego.faishal.id/jv/blog/pengingat-ganti-oli/</guid>
+      <pubDate>Sun, 04 Oct 2026 00:00:00 +0000</pubDate>
+      <description>Pangeling ganti oli manut jarak tempuh utawa interval wektu supaya mesin mobil lan motor tetep kajaga. Atur jadwal oli nganggo GarageGo offline.</description>
+    </item>
+    <item>
+      <title>Pajak STNK Tahunan: Aja Nganti Kelewat — GarageGo</title>
+      <link>https://garagego.faishal.id/jv/blog/pajak-stnk-tahunan/</link>
+      <guid isPermaLink="true">https://garagego.faishal.id/jv/blog/pajak-stnk-tahunan/</guid>
+      <pubDate>Sun, 04 Oct 2026 00:00:00 +0000</pubDate>
+      <description>Pangeling pajak STNK tahunan lan limang tahunan per kendaraan supaya ora kelewat. Cathet tanggal, tampa pangeling, mbayar pas wektu karo GarageGo.</description>
+    </item>
+  </channel>
+</rss>

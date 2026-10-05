@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Blog — GarageGo</title>
+    <link>https://garagego.faishal.id/ja/blog/</link>
+    <description>GarageGo ブログ：整備史・オイル通知・燃料記録・車バイク STNK 税のガイド——オフラインでプライベート。3分で身につきます。</description>
+    <language>ja</language>
+    <lastBuildDate>Sun, 04 Oct 2026 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>車とバイクの整備史：年々すっきり記録 — GarageGo</title>
+      <link>https://garagego.faishal.id/ja/blog/riwayat-servis-mobil-motor/</link>
+      <guid isPermaLink="true">https://garagego.faishal.id/ja/blog/riwayat-servis-mobil-motor/</guid>
+      <pubDate>Sun, 04 Oct 2026 00:00:00 +0000</pubDate>
+      <description>車とバイクの整備史を日付・走行距離・工場・費用つきで記録。オフライン GarageGo で年々すっきり。登録・記録・集計の3手順を表とチェックリスト、5つのQ&amp;Aつきで解説。オフライン対応で3分で身につきます。ぜひご活用ください。</description>
+    </item>
+    <item>
+      <title>オイル交換通知：距離または時間で — GarageGo</title>
+      <link>https://garagego.faishal.id/ja/blog/pengingat-ganti-oli/</link>
+      <guid isPermaLink="true">https://garagego.faishal.id/ja/blog/pengingat-ganti-oli/</guid>
+      <pubDate>Sun, 04 Oct 2026 00:00:00 +0000</pubDate>
+      <description>オイル交換通知が走行距離または時間間隔で車とバイクのエンジンを守ります。オフライン GarageGo で予定管理。記録・目標設定・通知の3手順を方式表とチェックリスト、5つのQ&amp;Aつきで解説。オフライン対応です。ぜひご活用ください。</description>
+    </item>
+    <item>
+      <title>年次 STNK 税：期限を逃さない — GarageGo</title>
+      <link>https://garagego.faishal.id/ja/blog/pajak-stnk-tahunan/</link>
+      <guid isPermaLink="true">https://garagego.faishal.id/ja/blog/pajak-stnk-tahunan/</guid>
+      <pubDate>Sun, 04 Oct 2026 00:00:00 +0000</pubDate>
+      <description>車両ごとの年次・5年次 STNK 税通知で期限を逃しません。日付を登録し知らせを受け、GarageGo で期限どおり納付。登録・通知・納付の3手順を種類表とチェックリスト、5つのQ&amp;Aつきで解説。3分で身につきます。ぜひご活用ください。</description>
+    </item>
+  </channel>
+</rss>

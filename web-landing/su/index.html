@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="su">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GarageGo — Servis, Oli & Pajak STNK Kandaraan</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="GarageGo nyatet servis, ganti oli, BBM, sareng pajak STNK mobil sareng motor dina sahiji aplikasi. Pangemut otomatis sareng rekap biaya, 100% offline.">
+    <meta name="keywords" content="garagego, servis motor, ganti oli, pajak STNK, catetan BBM, rawat motor, pangemut servis">
+    <meta name="author" content="Faishal">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://garagego.faishal.id/su/">
+    <link rel="alternate" hreflang="id" href="https://garagego.faishal.id/">
+    <link rel="alternate" hreflang="en" href="https://garagego.faishal.id/en/">
+    <link rel="alternate" hreflang="ar" href="https://garagego.faishal.id/ar/">
+    <link rel="alternate" hreflang="jv" href="https://garagego.faishal.id/jv/">
+    <link rel="alternate" hreflang="su" href="https://garagego.faishal.id/su/">
+    <link rel="alternate" hreflang="zh" href="https://garagego.faishal.id/zh/">
+    <link rel="alternate" hreflang="ja" href="https://garagego.faishal.id/ja/">
+    <link rel="alternate" hreflang="x-default" href="https://garagego.faishal.id/">
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://garagego.faishal.id/su/">
+    <meta property="og:title" content="GarageGo — Servis, Oli & Pajak STNK Kandaraan">
+    <meta property="og:description" content="GarageGo nyatet servis, ganti oli, BBM, sareng pajak STNK mobil sareng motor dina sahiji aplikasi. Pangemut otomatis sareng rekap biaya, 100% offline.">
+    <meta property="og:image" content="https://garagego.faishal.id/app/icons/Icon-512.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://garagego.faishal.id/su/">
+    <meta property="twitter:title" content="GarageGo — Servis, Oli & Pajak STNK Kandaraan">
+    <meta property="twitter:description" content="GarageGo nyatet servis, ganti oli, BBM, sareng pajak STNK mobil sareng motor dina sahiji aplikasi. Pangemut otomatis sareng rekap biaya, 100% offline.">
+    <meta property="twitter:image" content="https://garagego.faishal.id/app/icons/Icon-512.png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" sizes="192x192" href="../favicon-192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="../favicon-512.png">
+    <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../style.css">
+
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "GarageGo",
+        "url": "https://garagego.faishal.id/su/",
+        "description": "GarageGo nyatet servis, ganti oli, BBM, sareng pajak STNK mobil sareng motor dina sahiji aplikasi. Pangemut otomatis sareng rekap biaya, 100% offline.",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "Android, iOS, Web",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "IDR"
+        }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "GarageGo teh naon?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "GarageGo aplikasi gratis anu nyatet servis, ganti oli, BBM, sareng pajak STNK mobil sareng motor dina sahiji tempat."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Naha GarageGo ngingetkeun ganti oli sareng pajak?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Enya. Pangemut oli otomatis dumasar jarak atanapi waktos, sareng pantau BBM plus wates pajak taunan tiap kandaraan."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Data kandaraan simpen di mana?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Dina HP. GarageGo ngatur seueur mobil sareng motor 100% offline ku rekap biaya otomatis."
+                }
+            }
+        ]
+    }
+    </script>
+</head>
+<body>
+
+    <!-- Header / Navigation -->
+    <header class="header">
+        <div class="container header-container">
+            <div class="brand">
+                <div class="logo-wrapper">
+                    <svg width="1024" height="1024" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Background: High-Energy Automotive Racing Amber -->
+    <linearGradient id="ggBg" x1="0" y1="0" x2="1024" y2="1024" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#EA580C"/>
+      <stop offset="50%" stop-color="#C2410C"/>
+      <stop offset="100%" stop-color="#9A3412"/>
+    </linearGradient>
+
+    <!-- Warm Golden Ambient Glow -->
+    <radialGradient id="ggGlow" cx="512" cy="440" r="640" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FDBA74" stop-opacity="0.45"/>
+      <stop offset="45%" stop-color="#FB923C" stop-opacity="0.18"/>
+      <stop offset="85%" stop-color="#C2410C" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Dial Gauge Background -->
+    <linearGradient id="dialBg" x1="512" y1="200" x2="512" y2="760" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#1E293B"/>
+      <stop offset="60%" stop-color="#0F172A"/>
+      <stop offset="100%" stop-color="#020617"/>
+    </linearGradient>
+
+    <!-- Polished Chrome Wrench -->
+    <linearGradient id="wrenchChrome" x1="200" y1="200" x2="800" y2="800" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="25%" stop-color="#F1F5F9"/>
+      <stop offset="50%" stop-color="#94A3B8"/>
+      <stop offset="75%" stop-color="#E2E8F0"/>
+      <stop offset="100%" stop-color="#FFFFFF"/>
+    </linearGradient>
+
+    <!-- Needle Gradient -->
+    <linearGradient id="needleGrad" x1="512" y1="512" x2="710" y2="330" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#EF4444"/>
+      <stop offset="100%" stop-color="#F87171"/>
+    </linearGradient>
+
+    <!-- Drop Shadows -->
+    <filter id="dialShadow" x="-20%" y="-20%" width="140%" height="150%">
+      <feDropShadow dx="0" dy="32" stdDeviation="34" flood-color="#431407" flood-opacity="0.75"/>
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+
+    <filter id="wrenchShadow" x="-20%" y="-20%" width="140%" height="150%">
+      <feDropShadow dx="0" dy="16" stdDeviation="18" flood-color="#000000" flood-opacity="0.55"/>
+    </filter>
+
+    <!-- Top Gloss Sheen -->
+    <linearGradient id="topSheen" x1="0" y1="0" x2="0" y2="340" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.14"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1024" height="1024" fill="url(#ggBg)"/>
+  <rect width="1024" height="1024" fill="url(#ggGlow)"/>
+
+  <!-- ==================== TACHOMETER / SPEEDOMETER GAUGE ==================== -->
+  <g filter="url(#dialShadow)">
+    <!-- Outer Chrome Bezel Rim -->
+    <circle cx="512" cy="512" r="284" fill="url(#dialBg)" stroke="#FFFFFF" stroke-width="12"/>
+    <circle cx="512" cy="512" r="268" fill="none" stroke="#475569" stroke-width="3"/>
+
+    <!-- Tachometer Speed Arc (Cyan -> Amber -> Redline) -->
+    <path d="M 288 640 A 244 244 0 1 1 736 640" fill="none" stroke="#334155" stroke-width="20" stroke-linecap="round"/>
+    <path d="M 288 640 A 244 244 0 0 1 448 288" fill="none" stroke="#38BDF8" stroke-width="20" stroke-linecap="round"/>
+    <path d="M 448 288 A 244 244 0 0 1 636 332" fill="none" stroke="#F59E0B" stroke-width="20" stroke-linecap="round"/>
+    <path d="M 636 332 A 244 244 0 0 1 736 640" fill="none" stroke="#EF4444" stroke-width="20" stroke-linecap="round"/>
+
+    <!-- Precision Tick Marks -->
+    <circle cx="512" cy="274" r="7" fill="#FFFFFF"/>
+    <circle cx="340" cy="374" r="6" fill="#38BDF8"/>
+    <circle cx="276" cy="512" r="6" fill="#38BDF8"/>
+    <circle cx="684" cy="374" r="6" fill="#EF4444"/>
+    <circle cx="748" cy="512" r="6" fill="#EF4444"/>
+  </g>
+
+  <!-- ==================== HERO PRECISION CHROME SERVICE WRENCH ==================== -->
+  <!-- Angled across the lower center of the gauge (-36 deg) -->
+  <g filter="url(#wrenchShadow)" transform="rotate(-36 512 512)">
+    <!-- Wrench Shaft -->
+    <rect x="220" y="492" width="584" height="40" rx="14" fill="url(#wrenchChrome)" stroke="#FFFFFF" stroke-width="3"/>
+    <rect x="320" y="504" width="384" height="16" rx="8" fill="#64748B" opacity="0.35"/>
+
+    <!-- Left Open-Jaw Head -->
+    <g transform="translate(220, 512)">
+      <circle cx="-16" cy="0" r="52" fill="url(#wrenchChrome)" stroke="#FFFFFF" stroke-width="3"/>
+      <polygon points="-72,-20 -16,-20 -16,20 -72,20" fill="#C2410C"/>
+    </g>
+
+    <!-- Right Box-End Ring Head -->
+    <g transform="translate(804, 512)">
+      <circle cx="16" cy="0" r="52" fill="url(#wrenchChrome)" stroke="#FFFFFF" stroke-width="3"/>
+      <circle cx="16" cy="0" r="30" fill="#C2410C" stroke="#64748B" stroke-width="3"/>
+    </g>
+  </g>
+
+  <!-- ==================== TACHOMETER NEEDLE & CENTER HUB (ON TOP) ==================== -->
+  <g filter="url(#wrenchShadow)">
+    <!-- Dynamic Tachometer Needle Pointing Upwards to Redline -->
+    <polygon points="506,512 512,308 518,512" fill="url(#needleGrad)"/>
+    <circle cx="512" cy="512" r="34" fill="#0F172A" stroke="#FFFFFF" stroke-width="5"/>
+    <circle cx="512" cy="512" r="22" fill="#EF4444"/>
+    <circle cx="512" cy="512" r="9" fill="#FFFFFF"/>
+  </g>
+
+  <!-- Top Sheen Gloss -->
+  <rect width="1024" height="340" fill="url(#topSheen)"/>
+</svg>
+
+                </div>
+                <span class="brand-name">GarageGo</span>
+            </div>
+            <nav class="nav-links">
+                <a href="#features" class="nav-link" id="nav-features-link" data-i18n="features_title">Kaunggulan GarageGo</a>
+                <a href="#download" class="nav-link" id="nav-download-link" data-i18n="cta_mobile">Unduh Gratis Ayeuna</a>
+                <a href="#blog" class="nav-link" data-i18n="nav_blog">Blog</a>
+                
+                <!-- Premium Custom Language Switcher -->
+                <div class="lang-selector">
+                    <button class="dropdown-trigger" id="lang-btn" aria-haspopup="listbox" aria-expanded="false">
+                        <span id="current-flag">🇮🇩</span> <span id="current-lang-code">SU</span>
+                        <span class="dropdown-arrow">▾</span>
+                    </button>
+                    <ul class="dropdown-menu" id="lang-dropdown" role="listbox">
+                        <li role="option" data-value="id"><a href="https://garagego.faishal.id/">🇮🇩 Indonesia</a></li>
+                        <li role="option" data-value="en"><a href="https://garagego.faishal.id/en/">🇺🇸 English</a></li>
+                        <li role="option" data-value="ar"><a href="https://garagego.faishal.id/ar/">🇸🇦 العربية</a></li>
+                        <li role="option" data-value="jv"><a href="https://garagego.faishal.id/jv/">🇮🇩 Jawa</a></li>
+                        <li role="option" data-value="su"><a href="https://garagego.faishal.id/su/">🇮🇩 Sunda</a></li>
+                        <li role="option" data-value="zh"><a href="https://garagego.faishal.id/zh/">🇨🇳 中文</a></li>
+                        <li role="option" data-value="ja"><a href="https://garagego.faishal.id/ja/">🇯🇵 日本語</a></li>
+                    </ul>
+                </div>
+
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container hero-container">
+                <div class="hero-content">
+                    <div class="badge-accent" data-i18n="badge">🚗 GARASI & SERVIS KANDARAAN</div>
+                    <h1 class="hero-title" data-i18n="headline">Servis, Ganti Oli, sareng Pajak STNK Sering Hilap?</h1>
+                    
+                    <!-- PAS Copywriting Framework: Problem & Agitate & Solve -->
+                    <div class="pas-container">
+                        <p class="pas-problem" data-i18n="problem">Jadwal servis, ganti oli, sareng pajak STNK mobil sareng motor gampil hilap tanpa sahiji catetan anu rapi.</p>
+                        <p class="pas-agitate" data-i18n="agitate">Nota bengkel leungit, kilometer oli teu kapantau, sareng STNK telat diperpanjang dugi ka kena denda. Tanpa riwayat anu kacatet, biaya kandaraan ngagedéan tanpa karasa.</p>
+                        <p class="pas-solve" data-i18n="solve">GarageGo solusina. Catet riwayat servis, pangemut oli dumasar kilometer, konsumsi BBM, sareng tempo pajak STNK tiap kandaraan. 100% offline sareng pribadi.</p>
+                    </div>
+
+                    <div class="hero-ctas">
+                        <a href="#download" class="btn btn-primary" id="hero-cta-download-btn" data-i18n="cta_mobile">Unduh Gratis Ayeuna</a>
+                    </div>
+                    <p class="section-subtitle" data-i18n="trust_bar">✓ Data disimpen di alat  •  ✓ Bisa dipaké offline  •  ✓ Gratis</p>
+                </div>
+                <div class="hero-visual">
+                    <div class="phone-mockup">
+                        <div class="phone-screen">
+                            <div class="phone-app-preview">
+                                
+        <div class="mock-card checklist-card">
+            <div class="mock-card-header">
+                <span data-i18n="mock_title">Garasi Abdi</span>
+                <span class="mock-date">🚗</span>
+            </div>
+            <ul class="mock-list">
+                <li class="mock-item completed">
+                    <span class="check-box">✓</span> <span data-i18n="mock_subuh">Vario 125 • Oli 1.200 km</span>
+                </li>
+                <li class="mock-item completed">
+                    <span class="check-box">✓</span> <span data-i18n="mock_dhuha">Servis Rutin ✓</span>
+                </li>
+                <li class="mock-item completed">
+                    <span class="check-box">✓</span> <span data-i18n="mock_tilawah">BBM 1:48</span>
+                </li>
+                <li class="mock-item pending">
+                    <span class="check-box"></span> <span data-i18n="mock_charity">STNK: 12 Nov</span>
+                </li>
+            </ul>
+        </div>
+        <div class="mock-card stats-card">
+            <div class="stats-title" data-i18n="mock_chart_title">Rp 850 rb / sasih</div>
+            <div class="bar-chart">
+                <div class="chart-bar" style="height: 70%"><span class="bar-label">S</span></div>
+                <div class="chart-bar" style="height: 85%"><span class="bar-label">S</span></div>
+                <div class="chart-bar" style="height: 60%"><span class="bar-label">R</span></div>
+                <div class="chart-bar" style="height: 90%"><span class="bar-label">K</span></div>
+                <div class="chart-bar" style="height: 75%"><span class="bar-label">J</span></div>
+                <div class="chart-bar active" style="height: 100%"><span class="bar-label">S</span></div>
+                <div class="chart-bar" style="height: 80%"><span class="bar-label">M</span></div>
+            </div>
+        </div>
+    
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Scripture and Hadith References Section (Quranic Proof & Authenticity) -->
+        <section class="scripture-section">
+            <div class="container">
+                <div class="scripture-grid">
+                    <!-- Al-Quran Column -->
+                    <div class="scripture-card quran-card">
+                        <span class="card-tag" data-i18n="scripture_title">Amanah Ngarawat Titipan</span>
+                        <div class="arabic-quote font-amiri" data-i18n="scripture_arabic">إِنَّ خَيْرَ مَنِ اسْتَأْجَرْتَ الْقَوِيُّ الْأَمِينُ</div>
+                        <p class="translation-quote" data-i18n="scripture_translation">Saestuna jalma anu pangsaena dicokot jadi pagawé nyaeta anu kuat sareng tiasa dipercaya. — QS. Al-Qashash: 26</p>
+                    </div>
+                    <!-- Hadith Column -->
+                    <div class="scripture-card hadith-card">
+                        <span class="card-tag">As-Sunnah / Hadits</span>
+                        <div class="arabic-quote font-amiri" data-i18n="hadith_arabic">إِنَّ اللَّهَ يُحِبُّ إِذَا عَمِلَ أَحَدُكُمْ عَمَلاً أَنْ يُتْقِنَهُ</div>
+                        <p class="translation-quote" data-i18n="hadith_translation">Saestuna Allah mikacinta jalma anu midamel padamelan kalayan sampurna (itqan). — HR. Al-Baihaqi</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="features">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title" data-i18n="features_title">Kaunggulan GarageGo</h2>
+                    <p class="section-subtitle" data-i18n="features_sub">Sahiji catetan rapi sareng pangemut tepat waktu kanggo tiap kandaraan.</p>
+                </div>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">⚡</div>
+                        <h3 class="feature-title" data-i18n="f1_title">Riwayat Servis Lengkep</h3>
+                        <p class="feature-text" data-i18n="f1_text">Catet tanggal, kilometer, bengkel, sareng biaya unggal servis mobil sareng motor.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📈</div>
+                        <h3 class="feature-title" data-i18n="f2_title">Pangemut Oli Otomatis</h3>
+                        <p class="feature-text" data-i18n="f2_text">Bewara ganti oli dumasar jarak tempuh atanapi interval waktos.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🛡️</div>
+                        <h3 class="feature-title" data-i18n="f3_title">Catetan BBM & Pajak</h3>
+                        <p class="feature-text" data-i18n="f3_text">Pantau konsumsi BBM sareng tempo pajak STNK taunan tiap kandaraan.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🔒</div>
+                        <h3 class="feature-title" data-i18n="f4_title">Loba Kandaraan Offline</h3>
+                        <p class="feature-text" data-i18n="f4_text">Atur seueur mobil sareng motor; sadaya data disimpen dina HP.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Blog Section -->
+        <section id="blog" class="features">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title" data-i18n="blog_title">Artikel &amp; Panduan Panganyarna</h2>
+                    <p class="section-subtitle" data-i18n="blog_sub">Dalami GarageGo ngaliwatan tilu panduan singket ieu.</p>
+                </div>
+                <div class="features-grid">
+                    <div class="feature-card article-card">
+                        <a href="https://garagego.faishal.id/su/blog/riwayat-servis-mobil-motor/" class="article-card-thumb-link" aria-label="Riwayat Servis Mobil jeung Motor: Rapih Ti Taun ka Taun">
+                            <img src="/blog/riwayat-servis-mobil-motor/banner.jpg?v=2" alt="Riwayat Servis Mobil jeung Motor: Rapih Ti Taun ka Taun" class="article-card-thumb" width="600" height="338" loading="lazy">
+                        </a>
+                        <h3 class="feature-title"><a href="https://garagego.faishal.id/su/blog/riwayat-servis-mobil-motor/" data-i18n="b1_title">Riwayat Servis Mobil jeung Motor: Rapih Ti Taun ka Taun</a></h3>
+                        <p class="feature-text" data-i18n="b1_text">Tanggal, kilometer, bengkel, biaya: riwayat servis rapih per kendaraan.</p>
+                    </div>
+                    <div class="feature-card article-card">
+                        <a href="https://garagego.faishal.id/su/blog/pengingat-ganti-oli/" class="article-card-thumb-link" aria-label="Pangeling Ganti Oli: Dumasar Jarak atawa Waktu">
+                            <img src="/blog/pengingat-ganti-oli/banner.jpg?v=2" alt="Pangeling Ganti Oli: Dumasar Jarak atawa Waktu" class="article-card-thumb" width="600" height="338" loading="lazy">
+                        </a>
+                        <h3 class="feature-title"><a href="https://garagego.faishal.id/su/blog/pengingat-ganti-oli/" data-i18n="b2_title">Pangeling Ganti Oli: Dumasar Jarak atawa Waktu</a></h3>
+                        <p class="feature-text" data-i18n="b2_text">Target jarak atawa waktu ti kilometer panungtung, ku pangeling otomatis.</p>
+                    </div>
+                    <div class="feature-card article-card">
+                        <a href="https://garagego.faishal.id/su/blog/pajak-stnk-tahunan/" class="article-card-thumb-link" aria-label="Pajak STNK Taunan: Ulah Nepi ka Kaliwat">
+                            <img src="/blog/pajak-stnk-tahunan/banner.jpg?v=2" alt="Pajak STNK Taunan: Ulah Nepi ka Kaliwat" class="article-card-thumb" width="600" height="338" loading="lazy">
+                        </a>
+                        <h3 class="feature-title"><a href="https://garagego.faishal.id/su/blog/pajak-stnk-tahunan/" data-i18n="b3_title">Pajak STNK Taunan: Ulah Nepi ka Kaliwat</a></h3>
+                        <p class="feature-text" data-i18n="b3_text">Tanggal pajak kadaftar, pangeling samemeh tempo, mayar pas waktuna.</p>
+                    </div>
+                </div>
+                <div class="hero-ctas">
+                    <a href="https://garagego.faishal.id/su/blog/" class="btn btn-secondary" data-i18n="blog_view_all">Tingali Sadaya Artikel</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Download Section -->
+        <section id="download" class="download-section">
+            <div class="container">
+                <div class="download-box">
+                    <h2 class="download-title" data-i18n="down_title">Unduh Aplikasi Ayeuna</h2>
+                    <p class="download-text" data-i18n="down_text">Rapikeun riwayat servis mobil sareng motor, mayar pajak STNK tepat waktu. Gratis, teu perlu akun.</p>
+                    
+                    <div class="store-buttons">
+                        <!-- Play Store Button (live link when published, upcoming badge otherwise) -->
+                        <div class="store-btn disabled" id="play-store-upcoming-btn"><svg viewBox="0 0 512 512" class="store-icon" width="24" height="24"><path fill="#f57c00" d="M12 28.5L248 264.5L12 500.5C9.5 498 8 493 8 485.5V54.5C8 47 9.5 42 12 28.5Z"/><path fill="#ffb74d" d="M374 138.5L248 264.5L12 28.5C16.5 24 23 23 30.5 27.5L374 138.5Z"/><path fill="#f57c00" d="M374 390.5L30.5 497.5C23 502 16.5 501 12 496.5L248 264.5L374 390.5Z"/><path fill="#ffa726" d="M500 221.5L403.5 166.5L374 138.5L248 264.5L374 390.5L403.5 362.5L500 307.5C508 303 512 293 512 285.5C512 278 508 268 500 221.5Z"/></svg><div class="store-btn-text"><span data-i18n="coming_soon">Bakal Hadir dina</span><strong>Google Play</strong></div></div>
+
+                        <!-- App Store (Upcoming) Button -->
+                        <div class="store-btn disabled" id="app-store-upcoming-btn">
+                            <svg viewBox="0 0 512 512" class="store-icon" width="24" height="24" fill="currentColor">
+                                <path d="M383.5 227.5c-.5-52.6 42.7-78 44.7-79.3-24.4-35.7-62.4-40.6-75.9-41.2-32.5-3.3-63.4 19.1-79.9 19.1-16.5 0-42.1-19-69.4-18.5-35.9.5-69 20.9-87.5 53-37.4 65-9.6 161.4 26.8 213.9 17.8 25.7 39 54.4 66.8 53.4 26.8-1.1 37-17.3 69.4-17.3s41.6 17.3 69.4 16.7c28.3-.5 47-26 64.6-51.7 20.4-29.8 28.8-58.7 29.3-60.2-.6-.3-56.3-21.6-56.8-85.1zM324.7 82.5c14.6-17.7 24.4-42.3 21.7-66.8-21 1-46.5 14.1-61.6 31.8-13.6 15.7-25.5 40.7-22.3 64.7 23.4 1.8 47.6-12 62.2-29.7z"/>
+                            </svg>
+                            <div class="store-btn-text">
+                                <span data-i18n="coming_soon">Bakal Hadir dina</span>
+                                <strong>App Store</strong>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="download-text" data-i18n="risk_line">Gratis • Teu perlu akun • Data anjeun tetep di alat anjeun</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <p>&copy; 2026 faishal.id. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="https://faishal.id" class="footer-link">Utama</a>
+                <a href="privacy.html" class="footer-link" data-i18n="privacy_policy">Kabijakan Privasi</a>
+                <a href="terms.html" class="footer-link" data-i18n="terms_of_service">Katangtuan Ladenan</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Translation Core Script -->
+    <script>
+        const i18nData = {"id": {"meta_title": "GarageGo — Servis, Oli & Pajak STNK Kendaraan", "meta_description": "GarageGo mencatat servis, ganti oli, BBM, dan pajak STNK mobil dan motor dalam satu aplikasi. Pengingat otomatis dan rekap biaya di perangkat, 100% offline.", "meta_keywords": "garagego, servis motor, ganti oli, pajak STNK, catatan BBM, rawat motor, pengingat servis", "badge": "🚗 GARASI & SERVIS KENDARAAN", "headline": "Servis, Ganti Oli, dan Pajak STNK Sering Terlewat?", "problem": "Jadwal servis, ganti oli, dan pajak STNK mobil dan motor mudah terlupakan tanpa satu catatan yang rapi.", "agitate": "Nota bengkel tercecer, kilometer oli tak terpantau, dan STNK telat diperpanjang hingga kena denda. Tanpa riwayat tercatat, biaya kendaraan membengkak tanpa disadari.", "solve": "GarageGo solusinya. Catat riwayat servis, pengingat oli berdasar kilometer, konsumsi BBM, dan jatuh tempo pajak STNK tiap kendaraan. 100% offline dan privat.", "cta_mobile": "Unduh Gratis Sekarang", "features_title": "Keunggulan GarageGo", "features_sub": "Satu catatan rapi dan pengingat tepat waktu untuk tiap kendaraan.", "f1_title": "Riwayat Servis Lengkap", "f1_text": "Catat tanggal, kilometer, bengkel, dan biaya tiap servis mobil dan motor.", "f2_title": "Pengingat Oli Otomatis", "f2_text": "Notifikasi ganti oli berdasar jarak tempuh atau interval waktu.", "f3_title": "Catatan BBM & Pajak", "f3_text": "Pantau konsumsi BBM dan jatuh tempo pajak STNK tahunan tiap kendaraan.", "f4_title": "Multi-Kendaraan Offline", "f4_text": "Kelola banyak mobil dan motor; semua data tersimpan di perangkat.", "down_title": "Unduh Aplikasi Sekarang", "down_text": "Rapikan riwayat servis mobil dan motor, bayar pajak STNK tepat waktu. Gratis, tanpa perlu akun.", "coming_soon": "Segera Hadir di", "mock_title": "Garasi Saya", "mock_subuh": "Vario 125 • Oli 1.200 km", "mock_dhuha": "Servis Rutin ✓", "mock_tilawah": "BBM 1:48", "mock_charity": "STNK: 12 Nov", "mock_chart_title": "Rp 850 rb / bln", "scripture_title": "Amanah Merawat Titipan", "scripture_arabic": "إِنَّ خَيْرَ مَنِ اسْتَأْجَرْتَ الْقَوِيُّ الْأَمِينُ", "scripture_translation": "Sesungguhnya orang yang paling baik yang kamu ambil sebagai pekerja ialah orang yang kuat lagi dapat dipercaya. — QS. Al-Qashash: 26", "hadith_arabic": "إِنَّ اللَّهَ يُحِبُّ إِذَا عَمِلَ أَحَدُكُمْ عَمَلاً أَنْ يُتْقِنَهُ", "hadith_translation": "Sesungguhnya Allah menyukai jika salah seorang di antara kalian melakukan suatu pekerjaan dengan itqan (profesional dan sempurna). — HR. Al-Baihaqi", "privacy_policy": "Kebijakan Privasi", "terms_of_service": "Syarat & Ketentuan", "nav_blog": "Blog", "blog_title": "Artikel & Panduan Terbaru", "blog_sub": "Dalami GarageGo lewat tiga panduan singkat ini.", "blog_view_all": "Lihat Semua Artikel", "trust_bar": "✓ Data tersimpan di perangkat  •  ✓ Bisa dipakai offline  •  ✓ Gratis", "risk_line": "Gratis • Tanpa perlu akun • Data Anda tetap di perangkat Anda", "b1_title": "Riwayat Servis Mobil dan Motor: Rapi dari Tahun ke Tahun", "b1_text": "Tanggal, kilometer, bengkel, biaya: riwayat servis rapi per kendaraan.", "b2_title": "Pengingat Ganti Oli: Berdasar Jarak atau Waktu", "b2_text": "Target jarak atau waktu dari kilometer terakhir, dengan pengingat otomatis.", "b3_title": "Pajak STNK Tahunan: Jangan Sampai Terlewat", "b3_text": "Tanggal pajak terdaftar, pengingat sebelum tempo, bayar tepat waktu."}, "en": {"meta_title": "GarageGo — Service, Oil & Vehicle Tax Reminders", "meta_description": "GarageGo logs services, oil changes, fuel, and registration tax for cars and bikes in one app. Automatic reminders and cost recaps, 100% offline and private.", "meta_keywords": "garagego, vehicle service, oil change, vehicle tax, fuel log, service reminder, garage manager", "badge": "🚗 VEHICLE GARAGE & SERVICE LOG", "headline": "Always Missing Services, Oil Changes, and Vehicle Tax?", "problem": "Service schedules, oil changes, and vehicle registration for cars and bikes are easy to forget without one tidy log.", "agitate": "Workshop receipts go missing, oil mileage goes untracked, and vehicle registration lapses into fines. Without a written history, vehicle costs quietly balloon.", "solve": "GarageGo is the answer. Log service history, mileage-based oil reminders, fuel consumption, and registration deadlines per vehicle. 100% offline and private.", "cta_mobile": "Download Free Now", "features_title": "Why GarageGo", "features_sub": "One tidy log and timely reminders for every vehicle.", "f1_title": "Complete Service History", "f1_text": "Log date, mileage, workshop, and cost for every car and bike service.", "f2_title": "Automatic Oil Reminders", "f2_text": "Oil-change alerts based on distance travelled or time interval.", "f3_title": "Fuel & Tax Notes", "f3_text": "Track fuel consumption and yearly registration deadlines per vehicle.", "f4_title": "Multi-Vehicle, Offline", "f4_text": "Manage many cars and bikes; all data stays on your device.", "down_title": "Download the App Now", "down_text": "Keep every service record tidy and pay your vehicle tax on time. Free, no account needed.", "coming_soon": "Coming Soon on", "mock_title": "My Garage", "mock_subuh": "Vario 125 • Oil 1,200 km", "mock_dhuha": "Routine service ✓", "mock_tilawah": "Fuel 1:48", "mock_charity": "Tax: Nov 12", "mock_chart_title": "Rp 850k / month", "scripture_title": "Trust in Caring for Entrusted Goods", "scripture_arabic": "إِنَّ خَيْرَ مَنِ اسْتَأْجَرْتَ الْقَوِيُّ الْأَمِينُ", "scripture_translation": "Indeed, the best one you can hire is the strong and the trustworthy. — Surah Al-Qashash: 26", "hadith_arabic": "إِنَّ اللَّهَ يُحِبُّ إِذَا عَمِلَ أَحَدُكُمْ عَمَلاً أَنْ يُتْقِنَهُ", "hadith_translation": "Verily, Allah loves that when one of you does a job, he does it with excellence (itqan). — HR. Al-Baihaqi", "privacy_policy": "Privacy Policy", "terms_of_service": "Terms of Service", "nav_blog": "Blog", "blog_title": "Latest Articles & Guides", "blog_sub": "Get more from GarageGo with these three quick guides.", "blog_view_all": "View All Articles", "trust_bar": "✓ On-device data  •  ✓ Works offline  •  ✓ Free", "risk_line": "Free • No account needed • Your data stays on your device", "b1_title": "Car and Bike Service History: Tidy Year After Year", "b1_text": "Date, mileage, workshop, cost: tidy service history per vehicle.", "b2_title": "Oil-Change Reminders: By Distance or Time", "b2_text": "Distance or time targets from last mileage, with automatic reminders.", "b3_title": "Yearly STNK Tax: Never Miss the Deadline", "b3_text": "Tax dates registered, reminders before expiry, pay on time."}, "ar": {"meta_title": "غاراج غو — تذكير الصيانة والزيت والضريبة", "meta_description": "غاراج غو يسجل الصيانة وتغيير الزيت والوقود وضريبة الرخصة للسيارة والدراجة في تطبيق واحد. تذكيرات تلقائية وملخص التكاليف دون إنترنت.", "meta_keywords": "غاراج غو، صيانة المركبات، تغيير الزيت، ضريبة الرخصة، استهلاك الوقود، تذكير الصيانة", "badge": "🚗 مرآب وسجل صيانة المركبات", "headline": "هل تفوتك مواعيد الصيانة وتغيير الزيت وضريبة الرخصة؟", "problem": "تُنسى مواعيد الصيانة وتغيير الزيت وضريبة الرخصة للسيارة والدراجة دون سجل واحد مرتب.", "agitate": "تضيع فواتير الورش، ولا يُتابع عداد الزيت، ويتأخر تجديد رخصة المركبة حتى تتراكم الغرامات. وبدون سجل مكتوب، تتضخم تكاليف المركبة دون أن نشعر.", "solve": "غاراج غو هو الحل. سجل صيانة المركبات، وتذكير الزيت حسب العداد، واستهلاك الوقود، ومواعيد ضريبة الرخصة لكل مركبة. يعمل دون إنترنت وبخصوصية كاملة.", "cta_mobile": "حمّل مجانًا الآن", "features_title": "لماذا غاراج غو", "features_sub": "سجل مرتب وتذكيرات في وقتها لكل مركبة.", "f1_title": "سجل صيانة كامل", "f1_text": "سجل التاريخ والعداد والورشة والتكلفة لكل صيانة للسيارة والدراجة.", "f2_title": "تذكير الزيت تلقائيًا", "f2_text": "تنبيهات تغيير الزيت حسب المسافة المقطوعة أو الفاصل الزمني.", "f3_title": "الوقود والضريبة", "f3_text": "راقب استهلاك الوقود ومواعيد ضريبة الرخصة السنوية لكل مركبة.", "f4_title": "مركبات متعددة دون اتصال", "f4_text": "أدر عدة سيارات ودراجات؛ جميع البيانات محفوظة على جهازك.", "down_title": "حمل التطبيق الآن", "down_text": "نظم سجل خدمة سيارتك ودراجتك وادفع الضريبة في وقتها. مجاني ولا حاجة لحساب.", "coming_soon": "قريبًا على", "mock_title": "مرآبي", "mock_subuh": "فاريو 125 • زيت 1200 كم", "mock_dhuha": "صيانة دورية ✓", "mock_tilawah": "وقود 1:48", "mock_charity": "الرخصة: 12 نوفمبر", "mock_chart_title": "850 ألف / شهريًا", "scripture_title": "أمانة رعاية الودائع", "scripture_arabic": "إِنَّ خَيْرَ مَنِ اسْتَأْجَرْتَ الْقَوِيُّ الْأَمِينُ", "scripture_translation": "إن خير من استأجرت القوي الأمين — سورة القصص: 26", "hadith_arabic": "إِنَّ اللَّهَ يُحِبُّ إِذَا عَمِلَ أَحَدُكُمْ عَمَلاً أَنْ يُتْقِنَهُ", "hadith_translation": "إن الله يحب إذا عمل أحدكم عملاً أن يتقنه — رواه البيهقي", "privacy_policy": "سياسة الخصوصية", "terms_of_service": "شروط الخدمة", "nav_blog": "المدونة", "blog_title": "أحدث المقالات والأدلة", "blog_sub": "استفد أكثر من GarageGo مع هذه الأدلة الثلاثة المختصرة.", "blog_view_all": "عرض كل المقالات", "trust_bar": "✓ البيانات على جهازك  •  ✓ يعمل دون إنترنت  •  ✓ مجاني", "risk_line": "مجاني • لا حاجة لحساب • بياناتك تبقى على جهازك", "b1_title": "سجل صيانة السيارة والدراجة: مرتب عاما بعد عام", "b1_text": "التاريخ والكيلومترات والورشة والتكلفة: سجل صيانة مرتب لكل مركبة.", "b2_title": "تذكيرات تغيير الزيت: بالمسافة أو بالوقت", "b2_text": "أهداف المسافة أو الوقت من آخر الكيلومترات مع تذكيرات تلقائية.", "b3_title": "ضريبة الرخصة السنوية: لا يفوتك الموعد", "b3_text": "تواريخ الضريبة مسجلة والتذكير قبل الانتهاء والدفع بوقته."}, "jv": {"meta_title": "GarageGo — Servis, Oli & Pajak STNK Motor", "meta_description": "GarageGo nyathet servis, ganti oli, BBM, lan pajak STNK mobil lan motor ing sak aplikasi. Pengeling otomatis lan rekap biaya ing HP, 100% offline.", "meta_keywords": "garagego, servis motor, ganti oli, pajak STNK, cathetan BBM, rawat motor, pengeling servis", "badge": "🚗 GARASI & SERVIS KENDARAAN", "headline": "Servis, Ganti Oli, lan Pajak STNK Sering Kelalen?", "problem": "Jadwal servis, ganti oli, lan pajak STNK mobil lan motor gampang dilalekake tanpa sawijining cathetan sing rapi.", "agitate": "Nota bengkel ilang, kilometer oli ora kepantau, lan STNK telat didandani nganti kena denda. Tanpa riwayat sing kecathet, biaya kendaraan mundhak tanpa disadari.", "solve": "GarageGo solusine. Cathet riwayat servis, pengeling oli manut kilometer, konsumsi BBM, lan tempo pajak STNK saben kendaraan. 100% offline lan pribadi.", "cta_mobile": "Undhuh Gratis Saiki", "features_title": "Kaluwihan GarageGo", "features_sub": "Sawijining cathetan rapi lan pengeling tepat wektu kanggo saben kendaraan.", "f1_title": "Riwayat Servis Lengkap", "f1_text": "Cathet tanggal, kilometer, bengkel, lan biaya saben servis mobil lan motor.", "f2_title": "Pengeling Oli Otomatis", "f2_text": "Notifikasi ganti oli manut jarak tempuh utawa interval wektu.", "f3_title": "Cathetan BBM & Pajak", "f3_text": "Pantau konsumsi BBM lan tempo pajak STNK tahunan saben kendaraan.", "f4_title": "Akeh Kendaraan Offline", "f4_text": "Kelola akeh mobil lan motor; kabeh data disimpen ing HP.", "down_title": "Unduh Aplikasi Saiki", "down_text": "Rapi riwayat servis mobil lan motor, bayar pajak STNK tepat wektu. Gratis, tanpa perlu akun.", "coming_soon": "Bakal Teka ing", "mock_title": "Garasiku", "mock_subuh": "Vario 125 • Oli 1.200 km", "mock_dhuha": "Servis Rutin ✓", "mock_tilawah": "BBM 1:48", "mock_charity": "STNK: 12 Nov", "mock_chart_title": "Rp 850 rb / sasi", "scripture_title": "Amanah Ngrumat Titipan", "scripture_arabic": "إِنَّ خَيْرَ مَنِ اسْتَأْجَرْتَ الْقَوِيُّ الْأَمِينُ", "scripture_translation": "Saktemene wong sing paling apik kokdadekake buruh yaiku sing kuwat lan bisa dipercaya. — QS. Al-Qashash: 26", "hadith_arabic": "إِنَّ اللَّهَ يُحِبُّ إِذَا عَمِلَ أَحَدُكُمْ عَمَلاً أَنْ يُتْقِنَهُ", "hadith_translation": "Saktemene Allah tresna marang wong sing nindakake pakaryan kanthi sempurno (itqan). — HR. Al-Baihaqi", "privacy_policy": "Kabijakan Privasi", "terms_of_service": "Katentuan Layanan", "nav_blog": "Blog", "blog_title": "Artikel & Pandhuan Paling Anyar", "blog_sub": "Dalami GarageGo lewat telung pandhuan cekak iki.", "blog_view_all": "Deleng Kabeh Artikel", "trust_bar": "✓ Data kasimpen ing piranti  •  ✓ Bisa dienggo offline  •  ✓ Gratis", "risk_line": "Gratis • Tanpa perlu akun • Data Panjenengan tetep ing piranti", "b1_title": "Riwayat Servis Mobil lan Motor: Rapi Saka Taun ke Taun", "b1_text": "Tanggal, kilometer, bengkel, biaya: riwayat servis rapi per kendaraan.", "b2_title": "Pangeling Ganti Oli: Manut Jarak utawa Wektu", "b2_text": "Target jarak utawa wektu saka kilometer pungkasan, karo pangeling otomatis.", "b3_title": "Pajak STNK Tahunan: Aja Nganti Kelewat", "b3_text": "Tanggal pajak kadaftar, pangeling sadurunge tempo, mbayar pas wektu."}, "su": {"meta_title": "GarageGo — Servis, Oli & Pajak STNK Kandaraan", "meta_description": "GarageGo nyatet servis, ganti oli, BBM, sareng pajak STNK mobil sareng motor dina sahiji aplikasi. Pangemut otomatis sareng rekap biaya, 100% offline.", "meta_keywords": "garagego, servis motor, ganti oli, pajak STNK, catetan BBM, rawat motor, pangemut servis", "badge": "🚗 GARASI & SERVIS KANDARAAN", "headline": "Servis, Ganti Oli, sareng Pajak STNK Sering Hilap?", "problem": "Jadwal servis, ganti oli, sareng pajak STNK mobil sareng motor gampil hilap tanpa sahiji catetan anu rapi.", "agitate": "Nota bengkel leungit, kilometer oli teu kapantau, sareng STNK telat diperpanjang dugi ka kena denda. Tanpa riwayat anu kacatet, biaya kandaraan ngagedéan tanpa karasa.", "solve": "GarageGo solusina. Catet riwayat servis, pangemut oli dumasar kilometer, konsumsi BBM, sareng tempo pajak STNK tiap kandaraan. 100% offline sareng pribadi.", "cta_mobile": "Unduh Gratis Ayeuna", "features_title": "Kaunggulan GarageGo", "features_sub": "Sahiji catetan rapi sareng pangemut tepat waktu kanggo tiap kandaraan.", "f1_title": "Riwayat Servis Lengkep", "f1_text": "Catet tanggal, kilometer, bengkel, sareng biaya unggal servis mobil sareng motor.", "f2_title": "Pangemut Oli Otomatis", "f2_text": "Bewara ganti oli dumasar jarak tempuh atanapi interval waktos.", "f3_title": "Catetan BBM & Pajak", "f3_text": "Pantau konsumsi BBM sareng tempo pajak STNK taunan tiap kandaraan.", "f4_title": "Loba Kandaraan Offline", "f4_text": "Atur seueur mobil sareng motor; sadaya data disimpen dina HP.", "down_title": "Unduh Aplikasi Ayeuna", "down_text": "Rapikeun riwayat servis mobil sareng motor, mayar pajak STNK tepat waktu. Gratis, teu perlu akun.", "coming_soon": "Bakal Hadir dina", "mock_title": "Garasi Abdi", "mock_subuh": "Vario 125 • Oli 1.200 km", "mock_dhuha": "Servis Rutin ✓", "mock_tilawah": "BBM 1:48", "mock_charity": "STNK: 12 Nov", "mock_chart_title": "Rp 850 rb / sasih", "scripture_title": "Amanah Ngarawat Titipan", "scripture_arabic": "إِنَّ خَيْرَ مَنِ اسْتَأْجَرْتَ الْقَوِيُّ الْأَمِينُ", "scripture_translation": "Saestuna jalma anu pangsaena dicokot jadi pagawé nyaeta anu kuat sareng tiasa dipercaya. — QS. Al-Qashash: 26", "hadith_arabic": "إِنَّ اللَّهَ يُحِبُّ إِذَا عَمِلَ أَحَدُكُمْ عَمَلاً أَنْ يُتْقِنَهُ", "hadith_translation": "Saestuna Allah mikacinta jalma anu midamel padamelan kalayan sampurna (itqan). — HR. Al-Baihaqi", "privacy_policy": "Kabijakan Privasi", "terms_of_service": "Katangtuan Ladenan", "nav_blog": "Blog", "blog_title": "Artikel & Panduan Panganyarna", "blog_sub": "Dalami GarageGo ngaliwatan tilu panduan singket ieu.", "blog_view_all": "Tingali Sadaya Artikel", "trust_bar": "✓ Data disimpen di alat  •  ✓ Bisa dipaké offline  •  ✓ Gratis", "risk_line": "Gratis • Teu perlu akun • Data anjeun tetep di alat anjeun", "b1_title": "Riwayat Servis Mobil jeung Motor: Rapih Ti Taun ka Taun", "b1_text": "Tanggal, kilometer, bengkel, biaya: riwayat servis rapih per kendaraan.", "b2_title": "Pangeling Ganti Oli: Dumasar Jarak atawa Waktu", "b2_text": "Target jarak atawa waktu ti kilometer panungtung, ku pangeling otomatis.", "b3_title": "Pajak STNK Taunan: Ulah Nepi ka Kaliwat", "b3_text": "Tanggal pajak kadaftar, pangeling samemeh tempo, mayar pas waktuna."}, "zh": {"meta_title": "GarageGo — 保养、机油与车税提醒", "meta_description": "GarageGo 把汽车与摩托的保养、机油、油耗和车辆税记在一个应用里。自动提醒加费用汇总，100% 离线，完全保护隐私。", "meta_keywords": "garagego, 车辆保养, 换机油, 车辆税, 油耗记录, 保养提醒, 车库管理", "badge": "🚗 车辆车库与保养记录", "headline": "总忘记保养、换机油和缴车辆税？", "problem": "没有一本整齐的记录，汽车与摩托的保养、机油和税费计划很容易被忘记。", "agitate": "维修单据丢失、机油里程无人跟踪、车辆年检税逾期被罚。没有书面记录，养车费用在不知不觉中越涨越高。", "solve": "GarageGo 就是答案。记录保养历史、按里程提醒换机油、跟踪油耗与税费到期日。100% 离线，完全保护隐私。", "cta_mobile": "立即免费下载", "features_title": "为什么选择 GarageGo", "features_sub": "一本整齐的记录，为每辆车准时提醒。", "f1_title": "完整保养历史", "f1_text": "记录每次保养的日期、里程、维修店与费用，汽车摩托都适用。", "f2_title": "机油自动提醒", "f2_text": "按行驶里程或时间间隔提醒更换机油。", "f3_title": "油耗与税费", "f3_text": "跟踪油耗与每辆车的年度税费到期日。", "f4_title": "多车管理·离线", "f4_text": "管理多辆汽车摩托，所有数据保存在本机。", "down_title": "立即下载应用", "down_text": "整理好汽车与摩托的保养记录，按时缴纳车辆税。 免费，无需注册。", "coming_soon": "即将登陆", "mock_title": "我的车库", "mock_subuh": "Vario 125 • 机油1200km", "mock_dhuha": "常规保养 ✓", "mock_tilawah": "油耗 1:48", "mock_charity": "年检税：11月12日", "mock_chart_title": "月均 850 千盾", "scripture_title": "受托之物的诚信", "scripture_arabic": "إِنَّ خَيْرَ مَنِ اسْتَأْجَرْتَ الْقَوِيُّ الْأَمِينُ", "scripture_translation": "你雇佣的最优秀者，是强壮而诚信的人。—— 故事章：26", "hadith_arabic": "إِنَّ اللَّهَ يُحِبُّ إِذَا عَمِلَ أَحَدُكُمْ عَمَلاً أَنْ يُتْقِنَهُ", "hadith_translation": "真主喜爱当你们做一项工作时，能将其做到尽善尽美。—— 拜哈基圣训", "privacy_policy": "隐私政策", "terms_of_service": "服务条款", "nav_blog": "博客", "blog_title": "最新文章与指南", "blog_sub": "通过这三篇简短指南，深入了解GarageGo。", "blog_view_all": "查看全部文章", "trust_bar": "✓ 数据保存在本机  •  ✓ 支持离线使用  •  ✓ 免费", "risk_line": "免费 • 无需注册 • 您的数据保留在设备上", "b1_title": "汽车摩托维保史：年年整洁可查", "b1_text": "日期、里程、修理厂、费用：按车整洁的维保史。", "b2_title": "换机油提醒：按里程或按时间", "b2_text": "从上次里程定里程或时间目标，自动提醒。", "b3_title": "年检车税：别让截止日溜走", "b3_text": "税期登记、到期前提醒、按时缴纳。"}, "ja": {"meta_title": "GarageGo — 車の整備・オイル・税金リマインダー", "meta_description": "GarageGoは車とバイクの整備・オイル交換・燃費・税金を一つのアプリに記録。自動リマインダーと費用集計つき、100%オフラインでプライベート。", "meta_keywords": "garagego, 車両整備, オイル交換, 自動車税, 燃費記録, 整備リマインダー, ガレージ管理", "badge": "🚗 車両ガレージ・整備記録", "headline": "整備やオイル交換、税金の更新を忘れがちですか？", "problem": "車とバイクの整備、オイル交換、税金の予定は、一つの整理された記録がないと忘れがちです。", "agitate": "整備の領収書をなくし、オイル交換の走行距離を見失い、車検や税金の更新を遅らせて延滞金を払うことに。記録がなければ、維持費は気づかないうちに膨らみます。", "solve": "その答えがGarageGoです。整備履歴、走行距離にもとづくオイル通知、燃費、税金期限を車両ごとに記録。100%オフラインでプライベートです。", "cta_mobile": "今すぐ無料ダウンロード", "features_title": "GarageGoの強み", "features_sub": "1台ごとの整理された記録とタイムリーな通知。", "f1_title": "完全な整備履歴", "f1_text": "車とバイクの整備ごとに日付・走行距離・工場・費用を記録。", "f2_title": "オイル交換リマインダー", "f2_text": "走行距離または期間にもとづくオイル交換の通知。", "f3_title": "燃費・税金メモ", "f3_text": "燃費と年次税金の期限を車両ごとに管理。", "f4_title": "複数台対応・オフライン", "f4_text": "複数の車両を管理。すべてのデータは端末内に保存。", "down_title": "アプリをダウンロード", "down_text": "車とバイクの整備履歴を整理し、税金も期限内に納めましょう。 無料、アカウント不要。", "coming_soon": "近日公開", "mock_title": "マイガレージ", "mock_subuh": "ヴァリオ125 • オイル1200km", "mock_dhuha": "定期点検 ✓", "mock_tilawah": "燃費 1:48", "mock_charity": "税金：11月12日", "mock_chart_title": "月85万ルピア", "scripture_title": "預かりものへの誠実さ", "scripture_arabic": "إِنَّ خَيْرَ مَنِ اسْتَأْجَرْتَ الْقَوِيُّ الْأَمِينُ", "scripture_translation": "まことに雇うのに最も良いのは、強くて信頼できる者である。— スーラ・カサス：26", "hadith_arabic": "إِنَّ اللَّهَ يُحِبُّ إِذَا عَمِلَ أَحَدُكُمْ عَمَلاً أَنْ يُتْقِنَهُ", "hadith_translation": "アッラーは、あなたがたの誰かが仕事をするとき、それを完璧に行うことを愛される。— バイハキー伝", "privacy_policy": "プライバシーポリシー", "terms_of_service": "利用規約", "nav_blog": "ブログ", "blog_title": "最新の記事とガイド", "blog_sub": "この3つのクイックガイドでGarageGoを使いこなそう。", "blog_view_all": "すべての記事を見る", "trust_bar": "✓ データは端末に保存  •  ✓ オフライン対応  •  ✓ 無料", "risk_line": "無料 • アカウント不要 • データはあなたの端末に残ります", "b1_title": "車とバイクの整備史：年々すっきり記録", "b1_text": "日付・距離・工場・費用：車両ごとのすっきり整備史。", "b2_title": "オイル交換通知：距離または時間で", "b2_text": "前回距離からの距離・時間目標を自動で通知。", "b3_title": "年次 STNK 税：期限を逃さない", "b3_text": "税日を登録、期限前に通知、期限どおり納付。"}};
+        const flagMap = {
+            id: "🇮🇩",
+            en: "🇺🇸",
+            ar: "🇸🇦",
+            jv: "🇮🇩",
+            su: "🇮🇩",
+            zh: "🇨🇳",
+            ja: "🇯🇵"
+        };
+        
+        const codeMap = {
+            id: "ID",
+            en: "EN",
+            ar: "AR",
+            jv: "JV",
+            su: "SU",
+            zh: "ZH",
+            ja: "JA"
+        };
+
+        function changeLanguage(lang) {
+            if (!i18nData[lang]) return;
+            localStorage.setItem('landing_lang', lang);
+            
+            // Update Active Dropdown UI values
+            document.getElementById('current-flag').textContent = flagMap[lang];
+            document.getElementById('current-lang-code').textContent = codeMap[lang];
+            
+            // Update RTL if Arabic
+            if (lang === 'ar') {
+                document.documentElement.setAttribute('dir', 'rtl');
+                document.documentElement.setAttribute('lang', 'ar');
+            } else {
+                document.documentElement.removeAttribute('dir');
+                document.documentElement.setAttribute('lang', lang);
+            }
+            
+            // Translate all elements with data-i18n attribute
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (i18nData[lang][key]) {
+                    el.textContent = i18nData[lang][key];
+                }
+            });
+        }
+        
+        // Interactive Dropdown JS
+        const dropdownBtn = document.getElementById('lang-btn');
+        const dropdownMenu = document.getElementById('lang-dropdown');
+        
+        dropdownBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const isOpen = dropdownMenu.classList.toggle('open');
+            dropdownBtn.setAttribute('aria-expanded', isOpen);
+        });
+        
+        dropdownMenu.querySelectorAll('li').forEach(item => {
+            item.addEventListener('click', (e) => {
+                const selectedVal = e.currentTarget.getAttribute('data-value');
+                changeLanguage(selectedVal);
+                dropdownMenu.classList.remove('open');
+                dropdownBtn.setAttribute('aria-expanded', 'false');
+            });
+        });
+        
+        document.addEventListener('click', () => {
+            dropdownMenu.classList.remove('open');
+            dropdownBtn.setAttribute('aria-expanded', 'false');
+        });
+        
+        // Initialize preferred or browser language
+        window.addEventListener('DOMContentLoaded', () => {
+            const savedLang = localStorage.getItem('landing_lang');
+            const browserLang = navigator.language.split('-')[0];
+            const defaultLang = savedLang || (i18nData[browserLang] ? browserLang : 'id');
+            changeLanguage(defaultLang);
+        });
+    </script>
+
+</body>
+</html>

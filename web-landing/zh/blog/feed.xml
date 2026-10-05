@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Blog — GarageGo</title>
+    <link>https://garagego.faishal.id/zh/blog/</link>
+    <description>GarageGo 博客：维保史、换机油提醒、油耗记录与汽车摩托车税指南——离线且保护隐私，三分钟掌握。</description>
+    <language>zh</language>
+    <lastBuildDate>Sun, 04 Oct 2026 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>汽车摩托维保史：年年整洁可查 — GarageGo</title>
+      <link>https://garagego.faishal.id/zh/blog/riwayat-servis-mobil-motor/</link>
+      <guid isPermaLink="true">https://garagego.faishal.id/zh/blog/riwayat-servis-mobil-motor/</guid>
+      <pubDate>Sun, 04 Oct 2026 00:00:00 +0000</pubDate>
+      <description>记录汽车摩托维保史，含日期、里程、修理厂与费用。用离线 GarageGo 让维保史年年整洁。本文分三步讲解登记、记录与汇总，并附字段对照表、操作清单与五组常见问答，离线可用，新手三分钟即可掌握，欢迎收藏，欢迎分享给有需要的朋友。</description>
+    </item>
+    <item>
+      <title>换机油提醒：按里程或按时间 — GarageGo</title>
+      <link>https://garagego.faishal.id/zh/blog/pengingat-ganti-oli/</link>
+      <guid isPermaLink="true">https://garagego.faishal.id/zh/blog/pengingat-ganti-oli/</guid>
+      <pubDate>Sun, 04 Oct 2026 00:00:00 +0000</pubDate>
+      <description>换机油提醒按里程或时间间隔，让汽车摩托发动机持续受护。用离线 GarageGo 定机油计划。本文讲解记录、定目标与收提醒三步，附模式对照表、操作清单与五组常见问答，离线可用，新手也能快速上手，欢迎收藏，欢迎分享给有需要的朋友。</description>
+    </item>
+    <item>
+      <title>年检车税：别让截止日溜走 — GarageGo</title>
+      <link>https://garagego.faishal.id/zh/blog/pajak-stnk-tahunan/</link>
+      <guid isPermaLink="true">https://garagego.faishal.id/zh/blog/pajak-stnk-tahunan/</guid>
+      <pubDate>Sun, 04 Oct 2026 00:00:00 +0000</pubDate>
+      <description>按车提醒年检与五年车税，截止日不再溜走。登记日期、收提醒、用 GarageGo 按时缴税。本文讲解登记、提醒与缴纳三步，附种类对照表、操作清单与五组常见问答，离线可用，三分钟掌握，欢迎收藏，欢迎分享给有需要的朋友。三分钟掌握要领。</description>
+    </item>
+  </channel>
+</rss>

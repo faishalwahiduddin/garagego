@@ -275,10 +275,10 @@ class AppLocalizationsSu extends AppLocalizations {
   String get dataManagement => 'Ngatur Data & Cadangan';
 
   @override
-  String get exportBackup => 'Ékspor Cadangan (JSON)';
+  String get exportBackup => 'Ékspor Cadangan (.grg)';
 
   @override
-  String get importBackup => 'Pulihkeun Cadangan (JSON)';
+  String get importBackup => 'Pulihkeun Cadangan (.grg)';
 
   @override
   String get exportCsv => 'Ékspor kana CSV';
@@ -352,11 +352,11 @@ class AppLocalizationsSu extends AppLocalizations {
 
   @override
   String get cadanganLengkapSeluruhDataGara =>
-      'Cadangan lengkep sadaya data Garasi, jadwal servis, dokumén, sareng log BBM tiasa disalin kana clipboard di handap:';
+      'Bagikeun berkas .grg anu ngandung sadaya data garasi, jadwal, dokumén, jeung log BBM.';
 
   @override
   String get cadangkanSeluruhKendaraanServi =>
-      'Cadangkeun sadaya kandaraan, servis, BBM, sareng jadwal';
+      'Bagikeun sadaya kendaraan, servis, BBM, jeung jadwal salaku berkas .grg';
 
   @override
   String get cariRiwayatServisAtauBengkel =>
@@ -443,7 +443,7 @@ class AppLocalizationsSu extends AppLocalizations {
       'Panginget Dual-Trigger: Béwara bakal hurung saupami jarak (km) ATAWA waktos (sasih) parantos kahontal.';
 
   @override
-  String get eksporBackupJson => 'Ékspor Cadangan JSON';
+  String get eksporBackupJson => 'Ékspor Cadangan (.grg)';
 
   @override
   String get eksporCsvRiwayatBbm => 'Ékspor CSV Riwajat BBM';
@@ -452,7 +452,7 @@ class AppLocalizationsSu extends AppLocalizations {
   String get eksporCsvRiwayatServis => 'Ékspor CSV Riwajat Servis';
 
   @override
-  String get eksporCadanganJson => 'Ékspor Cadangan JSON';
+  String get eksporCadanganJson => 'Ékspor Cadangan (.grg)';
 
   @override
   String get eksporFormatTabelSpreadsheetUn =>
@@ -483,7 +483,7 @@ class AppLocalizationsSu extends AppLocalizations {
       'Itung konsumsi km/L sareng biaya béngsin';
 
   @override
-  String get imporPulihkanBackupJson => 'Impor / Pulihkeun Cadangan JSON';
+  String get imporPulihkanBackupJson => 'Impor / Pulihkeun Cadangan (.grg)';
 
   @override
   String get intervalJarakKm => 'Interval Jarak (km)';
@@ -514,7 +514,7 @@ class AppLocalizationsSu extends AppLocalizations {
 
   @override
   String get kembalikanDataDariBerkasCadang =>
-      'Mulihkeun data tina berkas cadangan JSON anu sah';
+      'Mulihkeun data tina berkas cadangan .grg anu sah';
 
   @override
   String get kilometerOdometerKm => 'Kilométer Odometer (km)';
@@ -638,7 +638,7 @@ class AppLocalizationsSu extends AppLocalizations {
   String get pulihkanData => 'Pulihkeun Data';
 
   @override
-  String get pulihkanDariBackupJson => 'Pulihkeun tina Cadangan JSON';
+  String get pulihkanDariBackupJson => 'Pulihkeun tina berkas (.grg)';
 
   @override
   String get rataRataEfisiensi => 'Rata-Rata Efisiensi';
@@ -675,7 +675,7 @@ class AppLocalizationsSu extends AppLocalizations {
 
   @override
   String get salinanJsonBackupBerhasilDisal =>
-      'Salinan JSON cadangan parantos disalin kana Clipboard!';
+      'Berkas cadangan .grg siap dibagikeun!';
 
   @override
   String get servisTerakhir => 'Servis Pamungkas';
@@ -746,11 +746,11 @@ class AppLocalizationsSu extends AppLocalizations {
   String get tanggalTerakhirDikerjakan => 'Tanggal Pamungkas Digawéan';
 
   @override
-  String get teksJsonTidakBolehKosong => 'Téks JSON teu kénging kosong!';
+  String get teksJsonTidakBolehKosong => 'Berkas cadangan teu kénging kosong!';
 
   @override
   String get tempelkanTeksDataJsonCadanganY =>
-      'Témpélkeun téks data JSON cadangan anu kungsi diékspor:';
+      'Pilih berkas cadangan .grg anu kungsi diékspor.';
 
   @override
   String get tentangAplikasiLisensi => 'Ngeunaan Aplikasi & Lisénsi';
@@ -845,8 +845,65 @@ class AppLocalizationsSu extends AppLocalizations {
   }
 
   @override
-  String get timezone => 'Zona Waktu';
+  String get timezone => 'Zona Wanci';
 
   @override
-  String get timezoneAuto => 'Otomatis (ikut perangkat)';
+  String get timezoneAuto => 'Otomatis (nurutkeun parangkat)';
+
+  @override
+  String get licenseUsageTitle => 'Lisensi Pamakean';
+
+  @override
+  String get licenseUsageNotice =>
+      'Bébas dianggo pikeun kaperluan pribadi jeung non-profit.';
+
+  @override
+  String get licenseUsageBadgeText => 'Pribadi & Non-Profit';
+
+  @override
+  String get validationVehicleNameRequired =>
+      'Nami kandaraan teu kenging kosong';
+
+  @override
+  String get validationVehicleNameMinLength =>
+      'Nami kandaraan sahenteuna 2 karakter';
+
+  @override
+  String get validationVehicleNameMaxLength =>
+      'Nami kandaraan maksimal 50 karakter';
+
+  @override
+  String get validationPlateRequired => 'Nomer plat teu kenging kosong';
+
+  @override
+  String get validationPlateMaxLength => 'Nomer plat maksimal 15 karakter';
+
+  @override
+  String get validationOdometerNegative =>
+      'Kilometer odometer teu kenging negatif';
+
+  @override
+  String get validationOdometerTooHigh =>
+      'Kilometer odometer ngaleuwihan wates wajar';
+
+  @override
+  String get validationOdometerLessThanPrevious =>
+      'Odometer enggal teu kenging langkung alit tibatan sateuacanna';
+
+  @override
+  String get validationCostNegative => 'Biaya teu kenging bernilai negatif';
+
+  @override
+  String get validationFuelLitersPositive =>
+      'Volume bensin kedah langkung ti 0 liter';
+
+  @override
+  String get validationFuelLitersTooHigh =>
+      'Volume bensin ngaleuwihan kapasitas tangki';
+
+  @override
+  String get validationServiceNameRequired => 'Nami servis kedah dieusian';
+
+  @override
+  String get validationDocNameRequired => 'Nami dokumen kedah dieusian';
 }

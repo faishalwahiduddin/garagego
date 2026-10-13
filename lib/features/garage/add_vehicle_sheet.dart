@@ -5,6 +5,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../core/constants/app_colors.dart';
 import '../../core/models/vehicle.dart';
 import '../../core/providers/app_providers.dart';
+import '../../core/utils/l10n_helpers.dart';
 import '../../core/utils/validators.dart';
 
 class AddVehicleSheet extends ConsumerStatefulWidget {
@@ -173,7 +174,7 @@ class _AddVehicleSheetState extends ConsumerState<AddVehicleSheet> {
                       : 'e.g. Honda HR-V / Yamaha NMAX',
                   prefixIcon: Icon(Icons.drive_file_rename_outline_rounded, size: 18, color: context.textSecondary),
                 ),
-                validator: AppValidators.validateVehicleName,
+                validator: (val) => mapValidationError(AppValidators.validateVehicleName(val), l10n),
               ),
               const SizedBox(height: 12),
 
@@ -196,7 +197,7 @@ class _AddVehicleSheetState extends ConsumerState<AddVehicleSheet> {
                         hintText: 'B 1234 CD',
                         prefixIcon: Icon(Icons.badge_outlined, size: 18, color: context.textSecondary),
                       ),
-                      validator: AppValidators.validatePlateNumber,
+                      validator: (val) => mapValidationError(AppValidators.validatePlateNumber(val), l10n),
                     ),
                   ),
                   const SizedBox(width: 12),
@@ -243,7 +244,7 @@ class _AddVehicleSheetState extends ConsumerState<AddVehicleSheet> {
                         suffixText: 'km',
                         prefixIcon: Icon(Icons.speed_rounded, size: 18, color: context.textSecondary),
                       ),
-                      validator: (val) => AppValidators.validateOdometer(int.tryParse(val ?? '')),
+                      validator: (val) => mapValidationError(AppValidators.validateOdometer(int.tryParse(val ?? '')), l10n),
                     ),
                   ),
                   const SizedBox(width: 12),

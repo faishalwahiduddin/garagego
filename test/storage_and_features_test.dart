@@ -1,6 +1,8 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:garagego/core/models/vehicle.dart';
 import 'package:garagego/core/storage/local_storage_service.dart';
+import 'package:garagego/core/utils/backup_file_io.dart';
+import 'package:package_info_plus/package_info_plus.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 void main() {
@@ -8,6 +10,13 @@ void main() {
     late LocalStorageService storage;
 
     setUp(() async {
+      PackageInfo.setMockInitialValues(
+        appName: 'GarageGo',
+        packageName: 'id.faishal.garagego',
+        version: '1.0.0',
+        buildNumber: '1',
+        buildSignature: '',
+      );
       SharedPreferences.setMockInitialValues({});
       storage = await LocalStorageService.init();
     });
@@ -34,8 +43,14 @@ void main() {
       expect(fuels, isNotEmpty);
     });
 
+    test('Backup file extension is grg', () {
+      expect(BackupFileIo.fileExtension, 'grg');
+      expect(BackupFileIo.slug, 'garagego');
+      expect(BackupFileIo.mimeType, 'application/octet-stream');
+    });
+
     test('Custom format Backup export and import round-trip preserves all entities', () async {
-      final backup = storage.exportBackupJson();
+      final backup = await storage.exportBackupJson();
       expect(backup.startsWith('FSBK1#GARAGEGO#'), isTrue);
       expect(backup, isNot(contains('Toyota Innova'))); // Obfuscated custom format
 

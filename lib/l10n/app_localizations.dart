@@ -641,13 +641,13 @@ abstract class AppLocalizations {
   /// No description provided for @exportBackup.
   ///
   /// In id, this message translates to:
-  /// **'Ekspor Cadangan (JSON)'**
+  /// **'Ekspor Cadangan (.grg)'**
   String get exportBackup;
 
   /// No description provided for @importBackup.
   ///
   /// In id, this message translates to:
-  /// **'Pulihkan Cadangan (JSON)'**
+  /// **'Pulihkan Cadangan (.grg)'**
   String get importBackup;
 
   /// No description provided for @exportCsv.
@@ -785,13 +785,13 @@ abstract class AppLocalizations {
   /// No description provided for @cadanganLengkapSeluruhDataGara.
   ///
   /// In id, this message translates to:
-  /// **'Cadangan lengkap seluruh data garasi, jadwal servis, dokumen, dan log BBM dapat disalin ke clipboard di bawah:'**
+  /// **'Bagikan berkas cadangan .grg berisi seluruh data garasi, jadwal servis, dokumen, dan log BBM.'**
   String get cadanganLengkapSeluruhDataGara;
 
   /// No description provided for @cadangkanSeluruhKendaraanServi.
   ///
   /// In id, this message translates to:
-  /// **'Cadangkan seluruh kendaraan, servis, BBM, dan jadwal'**
+  /// **'Bagikan seluruh kendaraan, servis, BBM, dan jadwal sebagai berkas .grg'**
   String get cadangkanSeluruhKendaraanServi;
 
   /// No description provided for @cariRiwayatServisAtauBengkel.
@@ -941,7 +941,7 @@ abstract class AppLocalizations {
   /// No description provided for @eksporBackupJson.
   ///
   /// In id, this message translates to:
-  /// **'Ekspor Backup JSON'**
+  /// **'Ekspor Cadangan (.grg)'**
   String get eksporBackupJson;
 
   /// No description provided for @eksporCsvRiwayatBbm.
@@ -959,7 +959,7 @@ abstract class AppLocalizations {
   /// No description provided for @eksporCadanganJson.
   ///
   /// In id, this message translates to:
-  /// **'Ekspor Cadangan JSON'**
+  /// **'Ekspor Cadangan (.grg)'**
   String get eksporCadanganJson;
 
   /// No description provided for @eksporFormatTabelSpreadsheetUn.
@@ -1013,7 +1013,7 @@ abstract class AppLocalizations {
   /// No description provided for @imporPulihkanBackupJson.
   ///
   /// In id, this message translates to:
-  /// **'Impor / Pulihkan Backup JSON'**
+  /// **'Impor / Pulihkan Cadangan (.grg)'**
   String get imporPulihkanBackupJson;
 
   /// No description provided for @intervalJarakKm.
@@ -1073,7 +1073,7 @@ abstract class AppLocalizations {
   /// No description provided for @kembalikanDataDariBerkasCadang.
   ///
   /// In id, this message translates to:
-  /// **'Kembalikan data dari berkas cadangan JSON yang valid'**
+  /// **'Kembalikan data dari berkas cadangan .grg yang valid'**
   String get kembalikanDataDariBerkasCadang;
 
   /// No description provided for @kilometerOdometerKm.
@@ -1307,7 +1307,7 @@ abstract class AppLocalizations {
   /// No description provided for @pulihkanDariBackupJson.
   ///
   /// In id, this message translates to:
-  /// **'Pulihkan dari Backup JSON'**
+  /// **'Pulihkan dari berkas (.grg)'**
   String get pulihkanDariBackupJson;
 
   /// No description provided for @rataRataEfisiensi.
@@ -1379,7 +1379,7 @@ abstract class AppLocalizations {
   /// No description provided for @salinanJsonBackupBerhasilDisal.
   ///
   /// In id, this message translates to:
-  /// **'Salinan JSON backup berhasil disalin ke Clipboard!'**
+  /// **'Berkas cadangan .grg siap dibagikan!'**
   String get salinanJsonBackupBerhasilDisal;
 
   /// No description provided for @servisTerakhir.
@@ -1511,13 +1511,13 @@ abstract class AppLocalizations {
   /// No description provided for @teksJsonTidakBolehKosong.
   ///
   /// In id, this message translates to:
-  /// **'Teks JSON tidak boleh kosong!'**
+  /// **'Berkas cadangan tidak boleh kosong!'**
   String get teksJsonTidakBolehKosong;
 
   /// No description provided for @tempelkanTeksDataJsonCadanganY.
   ///
   /// In id, this message translates to:
-  /// **'Tempelkan teks data JSON cadangan yang pernah diekspor sebelumnya:'**
+  /// **'Pilih berkas cadangan .grg yang pernah diekspor sebelumnya.'**
   String get tempelkanTeksDataJsonCadanganY;
 
   /// No description provided for @tentangAplikasiLisensi.
@@ -1675,6 +1675,102 @@ abstract class AppLocalizations {
   /// In id, this message translates to:
   /// **'Otomatis (ikut perangkat)'**
   String get timezoneAuto;
+
+  /// No description provided for @licenseUsageTitle.
+  ///
+  /// In id, this message translates to:
+  /// **'Lisensi Penggunaan'**
+  String get licenseUsageTitle;
+
+  /// No description provided for @licenseUsageNotice.
+  ///
+  /// In id, this message translates to:
+  /// **'Bebas digunakan untuk keperluan personal dan non-profit.'**
+  String get licenseUsageNotice;
+
+  /// No description provided for @licenseUsageBadgeText.
+  ///
+  /// In id, this message translates to:
+  /// **'Personal & Non-Profit'**
+  String get licenseUsageBadgeText;
+
+  /// No description provided for @validationVehicleNameRequired.
+  ///
+  /// In id, this message translates to:
+  /// **'Nama kendaraan tidak boleh kosong'**
+  String get validationVehicleNameRequired;
+
+  /// No description provided for @validationVehicleNameMinLength.
+  ///
+  /// In id, this message translates to:
+  /// **'Nama kendaraan minimal 2 karakter'**
+  String get validationVehicleNameMinLength;
+
+  /// No description provided for @validationVehicleNameMaxLength.
+  ///
+  /// In id, this message translates to:
+  /// **'Nama kendaraan maksimal 50 karakter'**
+  String get validationVehicleNameMaxLength;
+
+  /// No description provided for @validationPlateRequired.
+  ///
+  /// In id, this message translates to:
+  /// **'Nomor pelat polisi tidak boleh kosong'**
+  String get validationPlateRequired;
+
+  /// No description provided for @validationPlateMaxLength.
+  ///
+  /// In id, this message translates to:
+  /// **'Nomor pelat maksimal 15 karakter'**
+  String get validationPlateMaxLength;
+
+  /// No description provided for @validationOdometerNegative.
+  ///
+  /// In id, this message translates to:
+  /// **'Kilometer odometer tidak boleh negatif'**
+  String get validationOdometerNegative;
+
+  /// No description provided for @validationOdometerTooHigh.
+  ///
+  /// In id, this message translates to:
+  /// **'Kilometer odometer melebihi batas wajar'**
+  String get validationOdometerTooHigh;
+
+  /// No description provided for @validationOdometerLessThanPrevious.
+  ///
+  /// In id, this message translates to:
+  /// **'Odometer baru tidak boleh lebih kecil dari sebelumnya'**
+  String get validationOdometerLessThanPrevious;
+
+  /// No description provided for @validationCostNegative.
+  ///
+  /// In id, this message translates to:
+  /// **'Biaya tidak boleh bernilai negatif'**
+  String get validationCostNegative;
+
+  /// No description provided for @validationFuelLitersPositive.
+  ///
+  /// In id, this message translates to:
+  /// **'Volume bahan bakar harus lebih dari 0 liter'**
+  String get validationFuelLitersPositive;
+
+  /// No description provided for @validationFuelLitersTooHigh.
+  ///
+  /// In id, this message translates to:
+  /// **'Volume tangki melebihi kapasitas wajar'**
+  String get validationFuelLitersTooHigh;
+
+  /// No description provided for @validationServiceNameRequired.
+  ///
+  /// In id, this message translates to:
+  /// **'Nama servis wajib diisi'**
+  String get validationServiceNameRequired;
+
+  /// No description provided for @validationDocNameRequired.
+  ///
+  /// In id, this message translates to:
+  /// **'Nama dokumen wajib diisi'**
+  String get validationDocNameRequired;
 }
 
 class _AppLocalizationsDelegate

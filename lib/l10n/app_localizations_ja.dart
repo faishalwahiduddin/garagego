@@ -275,10 +275,10 @@ class AppLocalizationsJa extends AppLocalizations {
   String get dataManagement => 'データ・バックアップ管理';
 
   @override
-  String get exportBackup => 'バックアップを出力 (JSON)';
+  String get exportBackup => 'バックアップを書き出し (.grg)';
 
   @override
-  String get importBackup => 'バックアップを復元 (JSON)';
+  String get importBackup => 'バックアップを復元 (.grg)';
 
   @override
   String get exportCsv => 'CSV形式で出力';
@@ -349,10 +349,10 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get cadanganLengkapSeluruhDataGara =>
-      '車両、点検、書類、給油を含む全データをクリップボードにコピーできます：';
+      '車両・予定・書類・燃料ログを含む .grg バックアップを共有します。';
 
   @override
-  String get cadangkanSeluruhKendaraanServi => '全車両、整備、給油、スケジュールを一括バックアップ';
+  String get cadangkanSeluruhKendaraanServi => '車両・整備・燃料・予定を .grg ファイルとして共有';
 
   @override
   String get cariRiwayatServisAtauBengkel => '整備履歴や整備工場を検索...';
@@ -429,7 +429,7 @@ class AppLocalizationsJa extends AppLocalizations {
       'デュアルトリガー通知: 走行距離(km)または期間(月)のどちらかに達すると通知されます。';
 
   @override
-  String get eksporBackupJson => 'JSONバックアップ書き出し';
+  String get eksporBackupJson => 'バックアップを書き出し (.grg)';
 
   @override
   String get eksporCsvRiwayatBbm => '給油履歴をCSV書き出し';
@@ -438,7 +438,7 @@ class AppLocalizationsJa extends AppLocalizations {
   String get eksporCsvRiwayatServis => '整備履歴をCSV書き出し';
 
   @override
-  String get eksporCadanganJson => 'JSONバックアップ書き出し';
+  String get eksporCadanganJson => 'バックアップを書き出し (.grg)';
 
   @override
   String get eksporFormatTabelSpreadsheetUn => '整備工場記録用の表形式CSV書き出し';
@@ -465,7 +465,7 @@ class AppLocalizationsJa extends AppLocalizations {
   String get hitungKonsumsiKmLDanBiayaBensi => '燃費(km/L)とガソリン代を自動計算';
 
   @override
-  String get imporPulihkanBackupJson => 'JSONバックアップから復元';
+  String get imporPulihkanBackupJson => 'バックアップを読み込み / 復元 (.grg)';
 
   @override
   String get intervalJarakKm => '距離間隔 (km)';
@@ -495,7 +495,7 @@ class AppLocalizationsJa extends AppLocalizations {
   String get kategori => 'カテゴリー:';
 
   @override
-  String get kembalikanDataDariBerkasCadang => '有効なJSONバックアップファイルからデータを復元';
+  String get kembalikanDataDariBerkasCadang => '有効な .grg バックアップからデータを復元';
 
   @override
   String get kilometerOdometerKm => 'オドメーター走行距離 (km)';
@@ -613,7 +613,7 @@ class AppLocalizationsJa extends AppLocalizations {
   String get pulihkanData => 'データを復元';
 
   @override
-  String get pulihkanDariBackupJson => 'JSONバックアップから復元';
+  String get pulihkanDariBackupJson => 'ファイルから復元 (.grg)';
 
   @override
   String get rataRataEfisiensi => '平均燃費';
@@ -649,7 +649,7 @@ class AppLocalizationsJa extends AppLocalizations {
   String get salinKeClipboard => 'クリップボードにコピー';
 
   @override
-  String get salinanJsonBackupBerhasilDisal => 'JSONバックアップをクリップボードにコピーしました！';
+  String get salinanJsonBackupBerhasilDisal => '.grg バックアップを共有できます！';
 
   @override
   String get servisTerakhir => '直近の整備';
@@ -716,11 +716,10 @@ class AppLocalizationsJa extends AppLocalizations {
   String get tanggalTerakhirDikerjakan => '前回実施日';
 
   @override
-  String get teksJsonTidakBolehKosong => 'JSONテキストが空です！';
+  String get teksJsonTidakBolehKosong => 'バックアップファイルは空にできません！';
 
   @override
-  String get tempelkanTeksDataJsonCadanganY =>
-      '以前書き出したJSONバックアップデータをここに貼り付けてください：';
+  String get tempelkanTeksDataJsonCadanganY => '以前書き出した .grg バックアップを選んでください。';
 
   @override
   String get tentangAplikasiLisensi => 'アプリについて & ライセンス';
@@ -814,8 +813,56 @@ class AppLocalizationsJa extends AppLocalizations {
   }
 
   @override
-  String get timezone => 'Zona Waktu';
+  String get timezone => 'タイムゾーン';
 
   @override
-  String get timezoneAuto => 'Otomatis (ikut perangkat)';
+  String get timezoneAuto => '自動（デバイスに準拠）';
+
+  @override
+  String get licenseUsageTitle => '利用規約・ライセンス';
+
+  @override
+  String get licenseUsageNotice => '個人および非営利目的での利用は無料です。';
+
+  @override
+  String get licenseUsageBadgeText => '個人・非営利';
+
+  @override
+  String get validationVehicleNameRequired => '車両名を入力してください';
+
+  @override
+  String get validationVehicleNameMinLength => '車両名は2文字以上で入力してください';
+
+  @override
+  String get validationVehicleNameMaxLength => '車両名は50文字以内で入力してください';
+
+  @override
+  String get validationPlateRequired => 'ナンバープレート番号を入力してください';
+
+  @override
+  String get validationPlateMaxLength => 'ナンバープレートは15文字以内で入力してください';
+
+  @override
+  String get validationOdometerNegative => '走行距離は0以上で入力してください';
+
+  @override
+  String get validationOdometerTooHigh => '走行距離が一般的な上限を超えています';
+
+  @override
+  String get validationOdometerLessThanPrevious => '前回の走行距離より小さい値は登録できません';
+
+  @override
+  String get validationCostNegative => '費用は0以上で入力してください';
+
+  @override
+  String get validationFuelLitersPositive => '給油量は0Lより大きい値を入力してください';
+
+  @override
+  String get validationFuelLitersTooHigh => '給油量がタンク容量の妥当な上限を超えています';
+
+  @override
+  String get validationServiceNameRequired => 'サービス名を入力してください';
+
+  @override
+  String get validationDocNameRequired => '書類名を入力してください';
 }

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:garagego/l10n/app_localizations.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:package_info_plus/package_info_plus.dart';
 import '../../core/constants/app_colors.dart';
 import '../../core/constants/app_constants.dart';
 import '../../core/models/vehicle.dart';
@@ -10,220 +11,84 @@ import '../../core/providers/locale_provider.dart';
 import '../../core/providers/theme_provider.dart';
 import '../../core/providers/timezone_provider.dart';
 import '../../core/utils/app_timezone.dart';
+import '../../core/utils/backup_file_io.dart';
+import '../../core/utils/l10n_helpers.dart';
 import '../garage/add_vehicle_sheet.dart';
 
 class SettingsScreen extends ConsumerWidget {
   const SettingsScreen({super.key});
 
-  static const Map<String, ({String name, String nativeName})> _languages = {
-    'id': (name: 'Indonesian', nativeName: 'Bahasa Indonesia'),
-    'en': (name: 'English', nativeName: 'English'),
-    'ar': (name: 'Arabic', nativeName: 'العربية'),
-    'jv': (name: 'Javanese', nativeName: 'Basa Jawa'),
-    'su': (name: 'Sundanese', nativeName: 'Basa Sunda'),
-    'zh': (name: 'Chinese', nativeName: '中文 (简体)'),
-    'ja': (name: 'Japanese', nativeName: '日本語'),
-    'es': (name: 'Spanish', nativeName: 'Español'),
-  };
+  static const List<String> _supportedLocales = [
+    'id',
+    'en',
+    'ar',
+    'jv',
+    'su',
+    'zh',
+    'ja',
+    'es',
+  ];
 
-  static const Map<String, ({String title, String desc, String badge})> _licenseTexts = {
-    'id': (
-      title: 'Lisensi Penggunaan',
-      desc: 'Bebas digunakan untuk keperluan personal dan non-profit.',
-      badge: 'Personal & Non-Profit',
-    ),
-    'en': (
-      title: 'Usage License',
-      desc: 'Free to use for personal and non-profit use.',
-      badge: 'Personal & Non-Profit',
-    ),
-    'ar': (
-      title: 'ترخيص الاستخدام',
-      desc: 'مجاني للاستخدام الشخصي وغير الربحي.',
-      badge: 'شخصي وغير ربحي',
-    ),
-    'jv': (
-      title: 'Lisensi Panganggo',
-      desc: 'Bebas dienggo kanggo kaperluan pribadi lan non-profit.',
-      badge: 'Pribadi & Non-Profit',
-    ),
-    'su': (
-      title: 'Lisensi Pamakean',
-      desc: 'Bebas dianggo pikeun kaperluan pribadi jeung non-profit.',
-      badge: 'Pribadi & Non-Profit',
-    ),
-    'zh': (
-      title: '使用许可',
-      desc: '个人及非营利性用途免费使用。',
-      badge: '个人与非营利',
-    ),
-    'ja': (
-      title: '利用規約・ライセンス',
-      desc: '個人および非営利目的での利用は無料です。',
-      badge: '個人・非営利',
-    ),
-    'es': (
-      title: 'Licencia de Uso',
-      desc: 'Gratis para uso personal y sin fines de lucro.',
-      badge: 'Personal y Sin Fines de Lucro',
-    ),
-  };
-
-  void _showExportJsonDialog(BuildContext context, WidgetRef ref) {
+  Future<void> _exportBackupFile(BuildContext context, WidgetRef ref) async {
     final l10n = AppLocalizations.of(context)!;
     final storage = ref.read(localStorageServiceProvider);
-    final jsonStr = storage.exportBackupJson();
-
-    showDialog(
-      context: context,
-      builder: (ctx) => AlertDialog(
-        backgroundColor: context.cardBg,
-        title: Row(
-          children: [
-            const Icon(Icons.file_download_outlined, color: AppColors.primary, size: 22),
-            const SizedBox(width: 8),
-            Text(
-              l10n.eksporBackupJson,
-              style: TextStyle(color: context.textPrimary, fontSize: 16, fontWeight: FontWeight.w700),
-            ),
-          ],
-        ),
-        content: SizedBox(
-          width: 500,
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              Text(
-                l10n.cadanganLengkapSeluruhDataGara,
-                style: TextStyle(color: context.textSecondary, fontSize: 12),
-              ),
-              const SizedBox(height: 12),
-              Container(
-                height: 180,
-                padding: const EdgeInsets.all(10),
-                decoration: BoxDecoration(
-                  color: context.surfaceBg,
-                  borderRadius: BorderRadius.circular(8),
-                  border: Border.all(color: context.borderColor),
-                ),
-                child: SingleChildScrollView(
-                  child: SelectableText(
-                    jsonStr,
-                    style: TextStyle(fontFamily: 'monospace', fontSize: 10, color: context.textPrimary),
-                  ),
-                ),
-              ),
-            ],
-          ),
-        ),
-        actions: [
-          TextButton(
-            onPressed: () => Navigator.pop(ctx),
-            child: Text(l10n.tutup, style: TextStyle(color: context.textSecondary)),
-          ),
-          ElevatedButton.icon(
-            onPressed: () {
-              Clipboard.setData(ClipboardData(text: jsonStr));
-              Navigator.pop(ctx);
-              ScaffoldMessenger.of(context).showSnackBar(
-                SnackBar(content: Text(l10n.salinanJsonBackupBerhasilDisal)),
-              );
-            },
-            icon: const Icon(Icons.copy, size: 16),
-            label: Text(l10n.salinKeClipboard),
-          ),
-        ],
-      ),
-    );
+    try {
+      final payload = await storage.exportBackupJson();
+      await BackupFileIo.exportToShareSheet(
+        payload,
+        subject: 'GarageGo',
+      );
+      if (!context.mounted) return;
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text(l10n.salinanJsonBackupBerhasilDisal)),
+      );
+    } catch (e) {
+      if (!context.mounted) return;
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text(l10n.gagalMemulihkanBackup(e.toString()))),
+      );
+    }
   }
 
-  void _showImportJsonDialog(BuildContext context, WidgetRef ref) {
+  Future<void> _importBackupFile(BuildContext context, WidgetRef ref) async {
     final l10n = AppLocalizations.of(context)!;
-    final controller = TextEditingController();
+    final contents = await BackupFileIo.pickBackupContents();
+    if (contents == null || !context.mounted) return;
 
-    showDialog(
-      context: context,
-      builder: (ctx) => AlertDialog(
-        backgroundColor: context.cardBg,
-        title: Row(
-          children: [
-            const Icon(Icons.file_upload_outlined, color: AppColors.accent, size: 22),
-            const SizedBox(width: 8),
-            Text(
-              l10n.imporPulihkanBackupJson,
-              style: TextStyle(color: context.textPrimary, fontSize: 16, fontWeight: FontWeight.w700),
+    final storage = ref.read(localStorageServiceProvider);
+    try {
+      final success = await storage.importBackupJson(contents);
+      if (!context.mounted) return;
+      if (success) {
+        ref.invalidate(vehiclesProvider);
+        ref.invalidate(activeVehicleIdProvider);
+        ref.invalidate(serviceLogsProvider);
+        ref.invalidate(fuelLogsProvider);
+        ref.invalidate(maintenanceSchedulesProvider);
+        ref.invalidate(vehicleDocumentsProvider);
+        ref.invalidate(inspectionChecklistsProvider);
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text(l10n.dataCadanganBerhasilDipulihkan)),
+        );
+      } else {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text(
+              l10n.gagalMemulihkanBackup(
+                Localizations.localeOf(context).languageCode == 'id'
+                    ? 'Berkas .grg tidak valid atau struktur rusak'
+                    : 'Invalid .grg file or corrupted structure',
+              ),
             ),
-          ],
-        ),
-        content: SizedBox(
-          width: 500,
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              Text(
-                l10n.tempelkanTeksDataJsonCadanganY,
-                style: TextStyle(color: context.textSecondary, fontSize: 12),
-              ),
-              const SizedBox(height: 12),
-              TextField(
-                controller: controller,
-                maxLines: 8,
-                style: TextStyle(fontFamily: 'monospace', fontSize: 11, color: context.textPrimary),
-                decoration: InputDecoration(
-                  hintText: '{"version": 1, "exportedAt": ...}',
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(8),
-                    borderSide: BorderSide(color: context.borderColor),
-                  ),
-                ),
-              ),
-            ],
           ),
-        ),
-        actions: [
-          TextButton(
-            onPressed: () => Navigator.pop(ctx),
-            child: Text(l10n.batal, style: TextStyle(color: context.textSecondary)),
-          ),
-          ElevatedButton(
-            onPressed: () async {
-              final text = controller.text.trim();
-              if (text.isEmpty) {
-                ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(content: Text(l10n.teksJsonTidakBolehKosong)),
-                );
-                return;
-              }
-
-              final storage = ref.read(localStorageServiceProvider);
-              final success = await storage.importBackupJson(text);
-              if (context.mounted) {
-                Navigator.pop(ctx);
-                if (success) {
-                  ref.invalidate(vehiclesProvider);
-                  ref.invalidate(activeVehicleIdProvider);
-                  ref.invalidate(serviceLogsProvider);
-                  ref.invalidate(fuelLogsProvider);
-                  ref.invalidate(maintenanceSchedulesProvider);
-                  ref.invalidate(vehicleDocumentsProvider);
-                  ref.invalidate(inspectionChecklistsProvider);
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(content: Text(l10n.dataCadanganBerhasilDipulihkan)),
-                  );
-                } else {
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(content: Text(l10n.gagalMemulihkanBackup(Localizations.localeOf(context).languageCode == 'id' ? 'Format JSON tidak valid atau struktur rusak' : 'Invalid JSON format'))),
-                  );
-                }
-              }
-            },
-            child: Text(l10n.pulihkanData),
-          ),
-        ],
-      ),
-    );
+        );
+      }
+    } catch (e) {
+      if (!context.mounted) return;
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text(l10n.gagalMemulihkanBackup(e.toString()))),
+      );
+    }
   }
 
   void _showCsvExportDialog(BuildContext context, WidgetRef ref, String title, String csvData) {
@@ -292,7 +157,6 @@ class SettingsScreen extends ConsumerWidget {
     final currentLocale = ref.watch(localeProvider);
     final themeMode = ref.watch(themeModeProvider);
     final langCode = currentLocale.languageCode;
-    final license = _licenseTexts[langCode] ?? _licenseTexts['en']!;
 
     return Scaffold(
       appBar: AppBar(
@@ -448,7 +312,7 @@ class SettingsScreen extends ConsumerWidget {
                       style: TextStyle(fontSize: 14, fontWeight: FontWeight.w700, color: context.textPrimary),
                     ),
                     subtitle: Text(
-                      '${_languages[langCode]?.nativeName ?? langCode} (${_languages[langCode]?.name ?? langCode})',
+                      languageName(langCode, l10n),
                       style: TextStyle(fontSize: 12, color: context.textSecondary),
                     ),
                     trailing: Icon(Icons.chevron_right, color: context.textMuted),
@@ -513,7 +377,7 @@ class SettingsScreen extends ConsumerWidget {
                     l10n.cadangkanSeluruhKendaraanServi,
                     style: TextStyle(fontSize: 12, color: context.textSecondary),
                   ),
-                  onTap: () => _showExportJsonDialog(context, ref),
+                  onTap: () => _exportBackupFile(context, ref),
                 ),
                 Divider(color: context.borderColor, height: 1),
                 ListTile(
@@ -533,7 +397,7 @@ class SettingsScreen extends ConsumerWidget {
                     l10n.kembalikanDataDariBerkasCadang,
                     style: TextStyle(fontSize: 12, color: context.textSecondary),
                   ),
-                  onTap: () => _showImportJsonDialog(context, ref),
+                  onTap: () => _importBackupFile(context, ref),
                 ),
                 Divider(color: context.borderColor, height: 1),
                 ListTile(
@@ -670,7 +534,19 @@ class SettingsScreen extends ConsumerWidget {
                 children: [
                   _buildAboutRow(context, langCode == 'id' ? 'Aplikasi' : 'Application', AppConstants.appName),
                   Divider(color: context.borderColor, height: 20),
-                  _buildAboutRow(context, langCode == 'id' ? 'Versi' : 'Version', '${AppConstants.appVersion}+1'),
+                  FutureBuilder<PackageInfo>(
+                    future: PackageInfo.fromPlatform(),
+                    builder: (context, snapshot) {
+                      final version = snapshot.data != null
+                          ? '${snapshot.data!.version}+${snapshot.data!.buildNumber}'
+                          : '…';
+                      return _buildAboutRow(
+                        context,
+                        langCode == 'id' ? 'Versi' : 'Version',
+                        version,
+                      );
+                    },
+                  ),
                   Divider(color: context.borderColor, height: 20),
                   _buildAboutRow(context, langCode == 'id' ? 'Arsitektur' : 'Architecture', '100% Offline-First (No Server/No Tracking)'),
                   Divider(color: context.borderColor, height: 20),
@@ -682,7 +558,7 @@ class SettingsScreen extends ConsumerWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        license.title,
+                        l10n.licenseUsageTitle,
                         style: TextStyle(fontSize: 13, fontWeight: FontWeight.bold, color: context.textPrimary),
                       ),
                       Container(
@@ -693,7 +569,7 @@ class SettingsScreen extends ConsumerWidget {
                           border: Border.all(color: AppColors.primary.withValues(alpha: 0.3)),
                         ),
                         child: Text(
-                          license.badge,
+                          l10n.licenseUsageBadgeText,
                           style: const TextStyle(
                             fontSize: 11,
                             fontWeight: FontWeight.bold,
@@ -705,7 +581,7 @@ class SettingsScreen extends ConsumerWidget {
                   ),
                   const SizedBox(height: 6),
                   Text(
-                    license.desc,
+                    l10n.licenseUsageNotice,
                     style: TextStyle(fontSize: 12, color: context.textSecondary, height: 1.4),
                   ),
                 ],
@@ -842,20 +718,20 @@ class SettingsScreen extends ConsumerWidget {
               Divider(height: 1, color: context.borderColor),
               Expanded(
                 child: ListView(
-                  children: _languages.entries.map((entry) {
-                    final isSelected = entry.key == currentLocale.languageCode;
+                  children: _supportedLocales.map((code) {
+                    final isSelected = code == currentLocale.languageCode;
+                    final name = languageName(code, l10n);
                     return ListTile(
                       title: Text(
-                        entry.value.nativeName,
+                        name,
                         style: TextStyle(
                           color: isSelected ? AppColors.primary : context.textPrimary,
                           fontWeight: isSelected ? FontWeight.w700 : FontWeight.w500,
                         ),
                       ),
-                      subtitle: Text(entry.value.name, style: TextStyle(color: context.textSecondary, fontSize: 12)),
                       trailing: isSelected ? const Icon(Icons.check, color: AppColors.primary) : null,
                       onTap: () {
-                        ref.read(localeProvider.notifier).setLocale(Locale(entry.key));
+                        ref.read(localeProvider.notifier).setLocale(Locale(code));
                         Navigator.pop(ctx);
                       },
                     );

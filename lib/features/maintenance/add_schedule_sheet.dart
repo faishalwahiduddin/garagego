@@ -4,6 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../core/constants/app_colors.dart';
 import '../../core/models/vehicle.dart';
 import '../../core/providers/app_providers.dart';
+import '../../core/utils/l10n_helpers.dart';
 import '../../core/utils/validators.dart';
 
 class AddScheduleSheet extends ConsumerStatefulWidget {
@@ -119,7 +120,7 @@ class _AddScheduleSheetState extends ConsumerState<AddScheduleSheet> {
                   hintText: AppLocalizations.of(context)!.misalKurasMinyakRem,
                 ),
                 validator: (v) => v == null || v.trim().isEmpty
-                    ? (Localizations.localeOf(context).languageCode == 'id' ? 'Nama pekerjaan wajib diisi' : 'Service name is required')
+                    ? AppLocalizations.of(context)!.validationServiceNameRequired
                     : null,
               ),
               const SizedBox(height: 14),
@@ -209,7 +210,7 @@ class _AddScheduleSheetState extends ConsumerState<AddScheduleSheet> {
                   labelText: AppLocalizations.of(context)!.odometerTerakhirDikerjakanKm,
                   hintText: '20000',
                 ),
-                validator: (val) => AppValidators.validateOdometer(int.tryParse(val ?? '')),
+                validator: (val) => mapValidationError(AppValidators.validateOdometer(int.tryParse(val ?? '')), AppLocalizations.of(context)!),
               ),
               const SizedBox(height: 14),
 

@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
+import 'package:package_info_plus/package_info_plus.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../constants/app_constants.dart';
 import '../models/vehicle.dart';
@@ -228,9 +229,10 @@ class LocalStorageService {
   }
 
   // --- Backup & Data Portability ---
-  String exportBackupJson() {
+  Future<String> exportBackupJson() async {
+    final info = await PackageInfo.fromPlatform();
     final data = {
-      'version': AppConstants.appVersion,
+      'version': '${info.version}+${info.buildNumber}',
       'exportedAt': AppTimeZone.encodeForPrefs(AppTimeZone.nowUtc()),
       'vehicles': getVehicles().map((v) => v.toJson()).toList(),
       'activeVehicleId': getActiveVehicleId(),

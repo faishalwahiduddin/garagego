@@ -276,10 +276,10 @@ class AppLocalizationsId extends AppLocalizations {
   String get dataManagement => 'Manajemen Data & Cadangan';
 
   @override
-  String get exportBackup => 'Ekspor Cadangan (JSON)';
+  String get exportBackup => 'Ekspor Cadangan (.grg)';
 
   @override
-  String get importBackup => 'Pulihkan Cadangan (JSON)';
+  String get importBackup => 'Pulihkan Cadangan (.grg)';
 
   @override
   String get exportCsv => 'Ekspor ke CSV';
@@ -354,11 +354,11 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String get cadanganLengkapSeluruhDataGara =>
-      'Cadangan lengkap seluruh data garasi, jadwal servis, dokumen, dan log BBM dapat disalin ke clipboard di bawah:';
+      'Bagikan berkas cadangan .grg berisi seluruh data garasi, jadwal servis, dokumen, dan log BBM.';
 
   @override
   String get cadangkanSeluruhKendaraanServi =>
-      'Cadangkan seluruh kendaraan, servis, BBM, dan jadwal';
+      'Bagikan seluruh kendaraan, servis, BBM, dan jadwal sebagai berkas .grg';
 
   @override
   String get cariRiwayatServisAtauBengkel =>
@@ -445,7 +445,7 @@ class AppLocalizationsId extends AppLocalizations {
       'Dual-Trigger Reminder: Alarm akan aktif jika jarak (km) ATAU waktu (bulan) tercapai.';
 
   @override
-  String get eksporBackupJson => 'Ekspor Backup JSON';
+  String get eksporBackupJson => 'Ekspor Cadangan (.grg)';
 
   @override
   String get eksporCsvRiwayatBbm => 'Ekspor CSV Riwayat BBM';
@@ -454,7 +454,7 @@ class AppLocalizationsId extends AppLocalizations {
   String get eksporCsvRiwayatServis => 'Ekspor CSV Riwayat Servis';
 
   @override
-  String get eksporCadanganJson => 'Ekspor Cadangan JSON';
+  String get eksporCadanganJson => 'Ekspor Cadangan (.grg)';
 
   @override
   String get eksporFormatTabelSpreadsheetUn =>
@@ -485,7 +485,7 @@ class AppLocalizationsId extends AppLocalizations {
       'Hitung konsumsi km/L dan biaya bensin';
 
   @override
-  String get imporPulihkanBackupJson => 'Impor / Pulihkan Backup JSON';
+  String get imporPulihkanBackupJson => 'Impor / Pulihkan Cadangan (.grg)';
 
   @override
   String get intervalJarakKm => 'Interval Jarak (km)';
@@ -516,7 +516,7 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String get kembalikanDataDariBerkasCadang =>
-      'Kembalikan data dari berkas cadangan JSON yang valid';
+      'Kembalikan data dari berkas cadangan .grg yang valid';
 
   @override
   String get kilometerOdometerKm => 'Kilometer Odometer (km)';
@@ -640,7 +640,7 @@ class AppLocalizationsId extends AppLocalizations {
   String get pulihkanData => 'Pulihkan Data';
 
   @override
-  String get pulihkanDariBackupJson => 'Pulihkan dari Backup JSON';
+  String get pulihkanDariBackupJson => 'Pulihkan dari berkas (.grg)';
 
   @override
   String get rataRataEfisiensi => 'Rata-Rata Efisiensi';
@@ -677,7 +677,7 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String get salinanJsonBackupBerhasilDisal =>
-      'Salinan JSON backup berhasil disalin ke Clipboard!';
+      'Berkas cadangan .grg siap dibagikan!';
 
   @override
   String get servisTerakhir => 'Servis Terakhir';
@@ -748,11 +748,11 @@ class AppLocalizationsId extends AppLocalizations {
   String get tanggalTerakhirDikerjakan => 'Tanggal Terakhir Dikerjakan';
 
   @override
-  String get teksJsonTidakBolehKosong => 'Teks JSON tidak boleh kosong!';
+  String get teksJsonTidakBolehKosong => 'Berkas cadangan tidak boleh kosong!';
 
   @override
   String get tempelkanTeksDataJsonCadanganY =>
-      'Tempelkan teks data JSON cadangan yang pernah diekspor sebelumnya:';
+      'Pilih berkas cadangan .grg yang pernah diekspor sebelumnya.';
 
   @override
   String get tentangAplikasiLisensi => 'Tentang Aplikasi & Lisensi';
@@ -851,4 +851,61 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String get timezoneAuto => 'Otomatis (ikut perangkat)';
+
+  @override
+  String get licenseUsageTitle => 'Lisensi Penggunaan';
+
+  @override
+  String get licenseUsageNotice =>
+      'Bebas digunakan untuk keperluan personal dan non-profit.';
+
+  @override
+  String get licenseUsageBadgeText => 'Personal & Non-Profit';
+
+  @override
+  String get validationVehicleNameRequired =>
+      'Nama kendaraan tidak boleh kosong';
+
+  @override
+  String get validationVehicleNameMinLength =>
+      'Nama kendaraan minimal 2 karakter';
+
+  @override
+  String get validationVehicleNameMaxLength =>
+      'Nama kendaraan maksimal 50 karakter';
+
+  @override
+  String get validationPlateRequired => 'Nomor pelat polisi tidak boleh kosong';
+
+  @override
+  String get validationPlateMaxLength => 'Nomor pelat maksimal 15 karakter';
+
+  @override
+  String get validationOdometerNegative =>
+      'Kilometer odometer tidak boleh negatif';
+
+  @override
+  String get validationOdometerTooHigh =>
+      'Kilometer odometer melebihi batas wajar';
+
+  @override
+  String get validationOdometerLessThanPrevious =>
+      'Odometer baru tidak boleh lebih kecil dari sebelumnya';
+
+  @override
+  String get validationCostNegative => 'Biaya tidak boleh bernilai negatif';
+
+  @override
+  String get validationFuelLitersPositive =>
+      'Volume bahan bakar harus lebih dari 0 liter';
+
+  @override
+  String get validationFuelLitersTooHigh =>
+      'Volume tangki melebihi kapasitas wajar';
+
+  @override
+  String get validationServiceNameRequired => 'Nama servis wajib diisi';
+
+  @override
+  String get validationDocNameRequired => 'Nama dokumen wajib diisi';
 }

@@ -7,6 +7,7 @@ import '../../core/models/vehicle.dart';
 import '../../core/providers/app_providers.dart';
 import '../../core/providers/timezone_provider.dart';
 import '../../core/utils/app_timezone.dart';
+import '../../core/utils/l10n_helpers.dart';
 import '../../core/utils/validators.dart';
 import 'add_schedule_sheet.dart';
 import 'inspection_sheet.dart';
@@ -92,7 +93,7 @@ class _MaintenanceScreenState extends ConsumerState<MaintenanceScreen> with Sing
                           : 'e.g. Engine Oil & Filter Change',
                     ),
                     validator: (val) => val == null || val.trim().isEmpty
-                        ? (Localizations.localeOf(context).languageCode == 'id' ? 'Nama servis wajib diisi' : 'Service name is required')
+                        ? l10n.validationServiceNameRequired
                         : null,
                   ),
                   const SizedBox(height: 12),
@@ -123,7 +124,7 @@ class _MaintenanceScreenState extends ConsumerState<MaintenanceScreen> with Sing
                       labelText: l10n.kilometerOdometerKm,
                       hintText: '25000',
                     ),
-                    validator: (val) => AppValidators.validateOdometer(int.tryParse(val ?? '')),
+                    validator: (val) => mapValidationError(AppValidators.validateOdometer(int.tryParse(val ?? '')), l10n),
                   ),
                   const SizedBox(height: 12),
                   TextFormField(
@@ -133,7 +134,7 @@ class _MaintenanceScreenState extends ConsumerState<MaintenanceScreen> with Sing
                       labelText: l10n.biayaTotalRp,
                       hintText: '450000',
                     ),
-                    validator: (val) => AppValidators.validateCost(double.tryParse(val ?? '')),
+                    validator: (val) => mapValidationError(AppValidators.validateCost(double.tryParse(val ?? '')), l10n),
                   ),
                   const SizedBox(height: 12),
                   TextFormField(
@@ -237,14 +238,14 @@ class _MaintenanceScreenState extends ConsumerState<MaintenanceScreen> with Sing
                   controller: odoController,
                   keyboardType: TextInputType.number,
                   decoration: InputDecoration(labelText: l10n.odometerPengerjaanKm),
-                  validator: (val) => AppValidators.validateOdometer(int.tryParse(val ?? '')),
+                  validator: (val) => mapValidationError(AppValidators.validateOdometer(int.tryParse(val ?? '')), l10n),
                 ),
                 const SizedBox(height: 10),
                 TextFormField(
                   controller: costController,
                   keyboardType: TextInputType.number,
                   decoration: InputDecoration(labelText: l10n.totalBiayaRp),
-                  validator: (val) => AppValidators.validateCost(double.tryParse(val ?? '')),
+                  validator: (val) => mapValidationError(AppValidators.validateCost(double.tryParse(val ?? '')), l10n),
                 ),
                 const SizedBox(height: 10),
                 TextFormField(

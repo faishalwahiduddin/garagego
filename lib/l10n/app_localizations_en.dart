@@ -275,10 +275,10 @@ class AppLocalizationsEn extends AppLocalizations {
   String get dataManagement => 'Data & Backup Management';
 
   @override
-  String get exportBackup => 'Export Backup (JSON)';
+  String get exportBackup => 'Export Backup (.grg)';
 
   @override
-  String get importBackup => 'Restore Backup (JSON)';
+  String get importBackup => 'Restore Backup (.grg)';
 
   @override
   String get exportCsv => 'Export to CSV';
@@ -353,11 +353,11 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get cadanganLengkapSeluruhDataGara =>
-      'Full backup data including garage vehicles, schedules, documents, and fuel logs can be copied below:';
+      'Share a .grg backup file with all garage vehicles, schedules, documents, and fuel logs.';
 
   @override
   String get cadangkanSeluruhKendaraanServi =>
-      'Backup all vehicles, service records, fuel logs, and schedules';
+      'Share all vehicles, service, fuel, and schedules as a .grg file';
 
   @override
   String get cariRiwayatServisAtauBengkel =>
@@ -441,7 +441,7 @@ class AppLocalizationsEn extends AppLocalizations {
       'Dual-Trigger Reminder: Alarm triggers when mileage (km) OR duration (months) is reached.';
 
   @override
-  String get eksporBackupJson => 'Export Backup JSON';
+  String get eksporBackupJson => 'Export Backup (.grg)';
 
   @override
   String get eksporCsvRiwayatBbm => 'Export Fuel Logs CSV';
@@ -450,7 +450,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get eksporCsvRiwayatServis => 'Export Service Logs CSV';
 
   @override
-  String get eksporCadanganJson => 'Export Backup JSON';
+  String get eksporCadanganJson => 'Export Backup (.grg)';
 
   @override
   String get eksporFormatTabelSpreadsheetUn =>
@@ -481,7 +481,7 @@ class AppLocalizationsEn extends AppLocalizations {
       'Calculate km/L fuel economy and gasoline costs';
 
   @override
-  String get imporPulihkanBackupJson => 'Import / Restore Backup JSON';
+  String get imporPulihkanBackupJson => 'Import / Restore Backup (.grg)';
 
   @override
   String get intervalJarakKm => 'Distance Interval (km)';
@@ -512,7 +512,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get kembalikanDataDariBerkasCadang =>
-      'Restore data from a valid JSON backup file';
+      'Restore data from a valid .grg backup file';
 
   @override
   String get kilometerOdometerKm => 'Odometer Mileage (km)';
@@ -635,7 +635,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get pulihkanData => 'Restore Data';
 
   @override
-  String get pulihkanDariBackupJson => 'Restore from Backup JSON';
+  String get pulihkanDariBackupJson => 'Restore from file (.grg)';
 
   @override
   String get rataRataEfisiensi => 'Average Fuel Economy';
@@ -673,7 +673,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get salinanJsonBackupBerhasilDisal =>
-      'JSON backup successfully copied to Clipboard!';
+      '.grg backup file is ready to share!';
 
   @override
   String get servisTerakhir => 'Recent Service';
@@ -743,11 +743,11 @@ class AppLocalizationsEn extends AppLocalizations {
   String get tanggalTerakhirDikerjakan => 'Date Last Performed';
 
   @override
-  String get teksJsonTidakBolehKosong => 'JSON text cannot be empty!';
+  String get teksJsonTidakBolehKosong => 'Backup file must not be empty!';
 
   @override
   String get tempelkanTeksDataJsonCadanganY =>
-      'Paste your previously exported JSON backup data here:';
+      'Choose a previously exported .grg backup file.';
 
   @override
   String get tentangAplikasiLisensi => 'About App & License';
@@ -846,4 +846,61 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get timezoneAuto => 'Automatic (follow device)';
+
+  @override
+  String get licenseUsageTitle => 'Usage License';
+
+  @override
+  String get licenseUsageNotice =>
+      'Free to use for personal and non-profit use.';
+
+  @override
+  String get licenseUsageBadgeText => 'Personal & Non-Profit';
+
+  @override
+  String get validationVehicleNameRequired => 'Vehicle name is required';
+
+  @override
+  String get validationVehicleNameMinLength =>
+      'Vehicle name must be at least 2 characters';
+
+  @override
+  String get validationVehicleNameMaxLength =>
+      'Vehicle name cannot exceed 50 characters';
+
+  @override
+  String get validationPlateRequired => 'License plate number is required';
+
+  @override
+  String get validationPlateMaxLength =>
+      'License plate cannot exceed 15 characters';
+
+  @override
+  String get validationOdometerNegative =>
+      'Odometer reading cannot be negative';
+
+  @override
+  String get validationOdometerTooHigh =>
+      'Odometer reading exceeds reasonable limit';
+
+  @override
+  String get validationOdometerLessThanPrevious =>
+      'New odometer cannot be less than previous reading';
+
+  @override
+  String get validationCostNegative => 'Cost cannot be negative';
+
+  @override
+  String get validationFuelLitersPositive =>
+      'Fuel volume must be greater than 0 liters';
+
+  @override
+  String get validationFuelLitersTooHigh =>
+      'Fuel volume exceeds tank capacity limit';
+
+  @override
+  String get validationServiceNameRequired => 'Service name is required';
+
+  @override
+  String get validationDocNameRequired => 'Document name is required';
 }

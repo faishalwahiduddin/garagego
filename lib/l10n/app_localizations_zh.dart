@@ -275,10 +275,10 @@ class AppLocalizationsZh extends AppLocalizations {
   String get dataManagement => '数据与备份管理';
 
   @override
-  String get exportBackup => '导出备份 (JSON)';
+  String get exportBackup => '导出备份 (.grg)';
 
   @override
-  String get importBackup => '恢复备份 (JSON)';
+  String get importBackup => '恢复备份 (.grg)';
 
   @override
   String get exportCsv => '导出为 CSV';
@@ -347,10 +347,10 @@ class AppLocalizationsZh extends AppLocalizations {
   String get bukaBrankas => '打开随车证件夹';
 
   @override
-  String get cadanganLengkapSeluruhDataGara => '包含车辆、保养计划、证件及加油记录的完整备份可在此复制：';
+  String get cadanganLengkapSeluruhDataGara => '分享包含车库、日程、证件与油耗数据的 .grg 备份文件。';
 
   @override
-  String get cadangkanSeluruhKendaraanServi => '备份所有车辆、保养、加油及计划数据';
+  String get cadangkanSeluruhKendaraanServi => '将全部车辆、保养、油耗与日程分享为 .grg 文件';
 
   @override
   String get cariRiwayatServisAtauBengkel => '搜索保养记录或维修厂...';
@@ -426,7 +426,7 @@ class AppLocalizationsZh extends AppLocalizations {
       '双重触发提醒：当里程(km)或时间(月)任意一项达到时发出提醒。';
 
   @override
-  String get eksporBackupJson => '导出JSON备份';
+  String get eksporBackupJson => '导出备份 (.grg)';
 
   @override
   String get eksporCsvRiwayatBbm => '导出加油记录CSV';
@@ -435,7 +435,7 @@ class AppLocalizationsZh extends AppLocalizations {
   String get eksporCsvRiwayatServis => '导出保养记录CSV';
 
   @override
-  String get eksporCadanganJson => '导出JSON备份';
+  String get eksporCadanganJson => '导出备份 (.grg)';
 
   @override
   String get eksporFormatTabelSpreadsheetUn => '导出电子表格格式以备维修厂记录';
@@ -462,7 +462,7 @@ class AppLocalizationsZh extends AppLocalizations {
   String get hitungKonsumsiKmLDanBiayaBensi => '计算油耗(km/L)及燃油花费';
 
   @override
-  String get imporPulihkanBackupJson => '导入 / 恢复JSON备份';
+  String get imporPulihkanBackupJson => '导入 / 恢复备份 (.grg)';
 
   @override
   String get intervalJarakKm => '里程间隔 (km)';
@@ -492,7 +492,7 @@ class AppLocalizationsZh extends AppLocalizations {
   String get kategori => '类别:';
 
   @override
-  String get kembalikanDataDariBerkasCadang => '从有效的JSON备份文件中恢复数据';
+  String get kembalikanDataDariBerkasCadang => '从有效的 .grg 备份文件恢复数据';
 
   @override
   String get kilometerOdometerKm => '仪表盘里程 (km)';
@@ -609,7 +609,7 @@ class AppLocalizationsZh extends AppLocalizations {
   String get pulihkanData => '恢复数据';
 
   @override
-  String get pulihkanDariBackupJson => '从JSON备份恢复';
+  String get pulihkanDariBackupJson => '从文件恢复 (.grg)';
 
   @override
   String get rataRataEfisiensi => '平均燃油经济性';
@@ -645,7 +645,7 @@ class AppLocalizationsZh extends AppLocalizations {
   String get salinKeClipboard => '复制到剪贴板';
 
   @override
-  String get salinanJsonBackupBerhasilDisal => 'JSON备份已成功复制到剪贴板！';
+  String get salinanJsonBackupBerhasilDisal => '.grg 备份文件已准备好分享！';
 
   @override
   String get servisTerakhir => '最近保养';
@@ -711,10 +711,10 @@ class AppLocalizationsZh extends AppLocalizations {
   String get tanggalTerakhirDikerjakan => '上次执行日期';
 
   @override
-  String get teksJsonTidakBolehKosong => 'JSON文本不能为空！';
+  String get teksJsonTidakBolehKosong => '备份文件不能为空！';
 
   @override
-  String get tempelkanTeksDataJsonCadanganY => '在此粘贴先前导出的JSON备份数据：';
+  String get tempelkanTeksDataJsonCadanganY => '选择先前导出的 .grg 备份文件。';
 
   @override
   String get tentangAplikasiLisensi => '关于应用与许可';
@@ -807,8 +807,56 @@ class AppLocalizationsZh extends AppLocalizations {
   }
 
   @override
-  String get timezone => 'Zona Waktu';
+  String get timezone => '时区';
 
   @override
-  String get timezoneAuto => 'Otomatis (ikut perangkat)';
+  String get timezoneAuto => '自动（跟随设备）';
+
+  @override
+  String get licenseUsageTitle => '使用许可';
+
+  @override
+  String get licenseUsageNotice => '个人及非营利性用途免费使用。';
+
+  @override
+  String get licenseUsageBadgeText => '个人与非营利';
+
+  @override
+  String get validationVehicleNameRequired => '车辆名称不能为空';
+
+  @override
+  String get validationVehicleNameMinLength => '车辆名称至少需要2个字符';
+
+  @override
+  String get validationVehicleNameMaxLength => '车辆名称最多50个字符';
+
+  @override
+  String get validationPlateRequired => '车牌号码不能为空';
+
+  @override
+  String get validationPlateMaxLength => '车牌号码最多15个字符';
+
+  @override
+  String get validationOdometerNegative => '里程表读数不能为负数';
+
+  @override
+  String get validationOdometerTooHigh => '里程表读数超出合理范围';
+
+  @override
+  String get validationOdometerLessThanPrevious => '新里程不能小于此前的里程记录';
+
+  @override
+  String get validationCostNegative => '费用不能为负数';
+
+  @override
+  String get validationFuelLitersPositive => '加油量必须大于0升';
+
+  @override
+  String get validationFuelLitersTooHigh => '加油量超出油箱合理容量';
+
+  @override
+  String get validationServiceNameRequired => '保养服务名称不能为空';
+
+  @override
+  String get validationDocNameRequired => '文件名称不能为空';
 }

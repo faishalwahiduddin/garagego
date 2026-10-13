@@ -2,8 +2,7 @@ name: garagego
 description: "GarageGo — Vehicle & Fleet Garage Manager: Kelola servis, ganti oli, konsumsi BBM, dan pajak STNK mobil & motor secara offline."
 publish_to: 'none'
 
-version: 1.0.0+1
-
+version: 1.0.3+4
 environment:
   sdk: ^3.12.2
 
@@ -22,6 +21,9 @@ dependencies:
   flutter_timezone: ^5.1.0
   timezone: ^0.11.1
   share_plus: ^13.3.0
+  path_provider: ^2.1.5
+  file_picker: ^13.1.0
+  package_info_plus: ^10.2.2
   web: ^1.1.1
 
 dev_dependencies:

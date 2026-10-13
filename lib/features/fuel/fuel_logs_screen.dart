@@ -7,6 +7,7 @@ import '../../core/models/vehicle.dart';
 import '../../core/providers/app_providers.dart';
 import '../../core/providers/timezone_provider.dart';
 import '../../core/utils/app_timezone.dart';
+import '../../core/utils/l10n_helpers.dart';
 import '../../core/utils/validators.dart';
 
 class FuelLogsScreen extends ConsumerWidget {
@@ -79,7 +80,7 @@ class FuelLogsScreen extends ConsumerWidget {
                       labelText: l10n.kilometerOdometerKm,
                       hintText: '25500',
                     ),
-                    validator: (val) => AppValidators.validateOdometer(int.tryParse(val ?? '')),
+                    validator: (val) => mapValidationError(AppValidators.validateOdometer(int.tryParse(val ?? '')), l10n),
                   ),
                   const SizedBox(height: 12),
                   TextFormField(
@@ -89,7 +90,7 @@ class FuelLogsScreen extends ConsumerWidget {
                       labelText: l10n.volumeLiterKwh,
                       hintText: '35.5',
                     ),
-                    validator: (val) => AppValidators.validateFuelLiters(double.tryParse(val ?? '')),
+                    validator: (val) => mapValidationError(AppValidators.validateFuelLiters(double.tryParse(val ?? '')), l10n),
                   ),
                   const SizedBox(height: 12),
                   TextFormField(
@@ -99,7 +100,7 @@ class FuelLogsScreen extends ConsumerWidget {
                       labelText: l10n.hargaSatuanRpLiter,
                       hintText: '13700',
                     ),
-                    validator: (val) => AppValidators.validateCost(double.tryParse(val ?? '')),
+                    validator: (val) => mapValidationError(AppValidators.validateCost(double.tryParse(val ?? '')), l10n),
                   ),
                   const SizedBox(height: 12),
                   TextFormField(

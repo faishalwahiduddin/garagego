@@ -275,10 +275,10 @@ class AppLocalizationsAr extends AppLocalizations {
   String get dataManagement => 'إدارة البيانات والنسخ الاحتياطي';
 
   @override
-  String get exportBackup => 'تصدير نسخة احتياطية (JSON)';
+  String get exportBackup => 'تصدير نسخة احتياطية (.grg)';
 
   @override
-  String get importBackup => 'استعادة نسخة احتياطية (JSON)';
+  String get importBackup => 'استعادة النسخة (.grg)';
 
   @override
   String get exportCsv => 'تصدير إلى CSV';
@@ -353,11 +353,11 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get cadanganLengkapSeluruhDataGara =>
-      'يمكن نسخ النسخة الاحتياطية الكاملة لبيانات الكراج والمركبات والجداول أدناه:';
+      'شارك ملف .grg يحتوي على بيانات المرآب والجداول والمستندات والوقود.';
 
   @override
   String get cadangkanSeluruhKendaraanServi =>
-      'نسخ احتياطي لجميع المركبات وسجلات الصيانة والوقود والجداول';
+      'شارك المركبات والصيانة والوقود والجداول كملف .grg';
 
   @override
   String get cariRiwayatServisAtauBengkel =>
@@ -442,7 +442,7 @@ class AppLocalizationsAr extends AppLocalizations {
       'تذكير مزدوج: يتم التنبيه عند بلوغ المسافة (كم) أو المدة (أشهر).';
 
   @override
-  String get eksporBackupJson => 'تصدير نسخة احتياطية JSON';
+  String get eksporBackupJson => 'تصدير نسخة احتياطية (.grg)';
 
   @override
   String get eksporCsvRiwayatBbm => 'تصدير سجلات الوقود CSV';
@@ -451,7 +451,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get eksporCsvRiwayatServis => 'تصدير سجلات الصيانة CSV';
 
   @override
-  String get eksporCadanganJson => 'تصدير نسخة احتياطية JSON';
+  String get eksporCadanganJson => 'تصدير نسخة احتياطية (.grg)';
 
   @override
   String get eksporFormatTabelSpreadsheetUn =>
@@ -481,7 +481,7 @@ class AppLocalizationsAr extends AppLocalizations {
       'حساب استهلاك الوقود وتكلفة البنزين';
 
   @override
-  String get imporPulihkanBackupJson => 'استيراد / استعادة نسخة JSON';
+  String get imporPulihkanBackupJson => 'استيراد / استعادة النسخة (.grg)';
 
   @override
   String get intervalJarakKm => 'فاصل المسافة (كم)';
@@ -512,7 +512,7 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get kembalikanDataDariBerkasCadang =>
-      'استعادة البيانات من ملف نسخة احتياطية JSON صالح';
+      'استعد البيانات من ملف .grg صالح';
 
   @override
   String get kilometerOdometerKm => 'قراءة العداد (كم)';
@@ -635,7 +635,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get pulihkanData => 'استعادة البيانات';
 
   @override
-  String get pulihkanDariBackupJson => 'استعادة من نسخة JSON';
+  String get pulihkanDariBackupJson => 'استعادة من ملف (.grg)';
 
   @override
   String get rataRataEfisiensi => 'متوسط استهلاك الوقود';
@@ -671,8 +671,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get salinKeClipboard => 'نسخ إلى الحافظة';
 
   @override
-  String get salinanJsonBackupBerhasilDisal =>
-      'تم نسخ النسخة الاحتياطية JSON إلى الحافظة بنجاح!';
+  String get salinanJsonBackupBerhasilDisal => 'ملف النسخة .grg جاهز للمشاركة!';
 
   @override
   String get servisTerakhir => 'آخر صيانة';
@@ -741,11 +740,11 @@ class AppLocalizationsAr extends AppLocalizations {
   String get tanggalTerakhirDikerjakan => 'تاريخ آخر صيانة';
 
   @override
-  String get teksJsonTidakBolehKosong => 'نص JSON لا يمكن أن يكون فارغاً!';
+  String get teksJsonTidakBolehKosong => 'يجب ألا يكون ملف النسخة فارغًا!';
 
   @override
   String get tempelkanTeksDataJsonCadanganY =>
-      'الصق نص بيانات النسخة الاحتياطية JSON هنا:';
+      'اختر ملف نسخة .grg تم تصديره سابقًا.';
 
   @override
   String get tentangAplikasiLisensi => 'عن التطبيق والترخيص';
@@ -840,8 +839,61 @@ class AppLocalizationsAr extends AppLocalizations {
   }
 
   @override
-  String get timezone => 'Zona Waktu';
+  String get timezone => 'المنطقة الزمنية';
 
   @override
-  String get timezoneAuto => 'Otomatis (ikut perangkat)';
+  String get timezoneAuto => 'تلقائي (حسب الجهاز)';
+
+  @override
+  String get licenseUsageTitle => 'ترخيص الاستخدام';
+
+  @override
+  String get licenseUsageNotice => 'مجاني للاستخدام الشخصي وغير الربحي.';
+
+  @override
+  String get licenseUsageBadgeText => 'شخصي وغير ربحي';
+
+  @override
+  String get validationVehicleNameRequired => 'اسم المركبة مطلوب';
+
+  @override
+  String get validationVehicleNameMinLength =>
+      'يجب أن يتكون اسم المركبة من حرفين على الأقل';
+
+  @override
+  String get validationVehicleNameMaxLength =>
+      'لا يمكن أن يتجاوز اسم المركبة 50 حرفًا';
+
+  @override
+  String get validationPlateRequired => 'رقم لوحة المركبة مطلوب';
+
+  @override
+  String get validationPlateMaxLength =>
+      'لا يمكن أن تتجاوز لوحة المركبة 15 حرفًا';
+
+  @override
+  String get validationOdometerNegative => 'لا يمكن أن تكون قراءة العداد سالبة';
+
+  @override
+  String get validationOdometerTooHigh => 'قراءة العداد تتجاوز الحد المعقول';
+
+  @override
+  String get validationOdometerLessThanPrevious =>
+      'لا يمكن أن تكون القراءة الجديدة أقل من السابقة';
+
+  @override
+  String get validationCostNegative => 'لا يمكن أن تكون التكلفة سالبة';
+
+  @override
+  String get validationFuelLitersPositive =>
+      'يجب أن يكون حجم الوقود أكبر من 0 لتر';
+
+  @override
+  String get validationFuelLitersTooHigh => 'حجم الوقود يتجاوز سعة الخزان';
+
+  @override
+  String get validationServiceNameRequired => 'اسم الخدمة مطلوب';
+
+  @override
+  String get validationDocNameRequired => 'اسم المستند مطلوب';
 }

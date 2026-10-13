@@ -4,6 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../core/constants/app_colors.dart';
 import '../../core/models/vehicle.dart';
 import '../../core/providers/app_providers.dart';
+import '../../core/utils/l10n_helpers.dart';
 import '../../core/utils/validators.dart';
 
 class AddDocumentSheet extends ConsumerStatefulWidget {
@@ -117,7 +118,7 @@ class _AddDocumentSheetState extends ConsumerState<AddDocumentSheet> {
                   hintText: 'Misal: PKB Tahunan / Asuransi All Risk',
                 ),
                 validator: (val) => val == null || val.trim().isEmpty
-                    ? (Localizations.localeOf(context).languageCode == 'id' ? 'Nama dokumen wajib diisi' : 'Document name is required')
+                    ? l10n.validationDocNameRequired
                     : null,
               ),
               const SizedBox(height: 12),
@@ -163,7 +164,7 @@ class _AddDocumentSheetState extends ConsumerState<AddDocumentSheet> {
                   labelText: l10n.totalBiayaRp,
                   hintText: 'Misal: 3500000',
                 ),
-                validator: (val) => AppValidators.validateCost(double.tryParse(val ?? '')),
+                validator: (val) => mapValidationError(AppValidators.validateCost(double.tryParse(val ?? '')), l10n),
               ),
               const SizedBox(height: 12),
 

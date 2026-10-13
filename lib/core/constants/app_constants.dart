@@ -1,6 +1,5 @@
 class AppConstants {
   static const String appName = 'GarageGo';
-  static const String appVersion = '1.1.0';
   static const String appTagline = 'Personal Vehicle Garage & Fleet Maintenance Manager';
   static const String appDomain = 'https://garagego.faishal.id';
   static const String fleetHome = 'https://faishal.id';

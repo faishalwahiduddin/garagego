@@ -1,0 +1,29 @@
+{
+  "package_id": "garagego-eoy-57-amankan-log-garagego-di-hp-bersama-haria",
+  "app": "garagego",
+  "publish_date": "2026-12-11",
+  "primary_keyword": "servis motor",
+  "idea_type": "security",
+  "status": "queued",
+  "banner_ready": false,
+  "seo": true,
+  "slugs": {
+    "id": "amankan-log-garagego-di-hp-bersama-harian",
+    "en": "secure-garagego-logs-on-a-shared-phone",
+    "ar": "garagego-6",
+    "jv": "pandhuan-garagego-garagego-6",
+    "su": "pituduh-garagego-garagego-6",
+    "zh": "garagego-garagego-实用指南-6",
+    "ja": "garagegogaragego-ガイド-6"
+  },
+  "titles": {
+    "id": "Amankan Log GarageGo di HP Bersama",
+    "en": "Secure GarageGo Logs on a Shared Phone",
+    "ar": "GarageGo — دليل GarageGo",
+    "jv": "Pandhuan: Amankan Log GarageGo di HP Bersama",
+    "su": "Pituduh: Amankan Log GarageGo di HP Bersama",
+    "zh": "GarageGo · GarageGo 实用指南",
+    "ja": "GarageGo｜GarageGo ガイド"
+  },
+  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+}

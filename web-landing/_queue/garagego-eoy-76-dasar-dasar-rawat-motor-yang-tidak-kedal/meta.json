@@ -1,0 +1,29 @@
+{
+  "package_id": "garagego-eoy-76-dasar-dasar-rawat-motor-yang-tidak-kedal",
+  "app": "garagego",
+  "publish_date": "2026-12-30",
+  "primary_keyword": "rawat motor",
+  "idea_type": "evergreen",
+  "status": "queued",
+  "banner_ready": false,
+  "seo": true,
+  "slugs": {
+    "id": "dasar-dasar-rawat-motor-yang-tidak-kedaluwarsa-mingguan",
+    "en": "evergreen-basics-of-rawat-motor",
+    "ar": "rawat-motor-8",
+    "jv": "pandhuan-rawat-motor-garagego-8",
+    "su": "pituduh-rawat-motor-garagego-8",
+    "zh": "garagego-rawat-motor-实用指南-8",
+    "ja": "garagegorawat-motor-ガイド-8"
+  },
+  "titles": {
+    "id": "Dasar-Dasar rawat motor yang Tidak Kedaluwarsa",
+    "en": "Evergreen Basics of rawat motor — Offline First",
+    "ar": "rawat motor — دليل GarageGo",
+    "jv": "Pandhuan: Dasar-Dasar rawat motor yang Tidak Kedaluwarsa",
+    "su": "Pituduh: Dasar-Dasar rawat motor yang Tidak Kedaluwarsa",
+    "zh": "GarageGo · rawat motor 实用指南",
+    "ja": "GarageGo｜rawat motor ガイド"
+  },
+  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+}

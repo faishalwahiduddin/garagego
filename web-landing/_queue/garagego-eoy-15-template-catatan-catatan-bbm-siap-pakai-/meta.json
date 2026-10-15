@@ -1,0 +1,29 @@
+{
+  "package_id": "garagego-eoy-15-template-catatan-catatan-bbm-siap-pakai-",
+  "app": "garagego",
+  "publish_date": "2026-10-30",
+  "primary_keyword": "catatan BBM",
+  "idea_type": "template",
+  "status": "queued",
+  "banner_ready": false,
+  "seo": true,
+  "slugs": {
+    "id": "template-catatan-catatan-bbm-siap-pakai-harian",
+    "en": "ready-to-use-catatan-bbm-log-template",
+    "ar": "catatan-bbm-2",
+    "jv": "pandhuan-catatan-bbm-garagego-2",
+    "su": "pituduh-catatan-bbm-garagego-2",
+    "zh": "garagego-catatan-bbm-实用指南-2",
+    "ja": "garagegocatatan-bbm-ガイド-2"
+  },
+  "titles": {
+    "id": "Template Catatan catatan BBM Siap Pakai",
+    "en": "Ready-to-Use catatan BBM Log Template",
+    "ar": "catatan BBM — دليل GarageGo",
+    "jv": "Pandhuan: Template Catatan catatan BBM Siap Pakai",
+    "su": "Pituduh: Template Catatan catatan BBM Siap Pakai",
+    "zh": "GarageGo · catatan BBM 实用指南",
+    "ja": "GarageGo｜catatan BBM ガイド"
+  },
+  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+}

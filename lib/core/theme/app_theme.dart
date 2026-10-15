@@ -29,7 +29,7 @@ class AppTheme {
           fontSize: 18,
           fontWeight: FontWeight.w700,
           color: AppColors.textLightPrimary,
-          letterSpacing: -0.3,
+          letterSpacing: -0.4,
         ),
       ),
       cardTheme: CardThemeData(
@@ -38,7 +38,7 @@ class AppTheme {
         margin: EdgeInsets.zero,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(16),
-          side: const BorderSide(color: AppColors.borderLight, width: 1),
+          side: BorderSide(color: AppColors.textLightPrimary.withValues(alpha: 0.08), width: 1),
         ),
       ),
       navigationBarTheme: NavigationBarThemeData(
@@ -72,12 +72,13 @@ class AppTheme {
         elevation: 0,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(20),
-          side: const BorderSide(color: AppColors.borderLight, width: 1),
+          side: BorderSide(color: AppColors.textLightPrimary.withValues(alpha: 0.08), width: 1),
         ),
         titleTextStyle: const TextStyle(
           fontSize: 18,
           fontWeight: FontWeight.w700,
           color: AppColors.textLightPrimary,
+          letterSpacing: -0.4,
         ),
         contentTextStyle: const TextStyle(
           fontSize: 13,
@@ -164,7 +165,7 @@ class AppTheme {
           fontSize: 18,
           fontWeight: FontWeight.w700,
           color: AppColors.textDarkPrimary,
-          letterSpacing: -0.3,
+          letterSpacing: -0.4,
         ),
       ),
       cardTheme: CardThemeData(
@@ -173,7 +174,7 @@ class AppTheme {
         margin: EdgeInsets.zero,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(16),
-          side: const BorderSide(color: AppColors.border, width: 1),
+          side: BorderSide(color: Colors.white.withValues(alpha: 0.10), width: 1),
         ),
       ),
       navigationBarTheme: NavigationBarThemeData(
@@ -207,12 +208,13 @@ class AppTheme {
         elevation: 0,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(20),
-          side: const BorderSide(color: AppColors.border, width: 1),
+          side: BorderSide(color: Colors.white.withValues(alpha: 0.10), width: 1),
         ),
         titleTextStyle: const TextStyle(
           fontSize: 18,
           fontWeight: FontWeight.w700,
           color: AppColors.textDarkPrimary,
+          letterSpacing: -0.4,
         ),
         contentTextStyle: const TextStyle(
           fontSize: 13,

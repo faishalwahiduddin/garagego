@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:garagego/l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../core/constants/app_colors.dart';
+import '../../core/theme/app_motion.dart';
 import '../../core/models/vehicle.dart';
 import '../../core/providers/app_providers.dart';
 import '../../core/utils/l10n_helpers.dart';
@@ -353,7 +354,10 @@ class _AddVehicleSheetState extends ConsumerState<AddVehicleSheet> {
         onTap: onTap,
         borderRadius: BorderRadius.circular(12),
         child: AnimatedContainer(
-          duration: const Duration(milliseconds: 200),
+          duration: AppMotion.resolve(
+            context,
+            const Duration(milliseconds: 200),
+          ),
           padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 16),
           decoration: BoxDecoration(
             color: isSelected ? AppColors.primary.withValues(alpha: 0.1) : context.surfaceBg,

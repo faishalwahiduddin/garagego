@@ -1,0 +1,29 @@
+{
+  "package_id": "garagego-eoy-08-pajak-stnk-tahunan-di-hp-vs-buku-catatan",
+  "app": "garagego",
+  "publish_date": "2026-10-23",
+  "primary_keyword": "pajak stnk tahunan",
+  "idea_type": "comparison",
+  "status": "queued",
+  "banner_ready": false,
+  "seo": true,
+  "slugs": {
+    "id": "pajak-stnk-tahunan-di-hp-vs-buku-catatan-praktis",
+    "en": "pajak-stnk-tahunan-on-phone-vs-paper-log-practical",
+    "ar": "pajak-stnk-tahunan",
+    "jv": "pandhuan-pajak-stnk-tahunan-garagego",
+    "su": "pituduh-pajak-stnk-tahunan-garagego",
+    "zh": "garagego-pajak-stnk-tahunan-实用指南",
+    "ja": "garagegopajak-stnk-tahunan-ガイド"
+  },
+  "titles": {
+    "id": "pajak stnk tahunan: catatan longgar vs aplikasi",
+    "en": "pajak stnk tahunan on Phone vs Paper Log (Practical)",
+    "ar": "pajak stnk tahunan — دليل GarageGo",
+    "jv": "Pandhuan: pajak stnk tahunan: catatan longgar vs aplikasi",
+    "su": "Pituduh: pajak stnk tahunan: catatan longgar vs aplikasi",
+    "zh": "GarageGo · pajak stnk tahunan 实用指南",
+    "ja": "GarageGo｜pajak stnk tahunan ガイド"
+  },
+  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+}

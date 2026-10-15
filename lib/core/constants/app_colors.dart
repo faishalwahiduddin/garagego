@@ -50,5 +50,7 @@ extension AppThemeExtension on BuildContext {
   Color get cardBg => isDark ? AppColors.bgCard : AppColors.bgLightSurface;
   Color get surfaceBg => isDark ? AppColors.bgSurface : AppColors.bgLightElevated;
   Color get scaffoldBg => isDark ? AppColors.bgDark : AppColors.bgLight;
-  Color get borderColor => isDark ? AppColors.border : AppColors.borderLight;
+  Color get borderColor => isDark
+      ? Colors.white.withValues(alpha: 0.10)
+      : AppColors.textLightPrimary.withValues(alpha: 0.08);
 }

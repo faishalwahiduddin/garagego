@@ -1,0 +1,29 @@
+{
+  "package_id": "garagego-eoy-09-pengingat-ganti-oli-untuk-orang-sibuk-ha",
+  "app": "garagego",
+  "publish_date": "2026-10-24",
+  "primary_keyword": "pengingat ganti oli",
+  "idea_type": "persona",
+  "status": "queued",
+  "banner_ready": false,
+  "seo": true,
+  "slugs": {
+    "id": "pengingat-ganti-oli-untuk-orang-sibuk-harian",
+    "en": "pengingat-ganti-oli-for-busy-people",
+    "ar": "pengingat-ganti-oli",
+    "jv": "pandhuan-pengingat-ganti-oli-garagego",
+    "su": "pituduh-pengingat-ganti-oli-garagego",
+    "zh": "garagego-pengingat-ganti-oli-实用指南",
+    "ja": "garagegopengingat-ganti-oli-ガイド"
+  },
+  "titles": {
+    "id": "pengingat ganti oli untuk orang yang waktunya sempit",
+    "en": "pengingat ganti oli for Busy People",
+    "ar": "pengingat ganti oli — دليل GarageGo",
+    "jv": "Pandhuan: pengingat ganti oli untuk orang yang waktunya sempit",
+    "su": "Pituduh: pengingat ganti oli untuk orang yang waktunya sempit",
+    "zh": "GarageGo · pengingat ganti oli 实用指南",
+    "ja": "GarageGo｜pengingat ganti oli ガイド"
+  },
+  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+}

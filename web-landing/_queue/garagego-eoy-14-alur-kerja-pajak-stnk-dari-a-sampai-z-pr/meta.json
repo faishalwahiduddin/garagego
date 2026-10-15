@@ -1,0 +1,29 @@
+{
+  "package_id": "garagego-eoy-14-alur-kerja-pajak-stnk-dari-a-sampai-z-pr",
+  "app": "garagego",
+  "publish_date": "2026-10-29",
+  "primary_keyword": "pajak STNK",
+  "idea_type": "steps",
+  "status": "queued",
+  "banner_ready": false,
+  "seo": true,
+  "slugs": {
+    "id": "alur-kerja-pajak-stnk-dari-a-sampai-z-praktis",
+    "en": "pajak-stnk-workflow-a-to-z-practical",
+    "ar": "pajak-stnk-2",
+    "jv": "pandhuan-pajak-stnk-garagego-2",
+    "su": "pituduh-pajak-stnk-garagego-2",
+    "zh": "garagego-pajak-stnk-实用指南-2",
+    "ja": "garagegopajak-stnk-ガイド-2"
+  },
+  "titles": {
+    "id": "Alur Kerja pajak STNK dari A sampai Z",
+    "en": "pajak STNK Workflow A to Z (Practical)",
+    "ar": "pajak STNK — دليل GarageGo",
+    "jv": "Pandhuan: Alur Kerja pajak STNK dari A sampai Z",
+    "su": "Pituduh: Alur Kerja pajak STNK dari A sampai Z",
+    "zh": "GarageGo · pajak STNK 实用指南",
+    "ja": "GarageGo｜pajak STNK ガイド"
+  },
+  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+}

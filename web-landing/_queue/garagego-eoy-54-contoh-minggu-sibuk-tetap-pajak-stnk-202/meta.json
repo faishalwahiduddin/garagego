@@ -1,0 +1,29 @@
+{
+  "package_id": "garagego-eoy-54-contoh-minggu-sibuk-tetap-pajak-stnk-202",
+  "app": "garagego",
+  "publish_date": "2026-12-08",
+  "primary_keyword": "pajak STNK",
+  "idea_type": "cases",
+  "status": "queued",
+  "banner_ready": false,
+  "seo": true,
+  "slugs": {
+    "id": "contoh-minggu-sibuk-tetap-pajak-stnk-2026",
+    "en": "busy-week-example-still-doing-pajak-stnk",
+    "ar": "pajak-stnk-6",
+    "jv": "pandhuan-pajak-stnk-garagego-6",
+    "su": "pituduh-pajak-stnk-garagego-6",
+    "zh": "garagego-pajak-stnk-实用指南-6",
+    "ja": "garagegopajak-stnk-ガイド-6"
+  },
+  "titles": {
+    "id": "Contoh Minggu Sibuk tetap pajak STNK",
+    "en": "Busy-Week Example Still Doing pajak STNK",
+    "ar": "pajak STNK — دليل GarageGo",
+    "jv": "Pandhuan: Contoh Minggu Sibuk tetap pajak STNK",
+    "su": "Pituduh: Contoh Minggu Sibuk tetap pajak STNK",
+    "zh": "GarageGo · pajak STNK 实用指南",
+    "ja": "GarageGo｜pajak STNK ガイド"
+  },
+  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+}

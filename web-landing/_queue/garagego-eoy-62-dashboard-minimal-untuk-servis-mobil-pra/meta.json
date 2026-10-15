@@ -1,0 +1,29 @@
+{
+  "package_id": "garagego-eoy-62-dashboard-minimal-untuk-servis-mobil-pra",
+  "app": "garagego",
+  "publish_date": "2026-12-16",
+  "primary_keyword": "servis mobil",
+  "idea_type": "measure",
+  "status": "queued",
+  "banner_ready": false,
+  "seo": true,
+  "slugs": {
+    "id": "dashboard-minimal-untuk-servis-mobil-praktis",
+    "en": "minimal-dashboard-for-servis-mobil-practical",
+    "ar": "servis-mobil-7",
+    "jv": "pandhuan-servis-mobil-garagego-7",
+    "su": "pituduh-servis-mobil-garagego-7",
+    "zh": "garagego-servis-mobil-实用指南-7",
+    "ja": "garagegoservis-mobil-ガイド-7"
+  },
+  "titles": {
+    "id": "Dashboard Minimal untuk servis mobil",
+    "en": "Minimal Dashboard for servis mobil (Practical)",
+    "ar": "servis mobil — دليل GarageGo",
+    "jv": "Pandhuan: Dashboard Minimal untuk servis mobil",
+    "su": "Pituduh: Dashboard Minimal untuk servis mobil",
+    "zh": "GarageGo · servis mobil 实用指南",
+    "ja": "GarageGo｜servis mobil ガイド"
+  },
+  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+}

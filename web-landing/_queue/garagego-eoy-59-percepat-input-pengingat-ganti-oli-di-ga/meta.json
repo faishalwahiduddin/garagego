@@ -1,0 +1,29 @@
+{
+  "package_id": "garagego-eoy-59-percepat-input-pengingat-ganti-oli-di-ga",
+  "app": "garagego",
+  "publish_date": "2026-12-13",
+  "primary_keyword": "pengingat ganti oli",
+  "idea_type": "ux",
+  "status": "queued",
+  "banner_ready": false,
+  "seo": true,
+  "slugs": {
+    "id": "percepat-input-pengingat-ganti-oli-di-garagego-offline",
+    "en": "speed-up-pengingat-ganti-oli-input-in-garagego",
+    "ar": "pengingat-ganti-oli-6",
+    "jv": "pandhuan-pengingat-ganti-oli-garagego-6",
+    "su": "pituduh-pengingat-ganti-oli-garagego-6",
+    "zh": "garagego-pengingat-ganti-oli-实用指南-6",
+    "ja": "garagegopengingat-ganti-oli-ガイド-6"
+  },
+  "titles": {
+    "id": "Percepat Input pengingat ganti oli di GarageGo",
+    "en": "Speed Up pengingat ganti oli Input in GarageGo",
+    "ar": "pengingat ganti oli — دليل GarageGo",
+    "jv": "Pandhuan: Percepat Input pengingat ganti oli di GarageGo",
+    "su": "Pituduh: Percepat Input pengingat ganti oli di GarageGo",
+    "zh": "GarageGo · pengingat ganti oli 实用指南",
+    "ja": "GarageGo｜pengingat ganti oli ガイド"
+  },
+  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+}

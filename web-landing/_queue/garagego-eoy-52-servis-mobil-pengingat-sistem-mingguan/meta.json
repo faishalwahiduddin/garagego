@@ -1,0 +1,29 @@
+{
+  "package_id": "garagego-eoy-52-servis-mobil-pengingat-sistem-mingguan",
+  "app": "garagego",
+  "publish_date": "2026-12-06",
+  "primary_keyword": "servis mobil",
+  "idea_type": "integration",
+  "status": "queued",
+  "banner_ready": false,
+  "seo": true,
+  "slugs": {
+    "id": "servis-mobil-pengingat-sistem-mingguan",
+    "en": "servis-mobil-system-reminders",
+    "ar": "servis-mobil-6",
+    "jv": "pandhuan-servis-mobil-garagego-6",
+    "su": "pituduh-servis-mobil-garagego-6",
+    "zh": "garagego-servis-mobil-实用指南-6",
+    "ja": "garagegoservis-mobil-ガイド-6"
+  },
+  "titles": {
+    "id": "servis mobil: panduan praktis di GarageGo",
+    "en": "servis mobil + System Reminders — Offline First",
+    "ar": "servis mobil — دليل GarageGo",
+    "jv": "Pandhuan: servis mobil: panduan praktis di GarageGo",
+    "su": "Pituduh: servis mobil: panduan praktis di GarageGo",
+    "zh": "GarageGo · servis mobil 实用指南",
+    "ja": "GarageGo｜servis mobil ガイド"
+  },
+  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+}

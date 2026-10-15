@@ -1,0 +1,29 @@
+{
+  "package_id": "garagego-eoy-31-troubleshooting-servis-motor-yang-macet",
+  "app": "garagego",
+  "publish_date": "2026-11-15",
+  "primary_keyword": "servis motor",
+  "idea_type": "troubleshoot",
+  "status": "queued",
+  "banner_ready": false,
+  "seo": true,
+  "slugs": {
+    "id": "troubleshooting-servis-motor-yang-macet",
+    "en": "troubleshooting-stuck-servis-motor-habits",
+    "ar": "servis-motor-4",
+    "jv": "pandhuan-servis-motor-garagego-4",
+    "su": "pituduh-servis-motor-garagego-4",
+    "zh": "garagego-servis-motor-实用指南-4",
+    "ja": "garagegoservis-motor-ガイド-4"
+  },
+  "titles": {
+    "id": "Troubleshooting servis motor yang Macet",
+    "en": "Troubleshooting Stuck servis motor Habits",
+    "ar": "servis motor — دليل GarageGo",
+    "jv": "Pandhuan: Troubleshooting servis motor yang Macet",
+    "su": "Pituduh: Troubleshooting servis motor yang Macet",
+    "zh": "GarageGo · servis motor 实用指南",
+    "ja": "GarageGo｜servis motor ガイド"
+  },
+  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+}

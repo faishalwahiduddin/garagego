@@ -1,0 +1,29 @@
+{
+  "package_id": "garagego-eoy-34-pajak-stnk-di-chat-group-vs-tracker-khus",
+  "app": "garagego",
+  "publish_date": "2026-11-18",
+  "primary_keyword": "pajak STNK",
+  "idea_type": "vs-chat",
+  "status": "queued",
+  "banner_ready": false,
+  "seo": true,
+  "slugs": {
+    "id": "pajak-stnk-di-chat-group-vs-tracker-khusus-mingguan",
+    "en": "pajak-stnk-in-chat-groups-vs-dedicated-tracker",
+    "ar": "pajak-stnk-4",
+    "jv": "pandhuan-pajak-stnk-garagego-4",
+    "su": "pituduh-pajak-stnk-garagego-4",
+    "zh": "garagego-pajak-stnk-实用指南-4",
+    "ja": "garagegopajak-stnk-ガイド-4"
+  },
+  "titles": {
+    "id": "pajak STNK: panduan praktis di GarageGo",
+    "en": "pajak STNK in Chat Groups vs Dedicated Tracker — Offline First",
+    "ar": "pajak STNK — دليل GarageGo",
+    "jv": "Pandhuan: pajak STNK: panduan praktis di GarageGo",
+    "su": "Pituduh: pajak STNK: panduan praktis di GarageGo",
+    "zh": "GarageGo · pajak STNK 实用指南",
+    "ja": "GarageGo｜pajak STNK ガイド"
+  },
+  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+}

@@ -1,0 +1,29 @@
+{
+  "package_id": "garagego-eoy-39-field-wajib-dalam-satu-entri-pengingat-g",
+  "app": "garagego",
+  "publish_date": "2026-11-23",
+  "primary_keyword": "pengingat ganti oli",
+  "idea_type": "deep",
+  "status": "queued",
+  "banner_ready": false,
+  "seo": true,
+  "slugs": {
+    "id": "field-wajib-dalam-satu-entri-pengingat-ganti-oli-harian",
+    "en": "required-fields-in-one-pengingat-ganti-oli-entry",
+    "ar": "pengingat-ganti-oli-4",
+    "jv": "pandhuan-pengingat-ganti-oli-garagego-4",
+    "su": "pituduh-pengingat-ganti-oli-garagego-4",
+    "zh": "garagego-pengingat-ganti-oli-实用指南-4",
+    "ja": "garagegopengingat-ganti-oli-ガイド-4"
+  },
+  "titles": {
+    "id": "Field Wajib dalam Satu Entri pengingat ganti oli",
+    "en": "Required Fields in One pengingat ganti oli Entry",
+    "ar": "pengingat ganti oli — دليل GarageGo",
+    "jv": "Pandhuan: Field Wajib dalam Satu Entri pengingat ganti oli",
+    "su": "Pituduh: Field Wajib dalam Satu Entri pengingat ganti oli",
+    "zh": "GarageGo · pengingat ganti oli 实用指南",
+    "ja": "GarageGo｜pengingat ganti oli ガイド"
+  },
+  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+}

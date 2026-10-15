@@ -1,0 +1,29 @@
+{
+  "package_id": "garagego-eoy-07-garagego-manual-vs-aplikasi-offline",
+  "app": "garagego",
+  "publish_date": "2026-10-22",
+  "primary_keyword": "servis motor",
+  "idea_type": "comparison",
+  "status": "queued",
+  "banner_ready": false,
+  "seo": true,
+  "slugs": {
+    "id": "garagego-manual-vs-aplikasi-offline",
+    "en": "garagego-manual-notes-vs-offline-app",
+    "ar": "garagego",
+    "jv": "pandhuan-garagego-garagego",
+    "su": "pituduh-garagego-garagego",
+    "zh": "garagego-garagego-实用指南",
+    "ja": "garagegogaragego-ガイド"
+  },
+  "titles": {
+    "id": "GarageGo Manual vs Aplikasi",
+    "en": "GarageGo: Manual Notes vs Offline App",
+    "ar": "GarageGo — دليل GarageGo",
+    "jv": "Pandhuan: GarageGo Manual vs Aplikasi",
+    "su": "Pituduh: GarageGo Manual vs Aplikasi",
+    "zh": "GarageGo · GarageGo 实用指南",
+    "ja": "GarageGo｜GarageGo ガイド"
+  },
+  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+}

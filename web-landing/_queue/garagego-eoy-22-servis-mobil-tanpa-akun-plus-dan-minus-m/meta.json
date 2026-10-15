@@ -1,0 +1,29 @@
+{
+  "package_id": "garagego-eoy-22-servis-mobil-tanpa-akun-plus-dan-minus-m",
+  "app": "garagego",
+  "publish_date": "2026-11-06",
+  "primary_keyword": "servis mobil",
+  "idea_type": "privacy",
+  "status": "queued",
+  "banner_ready": false,
+  "seo": true,
+  "slugs": {
+    "id": "servis-mobil-tanpa-akun-plus-dan-minus-mingguan",
+    "en": "servis-mobil-without-an-account-pros-cons",
+    "ar": "servis-mobil-3",
+    "jv": "pandhuan-servis-mobil-garagego-3",
+    "su": "pituduh-servis-mobil-garagego-3",
+    "zh": "garagego-servis-mobil-实用指南-3",
+    "ja": "garagegoservis-mobil-ガイド-3"
+  },
+  "titles": {
+    "id": "Privasi data saat mencatat servis mobil",
+    "en": "servis mobil Without an Account: Pros &amp; Cons — Offline First",
+    "ar": "servis mobil — دليل GarageGo",
+    "jv": "Pandhuan: Privasi data saat mencatat servis mobil",
+    "su": "Pituduh: Privasi data saat mencatat servis mobil",
+    "zh": "GarageGo · servis mobil 实用指南",
+    "ja": "GarageGo｜servis mobil ガイド"
+  },
+  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+}

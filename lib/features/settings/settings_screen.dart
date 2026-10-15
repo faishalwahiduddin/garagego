@@ -14,6 +14,7 @@ import '../../core/utils/app_timezone.dart';
 import '../../core/utils/backup_file_io.dart';
 import '../../core/utils/l10n_helpers.dart';
 import '../garage/add_vehicle_sheet.dart';
+import '../../core/ui/spring_sheet.dart';
 
 class SettingsScreen extends ConsumerWidget {
   const SettingsScreen({super.key});
@@ -607,12 +608,9 @@ class SettingsScreen extends ConsumerWidget {
 
   void _showTimezoneModal(BuildContext context, WidgetRef ref) {
     final l10n = AppLocalizations.of(context)!;
-    showModalBottomSheet(
+    showSpringSheet(
       context: context,
-      backgroundColor: context.cardBg,
-      shape: const RoundedRectangleBorder(
-        borderRadius: BorderRadius.vertical(top: Radius.circular(24)),
-      ),
+      dismissOffset: 520,
       builder: (ctx) {
         final now = AppTimeZone.nowUtc();
         final current = ref.read(timezoneProvider);
@@ -623,6 +621,7 @@ class SettingsScreen extends ConsumerWidget {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
+              const SpringSheetHandle(),
               Padding(
                 padding: const EdgeInsets.all(16),
                 child: Text(
@@ -697,17 +696,15 @@ class SettingsScreen extends ConsumerWidget {
 
   void _showLanguageModal(BuildContext context, WidgetRef ref, Locale currentLocale) {
     final l10n = AppLocalizations.of(context)!;
-    showModalBottomSheet(
+    showSpringSheet(
       context: context,
-      backgroundColor: context.cardBg,
-      shape: const RoundedRectangleBorder(
-        borderRadius: BorderRadius.vertical(top: Radius.circular(24)),
-      ),
+      dismissOffset: 480,
       builder: (ctx) {
         return SafeArea(
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
+              const SpringSheetHandle(),
               Padding(
                 padding: const EdgeInsets.all(16),
                 child: Text(

@@ -1,1 +1,18 @@
-GarageGo mengelola garasi Anda: servis, ganti oli, konsumsi BBM, dan pajak STNK untuk mobil & motor.
+GarageGo membantu Anda merawat mobil dan sepeda motor dengan rapi. Catat riwayat servis berkala, jadwal ganti oli, konsumsi bahan bakar (BBM), dan tanggal jatuh tempo pajak STNK agar kendaraan selalu prima.
+
+Fitur Utama:
+✓ Kelola beberapa kendaraan sekaligus (mobil dan motor)
+✓ Catat riwayat servis, penggantian suku cadang, dan bengkel
+✓ Pengingat ganti oli berdasarkan odometer atau interval bulan
+✓ Log pengisian BBM lengkap dengan kalkulator konsumsi per kilometer
+✓ Pengingat jatuh tempo pajak tahunan STNK dan lima tahunan
+✓ Ringkasan pengeluaran perawatan bulanan dan tahunan
+✓ 100% offline tanpa iklan dan tanpa perlu registrasi akun
+
+Kenapa GarageGo?
+Riwayat perawatan kendaraan yang terdokumentasi rapi menjaga nilai jual kembali kendaraan dan mencegah kerusakan mendadak di jalan. GarageGo menggantikan buku servis manual dengan catatan praktis di saku Anda.
+
+Privasi Anda:
+Semua data kendaraan, pelat nomor, dan catatan biaya disimpan di memori lokal ponsel Anda. Tidak ada data yang dibagikan ke pihak ketiga.
+
+Bagian dari armada aplikasi utilitas faishal.id.

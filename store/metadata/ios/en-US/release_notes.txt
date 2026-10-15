@@ -1,1 +1,1 @@
-Multi-locale store screenshots release for GarageGo.
+Official store metadata and presentation update release for GarageGo.

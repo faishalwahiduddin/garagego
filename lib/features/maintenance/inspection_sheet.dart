@@ -4,6 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../core/constants/app_colors.dart';
 import '../../core/models/vehicle.dart';
 import '../../core/providers/app_providers.dart';
+import '../../core/ui/press_scale.dart';
 
 class InspectionSheet extends ConsumerStatefulWidget {
   final Vehicle vehicle;
@@ -85,6 +86,7 @@ class _InspectionSheetState extends ConsumerState<InspectionSheet> {
                       fontSize: 17,
                       fontWeight: FontWeight.w800,
                       color: context.textPrimary,
+                      letterSpacing: -0.4,
                     ),
                   ),
                 ],
@@ -145,6 +147,7 @@ class _InspectionSheetState extends ConsumerState<InspectionSheet> {
           // List of Inspection Items
           Expanded(
             child: ListView.builder(
+              physics: const BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
               itemCount: _items.length,
               itemBuilder: (context, index) {
                 final item = _items[index];
@@ -158,27 +161,30 @@ class _InspectionSheetState extends ConsumerState<InspectionSheet> {
                         color: item.isChecked ? AppColors.success.withValues(alpha: 0.4) : context.borderColor,
                       ),
                     ),
-                    child: CheckboxListTile(
-                      contentPadding: const EdgeInsets.symmetric(horizontal: 12, vertical: 2),
-                      title: Text(
-                        item.label,
-                        style: TextStyle(
-                          fontSize: 13,
-                          fontWeight: FontWeight.w600,
-                          color: item.isChecked ? context.textPrimary : context.textSecondary,
+                    child: PressScale(
+                      scale: 0.92,
+                      child: CheckboxListTile(
+                        contentPadding: const EdgeInsets.symmetric(horizontal: 12, vertical: 2),
+                        title: Text(
+                          item.label,
+                          style: TextStyle(
+                            fontSize: 13,
+                            fontWeight: FontWeight.w600,
+                            color: item.isChecked ? context.textPrimary : context.textSecondary,
+                          ),
                         ),
+                        subtitle: Text(
+                          item.category,
+                          style: TextStyle(fontSize: 11, color: context.textMuted),
+                        ),
+                        value: item.isChecked,
+                        activeColor: AppColors.success,
+                        onChanged: (val) {
+                          setState(() {
+                            item.isChecked = val ?? false;
+                          });
+                        },
                       ),
-                      subtitle: Text(
-                        item.category,
-                        style: TextStyle(fontSize: 11, color: context.textMuted),
-                      ),
-                      value: item.isChecked,
-                      activeColor: AppColors.success,
-                      onChanged: (val) {
-                        setState(() {
-                          item.isChecked = val ?? false;
-                        });
-                      },
                     ),
                   ),
                 );
@@ -199,26 +205,29 @@ class _InspectionSheetState extends ConsumerState<InspectionSheet> {
           const SizedBox(height: 14),
 
           // Action Buttons
-          ElevatedButton.icon(
-            onPressed: () {
-              final checklist = InspectionChecklist(
-                id: 'insp_${DateTime.now().millisecondsSinceEpoch}',
-                vehicleId: widget.vehicle.id,
-                date: DateTime.now(),
-                odometer: widget.vehicle.currentOdometer,
-                title: _titleController.text.trim(),
-                items: _items,
-                inspectorNotes: _notesController.text.trim(),
-              );
+          PressScale(
+            scale: 0.97,
+            child: ElevatedButton.icon(
+              onPressed: () {
+                final checklist = InspectionChecklist(
+                  id: 'insp_${DateTime.now().millisecondsSinceEpoch}',
+                  vehicleId: widget.vehicle.id,
+                  date: DateTime.now(),
+                  odometer: widget.vehicle.currentOdometer,
+                  title: _titleController.text.trim(),
+                  items: _items,
+                  inspectorNotes: _notesController.text.trim(),
+                );
 
-              ref.read(inspectionChecklistsProvider.notifier).addChecklist(checklist);
-              Navigator.pop(context);
-              ScaffoldMessenger.of(context).showSnackBar(
-                SnackBar(content: Text(l10n.hasilCeklisInspeksiBerhasilDis)),
-              );
-            },
-            icon: const Icon(Icons.check_circle_outline, size: 18),
-            label: Text(l10n.simpanAuditInspeksi),
+                ref.read(inspectionChecklistsProvider.notifier).addChecklist(checklist);
+                Navigator.pop(context);
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(content: Text(l10n.hasilCeklisInspeksiBerhasilDis)),
+                );
+              },
+              icon: const Icon(Icons.check_circle_outline, size: 18),
+              label: Text(l10n.simpanAuditInspeksi),
+            ),
           ),
         ],
       ),

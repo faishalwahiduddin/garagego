@@ -1,0 +1,29 @@
+{
+  "package_id": "garagego-eoy-65-rencana-30-hari-catatan-bbm-offline",
+  "app": "garagego",
+  "publish_date": "2026-12-19",
+  "primary_keyword": "catatan BBM",
+  "idea_type": "plan",
+  "status": "queued",
+  "banner_ready": false,
+  "seo": true,
+  "slugs": {
+    "id": "rencana-30-hari-catatan-bbm-offline",
+    "en": "30-day-catatan-bbm-plan",
+    "ar": "catatan-bbm-7",
+    "jv": "pandhuan-catatan-bbm-garagego-7",
+    "su": "pituduh-catatan-bbm-garagego-7",
+    "zh": "garagego-catatan-bbm-实用指南-7",
+    "ja": "garagegocatatan-bbm-ガイド-7"
+  },
+  "titles": {
+    "id": "Rencana 30 Hari catatan BBM",
+    "en": "30-Day catatan BBM Plan",
+    "ar": "catatan BBM — دليل GarageGo",
+    "jv": "Pandhuan: Rencana 30 Hari catatan BBM",
+    "su": "Pituduh: Rencana 30 Hari catatan BBM",
+    "zh": "GarageGo · catatan BBM 实用指南",
+    "ja": "GarageGo｜catatan BBM ガイド"
+  },
+  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+}

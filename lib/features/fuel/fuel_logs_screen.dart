@@ -6,6 +6,7 @@ import '../../core/constants/app_colors.dart';
 import '../../core/models/vehicle.dart';
 import '../../core/providers/app_providers.dart';
 import '../../core/providers/timezone_provider.dart';
+import '../../core/ui/press_scale.dart';
 import '../../core/utils/app_timezone.dart';
 import '../../core/utils/l10n_helpers.dart';
 import '../../core/utils/validators.dart';
@@ -41,7 +42,25 @@ class FuelLogsScreen extends ConsumerWidget {
     showDialog(
       context: context,
       builder: (ctx) => StatefulBuilder(
-        builder: (context, setState) => AlertDialog(
+        builder: (context, setState) {
+          final int? inputOdo = int.tryParse(odoController.text.trim());
+          final double? inputLiters = double.tryParse(litersController.text.trim());
+          final double? inputPrice = double.tryParse(priceController.text.trim());
+
+          final int deltaKm = (inputOdo != null && inputOdo > active.currentOdometer)
+              ? (inputOdo - active.currentOdometer)
+              : 0;
+          final double totalCost = (inputLiters != null && inputPrice != null && inputLiters > 0 && inputPrice > 0)
+              ? (inputLiters * inputPrice)
+              : 0;
+          final double? kmPerLiter = (deltaKm > 0 && inputLiters != null && inputLiters > 0)
+              ? (deltaKm / inputLiters)
+              : null;
+          final double? costPerKm = (deltaKm > 0 && totalCost > 0)
+              ? (totalCost / deltaKm)
+              : null;
+
+          return AlertDialog(
           backgroundColor: context.cardBg,
           title: Text(
             l10n.catatPengisianBbm,
@@ -49,9 +68,11 @@ class FuelLogsScreen extends ConsumerWidget {
               color: context.textPrimary,
               fontSize: 17,
               fontWeight: FontWeight.w700,
+              letterSpacing: -0.4,
             ),
           ),
           content: SingleChildScrollView(
+            physics: const BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
             child: Form(
               key: formKey,
               child: Column(
@@ -76,6 +97,7 @@ class FuelLogsScreen extends ConsumerWidget {
                   TextFormField(
                     controller: odoController,
                     keyboardType: TextInputType.number,
+                    onChanged: (_) => setState(() {}),
                     decoration: InputDecoration(
                       labelText: l10n.kilometerOdometerKm,
                       hintText: '25500',
@@ -86,6 +108,7 @@ class FuelLogsScreen extends ConsumerWidget {
                   TextFormField(
                     controller: litersController,
                     keyboardType: const TextInputType.numberWithOptions(decimal: true),
+                    onChanged: (_) => setState(() {}),
                     decoration: InputDecoration(
                       labelText: l10n.volumeLiterKwh,
                       hintText: '35.5',
@@ -96,6 +119,7 @@ class FuelLogsScreen extends ConsumerWidget {
                   TextFormField(
                     controller: priceController,
                     keyboardType: TextInputType.number,
+                    onChanged: (_) => setState(() {}),
                     decoration: InputDecoration(
                       labelText: l10n.hargaSatuanRpLiter,
                       hintText: '13700',
@@ -125,6 +149,114 @@ class FuelLogsScreen extends ConsumerWidget {
                     activeColor: AppColors.primary,
                     onChanged: (val) => setState(() => isFullTank = val ?? true),
                   ),
+
+                  // Real-time Fuel Telemetry Live Preview (Drivvo/Fuelio benchmark)
+                  if (totalCost > 0 || deltaKm > 0) ...[
+                    const SizedBox(height: 10),
+                    Container(
+                      padding: const EdgeInsets.all(12),
+                      decoration: BoxDecoration(
+                        color: AppColors.primary.withValues(alpha: 0.08),
+                        borderRadius: BorderRadius.circular(10),
+                        border: Border.all(color: AppColors.primary.withValues(alpha: 0.2)),
+                      ),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                'Estimasi Total Biaya:',
+                                style: TextStyle(
+                                  fontSize: 12,
+                                  fontWeight: FontWeight.w600,
+                                  color: context.textSecondary,
+                                ),
+                              ),
+                              Text(
+                                'Rp ${NumberFormat('#,###', 'id_ID').format(totalCost.round())}',
+                                style: const TextStyle(
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.w800,
+                                  color: AppColors.primary,
+                                ),
+                              ),
+                            ],
+                          ),
+                          if (deltaKm > 0) ...[
+                            const SizedBox(height: 6),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Text(
+                                  'Jarak Tempuh Trip:',
+                                  style: TextStyle(
+                                    fontSize: 11,
+                                    color: context.textSecondary,
+                                  ),
+                                ),
+                                Text(
+                                  '+$deltaKm km',
+                                  style: TextStyle(
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.w700,
+                                    color: context.textPrimary,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                          if (kmPerLiter != null) ...[
+                            const SizedBox(height: 4),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Text(
+                                  'Konsumsi Rata-rata:',
+                                  style: TextStyle(
+                                    fontSize: 11,
+                                    color: context.textSecondary,
+                                  ),
+                                ),
+                                Text(
+                                  '${kmPerLiter.toStringAsFixed(1)} km/L',
+                                  style: const TextStyle(
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.w700,
+                                    color: Color(0xFF16A34A),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                          if (costPerKm != null) ...[
+                            const SizedBox(height: 4),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Text(
+                                  'Biaya Operasional:',
+                                  style: TextStyle(
+                                    fontSize: 11,
+                                    color: context.textSecondary,
+                                  ),
+                                ),
+                                Text(
+                                  'Rp ${NumberFormat('#,###', 'id_ID').format(costPerKm.round())}/km',
+                                  style: TextStyle(
+                                    fontSize: 11,
+                                    fontWeight: FontWeight.w600,
+                                    color: context.textSecondary,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ],
+                      ),
+                    ),
+                  ],
                 ],
               ),
             ),
@@ -134,35 +266,39 @@ class FuelLogsScreen extends ConsumerWidget {
               onPressed: () => Navigator.pop(ctx),
               child: Text(l10n.batal, style: TextStyle(color: context.textSecondary)),
             ),
-            ElevatedButton(
-              onPressed: () {
-                if (!formKey.currentState!.validate()) return;
+            PressScale(
+              scale: 0.97,
+              child: ElevatedButton(
+                onPressed: () {
+                  if (!formKey.currentState!.validate()) return;
 
-                final log = FuelLog(
-                  id: 'fuel_${DateTime.now().millisecondsSinceEpoch}',
-                  vehicleId: active.id,
-                  date: DateTime.now(),
-                  odometer: int.parse(odoController.text.trim()),
-                  liters: double.parse(litersController.text.trim()),
-                  pricePerLiter: double.parse(priceController.text.trim()),
-                  isFullTank: isFullTank,
-                  fuelType: selectedFuelType,
-                  gasStation: stationController.text.trim(),
-                );
+                  final log = FuelLog(
+                    id: 'fuel_${DateTime.now().millisecondsSinceEpoch}',
+                    vehicleId: active.id,
+                    date: DateTime.now(),
+                    odometer: int.parse(odoController.text.trim()),
+                    liters: double.parse(litersController.text.trim()),
+                    pricePerLiter: double.parse(priceController.text.trim()),
+                    isFullTank: isFullTank,
+                    fuelType: selectedFuelType,
+                    gasStation: stationController.text.trim(),
+                  );
 
-                ref.read(fuelLogsProvider.notifier).addFuelLog(log);
-                Navigator.pop(ctx);
-                ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(content: Text(l10n.catatanBbmBerhasilDisimpan)),
-                );
-              },
-              child: Text(l10n.simpan),
+                  ref.read(fuelLogsProvider.notifier).addFuelLog(log);
+                  Navigator.pop(ctx);
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(content: Text(l10n.catatanBbmBerhasilDisimpan)),
+                  );
+                },
+                child: Text(l10n.simpan),
+              ),
             ),
           ],
-        ),
-      ),
-    );
-  }
+        );
+      },
+    ),
+  );
+}
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -179,21 +315,24 @@ class FuelLogsScreen extends ConsumerWidget {
       appBar: AppBar(
         title: Text(
           active != null ? '${l10n.navFuel}: ${active.name}' : l10n.konsumsiBbm,
-          style: TextStyle(fontWeight: FontWeight.w800, fontSize: 18, color: context.textPrimary),
+          style: TextStyle(fontWeight: FontWeight.w800, fontSize: 18, color: context.textPrimary, letterSpacing: -0.4),
         ),
         actions: [
           if (active != null)
-            IconButton(
-              icon: Container(
-                padding: const EdgeInsets.all(6),
-                decoration: BoxDecoration(
-                  color: AppColors.primary.withValues(alpha: 0.1),
-                  shape: BoxShape.circle,
+            PressScale(
+              scale: 0.92,
+              child: IconButton(
+                icon: Container(
+                  padding: const EdgeInsets.all(6),
+                  decoration: BoxDecoration(
+                    color: AppColors.primary.withValues(alpha: 0.1),
+                    shape: BoxShape.circle,
+                  ),
+                  child: const Icon(Icons.add, color: AppColors.primary, size: 18),
                 ),
-                child: const Icon(Icons.add, color: AppColors.primary, size: 18),
+                tooltip: l10n.catatPengisianBbm,
+                onPressed: () => _showAddFuelDialog(context, ref, active),
               ),
-              tooltip: l10n.catatPengisianBbm,
-              onPressed: () => _showAddFuelDialog(context, ref, active),
             ),
           const SizedBox(width: 8),
         ],
@@ -206,7 +345,8 @@ class FuelLogsScreen extends ConsumerWidget {
               ),
             )
           : SingleChildScrollView(
-              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
+              physics: const BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
+              padding: const EdgeInsets.fromLTRB(16, 14, 16, 96),
               child: Center(
                 child: ConstrainedBox(
                   constraints: const BoxConstraints(maxWidth: 800),
@@ -275,6 +415,7 @@ class FuelLogsScreen extends ConsumerWidget {
                           fontSize: 14,
                           fontWeight: FontWeight.w700,
                           color: context.textSecondary,
+                          letterSpacing: -0.3,
                         ),
                       ),
                       const SizedBox(height: 10),
@@ -297,7 +438,7 @@ class FuelLogsScreen extends ConsumerWidget {
                                 const SizedBox(height: 16),
                                 Text(
                                   l10n.belumAdaCatatanBbm,
-                                  style: TextStyle(color: context.textPrimary, fontSize: 16, fontWeight: FontWeight.w800),
+                                  style: TextStyle(color: context.textPrimary, fontSize: 16, fontWeight: FontWeight.w800, letterSpacing: -0.3),
                                 ),
                                 const SizedBox(height: 6),
                                 Text(
@@ -306,10 +447,13 @@ class FuelLogsScreen extends ConsumerWidget {
                                   textAlign: TextAlign.center,
                                 ),
                                 const SizedBox(height: 18),
-                                ElevatedButton.icon(
-                                  onPressed: () => _showAddFuelDialog(context, ref, active),
-                                  icon: const Icon(Icons.add, size: 16),
-                                  label: Text(l10n.catatPengisianPertama),
+                                PressScale(
+                                  scale: 0.97,
+                                  child: ElevatedButton.icon(
+                                    onPressed: () => _showAddFuelDialog(context, ref, active),
+                                    icon: const Icon(Icons.add, size: 16),
+                                    label: Text(l10n.catatPengisianPertama),
+                                  ),
                                 ),
                               ],
                             ),
@@ -321,12 +465,14 @@ class FuelLogsScreen extends ConsumerWidget {
 
                           return Padding(
                             padding: const EdgeInsets.only(bottom: 12),
-                            child: Card(
-                              child: Padding(
-                                padding: const EdgeInsets.all(16),
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
+                            child: PressScale(
+                              scale: 0.98,
+                              child: Card(
+                                child: Padding(
+                                  padding: const EdgeInsets.all(16),
+                                  child: Column(
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    children: [
                                     Row(
                                       children: [
                                         Container(
@@ -437,8 +583,9 @@ class FuelLogsScreen extends ConsumerWidget {
                                 ),
                               ),
                             ),
-                          );
-                        }),
+                          ),
+                        );
+                      }),
                     ],
                   ),
                 ),
@@ -454,48 +601,51 @@ class FuelLogsScreen extends ConsumerWidget {
     required IconData icon,
     required Color color,
   }) {
-    return Card(
-      child: Padding(
-        padding: const EdgeInsets.all(14),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Row(
-              children: [
-                Container(
-                  padding: const EdgeInsets.all(5),
-                  decoration: BoxDecoration(
-                    color: color.withValues(alpha: 0.12),
-                    borderRadius: BorderRadius.circular(6),
-                  ),
-                  child: Icon(icon, size: 14, color: color),
-                ),
-                const SizedBox(width: 8),
-                Expanded(
-                  child: Text(
-                    title,
-                    style: TextStyle(
-                      fontSize: 11,
-                      fontWeight: FontWeight.w600,
-                      color: context.textSecondary,
+    return PressScale(
+      scale: 0.97,
+      child: Card(
+        child: Padding(
+          padding: const EdgeInsets.all(14),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
+                children: [
+                  Container(
+                    padding: const EdgeInsets.all(5),
+                    decoration: BoxDecoration(
+                      color: color.withValues(alpha: 0.12),
+                      borderRadius: BorderRadius.circular(6),
                     ),
-                    maxLines: 1,
-                    overflow: TextOverflow.ellipsis,
+                    child: Icon(icon, size: 14, color: color),
                   ),
-                ),
-              ],
-            ),
-            const SizedBox(height: 10),
-            Text(
-              value,
-              style: TextStyle(
-                fontSize: 15,
-                fontWeight: FontWeight.w800,
-                color: context.textPrimary,
-                letterSpacing: -0.3,
+                  const SizedBox(width: 8),
+                  Expanded(
+                    child: Text(
+                      title,
+                      style: TextStyle(
+                        fontSize: 11,
+                        fontWeight: FontWeight.w600,
+                        color: context.textSecondary,
+                      ),
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                  ),
+                ],
               ),
-            ),
-          ],
+              const SizedBox(height: 10),
+              Text(
+                value,
+                style: TextStyle(
+                  fontSize: 15,
+                  fontWeight: FontWeight.w800,
+                  color: context.textPrimary,
+                  letterSpacing: -0.3,
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

@@ -1,0 +1,29 @@
+{
+  "package_id": "garagego-eoy-04-checklist-mingguan-pajak-stnk-review-min",
+  "app": "garagego",
+  "publish_date": "2026-10-19",
+  "primary_keyword": "pajak STNK",
+  "idea_type": "checklist",
+  "status": "queued",
+  "banner_ready": false,
+  "seo": true,
+  "slugs": {
+    "id": "checklist-mingguan-pajak-stnk-review-mingguan",
+    "en": "weekly-pajak-stnk-checklist-review",
+    "ar": "pajak-stnk",
+    "jv": "pandhuan-pajak-stnk-garagego",
+    "su": "pituduh-pajak-stnk-garagego",
+    "zh": "garagego-pajak-stnk-实用指南",
+    "ja": "garagegopajak-stnk-ガイド"
+  },
+  "titles": {
+    "id": "Checklist Mingguan pajak STNK + Review",
+    "en": "Weekly pajak STNK Checklist + Review — Offline First",
+    "ar": "pajak STNK — دليل GarageGo",
+    "jv": "Pandhuan: Checklist Mingguan pajak STNK + Review",
+    "su": "Pituduh: Checklist Mingguan pajak STNK + Review",
+    "zh": "GarageGo · pajak STNK 实用指南",
+    "ja": "GarageGo｜pajak STNK ガイド"
+  },
+  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+}

@@ -1,0 +1,29 @@
+{
+  "package_id": "garagego-eoy-18-pajak-stnk-tahunan-2",
+  "app": "garagego",
+  "publish_date": "2026-11-02",
+  "primary_keyword": "pajak stnk tahunan",
+  "idea_type": "faq",
+  "status": "queued",
+  "banner_ready": false,
+  "seo": true,
+  "slugs": {
+    "id": "pajak-stnk-tahunan-2",
+    "en": "pajak-stnk-tahunan",
+    "ar": "pajak-stnk-tahunan-2",
+    "jv": "pandhuan-pajak-stnk-tahunan-garagego-2",
+    "su": "pituduh-pajak-stnk-tahunan-garagego-2",
+    "zh": "garagego-pajak-stnk-tahunan-实用指南-2",
+    "ja": "garagegopajak-stnk-tahunan-ガイド-2"
+  },
+  "titles": {
+    "id": "FAQ pajak stnk tahunan: jawaban singkat yang dipakai",
+    "en": "pajak stnk tahunan — Practical Q&amp;A",
+    "ar": "pajak stnk tahunan — دليل GarageGo",
+    "jv": "Pandhuan: FAQ pajak stnk tahunan: jawaban singkat yang dipakai",
+    "su": "Pituduh: FAQ pajak stnk tahunan: jawaban singkat yang dipakai",
+    "zh": "GarageGo · pajak stnk tahunan 实用指南",
+    "ja": "GarageGo｜pajak stnk tahunan ガイド"
+  },
+  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+}

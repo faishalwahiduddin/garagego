@@ -1,0 +1,29 @@
+{
+  "package_id": "garagego-eoy-24-metrik-sederhana-untuk-pajak-stnk-2026",
+  "app": "garagego",
+  "publish_date": "2026-11-08",
+  "primary_keyword": "pajak STNK",
+  "idea_type": "review",
+  "status": "queued",
+  "banner_ready": false,
+  "seo": true,
+  "slugs": {
+    "id": "metrik-sederhana-untuk-pajak-stnk-2026",
+    "en": "simple-metrics-for-pajak-stnk",
+    "ar": "pajak-stnk-3",
+    "jv": "pandhuan-pajak-stnk-garagego-3",
+    "su": "pituduh-pajak-stnk-garagego-3",
+    "zh": "garagego-pajak-stnk-实用指南-3",
+    "ja": "garagegopajak-stnk-ガイド-3"
+  },
+  "titles": {
+    "id": "Metrik Sederhana untuk pajak STNK",
+    "en": "Simple Metrics for pajak STNK",
+    "ar": "pajak STNK — دليل GarageGo",
+    "jv": "Pandhuan: Metrik Sederhana untuk pajak STNK",
+    "su": "Pituduh: Metrik Sederhana untuk pajak STNK",
+    "zh": "GarageGo · pajak STNK 实用指南",
+    "ja": "GarageGo｜pajak STNK ガイド"
+  },
+  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+}

@@ -1,0 +1,16 @@
+Editorial blog hero image, exactly 1200x675, 16:9, ultra-clean product marketing still.
+
+Brand: GarageGo (garagego.faishal.id).
+Color script: background #1C0E03, primary #9A3412, secondary #FB923C, accent #F97316. Soft radial glows and a faint technical grid. Glassmorphism card on the right with accent border.
+
+Mood: practical toolbelt editorial, material textures, honest lighting.
+Motifs: service logs, inventory shelves, EXIF panels, map pins, soft product props.
+Style lock: dark premium editorial, offline-first privacy apps by faishal.id, no stock-photo people faces, no real phone UI screenshot, no watermark, no busy typography, no purple SaaS gradient cliché.
+
+Composition: left negative space for title overlay OR minimal elegant title; right a single frosted glass info card suggesting the article topic with progress bars / checklist / compass / journal fields as abstract UI (illustrated).
+
+ARTICLE TOPIC: Alur Kerja pajak STNK dari A sampai Z praktis
+ARTICLE ANGLE: steps — keyword pajak STNK
+ONE-LINE SCENE: steps visual for Alur Kerja pajak STNK dari A sampai Z praktis
+
+Output: single image, sharp, high contrast, ready as og:image / blog banner.

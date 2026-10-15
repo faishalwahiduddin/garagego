@@ -1,0 +1,29 @@
+{
+  "package_id": "garagego-eoy-49-tetap-jalan-meski-bolong-pengingat-ganti",
+  "app": "garagego",
+  "publish_date": "2026-12-03",
+  "primary_keyword": "pengingat ganti oli",
+  "idea_type": "motivation",
+  "status": "queued",
+  "banner_ready": false,
+  "seo": true,
+  "slugs": {
+    "id": "tetap-jalan-meski-bolong-pengingat-ganti-oli",
+    "en": "keep-going-after-missing-pengingat-ganti-oli",
+    "ar": "pengingat-ganti-oli-5",
+    "jv": "pandhuan-pengingat-ganti-oli-garagego-5",
+    "su": "pituduh-pengingat-ganti-oli-garagego-5",
+    "zh": "garagego-pengingat-ganti-oli-实用指南-5",
+    "ja": "garagegopengingat-ganti-oli-ガイド-5"
+  },
+  "titles": {
+    "id": "Tetap Jalan meski Bolong pengingat ganti oli",
+    "en": "Keep Going After Missing pengingat ganti oli",
+    "ar": "pengingat ganti oli — دليل GarageGo",
+    "jv": "Pandhuan: Tetap Jalan meski Bolong pengingat ganti oli",
+    "su": "Pituduh: Tetap Jalan meski Bolong pengingat ganti oli",
+    "zh": "GarageGo · pengingat ganti oli 实用指南",
+    "ja": "GarageGo｜pengingat ganti oli ガイド"
+  },
+  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+}

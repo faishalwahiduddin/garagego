@@ -6,6 +6,7 @@ import '../../core/constants/app_colors.dart';
 import '../../core/models/vehicle.dart';
 import '../../core/providers/app_providers.dart';
 import '../../core/providers/timezone_provider.dart';
+import '../../core/ui/press_scale.dart';
 import '../../core/utils/app_timezone.dart';
 import '../../core/utils/l10n_helpers.dart';
 import '../../core/utils/validators.dart';
@@ -75,9 +76,15 @@ class _MaintenanceScreenState extends ConsumerState<MaintenanceScreen> with Sing
           backgroundColor: context.cardBg,
           title: Text(
             l10n.catatServisBaru,
-            style: TextStyle(color: context.textPrimary, fontSize: 17, fontWeight: FontWeight.w700),
+            style: TextStyle(
+              color: context.textPrimary,
+              fontSize: 17,
+              fontWeight: FontWeight.w700,
+              letterSpacing: -0.4,
+            ),
           ),
           content: SingleChildScrollView(
+            physics: const BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
             child: Form(
               key: formKey,
               child: Column(
@@ -220,11 +227,17 @@ class _MaintenanceScreenState extends ConsumerState<MaintenanceScreen> with Sing
         backgroundColor: context.cardBg,
         title: Text(
           l10n.selesaikanJadwal(schedule.title),
-          style: TextStyle(color: context.textPrimary, fontSize: 16, fontWeight: FontWeight.w700),
+          style: TextStyle(
+            color: context.textPrimary,
+            fontSize: 16,
+            fontWeight: FontWeight.w700,
+            letterSpacing: -0.4,
+          ),
         ),
         content: Form(
           key: formKey,
           child: SingleChildScrollView(
+            physics: const BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
             child: Column(
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -308,7 +321,7 @@ class _MaintenanceScreenState extends ConsumerState<MaintenanceScreen> with Sing
           active != null
               ? '${l10n.navMaintenance}: ${active.name}'
               : (Localizations.localeOf(context).languageCode == 'id' ? 'Perawatan & Servis' : 'Maintenance & Services'),
-          style: TextStyle(fontWeight: FontWeight.w800, fontSize: 18, color: context.textPrimary),
+          style: TextStyle(fontWeight: FontWeight.w800, fontSize: 18, color: context.textPrimary, letterSpacing: -0.4),
         ),
         bottom: PreferredSize(
           preferredSize: const Size.fromHeight(48),
@@ -411,25 +424,28 @@ class _MaintenanceScreenState extends ConsumerState<MaintenanceScreen> with Sing
                 spacing: 8,
                 children: ScheduleFilterOption.values.map((f) {
                   final isSelected = _scheduleFilter == f;
-                  return ChoiceChip(
-                    label: Text(f.localizedLabel(context)),
-                    labelStyle: TextStyle(
-                      fontSize: 12,
-                      fontWeight: isSelected ? FontWeight.w700 : FontWeight.w500,
-                      color: isSelected ? Colors.white : context.textSecondary,
-                    ),
-                    selected: isSelected,
-                    selectedColor: AppColors.primary,
-                    backgroundColor: context.surfaceBg,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(16),
-                      side: BorderSide(
-                        color: isSelected ? AppColors.primary : context.borderColor,
+                  return PressScale(
+                    scale: 0.95,
+                    child: ChoiceChip(
+                      label: Text(f.localizedLabel(context)),
+                      labelStyle: TextStyle(
+                        fontSize: 12,
+                        fontWeight: isSelected ? FontWeight.w700 : FontWeight.w500,
+                        color: isSelected ? Colors.white : context.textSecondary,
                       ),
+                      selected: isSelected,
+                      selectedColor: AppColors.primary,
+                      backgroundColor: context.surfaceBg,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(16),
+                        side: BorderSide(
+                          color: isSelected ? AppColors.primary : context.borderColor,
+                        ),
+                      ),
+                      onSelected: (val) {
+                        if (val) setState(() => _scheduleFilter = f);
+                      },
                     ),
-                    onSelected: (val) {
-                      if (val) setState(() => _scheduleFilter = f);
-                    },
                   );
                 }).toList(),
               ),
@@ -528,20 +544,24 @@ class _MaintenanceScreenState extends ConsumerState<MaintenanceScreen> with Sing
                           style: TextStyle(color: context.textSecondary, fontSize: 12),
                         ),
                         const SizedBox(height: 18),
-                        ElevatedButton.icon(
-                          onPressed: () {
-                            final isEnglish = Localizations.localeOf(context).languageCode != 'id';
-                            ref.read(maintenanceSchedulesProvider.notifier).loadPresetsForVehicle(active, isEnglish: isEnglish);
-                          },
-                          icon: const Icon(Icons.auto_awesome, size: 16),
-                          label: Text(l10n.muatStandarPabrik(active.type.getLocalizedLabel(context))),
+                        PressScale(
+                          scale: 0.97,
+                          child: ElevatedButton.icon(
+                            onPressed: () {
+                              final isEnglish = Localizations.localeOf(context).languageCode != 'id';
+                              ref.read(maintenanceSchedulesProvider.notifier).loadPresetsForVehicle(active, isEnglish: isEnglish);
+                            },
+                            icon: const Icon(Icons.auto_awesome, size: 16),
+                            label: Text(l10n.muatStandarPabrik(active.type.getLocalizedLabel(context))),
+                          ),
                         ),
                       ],
                     ),
                   ),
                 )
               : ListView.builder(
-                  padding: const EdgeInsets.all(16),
+                  physics: const BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
+                  padding: const EdgeInsets.fromLTRB(16, 16, 16, 96),
                   itemCount: filtered.length,
                   itemBuilder: (context, index) {
                     final item = filtered[index];
@@ -560,115 +580,122 @@ class _MaintenanceScreenState extends ConsumerState<MaintenanceScreen> with Sing
 
                     return Padding(
                       padding: const EdgeInsets.only(bottom: 12),
-                      child: Card(
-                        child: Padding(
-                          padding: const EdgeInsets.all(16),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Row(
-                                children: [
-                                  Container(
-                                    padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-                                    decoration: BoxDecoration(
-                                      color: urgencyColor.withValues(alpha: 0.12),
-                                      borderRadius: BorderRadius.circular(6),
+                      child: PressScale(
+                        scale: 0.98,
+                        child: Card(
+                          child: Padding(
+                            padding: const EdgeInsets.all(16),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Row(
+                                  children: [
+                                    Container(
+                                      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                                      decoration: BoxDecoration(
+                                        color: urgencyColor.withValues(alpha: 0.12),
+                                        borderRadius: BorderRadius.circular(6),
+                                      ),
+                                      child: Text(
+                                        urgency.getLocalizedLabel(context),
+                                        style: TextStyle(fontSize: 11, fontWeight: FontWeight.w800, color: urgencyColor),
+                                      ),
                                     ),
-                                    child: Text(
-                                      urgency.getLocalizedLabel(context),
-                                      style: TextStyle(fontSize: 11, fontWeight: FontWeight.w800, color: urgencyColor),
+                                    const SizedBox(width: 8),
+                                    Text(
+                                      item.category,
+                                      style: TextStyle(fontSize: 12, fontWeight: FontWeight.w500, color: context.textSecondary),
                                     ),
-                                  ),
-                                  const SizedBox(width: 8),
-                                  Text(
-                                    item.category,
-                                    style: TextStyle(fontSize: 12, fontWeight: FontWeight.w500, color: context.textSecondary),
-                                  ),
-                                  const Spacer(),
-                                  IconButton(
-                                    icon: Icon(Icons.edit_outlined, size: 18, color: context.textSecondary),
-                                    visualDensity: VisualDensity.compact,
-                                    onPressed: () {
-                                      showModalBottomSheet(
-                                        context: context,
-                                        isScrollControlled: true,
-                                        backgroundColor: context.cardBg,
-                                        shape: const RoundedRectangleBorder(
-                                          borderRadius: BorderRadius.vertical(top: Radius.circular(24)),
-                                        ),
-                                        builder: (_) => AddScheduleSheet(vehicle: active, initialSchedule: item),
-                                      );
-                                    },
-                                  ),
-                                  IconButton(
-                                    icon: const Icon(Icons.delete_outline, size: 18, color: AppColors.danger),
-                                    visualDensity: VisualDensity.compact,
-                                    onPressed: () {
-                                      ref.read(maintenanceSchedulesProvider.notifier).deleteSchedule(item.id);
-                                    },
-                                  ),
-                                ],
-                              ),
-                              const SizedBox(height: 8),
-                              Text(
-                                item.title,
-                                style: TextStyle(
-                                  fontSize: 15,
-                                  fontWeight: FontWeight.w700,
-                                  color: context.textPrimary,
+                                    const Spacer(),
+                                    IconButton(
+                                      icon: Icon(Icons.edit_outlined, size: 18, color: context.textSecondary),
+                                      visualDensity: VisualDensity.compact,
+                                      onPressed: () {
+                                        showModalBottomSheet(
+                                          context: context,
+                                          isScrollControlled: true,
+                                          backgroundColor: context.cardBg,
+                                          shape: const RoundedRectangleBorder(
+                                            borderRadius: BorderRadius.vertical(top: Radius.circular(24)),
+                                          ),
+                                          builder: (_) => AddScheduleSheet(vehicle: active, initialSchedule: item),
+                                        );
+                                      },
+                                    ),
+                                    IconButton(
+                                      icon: const Icon(Icons.delete_outline, size: 18, color: AppColors.danger),
+                                      visualDensity: VisualDensity.compact,
+                                      onPressed: () {
+                                        ref.read(maintenanceSchedulesProvider.notifier).deleteSchedule(item.id);
+                                      },
+                                    ),
+                                  ],
                                 ),
-                              ),
-                              const SizedBox(height: 6),
-                              Row(
-                                children: [
-                                  Expanded(
-                                    child: Text(
-                                      kmLeft < 0
+                                const SizedBox(height: 8),
+                                Text(
+                                  item.title,
+                                  style: TextStyle(
+                                    fontSize: 15,
+                                    fontWeight: FontWeight.w700,
+                                    color: context.textPrimary,
+                                    letterSpacing: -0.3,
+                                  ),
+                                ),
+                                const SizedBox(height: 6),
+                                Row(
+                                  children: [
+                                    Expanded(
+                                      child: Text(
+                                        kmLeft < 0
+                                            ? (Localizations.localeOf(context).languageCode == 'id'
+                                                ? 'Terlewat ${-kmLeft} km'
+                                                : 'Overdue by ${-kmLeft} km')
+                                            : (Localizations.localeOf(context).languageCode == 'id'
+                                                ? 'Sisa $kmLeft km lagi'
+                                                : '$kmLeft km remaining'),
+                                        style: TextStyle(fontSize: 12, fontWeight: FontWeight.w700, color: urgencyColor),
+                                      ),
+                                    ),
+                                    Text(
+                                      daysLeft < 0
                                           ? (Localizations.localeOf(context).languageCode == 'id'
-                                              ? 'Terlewat ${-kmLeft} km'
-                                              : 'Overdue by ${-kmLeft} km')
+                                              ? 'Terlewat ${-daysLeft} hari'
+                                              : 'Overdue by ${-daysLeft} days')
                                           : (Localizations.localeOf(context).languageCode == 'id'
-                                              ? 'Sisa $kmLeft km lagi'
-                                              : '$kmLeft km remaining'),
-                                      style: TextStyle(fontSize: 12, fontWeight: FontWeight.w700, color: urgencyColor),
+                                              ? 'Sisa $daysLeft hari lagi'
+                                              : '$daysLeft days remaining'),
+                                      style: TextStyle(
+                                        fontSize: 12,
+                                        fontWeight: FontWeight.w600,
+                                        color: daysLeft <= 14 ? urgencyColor : context.textSecondary,
+                                      ),
                                     ),
-                                  ),
-                                  Text(
-                                    daysLeft < 0
-                                        ? (Localizations.localeOf(context).languageCode == 'id'
-                                            ? 'Terlewat ${-daysLeft} hari'
-                                            : 'Overdue by ${-daysLeft} days')
-                                        : (Localizations.localeOf(context).languageCode == 'id'
-                                            ? 'Sisa $daysLeft hari lagi'
-                                            : '$daysLeft days remaining'),
-                                    style: TextStyle(
-                                      fontSize: 12,
-                                      fontWeight: FontWeight.w600,
-                                      color: daysLeft <= 14 ? urgencyColor : context.textSecondary,
+                                  ],
+                                ),
+                                const SizedBox(height: 8),
+                                Text(
+                                  Localizations.localeOf(context).languageCode == 'id'
+                                      ? 'Setiap ${NumberFormat('#,###', 'id_ID').format(item.intervalKm)} km atau ${item.intervalMonths} bulan • Terakhir: ${item.lastPerformedOdometer} km (${AppTimeZone.formatDate(item.lastPerformedDate, loc, locale: localeCode)})'
+                                      : 'Every ${NumberFormat('#,###', 'en_US').format(item.intervalKm)} km or ${item.intervalMonths} months • Last: ${item.lastPerformedOdometer} km (${AppTimeZone.formatDate(item.lastPerformedDate, loc, locale: localeCode)})',
+                                  style: TextStyle(fontSize: 11, color: context.textMuted),
+                                ),
+                                Divider(color: context.borderColor, height: 20),
+                                Align(
+                                  alignment: Alignment.centerRight,
+                                  child: PressScale(
+                                    scale: 0.95,
+                                    child: TextButton.icon(
+                                      onPressed: () => _showMarkDoneDialog(context, ref, item, active),
+                                      icon: const Icon(Icons.check_circle_outline, size: 16, color: AppColors.accent),
+                                      label: Text(
+                                        l10n.tandaiSelesaiReset,
+                                        style: const TextStyle(color: AppColors.accent, fontSize: 12, fontWeight: FontWeight.w700),
+                                      ),
                                     ),
-                                  ),
-                                ],
-                              ),
-                              const SizedBox(height: 8),
-                              Text(
-                                Localizations.localeOf(context).languageCode == 'id'
-                                    ? 'Setiap ${NumberFormat('#,###', 'id_ID').format(item.intervalKm)} km atau ${item.intervalMonths} bulan • Terakhir: ${item.lastPerformedOdometer} km (${AppTimeZone.formatDate(item.lastPerformedDate, loc, locale: localeCode)})'
-                                    : 'Every ${NumberFormat('#,###', 'en_US').format(item.intervalKm)} km or ${item.intervalMonths} months • Last: ${item.lastPerformedOdometer} km (${AppTimeZone.formatDate(item.lastPerformedDate, loc, locale: localeCode)})',
-                                style: TextStyle(fontSize: 11, color: context.textMuted),
-                              ),
-                              Divider(color: context.borderColor, height: 20),
-                              Align(
-                                alignment: Alignment.centerRight,
-                                child: TextButton.icon(
-                                  onPressed: () => _showMarkDoneDialog(context, ref, item, active),
-                                  icon: const Icon(Icons.check_circle_outline, size: 16, color: AppColors.accent),
-                                  label: Text(
-                                    l10n.tandaiSelesaiReset,
-                                    style: const TextStyle(color: AppColors.accent, fontSize: 12, fontWeight: FontWeight.w700),
                                   ),
                                 ),
-                              ),
-                            ],
+                              ],
+                            ),
                           ),
                         ),
                       ),
@@ -710,10 +737,13 @@ class _MaintenanceScreenState extends ConsumerState<MaintenanceScreen> with Sing
                 ),
               ),
               const SizedBox(width: 8),
-              IconButton.filled(
-                icon: const Icon(Icons.add),
-                tooltip: l10n.catatServisBaru,
-                onPressed: () => _showAddServiceDialog(context, ref, active),
+              PressScale(
+                scale: 0.92,
+                child: IconButton.filled(
+                  icon: const Icon(Icons.add),
+                  tooltip: l10n.catatServisBaru,
+                  onPressed: () => _showAddServiceDialog(context, ref, active),
+                ),
               ),
             ],
           ),
@@ -736,77 +766,84 @@ class _MaintenanceScreenState extends ConsumerState<MaintenanceScreen> with Sing
                       const SizedBox(height: 16),
                       Text(
                         l10n.belumAdaRiwayatServis,
-                        style: TextStyle(color: context.textPrimary, fontSize: 16, fontWeight: FontWeight.w800),
+                        style: TextStyle(color: context.textPrimary, fontSize: 16, fontWeight: FontWeight.w800, letterSpacing: -0.3),
                       ),
                       const SizedBox(height: 16),
-                      ElevatedButton.icon(
-                        onPressed: () => _showAddServiceDialog(context, ref, active),
-                        icon: const Icon(Icons.add, size: 16),
-                        label: Text(l10n.catatServisBaru),
+                      PressScale(
+                        scale: 0.97,
+                        child: ElevatedButton.icon(
+                          onPressed: () => _showAddServiceDialog(context, ref, active),
+                          icon: const Icon(Icons.add, size: 16),
+                          label: Text(l10n.catatServisBaru),
+                        ),
                       ),
                     ],
                   ),
                 )
               : ListView.builder(
-                  padding: const EdgeInsets.symmetric(horizontal: 16),
+                  physics: const BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
+                  padding: const EdgeInsets.fromLTRB(16, 0, 16, 96),
                   itemCount: filtered.length,
                   itemBuilder: (context, index) {
                     final log = filtered[index];
                     return Padding(
                       padding: const EdgeInsets.only(bottom: 12),
-                      child: Card(
-                        child: Padding(
-                          padding: const EdgeInsets.all(16),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Row(
-                                children: [
-                                  Container(
-                                    padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-                                    decoration: BoxDecoration(
-                                      color: AppColors.primary.withValues(alpha: 0.1),
-                                      borderRadius: BorderRadius.circular(6),
-                                    ),
-                                    child: Text(
-                                      log.category,
-                                      style: const TextStyle(fontSize: 11, fontWeight: FontWeight.w700, color: AppColors.primary),
-                                    ),
-                                  ),
-                                  if (log.workshop.isNotEmpty) ...[
-                                    const SizedBox(width: 8),
-                                    Expanded(
+                      child: PressScale(
+                        scale: 0.98,
+                        child: Card(
+                          child: Padding(
+                            padding: const EdgeInsets.all(16),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Row(
+                                  children: [
+                                    Container(
+                                      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                                      decoration: BoxDecoration(
+                                        color: AppColors.primary.withValues(alpha: 0.1),
+                                        borderRadius: BorderRadius.circular(6),
+                                      ),
                                       child: Text(
-                                        log.workshop,
-                                        style: TextStyle(fontSize: 12, color: context.textSecondary),
-                                        maxLines: 1,
-                                        overflow: TextOverflow.ellipsis,
+                                        log.category,
+                                        style: const TextStyle(fontSize: 11, fontWeight: FontWeight.w700, color: AppColors.primary),
                                       ),
                                     ),
-                                  ] else
-                                    const Spacer(),
-                                  Text(
-                                    AppTimeZone.formatDate(log.date, loc, locale: localeCode),
-                                    style: TextStyle(fontSize: 12, color: context.textSecondary),
-                                  ),
-                                  IconButton(
-                                    icon: const Icon(Icons.delete_outline, size: 18, color: AppColors.danger),
-                                    visualDensity: VisualDensity.compact,
-                                    onPressed: () {
-                                      ref.read(serviceLogsProvider.notifier).deleteLog(log.id);
-                                    },
-                                  ),
-                                ],
-                              ),
-                              const SizedBox(height: 10),
-                              Text(
-                                log.title,
-                                style: TextStyle(
-                                  fontSize: 15,
-                                  fontWeight: FontWeight.w700,
-                                  color: context.textPrimary,
+                                    if (log.workshop.isNotEmpty) ...[
+                                      const SizedBox(width: 8),
+                                      Expanded(
+                                        child: Text(
+                                          log.workshop,
+                                          style: TextStyle(fontSize: 12, color: context.textSecondary),
+                                          maxLines: 1,
+                                          overflow: TextOverflow.ellipsis,
+                                        ),
+                                      ),
+                                    ] else
+                                      const Spacer(),
+                                    Text(
+                                      AppTimeZone.formatDate(log.date, loc, locale: localeCode),
+                                      style: TextStyle(fontSize: 12, color: context.textSecondary),
+                                    ),
+                                    IconButton(
+                                      icon: const Icon(Icons.delete_outline, size: 18, color: AppColors.danger),
+                                      visualDensity: VisualDensity.compact,
+                                      onPressed: () {
+                                        ref.read(serviceLogsProvider.notifier).deleteLog(log.id);
+                                      },
+                                    ),
+                                  ],
                                 ),
-                              ),
+                                const SizedBox(height: 10),
+                                Text(
+                                  log.title,
+                                  style: TextStyle(
+                                    fontSize: 15,
+                                    fontWeight: FontWeight.w700,
+                                    color: context.textPrimary,
+                                    letterSpacing: -0.3,
+                                  ),
+                                ),
                               const SizedBox(height: 4),
                               Text(
                                 l10n.odometerValue(NumberFormat('#,###', 'id_ID').format(log.odometer)),
@@ -835,7 +872,8 @@ class _MaintenanceScreenState extends ConsumerState<MaintenanceScreen> with Sing
                           ),
                         ),
                       ),
-                    );
+                    ),
+                  );
                   },
                 ),
         ),
@@ -861,20 +899,23 @@ class _MaintenanceScreenState extends ConsumerState<MaintenanceScreen> with Sing
                 ),
               ),
               const SizedBox(width: 8),
-              ElevatedButton.icon(
-                onPressed: () {
-                  showModalBottomSheet(
-                    context: context,
-                    isScrollControlled: true,
-                    backgroundColor: context.cardBg,
-                    shape: const RoundedRectangleBorder(
-                      borderRadius: BorderRadius.vertical(top: Radius.circular(24)),
-                    ),
-                    builder: (_) => InspectionSheet(vehicle: active),
-                  );
-                },
-                icon: const Icon(Icons.fact_check_outlined, size: 18),
-                label: Text(l10n.mulaiCeklis),
+              PressScale(
+                scale: 0.97,
+                child: ElevatedButton.icon(
+                  onPressed: () {
+                    showModalBottomSheet(
+                      context: context,
+                      isScrollControlled: true,
+                      backgroundColor: context.cardBg,
+                      shape: const RoundedRectangleBorder(
+                        borderRadius: BorderRadius.vertical(top: Radius.circular(24)),
+                      ),
+                      builder: (_) => InspectionSheet(vehicle: active),
+                    );
+                  },
+                  icon: const Icon(Icons.fact_check_outlined, size: 18),
+                  label: Text(l10n.mulaiCeklis),
+                ),
               ),
             ],
           ),
@@ -897,7 +938,7 @@ class _MaintenanceScreenState extends ConsumerState<MaintenanceScreen> with Sing
                       const SizedBox(height: 16),
                       Text(
                         l10n.belumAdaHasilCeklis,
-                        style: TextStyle(color: context.textPrimary, fontSize: 16, fontWeight: FontWeight.w800),
+                        style: TextStyle(color: context.textPrimary, fontSize: 16, fontWeight: FontWeight.w800, letterSpacing: -0.3),
                       ),
                       const SizedBox(height: 4),
                       Text(
@@ -905,26 +946,30 @@ class _MaintenanceScreenState extends ConsumerState<MaintenanceScreen> with Sing
                         style: TextStyle(color: context.textSecondary, fontSize: 12),
                       ),
                       const SizedBox(height: 16),
-                      ElevatedButton.icon(
-                        onPressed: () {
-                          showModalBottomSheet(
-                            context: context,
-                            isScrollControlled: true,
-                            backgroundColor: context.cardBg,
-                            shape: const RoundedRectangleBorder(
-                              borderRadius: BorderRadius.vertical(top: Radius.circular(24)),
-                            ),
-                            builder: (_) => InspectionSheet(vehicle: active),
-                          );
-                        },
-                        icon: const Icon(Icons.fact_check_outlined),
-                        label: Text(l10n.mulaiInspeksiPertama),
+                      PressScale(
+                        scale: 0.97,
+                        child: ElevatedButton.icon(
+                          onPressed: () {
+                            showModalBottomSheet(
+                              context: context,
+                              isScrollControlled: true,
+                              backgroundColor: context.cardBg,
+                              shape: const RoundedRectangleBorder(
+                                borderRadius: BorderRadius.vertical(top: Radius.circular(24)),
+                              ),
+                              builder: (_) => InspectionSheet(vehicle: active),
+                            );
+                          },
+                          icon: const Icon(Icons.fact_check_outlined),
+                          label: Text(l10n.mulaiInspeksiPertama),
+                        ),
                       ),
                     ],
                   ),
                 )
               : ListView.builder(
-                  padding: const EdgeInsets.symmetric(horizontal: 16),
+                  physics: const BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
+                  padding: const EdgeInsets.fromLTRB(16, 0, 16, 96),
                   itemCount: inspections.length,
                   itemBuilder: (context, index) {
                     final item = inspections[index];
@@ -941,56 +986,64 @@ class _MaintenanceScreenState extends ConsumerState<MaintenanceScreen> with Sing
 
                     return Padding(
                       padding: const EdgeInsets.only(bottom: 12),
-                      child: Card(
-                        child: Padding(
-                          padding: const EdgeInsets.all(16),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Row(
-                                children: [
-                                  Container(
-                                    padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-                                    decoration: BoxDecoration(
-                                      color: badgeColor.withValues(alpha: 0.12),
-                                      borderRadius: BorderRadius.circular(6),
+                      child: PressScale(
+                        scale: 0.98,
+                        child: Card(
+                          child: Padding(
+                            padding: const EdgeInsets.all(16),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Row(
+                                  children: [
+                                    Container(
+                                      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                                      decoration: BoxDecoration(
+                                        color: badgeColor.withValues(alpha: 0.12),
+                                        borderRadius: BorderRadius.circular(6),
+                                      ),
+                                      child: Text(
+                                        Localizations.localeOf(context).languageCode == 'id'
+                                            ? '${pct.toStringAsFixed(0)}% Lolos (${item.passedCount}/${item.totalCount})'
+                                            : '${pct.toStringAsFixed(0)}% Passed (${item.passedCount}/${item.totalCount})',
+                                        style: TextStyle(fontSize: 11, fontWeight: FontWeight.w700, color: badgeColor),
+                                      ),
                                     ),
-                                    child: Text(
-                                      Localizations.localeOf(context).languageCode == 'id'
-                                          ? '${pct.toStringAsFixed(0)}% Lolos (${item.passedCount}/${item.totalCount})'
-                                          : '${pct.toStringAsFixed(0)}% Passed (${item.passedCount}/${item.totalCount})',
-                                      style: TextStyle(fontSize: 11, fontWeight: FontWeight.w700, color: badgeColor),
+                                    const Spacer(),
+                                    Text(
+                                      AppTimeZone.formatDate(item.date, loc, locale: localeCode),
+                                      style: TextStyle(fontSize: 12, color: context.textSecondary),
                                     ),
+                                    IconButton(
+                                      icon: const Icon(Icons.delete_outline, size: 18, color: AppColors.danger),
+                                      visualDensity: VisualDensity.compact,
+                                      onPressed: () {
+                                        ref.read(inspectionChecklistsProvider.notifier).deleteChecklist(item.id);
+                                      },
+                                    ),
+                                  ],
+                                ),
+                                const SizedBox(height: 8),
+                                Text(
+                                  item.title,
+                                  style: TextStyle(
+                                    fontSize: 15,
+                                    fontWeight: FontWeight.w700,
+                                    color: context.textPrimary,
+                                    letterSpacing: -0.3,
                                   ),
-                                  const Spacer(),
-                                  Text(
-                                    AppTimeZone.formatDate(item.date, loc, locale: localeCode),
-                                    style: TextStyle(fontSize: 12, color: context.textSecondary),
-                                  ),
-                                  IconButton(
-                                    icon: const Icon(Icons.delete_outline, size: 18, color: AppColors.danger),
-                                    visualDensity: VisualDensity.compact,
-                                    onPressed: () {
-                                      ref.read(inspectionChecklistsProvider.notifier).deleteChecklist(item.id);
-                                    },
-                                  ),
+                                ),
+                                const SizedBox(height: 4),
+                                Text(
+                                  l10n.odometerValue(NumberFormat('#,###', 'id_ID').format(item.odometer)),
+                                  style: TextStyle(fontSize: 12, color: context.textSecondary),
+                                ),
+                                if (item.inspectorNotes.isNotEmpty) ...[
+                                  const SizedBox(height: 6),
+                                  Text(item.inspectorNotes, style: TextStyle(fontSize: 12, color: context.textSecondary)),
                                 ],
-                              ),
-                              const SizedBox(height: 8),
-                              Text(
-                                item.title,
-                                style: TextStyle(fontSize: 15, fontWeight: FontWeight.w700, color: context.textPrimary),
-                              ),
-                              const SizedBox(height: 4),
-                              Text(
-                                l10n.odometerValue(NumberFormat('#,###', 'id_ID').format(item.odometer)),
-                                style: TextStyle(fontSize: 12, color: context.textSecondary),
-                              ),
-                              if (item.inspectorNotes.isNotEmpty) ...[
-                                const SizedBox(height: 6),
-                                Text(item.inspectorNotes, style: TextStyle(fontSize: 12, color: context.textSecondary)),
                               ],
-                            ],
+                            ),
                           ),
                         ),
                       ),

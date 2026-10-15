@@ -1,0 +1,29 @@
+{
+  "package_id": "garagego-eoy-64-bahasa-yang-konsisten-saat-mencatat-paja",
+  "app": "garagego",
+  "publish_date": "2026-12-18",
+  "primary_keyword": "pajak STNK",
+  "idea_type": "content",
+  "status": "queued",
+  "banner_ready": false,
+  "seo": true,
+  "slugs": {
+    "id": "bahasa-yang-konsisten-saat-mencatat-pajak-stnk-mingguan",
+    "en": "consistent-language-when-logging-pajak-stnk",
+    "ar": "pajak-stnk-7",
+    "jv": "pandhuan-pajak-stnk-garagego-7",
+    "su": "pituduh-pajak-stnk-garagego-7",
+    "zh": "garagego-pajak-stnk-实用指南-7",
+    "ja": "garagegopajak-stnk-ガイド-7"
+  },
+  "titles": {
+    "id": "Bahasa yang Konsisten saat Mencatat pajak STNK",
+    "en": "Consistent Language When Logging pajak STNK — Offline First",
+    "ar": "pajak STNK — دليل GarageGo",
+    "jv": "Pandhuan: Bahasa yang Konsisten saat Mencatat pajak STNK",
+    "su": "Pituduh: Bahasa yang Konsisten saat Mencatat pajak STNK",
+    "zh": "GarageGo · pajak STNK 实用指南",
+    "ja": "GarageGo｜pajak STNK ガイド"
+  },
+  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+}

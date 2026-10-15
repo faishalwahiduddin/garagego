@@ -1,0 +1,29 @@
+{
+  "package_id": "garagego-eoy-10-riwayat-servis-mobil-motor-untuk-pemula-",
+  "app": "garagego",
+  "publish_date": "2026-10-25",
+  "primary_keyword": "riwayat servis mobil motor",
+  "idea_type": "persona",
+  "status": "queued",
+  "banner_ready": false,
+  "seo": true,
+  "slugs": {
+    "id": "riwayat-servis-mobil-motor-untuk-pemula-total-mingguan",
+    "en": "riwayat-servis-mobil-motor-for-absolute-beginners",
+    "ar": "riwayat-servis-mobil-motor",
+    "jv": "pandhuan-riwayat-servis-mobil-motor-garagego",
+    "su": "pituduh-riwayat-servis-mobil-motor-garagego",
+    "zh": "garagego-riwayat-servis-mobil-motor-实用指南",
+    "ja": "garagegoriwayat-servis-mobil-motor-ガイド"
+  },
+  "titles": {
+    "id": "riwayat servis mobil motor untuk orang yang waktunya sempit",
+    "en": "riwayat servis mobil motor for Absolute Beginners — Offline First",
+    "ar": "riwayat servis mobil motor — دليل GarageGo",
+    "jv": "Pandhuan: riwayat servis mobil motor untuk orang yang waktunya sempit",
+    "su": "Pituduh: riwayat servis mobil motor untuk orang yang waktunya sempit",
+    "zh": "GarageGo · riwayat servis mobil motor 实用指南",
+    "ja": "GarageGo｜riwayat servis mobil motor ガイド"
+  },
+  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+}

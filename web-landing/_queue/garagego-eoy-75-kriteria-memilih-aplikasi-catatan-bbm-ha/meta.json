@@ -1,0 +1,29 @@
+{
+  "package_id": "garagego-eoy-75-kriteria-memilih-aplikasi-catatan-bbm-ha",
+  "app": "garagego",
+  "publish_date": "2026-12-29",
+  "primary_keyword": "catatan BBM",
+  "idea_type": "intent-buy",
+  "status": "queued",
+  "banner_ready": false,
+  "seo": true,
+  "slugs": {
+    "id": "kriteria-memilih-aplikasi-catatan-bbm-harian",
+    "en": "criteria-for-choosing-a-catatan-bbm-app",
+    "ar": "catatan-bbm-8",
+    "jv": "pandhuan-catatan-bbm-garagego-8",
+    "su": "pituduh-catatan-bbm-garagego-8",
+    "zh": "garagego-catatan-bbm-实用指南-8",
+    "ja": "garagegocatatan-bbm-ガイド-8"
+  },
+  "titles": {
+    "id": "Kriteria Memilih Aplikasi catatan BBM",
+    "en": "Criteria for Choosing a catatan BBM App",
+    "ar": "catatan BBM — دليل GarageGo",
+    "jv": "Pandhuan: Kriteria Memilih Aplikasi catatan BBM",
+    "su": "Pituduh: Kriteria Memilih Aplikasi catatan BBM",
+    "zh": "GarageGo · catatan BBM 实用指南",
+    "ja": "GarageGo｜catatan BBM ガイド"
+  },
+  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+}

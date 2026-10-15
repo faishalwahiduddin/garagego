@@ -1,0 +1,29 @@
+{
+  "package_id": "garagego-eoy-77-prinsip-pencatatan-garagego-jangka-panja",
+  "app": "garagego",
+  "publish_date": "2026-12-31",
+  "primary_keyword": "servis motor",
+  "idea_type": "evergreen",
+  "status": "queued",
+  "banner_ready": false,
+  "seo": true,
+  "slugs": {
+    "id": "prinsip-pencatatan-garagego-jangka-panjang-offline",
+    "en": "long-term-garagego-logging-principles",
+    "ar": "garagego-8",
+    "jv": "pandhuan-garagego-garagego-8",
+    "su": "pituduh-garagego-garagego-8",
+    "zh": "garagego-garagego-实用指南-8",
+    "ja": "garagegogaragego-ガイド-8"
+  },
+  "titles": {
+    "id": "Prinsip Pencatatan GarageGo Jangka Panjang",
+    "en": "Long-Term GarageGo Logging Principles",
+    "ar": "GarageGo — دليل GarageGo",
+    "jv": "Pandhuan: Prinsip Pencatatan GarageGo Jangka Panjang",
+    "su": "Pituduh: Prinsip Pencatatan GarageGo Jangka Panjang",
+    "zh": "GarageGo · GarageGo 实用指南",
+    "ja": "GarageGo｜GarageGo ガイド"
+  },
+  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+}

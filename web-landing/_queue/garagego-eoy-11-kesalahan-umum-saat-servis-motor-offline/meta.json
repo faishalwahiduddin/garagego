@@ -1,0 +1,29 @@
+{
+  "package_id": "garagego-eoy-11-kesalahan-umum-saat-servis-motor-offline",
+  "app": "garagego",
+  "publish_date": "2026-10-26",
+  "primary_keyword": "servis motor",
+  "idea_type": "mistakes",
+  "status": "queued",
+  "banner_ready": false,
+  "seo": true,
+  "slugs": {
+    "id": "kesalahan-umum-saat-servis-motor-offline",
+    "en": "common-mistakes-when-doing-servis-motor",
+    "ar": "servis-motor-2",
+    "jv": "pandhuan-servis-motor-garagego-2",
+    "su": "pituduh-servis-motor-garagego-2",
+    "zh": "garagego-servis-motor-实用指南-2",
+    "ja": "garagegoservis-motor-ガイド-2"
+  },
+  "titles": {
+    "id": "Kesalahan Umum saat servis motor",
+    "en": "Common Mistakes When Doing servis motor",
+    "ar": "servis motor — دليل GarageGo",
+    "jv": "Pandhuan: Kesalahan Umum saat servis motor",
+    "su": "Pituduh: Kesalahan Umum saat servis motor",
+    "zh": "GarageGo · servis motor 实用指南",
+    "ja": "GarageGo｜servis motor ガイド"
+  },
+  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+}

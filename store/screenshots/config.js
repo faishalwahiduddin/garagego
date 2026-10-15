@@ -21,8 +21,8 @@ window.STORE_CONFIG = {
     "es-ES": "ES"
   },
   "tagline": {
-    "id": "Servis, oli, BBM, dan pajak STNK — offline.",
-    "en-US": "Service, oil, fuel & STNK tax — offline.",
+    "id": "Catat servis berkala, ganti oli, BBM & pajak STNK kendaraan.",
+    "en-US": "Track vehicle service, oil changes, fuel mileage, and road tax.",
     "ar": "Service, oil, fuel & STNK tax — offline.",
     "ja-JP": "Service, oil, fuel & STNK tax — offline.",
     "zh-CN": "Service, oil, fuel & STNK tax — offline.",

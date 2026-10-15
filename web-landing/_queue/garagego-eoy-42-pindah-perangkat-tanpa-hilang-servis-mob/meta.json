@@ -1,0 +1,29 @@
+{
+  "package_id": "garagego-eoy-42-pindah-perangkat-tanpa-hilang-servis-mob",
+  "app": "garagego",
+  "publish_date": "2026-11-26",
+  "primary_keyword": "servis mobil",
+  "idea_type": "export",
+  "status": "queued",
+  "banner_ready": false,
+  "seo": true,
+  "slugs": {
+    "id": "pindah-perangkat-tanpa-hilang-servis-mobil-2026",
+    "en": "move-devices-without-losing-servis-mobil",
+    "ar": "servis-mobil-5",
+    "jv": "pandhuan-servis-mobil-garagego-5",
+    "su": "pituduh-servis-mobil-garagego-5",
+    "zh": "garagego-servis-mobil-实用指南-5",
+    "ja": "garagegoservis-mobil-ガイド-5"
+  },
+  "titles": {
+    "id": "Pindah Perangkat tanpa Hilang servis mobil",
+    "en": "Move Devices Without Losing servis mobil",
+    "ar": "servis mobil — دليل GarageGo",
+    "jv": "Pandhuan: Pindah Perangkat tanpa Hilang servis mobil",
+    "su": "Pituduh: Pindah Perangkat tanpa Hilang servis mobil",
+    "zh": "GarageGo · servis mobil 实用指南",
+    "ja": "GarageGo｜servis mobil ガイド"
+  },
+  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+}

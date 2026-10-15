@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:garagego/l10n/app_localizations.dart';
 import 'package:go_router/go_router.dart';
 import '../../core/constants/app_colors.dart';
+import '../../core/ui/glass_bar.dart';
 
 class NavigationShell extends StatelessWidget {
   final StatefulNavigationShell navigationShell;
@@ -18,16 +19,21 @@ class NavigationShell extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final navSurface = isDark ? AppColors.bgSurface : AppColors.bgLightSurface;
 
     return Scaffold(
+      extendBody: true,
       body: navigationShell,
-      bottomNavigationBar: Container(
-        decoration: BoxDecoration(
-          border: Border(
-            top: BorderSide(color: context.borderColor, width: 1),
-          ),
-        ),
+      bottomNavigationBar: GlassBar(
+        borderSide: BarBorderSide.top,
+        color: navSurface,
+        opacity: 0.82,
+        blurSigma: 20,
         child: NavigationBar(
+          backgroundColor: Colors.transparent,
+          surfaceTintColor: Colors.transparent,
+          elevation: 0,
           selectedIndex: navigationShell.currentIndex,
           onDestinationSelected: _onTap,
           destinations: [

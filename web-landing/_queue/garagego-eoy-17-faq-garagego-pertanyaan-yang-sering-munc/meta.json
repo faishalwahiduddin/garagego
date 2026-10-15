@@ -1,0 +1,29 @@
+{
+  "package_id": "garagego-eoy-17-faq-garagego-pertanyaan-yang-sering-munc",
+  "app": "garagego",
+  "publish_date": "2026-11-01",
+  "primary_keyword": "servis motor",
+  "idea_type": "faq",
+  "status": "queued",
+  "banner_ready": false,
+  "seo": true,
+  "slugs": {
+    "id": "faq-garagego-pertanyaan-yang-sering-muncul-offline",
+    "en": "garagego-faq-frequent-questions",
+    "ar": "garagego-2",
+    "jv": "pandhuan-garagego-garagego-2",
+    "su": "pituduh-garagego-garagego-2",
+    "zh": "garagego-garagego-实用指南-2",
+    "ja": "garagegogaragego-ガイド-2"
+  },
+  "titles": {
+    "id": "FAQ GarageGo: Pertanyaan yang Sering Muncul",
+    "en": "GarageGo FAQ: Frequent Questions",
+    "ar": "GarageGo — دليل GarageGo",
+    "jv": "Pandhuan: FAQ GarageGo: Pertanyaan yang Sering Muncul",
+    "su": "Pituduh: FAQ GarageGo: Pertanyaan yang Sering Muncul",
+    "zh": "GarageGo · GarageGo 实用指南",
+    "ja": "GarageGo｜GarageGo ガイド"
+  },
+  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+}

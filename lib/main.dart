@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'core/a11y/text_scale.dart';
 import 'core/providers/app_providers.dart';
 import 'core/providers/locale_provider.dart';
 import 'core/providers/theme_provider.dart';
@@ -76,6 +77,7 @@ class _GarageGoAppState extends ConsumerState<GarageGoApp>
       darkTheme: AppTheme.darkTheme,
       themeMode: themeMode,
       routerConfig: appRouter,
+      builder: (context, child) => AppTextScale(child: child!),
       localizationsDelegates: const [
         AppLocalizations.delegate,
         FallbackMaterialLocalizationsDelegate(),

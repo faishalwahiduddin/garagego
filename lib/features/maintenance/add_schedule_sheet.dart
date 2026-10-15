@@ -4,6 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../core/constants/app_colors.dart';
 import '../../core/models/vehicle.dart';
 import '../../core/providers/app_providers.dart';
+import '../../core/ui/press_scale.dart';
 import '../../core/utils/l10n_helpers.dart';
 import '../../core/utils/validators.dart';
 
@@ -82,6 +83,7 @@ class _AddScheduleSheetState extends ConsumerState<AddScheduleSheet> {
       child: Form(
         key: _formKey,
         child: SingleChildScrollView(
+          physics: const BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -97,6 +99,7 @@ class _AddScheduleSheetState extends ConsumerState<AddScheduleSheet> {
                       fontSize: 18,
                       fontWeight: FontWeight.w800,
                       color: context.textPrimary,
+                      letterSpacing: -0.4,
                     ),
                   ),
                   IconButton(
@@ -241,43 +244,46 @@ class _AddScheduleSheetState extends ConsumerState<AddScheduleSheet> {
               const SizedBox(height: 22),
 
               // Submit Button
-              ElevatedButton(
-                onPressed: () {
-                  if (!_formKey.currentState!.validate()) return;
+              PressScale(
+                scale: 0.97,
+                child: ElevatedButton(
+                  onPressed: () {
+                    if (!_formKey.currentState!.validate()) return;
 
-                  final schedule = MaintenanceSchedule(
-                    id: widget.initialSchedule?.id ?? 'sched_${DateTime.now().millisecondsSinceEpoch}',
-                    vehicleId: widget.vehicle.id,
-                    title: _titleController.text.trim(),
-                    category: _categoryController.text.trim(),
-                    intervalKm: int.parse(_intervalKmController.text.trim()),
-                    intervalMonths: int.parse(_intervalMonthsController.text.trim()),
-                    lastPerformedOdometer: int.parse(_lastOdoController.text.trim()),
-                    lastPerformedDate: _lastDate,
-                    isPreset: widget.initialSchedule?.isPreset ?? false,
-                  );
+                    final schedule = MaintenanceSchedule(
+                      id: widget.initialSchedule?.id ?? 'sched_${DateTime.now().millisecondsSinceEpoch}',
+                      vehicleId: widget.vehicle.id,
+                      title: _titleController.text.trim(),
+                      category: _categoryController.text.trim(),
+                      intervalKm: int.parse(_intervalKmController.text.trim()),
+                      intervalMonths: int.parse(_intervalMonthsController.text.trim()),
+                      lastPerformedOdometer: int.parse(_lastOdoController.text.trim()),
+                      lastPerformedDate: _lastDate,
+                      isPreset: widget.initialSchedule?.isPreset ?? false,
+                    );
 
-                  if (isEditing) {
-                    ref.read(maintenanceSchedulesProvider.notifier).updateSchedule(schedule);
-                  } else {
-                    ref.read(maintenanceSchedulesProvider.notifier).addSchedule(schedule);
-                  }
+                    if (isEditing) {
+                      ref.read(maintenanceSchedulesProvider.notifier).updateSchedule(schedule);
+                    } else {
+                      ref.read(maintenanceSchedulesProvider.notifier).addSchedule(schedule);
+                    }
 
-                  Navigator.pop(context);
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(
-                      content: Text(
-                        isEditing
-                            ? (Localizations.localeOf(context).languageCode == 'id' ? 'Jadwal berhasil diperbarui!' : 'Schedule updated successfully!')
-                            : (Localizations.localeOf(context).languageCode == 'id' ? 'Jadwal perawatan berhasil disimpan!' : 'Maintenance schedule saved successfully!'),
+                    Navigator.pop(context);
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(
+                        content: Text(
+                          isEditing
+                              ? (Localizations.localeOf(context).languageCode == 'id' ? 'Jadwal berhasil diperbarui!' : 'Schedule updated successfully!')
+                              : (Localizations.localeOf(context).languageCode == 'id' ? 'Jadwal perawatan berhasil disimpan!' : 'Maintenance schedule saved successfully!'),
+                        ),
                       ),
-                    ),
-                  );
-                },
-                child: Text(
-                  isEditing
-                      ? (Localizations.localeOf(context).languageCode == 'id' ? 'Perbarui Jadwal' : 'Update Schedule')
-                      : (Localizations.localeOf(context).languageCode == 'id' ? 'Simpan Jadwal Perawatan' : 'Save Maintenance Schedule'),
+                    );
+                  },
+                  child: Text(
+                    isEditing
+                        ? (Localizations.localeOf(context).languageCode == 'id' ? 'Perbarui Jadwal' : 'Update Schedule')
+                        : (Localizations.localeOf(context).languageCode == 'id' ? 'Simpan Jadwal Perawatan' : 'Save Maintenance Schedule'),
+                  ),
                 ),
               ),
             ],

@@ -4,35 +4,52 @@
 > files are the split, tool-ready copies of this content.
 > ⚠️ **Non-English drafts (ar, ja-JP, zh-CN, es-ES) need a native-speaker review before publishing.**
 
-- **Package:** `id.faishal.garagego` · **Version:** 1.0.3+4 · **Category:** Lifestyle
+- **Package:** `id.faishal.garagego` · **Version:** 1.0.4+5 · **Category:** Lifestyle
 
 ---
 
 ## Bahasa Indonesia (`id`)
 
-**Title** (17/30)
+**Title** (28/30)
 
-> GarageGo — Garasi
+> GarageGo: Servis & BBM Mobil
 
-**Short description** (43/80)
+**Short description** (60/80)
 
-> Servis, oli, BBM, dan pajak STNK — offline.
+> Catat servis berkala, ganti oli, BBM & pajak STNK kendaraan.
 
-**Full description** (100/4000)
+**Full description** (1073/4000)
 
 <details><summary>show</summary>
 
-GarageGo mengelola garasi Anda: servis, ganti oli, konsumsi BBM, dan pajak STNK untuk mobil & motor.
+GarageGo membantu Anda merawat mobil dan sepeda motor dengan rapi. Catat riwayat servis berkala, jadwal ganti oli, konsumsi bahan bakar (BBM), dan tanggal jatuh tempo pajak STNK agar kendaraan selalu prima.
+
+Fitur Utama:
+✓ Kelola beberapa kendaraan sekaligus (mobil dan motor)
+✓ Catat riwayat servis, penggantian suku cadang, dan bengkel
+✓ Pengingat ganti oli berdasarkan odometer atau interval bulan
+✓ Log pengisian BBM lengkap dengan kalkulator konsumsi per kilometer
+✓ Pengingat jatuh tempo pajak tahunan STNK dan lima tahunan
+✓ Ringkasan pengeluaran perawatan bulanan dan tahunan
+✓ 100% offline tanpa iklan dan tanpa perlu registrasi akun
+
+Kenapa GarageGo?
+Riwayat perawatan kendaraan yang terdokumentasi rapi menjaga nilai jual kembali kendaraan dan mencegah kerusakan mendadak di jalan. GarageGo menggantikan buku servis manual dengan catatan praktis di saku Anda.
+
+Privasi Anda:
+Semua data kendaraan, pelat nomor, dan catatan biaya disimpan di memori lokal ponsel Anda. Tidak ada data yang dibagikan ke pihak ketiga.
+
+Bagian dari armada aplikasi utilitas faishal.id.
 
 </details>
 
-**Release notes** — versionCode 4 (52/500)
+**Release notes** — versionCode 5 (60/500)
 
-> Rilis store screenshots multi-bahasa untuk GarageGo.
+> Rilis pembaruan metadata dan aset toko resmi untuk GarageGo.
 
 **Tagline** (feature graphic)
 
-> Servis, oli, BBM, dan pajak STNK — offline.
+> Catat servis berkala, ganti oli, BBM & pajak STNK kendaraan.
 
 **Screenshot captions**
 
@@ -45,29 +62,46 @@ GarageGo mengelola garasi Anda: servis, ganti oli, konsumsi BBM, dan pajak STNK 
 
 ## English (US) (`en-US`)
 
-**Title** (17/30)
+**Title** (27/30)
 
-> GarageGo — Garage
+> GarageGo: Car & Bike Garage
 
-**Short description** (40/80)
+**Short description** (63/80)
 
-> Service, oil, fuel & STNK tax — offline.
+> Track vehicle service, oil changes, fuel mileage, and road tax.
 
-**Full description** (95/4000)
+**Full description** (1022/4000)
 
 <details><summary>show</summary>
 
-GarageGo manages your garage: service, oil changes, fuel logs, and STNK taxes for cars & bikes.
+GarageGo keeps your cars and motorcycles properly maintained. Log periodic maintenance, track oil change intervals, calculate fuel consumption, and monitor vehicle tax renewal dates with ease.
+
+Core Features:
+✓ Multi-vehicle management for cars and motorcycles
+✓ Service history logs with parts replacement and garage notes
+✓ Oil change reminders based on odometer mileage or calendar dates
+✓ Fuel fill-up tracker with automatic mileage calculations
+✓ Vehicle registration and road tax expiry alerts
+✓ Cost breakdown of repairs, routine servicing, and fuel expenses
+✓ 100% offline, zero ads, no sign-up required
+
+Why GarageGo?
+Keeping comprehensive maintenance records preserves your vehicle's resale value and prevents unexpected roadside breakdowns. GarageGo replaces messy glovebox paper receipts with a clear pocket record.
+
+Your Privacy:
+All vehicle details, license plate numbers, and expense logs remain stored on your device. Nothing is uploaded to external servers.
+
+Part of the faishal.id personal utility fleet.
 
 </details>
 
-**Release notes** — versionCode 4 (52/500)
+**Release notes** — versionCode 5 (69/500)
 
-> Multi-locale store screenshots release for GarageGo.
+> Official store metadata and presentation update release for GarageGo.
 
 **Tagline** (feature graphic)
 
-> Service, oil, fuel & STNK tax — offline.
+> Track vehicle service, oil changes, fuel mileage, and road tax.
 
 **Screenshot captions**
 
@@ -98,7 +132,7 @@ GarageGo manages your garage: service, oil changes, fuel logs, and STNK taxes fo
 
 </details>
 
-**Release notes** — versionCode 4 (39/500)
+**Release notes** — versionCode 5 (39/500)
 
 > إصدار أولي مع لقطات متجر متعددة اللغات.
 
@@ -135,7 +169,7 @@ faishal.idアプリファミリーの一員です。オフライン中心、広�
 
 </details>
 
-**Release notes** — versionCode 4 (27/500)
+**Release notes** — versionCode 5 (27/500)
 
 > 多言語ストア向けスクリーンショット対応の初回リリース。
 
@@ -172,7 +206,7 @@ faishal.id 应用家族成员。偏离线、无广告。
 
 </details>
 
-**Release notes** — versionCode 4 (15/500)
+**Release notes** — versionCode 5 (15/500)
 
 > 首次发布，支持多语言商店截图。
 
@@ -209,7 +243,7 @@ Parte de la familia de apps faishal.id. Enfoque offline, sin anuncios.
 
 </details>
 
-**Release notes** — versionCode 4 (51/500)
+**Release notes** — versionCode 5 (51/500)
 
 > Primera versión con capturas de tienda multiidioma.
 

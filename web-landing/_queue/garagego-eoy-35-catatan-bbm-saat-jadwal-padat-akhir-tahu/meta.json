@@ -1,0 +1,29 @@
+{
+  "package_id": "garagego-eoy-35-catatan-bbm-saat-jadwal-padat-akhir-tahu",
+  "app": "garagego",
+  "publish_date": "2026-11-19",
+  "primary_keyword": "catatan BBM",
+  "idea_type": "seasonal",
+  "status": "queued",
+  "banner_ready": false,
+  "seo": true,
+  "slugs": {
+    "id": "catatan-bbm-saat-jadwal-padat-akhir-tahun-offline",
+    "en": "catatan-bbm-during-busy-year-end-weeks",
+    "ar": "catatan-bbm-4",
+    "jv": "pandhuan-catatan-bbm-garagego-4",
+    "su": "pituduh-catatan-bbm-garagego-4",
+    "zh": "garagego-catatan-bbm-实用指南-4",
+    "ja": "garagegocatatan-bbm-ガイド-4"
+  },
+  "titles": {
+    "id": "Catatan BBM saat Jadwal Padat Akhir Tahun",
+    "en": "catatan BBM During Busy Year-End Weeks",
+    "ar": "catatan BBM — دليل GarageGo",
+    "jv": "Pandhuan: Catatan BBM saat Jadwal Padat Akhir Tahun",
+    "su": "Pituduh: Catatan BBM saat Jadwal Padat Akhir Tahun",
+    "zh": "GarageGo · catatan BBM 实用指南",
+    "ja": "GarageGo｜catatan BBM ガイド"
+  },
+  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+}

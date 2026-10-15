@@ -1,0 +1,29 @@
+{
+  "package_id": "garagego-eoy-06-istilah-penting-seputar-rawat-motor-2026",
+  "app": "garagego",
+  "publish_date": "2026-10-21",
+  "primary_keyword": "rawat motor",
+  "idea_type": "glossary",
+  "status": "queued",
+  "banner_ready": false,
+  "seo": true,
+  "slugs": {
+    "id": "istilah-penting-seputar-rawat-motor-2026",
+    "en": "key-terms-around-rawat-motor",
+    "ar": "rawat-motor",
+    "jv": "pandhuan-rawat-motor-garagego",
+    "su": "pituduh-rawat-motor-garagego",
+    "zh": "garagego-rawat-motor-实用指南",
+    "ja": "garagegorawat-motor-ガイド"
+  },
+  "titles": {
+    "id": "Istilah Penting seputar rawat motor",
+    "en": "Key Terms Around rawat motor",
+    "ar": "rawat motor — دليل GarageGo",
+    "jv": "Pandhuan: Istilah Penting seputar rawat motor",
+    "su": "Pituduh: Istilah Penting seputar rawat motor",
+    "zh": "GarageGo · rawat motor 实用指南",
+    "ja": "GarageGo｜rawat motor ガイド"
+  },
+  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+}

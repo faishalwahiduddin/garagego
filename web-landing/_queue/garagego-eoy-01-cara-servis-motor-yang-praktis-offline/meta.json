@@ -1,0 +1,29 @@
+{
+  "package_id": "garagego-eoy-01-cara-servis-motor-yang-praktis-offline",
+  "app": "garagego",
+  "publish_date": "2026-10-16",
+  "primary_keyword": "servis motor",
+  "idea_type": "how-to",
+  "status": "queued",
+  "banner_ready": false,
+  "seo": true,
+  "slugs": {
+    "id": "cara-servis-motor-yang-praktis-offline",
+    "en": "how-to-servis-motor-offline",
+    "ar": "servis-motor",
+    "jv": "pandhuan-servis-motor-garagego",
+    "su": "pituduh-servis-motor-garagego",
+    "zh": "garagego-servis-motor-实用指南",
+    "ja": "garagegoservis-motor-ガイド"
+  },
+  "titles": {
+    "id": "Cara servis motor yang Praktis (Offline)",
+    "en": "How to servis motor Offline — Practical Steps",
+    "ar": "servis motor — دليل GarageGo",
+    "jv": "Pandhuan: Cara servis motor yang Praktis (Offline)",
+    "su": "Pituduh: Cara servis motor yang Praktis (Offline)",
+    "zh": "GarageGo · servis motor 实用指南",
+    "ja": "GarageGo｜servis motor ガイド"
+  },
+  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+}

@@ -1,0 +1,29 @@
+{
+  "package_id": "garagego-eoy-33-ganti-oli-aplikasi-vs-catatan-di-browser",
+  "app": "garagego",
+  "publish_date": "2026-11-17",
+  "primary_keyword": "ganti oli",
+  "idea_type": "vs-web",
+  "status": "queued",
+  "banner_ready": false,
+  "seo": true,
+  "slugs": {
+    "id": "ganti-oli-aplikasi-vs-catatan-di-browser-harian",
+    "en": "ganti-oli-app-vs-browser-notes",
+    "ar": "ganti-oli-4",
+    "jv": "pandhuan-ganti-oli-garagego-4",
+    "su": "pituduh-ganti-oli-garagego-4",
+    "zh": "garagego-ganti-oli-实用指南-4",
+    "ja": "garagegoganti-oli-ガイド-4"
+  },
+  "titles": {
+    "id": "ganti oli: panduan praktis di GarageGo",
+    "en": "ganti oli: App vs Browser Notes",
+    "ar": "ganti oli — دليل GarageGo",
+    "jv": "Pandhuan: ganti oli: panduan praktis di GarageGo",
+    "su": "Pituduh: ganti oli: panduan praktis di GarageGo",
+    "zh": "GarageGo · ganti oli 实用指南",
+    "ja": "GarageGo｜ganti oli ガイド"
+  },
+  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+}

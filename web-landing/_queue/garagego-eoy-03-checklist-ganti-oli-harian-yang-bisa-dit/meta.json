@@ -1,0 +1,29 @@
+{
+  "package_id": "garagego-eoy-03-checklist-ganti-oli-harian-yang-bisa-dit",
+  "app": "garagego",
+  "publish_date": "2026-10-18",
+  "primary_keyword": "ganti oli",
+  "idea_type": "checklist",
+  "status": "queued",
+  "banner_ready": false,
+  "seo": true,
+  "slugs": {
+    "id": "checklist-ganti-oli-harian-yang-bisa-ditiru-harian",
+    "en": "daily-ganti-oli-checklist-you-can-copy",
+    "ar": "ganti-oli",
+    "jv": "pandhuan-ganti-oli-garagego",
+    "su": "pituduh-ganti-oli-garagego",
+    "zh": "garagego-ganti-oli-实用指南",
+    "ja": "garagegoganti-oli-ガイド"
+  },
+  "titles": {
+    "id": "Checklist ganti oli Harian yang Bisa Ditiru",
+    "en": "Daily ganti oli Checklist You Can Copy",
+    "ar": "ganti oli — دليل GarageGo",
+    "jv": "Pandhuan: Checklist ganti oli Harian yang Bisa Ditiru",
+    "su": "Pituduh: Checklist ganti oli Harian yang Bisa Ditiru",
+    "zh": "GarageGo · ganti oli 实用指南",
+    "ja": "GarageGo｜ganti oli ガイド"
+  },
+  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+}

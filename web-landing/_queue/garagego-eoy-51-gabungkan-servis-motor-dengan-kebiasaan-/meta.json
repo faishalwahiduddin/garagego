@@ -1,0 +1,29 @@
+{
+  "package_id": "garagego-eoy-51-gabungkan-servis-motor-dengan-kebiasaan-",
+  "app": "garagego",
+  "publish_date": "2026-12-05",
+  "primary_keyword": "servis motor",
+  "idea_type": "integration",
+  "status": "queued",
+  "banner_ready": false,
+  "seo": true,
+  "slugs": {
+    "id": "gabungkan-servis-motor-dengan-kebiasaan-lain-harian",
+    "en": "stack-servis-motor-with-other-habits",
+    "ar": "servis-motor-6",
+    "jv": "pandhuan-servis-motor-garagego-6",
+    "su": "pituduh-servis-motor-garagego-6",
+    "zh": "garagego-servis-motor-实用指南-6",
+    "ja": "garagegoservis-motor-ガイド-6"
+  },
+  "titles": {
+    "id": "Gabungkan servis motor dengan Kebiasaan Lain",
+    "en": "Stack servis motor with Other Habits",
+    "ar": "servis motor — دليل GarageGo",
+    "jv": "Pandhuan: Gabungkan servis motor dengan Kebiasaan Lain",
+    "su": "Pituduh: Gabungkan servis motor dengan Kebiasaan Lain",
+    "zh": "GarageGo · servis motor 实用指南",
+    "ja": "GarageGo｜servis motor ガイド"
+  },
+  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+}

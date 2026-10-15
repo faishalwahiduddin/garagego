@@ -1,1 +1,18 @@
-GarageGo manages your garage: service, oil changes, fuel logs, and STNK taxes for cars & bikes.
+GarageGo keeps your cars and motorcycles properly maintained. Log periodic maintenance, track oil change intervals, calculate fuel consumption, and monitor vehicle tax renewal dates with ease.
+
+Core Features:
+✓ Multi-vehicle management for cars and motorcycles
+✓ Service history logs with parts replacement and garage notes
+✓ Oil change reminders based on odometer mileage or calendar dates
+✓ Fuel fill-up tracker with automatic mileage calculations
+✓ Vehicle registration and road tax expiry alerts
+✓ Cost breakdown of repairs, routine servicing, and fuel expenses
+✓ 100% offline, zero ads, no sign-up required
+
+Why GarageGo?
+Keeping comprehensive maintenance records preserves your vehicle's resale value and prevents unexpected roadside breakdowns. GarageGo replaces messy glovebox paper receipts with a clear pocket record.
+
+Your Privacy:
+All vehicle details, license plate numbers, and expense logs remain stored on your device. Nothing is uploaded to external servers.
+
+Part of the faishal.id personal utility fleet.

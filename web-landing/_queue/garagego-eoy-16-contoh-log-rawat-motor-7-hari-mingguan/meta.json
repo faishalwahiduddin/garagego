@@ -1,0 +1,29 @@
+{
+  "package_id": "garagego-eoy-16-contoh-log-rawat-motor-7-hari-mingguan",
+  "app": "garagego",
+  "publish_date": "2026-10-31",
+  "primary_keyword": "rawat motor",
+  "idea_type": "template",
+  "status": "queued",
+  "banner_ready": false,
+  "seo": true,
+  "slugs": {
+    "id": "contoh-log-rawat-motor-7-hari-mingguan",
+    "en": "sample-7-day-rawat-motor-log",
+    "ar": "rawat-motor-2",
+    "jv": "pandhuan-rawat-motor-garagego-2",
+    "su": "pituduh-rawat-motor-garagego-2",
+    "zh": "garagego-rawat-motor-实用指南-2",
+    "ja": "garagegorawat-motor-ガイド-2"
+  },
+  "titles": {
+    "id": "Contoh Log rawat motor 7 Hari",
+    "en": "Sample 7-Day rawat motor Log — Offline First",
+    "ar": "rawat motor — دليل GarageGo",
+    "jv": "Pandhuan: Contoh Log rawat motor 7 Hari",
+    "su": "Pituduh: Contoh Log rawat motor 7 Hari",
+    "zh": "GarageGo · rawat motor 实用指南",
+    "ja": "GarageGo｜rawat motor ガイド"
+  },
+  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+}

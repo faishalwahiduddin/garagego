@@ -1,0 +1,29 @@
+{
+  "package_id": "garagego-eoy-74-kapan-saatnya-pakai-aplikasi-untuk-pajak",
+  "app": "garagego",
+  "publish_date": "2026-12-28",
+  "primary_keyword": "pajak STNK",
+  "idea_type": "intent-buy",
+  "status": "queued",
+  "banner_ready": false,
+  "seo": true,
+  "slugs": {
+    "id": "kapan-saatnya-pakai-aplikasi-untuk-pajak-stnk-praktis",
+    "en": "when-to-use-an-app-for-pajak-stnk-practical",
+    "ar": "pajak-stnk-8",
+    "jv": "pandhuan-pajak-stnk-garagego-8",
+    "su": "pituduh-pajak-stnk-garagego-8",
+    "zh": "garagego-pajak-stnk-实用指南-8",
+    "ja": "garagegopajak-stnk-ガイド-8"
+  },
+  "titles": {
+    "id": "Kapan Saatnya Pakai Aplikasi untuk pajak STNK",
+    "en": "When to Use an App for pajak STNK (Practical)",
+    "ar": "pajak STNK — دليل GarageGo",
+    "jv": "Pandhuan: Kapan Saatnya Pakai Aplikasi untuk pajak STNK",
+    "su": "Pituduh: Kapan Saatnya Pakai Aplikasi untuk pajak STNK",
+    "zh": "GarageGo · pajak STNK 实用指南",
+    "ja": "GarageGo｜pajak STNK ガイド"
+  },
+  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+}

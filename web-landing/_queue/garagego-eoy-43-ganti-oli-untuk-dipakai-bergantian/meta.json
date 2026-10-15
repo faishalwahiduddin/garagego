@@ -1,0 +1,29 @@
+{
+  "package_id": "garagego-eoy-43-ganti-oli-untuk-dipakai-bergantian",
+  "app": "garagego",
+  "publish_date": "2026-11-27",
+  "primary_keyword": "ganti oli",
+  "idea_type": "family",
+  "status": "queued",
+  "banner_ready": false,
+  "seo": true,
+  "slugs": {
+    "id": "ganti-oli-untuk-dipakai-bergantian",
+    "en": "sharing-a-device-for-ganti-oli",
+    "ar": "ganti-oli-5",
+    "jv": "pandhuan-ganti-oli-garagego-5",
+    "su": "pituduh-ganti-oli-garagego-5",
+    "zh": "garagego-ganti-oli-实用指南-5",
+    "ja": "garagegoganti-oli-ガイド-5"
+  },
+  "titles": {
+    "id": "ganti oli: panduan praktis di GarageGo",
+    "en": "Sharing a Device for ganti oli",
+    "ar": "ganti oli — دليل GarageGo",
+    "jv": "Pandhuan: ganti oli: panduan praktis di GarageGo",
+    "su": "Pituduh: ganti oli: panduan praktis di GarageGo",
+    "zh": "GarageGo · ganti oli 实用指南",
+    "ja": "GarageGo｜ganti oli ガイド"
+  },
+  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+}

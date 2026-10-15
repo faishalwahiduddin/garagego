@@ -14,7 +14,7 @@ void main() {
   setUpAll(AppTimeZone.initAppTimeZones);
 
   testWidgets('GarageGoApp smoke test', (WidgetTester tester) async {
-    SharedPreferences.setMockInitialValues({});
+    SharedPreferences.setMockInitialValues({'onboarding_completed': true});
     final storageService = await LocalStorageService.init();
 
     await tester.pumpWidget(
@@ -35,7 +35,7 @@ void main() {
   });
 
   testWidgets('GarageGoApp localization test (English)', (WidgetTester tester) async {
-    SharedPreferences.setMockInitialValues({'locale': 'en'});
+    SharedPreferences.setMockInitialValues({'locale': 'en', 'onboarding_completed': true});
     final storageService = await LocalStorageService.init();
 
     await tester.pumpWidget(

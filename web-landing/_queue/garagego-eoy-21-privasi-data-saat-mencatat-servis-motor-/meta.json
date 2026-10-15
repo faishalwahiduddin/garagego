@@ -1,0 +1,29 @@
+{
+  "package_id": "garagego-eoy-21-privasi-data-saat-mencatat-servis-motor-",
+  "app": "garagego",
+  "publish_date": "2026-11-05",
+  "primary_keyword": "servis motor",
+  "idea_type": "privacy",
+  "status": "queued",
+  "banner_ready": false,
+  "seo": true,
+  "slugs": {
+    "id": "privasi-data-saat-mencatat-servis-motor-harian",
+    "en": "data-privacy-when-logging-servis-motor",
+    "ar": "servis-motor-3",
+    "jv": "pandhuan-servis-motor-garagego-3",
+    "su": "pituduh-servis-motor-garagego-3",
+    "zh": "garagego-servis-motor-实用指南-3",
+    "ja": "garagegoservis-motor-ガイド-3"
+  },
+  "titles": {
+    "id": "Privasi Data saat Mencatat servis motor",
+    "en": "Data Privacy When Logging servis motor",
+    "ar": "servis motor — دليل GarageGo",
+    "jv": "Pandhuan: Privasi Data saat Mencatat servis motor",
+    "su": "Pituduh: Privasi Data saat Mencatat servis motor",
+    "zh": "GarageGo · servis motor 实用指南",
+    "ja": "GarageGo｜servis motor ガイド"
+  },
+  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+}

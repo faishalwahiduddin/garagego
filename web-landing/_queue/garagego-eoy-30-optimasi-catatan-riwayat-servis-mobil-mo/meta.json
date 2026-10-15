@@ -1,0 +1,29 @@
+{
+  "package_id": "garagego-eoy-30-optimasi-catatan-riwayat-servis-mobil-mo",
+  "app": "garagego",
+  "publish_date": "2026-11-14",
+  "primary_keyword": "riwayat servis mobil motor",
+  "idea_type": "advanced",
+  "status": "queued",
+  "banner_ready": false,
+  "seo": true,
+  "slugs": {
+    "id": "optimasi-catatan-riwayat-servis-mobil-motor-bulanan-2026",
+    "en": "optimize-monthly-riwayat-servis-mobil-motor-logs",
+    "ar": "riwayat-servis-mobil-motor-3",
+    "jv": "pandhuan-riwayat-servis-mobil-motor-garagego-3",
+    "su": "pituduh-riwayat-servis-mobil-motor-garagego-3",
+    "zh": "garagego-riwayat-servis-mobil-motor-实用指南-3",
+    "ja": "garagegoriwayat-servis-mobil-motor-ガイド-3"
+  },
+  "titles": {
+    "id": "Optimasi Catatan riwayat servis mobil motor Bulanan",
+    "en": "Optimize Monthly riwayat servis mobil motor Logs",
+    "ar": "riwayat servis mobil motor — دليل GarageGo",
+    "jv": "Pandhuan: Optimasi Catatan riwayat servis mobil motor Bulanan",
+    "su": "Pituduh: Optimasi Catatan riwayat servis mobil motor Bulanan",
+    "zh": "GarageGo · riwayat servis mobil motor 实用指南",
+    "ja": "GarageGo｜riwayat servis mobil motor ガイド"
+  },
+  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+}

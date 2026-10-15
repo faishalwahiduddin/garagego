@@ -1,0 +1,29 @@
+{
+  "package_id": "garagego-eoy-36-rencana-rawat-motor-menjelang-2027-2026",
+  "app": "garagego",
+  "publish_date": "2026-11-20",
+  "primary_keyword": "rawat motor",
+  "idea_type": "seasonal",
+  "status": "queued",
+  "banner_ready": false,
+  "seo": true,
+  "slugs": {
+    "id": "rencana-rawat-motor-menjelang-2027-2026",
+    "en": "rawat-motor-plan-heading-into-2027",
+    "ar": "rawat-motor-4",
+    "jv": "pandhuan-rawat-motor-garagego-4",
+    "su": "pituduh-rawat-motor-garagego-4",
+    "zh": "garagego-rawat-motor-实用指南-4",
+    "ja": "garagegorawat-motor-ガイド-4"
+  },
+  "titles": {
+    "id": "Rencana rawat motor Menjelang 2027",
+    "en": "rawat motor Plan Heading into 2027",
+    "ar": "rawat motor — دليل GarageGo",
+    "jv": "Pandhuan: Rencana rawat motor Menjelang 2027",
+    "su": "Pituduh: Rencana rawat motor Menjelang 2027",
+    "zh": "GarageGo · rawat motor 实用指南",
+    "ja": "GarageGo｜rawat motor ガイド"
+  },
+  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+}

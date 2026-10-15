@@ -1,0 +1,29 @@
+{
+  "package_id": "garagego-eoy-25-bangun-kebiasaan-catatan-bbm-21-hari",
+  "app": "garagego",
+  "publish_date": "2026-11-09",
+  "primary_keyword": "catatan BBM",
+  "idea_type": "habit",
+  "status": "queued",
+  "banner_ready": false,
+  "seo": true,
+  "slugs": {
+    "id": "bangun-kebiasaan-catatan-bbm-21-hari",
+    "en": "build-a-21-day-catatan-bbm-habit",
+    "ar": "catatan-bbm-3",
+    "jv": "pandhuan-catatan-bbm-garagego-3",
+    "su": "pituduh-catatan-bbm-garagego-3",
+    "zh": "garagego-catatan-bbm-实用指南-3",
+    "ja": "garagegocatatan-bbm-ガイド-3"
+  },
+  "titles": {
+    "id": "Bangun Kebiasaan catatan BBM 21 Hari",
+    "en": "Build a 21-Day catatan BBM Habit",
+    "ar": "catatan BBM — دليل GarageGo",
+    "jv": "Pandhuan: Bangun Kebiasaan catatan BBM 21 Hari",
+    "su": "Pituduh: Bangun Kebiasaan catatan BBM 21 Hari",
+    "zh": "GarageGo · catatan BBM 实用指南",
+    "ja": "GarageGo｜catatan BBM ガイド"
+  },
+  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+}

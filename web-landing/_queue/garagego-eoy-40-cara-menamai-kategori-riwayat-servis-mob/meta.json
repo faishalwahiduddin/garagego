@@ -1,0 +1,29 @@
+{
+  "package_id": "garagego-eoy-40-cara-menamai-kategori-riwayat-servis-mob",
+  "app": "garagego",
+  "publish_date": "2026-11-24",
+  "primary_keyword": "riwayat servis mobil motor",
+  "idea_type": "deep",
+  "status": "queued",
+  "banner_ready": false,
+  "seo": true,
+  "slugs": {
+    "id": "cara-menamai-kategori-riwayat-servis-mobil-motor-mingguan",
+    "en": "how-to-name-riwayat-servis-mobil-motor-categories",
+    "ar": "riwayat-servis-mobil-motor-4",
+    "jv": "pandhuan-riwayat-servis-mobil-motor-garagego-4",
+    "su": "pituduh-riwayat-servis-mobil-motor-garagego-4",
+    "zh": "garagego-riwayat-servis-mobil-motor-实用指南-4",
+    "ja": "garagegoriwayat-servis-mobil-motor-ガイド-4"
+  },
+  "titles": {
+    "id": "Cara Menamai Kategori riwayat servis mobil motor",
+    "en": "How to Name riwayat servis mobil motor Categories — Offline First",
+    "ar": "riwayat servis mobil motor — دليل GarageGo",
+    "jv": "Pandhuan: Cara Menamai Kategori riwayat servis mobil motor",
+    "su": "Pituduh: Cara Menamai Kategori riwayat servis mobil motor",
+    "zh": "GarageGo · riwayat servis mobil motor 实用指南",
+    "ja": "GarageGo｜riwayat servis mobil motor ガイド"
+  },
+  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+}

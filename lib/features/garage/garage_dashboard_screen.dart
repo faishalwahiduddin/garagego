@@ -8,6 +8,10 @@ import '../../core/models/vehicle.dart';
 import '../../core/providers/app_providers.dart';
 import '../../core/providers/timezone_provider.dart';
 import '../../core/services/analytics_service.dart';
+import '../../core/theme/app_motion.dart';
+import '../../core/ui/press_scale.dart';
+import '../../core/ui/spring_sheet.dart';
+import '../../core/ui/stagger_fade_in.dart';
 import '../../core/utils/app_timezone.dart';
 import '../gamification/presentation/widgets/garage_achievements_card.dart';
 import '../maintenance/add_schedule_sheet.dart';
@@ -20,27 +24,25 @@ class GarageDashboardScreen extends ConsumerWidget {
 
   void _showQuickActions(BuildContext context, WidgetRef ref, Vehicle? active) {
     final l10n = AppLocalizations.of(context)!;
-    showModalBottomSheet(
+    showSpringSheet(
       context: context,
-      isScrollControlled: true,
-      backgroundColor: context.cardBg,
-      shape: const RoundedRectangleBorder(
-        borderRadius: BorderRadius.vertical(top: Radius.circular(24)),
-      ),
+      dismissOffset: 520,
       builder: (ctx) => SafeArea(
         child: SingleChildScrollView(
+          physics: const BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
           padding: const EdgeInsets.fromLTRB(20, 8, 20, 24),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
+              const SpringSheetHandle(),
               Text(
                 l10n.aksiCepatGarasi,
                 style: TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.w800,
                   color: context.textPrimary,
-                  letterSpacing: -0.3,
+                  letterSpacing: -0.4,
                 ),
               ),
               const SizedBox(height: 16),
@@ -147,33 +149,37 @@ class GarageDashboardScreen extends ConsumerWidget {
     required String subtitle,
     required VoidCallback onTap,
   }) {
-    return ListTile(
-      contentPadding: const EdgeInsets.symmetric(horizontal: 4, vertical: 2),
-      leading: Container(
-        width: 44,
-        height: 44,
-        decoration: BoxDecoration(
-          color: iconColor.withValues(alpha: 0.12),
-          borderRadius: BorderRadius.circular(12),
+    return PressScale(
+      scale: 0.97,
+      child: ListTile(
+        contentPadding: const EdgeInsets.symmetric(horizontal: 4, vertical: 2),
+        leading: Container(
+          width: 44,
+          height: 44,
+          decoration: BoxDecoration(
+            color: iconColor.withValues(alpha: 0.12),
+            borderRadius: BorderRadius.circular(12),
+          ),
+          child: Icon(icon, color: iconColor, size: 22),
         ),
-        child: Icon(icon, color: iconColor, size: 22),
-      ),
-      title: Text(
-        title,
-        style: TextStyle(
-          color: context.textPrimary,
-          fontWeight: FontWeight.w700,
-          fontSize: 14,
+        title: Text(
+          title,
+          style: TextStyle(
+            color: context.textPrimary,
+            fontWeight: FontWeight.w700,
+            fontSize: 14,
+            letterSpacing: -0.2,
+          ),
         ),
+        subtitle: Text(
+          subtitle,
+          style: TextStyle(fontSize: 12, color: context.textSecondary),
+          maxLines: 1,
+          overflow: TextOverflow.ellipsis,
+        ),
+        trailing: Icon(Icons.chevron_right, size: 20, color: context.textMuted),
+        onTap: onTap,
       ),
-      subtitle: Text(
-        subtitle,
-        style: TextStyle(fontSize: 12, color: context.textSecondary),
-        maxLines: 1,
-        overflow: TextOverflow.ellipsis,
-      ),
-      trailing: Icon(Icons.chevron_right, size: 20, color: context.textMuted),
-      onTap: onTap,
     );
   }
 
@@ -275,57 +281,66 @@ class GarageDashboardScreen extends ConsumerWidget {
         ),
         actions: [
           if (activeVehicle != null)
-            IconButton(
+            PressScale(
+              scale: 0.92,
+              child: IconButton(
+                icon: Container(
+                  padding: const EdgeInsets.all(6),
+                  decoration: BoxDecoration(
+                    color: AppColors.primary.withValues(alpha: 0.1),
+                    shape: BoxShape.circle,
+                  ),
+                  child: const Icon(Icons.share_rounded, color: AppColors.primary, size: 18),
+                ),
+                tooltip: 'Bagikan Paspor Kendaraan',
+                onPressed: () => GarageShareDialog.show(
+                  context,
+                  vehicle: activeVehicle,
+                  health: healthResult,
+                ),
+              ),
+            ),
+          PressScale(
+            scale: 0.92,
+            child: IconButton(
               icon: Container(
                 padding: const EdgeInsets.all(6),
                 decoration: BoxDecoration(
                   color: AppColors.primary.withValues(alpha: 0.1),
                   shape: BoxShape.circle,
                 ),
-                child: const Icon(Icons.share_rounded, color: AppColors.primary, size: 18),
+                child: const Icon(Icons.add, color: AppColors.primary, size: 18),
               ),
-              tooltip: 'Bagikan Paspor Kendaraan',
-              onPressed: () => GarageShareDialog.show(
-                context,
-                vehicle: activeVehicle,
-                health: healthResult,
-              ),
+              tooltip: l10n.tambahKendaraan,
+              onPressed: () {
+                showModalBottomSheet(
+                  context: context,
+                  isScrollControlled: true,
+                  backgroundColor: context.cardBg,
+                  shape: const RoundedRectangleBorder(
+                    borderRadius: BorderRadius.vertical(top: Radius.circular(24)),
+                  ),
+                  builder: (_) => const AddVehicleSheet(),
+                );
+              },
             ),
-          IconButton(
-            icon: Container(
-              padding: const EdgeInsets.all(6),
-              decoration: BoxDecoration(
-                color: AppColors.primary.withValues(alpha: 0.1),
-                shape: BoxShape.circle,
-              ),
-              child: const Icon(Icons.add, color: AppColors.primary, size: 18),
-            ),
-            tooltip: l10n.tambahKendaraan,
-            onPressed: () {
-              showModalBottomSheet(
-                context: context,
-                isScrollControlled: true,
-                backgroundColor: context.cardBg,
-                shape: const RoundedRectangleBorder(
-                  borderRadius: BorderRadius.vertical(top: Radius.circular(24)),
-                ),
-                builder: (_) => const AddVehicleSheet(),
-              );
-            },
           ),
           const SizedBox(width: 8),
         ],
       ),
-      floatingActionButton: FloatingActionButton.extended(
-        backgroundColor: AppColors.primary,
-        elevation: 3,
-        highlightElevation: 5,
-        icon: const Icon(Icons.bolt, color: Colors.white, size: 20),
-        label: Text(
-          l10n.aksiCepat,
-          style: const TextStyle(fontWeight: FontWeight.w700, color: Colors.white, fontSize: 13),
+      floatingActionButton: PressScale(
+        scale: 0.95,
+        child: FloatingActionButton.extended(
+          backgroundColor: AppColors.primary,
+          elevation: 3,
+          highlightElevation: 5,
+          icon: const Icon(Icons.bolt, color: Colors.white, size: 20),
+          label: Text(
+            l10n.aksiCepat,
+            style: const TextStyle(fontWeight: FontWeight.w700, color: Colors.white, fontSize: 13),
+          ),
+          onPressed: () => _showQuickActions(context, ref, activeVehicle),
         ),
-        onPressed: () => _showQuickActions(context, ref, activeVehicle),
       ),
       body: vehicles.isEmpty
           ? Center(
@@ -361,24 +376,28 @@ class GarageDashboardScreen extends ConsumerWidget {
                       style: TextStyle(fontSize: 13, color: context.textSecondary),
                     ),
                     const SizedBox(height: 24),
-                    ElevatedButton.icon(
-                      onPressed: () {
-                        showModalBottomSheet(
-                          context: context,
-                          isScrollControlled: true,
-                          backgroundColor: context.cardBg,
-                          builder: (_) => const AddVehicleSheet(),
-                        );
-                      },
-                      icon: const Icon(Icons.add, size: 18),
-                      label: Text(l10n.tambahKendaraan),
+                    PressScale(
+                      scale: 0.97,
+                      child: ElevatedButton.icon(
+                        onPressed: () {
+                          showModalBottomSheet(
+                            context: context,
+                            isScrollControlled: true,
+                            backgroundColor: context.cardBg,
+                            builder: (_) => const AddVehicleSheet(),
+                          );
+                        },
+                        icon: const Icon(Icons.add, size: 18),
+                        label: Text(l10n.tambahKendaraan),
+                      ),
                     ),
                   ],
                 ),
               ),
             )
           : SingleChildScrollView(
-              padding: const EdgeInsets.only(left: 16, right: 16, top: 12, bottom: 88),
+              physics: const BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
+              padding: const EdgeInsets.only(left: 16, right: 16, top: 12, bottom: 96),
               child: Center(
                 child: ConstrainedBox(
                   constraints: const BoxConstraints(maxWidth: 800),
@@ -389,6 +408,7 @@ class GarageDashboardScreen extends ConsumerWidget {
                       SizedBox(
                         height: 40,
                         child: ListView.separated(
+                          physics: const BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
                           scrollDirection: Axis.horizontal,
                           itemCount: vehicles.length,
                           separatorBuilder: (ctx, i) => const SizedBox(width: 8),
@@ -398,66 +418,70 @@ class GarageDashboardScreen extends ConsumerWidget {
                             final isCar = v.type == VehicleType.car;
                             final brandColor = isCar ? AppColors.carColor : AppColors.motoColor;
 
-                            return Material(
-                              color: Colors.transparent,
-                              child: InkWell(
-                                onTap: () {
-                                  ref.read(activeVehicleIdProvider.notifier).setActiveId(v.id);
-                                },
-                                borderRadius: BorderRadius.circular(20),
-                                child: AnimatedContainer(
-                                  duration: const Duration(milliseconds: 200),
-                                  padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
-                                  decoration: BoxDecoration(
-                                    color: isSelected
-                                        ? AppColors.primary
-                                        : context.surfaceBg,
-                                    borderRadius: BorderRadius.circular(20),
-                                    border: Border.all(
-                                      color: isSelected ? AppColors.primary : context.borderColor,
-                                      width: 1,
-                                    ),
-                                  ),
-                                  child: Row(
-                                    mainAxisSize: MainAxisSize.min,
-                                    children: [
-                                      Icon(
-                                        isCar ? Icons.directions_car : Icons.two_wheeler,
-                                        size: 16,
-                                        color: isSelected ? Colors.white : brandColor,
-                                      ),
-                                      const SizedBox(width: 8),
-                                      Text(
-                                        v.name,
-                                        style: TextStyle(
-                                          fontSize: 12,
-                                          fontWeight: isSelected ? FontWeight.w700 : FontWeight.w600,
-                                          color: isSelected ? Colors.white : context.textPrimary,
-                                        ),
-                                      ),
-                                      const SizedBox(width: 6),
-                                      Container(
-                                        padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
-                                        decoration: BoxDecoration(
-                                          color: isSelected
-                                              ? Colors.white.withValues(alpha: 0.2)
-                                              : context.cardBg,
-                                          borderRadius: BorderRadius.circular(6),
-                                        ),
-                                        child: Text(
-                                          v.plateNumber,
-                                          style: TextStyle(
-                                            fontSize: 10,
-                                            fontWeight: FontWeight.w700,
-                                            color: isSelected ? Colors.white : context.textSecondary,
-                                            letterSpacing: 0.3,
-                                          ),
-                                        ),
-                                      ),
-                                    ],
+                            return StaggerFadeIn(
+                              index: index,
+                              child: PressScale(
+                              scale: 0.96,
+                              onTap: () {
+                                ref.read(activeVehicleIdProvider.notifier).setActiveId(v.id);
+                              },
+                              child: AnimatedContainer(
+                                duration: AppMotion.resolve(
+                                  context,
+                                  const Duration(milliseconds: 200),
+                                ),
+                                padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
+                                decoration: BoxDecoration(
+                                  color: isSelected
+                                      ? AppColors.primary
+                                      : context.surfaceBg,
+                                  borderRadius: BorderRadius.circular(20),
+                                  border: Border.all(
+                                    color: isSelected ? AppColors.primary : context.borderColor,
+                                    width: 1,
                                   ),
                                 ),
+                                child: Row(
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                    Icon(
+                                      isCar ? Icons.directions_car : Icons.two_wheeler,
+                                      size: 16,
+                                      color: isSelected ? Colors.white : brandColor,
+                                    ),
+                                    const SizedBox(width: 8),
+                                    Text(
+                                      v.name,
+                                      style: TextStyle(
+                                        fontSize: 12,
+                                        fontWeight: isSelected ? FontWeight.w700 : FontWeight.w600,
+                                        color: isSelected ? Colors.white : context.textPrimary,
+                                        letterSpacing: -0.2,
+                                      ),
+                                    ),
+                                    const SizedBox(width: 6),
+                                    Container(
+                                      padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
+                                      decoration: BoxDecoration(
+                                        color: isSelected
+                                            ? Colors.white.withValues(alpha: 0.2)
+                                            : context.cardBg,
+                                        borderRadius: BorderRadius.circular(6),
+                                      ),
+                                      child: Text(
+                                        v.plateNumber,
+                                        style: TextStyle(
+                                          fontSize: 10,
+                                          fontWeight: FontWeight.w700,
+                                          color: isSelected ? Colors.white : context.textSecondary,
+                                          letterSpacing: 0.3,
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
                               ),
+                            ),
                             );
                           },
                         ),
@@ -466,15 +490,23 @@ class GarageDashboardScreen extends ConsumerWidget {
 
                       if (activeVehicle != null) ...[
                         // 1. Vehicle Health Score & Hero Card
-                        _buildHealthHeroCard(context, ref, activeVehicle, healthResult),
+                        StaggerFadeIn(
+                          index: 0,
+                          child: _buildHealthHeroCard(context, ref, activeVehicle, healthResult),
+                        ),
                         const SizedBox(height: 14),
 
                         // Gamification: Maintenance Rank & Discipline Badges
-                        const GarageAchievementsCard(),
+                        StaggerFadeIn(
+                          index: 1,
+                          child: const GarageAchievementsCard(),
+                        ),
                         const SizedBox(height: 14),
 
                         // 2. High-Density Metric Grid
-                        Row(
+                        StaggerFadeIn(
+                          index: 2,
+                          child: Row(
                           children: [
                             Expanded(
                               child: _buildMetricCard(
@@ -499,8 +531,11 @@ class GarageDashboardScreen extends ConsumerWidget {
                             ),
                           ],
                         ),
+                        ),
                         const SizedBox(height: 10),
-                        Row(
+                        StaggerFadeIn(
+                          index: 3,
+                          child: Row(
                           children: [
                             Expanded(
                               child: _buildMetricCard(
@@ -525,10 +560,14 @@ class GarageDashboardScreen extends ConsumerWidget {
                             ),
                           ],
                         ),
+                        ),
                         const SizedBox(height: 14),
 
                         // 3. Oil Status Card with Reset Oil Button
-                        _buildOilStatusCard(context, ref, activeVehicle),
+                        StaggerFadeIn(
+                          index: 4,
+                          child: _buildOilStatusCard(context, ref, activeVehicle),
+                        ),
                         const SizedBox(height: 14),
 
                         // 4. Tax & Document Expiry Card
@@ -565,43 +604,45 @@ class GarageDashboardScreen extends ConsumerWidget {
     final isCar = v.type == VehicleType.car;
     final vehicleColor = isCar ? AppColors.carColor : AppColors.motoColor;
 
-    return Card(
-      color: context.cardBg,
-      child: Padding(
-        padding: const EdgeInsets.all(16),
-        child: Column(
-          children: [
-            Row(
-              children: [
-                // Vehicle Icon Badge
-                Container(
-                  width: 52,
-                  height: 52,
-                  decoration: BoxDecoration(
-                    color: vehicleColor.withValues(alpha: 0.12),
-                    borderRadius: BorderRadius.circular(14),
+    return PressScale(
+      scale: 0.98,
+      child: Card(
+        color: context.cardBg,
+        child: Padding(
+          padding: const EdgeInsets.all(16),
+          child: Column(
+            children: [
+              Row(
+                children: [
+                  // Vehicle Icon Badge
+                  Container(
+                    width: 52,
+                    height: 52,
+                    decoration: BoxDecoration(
+                      color: vehicleColor.withValues(alpha: 0.12),
+                      borderRadius: BorderRadius.circular(14),
+                    ),
+                    child: Icon(
+                      isCar ? Icons.directions_car : Icons.two_wheeler,
+                      color: vehicleColor,
+                      size: 28,
+                    ),
                   ),
-                  child: Icon(
-                    isCar ? Icons.directions_car : Icons.two_wheeler,
-                    color: vehicleColor,
-                    size: 28,
-                  ),
-                ),
-                const SizedBox(width: 14),
-                // Vehicle Info
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        v.name,
-                        style: TextStyle(
-                          fontSize: 17,
-                          fontWeight: FontWeight.w800,
-                          color: context.textPrimary,
-                          letterSpacing: -0.3,
+                  const SizedBox(width: 14),
+                  // Vehicle Info
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          v.name,
+                          style: TextStyle(
+                            fontSize: 17,
+                            fontWeight: FontWeight.w800,
+                            color: context.textPrimary,
+                            letterSpacing: -0.4,
+                          ),
                         ),
-                      ),
                       const SizedBox(height: 3),
                       Row(
                         children: [
@@ -700,20 +741,23 @@ class GarageDashboardScreen extends ConsumerWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
-                TextButton.icon(
-                  style: TextButton.styleFrom(
-                    visualDensity: VisualDensity.compact,
-                    foregroundColor: AppColors.primary,
-                  ),
-                  icon: const Icon(Icons.share_rounded, size: 15),
-                  label: const Text(
-                    'Bagikan Paspor Kendaraan',
-                    style: TextStyle(fontSize: 12, fontWeight: FontWeight.w700),
-                  ),
-                  onPressed: () => GarageShareDialog.show(
-                    context,
-                    vehicle: v,
-                    health: health,
+                PressScale(
+                  scale: 0.95,
+                  child: TextButton.icon(
+                    style: TextButton.styleFrom(
+                      visualDensity: VisualDensity.compact,
+                      foregroundColor: AppColors.primary,
+                    ),
+                    icon: const Icon(Icons.share_rounded, size: 15),
+                    label: const Text(
+                      'Bagikan Paspor Kendaraan',
+                      style: TextStyle(fontSize: 12, fontWeight: FontWeight.w700),
+                    ),
+                    onPressed: () => GarageShareDialog.show(
+                      context,
+                      vehicle: v,
+                      health: health,
+                    ),
                   ),
                 ),
               ],
@@ -721,7 +765,8 @@ class GarageDashboardScreen extends ConsumerWidget {
           ],
         ),
       ),
-    );
+    ),
+  );
   }
 
   Widget _buildOilStatusCard(BuildContext context, WidgetRef ref, Vehicle v) {
@@ -757,20 +802,24 @@ class GarageDashboardScreen extends ConsumerWidget {
                         fontSize: 14,
                         fontWeight: FontWeight.w700,
                         color: context.textPrimary,
+                        letterSpacing: -0.3,
                       ),
                     ),
                   ],
                 ),
-                TextButton.icon(
-                  style: TextButton.styleFrom(
-                    visualDensity: VisualDensity.compact,
-                    padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
-                  ),
-                  onPressed: () => _showResetOilDialog(context, ref, v),
-                  icon: const Icon(Icons.refresh, size: 14, color: AppColors.primary),
-                  label: Text(
-                    l10n.resetOli,
-                    style: const TextStyle(fontSize: 12, color: AppColors.primary, fontWeight: FontWeight.w700),
+                PressScale(
+                  scale: 0.95,
+                  child: TextButton.icon(
+                    style: TextButton.styleFrom(
+                      visualDensity: VisualDensity.compact,
+                      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+                    ),
+                    onPressed: () => _showResetOilDialog(context, ref, v),
+                    icon: const Icon(Icons.refresh, size: 14, color: AppColors.primary),
+                    label: Text(
+                      l10n.resetOli,
+                      style: const TextStyle(fontSize: 12, color: AppColors.primary, fontWeight: FontWeight.w700),
+                    ),
                   ),
                 ),
               ],
@@ -852,25 +901,29 @@ class GarageDashboardScreen extends ConsumerWidget {
                     fontSize: 14,
                     fontWeight: FontWeight.w700,
                     color: context.textPrimary,
+                    letterSpacing: -0.3,
                   ),
                 ),
                 const Spacer(),
-                TextButton(
-                  style: TextButton.styleFrom(
-                    visualDensity: VisualDensity.compact,
-                    padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
-                  ),
-                  onPressed: () => context.go('/glovebox'),
-                  child: Row(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Text(
-                        l10n.bukaBrankas,
-                        style: const TextStyle(fontSize: 12, color: AppColors.primary, fontWeight: FontWeight.w600),
-                      ),
-                      const SizedBox(width: 2),
-                      const Icon(Icons.chevron_right, size: 16, color: AppColors.primary),
-                    ],
+                PressScale(
+                  scale: 0.95,
+                  child: TextButton(
+                    style: TextButton.styleFrom(
+                      visualDensity: VisualDensity.compact,
+                      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
+                    ),
+                    onPressed: () => context.go('/glovebox'),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Text(
+                          l10n.bukaBrankas,
+                          style: const TextStyle(fontSize: 12, color: AppColors.primary, fontWeight: FontWeight.w600),
+                        ),
+                        const SizedBox(width: 2),
+                        const Icon(Icons.chevron_right, size: 16, color: AppColors.primary),
+                      ],
+                    ),
                   ),
                 ),
               ],
@@ -968,6 +1021,7 @@ class GarageDashboardScreen extends ConsumerWidget {
                     fontSize: 14,
                     fontWeight: FontWeight.w700,
                     color: context.textPrimary,
+                    letterSpacing: -0.3,
                   ),
                 ),
               ],
@@ -1041,26 +1095,30 @@ class GarageDashboardScreen extends ConsumerWidget {
                         fontSize: 14,
                         fontWeight: FontWeight.w700,
                         color: context.textPrimary,
+                        letterSpacing: -0.3,
                       ),
                     ),
                   ],
                 ),
-                TextButton(
-                  style: TextButton.styleFrom(
-                    visualDensity: VisualDensity.compact,
-                    padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
-                  ),
-                  onPressed: () => context.go('/maintenance'),
-                  child: Row(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Text(
-                        l10n.lihatSemua,
-                        style: const TextStyle(fontSize: 12, color: AppColors.primary, fontWeight: FontWeight.w600),
-                      ),
-                      const SizedBox(width: 2),
-                      const Icon(Icons.chevron_right, size: 16, color: AppColors.primary),
-                    ],
+                PressScale(
+                  scale: 0.95,
+                  child: TextButton(
+                    style: TextButton.styleFrom(
+                      visualDensity: VisualDensity.compact,
+                      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
+                    ),
+                    onPressed: () => context.go('/maintenance'),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Text(
+                          l10n.lihatSemua,
+                          style: const TextStyle(fontSize: 12, color: AppColors.primary, fontWeight: FontWeight.w600),
+                        ),
+                        const SizedBox(width: 2),
+                        const Icon(Icons.chevron_right, size: 16, color: AppColors.primary),
+                      ],
+                    ),
                   ),
                 ),
               ],
@@ -1084,52 +1142,56 @@ class GarageDashboardScreen extends ConsumerWidget {
 
                 return Padding(
                   padding: const EdgeInsets.only(bottom: 8),
-                  child: Container(
-                    padding: const EdgeInsets.all(10),
-                    decoration: BoxDecoration(
-                      color: context.surfaceBg,
-                      borderRadius: BorderRadius.circular(10),
-                      border: Border.all(color: context.borderColor),
-                    ),
-                    child: Row(
-                      children: [
-                        Container(
-                          padding: const EdgeInsets.all(6),
-                          decoration: BoxDecoration(
-                            color: c.withValues(alpha: 0.12),
-                            borderRadius: BorderRadius.circular(6),
+                  child: PressScale(
+                    scale: 0.98,
+                    onTap: () => context.go('/maintenance'),
+                    child: Container(
+                      padding: const EdgeInsets.all(10),
+                      decoration: BoxDecoration(
+                        color: context.surfaceBg,
+                        borderRadius: BorderRadius.circular(10),
+                        border: Border.all(color: context.borderColor),
+                      ),
+                      child: Row(
+                        children: [
+                          Container(
+                            padding: const EdgeInsets.all(6),
+                            decoration: BoxDecoration(
+                              color: c.withValues(alpha: 0.12),
+                              borderRadius: BorderRadius.circular(6),
+                            ),
+                            child: Icon(Icons.build_circle_outlined, size: 16, color: c),
                           ),
-                          child: Icon(Icons.build_circle_outlined, size: 16, color: c),
-                        ),
-                        const SizedBox(width: 10),
-                        Expanded(
-                          child: Text(
-                            s.title,
-                            style: TextStyle(
-                              fontSize: 12,
-                              fontWeight: FontWeight.w600,
-                              color: context.textPrimary,
+                          const SizedBox(width: 10),
+                          Expanded(
+                            child: Text(
+                              s.title,
+                              style: TextStyle(
+                                fontSize: 12,
+                                fontWeight: FontWeight.w600,
+                                color: context.textPrimary,
+                              ),
                             ),
                           ),
-                        ),
-                        Container(
-                          padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
-                          decoration: BoxDecoration(
-                            color: c.withValues(alpha: 0.1),
-                            borderRadius: BorderRadius.circular(6),
+                          Container(
+                            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
+                            decoration: BoxDecoration(
+                              color: c.withValues(alpha: 0.1),
+                              borderRadius: BorderRadius.circular(6),
+                            ),
+                            child: Text(
+                              km < 0
+                                  ? (Localizations.localeOf(context).languageCode == 'id'
+                                      ? 'Lewat ${-km} km'
+                                      : 'Overdue by ${-km} km')
+                                  : (Localizations.localeOf(context).languageCode == 'id'
+                                      ? 'Sisa $km km'
+                                      : '$km km left'),
+                              style: TextStyle(fontSize: 11, fontWeight: FontWeight.w700, color: c),
+                            ),
                           ),
-                          child: Text(
-                            km < 0
-                                ? (Localizations.localeOf(context).languageCode == 'id'
-                                    ? 'Lewat ${-km} km'
-                                    : 'Overdue by ${-km} km')
-                                : (Localizations.localeOf(context).languageCode == 'id'
-                                    ? 'Sisa $km km'
-                                    : '$km km left'),
-                            style: TextStyle(fontSize: 11, fontWeight: FontWeight.w700, color: c),
-                          ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                   ),
                 );
@@ -1171,26 +1233,30 @@ class GarageDashboardScreen extends ConsumerWidget {
                         fontSize: 14,
                         fontWeight: FontWeight.w700,
                         color: context.textPrimary,
+                        letterSpacing: -0.3,
                       ),
                     ),
                   ],
                 ),
-                TextButton(
-                  style: TextButton.styleFrom(
-                    visualDensity: VisualDensity.compact,
-                    padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
-                  ),
-                  onPressed: () => context.go('/maintenance'),
-                  child: Row(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Text(
-                        l10n.riwayatLengkap,
-                        style: const TextStyle(fontSize: 12, color: AppColors.primary, fontWeight: FontWeight.w600),
-                      ),
-                      const SizedBox(width: 2),
-                      const Icon(Icons.chevron_right, size: 16, color: AppColors.primary),
-                    ],
+                PressScale(
+                  scale: 0.95,
+                  child: TextButton(
+                    style: TextButton.styleFrom(
+                      visualDensity: VisualDensity.compact,
+                      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
+                    ),
+                    onPressed: () => context.go('/maintenance'),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Text(
+                          l10n.riwayatLengkap,
+                          style: const TextStyle(fontSize: 12, color: AppColors.primary, fontWeight: FontWeight.w600),
+                        ),
+                        const SizedBox(width: 2),
+                        const Icon(Icons.chevron_right, size: 16, color: AppColors.primary),
+                      ],
+                    ),
                   ),
                 ),
               ],
@@ -1207,53 +1273,57 @@ class GarageDashboardScreen extends ConsumerWidget {
             else
               ...serviceLogs.take(3).map((log) => Padding(
                     padding: const EdgeInsets.only(bottom: 8),
-                    child: Container(
-                      padding: const EdgeInsets.all(10),
-                      decoration: BoxDecoration(
-                        color: context.surfaceBg,
-                        borderRadius: BorderRadius.circular(10),
-                        border: Border.all(color: context.borderColor),
-                      ),
-                      child: Row(
-                        children: [
-                          Container(
-                            padding: const EdgeInsets.all(8),
-                            decoration: BoxDecoration(
-                              color: AppColors.primary.withValues(alpha: 0.12),
-                              borderRadius: BorderRadius.circular(8),
+                    child: PressScale(
+                      scale: 0.98,
+                      onTap: () => context.go('/maintenance'),
+                      child: Container(
+                        padding: const EdgeInsets.all(10),
+                        decoration: BoxDecoration(
+                          color: context.surfaceBg,
+                          borderRadius: BorderRadius.circular(10),
+                          border: Border.all(color: context.borderColor),
+                        ),
+                        child: Row(
+                          children: [
+                            Container(
+                              padding: const EdgeInsets.all(8),
+                              decoration: BoxDecoration(
+                                color: AppColors.primary.withValues(alpha: 0.12),
+                                borderRadius: BorderRadius.circular(8),
+                              ),
+                              child: const Icon(Icons.build_outlined, size: 16, color: AppColors.primary),
                             ),
-                            child: const Icon(Icons.build_outlined, size: 16, color: AppColors.primary),
-                          ),
-                          const SizedBox(width: 12),
-                          Expanded(
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  log.title,
-                                  style: TextStyle(
-                                    fontSize: 13,
-                                    fontWeight: FontWeight.w600,
-                                    color: context.textPrimary,
+                            const SizedBox(width: 12),
+                            Expanded(
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    log.title,
+                                    style: TextStyle(
+                                      fontSize: 13,
+                                      fontWeight: FontWeight.w600,
+                                      color: context.textPrimary,
+                                    ),
                                   ),
-                                ),
-                                const SizedBox(height: 2),
-                                Text(
-                                  '${NumberFormat('#,###', 'id_ID').format(log.odometer)} km • ${AppTimeZone.formatDate(log.date, loc, locale: localeCode)}',
-                                  style: TextStyle(fontSize: 11, color: context.textSecondary),
-                                ),
-                              ],
+                                  const SizedBox(height: 2),
+                                  Text(
+                                    '${NumberFormat('#,###', 'id_ID').format(log.odometer)} km • ${AppTimeZone.formatDate(log.date, loc, locale: localeCode)}',
+                                    style: TextStyle(fontSize: 11, color: context.textSecondary),
+                                  ),
+                                ],
+                              ),
                             ),
-                          ),
-                          Text(
-                            currency.format(log.cost),
-                            style: const TextStyle(
-                              fontSize: 13,
-                              fontWeight: FontWeight.w700,
-                              color: AppColors.primary,
+                            Text(
+                              currency.format(log.cost),
+                              style: const TextStyle(
+                                fontSize: 13,
+                                fontWeight: FontWeight.w700,
+                                color: AppColors.primary,
+                              ),
                             ),
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
                     ),
                   )),
@@ -1270,48 +1340,51 @@ class GarageDashboardScreen extends ConsumerWidget {
     required IconData icon,
     required Color iconColor,
   }) {
-    return Card(
-      child: Padding(
-        padding: const EdgeInsets.all(14),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Row(
-              children: [
-                Container(
-                  padding: const EdgeInsets.all(5),
-                  decoration: BoxDecoration(
-                    color: iconColor.withValues(alpha: 0.12),
-                    borderRadius: BorderRadius.circular(6),
-                  ),
-                  child: Icon(icon, size: 14, color: iconColor),
-                ),
-                const SizedBox(width: 8),
-                Expanded(
-                  child: Text(
-                    title,
-                    style: TextStyle(
-                      fontSize: 11,
-                      fontWeight: FontWeight.w600,
-                      color: context.textSecondary,
+    return PressScale(
+      scale: 0.97,
+      child: Card(
+        child: Padding(
+          padding: const EdgeInsets.all(14),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
+                children: [
+                  Container(
+                    padding: const EdgeInsets.all(5),
+                    decoration: BoxDecoration(
+                      color: iconColor.withValues(alpha: 0.12),
+                      borderRadius: BorderRadius.circular(6),
                     ),
-                    maxLines: 1,
-                    overflow: TextOverflow.ellipsis,
+                    child: Icon(icon, size: 14, color: iconColor),
                   ),
-                ),
-              ],
-            ),
-            const SizedBox(height: 10),
-            Text(
-              value,
-              style: TextStyle(
-                fontSize: 15,
-                fontWeight: FontWeight.w800,
-                color: context.textPrimary,
-                letterSpacing: -0.3,
+                  const SizedBox(width: 8),
+                  Expanded(
+                    child: Text(
+                      title,
+                      style: TextStyle(
+                        fontSize: 11,
+                        fontWeight: FontWeight.w600,
+                        color: context.textSecondary,
+                      ),
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                  ),
+                ],
               ),
-            ),
-          ],
+              const SizedBox(height: 10),
+              Text(
+                value,
+                style: TextStyle(
+                  fontSize: 15,
+                  fontWeight: FontWeight.w800,
+                  color: context.textPrimary,
+                  letterSpacing: -0.3,
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

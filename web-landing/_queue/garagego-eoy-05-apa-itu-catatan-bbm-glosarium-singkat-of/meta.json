@@ -1,0 +1,29 @@
+{
+  "package_id": "garagego-eoy-05-apa-itu-catatan-bbm-glosarium-singkat-of",
+  "app": "garagego",
+  "publish_date": "2026-10-20",
+  "primary_keyword": "catatan BBM",
+  "idea_type": "glossary",
+  "status": "queued",
+  "banner_ready": false,
+  "seo": true,
+  "slugs": {
+    "id": "apa-itu-catatan-bbm-glosarium-singkat-offline",
+    "en": "what-is-catatan-bbm-a-short-glossary",
+    "ar": "catatan-bbm",
+    "jv": "pandhuan-catatan-bbm-garagego",
+    "su": "pituduh-catatan-bbm-garagego",
+    "zh": "garagego-catatan-bbm-实用指南",
+    "ja": "garagegocatatan-bbm-ガイド"
+  },
+  "titles": {
+    "id": "Apa Itu catatan BBM? Glosarium Singkat",
+    "en": "What Is catatan BBM? A Short Glossary",
+    "ar": "catatan BBM — دليل GarageGo",
+    "jv": "Pandhuan: Apa Itu catatan BBM? Glosarium Singkat",
+    "su": "Pituduh: Apa Itu catatan BBM? Glosarium Singkat",
+    "zh": "GarageGo · catatan BBM 实用指南",
+    "ja": "GarageGo｜catatan BBM ガイド"
+  },
+  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+}

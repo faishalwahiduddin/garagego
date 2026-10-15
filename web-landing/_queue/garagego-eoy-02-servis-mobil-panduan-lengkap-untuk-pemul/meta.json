@@ -1,0 +1,29 @@
+{
+  "package_id": "garagego-eoy-02-servis-mobil-panduan-lengkap-untuk-pemul",
+  "app": "garagego",
+  "publish_date": "2026-10-17",
+  "primary_keyword": "servis mobil",
+  "idea_type": "how-to",
+  "status": "queued",
+  "banner_ready": false,
+  "seo": true,
+  "slugs": {
+    "id": "servis-mobil-panduan-lengkap-untuk-pemula-praktis",
+    "en": "servis-mobil-complete-beginner-guide-practical",
+    "ar": "servis-mobil",
+    "jv": "pandhuan-servis-mobil-garagego",
+    "su": "pituduh-servis-mobil-garagego",
+    "zh": "garagego-servis-mobil-实用指南",
+    "ja": "garagegoservis-mobil-ガイド"
+  },
+  "titles": {
+    "id": "Cara mencatat servis mobil tanpa ribet",
+    "en": "servis mobil: Complete Beginner Guide (Practical)",
+    "ar": "servis mobil — دليل GarageGo",
+    "jv": "Pandhuan: Cara mencatat servis mobil tanpa ribet",
+    "su": "Pituduh: Cara mencatat servis mobil tanpa ribet",
+    "zh": "GarageGo · servis mobil 实用指南",
+    "ja": "GarageGo｜servis mobil ガイド"
+  },
+  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+}

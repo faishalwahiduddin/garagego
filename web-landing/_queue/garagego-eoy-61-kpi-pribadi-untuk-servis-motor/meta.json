@@ -1,0 +1,29 @@
+{
+  "package_id": "garagego-eoy-61-kpi-pribadi-untuk-servis-motor",
+  "app": "garagego",
+  "publish_date": "2026-12-15",
+  "primary_keyword": "servis motor",
+  "idea_type": "measure",
+  "status": "queued",
+  "banner_ready": false,
+  "seo": true,
+  "slugs": {
+    "id": "kpi-pribadi-untuk-servis-motor",
+    "en": "personal-kpis-for-servis-motor",
+    "ar": "servis-motor-7",
+    "jv": "pandhuan-servis-motor-garagego-7",
+    "su": "pituduh-servis-motor-garagego-7",
+    "zh": "garagego-servis-motor-实用指南-7",
+    "ja": "garagegoservis-motor-ガイド-7"
+  },
+  "titles": {
+    "id": "KPI Pribadi untuk servis motor",
+    "en": "Personal KPIs for servis motor",
+    "ar": "servis motor — دليل GarageGo",
+    "jv": "Pandhuan: KPI Pribadi untuk servis motor",
+    "su": "Pituduh: KPI Pribadi untuk servis motor",
+    "zh": "GarageGo · servis motor 实用指南",
+    "ja": "GarageGo｜servis motor ガイド"
+  },
+  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+}

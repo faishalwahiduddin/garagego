@@ -1,0 +1,29 @@
+{
+  "package_id": "garagego-eoy-58-jangan-screenshot-sembarangan-log-pajak-",
+  "app": "garagego",
+  "publish_date": "2026-12-12",
+  "primary_keyword": "pajak stnk tahunan",
+  "idea_type": "security",
+  "status": "queued",
+  "banner_ready": false,
+  "seo": true,
+  "slugs": {
+    "id": "jangan-screenshot-sembarangan-log-pajak-stnk-tahunan-mingguan",
+    "en": "don-t-casually-screenshot-pajak-stnk-tahunan-logs",
+    "ar": "pajak-stnk-tahunan-6",
+    "jv": "pandhuan-pajak-stnk-tahunan-garagego-6",
+    "su": "pituduh-pajak-stnk-tahunan-garagego-6",
+    "zh": "garagego-pajak-stnk-tahunan-实用指南-6",
+    "ja": "garagegopajak-stnk-tahunan-ガイド-6"
+  },
+  "titles": {
+    "id": "Jangan Screenshot Sembarangan Log pajak stnk tahunan",
+    "en": "Don&#x27;t Casually Screenshot pajak stnk tahunan Logs — Offline First",
+    "ar": "pajak stnk tahunan — دليل GarageGo",
+    "jv": "Pandhuan: Jangan Screenshot Sembarangan Log pajak stnk tahunan",
+    "su": "Pituduh: Jangan Screenshot Sembarangan Log pajak stnk tahunan",
+    "zh": "GarageGo · pajak stnk tahunan 实用指南",
+    "ja": "GarageGo｜pajak stnk tahunan ガイド"
+  },
+  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+}

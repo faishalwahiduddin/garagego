@@ -1,0 +1,29 @@
+{
+  "package_id": "garagego-eoy-32-data-servis-mobil-hilang-cek-ini-dulu-pr",
+  "app": "garagego",
+  "publish_date": "2026-11-16",
+  "primary_keyword": "servis mobil",
+  "idea_type": "troubleshoot",
+  "status": "queued",
+  "banner_ready": false,
+  "seo": true,
+  "slugs": {
+    "id": "data-servis-mobil-hilang-cek-ini-dulu-praktis",
+    "en": "servis-mobil-data-missing-check-these-first-practical",
+    "ar": "servis-mobil-4",
+    "jv": "pandhuan-servis-mobil-garagego-4",
+    "su": "pituduh-servis-mobil-garagego-4",
+    "zh": "garagego-servis-mobil-实用指南-4",
+    "ja": "garagegoservis-mobil-ガイド-4"
+  },
+  "titles": {
+    "id": "Data servis mobil Hilang? Cek Ini Dulu",
+    "en": "servis mobil Data Missing? Check These First (Practical)",
+    "ar": "servis mobil — دليل GarageGo",
+    "jv": "Pandhuan: Data servis mobil Hilang? Cek Ini Dulu",
+    "su": "Pituduh: Data servis mobil Hilang? Cek Ini Dulu",
+    "zh": "GarageGo · servis mobil 实用指南",
+    "ja": "GarageGo｜servis mobil ガイド"
+  },
+  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+}

@@ -1,0 +1,29 @@
+{
+  "package_id": "garagego-eoy-63-catatan-ganti-oli-yang-mudah-dicari-nant",
+  "app": "garagego",
+  "publish_date": "2026-12-17",
+  "primary_keyword": "ganti oli",
+  "idea_type": "content",
+  "status": "queued",
+  "banner_ready": false,
+  "seo": true,
+  "slugs": {
+    "id": "catatan-ganti-oli-yang-mudah-dicari-nanti-harian",
+    "en": "ganti-oli-notes-that-stay-searchable",
+    "ar": "ganti-oli-7",
+    "jv": "pandhuan-ganti-oli-garagego-7",
+    "su": "pituduh-ganti-oli-garagego-7",
+    "zh": "garagego-ganti-oli-实用指南-7",
+    "ja": "garagegoganti-oli-ガイド-7"
+  },
+  "titles": {
+    "id": "Catatan ganti oli yang Mudah Dicari Nanti",
+    "en": "ganti oli Notes That Stay Searchable",
+    "ar": "ganti oli — دليل GarageGo",
+    "jv": "Pandhuan: Catatan ganti oli yang Mudah Dicari Nanti",
+    "su": "Pituduh: Catatan ganti oli yang Mudah Dicari Nanti",
+    "zh": "GarageGo · ganti oli 实用指南",
+    "ja": "GarageGo｜ganti oli ガイド"
+  },
+  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+}

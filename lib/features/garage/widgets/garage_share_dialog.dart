@@ -10,6 +10,7 @@ import '../../../core/constants/app_colors.dart';
 import '../../../core/models/vehicle.dart';
 import '../../../core/services/analytics_service.dart';
 import '../../../core/utils/app_timezone.dart';
+import '../../../core/ui/spring_sheet.dart';
 import '../../../core/utils/web_download_helper.dart';
 
 enum GarageShareAspectRatio {
@@ -90,9 +91,9 @@ class GarageShareDialog extends StatefulWidget {
     required Vehicle vehicle,
     VehicleHealthResult? health,
   }) {
-    return showDialog(
+    return showSpringSheet<void>(
       context: context,
-      barrierColor: Colors.black.withValues(alpha: 0.75),
+      dismissOffset: 560,
       builder: (context) => GarageShareDialog(
         vehicle: vehicle,
         health: health,

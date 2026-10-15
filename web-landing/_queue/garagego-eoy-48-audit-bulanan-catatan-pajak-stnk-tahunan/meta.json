@@ -1,0 +1,29 @@
+{
+  "package_id": "garagego-eoy-48-audit-bulanan-catatan-pajak-stnk-tahunan",
+  "app": "garagego",
+  "publish_date": "2026-12-02",
+  "primary_keyword": "pajak stnk tahunan",
+  "idea_type": "quality",
+  "status": "queued",
+  "banner_ready": false,
+  "seo": true,
+  "slugs": {
+    "id": "audit-bulanan-catatan-pajak-stnk-tahunan-2026",
+    "en": "monthly-audit-of-pajak-stnk-tahunan-logs",
+    "ar": "pajak-stnk-tahunan-5",
+    "jv": "pandhuan-pajak-stnk-tahunan-garagego-5",
+    "su": "pituduh-pajak-stnk-tahunan-garagego-5",
+    "zh": "garagego-pajak-stnk-tahunan-实用指南-5",
+    "ja": "garagegopajak-stnk-tahunan-ガイド-5"
+  },
+  "titles": {
+    "id": "Audit Bulanan Catatan pajak stnk tahunan",
+    "en": "Monthly Audit of pajak stnk tahunan Logs",
+    "ar": "pajak stnk tahunan — دليل GarageGo",
+    "jv": "Pandhuan: Audit Bulanan Catatan pajak stnk tahunan",
+    "su": "Pituduh: Audit Bulanan Catatan pajak stnk tahunan",
+    "zh": "GarageGo · pajak stnk tahunan 实用指南",
+    "ja": "GarageGo｜pajak stnk tahunan ガイド"
+  },
+  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+}

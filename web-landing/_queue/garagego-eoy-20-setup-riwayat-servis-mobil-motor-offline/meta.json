@@ -1,0 +1,29 @@
+{
+  "package_id": "garagego-eoy-20-setup-riwayat-servis-mobil-motor-offline",
+  "app": "garagego",
+  "publish_date": "2026-11-04",
+  "primary_keyword": "riwayat servis mobil motor",
+  "idea_type": "local",
+  "status": "queued",
+  "banner_ready": false,
+  "seo": true,
+  "slugs": {
+    "id": "setup-riwayat-servis-mobil-motor-offline-tanpa-kuota-praktis",
+    "en": "set-up-offline-riwayat-servis-mobil-motor-without-data-practical",
+    "ar": "riwayat-servis-mobil-motor-2",
+    "jv": "pandhuan-riwayat-servis-mobil-motor-garagego-2",
+    "su": "pituduh-riwayat-servis-mobil-motor-garagego-2",
+    "zh": "garagego-riwayat-servis-mobil-motor-实用指南-2",
+    "ja": "garagegoriwayat-servis-mobil-motor-ガイド-2"
+  },
+  "titles": {
+    "id": "Setup riwayat servis mobil motor Offline tanpa Kuota",
+    "en": "Set Up Offline riwayat servis mobil motor Without Data (Practical)",
+    "ar": "riwayat servis mobil motor — دليل GarageGo",
+    "jv": "Pandhuan: Setup riwayat servis mobil motor Offline tanpa Kuota",
+    "su": "Pituduh: Setup riwayat servis mobil motor Offline tanpa Kuota",
+    "zh": "GarageGo · riwayat servis mobil motor 实用指南",
+    "ja": "GarageGo｜riwayat servis mobil motor ガイド"
+  },
+  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+}

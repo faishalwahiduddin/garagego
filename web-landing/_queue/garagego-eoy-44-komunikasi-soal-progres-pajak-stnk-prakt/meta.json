@@ -1,0 +1,29 @@
+{
+  "package_id": "garagego-eoy-44-komunikasi-soal-progres-pajak-stnk-prakt",
+  "app": "garagego",
+  "publish_date": "2026-11-28",
+  "primary_keyword": "pajak STNK",
+  "idea_type": "family",
+  "status": "queued",
+  "banner_ready": false,
+  "seo": true,
+  "slugs": {
+    "id": "komunikasi-soal-progres-pajak-stnk-praktis",
+    "en": "talking-about-pajak-stnk-progress-practical",
+    "ar": "pajak-stnk-5",
+    "jv": "pandhuan-pajak-stnk-garagego-5",
+    "su": "pituduh-pajak-stnk-garagego-5",
+    "zh": "garagego-pajak-stnk-实用指南-5",
+    "ja": "garagegopajak-stnk-ガイド-5"
+  },
+  "titles": {
+    "id": "Komunikasi soal Progres pajak STNK",
+    "en": "Talking About pajak STNK Progress (Practical)",
+    "ar": "pajak STNK — دليل GarageGo",
+    "jv": "Pandhuan: Komunikasi soal Progres pajak STNK",
+    "su": "Pituduh: Komunikasi soal Progres pajak STNK",
+    "zh": "GarageGo · pajak STNK 实用指南",
+    "ja": "GarageGo｜pajak STNK ガイド"
+  },
+  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+}

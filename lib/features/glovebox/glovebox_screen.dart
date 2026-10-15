@@ -6,6 +6,7 @@ import '../../core/constants/app_colors.dart';
 import '../../core/models/vehicle.dart';
 import '../../core/providers/app_providers.dart';
 import '../../core/providers/timezone_provider.dart';
+import '../../core/ui/press_scale.dart';
 import '../../core/utils/app_timezone.dart';
 import 'add_document_sheet.dart';
 
@@ -26,31 +27,34 @@ class GloveboxScreen extends ConsumerWidget {
       appBar: AppBar(
         title: Text(
           active != null ? '${l10n.navGlovebox}: ${active.name}' : '${l10n.navGlovebox} & ${l10n.pajakStnk}',
-          style: TextStyle(fontWeight: FontWeight.w800, fontSize: 18, color: context.textPrimary),
+          style: TextStyle(fontWeight: FontWeight.w800, fontSize: 18, color: context.textPrimary, letterSpacing: -0.4),
         ),
         actions: [
           if (active != null)
-            IconButton(
-              icon: Container(
-                padding: const EdgeInsets.all(6),
-                decoration: BoxDecoration(
-                  color: AppColors.primary.withValues(alpha: 0.1),
-                  shape: BoxShape.circle,
-                ),
-                child: const Icon(Icons.add, color: AppColors.primary, size: 18),
-              ),
-              tooltip: l10n.tambahDokumen,
-              onPressed: () {
-                showModalBottomSheet(
-                  context: context,
-                  isScrollControlled: true,
-                  backgroundColor: context.cardBg,
-                  shape: const RoundedRectangleBorder(
-                    borderRadius: BorderRadius.vertical(top: Radius.circular(24)),
+            PressScale(
+              scale: 0.92,
+              child: IconButton(
+                icon: Container(
+                  padding: const EdgeInsets.all(6),
+                  decoration: BoxDecoration(
+                    color: AppColors.primary.withValues(alpha: 0.1),
+                    shape: BoxShape.circle,
                   ),
-                  builder: (_) => AddDocumentSheet(vehicle: active),
-                );
-              },
+                  child: const Icon(Icons.add, color: AppColors.primary, size: 18),
+                ),
+                tooltip: l10n.tambahDokumen,
+                onPressed: () {
+                  showModalBottomSheet(
+                    context: context,
+                    isScrollControlled: true,
+                    backgroundColor: context.cardBg,
+                    shape: const RoundedRectangleBorder(
+                      borderRadius: BorderRadius.vertical(top: Radius.circular(24)),
+                    ),
+                    builder: (_) => AddDocumentSheet(vehicle: active),
+                  );
+                },
+              ),
             ),
           const SizedBox(width: 8),
         ],
@@ -63,7 +67,8 @@ class GloveboxScreen extends ConsumerWidget {
               ),
             )
           : SingleChildScrollView(
-              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
+              physics: const BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
+              padding: const EdgeInsets.fromLTRB(16, 14, 16, 96),
               child: Center(
                 child: ConstrainedBox(
                   constraints: const BoxConstraints(maxWidth: 800),
@@ -71,13 +76,15 @@ class GloveboxScreen extends ConsumerWidget {
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
                       // Header Card: Clean Digital Glovebox Vault Summary
-                      Card(
-                        color: context.cardBg,
-                        child: Padding(
-                          padding: const EdgeInsets.all(16),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
+                      PressScale(
+                        scale: 0.98,
+                        child: Card(
+                          color: context.cardBg,
+                          child: Padding(
+                            padding: const EdgeInsets.all(16),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
                               Row(
                                 children: [
                                   Container(
@@ -175,7 +182,8 @@ class GloveboxScreen extends ConsumerWidget {
                                   ),
                                 ],
                               ),
-                            ],
+                              ],
+                            ),
                           ),
                         ),
                       ),
@@ -187,6 +195,7 @@ class GloveboxScreen extends ConsumerWidget {
                           fontSize: 14,
                           fontWeight: FontWeight.w700,
                           color: context.textSecondary,
+                          letterSpacing: -0.3,
                         ),
                       ),
                       const SizedBox(height: 10),
@@ -209,7 +218,7 @@ class GloveboxScreen extends ConsumerWidget {
                                 const SizedBox(height: 16),
                                 Text(
                                   l10n.belumAdaDokumenTercatat,
-                                  style: TextStyle(color: context.textPrimary, fontWeight: FontWeight.w800, fontSize: 16),
+                                  style: TextStyle(color: context.textPrimary, fontWeight: FontWeight.w800, fontSize: 16, letterSpacing: -0.3),
                                 ),
                                 const SizedBox(height: 6),
                                 Text(
@@ -218,20 +227,23 @@ class GloveboxScreen extends ConsumerWidget {
                                   textAlign: TextAlign.center,
                                 ),
                                 const SizedBox(height: 18),
-                                ElevatedButton.icon(
-                                  onPressed: () {
-                                    showModalBottomSheet(
-                                      context: context,
-                                      isScrollControlled: true,
-                                      backgroundColor: context.cardBg,
-                                      shape: const RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.vertical(top: Radius.circular(24)),
-                                      ),
-                                      builder: (_) => AddDocumentSheet(vehicle: active),
-                                    );
-                                  },
-                                  icon: const Icon(Icons.add, size: 16),
-                                  label: Text(l10n.tambahDokumenPertama),
+                                PressScale(
+                                  scale: 0.97,
+                                  child: ElevatedButton.icon(
+                                    onPressed: () {
+                                      showModalBottomSheet(
+                                        context: context,
+                                        isScrollControlled: true,
+                                        backgroundColor: context.cardBg,
+                                        shape: const RoundedRectangleBorder(
+                                          borderRadius: BorderRadius.vertical(top: Radius.circular(24)),
+                                        ),
+                                        builder: (_) => AddDocumentSheet(vehicle: active),
+                                      );
+                                    },
+                                    icon: const Icon(Icons.add, size: 16),
+                                    label: Text(l10n.tambahDokumenPertama),
+                                  ),
                                 ),
                               ],
                             ),

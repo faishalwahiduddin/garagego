@@ -2,7 +2,7 @@ name: garagego
 description: "GarageGo — Vehicle & Fleet Garage Manager: Kelola servis, ganti oli, konsumsi BBM, dan pajak STNK mobil & motor secara offline."
 publish_to: 'none'
 
-version: 1.0.8+9
+version: 1.0.9+10
 environment:
   sdk: ^3.12.2
 

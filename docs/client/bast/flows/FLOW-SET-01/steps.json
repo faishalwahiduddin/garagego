@@ -12,14 +12,14 @@
       "title": "Buka Pengaturan",
       "instruction": "Ketuk tab **Pengaturan**: daftar kendaraan, **Mode Tema**, **Bahasa Aplikasi**, dan **Zona Waktu**.",
       "image": "step-01.png",
-      "t": 6.2
+      "t": 9.6
     },
     {
       "n": 2,
       "title": "Cadangkan data",
       "instruction": "Pada **Portabilitas & Cadangan Data** pilih **Ekspor Cadangan (.grg)**, **Pulihkan dari berkas (.grg)**, atau ekspor CSV riwayat servis/BBM.",
       "image": "step-02.png",
-      "t": 7.8
+      "t": 12.7
     }
   ]
 }

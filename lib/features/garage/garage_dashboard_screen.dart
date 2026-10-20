@@ -20,6 +20,8 @@ import 'add_vehicle_sheet.dart';
 import 'widgets/garage_share_dialog.dart';
 
 class GarageDashboardScreen extends ConsumerWidget {
+  static const _shellNavHeight = 80.0;
+
   const GarageDashboardScreen({super.key});
 
   void _showQuickActions(BuildContext context, WidgetRef ref, Vehicle? active) {
@@ -332,18 +334,23 @@ class GarageDashboardScreen extends ConsumerWidget {
           const SizedBox(width: 8),
         ],
       ),
-      floatingActionButton: PressScale(
-        scale: 0.95,
-        child: FloatingActionButton.extended(
-          backgroundColor: AppColors.primary,
-          elevation: 3,
-          highlightElevation: 5,
-          icon: const Icon(Icons.bolt, color: Colors.white, size: 20),
-          label: Text(
-            l10n.aksiCepat,
-            style: const TextStyle(fontWeight: FontWeight.w700, color: Colors.white, fontSize: 13),
+      // The shell's NavigationBar (80 px, extendBody) is drawn over this page;
+      // lift the FAB above it or it is hidden and untappable.
+      floatingActionButton: Padding(
+        padding: const EdgeInsets.only(bottom: _shellNavHeight),
+        child: PressScale(
+          scale: 0.95,
+          child: FloatingActionButton.extended(
+            backgroundColor: AppColors.primary,
+            elevation: 3,
+            highlightElevation: 5,
+            icon: const Icon(Icons.bolt, color: Colors.white, size: 20),
+            label: Text(
+              l10n.aksiCepat,
+              style: const TextStyle(fontWeight: FontWeight.w700, color: Colors.white, fontSize: 13),
+            ),
+            onPressed: () => _showQuickActions(context, ref, activeVehicle),
           ),
-          onPressed: () => _showQuickActions(context, ref, activeVehicle),
         ),
       ),
       body: vehicles.isEmpty

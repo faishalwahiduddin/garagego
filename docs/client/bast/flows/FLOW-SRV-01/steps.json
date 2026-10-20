@@ -12,28 +12,28 @@
       "title": "Buka tab Perawatan",
       "instruction": "Ketuk tab **Perawatan**. Setiap jadwal berstatus **Aman**, **Segera**, atau **Terlewat** berdasarkan sisa km dan sisa hari.",
       "image": "step-01.png",
-      "t": 6.4
+      "t": 7.7
     },
     {
       "n": 2,
       "title": "Tandai pekerjaan selesai",
       "instruction": "Ketuk **Tandai Selesai / Reset** pada **Ganti Oli Mesin Sintetik**. Dialog menjelaskan interval akan direset dan dicatat ke riwayat.",
       "image": "step-02.png",
-      "t": 8.3
+      "t": 9.6
     },
     {
       "n": 3,
       "title": "Konfirmasi",
       "instruction": "Ketuk **Tandai Selesai**. Status jadwal kembali **Aman** dan odometer kendaraan diperbarui.",
       "image": "step-03.png",
-      "t": 11
+      "t": 12.2
     },
     {
       "n": 4,
       "title": "Lihat riwayat servis",
       "instruction": "Buka sub-tab **Riwayat**: catatan servis baru tersimpan lengkap dengan tanggal, odometer, dan biaya.",
       "image": "step-04.png",
-      "t": 12.1
+      "t": 13.3
     }
   ]
 }

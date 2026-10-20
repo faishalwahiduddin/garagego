@@ -1,0 +1,166 @@
+# docs/trace/flows.yaml — test case per flow (standards §TRACE). Ditulis tangan.
+# Bukti: test("<TC-ID> …") / testWidgets("<TC-ID> …") di test/**/*_test.dart; BAST: test/bast/bast_flows.mjs.
+version: 1
+app: garagego
+
+flows:
+  - id: FLOW-GAR-01
+    title: "Menambah kendaraan dan memilih kendaraan aktif"
+    priority: P0
+    requirement: [FR-001, FR-002]
+    touches:
+      - lib/features/garage/**
+      - lib/core/providers/app_providers.dart
+      - lib/core/utils/validators.dart
+    cases:
+      - id: FLOW-GAR-01-T01
+        kind: positive
+        layer: unit
+        title: "kendaraan pertama yang ditambahkan otomatis menjadi kendaraan aktif"
+      - id: FLOW-GAR-01-T02
+        kind: negative
+        layer: unit
+        title: "nama satu huruf atau pelat kosong ditolak saat disimpan"
+      - id: FLOW-GAR-01-T03
+        kind: edge
+        layer: unit
+        title: "batas panjang: nama 50 dan pelat 15 karakter diterima, lebihnya ditolak"
+      - id: FLOW-GAR-01-T04
+        kind: corner
+        layer: unit
+        title: "menghapus kendaraan aktif memindahkan pilihan ke kendaraan tersisa"
+      - id: FLOW-GAR-01-T05
+        kind: corner
+        layer: unit
+        title: "id kendaraan aktif yang hilang di penyimpanan jatuh ke kendaraan pertama"
+
+  - id: FLOW-SRV-01
+    title: "Mencatat servis dan memantau jadwal perawatan"
+    priority: P0
+    requirement: [FR-003, FR-004]
+    touches:
+      - lib/features/maintenance/**
+      - lib/core/models/vehicle.dart
+      - lib/core/providers/app_providers.dart
+    cases:
+      - id: FLOW-SRV-01-T01
+        kind: positive
+        layer: unit
+        title: "tandai jadwal selesai membuat log servis dan menaikkan odometer"
+      - id: FLOW-SRV-01-T02
+        kind: negative
+        layer: unit
+        title: "odometer mundur dari catatan sebelumnya dan biaya negatif ditolak"
+      - id: FLOW-SRV-01-T03
+        kind: edge
+        layer: unit
+        title: "batas urgensi: sisa 0 km terlewat, sisa 15% interval segera, 2.000.000 km maksimum"
+      - id: FLOW-SRV-01-T04
+        kind: corner
+        layer: unit
+        title: "log servis dengan odometer lebih rendah tidak menurunkan odometer; jadwal melewati tahun"
+      - id: FLOW-SRV-01-T05
+        kind: positive
+        layer: unit
+        title: "inspeksi menghitung persentase lolos dari butir tercentang"
+
+  - id: FLOW-FUE-01
+    title: "Mencatat pengisian BBM dan melihat efisiensi"
+    priority: P1
+    requirement: [FR-005]
+    touches:
+      - lib/features/fuel/**
+      - lib/core/services/analytics_service.dart
+    cases:
+      - id: FLOW-FUE-01-T01
+        kind: positive
+        layer: unit
+        title: "dua pengisian berurutan menghasilkan km/L dan Rp/km"
+      - id: FLOW-FUE-01-T02
+        kind: negative
+        layer: unit
+        title: "volume 0 / negatif dan di atas 500 liter ditolak"
+      - id: FLOW-FUE-01-T03
+        kind: edge
+        layer: unit
+        title: "tanpa catatan = 0, satu catatan memakai baseline 12,5 km/L"
+      - id: FLOW-FUE-01-T04
+        kind: corner
+        layer: unit
+        title: "catatan acak diurutkan per odometer; odometer sama dilewati tanpa bagi nol"
+
+  - id: FLOW-DOC-01
+    title: "Memantau pajak dan dokumen kendaraan"
+    priority: P1
+    requirement: [FR-006]
+    touches:
+      - lib/features/glovebox/**
+      - lib/core/models/vehicle.dart
+    cases:
+      - id: FLOW-DOC-01-T01
+        kind: positive
+        layer: unit
+        title: "mobil contoh punya pengingat PKB tahunan, STNK 5 tahunan, dan asuransi"
+      - id: FLOW-DOC-01-T02
+        kind: negative
+        layer: unit
+        title: "dokumen lewat jatuh tempo ditandai kedaluwarsa, bukan segera"
+      - id: FLOW-DOC-01-T03
+        kind: edge
+        layer: unit
+        title: "batas pengingat: hari ini dan H-30 = segera, H-31 = aman"
+      - id: FLOW-DOC-01-T04
+        kind: corner
+        layer: unit
+        title: "tipe dokumen tak dikenal di data tersimpan menjadi Lainnya; tanpa asuransi tidak dibuat"
+
+  - id: FLOW-TCO-01
+    title: "Melihat total biaya dan skor kesehatan kendaraan"
+    priority: P2
+    requirement: [FR-007]
+    touches:
+      - lib/features/garage/garage_dashboard_screen.dart
+      - lib/core/services/analytics_service.dart
+    cases:
+      - id: FLOW-TCO-01-T01
+        kind: positive
+        layer: unit
+        title: "total biaya menjumlahkan BBM, servis, dan dokumen per km"
+      - id: FLOW-TCO-01-T02
+        kind: negative
+        layer: unit
+        title: "garasi tanpa kendaraan menampilkan biaya nol"
+      - id: FLOW-TCO-01-T03
+        kind: edge
+        layer: unit
+        title: "odometer 0 tidak membagi nol pada biaya per km"
+      - id: FLOW-TCO-01-T04
+        kind: corner
+        layer: unit
+        title: "oli terlewat dan dokumen kedaluwarsa menurunkan skor kesehatan"
+
+  - id: FLOW-SET-01
+    title: "Mencadangkan data dan mengatur preferensi"
+    priority: P2
+    requirement: [FR-008, FR-009, NFR-001]
+    touches:
+      - lib/features/settings/**
+      - lib/core/storage/local_storage_service.dart
+      - lib/core/utils/backup_codec.dart
+    cases:
+      - id: FLOW-SET-01-T01
+        kind: positive
+        layer: unit
+        title: "ekspor lalu impor cadangan mengembalikan kendaraan dan log"
+      - id: FLOW-SET-01-T02
+        kind: negative
+        layer: unit
+        title: "berkas JSON mentah ditolak dan data lama tetap utuh"
+      - id: FLOW-SET-01-T03
+        kind: edge
+        layer: unit
+        title: "ekspor CSV kendaraan tanpa log hanya berisi baris judul"
+      - id: FLOW-SET-01-T04
+        kind: corner
+        layer: unit
+        title: "data kendaraan korup di penyimpanan dibaca sebagai garasi kosong; tema korup = sistem"

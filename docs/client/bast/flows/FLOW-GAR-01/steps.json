@@ -1,0 +1,53 @@
+{
+  "flow": "FLOW-GAR-01",
+  "title": "Menambah kendaraan dan memilih kendaraan aktif",
+  "summary": "Pengguna membuka GarageGo pertama kali, menambahkan kendaraan baru ke garasi, lalu memilihnya sebagai kendaraan aktif.",
+  "role": "ROL-001",
+  "tc": "FLOW-GAR-01-T01",
+  "baseURL": "flutter build web (lokal)",
+  "video": "video.mp4",
+  "steps": [
+    {
+      "n": 1,
+      "title": "Buka aplikasi",
+      "instruction": "Saat pertama dibuka, GarageGo menampilkan layar perkenalan. Ketuk **Lewati** untuk langsung masuk.",
+      "image": "step-01.png",
+      "t": 5.4
+    },
+    {
+      "n": 2,
+      "title": "Lihat garasi",
+      "instruction": "Tab **Garasi** menampilkan kendaraan contoh beserta skor kesehatan, odometer, dan biaya.",
+      "image": "step-02.png",
+      "t": 7.8
+    },
+    {
+      "n": 3,
+      "title": "Buka formulir kendaraan",
+      "instruction": "Ketuk ikon **Tambah Kendaraan** di kanan atas. Pilih jenis **Mobil** atau **Motor**.",
+      "image": "step-03.png",
+      "t": 9.7
+    },
+    {
+      "n": 4,
+      "title": "Isi data kendaraan",
+      "instruction": "Isi **Nama / Model Kendaraan** (2–50 karakter), **Nomor Pelat Polisi** (wajib, maks. 15 karakter), dan **Odometer Saat Ini (km)**.",
+      "image": "step-04.png",
+      "t": 18.1
+    },
+    {
+      "n": 5,
+      "title": "Simpan ke garasi",
+      "instruction": "Ketuk **Simpan ke Garasi**. Kendaraan baru muncul di deretan pemilih kendaraan di atas.",
+      "image": "step-05.png",
+      "t": 20.4
+    },
+    {
+      "n": 6,
+      "title": "Pilih kendaraan aktif",
+      "instruction": "Ketuk kartu **Yamaha NMAX 155** untuk menjadikannya kendaraan aktif; semua tab mengikuti kendaraan ini.",
+      "image": "step-06.png",
+      "t": 25.9
+    }
+  ]
+}

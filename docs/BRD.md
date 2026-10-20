@@ -64,3 +64,18 @@ Tidak ada peran berbasis server.
 
 - Akurasi km/L bergantung pada kedisiplinan mencatat tiap pengisian.
 - Pengingat pajak seakurat tanggal yang dimasukkan pengguna.
+
+## 6. Kebutuhan bisnis (§TRACE)
+
+ID di kolom pertama adalah SSOT `BR-NNN`; kolom terakhir menunjuk kebutuhan
+produk di [PRD](./PRD.md) yang merealisasikannya.
+
+| ID | Kebutuhan bisnis | Direalisasikan oleh |
+|---|---|---|
+| BR-001 | Riwayat tidak hilang: setiap servis, oli, dan sparepart tercatat dengan tanggal, odometer, dan biaya. | FR-003, FR-004 |
+| BR-002 | BBM terpantau: konsumsi km/L dan biaya per km dihitung on-device dari catatan pengisian berurutan. | FR-005 |
+| BR-003 | Pajak tidak telat: pengingat PKB tahunan, STNK 5 tahunan, dan asuransi per kendaraan. | FR-006 |
+| BR-004 | Biaya transparan: total biaya kepemilikan terakumulasi dari BBM, servis, dan pajak/dokumen. | FR-007 |
+| BR-005 | Satu garasi untuk banyak mobil dan motor keluarga, dengan pemilih kendaraan aktif. | FR-001, FR-002 |
+| BR-006 | Data milik pengguna: tersimpan lokal tanpa backend/akun, dan cadangan wajib bisa diimpor kembali tanpa kehilangan data. | FR-008, NFR-001 |
+| BR-007 | Dipakai bersama keluarga di perangkat yang sama, dalam bahasa dan tampilan pilihan masing-masing. | FR-009 |

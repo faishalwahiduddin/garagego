@@ -1,0 +1,215 @@
+{
+  "schema": 1,
+  "app": "garagego",
+  "note": "SSOT §TRACE (standards.md). Layar = pages (route GoRouter); app lokal tanpa API/email. Turunan: trace-graph.json, traceability-matrix.md (graph.mjs --write).",
+  "roles": {
+    "USR": "ROL-001"
+  },
+  "modules": {
+    "GAR": "MOD-001",
+    "SRV": "MOD-002",
+    "FUE": "MOD-003",
+    "DOC": "MOD-004",
+    "SET": "MOD-005"
+  },
+  "epics": [
+    {
+      "id": "EP-001",
+      "module": "MOD-001",
+      "title": "Garasi multi-kendaraan & biaya"
+    },
+    {
+      "id": "EP-002",
+      "module": "MOD-002",
+      "title": "Pencatatan servis, BBM, dan dokumen"
+    },
+    {
+      "id": "EP-003",
+      "module": "MOD-005",
+      "title": "Data lokal & preferensi"
+    }
+  ],
+  "flows": [
+    {
+      "id": "FLOW-GAR-01",
+      "story": "US-001",
+      "epic": "EP-001",
+      "role": "ROL-001",
+      "module": "MOD-001",
+      "title": "Menambah kendaraan dan memilih kendaraan aktif",
+      "status": "as-built"
+    },
+    {
+      "id": "FLOW-SRV-01",
+      "story": [
+        "US-002",
+        "US-005"
+      ],
+      "epic": "EP-002",
+      "role": "ROL-001",
+      "module": "MOD-002",
+      "title": "Mencatat servis dan memantau jadwal perawatan",
+      "status": "as-built"
+    },
+    {
+      "id": "FLOW-FUE-01",
+      "story": "US-003",
+      "epic": "EP-002",
+      "role": "ROL-001",
+      "module": "MOD-003",
+      "title": "Mencatat pengisian BBM dan melihat efisiensi",
+      "status": "as-built"
+    },
+    {
+      "id": "FLOW-DOC-01",
+      "story": "US-004",
+      "epic": "EP-002",
+      "role": "ROL-001",
+      "module": "MOD-004",
+      "title": "Memantau pajak dan dokumen kendaraan",
+      "status": "as-built"
+    },
+    {
+      "id": "FLOW-TCO-01",
+      "story": "US-006",
+      "epic": "EP-001",
+      "role": "ROL-001",
+      "module": "MOD-001",
+      "title": "Melihat total biaya dan skor kesehatan kendaraan",
+      "status": "as-built"
+    },
+    {
+      "id": "FLOW-SET-01",
+      "story": [
+        "US-007",
+        "US-008"
+      ],
+      "epic": "EP-003",
+      "role": "ROL-001",
+      "module": "MOD-005",
+      "title": "Mencadangkan data dan mengatur preferensi",
+      "status": "as-built"
+    }
+  ],
+  "pages": [
+    {
+      "id": "USR-GAR-001",
+      "route": "/onboarding",
+      "source": "lib/core/ui/fleet_onboarding_screen.dart",
+      "role": "ROL-001",
+      "module": "MOD-001",
+      "flows": [
+        "FLOW-GAR-01"
+      ]
+    },
+    {
+      "id": "USR-GAR-002",
+      "route": "/",
+      "source": "lib/features/garage/garage_dashboard_screen.dart",
+      "role": "ROL-001",
+      "module": "MOD-001",
+      "flows": [
+        "FLOW-GAR-01",
+        "FLOW-TCO-01"
+      ]
+    },
+    {
+      "id": "USR-SRV-001",
+      "route": "/maintenance",
+      "source": "lib/features/maintenance/maintenance_screen.dart",
+      "role": "ROL-001",
+      "module": "MOD-002",
+      "flows": [
+        "FLOW-SRV-01"
+      ]
+    },
+    {
+      "id": "USR-FUE-001",
+      "route": "/fuel",
+      "source": "lib/features/fuel/fuel_logs_screen.dart",
+      "role": "ROL-001",
+      "module": "MOD-003",
+      "flows": [
+        "FLOW-FUE-01"
+      ]
+    },
+    {
+      "id": "USR-DOC-001",
+      "route": "/glovebox",
+      "source": "lib/features/glovebox/glovebox_screen.dart",
+      "role": "ROL-001",
+      "module": "MOD-004",
+      "flows": [
+        "FLOW-DOC-01"
+      ]
+    },
+    {
+      "id": "USR-SET-001",
+      "route": "/settings",
+      "source": "lib/features/settings/settings_screen.dart",
+      "role": "ROL-001",
+      "module": "MOD-005",
+      "flows": [
+        "FLOW-SET-01"
+      ]
+    }
+  ],
+  "apis": [],
+  "emails": [],
+  "functions": [
+    {
+      "id": "USR-GAR-101",
+      "name": "VehiclesNotifier / activeVehicleProvider",
+      "source": "lib/core/providers/app_providers.dart",
+      "role": "ROL-001",
+      "module": "MOD-001",
+      "flows": [
+        "FLOW-GAR-01",
+        "FLOW-SRV-01"
+      ]
+    },
+    {
+      "id": "USR-GAR-102",
+      "name": "AnalyticsService",
+      "source": "lib/core/services/analytics_service.dart",
+      "role": "ROL-001",
+      "module": "MOD-001",
+      "flows": [
+        "FLOW-TCO-01",
+        "FLOW-FUE-01"
+      ]
+    },
+    {
+      "id": "USR-SRV-101",
+      "name": "MaintenanceSchedule.urgency",
+      "source": "lib/core/models/vehicle.dart",
+      "role": "ROL-001",
+      "module": "MOD-002",
+      "flows": [
+        "FLOW-SRV-01"
+      ]
+    },
+    {
+      "id": "USR-GAR-103",
+      "name": "AppValidators",
+      "source": "lib/core/utils/validators.dart",
+      "role": "ROL-001",
+      "module": "MOD-001",
+      "flows": [
+        "FLOW-GAR-01",
+        "FLOW-SRV-01",
+        "FLOW-FUE-01"
+      ]
+    },
+    {
+      "id": "USR-SET-101",
+      "name": "LocalStorageService (backup/CSV)",
+      "source": "lib/core/storage/local_storage_service.dart",
+      "role": "ROL-001",
+      "module": "MOD-005",
+      "flows": [
+        "FLOW-SET-01"
+      ]
+    }
+  ]
+}

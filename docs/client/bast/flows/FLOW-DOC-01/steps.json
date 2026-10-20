@@ -1,0 +1,25 @@
+{
+  "flow": "FLOW-DOC-01",
+  "title": "Memantau pajak dan dokumen kendaraan",
+  "summary": "Pengguna membuka **Brankas** untuk melihat sisa hari PKB tahunan, STNK 5 tahunan, dan asuransi kendaraan aktif.",
+  "role": "ROL-001",
+  "tc": "FLOW-DOC-01-T01",
+  "baseURL": "flutter build web (lokal)",
+  "video": "video.mp4",
+  "steps": [
+    {
+      "n": 1,
+      "title": "Buka Brankas",
+      "instruction": "Ketuk tab **Brankas**. Setiap dokumen menampilkan sisa hari, tanggal **Masa Berlaku**, dan biaya.",
+      "image": "step-01.png",
+      "t": 6.9
+    },
+    {
+      "n": 2,
+      "title": "Tambah dokumen",
+      "instruction": "Ketuk **Tambah Dokumen** untuk mencatat uji emisi, SIM, BPKB, atau dokumen lain beserta jatuh temponya.",
+      "image": "step-02.png",
+      "t": 8.8
+    }
+  ]
+}

@@ -181,6 +181,7 @@ class SettingsScreen extends ConsumerWidget {
                 onPressed: () {
                   showModalBottomSheet(
                     context: context,
+                    useRootNavigator: true,
                     isScrollControlled: true,
                     backgroundColor: context.cardBg,
                     shape: const RoundedRectangleBorder(

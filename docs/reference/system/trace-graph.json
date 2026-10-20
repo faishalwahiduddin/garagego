@@ -1,0 +1,1522 @@
+{
+  "generatedBy": "trace-graph",
+  "app": "garagego",
+  "stats": {
+    "BR": 7,
+    "FR": 9,
+    "NFR": 1,
+    "ROL": 1,
+    "MOD": 5,
+    "EP": 3,
+    "FLOW": 6,
+    "US": 8,
+    "PG": 6,
+    "FN": 5,
+    "TC": 26,
+    "TC_by_kind": {
+      "positive": 7,
+      "negative": 6,
+      "edge": 6,
+      "corner": 7
+    },
+    "TC_with_evidence": 26,
+    "BAST": 6
+  },
+  "nodes": [
+    {
+      "id": "BR-001",
+      "type": "BR",
+      "title": "Riwayat tidak hilang: setiap servis, oli, dan sparepart tercatat dengan tanggal, odometer, dan biaya. FR-003, FR-004",
+      "source": "docs/BRD.md"
+    },
+    {
+      "id": "BR-002",
+      "type": "BR",
+      "title": "BBM terpantau: konsumsi km/L dan biaya per km dihitung on-device dari catatan pengisian berurutan. FR-005",
+      "source": "docs/BRD.md"
+    },
+    {
+      "id": "BR-003",
+      "type": "BR",
+      "title": "Pajak tidak telat: pengingat PKB tahunan, STNK 5 tahunan, dan asuransi per kendaraan. FR-006",
+      "source": "docs/BRD.md"
+    },
+    {
+      "id": "BR-004",
+      "type": "BR",
+      "title": "Biaya transparan: total biaya kepemilikan terakumulasi dari BBM, servis, dan pajak/dokumen. FR-007",
+      "source": "docs/BRD.md"
+    },
+    {
+      "id": "BR-005",
+      "type": "BR",
+      "title": "Satu garasi untuk banyak mobil dan motor keluarga, dengan pemilih kendaraan aktif. FR-001, FR-002",
+      "source": "docs/BRD.md"
+    },
+    {
+      "id": "BR-006",
+      "type": "BR",
+      "title": "Data milik pengguna: tersimpan lokal tanpa backend/akun, dan cadangan wajib bisa diimpor kembali tanpa kehilangan data. FR-008, NFR-001",
+      "source": "docs/BRD.md"
+    },
+    {
+      "id": "BR-007",
+      "type": "BR",
+      "title": "Dipakai bersama keluarga di perangkat yang sama, dalam bahasa dan tampilan pilihan masing-masing. FR-009",
+      "source": "docs/BRD.md"
+    },
+    {
+      "id": "FR-001",
+      "type": "FR",
+      "title": "Tambah, ubah, hapus kendaraan mobil/motor: nama 2–50 karakter, pelat wajib ≤15 karakter, odometer 0–2.000.000 km. BR-005 US-001, FLOW-GAR-01",
+      "source": "docs/PRD.md"
+    },
+    {
+      "id": "FR-002",
+      "type": "FR",
+      "title": "Pemilih kendaraan aktif: kendaraan pertama otomatis aktif; menghapus kendaraan aktif memindahkan pilihan ke kendaraan tersisa. BR-005 US-001",
+      "source": "docs/PRD.md"
+    },
+    {
+      "id": "FR-003",
+      "type": "FR",
+      "title": "Log servis (tanggal, odometer, kategori, biaya ≥ 0, bengkel) memperbarui odometer dan titik ganti oli kendaraan, tidak pernah menurunkannya;",
+      "source": "docs/PRD.md"
+    },
+    {
+      "id": "FR-004",
+      "type": "FR",
+      "title": "Jadwal perawatan dua pemicu (km atau bulan) dengan status aman/segera/terlewat; tandai selesai otomatis membuat log servis; inspeksi checkli",
+      "source": "docs/PRD.md"
+    },
+    {
+      "id": "FR-005",
+      "type": "FR",
+      "title": "Log BBM (volume 0–500 L, harga/L, odometer) menghasilkan km/L dan Rp/km dari dua pengisian berurutan. BR-002 US-003, FLOW-FUE-01",
+      "source": "docs/PRD.md"
+    },
+    {
+      "id": "FR-006",
+      "type": "FR",
+      "title": "Brankas dokumen: PKB tahunan, STNK 5 tahunan, asuransi, dll.; status segera H-30 dan kedaluwarsa. BR-003 US-004, FLOW-DOC-01",
+      "source": "docs/PRD.md"
+    },
+    {
+      "id": "FR-007",
+      "type": "FR",
+      "title": "Total biaya kepemilikan (BBM + servis + dokumen), biaya per km, dan skor kesehatan kendaraan di Garasi. BR-004 US-006, FLOW-TCO-01",
+      "source": "docs/PRD.md"
+    },
+    {
+      "id": "FR-008",
+      "type": "FR",
+      "title": "Ekspor/impor cadangan .grg dan ekspor CSV; berkas asing atau rusak ditolak tanpa mengubah data. BR-006 US-007, FLOW-SET-01",
+      "source": "docs/PRD.md"
+    },
+    {
+      "id": "FR-009",
+      "type": "FR",
+      "title": "Antarmuka 8 bahasa dan tema sistem/terang/gelap. BR-007 US-008, FLOW-SET-01",
+      "source": "docs/PRD.md"
+    },
+    {
+      "id": "NFR-001",
+      "type": "NFR",
+      "title": "Offline-first: seluruh data di shared_preferences perangkat; data korup dibaca sebagai kosong, tidak crash. BR-006 FLOW-SET-01",
+      "source": "docs/PRD.md"
+    },
+    {
+      "id": "ROL-001",
+      "type": "ROL",
+      "title": "USR",
+      "source": "docs/reference/system/traceability.json"
+    },
+    {
+      "id": "MOD-001",
+      "type": "MOD",
+      "title": "GAR",
+      "source": "docs/reference/system/traceability.json"
+    },
+    {
+      "id": "MOD-002",
+      "type": "MOD",
+      "title": "SRV",
+      "source": "docs/reference/system/traceability.json"
+    },
+    {
+      "id": "MOD-003",
+      "type": "MOD",
+      "title": "FUE",
+      "source": "docs/reference/system/traceability.json"
+    },
+    {
+      "id": "MOD-004",
+      "type": "MOD",
+      "title": "DOC",
+      "source": "docs/reference/system/traceability.json"
+    },
+    {
+      "id": "MOD-005",
+      "type": "MOD",
+      "title": "SET",
+      "source": "docs/reference/system/traceability.json"
+    },
+    {
+      "id": "EP-001",
+      "type": "EP",
+      "title": "Garasi multi-kendaraan & biaya",
+      "source": "docs/reference/system/traceability.json"
+    },
+    {
+      "id": "EP-002",
+      "type": "EP",
+      "title": "Pencatatan servis, BBM, dan dokumen",
+      "source": "docs/reference/system/traceability.json"
+    },
+    {
+      "id": "EP-003",
+      "type": "EP",
+      "title": "Data lokal & preferensi",
+      "source": "docs/reference/system/traceability.json"
+    },
+    {
+      "id": "FLOW-GAR-01",
+      "type": "FLOW",
+      "title": "Menambah kendaraan dan memilih kendaraan aktif",
+      "status": "as-built",
+      "source": "docs/reference/system/traceability.json",
+      "bast": null,
+      "bastReason": null
+    },
+    {
+      "id": "FLOW-SRV-01",
+      "type": "FLOW",
+      "title": "Mencatat servis dan memantau jadwal perawatan",
+      "status": "as-built",
+      "source": "docs/reference/system/traceability.json",
+      "bast": null,
+      "bastReason": null
+    },
+    {
+      "id": "FLOW-FUE-01",
+      "type": "FLOW",
+      "title": "Mencatat pengisian BBM dan melihat efisiensi",
+      "status": "as-built",
+      "source": "docs/reference/system/traceability.json",
+      "bast": null,
+      "bastReason": null
+    },
+    {
+      "id": "FLOW-DOC-01",
+      "type": "FLOW",
+      "title": "Memantau pajak dan dokumen kendaraan",
+      "status": "as-built",
+      "source": "docs/reference/system/traceability.json",
+      "bast": null,
+      "bastReason": null
+    },
+    {
+      "id": "FLOW-TCO-01",
+      "type": "FLOW",
+      "title": "Melihat total biaya dan skor kesehatan kendaraan",
+      "status": "as-built",
+      "source": "docs/reference/system/traceability.json",
+      "bast": null,
+      "bastReason": null
+    },
+    {
+      "id": "FLOW-SET-01",
+      "type": "FLOW",
+      "title": "Mencadangkan data dan mengatur preferensi",
+      "status": "as-built",
+      "source": "docs/reference/system/traceability.json",
+      "bast": null,
+      "bastReason": null
+    },
+    {
+      "id": "US-001",
+      "type": "US",
+      "title": "Menambah kendaraan dan memilih kendaraan aktif",
+      "source": "docs/reference/system/traceability.json"
+    },
+    {
+      "id": "US-002",
+      "type": "US",
+      "title": "Mencatat servis dan memantau jadwal perawatan",
+      "source": "docs/reference/system/traceability.json"
+    },
+    {
+      "id": "US-005",
+      "type": "US",
+      "title": "Mencatat servis dan memantau jadwal perawatan",
+      "source": "docs/reference/system/traceability.json"
+    },
+    {
+      "id": "US-003",
+      "type": "US",
+      "title": "Mencatat pengisian BBM dan melihat efisiensi",
+      "source": "docs/reference/system/traceability.json"
+    },
+    {
+      "id": "US-004",
+      "type": "US",
+      "title": "Memantau pajak dan dokumen kendaraan",
+      "source": "docs/reference/system/traceability.json"
+    },
+    {
+      "id": "US-006",
+      "type": "US",
+      "title": "Melihat total biaya dan skor kesehatan kendaraan",
+      "source": "docs/reference/system/traceability.json"
+    },
+    {
+      "id": "US-007",
+      "type": "US",
+      "title": "Mencadangkan data dan mengatur preferensi",
+      "source": "docs/reference/system/traceability.json"
+    },
+    {
+      "id": "US-008",
+      "type": "US",
+      "title": "Mencadangkan data dan mengatur preferensi",
+      "source": "docs/reference/system/traceability.json"
+    },
+    {
+      "id": "USR-GAR-001",
+      "type": "PG",
+      "title": "/onboarding",
+      "source": "docs/reference/system/traceability.json"
+    },
+    {
+      "id": "USR-GAR-002",
+      "type": "PG",
+      "title": "/",
+      "source": "docs/reference/system/traceability.json"
+    },
+    {
+      "id": "USR-SRV-001",
+      "type": "PG",
+      "title": "/maintenance",
+      "source": "docs/reference/system/traceability.json"
+    },
+    {
+      "id": "USR-FUE-001",
+      "type": "PG",
+      "title": "/fuel",
+      "source": "docs/reference/system/traceability.json"
+    },
+    {
+      "id": "USR-DOC-001",
+      "type": "PG",
+      "title": "/glovebox",
+      "source": "docs/reference/system/traceability.json"
+    },
+    {
+      "id": "USR-SET-001",
+      "type": "PG",
+      "title": "/settings",
+      "source": "docs/reference/system/traceability.json"
+    },
+    {
+      "id": "USR-GAR-101",
+      "type": "FN",
+      "title": "VehiclesNotifier / activeVehicleProvider",
+      "source": "docs/reference/system/traceability.json"
+    },
+    {
+      "id": "USR-GAR-102",
+      "type": "FN",
+      "title": "AnalyticsService",
+      "source": "docs/reference/system/traceability.json"
+    },
+    {
+      "id": "USR-SRV-101",
+      "type": "FN",
+      "title": "MaintenanceSchedule.urgency",
+      "source": "docs/reference/system/traceability.json"
+    },
+    {
+      "id": "USR-GAR-103",
+      "type": "FN",
+      "title": "AppValidators",
+      "source": "docs/reference/system/traceability.json"
+    },
+    {
+      "id": "USR-SET-101",
+      "type": "FN",
+      "title": "LocalStorageService (backup/CSV)",
+      "source": "docs/reference/system/traceability.json"
+    },
+    {
+      "id": "FLOW-GAR-01-T01",
+      "type": "TC",
+      "title": "kendaraan pertama yang ditambahkan otomatis menjadi kendaraan aktif",
+      "layer": "unit",
+      "kind": "positive",
+      "source": "docs/trace/flows.yaml"
+    },
+    {
+      "id": "FLOW-GAR-01-T02",
+      "type": "TC",
+      "title": "nama satu huruf atau pelat kosong ditolak saat disimpan",
+      "layer": "unit",
+      "kind": "negative",
+      "source": "docs/trace/flows.yaml"
+    },
+    {
+      "id": "FLOW-GAR-01-T03",
+      "type": "TC",
+      "title": "batas panjang: nama 50 dan pelat 15 karakter diterima, lebihnya ditolak",
+      "layer": "unit",
+      "kind": "edge",
+      "source": "docs/trace/flows.yaml"
+    },
+    {
+      "id": "FLOW-GAR-01-T04",
+      "type": "TC",
+      "title": "menghapus kendaraan aktif memindahkan pilihan ke kendaraan tersisa",
+      "layer": "unit",
+      "kind": "corner",
+      "source": "docs/trace/flows.yaml"
+    },
+    {
+      "id": "FLOW-GAR-01-T05",
+      "type": "TC",
+      "title": "id kendaraan aktif yang hilang di penyimpanan jatuh ke kendaraan pertama",
+      "layer": "unit",
+      "kind": "corner",
+      "source": "docs/trace/flows.yaml"
+    },
+    {
+      "id": "FLOW-SRV-01-T01",
+      "type": "TC",
+      "title": "tandai jadwal selesai membuat log servis dan menaikkan odometer",
+      "layer": "unit",
+      "kind": "positive",
+      "source": "docs/trace/flows.yaml"
+    },
+    {
+      "id": "FLOW-SRV-01-T02",
+      "type": "TC",
+      "title": "odometer mundur dari catatan sebelumnya dan biaya negatif ditolak",
+      "layer": "unit",
+      "kind": "negative",
+      "source": "docs/trace/flows.yaml"
+    },
+    {
+      "id": "FLOW-SRV-01-T03",
+      "type": "TC",
+      "title": "batas urgensi: sisa 0 km terlewat, sisa 15% interval segera, 2.000.000 km maksimum",
+      "layer": "unit",
+      "kind": "edge",
+      "source": "docs/trace/flows.yaml"
+    },
+    {
+      "id": "FLOW-SRV-01-T04",
+      "type": "TC",
+      "title": "log servis dengan odometer lebih rendah tidak menurunkan odometer; jadwal melewati tahun",
+      "layer": "unit",
+      "kind": "corner",
+      "source": "docs/trace/flows.yaml"
+    },
+    {
+      "id": "FLOW-SRV-01-T05",
+      "type": "TC",
+      "title": "inspeksi menghitung persentase lolos dari butir tercentang",
+      "layer": "unit",
+      "kind": "positive",
+      "source": "docs/trace/flows.yaml"
+    },
+    {
+      "id": "FLOW-FUE-01-T01",
+      "type": "TC",
+      "title": "dua pengisian berurutan menghasilkan km/L dan Rp/km",
+      "layer": "unit",
+      "kind": "positive",
+      "source": "docs/trace/flows.yaml"
+    },
+    {
+      "id": "FLOW-FUE-01-T02",
+      "type": "TC",
+      "title": "volume 0 / negatif dan di atas 500 liter ditolak",
+      "layer": "unit",
+      "kind": "negative",
+      "source": "docs/trace/flows.yaml"
+    },
+    {
+      "id": "FLOW-FUE-01-T03",
+      "type": "TC",
+      "title": "tanpa catatan = 0, satu catatan memakai baseline 12,5 km/L",
+      "layer": "unit",
+      "kind": "edge",
+      "source": "docs/trace/flows.yaml"
+    },
+    {
+      "id": "FLOW-FUE-01-T04",
+      "type": "TC",
+      "title": "catatan acak diurutkan per odometer; odometer sama dilewati tanpa bagi nol",
+      "layer": "unit",
+      "kind": "corner",
+      "source": "docs/trace/flows.yaml"
+    },
+    {
+      "id": "FLOW-DOC-01-T01",
+      "type": "TC",
+      "title": "mobil contoh punya pengingat PKB tahunan, STNK 5 tahunan, dan asuransi",
+      "layer": "unit",
+      "kind": "positive",
+      "source": "docs/trace/flows.yaml"
+    },
+    {
+      "id": "FLOW-DOC-01-T02",
+      "type": "TC",
+      "title": "dokumen lewat jatuh tempo ditandai kedaluwarsa, bukan segera",
+      "layer": "unit",
+      "kind": "negative",
+      "source": "docs/trace/flows.yaml"
+    },
+    {
+      "id": "FLOW-DOC-01-T03",
+      "type": "TC",
+      "title": "batas pengingat: hari ini dan H-30 = segera, H-31 = aman",
+      "layer": "unit",
+      "kind": "edge",
+      "source": "docs/trace/flows.yaml"
+    },
+    {
+      "id": "FLOW-DOC-01-T04",
+      "type": "TC",
+      "title": "tipe dokumen tak dikenal di data tersimpan menjadi Lainnya; tanpa asuransi tidak dibuat",
+      "layer": "unit",
+      "kind": "corner",
+      "source": "docs/trace/flows.yaml"
+    },
+    {
+      "id": "FLOW-TCO-01-T01",
+      "type": "TC",
+      "title": "total biaya menjumlahkan BBM, servis, dan dokumen per km",
+      "layer": "unit",
+      "kind": "positive",
+      "source": "docs/trace/flows.yaml"
+    },
+    {
+      "id": "FLOW-TCO-01-T02",
+      "type": "TC",
+      "title": "garasi tanpa kendaraan menampilkan biaya nol",
+      "layer": "unit",
+      "kind": "negative",
+      "source": "docs/trace/flows.yaml"
+    },
+    {
+      "id": "FLOW-TCO-01-T03",
+      "type": "TC",
+      "title": "odometer 0 tidak membagi nol pada biaya per km",
+      "layer": "unit",
+      "kind": "edge",
+      "source": "docs/trace/flows.yaml"
+    },
+    {
+      "id": "FLOW-TCO-01-T04",
+      "type": "TC",
+      "title": "oli terlewat dan dokumen kedaluwarsa menurunkan skor kesehatan",
+      "layer": "unit",
+      "kind": "corner",
+      "source": "docs/trace/flows.yaml"
+    },
+    {
+      "id": "FLOW-SET-01-T01",
+      "type": "TC",
+      "title": "ekspor lalu impor cadangan mengembalikan kendaraan dan log",
+      "layer": "unit",
+      "kind": "positive",
+      "source": "docs/trace/flows.yaml"
+    },
+    {
+      "id": "FLOW-SET-01-T02",
+      "type": "TC",
+      "title": "berkas JSON mentah ditolak dan data lama tetap utuh",
+      "layer": "unit",
+      "kind": "negative",
+      "source": "docs/trace/flows.yaml"
+    },
+    {
+      "id": "FLOW-SET-01-T03",
+      "type": "TC",
+      "title": "ekspor CSV kendaraan tanpa log hanya berisi baris judul",
+      "layer": "unit",
+      "kind": "edge",
+      "source": "docs/trace/flows.yaml"
+    },
+    {
+      "id": "FLOW-SET-01-T04",
+      "type": "TC",
+      "title": "data kendaraan korup di penyimpanan dibaca sebagai garasi kosong; tema korup = sistem",
+      "layer": "unit",
+      "kind": "corner",
+      "source": "docs/trace/flows.yaml"
+    }
+  ],
+  "edges": [
+    {
+      "from": "BR-001",
+      "to": "FR-003",
+      "via": "docs/BRD.md"
+    },
+    {
+      "from": "BR-001",
+      "to": "FR-004",
+      "via": "docs/BRD.md"
+    },
+    {
+      "from": "BR-002",
+      "to": "FR-005",
+      "via": "docs/BRD.md"
+    },
+    {
+      "from": "BR-003",
+      "to": "FR-006",
+      "via": "docs/BRD.md"
+    },
+    {
+      "from": "BR-004",
+      "to": "FR-007",
+      "via": "docs/BRD.md"
+    },
+    {
+      "from": "BR-005",
+      "to": "FR-001",
+      "via": "docs/BRD.md"
+    },
+    {
+      "from": "BR-005",
+      "to": "FR-002",
+      "via": "docs/BRD.md"
+    },
+    {
+      "from": "BR-006",
+      "to": "FR-008",
+      "via": "docs/BRD.md"
+    },
+    {
+      "from": "BR-006",
+      "to": "NFR-001",
+      "via": "docs/BRD.md"
+    },
+    {
+      "from": "BR-007",
+      "to": "FR-009",
+      "via": "docs/BRD.md"
+    },
+    {
+      "from": "FR-001",
+      "to": "BR-005",
+      "via": "docs/PRD.md"
+    },
+    {
+      "from": "FR-001",
+      "to": "US-001",
+      "via": "docs/PRD.md"
+    },
+    {
+      "from": "FR-001",
+      "to": "FLOW-GAR-01",
+      "via": "docs/PRD.md"
+    },
+    {
+      "from": "FR-002",
+      "to": "BR-005",
+      "via": "docs/PRD.md"
+    },
+    {
+      "from": "FR-002",
+      "to": "US-001",
+      "via": "docs/PRD.md"
+    },
+    {
+      "from": "FR-002",
+      "to": "FLOW-GAR-01",
+      "via": "docs/PRD.md"
+    },
+    {
+      "from": "FR-003",
+      "to": "BR-001",
+      "via": "docs/PRD.md"
+    },
+    {
+      "from": "FR-003",
+      "to": "US-002",
+      "via": "docs/PRD.md"
+    },
+    {
+      "from": "FR-003",
+      "to": "FLOW-SRV-01",
+      "via": "docs/PRD.md"
+    },
+    {
+      "from": "FR-004",
+      "to": "BR-001",
+      "via": "docs/PRD.md"
+    },
+    {
+      "from": "FR-004",
+      "to": "US-005",
+      "via": "docs/PRD.md"
+    },
+    {
+      "from": "FR-004",
+      "to": "FLOW-SRV-01",
+      "via": "docs/PRD.md"
+    },
+    {
+      "from": "FR-005",
+      "to": "BR-002",
+      "via": "docs/PRD.md"
+    },
+    {
+      "from": "FR-005",
+      "to": "US-003",
+      "via": "docs/PRD.md"
+    },
+    {
+      "from": "FR-005",
+      "to": "FLOW-FUE-01",
+      "via": "docs/PRD.md"
+    },
+    {
+      "from": "FR-006",
+      "to": "BR-003",
+      "via": "docs/PRD.md"
+    },
+    {
+      "from": "FR-006",
+      "to": "US-004",
+      "via": "docs/PRD.md"
+    },
+    {
+      "from": "FR-006",
+      "to": "FLOW-DOC-01",
+      "via": "docs/PRD.md"
+    },
+    {
+      "from": "FR-007",
+      "to": "BR-004",
+      "via": "docs/PRD.md"
+    },
+    {
+      "from": "FR-007",
+      "to": "US-006",
+      "via": "docs/PRD.md"
+    },
+    {
+      "from": "FR-007",
+      "to": "FLOW-TCO-01",
+      "via": "docs/PRD.md"
+    },
+    {
+      "from": "FR-008",
+      "to": "BR-006",
+      "via": "docs/PRD.md"
+    },
+    {
+      "from": "FR-008",
+      "to": "US-007",
+      "via": "docs/PRD.md"
+    },
+    {
+      "from": "FR-008",
+      "to": "FLOW-SET-01",
+      "via": "docs/PRD.md"
+    },
+    {
+      "from": "FR-009",
+      "to": "BR-007",
+      "via": "docs/PRD.md"
+    },
+    {
+      "from": "FR-009",
+      "to": "US-008",
+      "via": "docs/PRD.md"
+    },
+    {
+      "from": "FR-009",
+      "to": "FLOW-SET-01",
+      "via": "docs/PRD.md"
+    },
+    {
+      "from": "NFR-001",
+      "to": "BR-006",
+      "via": "docs/PRD.md"
+    },
+    {
+      "from": "NFR-001",
+      "to": "FLOW-SET-01",
+      "via": "docs/PRD.md"
+    },
+    {
+      "from": "EP-001",
+      "to": "MOD-001",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "EP-002",
+      "to": "MOD-002",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "EP-003",
+      "to": "MOD-005",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "FLOW-GAR-01",
+      "to": "ROL-001",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "FLOW-GAR-01",
+      "to": "MOD-001",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "FLOW-GAR-01",
+      "to": "EP-001",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "FLOW-GAR-01",
+      "to": "US-001",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "FLOW-SRV-01",
+      "to": "ROL-001",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "FLOW-SRV-01",
+      "to": "MOD-002",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "FLOW-SRV-01",
+      "to": "EP-002",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "FLOW-SRV-01",
+      "to": "US-002",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "FLOW-SRV-01",
+      "to": "US-005",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "FLOW-FUE-01",
+      "to": "ROL-001",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "FLOW-FUE-01",
+      "to": "MOD-003",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "FLOW-FUE-01",
+      "to": "EP-002",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "FLOW-FUE-01",
+      "to": "US-003",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "FLOW-DOC-01",
+      "to": "ROL-001",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "FLOW-DOC-01",
+      "to": "MOD-004",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "FLOW-DOC-01",
+      "to": "EP-002",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "FLOW-DOC-01",
+      "to": "US-004",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "FLOW-TCO-01",
+      "to": "ROL-001",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "FLOW-TCO-01",
+      "to": "MOD-001",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "FLOW-TCO-01",
+      "to": "EP-001",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "FLOW-TCO-01",
+      "to": "US-006",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "FLOW-SET-01",
+      "to": "ROL-001",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "FLOW-SET-01",
+      "to": "MOD-005",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "FLOW-SET-01",
+      "to": "EP-003",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "FLOW-SET-01",
+      "to": "US-007",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "FLOW-SET-01",
+      "to": "US-008",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "US-001",
+      "to": "EP-001",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "US-002",
+      "to": "EP-002",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "US-005",
+      "to": "EP-002",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "US-003",
+      "to": "EP-002",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "US-004",
+      "to": "EP-002",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "US-006",
+      "to": "EP-001",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "US-007",
+      "to": "EP-003",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "US-008",
+      "to": "EP-003",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "USR-GAR-001",
+      "to": "FLOW-GAR-01",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "USR-GAR-001",
+      "to": "ROL-001",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "USR-GAR-001",
+      "to": "MOD-001",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "USR-GAR-002",
+      "to": "FLOW-GAR-01",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "USR-GAR-002",
+      "to": "FLOW-TCO-01",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "USR-GAR-002",
+      "to": "ROL-001",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "USR-GAR-002",
+      "to": "MOD-001",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "USR-SRV-001",
+      "to": "FLOW-SRV-01",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "USR-SRV-001",
+      "to": "ROL-001",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "USR-SRV-001",
+      "to": "MOD-002",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "USR-FUE-001",
+      "to": "FLOW-FUE-01",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "USR-FUE-001",
+      "to": "ROL-001",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "USR-FUE-001",
+      "to": "MOD-003",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "USR-DOC-001",
+      "to": "FLOW-DOC-01",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "USR-DOC-001",
+      "to": "ROL-001",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "USR-DOC-001",
+      "to": "MOD-004",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "USR-SET-001",
+      "to": "FLOW-SET-01",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "USR-SET-001",
+      "to": "ROL-001",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "USR-SET-001",
+      "to": "MOD-005",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "USR-GAR-101",
+      "to": "FLOW-GAR-01",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "USR-GAR-101",
+      "to": "FLOW-SRV-01",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "USR-GAR-101",
+      "to": "ROL-001",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "USR-GAR-101",
+      "to": "MOD-001",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "USR-GAR-102",
+      "to": "FLOW-TCO-01",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "USR-GAR-102",
+      "to": "FLOW-FUE-01",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "USR-GAR-102",
+      "to": "ROL-001",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "USR-GAR-102",
+      "to": "MOD-001",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "USR-SRV-101",
+      "to": "FLOW-SRV-01",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "USR-SRV-101",
+      "to": "ROL-001",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "USR-SRV-101",
+      "to": "MOD-002",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "USR-GAR-103",
+      "to": "FLOW-GAR-01",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "USR-GAR-103",
+      "to": "FLOW-SRV-01",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "USR-GAR-103",
+      "to": "FLOW-FUE-01",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "USR-GAR-103",
+      "to": "ROL-001",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "USR-GAR-103",
+      "to": "MOD-001",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "USR-SET-101",
+      "to": "FLOW-SET-01",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "USR-SET-101",
+      "to": "ROL-001",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "USR-SET-101",
+      "to": "MOD-005",
+      "via": "docs/reference/system/traceability.json"
+    },
+    {
+      "from": "FLOW-GAR-01",
+      "to": "FR-001",
+      "via": "docs/trace/flows.yaml"
+    },
+    {
+      "from": "FLOW-GAR-01",
+      "to": "FR-002",
+      "via": "docs/trace/flows.yaml"
+    },
+    {
+      "from": "FLOW-GAR-01-T01",
+      "to": "FLOW-GAR-01",
+      "via": "docs/trace/flows.yaml"
+    },
+    {
+      "from": "FLOW-GAR-01-T02",
+      "to": "FLOW-GAR-01",
+      "via": "docs/trace/flows.yaml"
+    },
+    {
+      "from": "FLOW-GAR-01-T03",
+      "to": "FLOW-GAR-01",
+      "via": "docs/trace/flows.yaml"
+    },
+    {
+      "from": "FLOW-GAR-01-T04",
+      "to": "FLOW-GAR-01",
+      "via": "docs/trace/flows.yaml"
+    },
+    {
+      "from": "FLOW-GAR-01-T05",
+      "to": "FLOW-GAR-01",
+      "via": "docs/trace/flows.yaml"
+    },
+    {
+      "from": "FLOW-SRV-01",
+      "to": "FR-003",
+      "via": "docs/trace/flows.yaml"
+    },
+    {
+      "from": "FLOW-SRV-01",
+      "to": "FR-004",
+      "via": "docs/trace/flows.yaml"
+    },
+    {
+      "from": "FLOW-SRV-01-T01",
+      "to": "FLOW-SRV-01",
+      "via": "docs/trace/flows.yaml"
+    },
+    {
+      "from": "FLOW-SRV-01-T02",
+      "to": "FLOW-SRV-01",
+      "via": "docs/trace/flows.yaml"
+    },
+    {
+      "from": "FLOW-SRV-01-T03",
+      "to": "FLOW-SRV-01",
+      "via": "docs/trace/flows.yaml"
+    },
+    {
+      "from": "FLOW-SRV-01-T04",
+      "to": "FLOW-SRV-01",
+      "via": "docs/trace/flows.yaml"
+    },
+    {
+      "from": "FLOW-SRV-01-T05",
+      "to": "FLOW-SRV-01",
+      "via": "docs/trace/flows.yaml"
+    },
+    {
+      "from": "FLOW-FUE-01",
+      "to": "FR-005",
+      "via": "docs/trace/flows.yaml"
+    },
+    {
+      "from": "FLOW-FUE-01-T01",
+      "to": "FLOW-FUE-01",
+      "via": "docs/trace/flows.yaml"
+    },
+    {
+      "from": "FLOW-FUE-01-T02",
+      "to": "FLOW-FUE-01",
+      "via": "docs/trace/flows.yaml"
+    },
+    {
+      "from": "FLOW-FUE-01-T03",
+      "to": "FLOW-FUE-01",
+      "via": "docs/trace/flows.yaml"
+    },
+    {
+      "from": "FLOW-FUE-01-T04",
+      "to": "FLOW-FUE-01",
+      "via": "docs/trace/flows.yaml"
+    },
+    {
+      "from": "FLOW-DOC-01",
+      "to": "FR-006",
+      "via": "docs/trace/flows.yaml"
+    },
+    {
+      "from": "FLOW-DOC-01-T01",
+      "to": "FLOW-DOC-01",
+      "via": "docs/trace/flows.yaml"
+    },
+    {
+      "from": "FLOW-DOC-01-T02",
+      "to": "FLOW-DOC-01",
+      "via": "docs/trace/flows.yaml"
+    },
+    {
+      "from": "FLOW-DOC-01-T03",
+      "to": "FLOW-DOC-01",
+      "via": "docs/trace/flows.yaml"
+    },
+    {
+      "from": "FLOW-DOC-01-T04",
+      "to": "FLOW-DOC-01",
+      "via": "docs/trace/flows.yaml"
+    },
+    {
+      "from": "FLOW-TCO-01",
+      "to": "FR-007",
+      "via": "docs/trace/flows.yaml"
+    },
+    {
+      "from": "FLOW-TCO-01-T01",
+      "to": "FLOW-TCO-01",
+      "via": "docs/trace/flows.yaml"
+    },
+    {
+      "from": "FLOW-TCO-01-T02",
+      "to": "FLOW-TCO-01",
+      "via": "docs/trace/flows.yaml"
+    },
+    {
+      "from": "FLOW-TCO-01-T03",
+      "to": "FLOW-TCO-01",
+      "via": "docs/trace/flows.yaml"
+    },
+    {
+      "from": "FLOW-TCO-01-T04",
+      "to": "FLOW-TCO-01",
+      "via": "docs/trace/flows.yaml"
+    },
+    {
+      "from": "FLOW-SET-01",
+      "to": "FR-008",
+      "via": "docs/trace/flows.yaml"
+    },
+    {
+      "from": "FLOW-SET-01",
+      "to": "FR-009",
+      "via": "docs/trace/flows.yaml"
+    },
+    {
+      "from": "FLOW-SET-01",
+      "to": "NFR-001",
+      "via": "docs/trace/flows.yaml"
+    },
+    {
+      "from": "FLOW-SET-01-T01",
+      "to": "FLOW-SET-01",
+      "via": "docs/trace/flows.yaml"
+    },
+    {
+      "from": "FLOW-SET-01-T02",
+      "to": "FLOW-SET-01",
+      "via": "docs/trace/flows.yaml"
+    },
+    {
+      "from": "FLOW-SET-01-T03",
+      "to": "FLOW-SET-01",
+      "via": "docs/trace/flows.yaml"
+    },
+    {
+      "from": "FLOW-SET-01-T04",
+      "to": "FLOW-SET-01",
+      "via": "docs/trace/flows.yaml"
+    }
+  ],
+  "cases": [
+    {
+      "id": "FLOW-GAR-01-T01",
+      "flow": "FLOW-GAR-01",
+      "title": "kendaraan pertama yang ditambahkan otomatis menjadi kendaraan aktif",
+      "layer": "unit",
+      "kind": "positive",
+      "walk": false
+    },
+    {
+      "id": "FLOW-GAR-01-T02",
+      "flow": "FLOW-GAR-01",
+      "title": "nama satu huruf atau pelat kosong ditolak saat disimpan",
+      "layer": "unit",
+      "kind": "negative",
+      "walk": false
+    },
+    {
+      "id": "FLOW-GAR-01-T03",
+      "flow": "FLOW-GAR-01",
+      "title": "batas panjang: nama 50 dan pelat 15 karakter diterima, lebihnya ditolak",
+      "layer": "unit",
+      "kind": "edge",
+      "walk": false
+    },
+    {
+      "id": "FLOW-GAR-01-T04",
+      "flow": "FLOW-GAR-01",
+      "title": "menghapus kendaraan aktif memindahkan pilihan ke kendaraan tersisa",
+      "layer": "unit",
+      "kind": "corner",
+      "walk": false
+    },
+    {
+      "id": "FLOW-GAR-01-T05",
+      "flow": "FLOW-GAR-01",
+      "title": "id kendaraan aktif yang hilang di penyimpanan jatuh ke kendaraan pertama",
+      "layer": "unit",
+      "kind": "corner",
+      "walk": false
+    },
+    {
+      "id": "FLOW-SRV-01-T01",
+      "flow": "FLOW-SRV-01",
+      "title": "tandai jadwal selesai membuat log servis dan menaikkan odometer",
+      "layer": "unit",
+      "kind": "positive",
+      "walk": false
+    },
+    {
+      "id": "FLOW-SRV-01-T02",
+      "flow": "FLOW-SRV-01",
+      "title": "odometer mundur dari catatan sebelumnya dan biaya negatif ditolak",
+      "layer": "unit",
+      "kind": "negative",
+      "walk": false
+    },
+    {
+      "id": "FLOW-SRV-01-T03",
+      "flow": "FLOW-SRV-01",
+      "title": "batas urgensi: sisa 0 km terlewat, sisa 15% interval segera, 2.000.000 km maksimum",
+      "layer": "unit",
+      "kind": "edge",
+      "walk": false
+    },
+    {
+      "id": "FLOW-SRV-01-T04",
+      "flow": "FLOW-SRV-01",
+      "title": "log servis dengan odometer lebih rendah tidak menurunkan odometer; jadwal melewati tahun",
+      "layer": "unit",
+      "kind": "corner",
+      "walk": false
+    },
+    {
+      "id": "FLOW-SRV-01-T05",
+      "flow": "FLOW-SRV-01",
+      "title": "inspeksi menghitung persentase lolos dari butir tercentang",
+      "layer": "unit",
+      "kind": "positive",
+      "walk": false
+    },
+    {
+      "id": "FLOW-FUE-01-T01",
+      "flow": "FLOW-FUE-01",
+      "title": "dua pengisian berurutan menghasilkan km/L dan Rp/km",
+      "layer": "unit",
+      "kind": "positive",
+      "walk": false
+    },
+    {
+      "id": "FLOW-FUE-01-T02",
+      "flow": "FLOW-FUE-01",
+      "title": "volume 0 / negatif dan di atas 500 liter ditolak",
+      "layer": "unit",
+      "kind": "negative",
+      "walk": false
+    },
+    {
+      "id": "FLOW-FUE-01-T03",
+      "flow": "FLOW-FUE-01",
+      "title": "tanpa catatan = 0, satu catatan memakai baseline 12,5 km/L",
+      "layer": "unit",
+      "kind": "edge",
+      "walk": false
+    },
+    {
+      "id": "FLOW-FUE-01-T04",
+      "flow": "FLOW-FUE-01",
+      "title": "catatan acak diurutkan per odometer; odometer sama dilewati tanpa bagi nol",
+      "layer": "unit",
+      "kind": "corner",
+      "walk": false
+    },
+    {
+      "id": "FLOW-DOC-01-T01",
+      "flow": "FLOW-DOC-01",
+      "title": "mobil contoh punya pengingat PKB tahunan, STNK 5 tahunan, dan asuransi",
+      "layer": "unit",
+      "kind": "positive",
+      "walk": false
+    },
+    {
+      "id": "FLOW-DOC-01-T02",
+      "flow": "FLOW-DOC-01",
+      "title": "dokumen lewat jatuh tempo ditandai kedaluwarsa, bukan segera",
+      "layer": "unit",
+      "kind": "negative",
+      "walk": false
+    },
+    {
+      "id": "FLOW-DOC-01-T03",
+      "flow": "FLOW-DOC-01",
+      "title": "batas pengingat: hari ini dan H-30 = segera, H-31 = aman",
+      "layer": "unit",
+      "kind": "edge",
+      "walk": false
+    },
+    {
+      "id": "FLOW-DOC-01-T04",
+      "flow": "FLOW-DOC-01",
+      "title": "tipe dokumen tak dikenal di data tersimpan menjadi Lainnya; tanpa asuransi tidak dibuat",
+      "layer": "unit",
+      "kind": "corner",
+      "walk": false
+    },
+    {
+      "id": "FLOW-TCO-01-T01",
+      "flow": "FLOW-TCO-01",
+      "title": "total biaya menjumlahkan BBM, servis, dan dokumen per km",
+      "layer": "unit",
+      "kind": "positive",
+      "walk": false
+    },
+    {
+      "id": "FLOW-TCO-01-T02",
+      "flow": "FLOW-TCO-01",
+      "title": "garasi tanpa kendaraan menampilkan biaya nol",
+      "layer": "unit",
+      "kind": "negative",
+      "walk": false
+    },
+    {
+      "id": "FLOW-TCO-01-T03",
+      "flow": "FLOW-TCO-01",
+      "title": "odometer 0 tidak membagi nol pada biaya per km",
+      "layer": "unit",
+      "kind": "edge",
+      "walk": false
+    },
+    {
+      "id": "FLOW-TCO-01-T04",
+      "flow": "FLOW-TCO-01",
+      "title": "oli terlewat dan dokumen kedaluwarsa menurunkan skor kesehatan",
+      "layer": "unit",
+      "kind": "corner",
+      "walk": false
+    },
+    {
+      "id": "FLOW-SET-01-T01",
+      "flow": "FLOW-SET-01",
+      "title": "ekspor lalu impor cadangan mengembalikan kendaraan dan log",
+      "layer": "unit",
+      "kind": "positive",
+      "walk": false
+    },
+    {
+      "id": "FLOW-SET-01-T02",
+      "flow": "FLOW-SET-01",
+      "title": "berkas JSON mentah ditolak dan data lama tetap utuh",
+      "layer": "unit",
+      "kind": "negative",
+      "walk": false
+    },
+    {
+      "id": "FLOW-SET-01-T03",
+      "flow": "FLOW-SET-01",
+      "title": "ekspor CSV kendaraan tanpa log hanya berisi baris judul",
+      "layer": "unit",
+      "kind": "edge",
+      "walk": false
+    },
+    {
+      "id": "FLOW-SET-01-T04",
+      "flow": "FLOW-SET-01",
+      "title": "data kendaraan korup di penyimpanan dibaca sebagai garasi kosong; tema korup = sistem",
+      "layer": "unit",
+      "kind": "corner",
+      "walk": false
+    }
+  ],
+  "problems": []
+}

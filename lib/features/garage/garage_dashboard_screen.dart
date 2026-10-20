@@ -79,6 +79,7 @@ class GarageDashboardScreen extends ConsumerWidget {
                     Navigator.pop(ctx);
                     showModalBottomSheet(
                       context: context,
+                      useRootNavigator: true,
                       isScrollControlled: true,
                       backgroundColor: context.cardBg,
                       builder: (_) => AddScheduleSheet(vehicle: active),
@@ -96,6 +97,7 @@ class GarageDashboardScreen extends ConsumerWidget {
                     Navigator.pop(ctx);
                     showModalBottomSheet(
                       context: context,
+                      useRootNavigator: true,
                       isScrollControlled: true,
                       backgroundColor: context.cardBg,
                       builder: (_) => InspectionSheet(vehicle: active),
@@ -128,6 +130,7 @@ class GarageDashboardScreen extends ConsumerWidget {
                   Navigator.pop(ctx);
                   showModalBottomSheet(
                     context: context,
+                    useRootNavigator: true,
                     isScrollControlled: true,
                     backgroundColor: context.cardBg,
                     builder: (_) => const AddVehicleSheet(),
@@ -315,6 +318,7 @@ class GarageDashboardScreen extends ConsumerWidget {
               onPressed: () {
                 showModalBottomSheet(
                   context: context,
+                  useRootNavigator: true,
                   isScrollControlled: true,
                   backgroundColor: context.cardBg,
                   shape: const RoundedRectangleBorder(
@@ -382,6 +386,7 @@ class GarageDashboardScreen extends ConsumerWidget {
                         onPressed: () {
                           showModalBottomSheet(
                             context: context,
+                            useRootNavigator: true,
                             isScrollControlled: true,
                             backgroundColor: context.cardBg,
                             builder: (_) => const AddVehicleSheet(),

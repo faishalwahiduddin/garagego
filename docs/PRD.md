@@ -39,13 +39,32 @@ pelat 5 tahunan, serta odometer untuk seluruh armada mobil dan motor.
 | `US-005` | **Interval servis** | 3 | Target ganti oli berikut (km atau bulan) | `lib/core/` |
 | `US-006` | **Total biaya** | 3 | Akumulasi BBM + servis + pajak per kendaraan | `lib/features/` |
 | `US-007` | **Ekspor/impor** | 2 | Backup file via share + FilePicker | `lib/features/` |
-| `US-008` | **i18n** | 3 | Indonesia + Inggris | `lib/l10n/` |
+| `US-008` | **i18n** | 3 | 8 bahasa (id, en, ar, jv, su, zh, ja, es) + tema | `lib/l10n/` |
 
 ### 4.2 Di luar cakupan
 
 - Integrasi OBD/telemetri kendaraan
 - Booking bengkel atau perbandingan harga bengkel
 - Backend, akun, sinkronisasi cloud
+
+### 4.3 Kebutuhan produk (§TRACE)
+
+`FR`/`NFR` di kolom pertama adalah SSOT; kolom berikutnya menunjuk `BR` asal
+([BRD](./BRD.md)) dan story/flow yang merealisasikannya
+([user-flows](./reference/specs/user-flows.md)).
+
+| ID | Kebutuhan | Asal | Realisasi |
+|---|---|---|---|
+| FR-001 | Tambah, ubah, hapus kendaraan mobil/motor: nama 2–50 karakter, pelat wajib ≤15 karakter, odometer 0–2.000.000 km. | BR-005 | US-001, FLOW-GAR-01 |
+| FR-002 | Pemilih kendaraan aktif: kendaraan pertama otomatis aktif; menghapus kendaraan aktif memindahkan pilihan ke kendaraan tersisa. | BR-005 | US-001, FLOW-GAR-01 |
+| FR-003 | Log servis (tanggal, odometer, kategori, biaya ≥ 0, bengkel) memperbarui odometer dan titik ganti oli kendaraan, tidak pernah menurunkannya; odometer mundur ditolak. | BR-001 | US-002, FLOW-SRV-01 |
+| FR-004 | Jadwal perawatan dua pemicu (km atau bulan) dengan status aman/segera/terlewat; tandai selesai otomatis membuat log servis; inspeksi checklist menghitung persentase lolos. | BR-001 | US-005, FLOW-SRV-01 |
+| FR-005 | Log BBM (volume 0–500 L, harga/L, odometer) menghasilkan km/L dan Rp/km dari dua pengisian berurutan. | BR-002 | US-003, FLOW-FUE-01 |
+| FR-006 | Brankas dokumen: PKB tahunan, STNK 5 tahunan, asuransi, dll.; status segera H-30 dan kedaluwarsa. | BR-003 | US-004, FLOW-DOC-01 |
+| FR-007 | Total biaya kepemilikan (BBM + servis + dokumen), biaya per km, dan skor kesehatan kendaraan di Garasi. | BR-004 | US-006, FLOW-TCO-01 |
+| FR-008 | Ekspor/impor cadangan `.grg` dan ekspor CSV; berkas asing atau rusak ditolak tanpa mengubah data. | BR-006 | US-007, FLOW-SET-01 |
+| FR-009 | Antarmuka 8 bahasa dan tema sistem/terang/gelap. | BR-007 | US-008, FLOW-SET-01 |
+| NFR-001 | Offline-first: seluruh data di `shared_preferences` perangkat; data korup dibaca sebagai kosong, tidak crash. | BR-006 | FLOW-SET-01 |
 
 ## 5. Data Model
 

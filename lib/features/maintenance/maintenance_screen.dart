@@ -468,6 +468,7 @@ class _MaintenanceScreenState extends ConsumerState<MaintenanceScreen> with Sing
                   } else if (val == 'add') {
                     showModalBottomSheet(
                       context: context,
+                      useRootNavigator: true,
                       isScrollControlled: true,
                       backgroundColor: context.cardBg,
                       shape: const RoundedRectangleBorder(
@@ -613,6 +614,7 @@ class _MaintenanceScreenState extends ConsumerState<MaintenanceScreen> with Sing
                                       onPressed: () {
                                         showModalBottomSheet(
                                           context: context,
+                                          useRootNavigator: true,
                                           isScrollControlled: true,
                                           backgroundColor: context.cardBg,
                                           shape: const RoundedRectangleBorder(
@@ -905,6 +907,7 @@ class _MaintenanceScreenState extends ConsumerState<MaintenanceScreen> with Sing
                   onPressed: () {
                     showModalBottomSheet(
                       context: context,
+                      useRootNavigator: true,
                       isScrollControlled: true,
                       backgroundColor: context.cardBg,
                       shape: const RoundedRectangleBorder(
@@ -952,6 +955,7 @@ class _MaintenanceScreenState extends ConsumerState<MaintenanceScreen> with Sing
                           onPressed: () {
                             showModalBottomSheet(
                               context: context,
+                              useRootNavigator: true,
                               isScrollControlled: true,
                               backgroundColor: context.cardBg,
                               shape: const RoundedRectangleBorder(

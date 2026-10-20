@@ -1,0 +1,25 @@
+{
+  "flow": "FLOW-SET-01",
+  "title": "Mencadangkan data dan mengatur preferensi",
+  "summary": "Pengguna membuka **Pengaturan** untuk mengatur tema dan bahasa, serta mengekspor cadangan `.grg` atau CSV.",
+  "role": "ROL-001",
+  "tc": "FLOW-SET-01-T01",
+  "baseURL": "flutter build web (lokal)",
+  "video": "video.mp4",
+  "steps": [
+    {
+      "n": 1,
+      "title": "Buka Pengaturan",
+      "instruction": "Ketuk tab **Pengaturan**: daftar kendaraan, **Mode Tema**, **Bahasa Aplikasi**, dan **Zona Waktu**.",
+      "image": "step-01.png",
+      "t": 6.2
+    },
+    {
+      "n": 2,
+      "title": "Cadangkan data",
+      "instruction": "Pada **Portabilitas & Cadangan Data** pilih **Ekspor Cadangan (.grg)**, **Pulihkan dari berkas (.grg)**, atau ekspor CSV riwayat servis/BBM.",
+      "image": "step-02.png",
+      "t": 7.8
+    }
+  ]
+}

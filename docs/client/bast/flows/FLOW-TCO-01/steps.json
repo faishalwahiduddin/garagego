@@ -1,0 +1,32 @@
+{
+  "flow": "FLOW-TCO-01",
+  "title": "Melihat total biaya dan skor kesehatan kendaraan",
+  "summary": "Di tab **Garasi** pengguna membaca skor kesehatan, odometer, biaya per km, dan rincian total biaya kepemilikan.",
+  "role": "ROL-001",
+  "tc": "FLOW-TCO-01-T01",
+  "baseURL": "flutter build web (lokal)",
+  "video": "video.mp4",
+  "steps": [
+    {
+      "n": 1,
+      "title": "Baca skor kesehatan",
+      "instruction": "Tab **Garasi** menampilkan skor kesehatan kendaraan aktif dan peringatan yang perlu ditindaklanjuti.",
+      "image": "step-01.png",
+      "t": 5.7
+    },
+    {
+      "n": 2,
+      "title": "Baca ringkasan biaya",
+      "instruction": "Gulir ke bawah: **Odometer**, **Biaya / KM**, **Konsumsi BBM**, dan **Total Biaya (TCO)**.",
+      "image": "step-02.png",
+      "t": 7.1
+    },
+    {
+      "n": 3,
+      "title": "Rincian TCO",
+      "instruction": "Bagian **Total Biaya Kepemilikan (TCO)** merinci biaya BBM, perawatan, serta pajak & STNK.",
+      "image": "step-03.png",
+      "t": 8.6
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "flow": "FLOW-SRV-01",
+  "title": "Mencatat servis dan memantau jadwal perawatan",
+  "summary": "Pengguna membuka jadwal perawatan dua pemicu (km/bulan), menandai satu pekerjaan selesai, dan melihatnya tercatat di riwayat servis.",
+  "role": "ROL-001",
+  "tc": "FLOW-SRV-01-T01",
+  "baseURL": "flutter build web (lokal)",
+  "video": "video.mp4",
+  "steps": [
+    {
+      "n": 1,
+      "title": "Buka tab Perawatan",
+      "instruction": "Ketuk tab **Perawatan**. Setiap jadwal berstatus **Aman**, **Segera**, atau **Terlewat** berdasarkan sisa km dan sisa hari.",
+      "image": "step-01.png",
+      "t": 6.4
+    },
+    {
+      "n": 2,
+      "title": "Tandai pekerjaan selesai",
+      "instruction": "Ketuk **Tandai Selesai / Reset** pada **Ganti Oli Mesin Sintetik**. Dialog menjelaskan interval akan direset dan dicatat ke riwayat.",
+      "image": "step-02.png",
+      "t": 8.3
+    },
+    {
+      "n": 3,
+      "title": "Konfirmasi",
+      "instruction": "Ketuk **Tandai Selesai**. Status jadwal kembali **Aman** dan odometer kendaraan diperbarui.",
+      "image": "step-03.png",
+      "t": 11
+    },
+    {
+      "n": 4,
+      "title": "Lihat riwayat servis",
+      "instruction": "Buka sub-tab **Riwayat**: catatan servis baru tersimpan lengkap dengan tanggal, odometer, dan biaya.",
+      "image": "step-04.png",
+      "t": 12.1
+    }
+  ]
+}

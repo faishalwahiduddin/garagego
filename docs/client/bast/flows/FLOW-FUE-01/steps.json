@@ -1,0 +1,32 @@
+{
+  "flow": "FLOW-FUE-01",
+  "title": "Mencatat pengisian BBM dan melihat efisiensi",
+  "summary": "Pengguna mencatat pengisian BBM; GarageGo menghitung km/L dan biaya per km dari pengisian berurutan.",
+  "role": "ROL-001",
+  "tc": "FLOW-FUE-01-T01",
+  "baseURL": "flutter build web (lokal)",
+  "video": "video.mp4",
+  "steps": [
+    {
+      "n": 1,
+      "title": "Buka tab BBM",
+      "instruction": "Ketuk tab **BBM**. Ringkasan menampilkan **Rata-Rata Efisiensi**, **Biaya per KM**, dan riwayat pengisian.",
+      "image": "step-01.png",
+      "t": 7.5
+    },
+    {
+      "n": 2,
+      "title": "Isi pengisian",
+      "instruction": "Ketuk **Catat Pengisian BBM**, lalu isi **Kilometer Odometer**, **Volume** (0–500 L), dan **Harga Satuan**. Biarkan **Isi Tangki Penuh** aktif agar km/L akurat.",
+      "image": "step-02.png",
+      "t": 17.8
+    },
+    {
+      "n": 3,
+      "title": "Simpan dan baca efisiensi",
+      "instruction": "Ketuk **Simpan**. Catatan baru masuk ke riwayat dan km/L serta Rp/km dihitung ulang otomatis.",
+      "image": "step-03.png",
+      "t": 20.1
+    }
+  ]
+}

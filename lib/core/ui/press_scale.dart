@@ -58,12 +58,17 @@ class PressScale extends StatefulWidget {
 
 class _PressScaleState extends State<PressScale>
     with SingleTickerProviderStateMixin {
-  late final AnimationController _controller = AnimationController.unbounded(
-    vsync: this,
-    value: 1.0,
-  );
+  late final AnimationController _controller;
 
   bool _pointerInside = false;
+
+  @override
+  void initState() {
+    super.initState();
+    // Created eagerly: a lazy initialiser would first run inside dispose()
+    // when enabled == false (build never reads it).
+    _controller = AnimationController.unbounded(vsync: this, value: 1.0);
+  }
 
   @override
   void dispose() {

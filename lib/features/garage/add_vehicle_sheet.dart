@@ -381,7 +381,7 @@ class _AddVehicleSheetState extends ConsumerState<AddVehicleSheet> {
                 style: TextStyle(
                   fontSize: 13,
                   fontWeight: isSelected ? FontWeight.w700 : FontWeight.w500,
-                  color: isSelected ? AppColors.primary : context.textPrimary,
+                  color: isSelected ? context.readable(AppColors.primary) : context.textPrimary,
                 ),
               ),
             ],

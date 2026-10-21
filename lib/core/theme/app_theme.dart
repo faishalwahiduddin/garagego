@@ -51,7 +51,7 @@ class AppTheme {
             return const TextStyle(
               fontSize: 11,
               fontWeight: FontWeight.w700,
-              color: AppColors.primary,
+              color: AppColors.primaryDark,
             );
           }
           return const TextStyle(
@@ -62,7 +62,7 @@ class AppTheme {
         }),
         iconTheme: WidgetStateProperty.resolveWith((states) {
           if (states.contains(WidgetState.selected)) {
-            return const IconThemeData(color: AppColors.primary, size: 22);
+            return const IconThemeData(color: AppColors.primaryDark, size: 22);
           }
           return const IconThemeData(color: AppColors.textLightSecondary, size: 22);
         }),
@@ -114,6 +114,9 @@ class AppTheme {
           borderSide: const BorderSide(color: AppColors.primary, width: 1.5),
         ),
       ),
+      textButtonTheme: TextButtonThemeData(
+        style: TextButton.styleFrom(foregroundColor: AppColors.primaryDark),
+      ),
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
           backgroundColor: AppColors.primary,
@@ -126,7 +129,7 @@ class AppTheme {
       ),
       chipTheme: ChipThemeData(
         backgroundColor: AppColors.bgLightElevated,
-        selectedColor: AppColors.primary,
+        selectedColor: AppColors.primaryDark,
         labelStyle: const TextStyle(fontSize: 12, color: AppColors.textLightPrimary),
         secondaryLabelStyle: const TextStyle(fontSize: 12, color: Colors.white, fontWeight: FontWeight.w600),
         shape: RoundedRectangleBorder(
@@ -262,7 +265,7 @@ class AppTheme {
       ),
       chipTheme: ChipThemeData(
         backgroundColor: AppColors.bgSurface,
-        selectedColor: AppColors.primary,
+        selectedColor: AppColors.primaryDark,
         labelStyle: const TextStyle(fontSize: 12, color: AppColors.textDarkPrimary),
         secondaryLabelStyle: const TextStyle(fontSize: 12, color: Colors.white, fontWeight: FontWeight.w600),
         shape: RoundedRectangleBorder(

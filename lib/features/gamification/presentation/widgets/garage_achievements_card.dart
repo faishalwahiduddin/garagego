@@ -59,10 +59,10 @@ class GarageAchievementsCard extends ConsumerWidget {
                             ),
                             child: Text(
                               'LVL ${state.currentLevel.level}',
-                              style: const TextStyle(
+                              style: TextStyle(
                                 fontSize: 10,
                                 fontWeight: FontWeight.w800,
-                                color: AppColors.primary,
+                                color: context.readable(AppColors.primary),
                                 letterSpacing: 0.5,
                               ),
                             ),
@@ -365,7 +365,7 @@ class GarageAchievementsCard extends ConsumerWidget {
                       style: TextStyle(
                         fontSize: 12,
                         fontWeight: FontWeight.w700,
-                        color: unlocked ? AppColors.success : context.textMuted,
+                        color: unlocked ? context.readable(AppColors.success) : context.textMuted,
                       ),
                     ),
                   ],

@@ -124,7 +124,7 @@ class _InspectionSheetState extends ConsumerState<InspectionSheet> {
                       style: TextStyle(
                         fontSize: 14,
                         fontWeight: FontWeight.w900,
-                        color: percentage == 1.0 ? AppColors.success : (percentage >= 0.7 ? AppColors.warning : AppColors.danger),
+                        color: percentage == 1.0 ? context.readable(AppColors.success) : (percentage >= 0.7 ? context.readable(AppColors.warning) : context.readable(AppColors.danger)),
                       ),
                     ),
                   ],

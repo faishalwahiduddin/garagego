@@ -341,7 +341,7 @@ class GarageDashboardScreen extends ConsumerWidget {
         child: PressScale(
           scale: 0.95,
           child: FloatingActionButton.extended(
-            backgroundColor: AppColors.primary,
+            backgroundColor: context.brandFill,
             elevation: 3,
             highlightElevation: 5,
             icon: const Icon(Icons.bolt, color: Colors.white, size: 20),
@@ -445,11 +445,11 @@ class GarageDashboardScreen extends ConsumerWidget {
                                 padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
                                 decoration: BoxDecoration(
                                   color: isSelected
-                                      ? AppColors.primary
+                                      ? context.brandFill
                                       : context.surfaceBg,
                                   borderRadius: BorderRadius.circular(20),
                                   border: Border.all(
-                                    color: isSelected ? AppColors.primary : context.borderColor,
+                                    color: isSelected ? context.brandFill : context.borderColor,
                                     width: 1,
                                   ),
                                 ),
@@ -476,7 +476,7 @@ class GarageDashboardScreen extends ConsumerWidget {
                                       padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
                                       decoration: BoxDecoration(
                                         color: isSelected
-                                            ? Colors.white.withValues(alpha: 0.2)
+                                            ? Colors.black.withValues(alpha: 0.2)
                                             : context.cardBg,
                                         borderRadius: BorderRadius.circular(6),
                                       ),
@@ -612,7 +612,7 @@ class GarageDashboardScreen extends ConsumerWidget {
     VehicleHealthResult? health,
   ) {
     final score = health?.score ?? 100;
-    final color = Color(health?.statusColor ?? 0xFF10B981);
+    final color = context.readable(Color(health?.statusColor ?? 0xFF10B981));
     final isCar = v.type == VehicleType.car;
     final vehicleColor = isCar ? AppColors.carColor : AppColors.motoColor;
 
@@ -736,9 +736,9 @@ class GarageDashboardScreen extends ConsumerWidget {
                     Expanded(
                       child: Text(
                         health.warnings.first,
-                        style: const TextStyle(
+                        style: TextStyle(
                           fontSize: 11,
-                          color: AppColors.danger,
+                          color: context.readable(AppColors.danger),
                           fontWeight: FontWeight.w600,
                         ),
                         maxLines: 2,
@@ -758,7 +758,7 @@ class GarageDashboardScreen extends ConsumerWidget {
                   child: TextButton.icon(
                     style: TextButton.styleFrom(
                       visualDensity: VisualDensity.compact,
-                      foregroundColor: AppColors.primary,
+                      foregroundColor: context.readable(AppColors.primary),
                     ),
                     icon: const Icon(Icons.share_rounded, size: 15),
                     label: const Text(
@@ -786,7 +786,7 @@ class GarageDashboardScreen extends ConsumerWidget {
     final remainingOilKm = v.kmUntilNextOilChange;
     final isOilOverdue = remainingOilKm < 0;
     final progress = (1.0 - (remainingOilKm / v.oilIntervalKm)).clamp(0.0, 1.0);
-    final statusColor = isOilOverdue ? AppColors.danger : (remainingOilKm <= 1000 ? AppColors.warning : AppColors.accent);
+    final statusColor = isOilOverdue ? context.readable(AppColors.danger) : (remainingOilKm <= 1000 ? context.readable(AppColors.warning) : context.readable(AppColors.accent));
 
     return Card(
       child: Padding(
@@ -830,7 +830,7 @@ class GarageDashboardScreen extends ConsumerWidget {
                     icon: const Icon(Icons.refresh, size: 14, color: AppColors.primary),
                     label: Text(
                       l10n.resetOli,
-                      style: const TextStyle(fontSize: 12, color: AppColors.primary, fontWeight: FontWeight.w700),
+                      style: TextStyle(fontSize: 12, color: context.readable(AppColors.primary), fontWeight: FontWeight.w700),
                     ),
                   ),
                 ),
@@ -887,8 +887,8 @@ class GarageDashboardScreen extends ConsumerWidget {
 
   Widget _buildTaxReminderCard(BuildContext context, Vehicle v) {
     final l10n = AppLocalizations.of(context)!;
-    final pkbColor = v.isTaxClose ? AppColors.danger : AppColors.success;
-    final plateColor = v.isPlateClose ? AppColors.warning : context.textPrimary;
+    final pkbColor = v.isTaxClose ? context.readable(AppColors.danger) : context.readable(AppColors.success);
+    final plateColor = v.isPlateClose ? context.readable(AppColors.warning) : context.textPrimary;
 
     return Card(
       child: Padding(
@@ -930,7 +930,7 @@ class GarageDashboardScreen extends ConsumerWidget {
                       children: [
                         Text(
                           l10n.bukaBrankas,
-                          style: const TextStyle(fontSize: 12, color: AppColors.primary, fontWeight: FontWeight.w600),
+                          style: TextStyle(fontSize: 12, color: context.readable(AppColors.primary), fontWeight: FontWeight.w600),
                         ),
                         const SizedBox(width: 2),
                         const Icon(Icons.chevron_right, size: 16, color: AppColors.primary),
@@ -1125,7 +1125,7 @@ class GarageDashboardScreen extends ConsumerWidget {
                       children: [
                         Text(
                           l10n.lihatSemua,
-                          style: const TextStyle(fontSize: 12, color: AppColors.primary, fontWeight: FontWeight.w600),
+                          style: TextStyle(fontSize: 12, color: context.readable(AppColors.primary), fontWeight: FontWeight.w600),
                         ),
                         const SizedBox(width: 2),
                         const Icon(Icons.chevron_right, size: 16, color: AppColors.primary),
@@ -1148,9 +1148,9 @@ class GarageDashboardScreen extends ConsumerWidget {
               ...nearest.map((s) {
                 final urgency = s.urgency(v.currentOdometer);
                 final km = s.kmRemaining(v.currentOdometer);
-                final c = urgency == ScheduleUrgency.overdue
+                final c = context.readable(urgency == ScheduleUrgency.overdue
                     ? AppColors.danger
-                    : (urgency == ScheduleUrgency.dueSoon ? AppColors.warning : AppColors.success);
+                    : (urgency == ScheduleUrgency.dueSoon ? AppColors.warning : AppColors.success));
 
                 return Padding(
                   padding: const EdgeInsets.only(bottom: 8),
@@ -1263,7 +1263,7 @@ class GarageDashboardScreen extends ConsumerWidget {
                       children: [
                         Text(
                           l10n.riwayatLengkap,
-                          style: const TextStyle(fontSize: 12, color: AppColors.primary, fontWeight: FontWeight.w600),
+                          style: TextStyle(fontSize: 12, color: context.readable(AppColors.primary), fontWeight: FontWeight.w600),
                         ),
                         const SizedBox(width: 2),
                         const Icon(Icons.chevron_right, size: 16, color: AppColors.primary),
@@ -1328,10 +1328,10 @@ class GarageDashboardScreen extends ConsumerWidget {
                             ),
                             Text(
                               currency.format(log.cost),
-                              style: const TextStyle(
+                              style: TextStyle(
                                 fontSize: 13,
                                 fontWeight: FontWeight.w700,
-                                color: AppColors.primary,
+                                color: context.readable(AppColors.primary),
                               ),
                             ),
                           ],

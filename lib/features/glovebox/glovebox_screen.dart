@@ -145,7 +145,7 @@ class GloveboxScreen extends ConsumerWidget {
                                             style: TextStyle(
                                               fontSize: 14,
                                               fontWeight: FontWeight.w800,
-                                              color: active.isTaxClose ? AppColors.danger : AppColors.success,
+                                              color: active.isTaxClose ? context.readable(AppColors.danger) : context.readable(AppColors.success),
                                             ),
                                           ),
                                         ],
@@ -174,7 +174,7 @@ class GloveboxScreen extends ConsumerWidget {
                                             style: TextStyle(
                                               fontSize: 14,
                                               fontWeight: FontWeight.w800,
-                                              color: active.isPlateClose ? AppColors.warning : context.textPrimary,
+                                              color: active.isPlateClose ? context.readable(AppColors.warning) : context.textPrimary,
                                             ),
                                           ),
                                         ],
@@ -259,13 +259,13 @@ class GloveboxScreen extends ConsumerWidget {
 
                           final isId = Localizations.localeOf(context).languageCode == 'id';
                           if (doc.isExpired) {
-                            statusColor = AppColors.danger;
+                            statusColor = context.readable(AppColors.danger);
                             statusText = isId ? 'Kedaluwarsa ${-days} hari lalu' : 'Expired ${-days} days ago';
                           } else if (doc.isDueSoon) {
-                            statusColor = AppColors.warning;
+                            statusColor = context.readable(AppColors.warning);
                             statusText = isId ? 'Jatuh tempo $days hari lagi' : 'Due in $days days';
                           } else {
-                            statusColor = AppColors.success;
+                            statusColor = context.readable(AppColors.success);
                             statusText = isId ? '$days hari lagi' : '$days days remaining';
                           }
 
@@ -356,10 +356,10 @@ class GloveboxScreen extends ConsumerWidget {
                                         if (doc.cost > 0)
                                           Text(
                                             currency.format(doc.cost),
-                                            style: const TextStyle(
+                                            style: TextStyle(
                                               fontSize: 13,
                                               fontWeight: FontWeight.w800,
-                                              color: AppColors.primary,
+                                              color: context.readable(AppColors.primary),
                                             ),
                                           ),
                                       ],
@@ -392,7 +392,7 @@ class GloveboxScreen extends ConsumerWidget {
                                           icon: const Icon(Icons.edit_outlined, size: 15, color: AppColors.primary),
                                           label: Text(
                                             l10n.ubah,
-                                            style: const TextStyle(fontSize: 12, color: AppColors.primary, fontWeight: FontWeight.w700),
+                                            style: TextStyle(fontSize: 12, color: context.readable(AppColors.primary), fontWeight: FontWeight.w700),
                                           ),
                                         ),
                                         const SizedBox(width: 8),

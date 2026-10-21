@@ -21,7 +21,7 @@ class AppColors {
   static const Color border = Color(0xFF263348); // Subtle dark border
   static const Color textDarkPrimary = Color(0xFFF8FAFC);
   static const Color textDarkSecondary = Color(0xFF94A3B8);
-  static const Color textDarkMuted = Color(0xFF64748B);
+  static const Color textDarkMuted = Color(0xFF8090A6); // >= 4.5:1 on bgDark/bgSurface/bgCard
 
   // Light Theme Surfaces
   static const Color bgLight = Color(0xFFF8FAFC);
@@ -30,7 +30,7 @@ class AppColors {
   static const Color borderLight = Color(0xFFE2E8F0);
   static const Color textLightPrimary = Color(0xFF0F172A);
   static const Color textLightSecondary = Color(0xFF475569);
-  static const Color textLightMuted = Color(0xFF94A3B8);
+  static const Color textLightMuted = Color(0xFF56657A); // >= 4.5:1 on white/bgLight/bgLightElevated
 
   // Vehicle Type Colors
   static const Color carColor = Color(0xFF0284C7);
@@ -53,4 +53,18 @@ extension AppThemeExtension on BuildContext {
   Color get borderColor => isDark
       ? Colors.white.withValues(alpha: 0.10)
       : AppColors.textLightPrimary.withValues(alpha: 0.08);
+
+  /// Brand/status colours as text. The 500-600 weights fall below 4.5:1 on
+  /// both surfaces (dark: lighter 400 weights; light: darker 700-800 weights).
+  Color readable(Color c) {
+    if (c == AppColors.primary) return isDark ? const Color(0xFFFB923C) : const Color(0xFF9A3412); // Orange 400 / 800
+    if (c == AppColors.accent) return isDark ? AppColors.accentLight : const Color(0xFF0369A1); // Sky 700
+    if (c == AppColors.danger) return isDark ? const Color(0xFFF87171) : const Color(0xFFB91C1C); // Red 400 / 700
+    if (c == AppColors.warning) return isDark ? c : const Color(0xFF92400E); // Amber 800
+    if (c == AppColors.success) return isDark ? c : const Color(0xFF065F46); // Emerald 800
+    return c;
+  }
+
+  /// Fill behind white text: Orange 700 keeps white at >= 5:1 in both themes.
+  Color get brandFill => AppColors.primaryDark;
 }

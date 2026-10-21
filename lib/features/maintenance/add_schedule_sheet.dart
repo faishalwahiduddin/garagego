@@ -111,7 +111,7 @@ class _AddScheduleSheetState extends ConsumerState<AddScheduleSheet> {
               const SizedBox(height: 6),
               Text(
                 AppLocalizations.of(context)!.dualTriggerReminderAlarmAkanAk,
-                style: const TextStyle(fontSize: 12, color: AppColors.primary, fontWeight: FontWeight.w500),
+                style: TextStyle(fontSize: 12, color: context.readable(AppColors.primary), fontWeight: FontWeight.w500),
               ),
               const SizedBox(height: 16),
 
@@ -147,7 +147,7 @@ class _AddScheduleSheetState extends ConsumerState<AddScheduleSheet> {
                       color: isSelected ? Colors.white : context.textSecondary,
                     ),
                     selected: isSelected,
-                    selectedColor: AppColors.primary,
+                    selectedColor: AppColors.primaryDark,
                     backgroundColor: context.surfaceBg,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(16),

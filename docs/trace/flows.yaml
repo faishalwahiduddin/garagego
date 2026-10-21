@@ -33,6 +33,14 @@ flows:
         kind: corner
         layer: unit
         title: "id kendaraan aktif yang hilang di penyimpanan jatuh ke kendaraan pertama"
+      - id: FLOW-GAR-01-T06
+        kind: corner
+        layer: unit
+        title: "tombol Aksi Cepat dan Simpan ke Garasi tidak tertutup bilah navigasi"
+      - id: FLOW-GAR-01-T07
+        kind: corner
+        layer: unit
+        title: "PressScale nonaktif dibuang tanpa error (controller dibuat di initState)"
 
   - id: FLOW-SRV-01
     title: "Mencatat servis dan memantau jadwal perawatan"
@@ -164,3 +172,11 @@ flows:
         kind: corner
         layer: unit
         title: "data kendaraan korup di penyimpanan dibaca sebagai garasi kosong; tema korup = sistem"
+      - id: FLOW-SET-01-T05
+        kind: corner
+        layer: unit
+        title: "tema gelap: semua teks di 5 tab terbaca (kontras >= 4.5)"
+      - id: FLOW-SET-01-T06
+        kind: corner
+        layer: unit
+        title: "tema terang: semua teks di 5 tab terbaca (kontras >= 4.5)"

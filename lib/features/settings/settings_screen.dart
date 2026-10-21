@@ -272,7 +272,7 @@ class SettingsScreen extends ConsumerWidget {
                       SegmentedButton<ThemeMode>(
                         style: SegmentedButton.styleFrom(
                           visualDensity: VisualDensity.compact,
-                          selectedBackgroundColor: AppColors.primary,
+                          selectedBackgroundColor: AppColors.primaryDark,
                           selectedForegroundColor: Colors.white,
                           foregroundColor: context.textSecondary,
                           backgroundColor: context.surfaceBg,
@@ -470,7 +470,7 @@ class SettingsScreen extends ConsumerWidget {
               ),
               title: Text(
                 l10n.resetDataGarasi,
-                style: const TextStyle(color: AppColors.danger, fontSize: 14, fontWeight: FontWeight.w700),
+                style: TextStyle(color: context.readable(AppColors.danger), fontSize: 14, fontWeight: FontWeight.w700),
               ),
               subtitle: Text(
                 l10n.menghapusSemuaLogServisBbmDanR,
@@ -572,10 +572,10 @@ class SettingsScreen extends ConsumerWidget {
                         ),
                         child: Text(
                           l10n.licenseUsageBadgeText,
-                          style: const TextStyle(
+                          style: TextStyle(
                             fontSize: 11,
                             fontWeight: FontWeight.bold,
-                            color: AppColors.primary,
+                            color: context.readable(AppColors.primary),
                           ),
                         ),
                       ),
@@ -644,7 +644,7 @@ class SettingsScreen extends ConsumerWidget {
                         title: Text(
                           autoLabel,
                           style: TextStyle(
-                            color: current == null ? AppColors.primary : context.textPrimary,
+                            color: current == null ? context.readable(AppColors.primary) : context.textPrimary,
                             fontWeight: current == null ? FontWeight.w700 : FontWeight.w500,
                           ),
                         ),
@@ -669,7 +669,7 @@ class SettingsScreen extends ConsumerWidget {
                                 ? '${zone.iana} (${AppTimeZone.offsetLabel(zone.iana, now)})'
                                 : '${zone.iana} (${zone.shortLabel}, ${AppTimeZone.offsetLabel(zone.iana, now)})',
                             style: TextStyle(
-                              color: zone.iana == current ? AppColors.primary : context.textPrimary,
+                              color: zone.iana == current ? context.readable(AppColors.primary) : context.textPrimary,
                               fontWeight: zone.iana == current ? FontWeight.w700 : FontWeight.w500,
                             ),
                           ),
@@ -723,7 +723,7 @@ class SettingsScreen extends ConsumerWidget {
                       title: Text(
                         name,
                         style: TextStyle(
-                          color: isSelected ? AppColors.primary : context.textPrimary,
+                          color: isSelected ? context.readable(AppColors.primary) : context.textPrimary,
                           fontWeight: isSelected ? FontWeight.w700 : FontWeight.w500,
                         ),
                       ),

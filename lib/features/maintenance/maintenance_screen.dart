@@ -335,7 +335,7 @@ class _MaintenanceScreenState extends ConsumerState<MaintenanceScreen> with Sing
               tabAlignment: TabAlignment.start,
               indicatorColor: AppColors.primary,
               indicatorWeight: 3,
-              labelColor: AppColors.primary,
+              labelColor: context.readable(AppColors.primary),
               unselectedLabelColor: context.textSecondary,
               labelStyle: const TextStyle(fontSize: 13, fontWeight: FontWeight.w700),
               unselectedLabelStyle: const TextStyle(fontSize: 13, fontWeight: FontWeight.w500),
@@ -434,7 +434,7 @@ class _MaintenanceScreenState extends ConsumerState<MaintenanceScreen> with Sing
                         color: isSelected ? Colors.white : context.textSecondary,
                       ),
                       selected: isSelected,
-                      selectedColor: AppColors.primary,
+                      selectedColor: AppColors.primaryDark,
                       backgroundColor: context.surfaceBg,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(16),
@@ -572,11 +572,11 @@ class _MaintenanceScreenState extends ConsumerState<MaintenanceScreen> with Sing
 
                     Color urgencyColor;
                     if (urgency == ScheduleUrgency.overdue) {
-                      urgencyColor = AppColors.danger;
+                      urgencyColor = context.readable(AppColors.danger);
                     } else if (urgency == ScheduleUrgency.dueSoon) {
-                      urgencyColor = AppColors.warning;
+                      urgencyColor = context.readable(AppColors.warning);
                     } else {
-                      urgencyColor = AppColors.success;
+                      urgencyColor = context.readable(AppColors.success);
                     }
 
                     return Padding(
@@ -691,7 +691,7 @@ class _MaintenanceScreenState extends ConsumerState<MaintenanceScreen> with Sing
                                       icon: const Icon(Icons.check_circle_outline, size: 16, color: AppColors.accent),
                                       label: Text(
                                         l10n.tandaiSelesaiReset,
-                                        style: const TextStyle(color: AppColors.accent, fontSize: 12, fontWeight: FontWeight.w700),
+                                        style: TextStyle(color: context.readable(AppColors.accent), fontSize: 12, fontWeight: FontWeight.w700),
                                       ),
                                     ),
                                   ),
@@ -808,7 +808,7 @@ class _MaintenanceScreenState extends ConsumerState<MaintenanceScreen> with Sing
                                       ),
                                       child: Text(
                                         log.category,
-                                        style: const TextStyle(fontSize: 11, fontWeight: FontWeight.w700, color: AppColors.primary),
+                                        style: TextStyle(fontSize: 11, fontWeight: FontWeight.w700, color: context.readable(AppColors.primary)),
                                       ),
                                     ),
                                     if (log.workshop.isNotEmpty) ...[
@@ -862,10 +862,10 @@ class _MaintenanceScreenState extends ConsumerState<MaintenanceScreen> with Sing
                                   Text(l10n.totalBiayaBengkel, style: TextStyle(fontSize: 12, color: context.textSecondary)),
                                   Text(
                                     currency.format(log.cost),
-                                    style: const TextStyle(
+                                    style: TextStyle(
                                       fontSize: 15,
                                       fontWeight: FontWeight.w800,
-                                      color: AppColors.primary,
+                                      color: context.readable(AppColors.primary),
                                     ),
                                   ),
                                 ],
@@ -981,11 +981,11 @@ class _MaintenanceScreenState extends ConsumerState<MaintenanceScreen> with Sing
 
                     Color badgeColor;
                     if (pct >= 90) {
-                      badgeColor = AppColors.success;
+                      badgeColor = context.readable(AppColors.success);
                     } else if (pct >= 70) {
-                      badgeColor = AppColors.warning;
+                      badgeColor = context.readable(AppColors.warning);
                     } else {
-                      badgeColor = AppColors.danger;
+                      badgeColor = context.readable(AppColors.danger);
                     }
 
                     return Padding(

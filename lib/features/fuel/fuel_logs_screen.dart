@@ -176,10 +176,10 @@ class FuelLogsScreen extends ConsumerWidget {
                               ),
                               Text(
                                 'Rp ${NumberFormat('#,###', 'id_ID').format(totalCost.round())}',
-                                style: const TextStyle(
+                                style: TextStyle(
                                   fontSize: 14,
                                   fontWeight: FontWeight.w800,
-                                  color: AppColors.primary,
+                                  color: context.readable(AppColors.primary),
                                 ),
                               ),
                             ],
@@ -483,7 +483,7 @@ class FuelLogsScreen extends ConsumerWidget {
                                           ),
                                           child: Text(
                                             '${log.liters.toStringAsFixed(1)} L',
-                                            style: const TextStyle(fontSize: 11, fontWeight: FontWeight.w800, color: AppColors.warning),
+                                            style: TextStyle(fontSize: 11, fontWeight: FontWeight.w800, color: context.readable(AppColors.warning)),
                                           ),
                                         ),
                                         const SizedBox(width: 8),
@@ -528,10 +528,10 @@ class FuelLogsScreen extends ConsumerWidget {
                                         ),
                                         Text(
                                           currency.format(log.totalCost),
-                                          style: const TextStyle(
+                                          style: TextStyle(
                                             fontSize: 15,
                                             fontWeight: FontWeight.w800,
-                                            color: AppColors.primary,
+                                            color: context.readable(AppColors.primary),
                                           ),
                                         ),
                                       ],
@@ -553,10 +553,10 @@ class FuelLogsScreen extends ConsumerWidget {
                                             ),
                                             child: Text(
                                               '${pt.kmPerLiter.toStringAsFixed(1)} km/L',
-                                              style: const TextStyle(
+                                              style: TextStyle(
                                                 fontSize: 11,
                                                 fontWeight: FontWeight.w800,
-                                                color: AppColors.success,
+                                                color: context.readable(AppColors.success),
                                               ),
                                             ),
                                           ),

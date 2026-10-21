@@ -12,14 +12,14 @@
       "title": "Buka Brankas",
       "instruction": "Ketuk tab **Brankas**. Setiap dokumen menampilkan sisa hari, tanggal **Masa Berlaku**, dan biaya.",
       "image": "step-01.png",
-      "t": 7.8
+      "t": 5.1
     },
     {
       "n": 2,
       "title": "Tambah dokumen",
       "instruction": "Ketuk **Tambah Dokumen** untuk mencatat uji emisi, SIM, BPKB, atau dokumen lain beserta jatuh temponya.",
       "image": "step-02.png",
-      "t": 9.7
+      "t": 6.9
     }
   ]
 }

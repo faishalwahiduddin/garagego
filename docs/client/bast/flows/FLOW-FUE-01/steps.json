@@ -12,21 +12,21 @@
       "title": "Buka tab BBM",
       "instruction": "Ketuk tab **BBM**. Ringkasan menampilkan **Rata-Rata Efisiensi**, **Biaya per KM**, dan riwayat pengisian.",
       "image": "step-01.png",
-      "t": 6.7
+      "t": 4.9
     },
     {
       "n": 2,
       "title": "Isi pengisian",
       "instruction": "Ketuk **Catat Pengisian BBM**, lalu isi **Kilometer Odometer**, **Volume** (0–500 L), dan **Harga Satuan**. Biarkan **Isi Tangki Penuh** aktif agar km/L akurat.",
       "image": "step-02.png",
-      "t": 25.4
+      "t": 10.7
     },
     {
       "n": 3,
       "title": "Simpan dan baca efisiensi",
       "instruction": "Ketuk **Simpan**. Catatan baru masuk ke riwayat dan km/L serta Rp/km dihitung ulang otomatis.",
       "image": "step-03.png",
-      "t": 28.3
+      "t": 12.9
     }
   ]
 }

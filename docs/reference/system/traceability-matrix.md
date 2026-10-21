@@ -25,10 +25,10 @@ Satu graph untuk seluruh artefak (standar: `~/projects/docs/standards.md` §TRAC
 | US | 8 |
 | PG | 6 |
 | FN | 5 |
-| TC | 26 |
-| TC_with_evidence | 26 |
+| TC | 30 |
+| TC_with_evidence | 30 |
 | BAST | 6 |
-| TC per kind | positive 7 · negative 6 · edge 6 · corner 7 |
+| TC per kind | positive 7 · negative 6 · edge 6 · corner 11 |
 
 > ✅ Graph utuh: 0 orphan, 0 referensi menggantung, 0 duplikat, setiap flow punya 4 jenis case.
 
@@ -63,12 +63,12 @@ Satu graph untuk seluruh artefak (standar: `~/projects/docs/standards.md` §TRAC
 
 | Flow | Judul | Role | Modul | Epic · Story | Kebutuhan | Case (+ − edge corner) | Bukti otomatis | BAST |
 |---|---|---|---|---|---|---|---|---|
-| FLOW-GAR-01 | Menambah kendaraan dan memilih kendaraan aktif | ROL-001 | MOD-001 | EP-001, US-001, USR-GAR-001, USR-GAR-002, USR-GAR-101, USR-GAR-103 | FR-001, FR-002 | 5 (1 · 1 · 1 · 2) | 5/5 | [BAST-FLOW-GAR-01](../../client/bast/guide/FLOW-GAR-01.html) |
+| FLOW-GAR-01 | Menambah kendaraan dan memilih kendaraan aktif | ROL-001 | MOD-001 | EP-001, US-001, USR-GAR-001, USR-GAR-002, USR-GAR-101, USR-GAR-103 | FR-001, FR-002 | 7 (1 · 1 · 1 · 4) | 7/7 | [BAST-FLOW-GAR-01](../../client/bast/guide/FLOW-GAR-01.html) |
 | FLOW-SRV-01 | Mencatat servis dan memantau jadwal perawatan | ROL-001 | MOD-002 | EP-002, US-002, US-005, USR-GAR-101, USR-GAR-103, USR-SRV-001, USR-SRV-101 | FR-003, FR-004 | 5 (2 · 1 · 1 · 1) | 5/5 | [BAST-FLOW-SRV-01](../../client/bast/guide/FLOW-SRV-01.html) |
 | FLOW-FUE-01 | Mencatat pengisian BBM dan melihat efisiensi | ROL-001 | MOD-003 | EP-002, US-003, USR-FUE-001, USR-GAR-102, USR-GAR-103 | FR-005 | 4 (1 · 1 · 1 · 1) | 4/4 | [BAST-FLOW-FUE-01](../../client/bast/guide/FLOW-FUE-01.html) |
 | FLOW-DOC-01 | Memantau pajak dan dokumen kendaraan | ROL-001 | MOD-004 | EP-002, US-004, USR-DOC-001 | FR-006 | 4 (1 · 1 · 1 · 1) | 4/4 | [BAST-FLOW-DOC-01](../../client/bast/guide/FLOW-DOC-01.html) |
 | FLOW-TCO-01 | Melihat total biaya dan skor kesehatan kendaraan | ROL-001 | MOD-001 | EP-001, US-006, USR-GAR-002, USR-GAR-102 | FR-007 | 4 (1 · 1 · 1 · 1) | 4/4 | [BAST-FLOW-TCO-01](../../client/bast/guide/FLOW-TCO-01.html) |
-| FLOW-SET-01 | Mencadangkan data dan mengatur preferensi | ROL-001 | MOD-005 | EP-003, US-007, US-008, USR-SET-001, USR-SET-101 | FR-008, FR-009, NFR-001 | 4 (1 · 1 · 1 · 1) | 4/4 | [BAST-FLOW-SET-01](../../client/bast/guide/FLOW-SET-01.html) |
+| FLOW-SET-01 | Mencadangkan data dan mengatur preferensi | ROL-001 | MOD-005 | EP-003, US-007, US-008, USR-SET-001, USR-SET-101 | FR-008, FR-009, NFR-001 | 6 (1 · 1 · 1 · 3) | 6/6 | [BAST-FLOW-SET-01](../../client/bast/guide/FLOW-SET-01.html) |
 
 ## 4. Test case
 
@@ -79,6 +79,8 @@ Satu graph untuk seluruh artefak (standar: `~/projects/docs/standards.md` §TRAC
 | FLOW-GAR-01-T03 | FLOW-GAR-01 | edge | unit | batas panjang: nama 50 dan pelat 15 karakter diterima, lebihnya ditolak | `test/trace/trace_cases_test.dart` | pass |
 | FLOW-GAR-01-T04 | FLOW-GAR-01 | corner | unit | menghapus kendaraan aktif memindahkan pilihan ke kendaraan tersisa | `test/trace/trace_cases_test.dart` | pass |
 | FLOW-GAR-01-T05 | FLOW-GAR-01 | corner | unit | id kendaraan aktif yang hilang di penyimpanan jatuh ke kendaraan pertama | `test/trace/trace_cases_test.dart` | pass |
+| FLOW-GAR-01-T06 | FLOW-GAR-01 | corner | unit | tombol Aksi Cepat dan Simpan ke Garasi tidak tertutup bilah navigasi | `test/trace/ui_guard_test.dart` | pass |
+| FLOW-GAR-01-T07 | FLOW-GAR-01 | corner | unit | PressScale nonaktif dibuang tanpa error (controller dibuat di initState) | `test/trace/press_scale_tap_test.dart` | pass |
 | FLOW-SRV-01-T01 | FLOW-SRV-01 | positive | unit | tandai jadwal selesai membuat log servis dan menaikkan odometer | `test/trace/trace_cases_test.dart` | pass |
 | FLOW-SRV-01-T02 | FLOW-SRV-01 | negative | unit | odometer mundur dari catatan sebelumnya dan biaya negatif ditolak | `test/trace/trace_cases_test.dart` | pass |
 | FLOW-SRV-01-T03 | FLOW-SRV-01 | edge | unit | batas urgensi: sisa 0 km terlewat, sisa 15% interval segera, 2.000.000 km maksimum | `test/trace/trace_cases_test.dart` | pass |
@@ -100,6 +102,8 @@ Satu graph untuk seluruh artefak (standar: `~/projects/docs/standards.md` §TRAC
 | FLOW-SET-01-T02 | FLOW-SET-01 | negative | unit | berkas JSON mentah ditolak dan data lama tetap utuh | `test/trace/trace_cases_test.dart` | pass |
 | FLOW-SET-01-T03 | FLOW-SET-01 | edge | unit | ekspor CSV kendaraan tanpa log hanya berisi baris judul | `test/trace/trace_cases_test.dart` | pass |
 | FLOW-SET-01-T04 | FLOW-SET-01 | corner | unit | data kendaraan korup di penyimpanan dibaca sebagai garasi kosong; tema korup = sistem | `test/trace/trace_cases_test.dart` | pass |
+| FLOW-SET-01-T05 | FLOW-SET-01 | corner | unit | tema gelap: semua teks di 5 tab terbaca (kontras >= 4.5) | `test/trace/ui_guard_test.dart` | pass |
+| FLOW-SET-01-T06 | FLOW-SET-01 | corner | unit | tema terang: semua teks di 5 tab terbaca (kontras >= 4.5) | `test/trace/ui_guard_test.dart` | pass |
 
 ## Halaman
 

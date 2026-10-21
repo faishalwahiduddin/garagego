@@ -12,7 +12,7 @@ generated: { by: process:trace-graph }
 
 | Total case | pass | fail | belum dijalankan | positive | negative | edge | corner |
 |---|---|---|---|---|---|---|---|
-| 26 | 26 | 0 | 0 | 7 | 6 | 6 | 7 |
+| 30 | 30 | 0 | 0 | 7 | 6 | 6 | 11 |
 
 Sumber hasil: `docs/trace/ledger.json`. Rantai lengkap: [traceability-matrix.md](../../reference/system/traceability-matrix.md).
 
@@ -20,17 +20,19 @@ Sumber hasil: `docs/trace/ledger.json`. Rantai lengkap: [traceability-matrix.md]
 
 | TC | Jenis | Lapis | Skenario | Hasil | Commit |
 |---|---|---|---|---|---|
-| FLOW-GAR-01-T01 | positive | unit | kendaraan pertama yang ditambahkan otomatis menjadi kendaraan aktif | pass | b404dfa |
+| FLOW-GAR-01-T01 | positive | unit | kendaraan pertama yang ditambahkan otomatis menjadi kendaraan aktif | pass | f53183f |
 | FLOW-GAR-01-T02 | negative | unit | nama satu huruf atau pelat kosong ditolak saat disimpan | pass | b404dfa |
 | FLOW-GAR-01-T03 | edge | unit | batas panjang: nama 50 dan pelat 15 karakter diterima, lebihnya ditolak | pass | b404dfa |
 | FLOW-GAR-01-T04 | corner | unit | menghapus kendaraan aktif memindahkan pilihan ke kendaraan tersisa | pass | b404dfa |
 | FLOW-GAR-01-T05 | corner | unit | id kendaraan aktif yang hilang di penyimpanan jatuh ke kendaraan pertama | pass | b404dfa |
+| FLOW-GAR-01-T06 | corner | unit | tombol Aksi Cepat dan Simpan ke Garasi tidak tertutup bilah navigasi | pass | f53183f |
+| FLOW-GAR-01-T07 | corner | unit | PressScale nonaktif dibuang tanpa error (controller dibuat di initState) | pass | f53183f |
 
 ## FLOW-SRV-01 — Mencatat servis dan memantau jadwal perawatan · [panduan & video BAST](../bast/guide/FLOW-SRV-01.html)
 
 | TC | Jenis | Lapis | Skenario | Hasil | Commit |
 |---|---|---|---|---|---|
-| FLOW-SRV-01-T01 | positive | unit | tandai jadwal selesai membuat log servis dan menaikkan odometer | pass | b404dfa |
+| FLOW-SRV-01-T01 | positive | unit | tandai jadwal selesai membuat log servis dan menaikkan odometer | pass | f53183f |
 | FLOW-SRV-01-T02 | negative | unit | odometer mundur dari catatan sebelumnya dan biaya negatif ditolak | pass | b404dfa |
 | FLOW-SRV-01-T03 | edge | unit | batas urgensi: sisa 0 km terlewat, sisa 15% interval segera, 2.000.000 km maksimum | pass | b404dfa |
 | FLOW-SRV-01-T04 | corner | unit | log servis dengan odometer lebih rendah tidak menurunkan odometer; jadwal melewati tahun | pass | b404dfa |
@@ -40,7 +42,7 @@ Sumber hasil: `docs/trace/ledger.json`. Rantai lengkap: [traceability-matrix.md]
 
 | TC | Jenis | Lapis | Skenario | Hasil | Commit |
 |---|---|---|---|---|---|
-| FLOW-FUE-01-T01 | positive | unit | dua pengisian berurutan menghasilkan km/L dan Rp/km | pass | b404dfa |
+| FLOW-FUE-01-T01 | positive | unit | dua pengisian berurutan menghasilkan km/L dan Rp/km | pass | f53183f |
 | FLOW-FUE-01-T02 | negative | unit | volume 0 / negatif dan di atas 500 liter ditolak | pass | b404dfa |
 | FLOW-FUE-01-T03 | edge | unit | tanpa catatan = 0, satu catatan memakai baseline 12,5 km/L | pass | b404dfa |
 | FLOW-FUE-01-T04 | corner | unit | catatan acak diurutkan per odometer; odometer sama dilewati tanpa bagi nol | pass | b404dfa |
@@ -49,7 +51,7 @@ Sumber hasil: `docs/trace/ledger.json`. Rantai lengkap: [traceability-matrix.md]
 
 | TC | Jenis | Lapis | Skenario | Hasil | Commit |
 |---|---|---|---|---|---|
-| FLOW-DOC-01-T01 | positive | unit | mobil contoh punya pengingat PKB tahunan, STNK 5 tahunan, dan asuransi | pass | b404dfa |
+| FLOW-DOC-01-T01 | positive | unit | mobil contoh punya pengingat PKB tahunan, STNK 5 tahunan, dan asuransi | pass | f53183f |
 | FLOW-DOC-01-T02 | negative | unit | dokumen lewat jatuh tempo ditandai kedaluwarsa, bukan segera | pass | b404dfa |
 | FLOW-DOC-01-T03 | edge | unit | batas pengingat: hari ini dan H-30 = segera, H-31 = aman | pass | b404dfa |
 | FLOW-DOC-01-T04 | corner | unit | tipe dokumen tak dikenal di data tersimpan menjadi Lainnya; tanpa asuransi tidak dibuat | pass | b404dfa |
@@ -58,7 +60,7 @@ Sumber hasil: `docs/trace/ledger.json`. Rantai lengkap: [traceability-matrix.md]
 
 | TC | Jenis | Lapis | Skenario | Hasil | Commit |
 |---|---|---|---|---|---|
-| FLOW-TCO-01-T01 | positive | unit | total biaya menjumlahkan BBM, servis, dan dokumen per km | pass | b404dfa |
+| FLOW-TCO-01-T01 | positive | unit | total biaya menjumlahkan BBM, servis, dan dokumen per km | pass | f53183f |
 | FLOW-TCO-01-T02 | negative | unit | garasi tanpa kendaraan menampilkan biaya nol | pass | b404dfa |
 | FLOW-TCO-01-T03 | edge | unit | odometer 0 tidak membagi nol pada biaya per km | pass | b404dfa |
 | FLOW-TCO-01-T04 | corner | unit | oli terlewat dan dokumen kedaluwarsa menurunkan skor kesehatan | pass | b404dfa |
@@ -67,7 +69,9 @@ Sumber hasil: `docs/trace/ledger.json`. Rantai lengkap: [traceability-matrix.md]
 
 | TC | Jenis | Lapis | Skenario | Hasil | Commit |
 |---|---|---|---|---|---|
-| FLOW-SET-01-T01 | positive | unit | ekspor lalu impor cadangan mengembalikan kendaraan dan log | pass | b404dfa |
+| FLOW-SET-01-T01 | positive | unit | ekspor lalu impor cadangan mengembalikan kendaraan dan log | pass | f53183f |
 | FLOW-SET-01-T02 | negative | unit | berkas JSON mentah ditolak dan data lama tetap utuh | pass | b404dfa |
 | FLOW-SET-01-T03 | edge | unit | ekspor CSV kendaraan tanpa log hanya berisi baris judul | pass | b404dfa |
 | FLOW-SET-01-T04 | corner | unit | data kendaraan korup di penyimpanan dibaca sebagai garasi kosong; tema korup = sistem | pass | b404dfa |
+| FLOW-SET-01-T05 | corner | unit | tema gelap: semua teks di 5 tab terbaca (kontras >= 4.5) | pass | f53183f |
+| FLOW-SET-01-T06 | corner | unit | tema terang: semua teks di 5 tab terbaca (kontras >= 4.5) | pass | f53183f |

@@ -12,14 +12,14 @@
     "US": 8,
     "PG": 6,
     "FN": 5,
-    "TC": 26,
+    "TC": 30,
     "TC_by_kind": {
       "positive": 7,
       "negative": 6,
       "edge": 6,
-      "corner": 7
+      "corner": 11
     },
-    "TC_with_evidence": 26,
+    "TC_with_evidence": 30,
     "BAST": 6
   },
   "nodes": [
@@ -388,6 +388,22 @@
       "source": "docs/trace/flows.yaml"
     },
     {
+      "id": "FLOW-GAR-01-T06",
+      "type": "TC",
+      "title": "tombol Aksi Cepat dan Simpan ke Garasi tidak tertutup bilah navigasi",
+      "layer": "unit",
+      "kind": "corner",
+      "source": "docs/trace/flows.yaml"
+    },
+    {
+      "id": "FLOW-GAR-01-T07",
+      "type": "TC",
+      "title": "PressScale nonaktif dibuang tanpa error (controller dibuat di initState)",
+      "layer": "unit",
+      "kind": "corner",
+      "source": "docs/trace/flows.yaml"
+    },
+    {
       "id": "FLOW-SRV-01-T01",
       "type": "TC",
       "title": "tandai jadwal selesai membuat log servis dan menaikkan odometer",
@@ -551,6 +567,22 @@
       "id": "FLOW-SET-01-T04",
       "type": "TC",
       "title": "data kendaraan korup di penyimpanan dibaca sebagai garasi kosong; tema korup = sistem",
+      "layer": "unit",
+      "kind": "corner",
+      "source": "docs/trace/flows.yaml"
+    },
+    {
+      "id": "FLOW-SET-01-T05",
+      "type": "TC",
+      "title": "tema gelap: semua teks di 5 tab terbaca (kontras >= 4.5)",
+      "layer": "unit",
+      "kind": "corner",
+      "source": "docs/trace/flows.yaml"
+    },
+    {
+      "id": "FLOW-SET-01-T06",
+      "type": "TC",
+      "title": "tema terang: semua teks di 5 tab terbaca (kontras >= 4.5)",
       "layer": "unit",
       "kind": "corner",
       "source": "docs/trace/flows.yaml"
@@ -1163,6 +1195,16 @@
       "via": "docs/trace/flows.yaml"
     },
     {
+      "from": "FLOW-GAR-01-T06",
+      "to": "FLOW-GAR-01",
+      "via": "docs/trace/flows.yaml"
+    },
+    {
+      "from": "FLOW-GAR-01-T07",
+      "to": "FLOW-GAR-01",
+      "via": "docs/trace/flows.yaml"
+    },
+    {
       "from": "FLOW-SRV-01",
       "to": "FR-003",
       "via": "docs/trace/flows.yaml"
@@ -1306,6 +1348,16 @@
       "from": "FLOW-SET-01-T04",
       "to": "FLOW-SET-01",
       "via": "docs/trace/flows.yaml"
+    },
+    {
+      "from": "FLOW-SET-01-T05",
+      "to": "FLOW-SET-01",
+      "via": "docs/trace/flows.yaml"
+    },
+    {
+      "from": "FLOW-SET-01-T06",
+      "to": "FLOW-SET-01",
+      "via": "docs/trace/flows.yaml"
     }
   ],
   "cases": [
@@ -1345,6 +1397,22 @@
       "id": "FLOW-GAR-01-T05",
       "flow": "FLOW-GAR-01",
       "title": "id kendaraan aktif yang hilang di penyimpanan jatuh ke kendaraan pertama",
+      "layer": "unit",
+      "kind": "corner",
+      "walk": false
+    },
+    {
+      "id": "FLOW-GAR-01-T06",
+      "flow": "FLOW-GAR-01",
+      "title": "tombol Aksi Cepat dan Simpan ke Garasi tidak tertutup bilah navigasi",
+      "layer": "unit",
+      "kind": "corner",
+      "walk": false
+    },
+    {
+      "id": "FLOW-GAR-01-T07",
+      "flow": "FLOW-GAR-01",
+      "title": "PressScale nonaktif dibuang tanpa error (controller dibuat di initState)",
       "layer": "unit",
       "kind": "corner",
       "walk": false
@@ -1513,6 +1581,22 @@
       "id": "FLOW-SET-01-T04",
       "flow": "FLOW-SET-01",
       "title": "data kendaraan korup di penyimpanan dibaca sebagai garasi kosong; tema korup = sistem",
+      "layer": "unit",
+      "kind": "corner",
+      "walk": false
+    },
+    {
+      "id": "FLOW-SET-01-T05",
+      "flow": "FLOW-SET-01",
+      "title": "tema gelap: semua teks di 5 tab terbaca (kontras >= 4.5)",
+      "layer": "unit",
+      "kind": "corner",
+      "walk": false
+    },
+    {
+      "id": "FLOW-SET-01-T06",
+      "flow": "FLOW-SET-01",
+      "title": "tema terang: semua teks di 5 tab terbaca (kontras >= 4.5)",
       "layer": "unit",
       "kind": "corner",
       "walk": false

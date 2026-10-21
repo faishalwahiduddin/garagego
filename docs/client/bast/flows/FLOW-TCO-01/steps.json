@@ -12,21 +12,21 @@
       "title": "Baca skor kesehatan",
       "instruction": "Tab **Garasi** menampilkan skor kesehatan kendaraan aktif dan peringatan yang perlu ditindaklanjuti.",
       "image": "step-01.png",
-      "t": 6.3
+      "t": 4.3
     },
     {
       "n": 2,
       "title": "Baca ringkasan biaya",
       "instruction": "Gulir ke bawah: **Odometer**, **Biaya / KM**, **Konsumsi BBM**, dan **Total Biaya (TCO)**.",
       "image": "step-02.png",
-      "t": 7.9
+      "t": 5.7
     },
     {
       "n": 3,
       "title": "Rincian TCO",
       "instruction": "Bagian **Total Biaya Kepemilikan (TCO)** merinci biaya BBM, perawatan, serta pajak & STNK.",
       "image": "step-03.png",
-      "t": 9.4
+      "t": 7
     }
   ]
 }

@@ -1,0 +1,1 @@
+Correcciones: el botón de Acciones rápidas ahora queda sobre la barra de navegación inferior, las hojas de entrada ya no se tapan y los toques en botones son más fiables. Contraste de texto de al menos 4,5:1 en tema claro y oscuro. Animación de botones más estable.

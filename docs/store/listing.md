@@ -27,9 +27,9 @@ GarageGo membantu Anda merawat mobil dan sepeda motor dengan rapi. Catat riwayat
 Fitur Utama:
 ✓ Kelola beberapa kendaraan sekaligus (mobil dan motor)
 ✓ Catat riwayat servis, penggantian suku cadang, dan bengkel
-✓ Pengingat ganti oli berdasarkan odometer atau interval bulan
+✓ Pelacakan jadwal ganti oli berdasarkan odometer atau interval bulan, dengan penanda terlambat di aplikasi
 ✓ Log pengisian BBM lengkap dengan kalkulator konsumsi per kilometer
-✓ Pengingat jatuh tempo pajak tahunan STNK dan lima tahunan
+✓ Pencatatan tanggal jatuh tempo pajak tahunan STNK dan lima tahunan
 ✓ Ringkasan pengeluaran perawatan bulanan dan tahunan
 ✓ 100% offline tanpa iklan dan tanpa perlu registrasi akun
 
@@ -79,9 +79,9 @@ GarageGo keeps your cars and motorcycles properly maintained. Log periodic maint
 Core Features:
 ✓ Multi-vehicle management for cars and motorcycles
 ✓ Service history logs with parts replacement and garage notes
-✓ Oil change reminders based on odometer mileage or calendar dates
+✓ Oil change due tracking by odometer mileage or calendar dates, with overdue indicators in the app
 ✓ Fuel fill-up tracker with automatic mileage calculations
-✓ Vehicle registration and road tax expiry alerts
+✓ Vehicle registration and road tax expiry date tracking
 ✓ Cost breakdown of repairs, routine servicing, and fuel expenses
 ✓ 100% offline, zero ads, no sign-up required
 

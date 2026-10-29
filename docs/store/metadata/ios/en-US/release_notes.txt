@@ -1,1 +1,1 @@
-Official store metadata and presentation update release for GarageGo.
+Fixes: the Quick Actions button now sits above the bottom navigation bar, input sheets are no longer covered, and button taps are more reliable. Text contrast of at least 4.5:1 in both light and dark themes. Improved button animation stability.

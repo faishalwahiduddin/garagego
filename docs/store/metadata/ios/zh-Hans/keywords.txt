@@ -1,1 +1,1 @@
-vehicle,maintenance,fuel,garage
+车辆,保养,油耗,车库,机油,摩托车,税费

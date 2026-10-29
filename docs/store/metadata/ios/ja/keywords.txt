@@ -1,1 +1,1 @@
-vehicle,maintenance,fuel,garage
+車両,整備,燃費,ガレージ,オイル交換,バイク,車検

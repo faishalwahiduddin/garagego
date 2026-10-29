@@ -3,9 +3,9 @@ GarageGo membantu Anda merawat mobil dan sepeda motor dengan rapi. Catat riwayat
 Fitur Utama:
 ✓ Kelola beberapa kendaraan sekaligus (mobil dan motor)
 ✓ Catat riwayat servis, penggantian suku cadang, dan bengkel
-✓ Pengingat ganti oli berdasarkan odometer atau interval bulan
+✓ Pelacakan jadwal ganti oli berdasarkan odometer atau interval bulan, dengan penanda terlambat di aplikasi
 ✓ Log pengisian BBM lengkap dengan kalkulator konsumsi per kilometer
-✓ Pengingat jatuh tempo pajak tahunan STNK dan lima tahunan
+✓ Pencatatan tanggal jatuh tempo pajak tahunan STNK dan lima tahunan
 ✓ Ringkasan pengeluaran perawatan bulanan dan tahunan
 ✓ 100% offline tanpa iklan dan tanpa perlu registrasi akun
 

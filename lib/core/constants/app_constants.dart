@@ -1,6 +1,14 @@
+/// Non-translatable application facts.
+///
+/// The app name, tagline and every other user-visible string live in the ARB
+/// files (`appTitle`, `appTagline`, …) so they follow the selected language.
 class AppConstants {
-  static const String appName = 'GarageGo';
-  static const String appTagline = 'Personal Vehicle Garage & Fleet Maintenance Manager';
+  /// Public site host shown in the About card.
+  static const String appDomainHost = 'garagego.faishal.id';
+
+  /// Play Store / App Store application identifier.
+  static const String packageId = 'id.faishal.garagego';
+
   static const String appDomain = 'https://garagego.faishal.id';
   static const String fleetHome = 'https://faishal.id';
 

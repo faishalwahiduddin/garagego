@@ -8,22 +8,31 @@
   "banner_ready": false,
   "seo": true,
   "slugs": {
-    "id": "servis-mobil-tanpa-akun-plus-dan-minus-mingguan",
-    "en": "servis-mobil-without-an-account-pros-cons",
-    "ar": "servis-mobil-3",
-    "jv": "pandhuan-servis-mobil-garagego-3",
-    "su": "pituduh-servis-mobil-garagego-3",
-    "zh": "garagego-servis-mobil-实用指南-3",
-    "ja": "garagegoservis-mobil-ガイド-3"
+    "id": "privasi-servis-mobil-apa-yang-tersimpan-di-perangkat",
+    "en": "where-your-servis-mobil-data-actually-lives",
+    "ar": "ayn-thfz-byanat-alsjlat-alywmya",
+    "jv": "data-servis-mobil-kasimpen-ing-ngendi",
+    "su": "data-servis-mobil-disimpen-di-mana",
+    "zh": "ri-chang-ji-lu-de-shu-ju-bao-cun-zai-na-li",
+    "ja": "mainichi-no-kiroku-no-deeta-hadokoni-hozon-sareruka"
   },
   "titles": {
-    "id": "Privasi data saat mencatat servis mobil",
-    "en": "servis mobil Without an Account: Pros &amp; Cons — Offline First",
-    "ar": "servis mobil — دليل GarageGo",
-    "jv": "Pandhuan: Privasi data saat mencatat servis mobil",
-    "su": "Pituduh: Privasi data saat mencatat servis mobil",
-    "zh": "GarageGo · servis mobil 实用指南",
-    "ja": "GarageGo｜servis mobil ガイド"
+    "id": "Privasi servis mobil: apa yang tersimpan di perangkat",
+    "en": "Where your servis mobil data actually lives",
+    "ar": "أين تُحفظ بيانات السجلات اليومية",
+    "jv": "Data servis mobil kasimpen ing ngendi",
+    "su": "Data servis mobil disimpen di mana",
+    "zh": "日常记录的数据保存在哪里",
+    "ja": "毎日の記録のデータはどこに保存されるか"
   },
-  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+  "quality_pass": "editorial-v3",
+  "descriptions": {
+    "id": "Privasi servis mobil: penjelasan data yang tersimpan di perangkat, tinjauan mingguan, dan langkah yang perlu diambil setelah sempat berhenti mencatat.",
+    "en": "Where servis mobil data lives: a plain look at what stays on your device, how the weekly check works, and what to do after your records have a gap.",
+    "ar": "أين تُحفظ بيانات servis mobil: نظرة واضحة على ما يبقى على جهازك، وكيف تعمل المراجعة الأسبوعية، وماذا تفعل بعد وجود فجوة في السجل.",
+    "ja": "servis mobilのデータが残る場所。端末に保存される内容、毎週の確認、記録が途切れた後にすべきこと。",
+    "zh": "设备上的servis mobil数据：保留的内容、每周检查的方式，以及记录中断后该怎么办。",
+    "jv": "Privasi servis mobil: katrangan data sing kasimpen ing piranti, tinjauan saben minggu, lan langkah sing perlu ditindakaké sawisé cathetan sempat mandheg.",
+    "su": "Privasi servis mobil: katerangan data nu disimpen di alat, tinjauan mingguan, jeung léngkah nu kudu dilakukeun sanggeus catetan sempat eureun."
+  }
 }

@@ -8,22 +8,31 @@
   "banner_ready": false,
   "seo": true,
   "slugs": {
-    "id": "kenapa-garagego-cocok-untuk-pajak-stnk-tahunan-mingguan",
-    "en": "why-garagego-fits-pajak-stnk-tahunan",
-    "ar": "pajak-stnk-tahunan-3",
-    "jv": "pandhuan-pajak-stnk-tahunan-garagego-3",
-    "su": "pituduh-pajak-stnk-tahunan-garagego-3",
-    "zh": "garagego-pajak-stnk-tahunan-实用指南-3",
-    "ja": "garagegopajak-stnk-tahunan-ガイド-3"
+    "id": "pajak-stnk-tahunan-alat-mana-yang-benar-benar-dipakai",
+    "en": "pajak-stnk-tahunan-which-tool-you-will-actually-use",
+    "ar": "alsjlat-alywmya-ay-adaa-ststkhdmha-fala",
+    "jv": "pajak-stnk-tahunan-piranti-endi-sing-tenan-dipigunakake",
+    "su": "pajak-stnk-tahunan-alat-mana-anu-beneran-dipake",
+    "zh": "ri-chang-ji-lu-na-ge-gong-ju-zhen-de-hui-yong",
+    "ja": "mainichi-no-kiroku-jissaini-tsukau-dougu-hadoreka"
   },
   "titles": {
-    "id": "Kenapa GarageGo Cocok untuk pajak stnk tahunan",
-    "en": "Why GarageGo Fits pajak stnk tahunan — Offline First",
-    "ar": "pajak stnk tahunan — دليل GarageGo",
-    "jv": "Pandhuan: Kenapa GarageGo Cocok untuk pajak stnk tahunan",
-    "su": "Pituduh: Kenapa GarageGo Cocok untuk pajak stnk tahunan",
-    "zh": "GarageGo · pajak stnk tahunan 实用指南",
-    "ja": "GarageGo｜pajak stnk tahunan ガイド"
+    "id": "pajak stnk tahunan: alat mana yang benar-benar dipakai",
+    "en": "pajak stnk tahunan: which tool you will actually use",
+    "ar": "السجلات اليومية: أي أداة ستستخدمها فعلاً",
+    "jv": "pajak stnk tahunan: piranti endi sing tenan dipigunakaké",
+    "su": "pajak stnk tahunan: alat mana anu beneran dipaké",
+    "zh": "日常记录：哪个工具真的会用",
+    "ja": "毎日の記録：実際に使う道具はどれか"
   },
-  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+  "quality_pass": "editorial-v3",
+  "descriptions": {
+    "id": "Memilih alat untuk pajak stnk tahunan yang benar-benar dipakai. Bahas alasan catatan putus, data tersimpan di perangkat, dan tinjauan mingguan.",
+    "en": "Choosing a pajak stnk tahunan tool you will actually keep using: why records slip away, what stays on your device, and a weekly review to check progress.",
+    "ar": "اختيار أداة pajak stnk tahunan ستستمر في استخدامها: لماذا تضيع السجلات، وما الذي يبقى على جهازك، ومراجعة أسبوعية لمتابعة التقدم.",
+    "ja": "pajak stnk tahunanのツールを選ぶ視点。記録が失われる理由、端末保存の範囲、毎週の見直し。",
+    "zh": "选择一款你会坚持使用的pajak stnk tahunan工具：记录为何会消失、设备上保存什么，以及每周回顾。",
+    "jv": "Milih piranti kanggo pajak stnk tahunan sing bener-bener bakal dienggo: sebab cathetan ilang, data kasimpen ing piranti, lan tinjauan saben minggu.",
+    "su": "Milih alat pikeun pajak stnk tahunan nu bener-bener bakal dipaké: sabab catetan leungit, data disimpen di alat, jeung tinjauan mingguan pikeun ningali kamajuan."
+  }
 }

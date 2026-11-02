@@ -8,22 +8,31 @@
   "banner_ready": false,
   "seo": true,
   "slugs": {
-    "id": "kualitas-data-garagego-vs-kuantitas-offline",
-    "en": "garagego-data-quality-vs-quantity",
-    "ar": "garagego-5",
-    "jv": "pandhuan-garagego-garagego-5",
-    "su": "pituduh-garagego-garagego-5",
-    "zh": "garagego-garagego-实用指南-5",
-    "ja": "garagegogaragego-ガイド-5"
+    "id": "servis-motor-yang-datanya-bisa-dipercaya",
+    "en": "motorbike-service-whose-records-you-can-trust",
+    "ar": "syana-aldraja-bsjlat-mwthwqa",
+    "jv": "servis-motor-sing-dhatae-bisa-dipercaya",
+    "su": "servis-motor-anu-datana-bisa-dipercaya",
+    "zh": "ji-lu-ke-xin-de-mo-tuo-che-bao-yang",
+    "ja": "kiroku-wo-shinrai-dekiru-baiku-seibi"
   },
   "titles": {
-    "id": "Kualitas Data GarageGo vs Kuantitas",
-    "en": "GarageGo Data Quality vs Quantity",
-    "ar": "GarageGo — دليل GarageGo",
-    "jv": "Pandhuan: Kualitas Data GarageGo vs Kuantitas",
-    "su": "Pituduh: Kualitas Data GarageGo vs Kuantitas",
-    "zh": "GarageGo · GarageGo 实用指南",
-    "ja": "GarageGo｜GarageGo ガイド"
+    "id": "servis motor yang datanya bisa dipercaya",
+    "en": "motorbike service whose records you can trust",
+    "ar": "صيانة الدراجة بسجلات موثوقة",
+    "jv": "servis motor sing dhataé bisa dipercaya",
+    "su": "servis motor anu datana bisa dipercaya",
+    "zh": "记录可信的摩托车保养",
+    "ja": "記録を信頼できるバイク整備"
   },
-  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+  "quality_pass": "editorial-v3",
+  "descriptions": {
+    "id": "Servis motor dengan catatan yang bisa Anda percaya: kenapa catatan rusak, versi paling kecil untuk menjaga kualitas, dan cara kembali setelah bolong.",
+    "en": "Motorbike service with records you can trust: why records go wrong, the smallest version that protects their quality, and how to recover after a gap.",
+    "ar": "servis motor بسجلات يمكنك الوثوق بها: لماذا تتعطل السجلات، وأصغر نسخة تحافظ على جودتها، وكيف تستعيدها بعد فجوة.",
+    "ja": "信頼できる記録を残すためのservis motor。記録が崩れる理由、品質を守る最小バージョン、立て直し。",
+    "zh": "想留下可信记录的servis motor：记录为何会出错，保护质量的最小版本，以及间隔后如何恢复。",
+    "jv": "Servis motor kanthi cathetan sing bisa dipercaya: kenapa cathetan rusak, versi paling cilik kanggo njaga kualitas, lan carane bali sawisé bolong suwé.",
+    "su": "Servis motor kalayan catetan nu bisa dipercaya: naha catetan rusak, versi pang leutikna pikeun ngajaga kualitas, jeung kumaha balik sanggeus bolong lila."
+  }
 }

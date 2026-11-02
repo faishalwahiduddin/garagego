@@ -8,22 +8,31 @@
   "banner_ready": false,
   "seo": true,
   "slugs": {
-    "id": "tetap-jalan-meski-bolong-pengingat-ganti-oli",
-    "en": "keep-going-after-missing-pengingat-ganti-oli",
-    "ar": "pengingat-ganti-oli-5",
-    "jv": "pandhuan-pengingat-ganti-oli-garagego-5",
-    "su": "pituduh-pengingat-ganti-oli-garagego-5",
-    "zh": "garagego-pengingat-ganti-oli-实用指南-5",
-    "ja": "garagegopengingat-ganti-oli-ガイド-5"
+    "id": "menjaga-pengingat-ganti-oli-saat-semangat-turun",
+    "en": "keeping-pengingat-ganti-oli-going-when-motivation-drops",
+    "ar": "alsjlat-alywmya-la-ythql-fthh",
+    "jv": "njaga-pengingat-ganti-oli-nalika-semangat-mudhun",
+    "su": "ngajaga-pengingat-ganti-oli-nalika-sumanget-turun",
+    "zh": "da-kai-bu-fei-jin-de-ri-chang-ji-lu",
+    "ja": "hiraku-noga-okkuu-ninaranai-mainichi-no-kiroku"
   },
   "titles": {
-    "id": "Tetap Jalan meski Bolong pengingat ganti oli",
-    "en": "Keep Going After Missing pengingat ganti oli",
-    "ar": "pengingat ganti oli — دليل GarageGo",
-    "jv": "Pandhuan: Tetap Jalan meski Bolong pengingat ganti oli",
-    "su": "Pituduh: Tetap Jalan meski Bolong pengingat ganti oli",
-    "zh": "GarageGo · pengingat ganti oli 实用指南",
-    "ja": "GarageGo｜pengingat ganti oli ガイド"
+    "id": "Menjaga pengingat ganti oli saat semangat turun",
+    "en": "Keeping pengingat ganti oli going when motivation drops",
+    "ar": "السجلات اليومية لا يثقل فتحه",
+    "jv": "Njaga pengingat ganti oli nalika semangat mudhun",
+    "su": "Ngajaga pengingat ganti oli nalika sumanget turun",
+    "zh": "打开不费劲的日常记录",
+    "ja": "開くのが億劫にならない毎日の記録"
   },
-  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+  "quality_pass": "editorial-v3",
+  "descriptions": {
+    "id": "Pengingat ganti oli tetap jalan saat motivasi turun: penyebab kebiasaan putus, versi paling kecil yang ringan, dan cara melanjutkan setelah bolong.",
+    "en": "Keep pengingat ganti oli going when motivation drops: why habits break, a light smallest version to fall back on, and how to resume after a gap.",
+    "ar": "استمر في pengingat ganti oli عندما يقل الحماس: لماذا تنقطع العادات، وأصغر نسخة خفيفة للعودة إليها، وكيف تستأنف بعد فجوة.",
+    "ja": "やる気が下がっても続けるpengingat ganti oli。習慣が途切れる理由、戻れる軽い最小バージョン。",
+    "zh": "动力下降时仍能坚持pengingat ganti oli：习惯为何中断，可回退的轻量最小版本，以及间隔后恢复。",
+    "jv": "Pengingat ganti oli tetep mlaku nalika semangat mudhun: sebab kebiasan kepethuk, versi paling cilik sing entheng kanggo dadi sandaran, lan carane nerusaké.",
+    "su": "Pengingat ganti oli tetep jalan lamun motivasi turun: sabab kabiasaan putus, versi pang leutikna nu enteng pikeun dijadikeun sandaran, jeung kumaha neruskeun."
+  }
 }

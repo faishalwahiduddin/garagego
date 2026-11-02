@@ -8,22 +8,31 @@
   "banner_ready": false,
   "seo": true,
   "slugs": {
-    "id": "komunikasi-soal-progres-pajak-stnk-praktis",
-    "en": "talking-about-pajak-stnk-progress-practical",
-    "ar": "pajak-stnk-5",
-    "jv": "pandhuan-pajak-stnk-garagego-5",
-    "su": "pituduh-pajak-stnk-garagego-5",
-    "zh": "garagego-pajak-stnk-实用指南-5",
-    "ja": "garagegopajak-stnk-ガイド-5"
+    "id": "pajak-stnk-untuk-satu-rumah",
+    "en": "pajak-stnk-for-the-whole-household",
+    "ar": "hala-amlya-alsjlat-alywmya-larbaa-ashr-ywma",
+    "jv": "pajak-stnk-kanggo-sakulawarga",
+    "su": "pajak-stnk-pikeun-sakulawarga",
+    "zh": "an-li-14-tian-de-ri-chang-ji-lu",
+    "ja": "jirei-14-nichikan-no-mainichi-no-kiroku"
   },
   "titles": {
-    "id": "Komunikasi soal Progres pajak STNK",
-    "en": "Talking About pajak STNK Progress (Practical)",
-    "ar": "pajak STNK — دليل GarageGo",
-    "jv": "Pandhuan: Komunikasi soal Progres pajak STNK",
-    "su": "Pituduh: Komunikasi soal Progres pajak STNK",
-    "zh": "GarageGo · pajak STNK 实用指南",
-    "ja": "GarageGo｜pajak STNK ガイド"
+    "id": "pajak STNK untuk satu rumah",
+    "en": "pajak STNK for the whole household",
+    "ar": "حالة عملية: السجلات اليومية لأربعة عشر يوماً",
+    "jv": "pajak STNK kanggo sakulawarga",
+    "su": "pajak STNK pikeun sakulawarga",
+    "zh": "案例：14 天的日常记录",
+    "ja": "事例：14日間の毎日の記録"
   },
-  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+  "quality_pass": "editorial-v3",
+  "descriptions": {
+    "id": "pajak STNK untuk seluruh rumah tangga: cara membagi jadwal, tinjauan mingguan, dan penyimpanan data di perangkat setiap anggota keluarga.",
+    "en": "pajak STNK for the whole household: how to split the schedule, run the weekly check together, and keep each family member's data on their own device.",
+    "ar": "pajak STNK لكامل الأسرة: كيف تقسم الجدول، وتنفّذ المراجعة الأسبوعية معاً، وتحتفظ ببيانات كل فرد على جهازه الخاص.",
+    "ja": "家族みんなの予定づくり。pajak STNKの分担、毎週の確認、端末内データの扱い、各自の記録の考え方。",
+    "zh": "整个家庭的pajak STNK：如何分配时间表，一起做每周检查，并让每位成员的数据留在自己的设备上。",
+    "jv": "pajak STNK kanggo kabeh kulawarga: carane mbagi jadwal, tinjauan saben minggu bareng-bareng, lan data saben anggota kasimpen ing piranti dhewe-dhewe.",
+    "su": "pajak STNK pikeun sakabéh kulawarga: kumaha ngabagi jadwal, tinjauan mingguan bareng-bareng, jeung data unggal anggota disimpen di alatna sewang-sewangan."
+  }
 }

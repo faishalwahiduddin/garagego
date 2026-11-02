@@ -8,22 +8,31 @@
   "banner_ready": false,
   "seo": true,
   "slugs": {
-    "id": "kriteria-memilih-aplikasi-catatan-bbm-harian",
-    "en": "criteria-for-choosing-a-catatan-bbm-app",
-    "ar": "catatan-bbm-8",
-    "jv": "pandhuan-catatan-bbm-garagego-8",
-    "su": "pituduh-catatan-bbm-garagego-8",
-    "zh": "garagego-catatan-bbm-实用指南-8",
-    "ja": "garagegocatatan-bbm-ガイド-8"
+    "id": "catatan-bbm-yang-perlu-dicek-sebelum-memilih",
+    "en": "daily-records-what-to-check-before-you-choose",
+    "ar": "alsjlat-alywmya-ma-tthqq-mnh-qbl-alakhtyar-aljz-2",
+    "jv": "catatan-bbm-sing-kudu-dipriksa-sadurunge-milih",
+    "su": "catatan-bbm-anu-kudu-dipariksa-samemeh-milih",
+    "zh": "ri-chang-ji-lu-xuan-ze-qian-gai-que-ren-shen-me-di-2-pian",
+    "ja": "mainichi-no-kiroku-erabu-mae-ni-kakuninsu-rukoto-dai-2-kai"
   },
   "titles": {
-    "id": "Kriteria Memilih Aplikasi catatan BBM",
-    "en": "Criteria for Choosing a catatan BBM App",
-    "ar": "catatan BBM — دليل GarageGo",
-    "jv": "Pandhuan: Kriteria Memilih Aplikasi catatan BBM",
-    "su": "Pituduh: Kriteria Memilih Aplikasi catatan BBM",
-    "zh": "GarageGo · catatan BBM 实用指南",
-    "ja": "GarageGo｜catatan BBM ガイド"
+    "id": "catatan BBM: yang perlu dicek sebelum memilih",
+    "en": "daily records: what to check before you choose",
+    "ar": "السجلات اليومية: ما تتحقق منه قبل الاختيار · الجزء 2",
+    "jv": "catatan BBM: sing kudu dipriksa sadurungé milih",
+    "su": "catatan BBM: anu kudu dipariksa saméméh milih",
+    "zh": "日常记录：选择前该确认什么 · 第2篇",
+    "ja": "毎日の記録：選ぶ前に確認すること · 第2回"
   },
-  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+  "quality_pass": "editorial-v3",
+  "descriptions": {
+    "id": "Catatan BBM: kriteria yang perlu dicek sebelum memilih. Bahas alasan kebiasaan putus, penyimpanan di perangkat, dan tinjauan mingguan.",
+    "en": "Daily records: what to check before you choose. Looks at why habits break, where data is stored on the device, and how a weekly check fits in.",
+    "ar": "catatan BBM: ما الذي يُفحص قبل الاختيار. ينظر في سبب انقطاع العادات، ومكان حفظ البيانات على الجهاز، وكيف تتناسب المراجعة الأسبوعية.",
+    "ja": "catatan BBMを選ぶ前のチェックポイント。習慣が途切れる理由、端末内の保存、毎週の確認。",
+    "zh": "选择catatan BBM之前的检查要点：习惯为何中断，设备上的存储方式，以及每周检查的安排。",
+    "jv": "Catatan BBM: kriteria sing kudu dicek sadurunge milih. Ngrembug sebab kebiasan kepethuk, panyimpenan ing piranti, lan tinjauan saben minggu.",
+    "su": "Catatan BBM: kriteria nu kudu dipariksa sateuacan milih. Ngabahas sabab kabiasaan putus, panyimpenan di alat, jeung tinjauan mingguan."
+  }
 }

@@ -2,6 +2,8 @@ import 'dart:math' as math;
 import 'dart:ui';
 import 'package:flutter/material.dart';
 
+import '../../l10n/app_localizations.dart';
+
 /// Emil Kowalski style fast perceived loading indicator and state switcher.
 class FleetLoadingView extends StatefulWidget {
   const FleetLoadingView({
@@ -44,10 +46,13 @@ class _FleetLoadingViewState extends State<FleetLoadingView>
     final effectiveColor =
         widget.color ?? Theme.of(context).colorScheme.primary;
     final isDark = Theme.of(context).brightness == Brightness.dark;
+    // Default label follows the selected language; a caller-supplied message
+    // always wins.
+    final label = widget.message ?? AppLocalizations.of(context)?.loadingLabel;
 
     return Center(
       child: Semantics(
-        label: widget.message ?? 'Memuat...',
+        label: label,
         liveRegion: true,
         child: Column(
           mainAxisSize: MainAxisSize.min,

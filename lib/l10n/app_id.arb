@@ -166,7 +166,7 @@
   "lakukanInspeksi10PoinBanRemOli": "Lakukan inspeksi 10 poin ban, rem, oli, lampu, dan aki.",
   "lihatSemua": "Lihat Semua",
   "lisensiPamakean": "Lisensi Pamakean",
-  "lisensiPanganggo": "Lisensi Panganggo",
+  "lisensiPanganggo": "Lisensi Penggunaan",
   "lisensiPenggunaan": "Lisensi Penggunaan",
   "menghapusSemuaLogServisBbmDanR": "Menghapus semua log servis, BBM, dan riwayat garasi",
   "mobil": "Mobil",
@@ -338,5 +338,1181 @@
   "validationFuelLitersPositive": "Volume bahan bakar harus lebih dari 0 liter",
   "validationFuelLitersTooHigh": "Volume tangki melebihi kapasitas wajar",
   "validationServiceNameRequired": "Nama servis wajib diisi",
-  "validationDocNameRequired": "Nama dokumen wajib diisi"
+  "validationDocNameRequired": "Nama dokumen wajib diisi",
+  "appTitle": "GarageGo",
+  "@appTitle": {
+    "description": "App title used by the window title, splash and onboarding chrome."
+  },
+  "appTagline": "Catat servis, oli, BBM & pajak kendaraan dalam satu garasi",
+  "@appTagline": {
+    "description": "One-line product tagline shown on the splash screen."
+  },
+  "loadingLabel": "Memuat…",
+  "@loadingLabel": {
+    "description": "Accessible label shown while content is loading."
+  },
+  "onbSkip": "Lewati",
+  "@onbSkip": {
+    "description": "Onboarding: skip button."
+  },
+  "onbNext": "Lanjut",
+  "@onbNext": {
+    "description": "Onboarding: next slide button."
+  },
+  "onbGetStarted": "Mulai Sekarang",
+  "@onbGetStarted": {
+    "description": "Onboarding: finish button on the last slide."
+  },
+  "onbPrivacyHeadline": "Privasi & Offline Terjamin",
+  "@onbPrivacyHeadline": {
+    "description": "Onboarding last slide: short privacy reassurance."
+  },
+  "onbPrivacyDetail": "Semua data kendaraan tersimpan aman di perangkat Anda tanpa pelacak.",
+  "@onbPrivacyDetail": {
+    "description": "Onboarding: longer privacy line (used by the consent/reference copy)."
+  },
+  "onbSlide1Title": "Garasi Anda",
+  "@onbSlide1Title": {
+    "description": "Onboarding slide 1 headline."
+  },
+  "onbSlide1Sub": "Mobil & motor dalam satu tempat",
+  "@onbSlide1Sub": {
+    "description": "Onboarding slide 1 subtext."
+  },
+  "onbSlide1Badge": "100% Offline & Privat",
+  "@onbSlide1Badge": {
+    "description": "Onboarding slide 1 badge."
+  },
+  "onbSlide2Title": "Perawatan",
+  "@onbSlide2Title": {
+    "description": "Onboarding slide 2 headline."
+  },
+  "onbSlide2Sub": "Servis, oli, dan pajak STNK",
+  "@onbSlide2Sub": {
+    "description": "Onboarding slide 2 subtext."
+  },
+  "onbSlide2Badge": "Pengingat Berkala",
+  "@onbSlide2Badge": {
+    "description": "Onboarding slide 2 badge."
+  },
+  "onbSlide3Title": "BBM",
+  "@onbSlide3Title": {
+    "description": "Onboarding slide 3 headline."
+  },
+  "onbSlide3Sub": "Konsumsi km/L & biaya per km",
+  "@onbSlide3Sub": {
+    "description": "Onboarding slide 3 subtext."
+  },
+  "onbSlide3Badge": "Tanpa Iklan & Tanpa Akun",
+  "@onbSlide3Badge": {
+    "description": "Onboarding slide 3 badge."
+  },
+  "onbSlide4Title": "Offline & Privat",
+  "@onbSlide4Title": {
+    "description": "Onboarding slide 4 headline."
+  },
+  "onbSlide4Sub": "Data tersimpan di perangkat Anda",
+  "@onbSlide4Sub": {
+    "description": "Onboarding slide 4 subtext."
+  },
+  "onbSlide4Badge": "Data Tersimpan di Perangkat",
+  "@onbSlide4Badge": {
+    "description": "Onboarding slide 4 badge."
+  },
+  "urgencySafe": "Aman",
+  "@urgencySafe": {
+    "description": "Schedule urgency: everything is fine."
+  },
+  "urgencyDueSoon": "Segera",
+  "@urgencyDueSoon": {
+    "description": "Schedule urgency: due soon."
+  },
+  "urgencyOverdue": "Terlewat",
+  "@urgencyOverdue": {
+    "description": "Schedule urgency: overdue."
+  },
+  "docTypeTax": "Pajak PKB Tahunan",
+  "@docTypeTax": {
+    "description": "Document type: annual vehicle tax."
+  },
+  "docTypePlate": "Ganti Pelat & STNK 5 Th",
+  "@docTypePlate": {
+    "description": "Document type: 5-year plate and registration renewal."
+  },
+  "docTypeInsurance": "Asuransi Kendaraan",
+  "@docTypeInsurance": {
+    "description": "Document type: vehicle insurance."
+  },
+  "docTypeEmissions": "Uji Emisi / KIR",
+  "@docTypeEmissions": {
+    "description": "Document type: emissions test / roadworthiness inspection."
+  },
+  "docTypeLicense": "SIM Pengemudi",
+  "@docTypeLicense": {
+    "description": "Document type: driver licence."
+  },
+  "docTypeTitle": "BPKB Kendaraan",
+  "@docTypeTitle": {
+    "description": "Document type: vehicle ownership title (BPKB)."
+  },
+  "docTypeOther": "Dokumen Lainnya",
+  "@docTypeOther": {
+    "description": "Document type: any other document."
+  },
+  "mtCatOilFluids": "Oli & Pelumas",
+  "@mtCatOilFluids": {
+    "description": "Maintenance category: oil and fluids."
+  },
+  "mtCatOilFilter": "Oli & Filter",
+  "@mtCatOilFilter": {
+    "description": "Maintenance category: oil and filters."
+  },
+  "mtCatAirFilter": "Filter & Udara",
+  "@mtCatAirFilter": {
+    "description": "Maintenance category: air and cabin filters."
+  },
+  "mtCatBrakes": "Pengereman",
+  "@mtCatBrakes": {
+    "description": "Maintenance category: braking system."
+  },
+  "mtCatTires": "Ban & Suspensi",
+  "@mtCatTires": {
+    "description": "Maintenance category: tyres and suspension."
+  },
+  "mtCatIgnition": "Pengapian",
+  "@mtCatIgnition": {
+    "description": "Maintenance category: ignition system."
+  },
+  "mtCatTransmission": "Transmisi & Penggerak",
+  "@mtCatTransmission": {
+    "description": "Maintenance category: transmission and drivetrain."
+  },
+  "mtCatCvt": "Transmisi CVT",
+  "@mtCatCvt": {
+    "description": "Maintenance category: CVT transmission."
+  },
+  "mtCatElectrical": "Kelistrikan & Aki",
+  "@mtCatElectrical": {
+    "description": "Maintenance category: electrical system and battery."
+  },
+  "mtCatCoolant": "Cairan & Radiator",
+  "@mtCatCoolant": {
+    "description": "Maintenance category: coolant and radiator."
+  },
+  "mtCatGeneral": "Perawatan Berkala",
+  "@mtCatGeneral": {
+    "description": "Maintenance category: periodic servicing."
+  },
+  "mtPresetCarOil": "Ganti Oli Mesin Sintetik",
+  "@mtPresetCarOil": {
+    "description": "Preset schedule (car): engine oil."
+  },
+  "mtPresetCarOilFilter": "Ganti Filter Oli Mesin",
+  "@mtPresetCarOilFilter": {
+    "description": "Preset schedule (car): oil filter."
+  },
+  "mtPresetCarAirFilter": "Filter Udara & AC Kabin",
+  "@mtPresetCarAirFilter": {
+    "description": "Preset schedule (car): air and cabin filter."
+  },
+  "mtPresetCarBrakeFluid": "Kuras Minyak Rem & Kampas",
+  "@mtPresetCarBrakeFluid": {
+    "description": "Preset schedule (car): brake fluid and pads."
+  },
+  "mtPresetCarTireRotation": "Rotasi Ban & Spooring Balancing",
+  "@mtPresetCarTireRotation": {
+    "description": "Preset schedule (car): tyre rotation and alignment."
+  },
+  "mtPresetCarSparkPlugs": "Ganti Busi Iridium",
+  "@mtPresetCarSparkPlugs": {
+    "description": "Preset schedule (car): spark plugs."
+  },
+  "mtPresetMotoOil": "Ganti Oli Mesin Matic/Manual",
+  "@mtPresetMotoOil": {
+    "description": "Preset schedule (motorcycle): engine oil."
+  },
+  "mtPresetMotoGearOil": "Ganti Oli Gardan (Gear Oil)",
+  "@mtPresetMotoGearOil": {
+    "description": "Preset schedule (motorcycle): final drive gear oil."
+  },
+  "mtPresetMotoCvt": "Servis CVT, V-Belt & Roller",
+  "@mtPresetMotoCvt": {
+    "description": "Preset schedule (motorcycle): CVT service."
+  },
+  "mtPresetMotoBrakes": "Cek & Ganti Kampas Rem",
+  "@mtPresetMotoBrakes": {
+    "description": "Preset schedule (motorcycle): brake pads."
+  },
+  "mtPresetMotoSparkPlug": "Ganti Busi Motor",
+  "@mtPresetMotoSparkPlug": {
+    "description": "Preset schedule (motorcycle): spark plug."
+  },
+  "inspPreTripTitle": "Inspeksi Pra-Perjalanan ({type})",
+  "@inspPreTripTitle": {
+    "description": "Title of a generated pre-trip inspection checklist.",
+    "placeholders": {
+      "type": {
+        "type": "String"
+      }
+    }
+  },
+  "inspRoadworthiness": "Kelayakan: {passed} dari {total} Poin Lolos",
+  "@inspRoadworthiness": {
+    "description": "Inspection progress: how many of the checkpoints passed.",
+    "placeholders": {
+      "passed": {
+        "type": "String"
+      },
+      "total": {
+        "type": "String"
+      }
+    }
+  },
+  "inspPassedCount": "{pct}% Lolos ({passed}/{total})",
+  "@inspPassedCount": {
+    "description": "Inspection list badge: percentage and passed/total count.",
+    "placeholders": {
+      "pct": {
+        "type": "String"
+      },
+      "passed": {
+        "type": "String"
+      },
+      "total": {
+        "type": "String"
+      }
+    }
+  },
+  "inspCatEngine": "Mesin & Cairan",
+  "@inspCatEngine": {
+    "description": "Inspection category: engine and fluids."
+  },
+  "inspCatWheelsBrakes": "Roda & Pengereman",
+  "@inspCatWheelsBrakes": {
+    "description": "Inspection category: wheels and brakes."
+  },
+  "inspCatLights": "Lampu & Kelistrikan",
+  "@inspCatLights": {
+    "description": "Inspection category: lights and electrical."
+  },
+  "inspCatSafety": "Keselamatan",
+  "@inspCatSafety": {
+    "description": "Inspection category: safety equipment."
+  },
+  "inspCatDrivetrain": "Transmisi & Penggerak",
+  "@inspCatDrivetrain": {
+    "description": "Inspection category: drivetrain."
+  },
+  "inspCatWheelsSteering": "Roda & Kemudi",
+  "@inspCatWheelsSteering": {
+    "description": "Inspection category: wheels and steering."
+  },
+  "inspCatBrakes": "Pengereman",
+  "@inspCatBrakes": {
+    "description": "Inspection category: brakes."
+  },
+  "inspCatElectrical": "Kelistrikan",
+  "@inspCatElectrical": {
+    "description": "Inspection category: electrical."
+  },
+  "inspCatEquipment": "Kelengkapan",
+  "@inspCatEquipment": {
+    "description": "Inspection category: equipment."
+  },
+  "inspCar1": "Level Dipstick & Kejernihan Oli Mesin",
+  "@inspCar1": {
+    "description": "Inspection checkpoint (car): engine oil dipstick."
+  },
+  "inspCar2": "Level Air Reservoir Radiator Coolant",
+  "@inspCar2": {
+    "description": "Inspection checkpoint (car): radiator coolant reservoir."
+  },
+  "inspCar3": "Level Minyak Rem & Minyak Kopling/Power Steering",
+  "@inspCar3": {
+    "description": "Inspection checkpoint (car): brake, clutch and power steering fluid."
+  },
+  "inspCar4": "Tekanan Udara & Alur Ketebalan 4 Ban + Ban Serep",
+  "@inspCar4": {
+    "description": "Inspection checkpoint (car): tyre pressure and tread."
+  },
+  "inspCar5": "Kondisi Kampas Rem & Daya Cengkeram Rem Tangan",
+  "@inspCar5": {
+    "description": "Inspection checkpoint (car): brake pads and handbrake."
+  },
+  "inspCar6": "Lampu Utama, Lampu Rem, Sein & Lampu Hazard",
+  "@inspCar6": {
+    "description": "Inspection checkpoint (car): lights."
+  },
+  "inspCar7": "Kondisi Terminal & Tegangan Indikator Aki (12V)",
+  "@inspCar7": {
+    "description": "Inspection checkpoint (car): battery terminals and voltage."
+  },
+  "inspCar8": "Karet Wiper & Air Tabung Washer Kaca Depan",
+  "@inspCar8": {
+    "description": "Inspection checkpoint (car): wipers and washer fluid."
+  },
+  "inspCar9": "Dongkrak, Kunci Roda, Segitiga Pengaman & Kotak P3K",
+  "@inspCar9": {
+    "description": "Inspection checkpoint (car): emergency equipment."
+  },
+  "inspMoto1": "Ketinggian & Kualitas Oli Mesin",
+  "@inspMoto1": {
+    "description": "Inspection checkpoint (motorcycle): engine oil."
+  },
+  "inspMoto2": "Kondisi Oli Gardan / Ketegangan Rantai Roda",
+  "@inspMoto2": {
+    "description": "Inspection checkpoint (motorcycle): final drive oil or chain slack."
+  },
+  "inspMoto3": "Tekanan Angin Ban Depan & Belakang",
+  "@inspMoto3": {
+    "description": "Inspection checkpoint (motorcycle): tyre pressures."
+  },
+  "inspMoto4": "Ketebalan Kampas Rem Depan & Belakang",
+  "@inspMoto4": {
+    "description": "Inspection checkpoint (motorcycle): brake pad thickness."
+  },
+  "inspMoto5": "Lampu Depan, Lampu Belakang & Lampu Sein",
+  "@inspMoto5": {
+    "description": "Inspection checkpoint (motorcycle): lights."
+  },
+  "inspMoto6": "Fungsi Klakson & Starter Elektrik (Kondisi Aki)",
+  "@inspMoto6": {
+    "description": "Inspection checkpoint (motorcycle): horn and electric starter."
+  },
+  "inspMoto7": "Spion Kanan & Kiri serta Kunci Kelengkapan",
+  "@inspMoto7": {
+    "description": "Inspection checkpoint (motorcycle): mirrors and toolkit."
+  },
+  "gamesLvl": "LVL {level}",
+  "@gamesLvl": {
+    "description": "Level chip prefix.",
+    "placeholders": {
+      "level": {
+        "type": "String"
+      }
+    }
+  },
+  "gamesProgress": "{xp} XP • {unlocked}/{total} Lencana Terbuka",
+  "@gamesProgress": {
+    "description": "Gamification header: total XP and unlocked badge count.",
+    "placeholders": {
+      "xp": {
+        "type": "String"
+      },
+      "unlocked": {
+        "type": "String"
+      },
+      "total": {
+        "type": "String"
+      }
+    }
+  },
+  "gamesNextLevel": "Menuju {next} ({xp} XP)",
+  "@gamesNextLevel": {
+    "description": "Progress hint towards the next level.",
+    "placeholders": {
+      "next": {
+        "type": "String"
+      },
+      "xp": {
+        "type": "String"
+      }
+    }
+  },
+  "gamesMaxRank": "Pangkat Maksimal",
+  "@gamesMaxRank": {
+    "description": "Shown when the highest level is reached."
+  },
+  "gamesBadgesTitle": "Lencana Disiplin Garasi",
+  "@gamesBadgesTitle": {
+    "description": "Section header above the badge grid."
+  },
+  "gamesShare": "Bagikan",
+  "@gamesShare": {
+    "description": "Tooltip/label for the share action."
+  },
+  "gamesUnlocked": "Terbuka (+100 XP)",
+  "@gamesUnlocked": {
+    "description": "Badge detail: unlocked state with XP reward."
+  },
+  "gamesLocked": "Belum Tercapai",
+  "@gamesLocked": {
+    "description": "Badge detail: not yet unlocked."
+  },
+  "gamesBadgeUnlockedLine": "Lencana terbuka: {highlight}",
+  "@gamesBadgeUnlockedLine": {
+    "description": "Badge share line: which badge was unlocked.",
+    "placeholders": {
+      "highlight": {
+        "type": "String"
+      }
+    }
+  },
+  "gamesLvl1": "Pengendara Pemula",
+  "@gamesLvl1": {
+    "description": "Level 1 title."
+  },
+  "gamesLvl2": "Pemilik Peduli",
+  "@gamesLvl2": {
+    "description": "Level 2 title."
+  },
+  "gamesLvl3": "Penjaga Armada",
+  "@gamesLvl3": {
+    "description": "Level 3 title."
+  },
+  "gamesLvl4": "Spesialis Servis",
+  "@gamesLvl4": {
+    "description": "Level 4 title."
+  },
+  "gamesLvl5": "Master Garasi",
+  "@gamesLvl5": {
+    "description": "Level 5 title."
+  },
+  "badgeFirstRideTitle": "Armada Pertama",
+  "@badgeFirstRideTitle": {
+    "description": "Badge: first vehicle."
+  },
+  "badgeFirstRideDesc": "Mendaftarkan kendaraan pertama ke dalam garasi digital.",
+  "@badgeFirstRideDesc": {
+    "description": "Badge description: first vehicle."
+  },
+  "badgeOilCareTitle": "Disiplin Oli",
+  "@badgeOilCareTitle": {
+    "description": "Badge: on-time oil change."
+  },
+  "badgeOilCareDesc": "Mencatat riwayat ganti oli mesin tepat waktu.",
+  "@badgeOilCareDesc": {
+    "description": "Badge description: on-time oil change."
+  },
+  "badgeServiceVeteranTitle": "Rutin Berkala",
+  "@badgeServiceVeteranTitle": {
+    "description": "Badge: repeated periodic service."
+  },
+  "badgeServiceVeteranDesc": "Mencatatkan minimal 3 log servis perawatan berkala.",
+  "@badgeServiceVeteranDesc": {
+    "description": "Badge description: repeated periodic service."
+  },
+  "badgeFuelWatcherTitle": "Jejak Efisiensi",
+  "@badgeFuelWatcherTitle": {
+    "description": "Badge: fuel logging."
+  },
+  "badgeFuelWatcherDesc": "Mencatat minimal 3 pengisian BBM untuk memantau konsumsi.",
+  "@badgeFuelWatcherDesc": {
+    "description": "Badge description: fuel logging."
+  },
+  "badgeSafeVoyageTitle": "Inspektur Teliti",
+  "@badgeSafeVoyageTitle": {
+    "description": "Badge: safety inspection."
+  },
+  "badgeSafeVoyageDesc": "Menyelesaikan checklist inspeksi keselamatan kendaraan.",
+  "@badgeSafeVoyageDesc": {
+    "description": "Badge description: safety inspection."
+  },
+  "badgeDocKeeperTitle": "Tertib Dokumen",
+  "@badgeDocKeeperTitle": {
+    "description": "Badge: documents stored."
+  },
+  "badgeDocKeeperDesc": "Menyimpan dokumen legalitas (STNK/Pajak/SIM/Asuransi).",
+  "@badgeDocKeeperDesc": {
+    "description": "Badge description: documents stored."
+  },
+  "badgePrimeFleetTitle": "Kondisi Prima",
+  "@badgePrimeFleetTitle": {
+    "description": "Badge: high health score."
+  },
+  "badgePrimeFleetDesc": "Mencapai skor kesehatan kendaraan 90 atau lebih.",
+  "@badgePrimeFleetDesc": {
+    "description": "Badge description: high health score."
+  },
+  "badgeRoadWarriorTitle": "Jelajah 10.000 KM",
+  "@badgeRoadWarriorTitle": {
+    "description": "Badge: long distance."
+  },
+  "badgeRoadWarriorDesc": "Memantau kendaraan dengan odometer melampaui 10.000 km.",
+  "@badgeRoadWarriorDesc": {
+    "description": "Badge description: long distance."
+  },
+  "healthOilOverdue": "Ganti oli mesin sudah terlewat {km} km",
+  "@healthOilOverdue": {
+    "description": "Health warning: oil change overdue.",
+    "placeholders": {
+      "km": {
+        "type": "String"
+      }
+    }
+  },
+  "healthOilDue": "Ganti oli mesin perlu dilakukan dalam {km} km lagi",
+  "@healthOilDue": {
+    "description": "Health warning: oil change due soon.",
+    "placeholders": {
+      "km": {
+        "type": "String"
+      }
+    }
+  },
+  "healthOilOptimal": "Interval oli mesin dalam kondisi prima",
+  "@healthOilOptimal": {
+    "description": "Health good point: oil interval fine."
+  },
+  "healthTaxOverdue": "Pajak STNK tahunan telah lewat jatuh tempo",
+  "@healthTaxOverdue": {
+    "description": "Health warning: tax overdue."
+  },
+  "healthTaxDue": "Pajak STNK tahunan jatuh tempo dalam {days} hari",
+  "@healthTaxDue": {
+    "description": "Health warning: tax due soon.",
+    "placeholders": {
+      "days": {
+        "type": "String"
+      }
+    }
+  },
+  "healthTaxSafe": "Pajak PKB tahunan aktif & aman",
+  "@healthTaxSafe": {
+    "description": "Health good point: tax is fine."
+  },
+  "healthPlateExpired": "Masa berlaku pelat 5 tahunan telah habis",
+  "@healthPlateExpired": {
+    "description": "Health warning: 5-year plate expired."
+  },
+  "healthPlateDue": "Pelat 5 tahunan perlu diperpanjang dalam {days} hari",
+  "@healthPlateDue": {
+    "description": "Health warning: 5-year plate due soon.",
+    "placeholders": {
+      "days": {
+        "type": "String"
+      }
+    }
+  },
+  "healthScheduleOverdue": "{title} sudah terlewat",
+  "@healthScheduleOverdue": {
+    "description": "Health warning: a named schedule is overdue.",
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "healthScheduleDueSoon": "{title} mendekati batas servis",
+  "@healthScheduleDueSoon": {
+    "description": "Health warning: a named schedule is due soon.",
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "healthPrime": "Sangat Prima",
+  "@healthPrime": {
+    "description": "Vehicle health status: excellent."
+  },
+  "healthAttention": "Perlu Perhatian",
+  "@healthAttention": {
+    "description": "Vehicle health status: needs attention."
+  },
+  "healthCritical": "Kritis / Servis Segera",
+  "@healthCritical": {
+    "description": "Vehicle health status: critical."
+  },
+  "fuelEstTotalCost": "Estimasi Total Biaya:",
+  "@fuelEstTotalCost": {
+    "description": "Live fuel form preview: estimated total cost."
+  },
+  "fuelTripDistance": "Jarak Tempuh Trip:",
+  "@fuelTripDistance": {
+    "description": "Live fuel form preview: trip distance."
+  },
+  "fuelAvgConsumption": "Konsumsi Rata-rata:",
+  "@fuelAvgConsumption": {
+    "description": "Live fuel form preview: average consumption."
+  },
+  "fuelOperatingCost": "Biaya Operasional:",
+  "@fuelOperatingCost": {
+    "description": "Live fuel form preview: running cost per km."
+  },
+  "fuelFullTank": "Tangki Penuh",
+  "@fuelFullTank": {
+    "description": "Fuel log: tank was filled completely."
+  },
+  "fuelPartial": "Sebagian",
+  "@fuelPartial": {
+    "description": "Fuel log: partial fill."
+  },
+  "fuelPricePerLiterLine": "@ {price} / L • {state}",
+  "@fuelPricePerLiterLine": {
+    "description": "Fuel log line: unit price and fill type.",
+    "placeholders": {
+      "price": {
+        "type": "String"
+      },
+      "state": {
+        "type": "String"
+      }
+    }
+  },
+  "fuelOdometerValue": "Odo: {value} km",
+  "@fuelOdometerValue": {
+    "description": "Fuel log line: odometer reading.",
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    }
+  },
+  "fuelKmL": "{value} km/L",
+  "@fuelKmL": {
+    "description": "Fuel economy unit value.",
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    }
+  },
+  "aboutApplication": "Aplikasi",
+  "@aboutApplication": {
+    "description": "About row label: application name."
+  },
+  "aboutVersion": "Versi",
+  "@aboutVersion": {
+    "description": "About row label: version."
+  },
+  "aboutArchitecture": "Arsitektur",
+  "@aboutArchitecture": {
+    "description": "About row label: architecture."
+  },
+  "aboutArchitectureValue": "100% Offline-First (tanpa server, tanpa pelacakan)",
+  "@aboutArchitectureValue": {
+    "description": "About row value: offline-first architecture."
+  },
+  "aboutDomain": "Domain",
+  "@aboutDomain": {
+    "description": "About row label: domain."
+  },
+  "aboutPackageId": "ID Paket",
+  "@aboutPackageId": {
+    "description": "About row label: package identifier."
+  },
+  "settingsVehicleOdo": "{plate} • Odo: {value} km",
+  "@settingsVehicleOdo": {
+    "description": "Settings vehicle row subtitle: plate and odometer.",
+    "placeholders": {
+      "plate": {
+        "type": "String"
+      },
+      "value": {
+        "type": "String"
+      }
+    }
+  },
+  "backupInvalidFile": "Berkas .grg tidak valid atau strukturnya rusak",
+  "@backupInvalidFile": {
+    "description": "Backup import failed: the file is not a valid GarageGo backup."
+  },
+  "filterAll": "Semua",
+  "@filterAll": {
+    "description": "Schedule filter: everything."
+  },
+  "filterAttention": "Perhatian",
+  "@filterAttention": {
+    "description": "Schedule filter: needs attention."
+  },
+  "maintenanceScreenTitle": "Perawatan & Servis",
+  "@maintenanceScreenTitle": {
+    "description": "Maintenance screen title when no vehicle is selected."
+  },
+  "serviceTitleHint": "Misal: Ganti Oli Mesin & Filter",
+  "@serviceTitleHint": {
+    "description": "Service log form: example title."
+  },
+  "workshopHint": "Misal: Bengkel Resmi Astra",
+  "@workshopHint": {
+    "description": "Service log form: example workshop."
+  },
+  "mustBePositive": "Wajib lebih dari 0",
+  "@mustBePositive": {
+    "description": "Validation: the value must be greater than zero."
+  },
+  "editScheduleTitle": "Ubah Jadwal Perawatan",
+  "@editScheduleTitle": {
+    "description": "Sheet title: edit an existing maintenance schedule."
+  },
+  "scheduleUpdated": "Jadwal berhasil diperbarui!",
+  "@scheduleUpdated": {
+    "description": "Snackbar: schedule updated."
+  },
+  "scheduleSaved": "Jadwal perawatan berhasil disimpan!",
+  "@scheduleSaved": {
+    "description": "Snackbar: schedule created."
+  },
+  "updateSchedule": "Perbarui Jadwal",
+  "@updateSchedule": {
+    "description": "Button: save changes to a schedule."
+  },
+  "saveSchedule": "Simpan Jadwal Perawatan",
+  "@saveSchedule": {
+    "description": "Button: create a maintenance schedule."
+  },
+  "scheduleCompleted": "{title} berhasil diselesaikan!",
+  "@scheduleCompleted": {
+    "description": "Snackbar: a named schedule was marked done.",
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "kmOverdue": "Terlewat {km} km",
+  "@kmOverdue": {
+    "description": "Schedule badge: kilometres overdue.",
+    "placeholders": {
+      "km": {
+        "type": "String"
+      }
+    }
+  },
+  "kmRemaining": "Sisa {km} km lagi",
+  "@kmRemaining": {
+    "description": "Schedule badge: kilometres remaining.",
+    "placeholders": {
+      "km": {
+        "type": "String"
+      }
+    }
+  },
+  "kmOverdueShort": "Lewat {km} km",
+  "@kmOverdueShort": {
+    "description": "Compact schedule badge: kilometres overdue.",
+    "placeholders": {
+      "km": {
+        "type": "String"
+      }
+    }
+  },
+  "kmRemainingShort": "Sisa {km} km",
+  "@kmRemainingShort": {
+    "description": "Compact schedule badge: kilometres left.",
+    "placeholders": {
+      "km": {
+        "type": "String"
+      }
+    }
+  },
+  "daysOverdue": "Terlewat {days} hari",
+  "@daysOverdue": {
+    "description": "Schedule badge: days overdue.",
+    "placeholders": {
+      "days": {
+        "type": "String"
+      }
+    }
+  },
+  "daysLeft": "Sisa {days} hari lagi",
+  "@daysLeft": {
+    "description": "Schedule badge: days left.",
+    "placeholders": {
+      "days": {
+        "type": "String"
+      }
+    }
+  },
+  "scheduleIntervalSummary": "Setiap {km} km atau {months} bulan • Terakhir: {odo} km ({date})",
+  "@scheduleIntervalSummary": {
+    "description": "Schedule card: interval, last odometer and last date.",
+    "placeholders": {
+      "km": {
+        "type": "String"
+      },
+      "months": {
+        "type": "String"
+      },
+      "odo": {
+        "type": "String"
+      },
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "shareVehiclePassport": "Bagikan Paspor Kendaraan",
+  "@shareVehiclePassport": {
+    "description": "Action: share the vehicle status card."
+  },
+  "shareVehiclePassportSubtitle": "Bagikan kartu status, skor kesehatan & riwayat ke media sosial",
+  "@shareVehiclePassportSubtitle": {
+    "description": "Quick action subtitle for the share card."
+  },
+  "garageEmptyBody": "Tambahkan mobil atau motor keluarga pertama Anda untuk mulai memantau servis, oli, dan BBM.",
+  "@garageEmptyBody": {
+    "description": "Empty garage explanation."
+  },
+  "resetOilConfirm": "Counter penggantian oli untuk {name} akan diatur ulang ke odometer saat ini ({odo} km).",
+  "@resetOilConfirm": {
+    "description": "Oil reset dialog body.",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "odo": {
+        "type": "String"
+      }
+    }
+  },
+  "resetOilServiceNote": "Reset counter interval oli mesin",
+  "@resetOilServiceNote": {
+    "description": "Service log note created by the oil reset action."
+  },
+  "oilIntervalEvery": "Interval: tiap {km} km",
+  "@oilIntervalEvery": {
+    "description": "Oil card: interval in kilometres.",
+    "placeholders": {
+      "km": {
+        "type": "String"
+      }
+    }
+  },
+  "garageYear": "Tahun {year}",
+  "@garageYear": {
+    "description": "Vehicle subtitle: manufacture year.",
+    "placeholders": {
+      "year": {
+        "type": "String"
+      }
+    }
+  },
+  "shareDialogTitle": "Bagikan Paspor Kendaraan",
+  "@shareDialogTitle": {
+    "description": "Share dialog header."
+  },
+  "shareCopySummary": "Salin Ringkasan",
+  "@shareCopySummary": {
+    "description": "Button: copy the summary text."
+  },
+  "sharePreparing": "Menyiapkan…",
+  "@sharePreparing": {
+    "description": "Button label while the image is being generated."
+  },
+  "shareDownloadPassport": "Unduh Paspor",
+  "@shareDownloadPassport": {
+    "description": "Web button: download the image."
+  },
+  "shareSharePassport": "Bagikan Paspor",
+  "@shareSharePassport": {
+    "description": "Button: share the image."
+  },
+  "shareImageFailed": "Gagal membuat gambar paspor kendaraan",
+  "@shareImageFailed": {
+    "description": "Snackbar: image generation failed."
+  },
+  "shareImageDownloaded": "Paspor kendaraan berhasil diunduh",
+  "@shareImageDownloaded": {
+    "description": "Snackbar: image downloaded."
+  },
+  "shareSummaryCopied": "Ringkasan status kendaraan berhasil disalin",
+  "@shareSummaryCopied": {
+    "description": "Snackbar: summary copied to clipboard."
+  },
+  "shareCardHealthHeader": "STATUS KESEHATAN ARMADA",
+  "@shareCardHealthHeader": {
+    "description": "Share card: health section label."
+  },
+  "shareCardCondition": "Kondisi {status}",
+  "@shareCardCondition": {
+    "description": "Share card: condition line.",
+    "placeholders": {
+      "status": {
+        "type": "String"
+      }
+    }
+  },
+  "shareCardOdometer": "ODOMETER",
+  "@shareCardOdometer": {
+    "description": "Share card metric label: odometer."
+  },
+  "shareCardOil": "GANTI OLI",
+  "@shareCardOil": {
+    "description": "Share card metric label: oil change."
+  },
+  "shareCardTax": "PAJAK PKB",
+  "@shareCardTax": {
+    "description": "Share card metric label: road tax."
+  },
+  "shareCardNeedService": "Perlu Servis",
+  "@shareCardNeedService": {
+    "description": "Share card: oil change needed now."
+  },
+  "shareCardDaysShort": "{days} hr lagi",
+  "@shareCardDaysShort": {
+    "description": "Share card: days remaining in short form.",
+    "placeholders": {
+      "days": {
+        "type": "String"
+      }
+    }
+  },
+  "shareCardLogbook": "Logbook: {date}",
+  "@shareCardLogbook": {
+    "description": "Share card footer: logbook date.",
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "shareTextHeader": "🚗 Paspor Perawatan Kendaraan — {name} ({plate})",
+  "@shareTextHeader": {
+    "description": "Share text line 1: vehicle name and plate.",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "plate": {
+        "type": "String"
+      }
+    }
+  },
+  "shareTextHealth": "🏆 Skor Kesehatan: {score}/100 ({status})",
+  "@shareTextHealth": {
+    "description": "Share text line 2: health score.",
+    "placeholders": {
+      "score": {
+        "type": "String"
+      },
+      "status": {
+        "type": "String"
+      }
+    }
+  },
+  "shareTextOdometer": "⚡ Odometer: {odo} km",
+  "@shareTextOdometer": {
+    "description": "Share text line 3: odometer.",
+    "placeholders": {
+      "odo": {
+        "type": "String"
+      }
+    }
+  },
+  "shareTextOil": "🛢️ Interval Ganti Oli: {km} km lagi",
+  "@shareTextOil": {
+    "description": "Share text line 4: oil change countdown.",
+    "placeholders": {
+      "km": {
+        "type": "String"
+      }
+    }
+  },
+  "shareTextOilDue": "🛢️ Perlu Ganti Oli Segera",
+  "@shareTextOilDue": {
+    "description": "Share text line 4 when an oil change is needed now."
+  },
+  "shareTextTax": "📋 Pajak PKB: {days} hari lagi",
+  "@shareTextTax": {
+    "description": "Share text line 5: road tax remaining days.",
+    "placeholders": {
+      "days": {
+        "type": "String"
+      }
+    }
+  },
+  "shareTextFooter": "Kelola perawatan garasi lengkap & offline di GarageGo: https://garagego.faishal.id",
+  "@shareTextFooter": {
+    "description": "Share text last line: call to action."
+  },
+  "gloveboxHeader": "Glovebox Digital — {name}",
+  "@gloveboxHeader": {
+    "description": "Glovebox header card title with the vehicle name.",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "gloveboxDocCount": "{plate} • {count} Dokumen Terdaftar",
+  "@gloveboxDocCount": {
+    "description": "Glovebox header: plate and number of documents.",
+    "placeholders": {
+      "plate": {
+        "type": "String"
+      },
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "docExpiredAgo": "Kedaluwarsa {days} hari lalu",
+  "@docExpiredAgo": {
+    "description": "Document status: expired N days ago.",
+    "placeholders": {
+      "days": {
+        "type": "String"
+      }
+    }
+  },
+  "docDueIn": "Jatuh tempo {days} hari lagi",
+  "@docDueIn": {
+    "description": "Document status: due in N days.",
+    "placeholders": {
+      "days": {
+        "type": "String"
+      }
+    }
+  },
+  "docDaysLeft": "{days} hari lagi",
+  "@docDaysLeft": {
+    "description": "Document status: N days remaining.",
+    "placeholders": {
+      "days": {
+        "type": "String"
+      }
+    }
+  },
+  "docValidUntil": "Masa Berlaku: {date}",
+  "@docValidUntil": {
+    "description": "Document card: expiry date line.",
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "docEditTitle": "Ubah Dokumen",
+  "@docEditTitle": {
+    "description": "Sheet title: edit a document."
+  },
+  "docAddTitle": "Tambah Dokumen Garasi",
+  "@docAddTitle": {
+    "description": "Sheet title: add a document."
+  },
+  "docTitleHint": "Misal: PKB Tahunan / Asuransi All Risk",
+  "@docTitleHint": {
+    "description": "Document form: title hint."
+  },
+  "docNumberHint": "Misal: B 1234 CD / POL-88902",
+  "@docNumberHint": {
+    "description": "Document form: document number hint."
+  },
+  "docCostHint": "Misal: 3500000",
+  "@docCostHint": {
+    "description": "Document form: cost hint."
+  },
+  "docNotesLabel": "Catatan & Petunjuk Perpanjangan",
+  "@docNotesLabel": {
+    "description": "Document form: notes label."
+  },
+  "docNotesHint": "Misal: Bayar online via Signal app",
+  "@docNotesHint": {
+    "description": "Document form: notes hint."
+  },
+  "docUpdated": "Dokumen berhasil diperbarui!",
+  "@docUpdated": {
+    "description": "Snackbar: document updated."
+  },
+  "docAdded": "Dokumen berhasil ditambahkan!",
+  "@docAdded": {
+    "description": "Snackbar: document added."
+  },
+  "docUpdate": "Perbarui Dokumen",
+  "@docUpdate": {
+    "description": "Button: save document changes."
+  },
+  "docSave": "Simpan Dokumen",
+  "@docSave": {
+    "description": "Button: save a new document."
+  },
+  "vehicleNameHint": "Misal: Honda HR-V / Yamaha NMAX",
+  "@vehicleNameHint": {
+    "description": "Vehicle form: name hint."
+  },
+  "plateHint": "B 1234 CD",
+  "@plateHint": {
+    "description": "Vehicle form: plate number hint."
+  },
+  "invalidYear": "Tahun tidak valid",
+  "@invalidYear": {
+    "description": "Validation: manufacture year out of range."
+  },
+  "taxDueLabel": "Jatuh Tempo Pajak STNK",
+  "@taxDueLabel": {
+    "description": "Vehicle form: annual tax due date label."
+  },
+  "scheduleDoneNote": "Selesai sesuai jadwal berkala ({category})",
+  "@scheduleDoneNote": {
+    "description": "Service log note written when a schedule is completed.",
+    "placeholders": {
+      "category": {
+        "type": "String"
+      }
+    }
+  },
+  "backupErrEmpty": "Data cadangan kosong.",
+  "@backupErrEmpty": {
+    "description": "Backup error: empty payload."
+  },
+  "backupErrRawJson": "Format JSON mentah tidak didukung demi keamanan. Gunakan berkas cadangan resmi.",
+  "@backupErrRawJson": {
+    "description": "Backup error: raw JSON is not accepted."
+  },
+  "backupErrFormat": "Format berkas cadangan tidak valid atau tidak dikenali.",
+  "@backupErrFormat": {
+    "description": "Backup error: unrecognised file format."
+  },
+  "backupErrWrongApp": "Berkas cadangan milik aplikasi {other}, tidak dapat dipulihkan ke {expected}.",
+  "@backupErrWrongApp": {
+    "description": "Backup error: backup belongs to another app.",
+    "placeholders": {
+      "other": {
+        "type": "String"
+      },
+      "expected": {
+        "type": "String"
+      }
+    }
+  },
+  "backupErrCorrupt": "Data cadangan rusak atau format encoding tidak sah.",
+  "@backupErrCorrupt": {
+    "description": "Backup error: undecodable payload."
+  },
+  "backupErrIntegrity": "Integritas data cadangan tidak valid: data telah dimodifikasi atau rusak.",
+  "@backupErrIntegrity": {
+    "description": "Backup error: checksum mismatch."
+  },
+  "backupErrNotObject": "Isi data cadangan bukan objek data yang sah.",
+  "@backupErrNotObject": {
+    "description": "Backup error: payload is not a data object."
+  },
+  "mtCatEngine": "Mesin",
+  "@mtCatEngine": {
+    "description": "Maintenance category: engine."
+  },
+  "mtCatOther": "Lainnya",
+  "@mtCatOther": {
+    "description": "Maintenance category: anything else."
+  },
+  "unitMonthsShort": "bln",
+  "@unitMonthsShort": {
+    "description": "Short month unit used as an input field suffix."
+  },
+  "docNoteTax": "Bayar via Samsat Digital Nasional (SIGNAL) atau Samsat terdekat",
+  "@docNoteTax": {
+    "description": "Renewal note on a generated tax document."
+  },
+  "docNotePlate": "Wajib cek fisik kendaraan langsung di Samsat Induk",
+  "@docNotePlate": {
+    "description": "Renewal note on a generated 5-year plate document."
+  },
+  "docNoteInsurance": "Nomor klaim darurat atau towing tersedia di polis",
+  "@docNoteInsurance": {
+    "description": "Renewal note on a generated insurance document."
+  },
+  "gamesBadgeCount": "{unlocked}/{total} Lencana Terbuka",
+  "@gamesBadgeCount": {
+    "description": "Share text: unlocked badge count.",
+    "placeholders": {
+      "unlocked": {
+        "type": "String"
+      },
+      "total": {
+        "type": "String"
+      }
+    }
+  }
 }

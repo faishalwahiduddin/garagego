@@ -1,0 +1,85 @@
+{
+  "title": "Apa itu catatan BBM? Penjelasan singkat",
+  "description": "Apa itu catatan BBM dalam praktik, versi paling kecil yang bisa dicoba, dan cara data tersimpan di perangkat tanpa akun. Penjelasan singkat untuk pemula.",
+  "badge": "produktivitas · offline",
+  "answer": "Jumat sore catatan catatan BBM Anda berisi belasan baris setengah jadi tanpa tanggal yang bisa dibandingkan. GarageGo menyimpan catatan BBM di perangkat, jadi datanya tetap terbuka tanpa kuota dan tanpa akun.",
+  "toc": [
+    "Arti praktis catatan BBM",
+    "Versi paling kecil",
+    "Tersimpan di perangkat"
+  ],
+  "sections": [
+    {
+      "h2": "Arti praktis catatan BBM",
+      "p": "Dalam praktik, catatan BBM berarti ada bukti bertanggal yang bisa dibuka ulang—bukan niat yang cuma diingat.",
+      "h3": null,
+      "p3": null
+    },
+    {
+      "h2": "Versi paling kecil",
+      "p": "Tiga isian saja: waktu, status, satu hambatan. Sisanya opsional.",
+      "h3": null,
+      "p3": null
+    },
+    {
+      "h2": "Tersimpan di perangkat",
+      "p": "GarageGo menyimpan catatan BBM di perangkat, jadi datanya tetap terbuka tanpa kuota dan tanpa akun.",
+      "h3": null,
+      "p3": null
+    }
+  ],
+  "table": {
+    "caption": "Kerangka catatan BBM",
+    "headers": [
+      "Langkah",
+      "Isi minimal",
+      "Selesai bila"
+    ],
+    "rows": [
+      [
+        "Entri harian",
+        "waktu + status",
+        "tersimpan < 2 menit"
+      ],
+      [
+        "Penanda",
+        "posisi terakhir",
+        "bisa dilanjut besok"
+      ],
+      [
+        "Evaluasi minggu",
+        "satu penyesuaian",
+        "diterapkan Senin"
+      ]
+    ]
+  },
+  "list": [
+    "Tetapkan satu waktu tetap, bukan “kapan sempat”.",
+    "Buka GarageGo saat waktu itu tiba, bukan nanti malam.",
+    "Catat satu hambatan, bukan alasan panjang.",
+    "Cadangkan data sebelum ganti ponsel."
+  ],
+  "faqs": [
+    [
+      "Apakah catatan BBM bisa dibuka offline?",
+      "Ya. GarageGo menyimpan semuanya di perangkat, jadi tidak butuh kuota."
+    ],
+    [
+      "Perlu akun dulu?",
+      "Tidak. Mulai tanpa login; cadangkan data secara berkala."
+    ],
+    [
+      "Mulai dari mana?",
+      "Dari bagian terpendek. Tambah cakupan hanya setelah dua minggu stabil."
+    ],
+    [
+      "Kalau bolong beberapa hari?",
+      "Jangan hapus riwayat. Lanjut dari bagian terakhir dan catat satu hambatan."
+    ]
+  ],
+  "cta": [
+    "Mulai catatan BBM hari ini",
+    "Buka GarageGo"
+  ],
+  "slug": "apa-itu-catatan-bbm-glosarium-singkat-offline"
+}

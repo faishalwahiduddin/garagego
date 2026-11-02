@@ -1,0 +1,85 @@
+{
+  "title": "pajak stnk tahunan in 2026: what changed",
+  "description": "pajak stnk tahunan in 2026: a look at what changed, what the practice means now, the smallest version to start, and on-device data storage.",
+  "badge": "productivity · offline",
+  "answer": "On Friday your pajak stnk tahunan notes are a dozen half-finished lines with no comparable dates. GarageGo keeps pajak stnk tahunan on-device, so it stays readable with no data plan and no account.",
+  "toc": [
+    "What pajak stnk tahunan means in practice",
+    "The smallest version",
+    "Stored on your device"
+  ],
+  "sections": [
+    {
+      "h2": "What pajak stnk tahunan means in practice",
+      "p": "In practice, pajak stnk tahunan means dated evidence you can reopen, not an intention you only remember.",
+      "h3": null,
+      "p3": null
+    },
+    {
+      "h2": "The smallest version",
+      "p": "Three fields only: time, status, one blocker. Everything else is optional.",
+      "h3": null,
+      "p3": null
+    },
+    {
+      "h2": "Stored on your device",
+      "p": "GarageGo keeps pajak stnk tahunan on-device, so it stays readable with no data plan and no account.",
+      "h3": null,
+      "p3": null
+    }
+  ],
+  "table": {
+    "caption": "A working frame for pajak stnk tahunan",
+    "headers": [
+      "Step",
+      "Minimum",
+      "Done when"
+    ],
+    "rows": [
+      [
+        "Daily entry",
+        "time + status",
+        "saved in < 2 min"
+      ],
+      [
+        "Bookmark",
+        "last position",
+        "resumable tomorrow"
+      ],
+      [
+        "Weekly review",
+        "one adjustment",
+        "applied Monday"
+      ]
+    ]
+  },
+  "list": [
+    "Pick one fixed time, not “whenever there is room”.",
+    "Open GarageGo when that time arrives, not later tonight.",
+    "Note one blocker, not a long excuse.",
+    "Back up before you switch phones."
+  ],
+  "faqs": [
+    [
+      "Can I open pajak stnk tahunan offline?",
+      "Yes. GarageGo keeps everything on-device, so no data plan is needed."
+    ],
+    [
+      "Do I need an account first?",
+      "No. Start without login; export a backup from time to time."
+    ],
+    [
+      "Where do I start?",
+      "With the shortest piece. Add scope only after two steady weeks."
+    ],
+    [
+      "What if I miss a few days?",
+      "Do not wipe history. Resume from the last entry and note one blocker."
+    ]
+  ],
+  "cta": [
+    "Start pajak stnk tahunan today",
+    "Open GarageGo"
+  ],
+  "slug": "latest-practical-update-on-pajak-stnk-tahunan-practical"
+}

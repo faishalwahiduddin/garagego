@@ -8,22 +8,31 @@
   "banner_ready": false,
   "seo": true,
   "slugs": {
-    "id": "pengingat-ganti-oli-adalah-apa-penjelasan-cara-mulai-harian",
-    "en": "what-is-pengingat-ganti-oli-explanation-how-to-start",
-    "ar": "pengingat-ganti-oli-7",
-    "jv": "pandhuan-pengingat-ganti-oli-garagego-7",
-    "su": "pituduh-pengingat-ganti-oli-garagego-7",
-    "zh": "garagego-pengingat-ganti-oli-实用指南-7",
-    "ja": "garagegopengingat-ganti-oli-ガイド-7"
+    "id": "pengingat-ganti-oli-untuk-pemula-mulai-dari-mana",
+    "en": "pengingat-ganti-oli-for-beginners-where-to-start",
+    "ar": "alsjlat-alywmya-llmbtdiyn-mn-ayn-tbda-aljz-2",
+    "jv": "pengingat-ganti-oli-kanggo-pamula-wiwit-saka-ngendi",
+    "su": "pengingat-ganti-oli-pikeun-pamula-mimitian-ti-mana",
+    "zh": "ri-chang-ji-lu-ru-men-cong-na-li-kai-shi-di-2-pian",
+    "ja": "mainichi-no-kiroku-nyuumon-dokokara-hajime-ruka-dai-2-kai"
   },
   "titles": {
-    "id": "Pengingat ganti oli Adalah Apa? Penjelasan + Cara Mulai",
-    "en": "What Is pengingat ganti oli? Explanation + How to Start",
-    "ar": "pengingat ganti oli — دليل GarageGo",
-    "jv": "Pandhuan: Pengingat ganti oli Adalah Apa? Penjelasan + Cara Mulai",
-    "su": "Pituduh: Pengingat ganti oli Adalah Apa? Penjelasan + Cara Mulai",
-    "zh": "GarageGo · pengingat ganti oli 实用指南",
-    "ja": "GarageGo｜pengingat ganti oli ガイド"
+    "id": "pengingat ganti oli untuk pemula: mulai dari mana",
+    "en": "pengingat ganti oli for beginners: where to start",
+    "ar": "السجلات اليومية للمبتدئين: من أين تبدأ · الجزء 2",
+    "jv": "pengingat ganti oli kanggo pamula: wiwit saka ngendi",
+    "su": "pengingat ganti oli pikeun pamula: mimitian ti mana",
+    "zh": "日常记录入门：从哪里开始 · 第2篇",
+    "ja": "毎日の記録入門：どこから始めるか · 第2回"
   },
-  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+  "quality_pass": "editorial-v3",
+  "descriptions": {
+    "id": "Pengingat ganti oli untuk pemula: dari mana memulainya, arti praktisnya, versi paling kecil, dan penjelasan singkat soal data di perangkat.",
+    "en": "pengingat ganti oli for beginners: where to start, what the practice means, the smallest version to try first, and how data is stored on device.",
+    "ar": "pengingat ganti oli للمبتدئين: من أين تبدأ، ومعناه العملي، وأصغر نسخة للتجربة أولاً، وكيف تُحفظ البيانات على الجهاز.",
+    "ja": "初心者向けのpengingat ganti oli。どこから始めるか、実践的な意味、最小バージョン、端末内データ。",
+    "zh": "给新手的pengingat ganti oli：从哪里开始、实际含义、最先尝试的最小版本，以及设备上的数据保存。",
+    "jv": "Pengingat ganti oli kanggo pemula: saka endi miwiti, tegesé ing praktik, versi paling cilik kanggo dicoba dhisik, lan katrangan cekak babagan data ing piranti.",
+    "su": "Pengingat ganti oli pikeun pemula: ti mana mimitianana, harti praktisna, versi pang leutikna pikeun dicoba heula, jeung katerangan pondok ngeunaan data di alat."
+  }
 }

@@ -8,22 +8,31 @@
   "banner_ready": false,
   "seo": true,
   "slugs": {
-    "id": "servis-mobil-panduan-lengkap-untuk-pemula-praktis",
-    "en": "servis-mobil-complete-beginner-guide-practical",
-    "ar": "servis-mobil",
-    "jv": "pandhuan-servis-mobil-garagego",
-    "su": "pituduh-servis-mobil-garagego",
-    "zh": "garagego-servis-mobil-实用指南",
-    "ja": "garagegoservis-mobil-ガイド"
+    "id": "cara-memulai-servis-mobil-tanpa-ribet",
+    "en": "how-to-start-servis-mobil-without-friction",
+    "ar": "kyf-tbda-alsjlat-alywmya-dwn-taqyd",
+    "jv": "kepriye-miwiti-servis-mobil-tanpa-ruwet",
+    "su": "kumaha-ngamimitian-servis-mobil-tanpa-ribet",
+    "zh": "ru-he-kai-shi-ri-chang-ji-lu-bu-bi-fu-za",
+    "ja": "mainichi-no-kiroku-wo-muri-naku-hajime-ru-houhou"
   },
   "titles": {
-    "id": "Cara mencatat servis mobil tanpa ribet",
-    "en": "servis mobil: Complete Beginner Guide (Practical)",
-    "ar": "servis mobil — دليل GarageGo",
-    "jv": "Pandhuan: Cara mencatat servis mobil tanpa ribet",
-    "su": "Pituduh: Cara mencatat servis mobil tanpa ribet",
-    "zh": "GarageGo · servis mobil 实用指南",
-    "ja": "GarageGo｜servis mobil ガイド"
+    "id": "Cara memulai servis mobil tanpa ribet",
+    "en": "How to start servis mobil without friction",
+    "ar": "كيف تبدأ السجلات اليومية دون تعقيد",
+    "jv": "Kepriyé miwiti servis mobil tanpa ruwet",
+    "su": "Kumaha ngamimitian servis mobil tanpa ribet",
+    "zh": "如何开始日常记录（不必复杂）",
+    "ja": "毎日の記録を無理なく始める方法"
   },
-  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+  "quality_pass": "editorial-v3",
+  "descriptions": {
+    "id": "Cara memulai servis mobil dengan langkah sederhana: pilih versi paling kecil, tentukan kapan menjalankannya, lalu lakukan tinjauan mingguan agar catatan rapi.",
+    "en": "Start servis mobil with simple steps: pick the smallest version, decide when to run it, then do a weekly check so your records stay tidy.",
+    "ar": "ابدأ متابعة servis mobil بخطوات بسيطة: اختر أصغر نسخة، وحدّد وقت تشغيلها، ثم اعمل مراجعة أسبوعية تُبقي كل شيء مرتباً وقابلاً للمتابعة.",
+    "ja": "無理のない進め方でservis mobilを始める手順。最小構成、取り組む時期、週に一度の確認を紹介。",
+    "zh": "以轻松的方式开始servis mobil：选择最小版本，确定执行时机，并安排每周一次的检查。",
+    "jv": "Kepriyé miwiti servis mobil kanthi langkah gampang: pilih versi sing paling cilik, mutusaké kapan kudu mlaku, lan ninjau saben minggu supaya cathetané rapi.",
+    "su": "Kumaha ngamimitian servis mobil basajan: pilih versi nu pang leutikna, tangtukeun iraha ngajalankeunana, jeung tinjauan mingguan supaya catetan rapih."
+  }
 }

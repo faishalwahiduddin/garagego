@@ -8,22 +8,31 @@
   "banner_ready": false,
   "seo": true,
   "slugs": {
-    "id": "cara-servis-motor-yang-praktis-offline",
-    "en": "how-to-servis-motor-offline",
-    "ar": "servis-motor",
-    "jv": "pandhuan-servis-motor-garagego",
-    "su": "pituduh-servis-motor-garagego",
-    "zh": "garagego-servis-motor-实用指南",
-    "ja": "garagegoservis-motor-ガイド"
+    "id": "cara-memulai-servis-motor-tanpa-ribet",
+    "en": "how-to-start-motorbike-service-without-friction",
+    "ar": "kyf-tbda-syana-aldraja-dwn-taqyd",
+    "jv": "kepriye-miwiti-servis-motor-tanpa-ruwet",
+    "su": "kumaha-ngamimitian-servis-motor-tanpa-ribet",
+    "zh": "ru-he-kai-shi-mo-tuo-che-bao-yang-bu-bi-fu-za",
+    "ja": "baiku-seibi-wo-muri-naku-hajime-ru-houhou"
   },
   "titles": {
-    "id": "Cara servis motor yang Praktis (Offline)",
-    "en": "How to servis motor Offline — Practical Steps",
-    "ar": "servis motor — دليل GarageGo",
-    "jv": "Pandhuan: Cara servis motor yang Praktis (Offline)",
-    "su": "Pituduh: Cara servis motor yang Praktis (Offline)",
-    "zh": "GarageGo · servis motor 实用指南",
-    "ja": "GarageGo｜servis motor ガイド"
+    "id": "Cara memulai servis motor tanpa ribet",
+    "en": "How to start motorbike service without friction",
+    "ar": "كيف تبدأ صيانة الدراجة دون تعقيد",
+    "jv": "Kepriyé miwiti servis motor tanpa ruwet",
+    "su": "Kumaha ngamimitian servis motor tanpa ribet",
+    "zh": "如何开始摩托车保养（不必复杂）",
+    "ja": "バイク整備を無理なく始める方法"
   },
-  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+  "quality_pass": "editorial-v3",
+  "descriptions": {
+    "id": "Mulai servis motor dari versi paling kecil. Artikel ini menjelaskan kapan waktu terbaik mencatatnya dan cara meninjau kebiasaan itu setiap minggu tanpa ribet.",
+    "en": "Start motorbike service with the smallest version that works. This guide covers when to run it and how to do a quick weekly check without friction.",
+    "ar": "ابدأ متابعة servis motor بأصغر نسخة تنجح: متى تبدأ بها، وكيف تراجع الأمر أسبوعياً بخطوة سريعة دون أن يثقل عليك.",
+    "ja": "最小バージョンでservis motorを始める方法。実行のタイミングと毎週の振り返りを順番に説明します。",
+    "zh": "用最小版本开始servis motor，说明何时执行，以及每周如何回顾，步骤清楚易懂。",
+    "jv": "Miwiti servis motor saka versi sing paling cilik. Artikel iki nerangake kapan wektu sing pas kanggo nyathet, lan carane ninjau saben minggu tanpa ruwet.",
+    "su": "Mimitian servis motor ku versi nu pang leutikna. Artikel ieu ngajelaskeun iraha waktu nu pas keur nyatet jeung kumaha ningali minggu-minggu tanpa ribet."
+  }
 }

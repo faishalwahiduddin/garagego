@@ -8,22 +8,31 @@
   "banner_ready": false,
   "seo": true,
   "slugs": {
-    "id": "dashboard-minimal-untuk-servis-mobil-praktis",
-    "en": "minimal-dashboard-for-servis-mobil-practical",
-    "ar": "servis-mobil-7",
-    "jv": "pandhuan-servis-mobil-garagego-7",
-    "su": "pituduh-servis-mobil-garagego-7",
-    "zh": "garagego-servis-mobil-实用指南-7",
-    "ja": "garagegoservis-mobil-ガイド-7"
+    "id": "cara-mengukur-servis-mobil-tanpa-angka-palsu",
+    "en": "measuring-servis-mobil-without-fake-numbers",
+    "ar": "qyas-alsjlat-alywmya-dwn-arqam-whmya-aljz-2",
+    "jv": "ngukur-servis-mobil-tanpa-angka-goroh",
+    "su": "ngukur-servis-mobil-tanpa-angka-bohong",
+    "zh": "ru-he-heng-liang-ri-chang-ji-lu-er-bu-kao-gu-ji-di-2-pian",
+    "ja": "suisoku-ni-tayora-zu-mainichi-no-kiroku-wo-hakaru-dai-2-kai"
   },
   "titles": {
-    "id": "Dashboard Minimal untuk servis mobil",
-    "en": "Minimal Dashboard for servis mobil (Practical)",
-    "ar": "servis mobil — دليل GarageGo",
-    "jv": "Pandhuan: Dashboard Minimal untuk servis mobil",
-    "su": "Pituduh: Dashboard Minimal untuk servis mobil",
-    "zh": "GarageGo · servis mobil 实用指南",
-    "ja": "GarageGo｜servis mobil ガイド"
+    "id": "Cara mengukur servis mobil tanpa angka palsu",
+    "en": "Measuring servis mobil without fake numbers",
+    "ar": "قياس السجلات اليومية دون أرقام وهمية · الجزء 2",
+    "jv": "Ngukur servis mobil tanpa angka goroh",
+    "su": "Ngukur servis mobil tanpa angka bohong",
+    "zh": "如何衡量日常记录而不靠估计 · 第2篇",
+    "ja": "推測に頼らず毎日の記録を測る · 第2回"
   },
-  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+  "quality_pass": "editorial-v3",
+  "descriptions": {
+    "id": "Mengukur servis mobil tanpa angka palsu. Bahas tinjauan mingguan, penyimpanan di perangkat, dan langkah setelah catatan berhenti sementara.",
+    "en": "Measuring servis mobil without fake numbers, covering the weekly check, on-device storage, and the steps to take after logging stops for a while.",
+    "ar": "قياس servis mobil دون أرقام مزيفة، يغطي المراجعة الأسبوعية، والتخزين على الجهاز، والخطوات بعد توقف التسجيل مدة.",
+    "ja": "偽の数字を使わずservis mobilを評価する。毎週の確認、端末内の保存、記録が止まった後の手順。",
+    "zh": "不使用虚假数字评估servis mobil：涵盖每周检查、设备存储，以及停止记录一段时间后的步骤。",
+    "jv": "Ngukur servis mobil tanpa angka palsu. Ngrembug tinjauan saben minggu, panyimpenan ing piranti, lan langkah sawisé cathetan mandheg sedhela.",
+    "su": "Ngukur servis mobil tanpa angka palsu. Ngabahas tinjauan mingguan, panyimpenan di alat, jeung léngkah sanggeus catetan eureun sakedap."
+  }
 }

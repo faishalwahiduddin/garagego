@@ -8,22 +8,31 @@
   "banner_ready": false,
   "seo": true,
   "slugs": {
-    "id": "mode-pesawat-tetap-bisa-garagego",
-    "en": "airplane-mode-still-do-garagego",
-    "ar": "garagego-7",
-    "jv": "pandhuan-garagego-garagego-7",
-    "su": "pituduh-garagego-garagego-7",
-    "zh": "garagego-garagego-实用指南-7",
-    "ja": "garagegogaragego-ガイド-7"
+    "id": "servis-motor-full-offline-apa-yang-tetap-jalan",
+    "en": "motorbike-service-fully-offline-what-still-works",
+    "ar": "syana-aldraja-bla-atsal-tmama-ma-ybqa-yaml",
+    "jv": "servis-motor-full-offline-apa-sing-tetep-mlaku",
+    "su": "servis-motor-full-offline-naon-anu-tetep-jalan",
+    "zh": "mo-tuo-che-bao-yang-wan-quan-li-xian-na-xie-gong-neng-hai-neng-yong",
+    "ja": "baiku-seibi-kanzen-ofurain-nani-ga-ugoku-ka"
   },
   "titles": {
-    "id": "Mode Pesawat: Tetap Bisa GarageGo",
-    "en": "Airplane Mode: Still Do GarageGo",
-    "ar": "GarageGo — دليل GarageGo",
-    "jv": "Pandhuan: Mode Pesawat: Tetap Bisa GarageGo",
-    "su": "Pituduh: Mode Pesawat: Tetap Bisa GarageGo",
-    "zh": "GarageGo · GarageGo 实用指南",
-    "ja": "GarageGo｜GarageGo ガイド"
+    "id": "servis motor full offline: apa yang tetap jalan",
+    "en": "motorbike service fully offline: what still works",
+    "ar": "صيانة الدراجة بلا اتصال تماماً: ما يبقى يعمل",
+    "jv": "servis motor full offline: apa sing tetep mlaku",
+    "su": "servis motor full offline: naon anu tetep jalan",
+    "zh": "摩托车保养完全离线：哪些功能还能用",
+    "ja": "バイク整備完全オフライン：何が動くか"
   },
-  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+  "quality_pass": "editorial-v3",
+  "descriptions": {
+    "id": "Servis motor sepenuhnya offline: apa saja yang tetap bisa dipakai, penyimpanan di perangkat, tinjauan mingguan, dan langkah setelah jeda.",
+    "en": "Motorbike service fully offline: what still works without a connection, how data stays on your device, the weekly check, and steps after a break.",
+    "ar": "servis motor دون اتصال بالكامل: ما الذي يظل يعمل بلا شبكة، وكيف تبقى البيانات على جهازك، والمراجعة الأسبوعية، والخطوات بعد توقف.",
+    "ja": "通信がなくても使える、完全オフラインのservis motor。端末内データ、毎週の確認、中断後の手順。",
+    "zh": "完全离线的servis motor：没有网络仍能用的部分、设备上的数据、每周检查，以及中断后的步骤。",
+    "jv": "Servis motor kabeh offline: apa sing tetep bisa dienggo tanpa jaringan, data ing piranti, tinjauan saben minggu, lan langkah sawisé jeda.",
+    "su": "Servis motor sakabéhna offline: naon nu tetep bisa dipaké tanpa jaringan, data di alat, tinjauan mingguan, jeung léngkah sanggeus jeda."
+  }
 }

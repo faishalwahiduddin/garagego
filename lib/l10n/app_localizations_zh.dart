@@ -859,4 +859,775 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get validationDocNameRequired => '文件名称不能为空';
+
+  @override
+  String get appTitle => 'GarageGo';
+
+  @override
+  String get appTagline => '保养、机油、燃油与车税，一处记全';
+
+  @override
+  String get loadingLabel => '加载中…';
+
+  @override
+  String get onbSkip => '跳过';
+
+  @override
+  String get onbNext => '下一步';
+
+  @override
+  String get onbGetStarted => '开始使用';
+
+  @override
+  String get onbPrivacyHeadline => '隐私保护，完全离线';
+
+  @override
+  String get onbPrivacyDetail => '所有车辆数据都保存在您的设备上，不含任何追踪。';
+
+  @override
+  String get onbSlide1Title => '您的车库';
+
+  @override
+  String get onbSlide1Sub => '汽车与摩托，集中管理';
+
+  @override
+  String get onbSlide1Badge => '100% 离线且私密';
+
+  @override
+  String get onbSlide2Title => '保养';
+
+  @override
+  String get onbSlide2Sub => '保养、机油与车税';
+
+  @override
+  String get onbSlide2Badge => '定期提醒';
+
+  @override
+  String get onbSlide3Title => '燃油';
+
+  @override
+  String get onbSlide3Sub => '百公里油耗与每公里花费';
+
+  @override
+  String get onbSlide3Badge => '无广告，无需账号';
+
+  @override
+  String get onbSlide4Title => '离线且私密';
+
+  @override
+  String get onbSlide4Sub => '数据保存在您的设备中';
+
+  @override
+  String get onbSlide4Badge => '数据保存在设备中';
+
+  @override
+  String get urgencySafe => '正常';
+
+  @override
+  String get urgencyDueSoon => '即将到期';
+
+  @override
+  String get urgencyOverdue => '已逾期';
+
+  @override
+  String get docTypeTax => '年度车辆税';
+
+  @override
+  String get docTypePlate => '五年牌照与行驶证换发';
+
+  @override
+  String get docTypeInsurance => '车辆保险';
+
+  @override
+  String get docTypeEmissions => '排放检测 / 年检';
+
+  @override
+  String get docTypeLicense => '驾驶证';
+
+  @override
+  String get docTypeTitle => '车辆所有权证';
+
+  @override
+  String get docTypeOther => '其他证件';
+
+  @override
+  String get mtCatOilFluids => '机油与油液';
+
+  @override
+  String get mtCatOilFilter => '机油与滤芯';
+
+  @override
+  String get mtCatAirFilter => '空气与空调滤芯';
+
+  @override
+  String get mtCatBrakes => '制动系统';
+
+  @override
+  String get mtCatTires => '轮胎与悬架';
+
+  @override
+  String get mtCatIgnition => '点火系统';
+
+  @override
+  String get mtCatTransmission => '变速与传动';
+
+  @override
+  String get mtCatCvt => 'CVT 变速箱';
+
+  @override
+  String get mtCatElectrical => '电气与电瓶';
+
+  @override
+  String get mtCatCoolant => '冷却液与水箱';
+
+  @override
+  String get mtCatGeneral => '定期保养';
+
+  @override
+  String get mtPresetCarOil => '更换合成机油';
+
+  @override
+  String get mtPresetCarOilFilter => '更换机油滤芯';
+
+  @override
+  String get mtPresetCarAirFilter => '空气滤芯与空调滤芯';
+
+  @override
+  String get mtPresetCarBrakeFluid => '更换刹车油与刹车片';
+
+  @override
+  String get mtPresetCarTireRotation => '轮胎换位与四轮定位';
+
+  @override
+  String get mtPresetCarSparkPlugs => '更换铱金火花塞';
+
+  @override
+  String get mtPresetMotoOil => '更换摩托机油';
+
+  @override
+  String get mtPresetMotoGearOil => '更换齿轮油';
+
+  @override
+  String get mtPresetMotoCvt => 'CVT 保养、皮带与滚珠';
+
+  @override
+  String get mtPresetMotoBrakes => '检查并更换刹车片';
+
+  @override
+  String get mtPresetMotoSparkPlug => '更换摩托火花塞';
+
+  @override
+  String inspPreTripTitle(String type) {
+    return '出行前检查（$type）';
+  }
+
+  @override
+  String inspRoadworthiness(String passed, String total) {
+    return '合格项：$passed/$total 项通过';
+  }
+
+  @override
+  String inspPassedCount(String pct, String passed, String total) {
+    return '$pct% 通过（$passed/$total）';
+  }
+
+  @override
+  String get inspCatEngine => '发动机与油液';
+
+  @override
+  String get inspCatWheelsBrakes => '车轮与制动';
+
+  @override
+  String get inspCatLights => '灯光与电气';
+
+  @override
+  String get inspCatSafety => '安全';
+
+  @override
+  String get inspCatDrivetrain => '传动系统';
+
+  @override
+  String get inspCatWheelsSteering => '车轮与转向';
+
+  @override
+  String get inspCatBrakes => '制动';
+
+  @override
+  String get inspCatElectrical => '电气';
+
+  @override
+  String get inspCatEquipment => '随车装备';
+
+  @override
+  String get inspCar1 => '机油尺液位与机油清洁度';
+
+  @override
+  String get inspCar2 => '水箱冷却液液位';
+
+  @override
+  String get inspCar3 => '刹车、离合与助力转向油位';
+
+  @override
+  String get inspCar4 => '四轮及备胎胎压与花纹深度';
+
+  @override
+  String get inspCar5 => '刹车片状态与手刹制动力';
+
+  @override
+  String get inspCar6 => '大灯、刹车灯、转向灯与双闪';
+
+  @override
+  String get inspCar7 => '电瓶接线柱与 12V 电压指示';
+
+  @override
+  String get inspCar8 => '雨刷胶条与玻璃水液位';
+
+  @override
+  String get inspCar9 => '千斤顶、轮胎扳手、警示三角与急救包';
+
+  @override
+  String get inspMoto1 => '机油液位与品质';
+
+  @override
+  String get inspMoto2 => '齿轮油状态 / 链条松紧度';
+
+  @override
+  String get inspMoto3 => '前后轮胎压';
+
+  @override
+  String get inspMoto4 => '前后刹车片厚度';
+
+  @override
+  String get inspMoto5 => '前灯、尾灯与转向灯';
+
+  @override
+  String get inspMoto6 => '喇叭与电启动（电瓶状态）';
+
+  @override
+  String get inspMoto7 => '左右后视镜与随车工具';
+
+  @override
+  String gamesLvl(String level) {
+    return '等级 $level';
+  }
+
+  @override
+  String gamesProgress(String xp, String unlocked, String total) {
+    return '$xp XP • 已解锁 $unlocked/$total 枚徽章';
+  }
+
+  @override
+  String gamesNextLevel(String next, String xp) {
+    return '下一级：$next（$xp XP）';
+  }
+
+  @override
+  String get gamesMaxRank => '已达最高等级';
+
+  @override
+  String get gamesBadgesTitle => '车库保养徽章';
+
+  @override
+  String get gamesShare => '分享';
+
+  @override
+  String get gamesUnlocked => '已解锁（+100 XP）';
+
+  @override
+  String get gamesLocked => '尚未解锁';
+
+  @override
+  String gamesBadgeUnlockedLine(String highlight) {
+    return '已解锁徽章：$highlight';
+  }
+
+  @override
+  String get gamesLvl1 => '新手车主';
+
+  @override
+  String get gamesLvl2 => '用心车主';
+
+  @override
+  String get gamesLvl3 => '车队守护者';
+
+  @override
+  String get gamesLvl4 => '保养专家';
+
+  @override
+  String get gamesLvl5 => '车库大师';
+
+  @override
+  String get badgeFirstRideTitle => '第一辆车';
+
+  @override
+  String get badgeFirstRideDesc => '在数字车库中登记第一辆车。';
+
+  @override
+  String get badgeOilCareTitle => '机油卫士';
+
+  @override
+  String get badgeOilCareDesc => '按时记录了更换机油。';
+
+  @override
+  String get badgeServiceVeteranTitle => '定期保养达人';
+
+  @override
+  String get badgeServiceVeteranDesc => '至少记录了 3 次定期保养。';
+
+  @override
+  String get badgeFuelWatcherTitle => '油耗追踪';
+
+  @override
+  String get badgeFuelWatcherDesc => '至少记录了 3 次加油以跟踪油耗。';
+
+  @override
+  String get badgeSafeVoyageTitle => '安全检验员';
+
+  @override
+  String get badgeSafeVoyageDesc => '完成了车辆安全检查清单。';
+
+  @override
+  String get badgeDocKeeperTitle => '证件管家';
+
+  @override
+  String get badgeDocKeeperDesc => '保存了车辆合法证件（行驶证、税单、驾照、保险）。';
+
+  @override
+  String get badgePrimeFleetTitle => '车况优良';
+
+  @override
+  String get badgePrimeFleetDesc => '车辆健康分达到 90 分以上。';
+
+  @override
+  String get badgeRoadWarriorTitle => '万里行者';
+
+  @override
+  String get badgeRoadWarriorDesc => '跟踪里程超过 10,000 公里的车辆。';
+
+  @override
+  String healthOilOverdue(String km) {
+    return '机油已超期 $km 公里';
+  }
+
+  @override
+  String healthOilDue(String km) {
+    return '机油将在 $km 公里后需要更换';
+  }
+
+  @override
+  String get healthOilOptimal => '机油更换周期正常';
+
+  @override
+  String get healthTaxOverdue => '年度车税已逾期';
+
+  @override
+  String healthTaxDue(String days) {
+    return '年度车税将在 $days 天后到期';
+  }
+
+  @override
+  String get healthTaxSafe => '年度车税在有效期内';
+
+  @override
+  String get healthPlateExpired => '五年牌照已过期';
+
+  @override
+  String healthPlateDue(String days) {
+    return '五年牌照将在 $days 天后需要换发';
+  }
+
+  @override
+  String healthScheduleOverdue(String title) {
+    return '$title 已逾期';
+  }
+
+  @override
+  String healthScheduleDueSoon(String title) {
+    return '$title 即将到期';
+  }
+
+  @override
+  String get healthPrime => '极佳';
+
+  @override
+  String get healthAttention => '需要留意';
+
+  @override
+  String get healthCritical => '严重 / 尽快保养';
+
+  @override
+  String get fuelEstTotalCost => '预计总费用：';
+
+  @override
+  String get fuelTripDistance => '本次行驶距离：';
+
+  @override
+  String get fuelAvgConsumption => '平均油耗：';
+
+  @override
+  String get fuelOperatingCost => '每公里成本：';
+
+  @override
+  String get fuelFullTank => '加满';
+
+  @override
+  String get fuelPartial => '部分加油';
+
+  @override
+  String fuelPricePerLiterLine(String price, String state) {
+    return '@ $price/升 • $state';
+  }
+
+  @override
+  String fuelOdometerValue(String value) {
+    return '里程：$value km';
+  }
+
+  @override
+  String fuelKmL(String value) {
+    return '$value 公里/升';
+  }
+
+  @override
+  String get aboutApplication => '应用';
+
+  @override
+  String get aboutVersion => '版本';
+
+  @override
+  String get aboutArchitecture => '架构';
+
+  @override
+  String get aboutArchitectureValue => '100% 离线优先（无服务器、无追踪）';
+
+  @override
+  String get aboutDomain => '域名';
+
+  @override
+  String get aboutPackageId => '包名';
+
+  @override
+  String settingsVehicleOdo(String plate, String value) {
+    return '$plate • 里程：$value km';
+  }
+
+  @override
+  String get backupInvalidFile => '.grg 文件无效或结构已损坏';
+
+  @override
+  String get filterAll => '全部';
+
+  @override
+  String get filterAttention => '需留意';
+
+  @override
+  String get maintenanceScreenTitle => '保养与服务';
+
+  @override
+  String get serviceTitleHint => '例如：更换机油与滤芯';
+
+  @override
+  String get workshopHint => '例如：授权经销商 / 修理厂';
+
+  @override
+  String get mustBePositive => '必须大于 0';
+
+  @override
+  String get editScheduleTitle => '修改保养计划';
+
+  @override
+  String get scheduleUpdated => '计划已更新！';
+
+  @override
+  String get scheduleSaved => '保养计划已保存！';
+
+  @override
+  String get updateSchedule => '更新计划';
+
+  @override
+  String get saveSchedule => '保存保养计划';
+
+  @override
+  String scheduleCompleted(String title) {
+    return '$title 已完成！';
+  }
+
+  @override
+  String kmOverdue(String km) {
+    return '超出 $km 公里';
+  }
+
+  @override
+  String kmRemaining(String km) {
+    return '还剩 $km 公里';
+  }
+
+  @override
+  String kmOverdueShort(String km) {
+    return '超 $km km';
+  }
+
+  @override
+  String kmRemainingShort(String km) {
+    return '剩 $km km';
+  }
+
+  @override
+  String daysOverdue(String days) {
+    return '逾期 $days 天';
+  }
+
+  @override
+  String daysLeft(String days) {
+    return '还剩 $days 天';
+  }
+
+  @override
+  String scheduleIntervalSummary(
+    String km,
+    String months,
+    String odo,
+    String date,
+  ) {
+    return '每 $km 公里或 $months 个月 • 上次：$odo km（$date）';
+  }
+
+  @override
+  String get shareVehiclePassport => '分享车辆护照';
+
+  @override
+  String get shareVehiclePassportSubtitle => '把状态卡、健康分与记录分享到社交媒体';
+
+  @override
+  String get garageEmptyBody => '添加家里的第一辆车或摩托，开始跟踪保养、机油与燃油。';
+
+  @override
+  String resetOilConfirm(String name, String odo) {
+    return '$name 的换油计数将重置为当前里程（$odo km）。';
+  }
+
+  @override
+  String get resetOilServiceNote => '重置机油周期计数';
+
+  @override
+  String oilIntervalEvery(String km) {
+    return '周期：每 $km 公里';
+  }
+
+  @override
+  String garageYear(String year) {
+    return '$year 年款';
+  }
+
+  @override
+  String get shareDialogTitle => '分享车辆护照';
+
+  @override
+  String get shareCopySummary => '复制摘要';
+
+  @override
+  String get sharePreparing => '正在生成…';
+
+  @override
+  String get shareDownloadPassport => '下载护照';
+
+  @override
+  String get shareSharePassport => '分享护照';
+
+  @override
+  String get shareImageFailed => '无法生成车辆护照图片';
+
+  @override
+  String get shareImageDownloaded => '车辆护照已下载';
+
+  @override
+  String get shareSummaryCopied => '车辆状态摘要已复制';
+
+  @override
+  String get shareCardHealthHeader => '车队健康状态';
+
+  @override
+  String shareCardCondition(String status) {
+    return '车况：$status';
+  }
+
+  @override
+  String get shareCardOdometer => '里程';
+
+  @override
+  String get shareCardOil => '换机油';
+
+  @override
+  String get shareCardTax => '车辆税';
+
+  @override
+  String get shareCardNeedService => '需要保养';
+
+  @override
+  String shareCardDaysShort(String days) {
+    return '$days 天';
+  }
+
+  @override
+  String shareCardLogbook(String date) {
+    return '日志：$date';
+  }
+
+  @override
+  String shareTextHeader(String name, String plate) {
+    return '🚗 车辆保养护照 — $name（$plate）';
+  }
+
+  @override
+  String shareTextHealth(String score, String status) {
+    return '🏆 健康分：$score/100（$status）';
+  }
+
+  @override
+  String shareTextOdometer(String odo) {
+    return '⚡ 里程：$odo km';
+  }
+
+  @override
+  String shareTextOil(String km) {
+    return '🛢️ 距离换油还有 $km km';
+  }
+
+  @override
+  String get shareTextOilDue => '🛢️ 需立即更换机油';
+
+  @override
+  String shareTextTax(String days) {
+    return '📋 车辆税：还剩 $days 天';
+  }
+
+  @override
+  String get shareTextFooter =>
+      '在 GarageGo 离线管理完整车库保养：https://garagego.faishal.id';
+
+  @override
+  String gloveboxHeader(String name) {
+    return '数字手套箱 — $name';
+  }
+
+  @override
+  String gloveboxDocCount(String plate, String count) {
+    return '$plate • 已登记 $count 份证件';
+  }
+
+  @override
+  String docExpiredAgo(String days) {
+    return '$days 天前已过期';
+  }
+
+  @override
+  String docDueIn(String days) {
+    return '$days 天后到期';
+  }
+
+  @override
+  String docDaysLeft(String days) {
+    return '还剩 $days 天';
+  }
+
+  @override
+  String docValidUntil(String date) {
+    return '有效期至：$date';
+  }
+
+  @override
+  String get docEditTitle => '修改证件';
+
+  @override
+  String get docAddTitle => '添加车库证件';
+
+  @override
+  String get docTitleHint => '例如：年度车税 / 全险';
+
+  @override
+  String get docNumberHint => '例如：B 1234 CD / POL-88902';
+
+  @override
+  String get docCostHint => '例如：3500000';
+
+  @override
+  String get docNotesLabel => '备注与续期提示';
+
+  @override
+  String get docNotesHint => '例如：在线支付或到窗口办理';
+
+  @override
+  String get docUpdated => '证件已更新！';
+
+  @override
+  String get docAdded => '证件已添加！';
+
+  @override
+  String get docUpdate => '更新证件';
+
+  @override
+  String get docSave => '保存证件';
+
+  @override
+  String get vehicleNameHint => '例如：Honda HR-V / Yamaha NMAX';
+
+  @override
+  String get plateHint => 'B 1234 CD';
+
+  @override
+  String get invalidYear => '年份无效';
+
+  @override
+  String get taxDueLabel => '年度车税到期日';
+
+  @override
+  String scheduleDoneNote(String category) {
+    return '已按定期计划完成（$category）';
+  }
+
+  @override
+  String get backupErrEmpty => '备份数据为空。';
+
+  @override
+  String get backupErrRawJson => '出于安全考虑不支持原始 JSON，请使用官方备份文件。';
+
+  @override
+  String get backupErrFormat => '备份文件格式无效或无法识别。';
+
+  @override
+  String backupErrWrongApp(String other, String expected) {
+    return '该备份属于 $other，无法恢复到 $expected。';
+  }
+
+  @override
+  String get backupErrCorrupt => '备份数据已损坏或编码无效。';
+
+  @override
+  String get backupErrIntegrity => '备份完整性校验失败：数据已被修改或损坏。';
+
+  @override
+  String get backupErrNotObject => '备份内容不是有效的数据对象。';
+
+  @override
+  String get mtCatEngine => '发动机';
+
+  @override
+  String get mtCatOther => '其他';
+
+  @override
+  String get unitMonthsShort => '月';
+
+  @override
+  String get docNoteTax => '通过国家 Samsat Digital（SIGNAL）应用或就近的 Samsat 网点缴纳';
+
+  @override
+  String get docNotePlate => '需到 Samsat 主所进行车辆实车查验';
+
+  @override
+  String get docNoteInsurance => '保单内附紧急理赔与拖车电话';
+
+  @override
+  String gamesBadgeCount(String unlocked, String total) {
+    return '已解锁 $unlocked/$total 枚徽章';
+  }
 }

@@ -8,22 +8,31 @@
   "banner_ready": false,
   "seo": true,
   "slugs": {
-    "id": "pindah-perangkat-tanpa-hilang-servis-mobil-2026",
-    "en": "move-devices-without-losing-servis-mobil",
-    "ar": "servis-mobil-5",
-    "jv": "pandhuan-servis-mobil-garagego-5",
-    "su": "pituduh-servis-mobil-garagego-5",
-    "zh": "garagego-servis-mobil-实用指南-5",
-    "ja": "garagegoservis-mobil-ガイド-5"
+    "id": "ekspor-data-servis-mobil-apa-yang-ikut-tersimpan",
+    "en": "exporting-servis-mobil-what-comes-with-the-file",
+    "ar": "tsdyr-alsjlat-alywmya-ma-aldhy-yhfz-fala",
+    "jv": "ekspor-data-servis-mobil-apa-sing-melu-kasimpen",
+    "su": "ekspor-data-servis-mobil-naon-anu-milu-kasimpen",
+    "zh": "dao-chu-ri-chang-ji-lu-wen-jian-li-dou-you-shen-me",
+    "ja": "mainichi-no-kiroku-no-kakidashi-nani-ga-hozon-sareruka"
   },
   "titles": {
-    "id": "Pindah Perangkat tanpa Hilang servis mobil",
-    "en": "Move Devices Without Losing servis mobil",
-    "ar": "servis mobil — دليل GarageGo",
-    "jv": "Pandhuan: Pindah Perangkat tanpa Hilang servis mobil",
-    "su": "Pituduh: Pindah Perangkat tanpa Hilang servis mobil",
-    "zh": "GarageGo · servis mobil 实用指南",
-    "ja": "GarageGo｜servis mobil ガイド"
+    "id": "Ekspor data servis mobil: apa yang ikut tersimpan",
+    "en": "Exporting servis mobil: what comes with the file",
+    "ar": "تصدير السجلات اليومية: ما الذي يُحفظ فعلاً",
+    "jv": "Ekspor data servis mobil: apa sing melu kasimpen",
+    "su": "Ékspor data servis mobil: naon anu milu kasimpen",
+    "zh": "导出日常记录：文件里都有什么",
+    "ja": "毎日の記録の書き出し：何が保存されるか"
   },
-  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+  "quality_pass": "editorial-v3",
+  "descriptions": {
+    "id": "Ekspor servis mobil: penjelasan isi file yang dihasilkan, tinjauan mingguan, dan catatan penyimpanan di perangkat saat Anda berganti perangkat.",
+    "en": "Exporting servis mobil: what to expect in the exported file, the weekly check to keep it current, and on-device storage when you switch to a new phone.",
+    "ar": "تصدير servis mobil: ما يمكن توقعه في الملف المُصدَّر، والمراجعة الأسبوعية للحفاظ على تحديثه، والتخزين على الجهاز عند تغيير الهاتف.",
+    "ja": "servis mobilを書き出す際のポイント。出力ファイルの中身、毎週の確認、端末を替えた時の保存。",
+    "zh": "导出servis mobil：说明导出文件中会有什么、如何保持记录更新的每周检查，以及换手机时的设备存储。",
+    "jv": "Ekspor servis mobil: apa sing bisa dikira ing file ekspor, tinjauan saben minggu supaya tetep anyar, lan panyimpenan ing piranti nalika ganti HP.",
+    "su": "Ékspor servis mobil: naon nu bisa diharepkeun dina file ékspor, tinjauan mingguan pikeun ngajaga tetep anyar, jeung panyimpenan di alat lamun ganti HP."
+  }
 }

@@ -8,22 +8,31 @@
   "banner_ready": false,
   "seo": true,
   "slugs": {
-    "id": "apa-itu-catatan-bbm-glosarium-singkat-offline",
-    "en": "what-is-catatan-bbm-a-short-glossary",
-    "ar": "catatan-bbm",
-    "jv": "pandhuan-catatan-bbm-garagego",
-    "su": "pituduh-catatan-bbm-garagego",
-    "zh": "garagego-catatan-bbm-实用指南",
-    "ja": "garagegocatatan-bbm-ガイド"
+    "id": "apa-itu-catatan-bbm-penjelasan-singkat",
+    "en": "what-is-daily-records-a-short-explanation",
+    "ar": "ma-mana-alsjlat-alywmya-shrh-mwjz",
+    "jv": "apa-iku-catatan-bbm-katrangan-cekak",
+    "su": "naon-eta-catatan-bbm-katerangan-pondok",
+    "zh": "ri-chang-ji-lu-shi-shen-me-jian-ming-jie-shi",
+    "ja": "mainichi-no-kiroku-toha-mijikai-setsumei"
   },
   "titles": {
-    "id": "Apa Itu catatan BBM? Glosarium Singkat",
-    "en": "What Is catatan BBM? A Short Glossary",
-    "ar": "catatan BBM — دليل GarageGo",
-    "jv": "Pandhuan: Apa Itu catatan BBM? Glosarium Singkat",
-    "su": "Pituduh: Apa Itu catatan BBM? Glosarium Singkat",
-    "zh": "GarageGo · catatan BBM 实用指南",
-    "ja": "GarageGo｜catatan BBM ガイド"
+    "id": "Apa itu catatan BBM? Penjelasan singkat",
+    "en": "What is daily records? A short explanation",
+    "ar": "ما معنى السجلات اليومية؟ شرح موجز",
+    "jv": "Apa iku catatan BBM? Katrangan cekak",
+    "su": "Naon éta catatan BBM? Katerangan pondok",
+    "zh": "日常记录是什么？简明解释",
+    "ja": "毎日の記録とは？短い説明"
   },
-  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+  "quality_pass": "editorial-v3",
+  "descriptions": {
+    "id": "Apa itu catatan BBM dalam praktik, versi paling kecil yang bisa dicoba, dan cara data tersimpan di perangkat tanpa akun. Penjelasan singkat untuk pemula.",
+    "en": "What daily records means in practice, the smallest version you can try, and how your data stays stored on your device with no account needed.",
+    "ar": "ما معنى catatan BBM في الممارسة، وأصغر نسخة يمكنك تجربتها، وكيف تبقى البيانات محفوظة على جهازك دون حاجة إلى حساب.",
+    "ja": "catatan BBMの実際の意味、試せる最小バージョン、端末に保存される仕組みを短く説明します。",
+    "zh": "说明catatan BBM的实际含义、可以先试的最小版本，以及数据如何保存在设备上。",
+    "jv": "Apa iku catatan BBM ing praktik, versi paling cilik sing bisa dicoba, lan carané data kasimpen ing piranti tanpa akun. Katrangan cekak kanggo pemula.",
+    "su": "Naon éta catatan BBM dina prakték, versi pang leutikna anu bisa dicoba, jeung kumaha data disimpen dina alat tanpa akun. Katerangan pondok pikeun pemula."
+  }
 }

@@ -1,6 +1,21 @@
 import 'dart:convert';
 import 'dart:typed_data';
 
+// Stable error codes for backup decoding. Throwing codes instead of sentences
+// keeps stored/exported data language-neutral; `localizeBackupError` in
+// `core/utils/l10n_helpers.dart` turns them into localized copy for the UI.
+const kJsonObjectOpen = '{';
+const kJsonArrayOpen = '[';
+const kBackupErrEmpty = 'backupEmpty';
+const kBackupErrRawJson = 'backupRawJson';
+const kBackupErrFormat = 'backupFormat';
+const kBackupErrWrongApp = 'backupWrongApp';
+const kBackupErrCorrupt = 'backupCorrupt';
+const kBackupErrIntegrity = 'backupIntegrity';
+const kBackupErrNotObject = 'backupNotObject';
+const kBackupErrNoVehicles = 'backupNoVehicles';
+const kBackupErrInvalidVehicles = 'backupInvalidVehicles';
+
 /// Codec untuk format cadangan custom aman armada aplikasi faishal.id.
 ///
 /// Format: `FSBK1#<APP_TAG>#<CHECKSUM_HEX>#<BASE64_OBFUSCATED_PAYLOAD>`
@@ -12,7 +27,7 @@ import 'dart:typed_data';
 /// 4. Mencegah pemulihan silang antar-aplikasi.
 /// 5. Menolak input JSON mentah secara tegas untuk mencegah pengubahan teks manual.
 class FleetBackupCodec {
-  static const String prefix = 'FSBK1';
+  static const prefix = 'FSBK1';
 
   static final List<int> _crcTable = List<int>.generate(256, (i) {
     int c = i;
@@ -66,26 +81,24 @@ class FleetBackupCodec {
   }) {
     final trimmed = encoded.trim();
     if (trimmed.isEmpty) {
-      throw const FormatException('Data cadangan kosong.');
+      throw const FormatException(kBackupErrEmpty);
     }
-    if (trimmed.startsWith('{') || trimmed.startsWith('[')) {
-      throw const FormatException(
-        'Format JSON mentah tidak didukung untuk mencegah manipulasi data. '
-        'Gunakan berkas atau kode cadangan resmi.',
-      );
+    if (trimmed.startsWith(kJsonObjectOpen) ||
+        trimmed.startsWith(kJsonArrayOpen)) {
+      throw const FormatException(kBackupErrRawJson);
     }
 
     final parts = trimmed.split('#');
     if (parts.length != 4 || parts[0] != prefix) {
-      throw const FormatException('Format berkas cadangan tidak valid atau tidak dikenali.');
+      throw const FormatException(kBackupErrFormat);
     }
 
     final incomingTag = parts[1].trim().toUpperCase();
     final expectedTag = appTag.trim().toUpperCase();
     if (incomingTag != expectedTag) {
       throw FormatException(
-        'Berkas cadangan ini milik aplikasi $incomingTag, '
-        'tidak dapat dipulihkan ke $expectedTag.',
+        kBackupErrWrongApp,
+        '$incomingTag|$expectedTag',
       );
     }
 
@@ -94,27 +107,25 @@ class FleetBackupCodec {
     try {
       masked = base64Decode(parts[3].trim());
     } catch (_) {
-      throw const FormatException('Data cadangan rusak atau format encoding tidak sah.');
+      throw const FormatException(kBackupErrCorrupt);
     }
 
     final rawBytes = _maskBytes(masked, incomingTag);
     final actualChecksum = _computeChecksum(rawBytes, incomingTag).toRadixString(16).padLeft(8, '0');
 
     if (actualChecksum != expectedChecksum) {
-      throw const FormatException(
-        'Integritas data cadangan tidak valid: data telah dimodifikasi atau rusak.',
-      );
+      throw const FormatException(kBackupErrIntegrity);
     }
 
     try {
       final decodedJson = jsonDecode(utf8.decode(rawBytes));
       if (decodedJson is! Map<String, dynamic>) {
-        throw const FormatException('Isi data cadangan bukan objek data yang sah.');
+        throw const FormatException(kBackupErrNotObject);
       }
       return decodedJson;
     } catch (e) {
       if (e is FormatException) rethrow;
-      throw FormatException('Gagal memproses struktur data cadangan: $e');
+      throw FormatException(kBackupErrFormat, '$e');
     }
   }
 }

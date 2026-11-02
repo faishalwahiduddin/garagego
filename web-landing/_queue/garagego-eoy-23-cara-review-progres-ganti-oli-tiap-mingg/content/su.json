@@ -1,0 +1,85 @@
+{
+  "title": "Kumaha ninjau ganti oli unggal minggu",
+  "description": "Kumaha ninjau ganti oli unggal minggu: fokus kana tinjauan mingguan, data nu disimpen di alat, jeung kumaha neruskeun lamun sataun teu nyatet.",
+  "badge": "produktivitas · offline",
+  "answer": "Jumaah soré catetan ganti oli anjeun belasan baris satengah jadi tanpa tanggal. GarageGo nyimpen ganti oli dina alat, jadi tetep kabuka tanpa kuota jeung tanpa akun.",
+  "toc": [
+    "Tinjauan unggal minggu",
+    "Kasimpen dina alat",
+    "Sanggeus bolong"
+  ],
+  "sections": [
+    {
+      "h2": "Tinjauan unggal minggu",
+      "p": "Saminggu sakali, tempo bagian anu paling sering bolong, tuluy leutikan targetna.",
+      "h3": null,
+      "p3": null
+    },
+    {
+      "h2": "Kasimpen dina alat",
+      "p": "GarageGo nyimpen ganti oli dina alat, jadi tetep kabuka tanpa kuota jeung tanpa akun.",
+      "h3": null,
+      "p3": null
+    },
+    {
+      "h2": "Sanggeus bolong",
+      "p": "Lamun bolong sababaraha poé, ulah mupus riwayat. Buka catetan panungtungan, eusian hiji poé, tuluy tutup.",
+      "h3": null,
+      "p3": null
+    }
+  ],
+  "table": {
+    "caption": "Rangka ganti oli",
+    "headers": [
+      "Léngkah",
+      "Eusi minimal",
+      "Bérés lamun"
+    ],
+    "rows": [
+      [
+        "Éntri sapopoé",
+        "waktu + status",
+        "kasimpen < 2 menit"
+      ],
+      [
+        "Pananda",
+        "posisi panungtungan",
+        "bisa diteruskeun isukan"
+      ],
+      [
+        "Evaluasi minggu",
+        "hiji panyesuaian",
+        "diterapkeun Senén"
+      ]
+    ]
+  },
+  "list": [
+    "Tangtukeun hiji waktu tetep, lain “mun sempet”.",
+    "Buka GarageGo basa waktu éta datang, ulah engké peuting.",
+    "Catet hiji halangan, lain alesan panjang.",
+    "Cadangkeun data saméméh ganti HP."
+  ],
+  "faqs": [
+    [
+      "Naha ganti oli bisa dibuka offline?",
+      "Bisa. GarageGo nyimpen kabéh dina alat, jadi teu butuh kuota."
+    ],
+    [
+      "Kudu akun heula?",
+      "Teu. Mimitian tanpa login; cadangkeun data sakapeung."
+    ],
+    [
+      "Mimitian ti mana?",
+      "Ti bagian pangpondokna. Tambahan yén geus dua minggu stabil."
+    ],
+    [
+      "Lamun bolong sababaraha poé?",
+      "Ulah mupus riwayat. Teraskeun tina catetan panungtungan jeung catet hiji halangan."
+    ]
+  ],
+  "cta": [
+    "Mimitian ganti oli poé ieu",
+    "Buka GarageGo"
+  ],
+  "slug": "pituduh-ganti-oli-garagego-3"
+}

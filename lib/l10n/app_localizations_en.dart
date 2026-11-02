@@ -903,4 +903,796 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get validationDocNameRequired => 'Document name is required';
+
+  @override
+  String get appTitle => 'GarageGo';
+
+  @override
+  String get appTagline =>
+      'Track service, oil, fuel and vehicle tax in one garage';
+
+  @override
+  String get loadingLabel => 'Loading…';
+
+  @override
+  String get onbSkip => 'Skip';
+
+  @override
+  String get onbNext => 'Next';
+
+  @override
+  String get onbGetStarted => 'Get Started';
+
+  @override
+  String get onbPrivacyHeadline => 'Private & Offline';
+
+  @override
+  String get onbPrivacyDetail =>
+      'All vehicle data stays on this device. No trackers.';
+
+  @override
+  String get onbSlide1Title => 'Your garage';
+
+  @override
+  String get onbSlide1Sub => 'Cars and motorcycles in one place';
+
+  @override
+  String get onbSlide1Badge => '100% Offline & Private';
+
+  @override
+  String get onbSlide2Title => 'Maintenance';
+
+  @override
+  String get onbSlide2Sub => 'Service, oil and road tax';
+
+  @override
+  String get onbSlide2Badge => 'Scheduled Reminders';
+
+  @override
+  String get onbSlide3Title => 'Fuel';
+
+  @override
+  String get onbSlide3Sub => 'km/L economy and cost per km';
+
+  @override
+  String get onbSlide3Badge => 'No Ads, No Account';
+
+  @override
+  String get onbSlide4Title => 'Offline & private';
+
+  @override
+  String get onbSlide4Sub => 'Data stays on your device';
+
+  @override
+  String get onbSlide4Badge => 'Data Stays on Your Device';
+
+  @override
+  String get urgencySafe => 'Safe';
+
+  @override
+  String get urgencyDueSoon => 'Due Soon';
+
+  @override
+  String get urgencyOverdue => 'Overdue';
+
+  @override
+  String get docTypeTax => 'Annual Vehicle Tax';
+
+  @override
+  String get docTypePlate => '5-Year Plate & Registration';
+
+  @override
+  String get docTypeInsurance => 'Vehicle Insurance';
+
+  @override
+  String get docTypeEmissions => 'Emissions Test / Inspection';
+
+  @override
+  String get docTypeLicense => 'Driver\'s Licence';
+
+  @override
+  String get docTypeTitle => 'Vehicle Title (BPKB)';
+
+  @override
+  String get docTypeOther => 'Other Document';
+
+  @override
+  String get mtCatOilFluids => 'Oil & Fluids';
+
+  @override
+  String get mtCatOilFilter => 'Oil & Filter';
+
+  @override
+  String get mtCatAirFilter => 'Air & Cabin Filters';
+
+  @override
+  String get mtCatBrakes => 'Brakes';
+
+  @override
+  String get mtCatTires => 'Tyres & Suspension';
+
+  @override
+  String get mtCatIgnition => 'Ignition';
+
+  @override
+  String get mtCatTransmission => 'Transmission & Drivetrain';
+
+  @override
+  String get mtCatCvt => 'CVT Transmission';
+
+  @override
+  String get mtCatElectrical => 'Electrical & Battery';
+
+  @override
+  String get mtCatCoolant => 'Coolant & Radiator';
+
+  @override
+  String get mtCatGeneral => 'Periodic Service';
+
+  @override
+  String get mtPresetCarOil => 'Synthetic Engine Oil Change';
+
+  @override
+  String get mtPresetCarOilFilter => 'Engine Oil Filter Replacement';
+
+  @override
+  String get mtPresetCarAirFilter => 'Air Filter & Cabin AC Filter';
+
+  @override
+  String get mtPresetCarBrakeFluid => 'Brake Fluid Flush & Brake Pads';
+
+  @override
+  String get mtPresetCarTireRotation => 'Tyre Rotation & Wheel Alignment';
+
+  @override
+  String get mtPresetCarSparkPlugs => 'Iridium Spark Plugs';
+
+  @override
+  String get mtPresetMotoOil => 'Motorcycle Engine Oil Change';
+
+  @override
+  String get mtPresetMotoGearOil => 'Final Drive Gear Oil';
+
+  @override
+  String get mtPresetMotoCvt => 'CVT Service, V-Belt & Rollers';
+
+  @override
+  String get mtPresetMotoBrakes => 'Front & Rear Brake Pads Inspection';
+
+  @override
+  String get mtPresetMotoSparkPlug => 'Motorcycle Spark Plug';
+
+  @override
+  String inspPreTripTitle(String type) {
+    return 'Pre-Trip Inspection ($type)';
+  }
+
+  @override
+  String inspRoadworthiness(String passed, String total) {
+    return 'Roadworthiness: $passed of $total Points Passed';
+  }
+
+  @override
+  String inspPassedCount(String pct, String passed, String total) {
+    return '$pct% Passed ($passed/$total)';
+  }
+
+  @override
+  String get inspCatEngine => 'Engine & Fluids';
+
+  @override
+  String get inspCatWheelsBrakes => 'Wheels & Brakes';
+
+  @override
+  String get inspCatLights => 'Lights & Electrical';
+
+  @override
+  String get inspCatSafety => 'Safety';
+
+  @override
+  String get inspCatDrivetrain => 'Drivetrain';
+
+  @override
+  String get inspCatWheelsSteering => 'Wheels & Steering';
+
+  @override
+  String get inspCatBrakes => 'Brakes';
+
+  @override
+  String get inspCatElectrical => 'Electrical';
+
+  @override
+  String get inspCatEquipment => 'Equipment';
+
+  @override
+  String get inspCar1 => 'Dipstick Level & Engine Oil Clarity';
+
+  @override
+  String get inspCar2 => 'Radiator Coolant Reservoir Level';
+
+  @override
+  String get inspCar3 => 'Brake & Clutch / Power Steering Fluid Level';
+
+  @override
+  String get inspCar4 => 'Tyre Pressure & Tread Depth (4 Tyres + Spare)';
+
+  @override
+  String get inspCar5 => 'Brake Pads Condition & Handbrake Grip';
+
+  @override
+  String get inspCar6 => 'Headlights, Brake Lights, Turn Signals & Hazard';
+
+  @override
+  String get inspCar7 => 'Battery Terminals & 12V Voltage Indicator';
+
+  @override
+  String get inspCar8 => 'Windshield Wipers & Washer Fluid Level';
+
+  @override
+  String get inspCar9 => 'Jack, Lug Wrench, Warning Triangle & First Aid Kit';
+
+  @override
+  String get inspMoto1 => 'Engine Oil Level & Condition';
+
+  @override
+  String get inspMoto2 => 'Final Drive Oil / Drive Chain Slack';
+
+  @override
+  String get inspMoto3 => 'Front & Rear Tyre Pressures';
+
+  @override
+  String get inspMoto4 => 'Front & Rear Brake Pads Thickness';
+
+  @override
+  String get inspMoto5 => 'Headlight, Taillight & Turn Signals';
+
+  @override
+  String get inspMoto6 => 'Horn & Electric Starter Operation';
+
+  @override
+  String get inspMoto7 => 'Rearview Mirrors & Toolkit';
+
+  @override
+  String gamesLvl(String level) {
+    return 'LVL $level';
+  }
+
+  @override
+  String gamesProgress(String xp, String unlocked, String total) {
+    return '$xp XP • $unlocked/$total Badges Unlocked';
+  }
+
+  @override
+  String gamesNextLevel(String next, String xp) {
+    return 'Next: $next ($xp XP)';
+  }
+
+  @override
+  String get gamesMaxRank => 'Max Rank Reached';
+
+  @override
+  String get gamesBadgesTitle => 'Garage Maintenance Badges';
+
+  @override
+  String get gamesShare => 'Share';
+
+  @override
+  String get gamesUnlocked => 'Unlocked (+100 XP)';
+
+  @override
+  String get gamesLocked => 'Not Unlocked Yet';
+
+  @override
+  String gamesBadgeUnlockedLine(String highlight) {
+    return 'Badge unlocked: $highlight';
+  }
+
+  @override
+  String get gamesLvl1 => 'Novice Driver';
+
+  @override
+  String get gamesLvl2 => 'Diligent Owner';
+
+  @override
+  String get gamesLvl3 => 'Fleet Guardian';
+
+  @override
+  String get gamesLvl4 => 'Maintenance Specialist';
+
+  @override
+  String get gamesLvl5 => 'Master Custodian';
+
+  @override
+  String get badgeFirstRideTitle => 'First Vehicle';
+
+  @override
+  String get badgeFirstRideDesc =>
+      'Registered your first vehicle in the digital garage.';
+
+  @override
+  String get badgeOilCareTitle => 'Oil Sentinel';
+
+  @override
+  String get badgeOilCareDesc => 'Logged an on-time engine oil change.';
+
+  @override
+  String get badgeServiceVeteranTitle => 'Service Regular';
+
+  @override
+  String get badgeServiceVeteranDesc =>
+      'Recorded at least 3 maintenance service logs.';
+
+  @override
+  String get badgeFuelWatcherTitle => 'Fuel Tracker';
+
+  @override
+  String get badgeFuelWatcherDesc =>
+      'Logged at least 3 fuel fill-ups to monitor efficiency.';
+
+  @override
+  String get badgeSafeVoyageTitle => 'Safety Inspector';
+
+  @override
+  String get badgeSafeVoyageDesc =>
+      'Completed a vehicle safety inspection checklist.';
+
+  @override
+  String get badgeDocKeeperTitle => 'Document Guard';
+
+  @override
+  String get badgeDocKeeperDesc =>
+      'Saved vehicle legal documents (tax, licence, insurance).';
+
+  @override
+  String get badgePrimeFleetTitle => 'Prime Health';
+
+  @override
+  String get badgePrimeFleetDesc =>
+      'Achieved vehicle health score of 90 or above.';
+
+  @override
+  String get badgeRoadWarriorTitle => 'Road Warrior';
+
+  @override
+  String get badgeRoadWarriorDesc =>
+      'Tracking a vehicle with odometer exceeding 10,000 km.';
+
+  @override
+  String healthOilOverdue(String km) {
+    return 'Engine oil change is overdue by $km km';
+  }
+
+  @override
+  String healthOilDue(String km) {
+    return 'Engine oil change due in $km km';
+  }
+
+  @override
+  String get healthOilOptimal => 'Engine oil interval is optimal';
+
+  @override
+  String get healthTaxOverdue => 'Annual vehicle tax is overdue';
+
+  @override
+  String healthTaxDue(String days) {
+    return 'Annual vehicle tax due in $days days';
+  }
+
+  @override
+  String get healthTaxSafe => 'Annual vehicle tax is active and safe';
+
+  @override
+  String get healthPlateExpired => '5-year licence plate has expired';
+
+  @override
+  String healthPlateDue(String days) {
+    return '5-year licence plate renewal due in $days days';
+  }
+
+  @override
+  String healthScheduleOverdue(String title) {
+    return '$title is overdue';
+  }
+
+  @override
+  String healthScheduleDueSoon(String title) {
+    return '$title is due soon';
+  }
+
+  @override
+  String get healthPrime => 'Prime';
+
+  @override
+  String get healthAttention => 'Needs Attention';
+
+  @override
+  String get healthCritical => 'Critical / Service Soon';
+
+  @override
+  String get fuelEstTotalCost => 'Estimated total cost:';
+
+  @override
+  String get fuelTripDistance => 'Trip distance:';
+
+  @override
+  String get fuelAvgConsumption => 'Average consumption:';
+
+  @override
+  String get fuelOperatingCost => 'Running cost:';
+
+  @override
+  String get fuelFullTank => 'Full Tank';
+
+  @override
+  String get fuelPartial => 'Partial';
+
+  @override
+  String fuelPricePerLiterLine(String price, String state) {
+    return '@ $price / L • $state';
+  }
+
+  @override
+  String fuelOdometerValue(String value) {
+    return 'Odo: $value km';
+  }
+
+  @override
+  String fuelKmL(String value) {
+    return '$value km/L';
+  }
+
+  @override
+  String get aboutApplication => 'Application';
+
+  @override
+  String get aboutVersion => 'Version';
+
+  @override
+  String get aboutArchitecture => 'Architecture';
+
+  @override
+  String get aboutArchitectureValue =>
+      '100% Offline-First (no server, no tracking)';
+
+  @override
+  String get aboutDomain => 'Domain';
+
+  @override
+  String get aboutPackageId => 'Package ID';
+
+  @override
+  String settingsVehicleOdo(String plate, String value) {
+    return '$plate • Odo: $value km';
+  }
+
+  @override
+  String get backupInvalidFile => 'The .grg file is invalid or corrupted';
+
+  @override
+  String get filterAll => 'All';
+
+  @override
+  String get filterAttention => 'Attention';
+
+  @override
+  String get maintenanceScreenTitle => 'Maintenance & Services';
+
+  @override
+  String get serviceTitleHint => 'e.g. Engine Oil & Filter Change';
+
+  @override
+  String get workshopHint => 'e.g. Authorized Dealership / Workshop';
+
+  @override
+  String get mustBePositive => 'Must be greater than 0';
+
+  @override
+  String get editScheduleTitle => 'Edit Maintenance Schedule';
+
+  @override
+  String get scheduleUpdated => 'Schedule updated successfully!';
+
+  @override
+  String get scheduleSaved => 'Maintenance schedule saved successfully!';
+
+  @override
+  String get updateSchedule => 'Update Schedule';
+
+  @override
+  String get saveSchedule => 'Save Maintenance Schedule';
+
+  @override
+  String scheduleCompleted(String title) {
+    return '$title completed successfully!';
+  }
+
+  @override
+  String kmOverdue(String km) {
+    return 'Overdue by $km km';
+  }
+
+  @override
+  String kmRemaining(String km) {
+    return '$km km remaining';
+  }
+
+  @override
+  String kmOverdueShort(String km) {
+    return 'Overdue $km km';
+  }
+
+  @override
+  String kmRemainingShort(String km) {
+    return '$km km left';
+  }
+
+  @override
+  String daysOverdue(String days) {
+    return 'Overdue by $days days';
+  }
+
+  @override
+  String daysLeft(String days) {
+    return '$days days left';
+  }
+
+  @override
+  String scheduleIntervalSummary(
+    String km,
+    String months,
+    String odo,
+    String date,
+  ) {
+    return 'Every $km km or $months months • Last: $odo km ($date)';
+  }
+
+  @override
+  String get shareVehiclePassport => 'Share Vehicle Passport';
+
+  @override
+  String get shareVehiclePassportSubtitle =>
+      'Share the status card, health score and history to social media';
+
+  @override
+  String get garageEmptyBody =>
+      'Add your family\'s first car or motorcycle to start tracking services, oil changes and fuel.';
+
+  @override
+  String resetOilConfirm(String name, String odo) {
+    return 'The oil change counter for $name will be reset to the current odometer ($odo km).';
+  }
+
+  @override
+  String get resetOilServiceNote => 'Engine oil interval counter reset';
+
+  @override
+  String oilIntervalEvery(String km) {
+    return 'Interval: every $km km';
+  }
+
+  @override
+  String garageYear(String year) {
+    return 'Year $year';
+  }
+
+  @override
+  String get shareDialogTitle => 'Share Vehicle Passport';
+
+  @override
+  String get shareCopySummary => 'Copy Summary';
+
+  @override
+  String get sharePreparing => 'Preparing…';
+
+  @override
+  String get shareDownloadPassport => 'Download Passport';
+
+  @override
+  String get shareSharePassport => 'Share Passport';
+
+  @override
+  String get shareImageFailed =>
+      'Could not generate the vehicle passport image';
+
+  @override
+  String get shareImageDownloaded => 'Vehicle passport downloaded';
+
+  @override
+  String get shareSummaryCopied => 'Vehicle status summary copied';
+
+  @override
+  String get shareCardHealthHeader => 'FLEET HEALTH STATUS';
+
+  @override
+  String shareCardCondition(String status) {
+    return 'Condition: $status';
+  }
+
+  @override
+  String get shareCardOdometer => 'ODOMETER';
+
+  @override
+  String get shareCardOil => 'OIL CHANGE';
+
+  @override
+  String get shareCardTax => 'ROAD TAX';
+
+  @override
+  String get shareCardNeedService => 'Service Now';
+
+  @override
+  String shareCardDaysShort(String days) {
+    return '$days days';
+  }
+
+  @override
+  String shareCardLogbook(String date) {
+    return 'Logbook: $date';
+  }
+
+  @override
+  String shareTextHeader(String name, String plate) {
+    return '🚗 Vehicle Care Passport — $name ($plate)';
+  }
+
+  @override
+  String shareTextHealth(String score, String status) {
+    return '🏆 Health score: $score/100 ($status)';
+  }
+
+  @override
+  String shareTextOdometer(String odo) {
+    return '⚡ Odometer: $odo km';
+  }
+
+  @override
+  String shareTextOil(String km) {
+    return '🛢️ Oil change due in $km km';
+  }
+
+  @override
+  String get shareTextOilDue => '🛢️ Oil change needed now';
+
+  @override
+  String shareTextTax(String days) {
+    return '📋 Road tax: $days days left';
+  }
+
+  @override
+  String get shareTextFooter =>
+      'Manage your whole garage offline in GarageGo: https://garagego.faishal.id';
+
+  @override
+  String gloveboxHeader(String name) {
+    return 'Digital Glovebox — $name';
+  }
+
+  @override
+  String gloveboxDocCount(String plate, String count) {
+    return '$plate • $count Registered Documents';
+  }
+
+  @override
+  String docExpiredAgo(String days) {
+    return 'Expired $days days ago';
+  }
+
+  @override
+  String docDueIn(String days) {
+    return 'Due in $days days';
+  }
+
+  @override
+  String docDaysLeft(String days) {
+    return '$days days remaining';
+  }
+
+  @override
+  String docValidUntil(String date) {
+    return 'Valid until: $date';
+  }
+
+  @override
+  String get docEditTitle => 'Edit Document';
+
+  @override
+  String get docAddTitle => 'Add Garage Document';
+
+  @override
+  String get docTitleHint => 'e.g. Annual tax / All-risk insurance';
+
+  @override
+  String get docNumberHint => 'e.g. B 1234 CD / POL-88902';
+
+  @override
+  String get docCostHint => 'e.g. 3500000';
+
+  @override
+  String get docNotesLabel => 'Notes & Renewal Instructions';
+
+  @override
+  String get docNotesHint => 'e.g. Pay online or visit the office';
+
+  @override
+  String get docUpdated => 'Document updated successfully!';
+
+  @override
+  String get docAdded => 'Document added successfully!';
+
+  @override
+  String get docUpdate => 'Update Document';
+
+  @override
+  String get docSave => 'Save Document';
+
+  @override
+  String get vehicleNameHint => 'e.g. Honda HR-V / Yamaha NMAX';
+
+  @override
+  String get plateHint => 'B 1234 CD';
+
+  @override
+  String get invalidYear => 'Invalid year';
+
+  @override
+  String get taxDueLabel => 'Annual Tax Due Date';
+
+  @override
+  String scheduleDoneNote(String category) {
+    return 'Completed on the periodic schedule ($category)';
+  }
+
+  @override
+  String get backupErrEmpty => 'The backup data is empty.';
+
+  @override
+  String get backupErrRawJson =>
+      'Raw JSON is not accepted for security reasons. Use an official backup file.';
+
+  @override
+  String get backupErrFormat =>
+      'The backup file format is invalid or unrecognised.';
+
+  @override
+  String backupErrWrongApp(String other, String expected) {
+    return 'This backup belongs to $other and cannot be restored into $expected.';
+  }
+
+  @override
+  String get backupErrCorrupt =>
+      'The backup data is corrupted or badly encoded.';
+
+  @override
+  String get backupErrIntegrity =>
+      'The backup integrity check failed: the data was modified or corrupted.';
+
+  @override
+  String get backupErrNotObject =>
+      'The backup content is not a valid data object.';
+
+  @override
+  String get mtCatEngine => 'Engine';
+
+  @override
+  String get mtCatOther => 'Other';
+
+  @override
+  String get unitMonthsShort => 'mo';
+
+  @override
+  String get docNoteTax =>
+      'Pay via the national Samsat Digital (SIGNAL) app or your nearest Samsat office';
+
+  @override
+  String get docNotePlate =>
+      'The vehicle must pass a physical check at the main Samsat office';
+
+  @override
+  String get docNoteInsurance =>
+      'The emergency claim and towing numbers are listed on the policy';
+
+  @override
+  String gamesBadgeCount(String unlocked, String total) {
+    return '$unlocked/$total badges unlocked';
+  }
 }

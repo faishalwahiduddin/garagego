@@ -8,22 +8,31 @@
   "banner_ready": false,
   "seo": true,
   "slugs": {
-    "id": "10-field-servis-mobil-yang-worth-disimpan-2026",
-    "en": "10-servis-mobil-fields-worth-keeping",
-    "ar": "servis-mobil-8",
-    "jv": "pandhuan-servis-mobil-garagego-8",
-    "su": "pituduh-servis-mobil-garagego-8",
-    "zh": "garagego-servis-mobil-实用指南-8",
-    "ja": "garagegoservis-mobil-ガイド-8"
+    "id": "servis-mobil-daftar-pilihan-yang-masuk-akal",
+    "en": "servis-mobil-a-shortlist-that-makes-sense",
+    "ar": "alsjlat-alywmya-khyarat-qlyla-mntqya-aljz-2",
+    "jv": "servis-mobil-pilihan-sing-cukup-masuk-akal",
+    "su": "servis-mobil-pilihan-anu-asup-akal",
+    "zh": "ri-chang-ji-lu-zhi-de-kao-lv-de-ji-zhong-xuan-ze-di-2-pian",
+    "ja": "mainichi-no-kiroku-nattoku-dekiru-sentakushi-dai-2-kai"
   },
   "titles": {
-    "id": "10 Field servis mobil yang Worth Disimpan",
-    "en": "10 servis mobil Fields Worth Keeping",
-    "ar": "servis mobil — دليل GarageGo",
-    "jv": "Pandhuan: 10 Field servis mobil yang Worth Disimpan",
-    "su": "Pituduh: 10 Field servis mobil yang Worth Disimpan",
-    "zh": "GarageGo · servis mobil 实用指南",
-    "ja": "GarageGo｜servis mobil ガイド"
+    "id": "servis mobil: daftar pilihan yang masuk akal",
+    "en": "servis mobil: a shortlist that makes sense",
+    "ar": "السجلات اليومية: خيارات قليلة منطقية · الجزء 2",
+    "jv": "servis mobil: pilihan sing cukup masuk akal",
+    "su": "servis mobil: pilihan anu asup akal",
+    "zh": "日常记录：值得考虑的几种选择 · 第2篇",
+    "ja": "毎日の記録：納得できる選択肢 · 第2回"
   },
-  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+  "quality_pass": "editorial-v3",
+  "descriptions": {
+    "id": "Servis mobil: daftar pendek yang masuk akal. Bahas versi paling kecil, kapan menjalankannya, dan tinjauan mingguan agar tetap konsisten.",
+    "en": "servis mobil: a shortlist that makes sense. Covers the smallest version, when to run it, and a weekly check that keeps you consistent over time.",
+    "ar": "servis mobil: قائمة مختصرة منطقية. تغطي أصغر نسخة، ووقت التشغيل، ومراجعة أسبوعية تحافظ على الاستمرار مع الوقت.",
+    "ja": "現実的な候補の短い一覧。servis mobilの最小バージョン、実行のタイミング、一貫性を保つ毎週の確認。",
+    "zh": "实用的候选清单：servis mobil的最小版本、执行时间，以及保持一致性的每周检查。",
+    "jv": "Servis mobil: dhaftar cendhak sing masuk akal. Ngrembug versi paling cilik, kapan mlaku, lan tinjauan saben minggu supaya tetep konsisten.",
+    "su": "Servis mobil: daptar pondok nu masuk akal. Ngabahas versi pang leutikna, iraha ngajalankeunana, jeung tinjauan mingguan supaya tetep konsisten."
+  }
 }

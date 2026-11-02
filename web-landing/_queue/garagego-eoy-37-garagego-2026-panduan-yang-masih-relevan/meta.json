@@ -8,22 +8,31 @@
   "banner_ready": false,
   "seo": true,
   "slugs": {
-    "id": "garagego-2026-panduan-yang-masih-relevan",
-    "en": "garagego-2026-still-relevant-guide",
-    "ar": "garagego-4",
-    "jv": "pandhuan-garagego-garagego-4",
-    "su": "pituduh-garagego-garagego-4",
-    "zh": "garagego-garagego-实用指南-4",
-    "ja": "garagegogaragego-ガイド-4"
+    "id": "servis-motor-di-2026-apa-yang-berubah",
+    "en": "motorbike-service-in-2026-what-changed",
+    "ar": "syana-aldraja-fy-2026-ma-aldhy-tghyr",
+    "jv": "servis-motor-ing-2026-apa-sing-owah",
+    "su": "servis-motor-taun-2026-naon-anu-robah",
+    "zh": "2026-nian-de-mo-tuo-che-bao-yang-you-shen-me-bian-hua",
+    "ja": "2026-nen-no-baiku-seibi-nani-ga-kawa-ttaka"
   },
   "titles": {
-    "id": "GarageGo 2026: Panduan yang Masih Relevan",
-    "en": "GarageGo 2026: Still-Relevant Guide",
-    "ar": "GarageGo — دليل GarageGo",
-    "jv": "Pandhuan: GarageGo 2026: Panduan yang Masih Relevan",
-    "su": "Pituduh: GarageGo 2026: Panduan yang Masih Relevan",
-    "zh": "GarageGo · GarageGo 实用指南",
-    "ja": "GarageGo｜GarageGo ガイド"
+    "id": "servis motor di 2026: apa yang berubah",
+    "en": "motorbike service in 2026: what changed",
+    "ar": "صيانة الدراجة في 2026: ما الذي تغيّر",
+    "jv": "servis motor ing 2026: apa sing owah",
+    "su": "servis motor taun 2026: naon anu robah",
+    "zh": "2026 年的摩托车保养：有什么变化",
+    "ja": "2026年のバイク整備：何が変わったか"
   },
-  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+  "quality_pass": "editorial-v3",
+  "descriptions": {
+    "id": "Servis motor di tahun 2026: apa yang berubah dari sisi arti praktisnya, versi paling kecil yang tetap relevan, dan data yang tersimpan di perangkat.",
+    "en": "Motorbike service in 2026: what has changed in practice, why the smallest version still matters, and how your data stays stored on your device.",
+    "ar": "servis motor في عام 2026: ما الذي تغيّر عملياً، ولماذا ما زالت أصغر نسخة مهمة، وكيف تبقى بياناتك محفوظة على جهازك.",
+    "ja": "2026年のservis motor。実践面で変わったこと、最小バージョンが今も大切な理由、端末に保存されるデータ。",
+    "zh": "2026年的servis motor：实际做法有哪些变化，最小版本为何仍然重要，以及数据如何保存在设备上。",
+    "jv": "Servis motor ing taun 2026: apa sing wis owah ing praktik, kenapa versi paling cilik isih penting, lan carane data tetep kasimpen ing piranti.",
+    "su": "Servis motor taun 2026: naon nu geus robah dina prakték, naha versi pang leutikna masih penting, jeung kumaha data tetep disimpen di alat."
+  }
 }

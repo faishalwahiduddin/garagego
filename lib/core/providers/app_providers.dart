@@ -1,8 +1,9 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import '../../l10n/app_localizations.dart';
 import '../models/vehicle.dart';
 import '../services/analytics_service.dart';
 import '../storage/local_storage_service.dart';
-import 'locale_provider.dart';
+import 'l10n_provider.dart';
 
 final localStorageServiceProvider = Provider<LocalStorageService>((ref) {
   throw UnimplementedError('localStorageServiceProvider must be provided');
@@ -169,6 +170,7 @@ class MaintenanceSchedulesNotifier extends Notifier<List<MaintenanceSchedule>> {
     required int performedOdometer,
     required DateTime performedDate,
     required double cost,
+    required AppLocalizations l10n,
     String notes = '',
     String workshop = '',
   }) async {
@@ -186,16 +188,25 @@ class MaintenanceSchedulesNotifier extends Notifier<List<MaintenanceSchedule>> {
       odometer: performedOdometer,
       title: schedule.title,
       cost: cost,
-      notes: notes.isNotEmpty ? notes : 'Selesai sesuai jadwal berkala (${schedule.category})',
-      isOilChange: schedule.category.toLowerCase().contains('oli'),
+      notes: notes.isNotEmpty
+          ? notes
+          : l10n.scheduleDoneNote(schedule.category),
+      // Categories are stored values, so the legacy Indonesian key still
+      // counts alongside the two localized oil categories.
+      isOilChange: schedule.category == kOilChangeServiceCategory ||
+          schedule.category == l10n.mtCatOilFluids ||
+          schedule.category == l10n.mtCatOilFilter,
       workshop: workshop,
       category: schedule.category,
     );
     await ref.read(serviceLogsProvider.notifier).addLog(serviceLog);
   }
 
-  Future<void> loadPresetsForVehicle(Vehicle vehicle, {bool isEnglish = false}) async {
-    final presets = MaintenanceSchedule.defaultPresetsFor(vehicle, isEnglish: isEnglish);
+  Future<void> loadPresetsForVehicle(
+    Vehicle vehicle,
+    AppLocalizations l10n,
+  ) async {
+    final presets = MaintenanceSchedule.defaultPresetsFor(vehicle, l10n);
     // Remove existing presets for this vehicle and replace
     final nonPresets = state.where((s) => s.vehicleId != vehicle.id || !s.isPreset).toList();
     state = [...nonPresets, ...presets];
@@ -306,13 +317,12 @@ final vehicleHealthScoreProvider = Provider<VehicleHealthResult?>((ref) {
   if (active == null) return null;
   final schedules = ref.watch(activeMaintenanceSchedulesProvider);
   final documents = ref.watch(activeVehicleDocumentsProvider);
-  final locale = ref.watch(localeProvider);
-  final isEnglish = locale.languageCode != 'id';
+  final l10n = ref.watch(appLocalizationsProvider);
   return AnalyticsService.computeHealthScore(
     vehicle: active,
     schedules: schedules,
     documents: documents,
-    isEnglish: isEnglish,
+    l10n: l10n,
   );
 });
 

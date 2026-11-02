@@ -1,6 +1,6 @@
 # GarageGo
 
-> Catat servis berkala, ganti oli, BBM & pajak STNK kendaraan.
+> GarageGo mencatat servis, ganti oli, BBM, dan pajak STNK mobil dan motor dalam satu aplikasi. Pengingat otomatis dan rekap biaya di perangkat, 100% offline.
 
 GarageGo is a free app in the faishal.id fleet. Offline-first product; this marketing site may use optional consent-gated analytics.
 
@@ -12,9 +12,10 @@ GarageGo is a free app in the faishal.id fleet. Offline-first product; this mark
 - Terms: https://garagego.faishal.id/id/terms.html
 - Pricing: https://garagego.faishal.id/pricing.md
 - Publisher: https://faishal.id
+- Google Play: https://play.google.com/store/apps/details?id=id.faishal.garagego
 
 ## Blog posts
 
-- https://garagego.faishal.id/id/blog/pajak-stnk-tahunan/
-- https://garagego.faishal.id/id/blog/pengingat-ganti-oli/
-- https://garagego.faishal.id/id/blog/riwayat-servis-mobil-motor/
+- https://garagego.faishal.id/id/blog/pajak-stnk-tahunan-jangan-sampai-terlewat/
+- https://garagego.faishal.id/id/blog/pengingat-ganti-oli-berdasar-jarak-atau-waktu/
+- https://garagego.faishal.id/id/blog/riwayat-servis-mobil-dan-motor-rapi-dari-tahun-ke-tahun/

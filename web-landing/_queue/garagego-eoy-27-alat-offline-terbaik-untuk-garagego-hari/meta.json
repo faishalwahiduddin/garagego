@@ -8,22 +8,31 @@
   "banner_ready": false,
   "seo": true,
   "slugs": {
-    "id": "alat-offline-terbaik-untuk-garagego-harian",
-    "en": "best-offline-tools-for-garagego",
-    "ar": "garagego-3",
-    "jv": "pandhuan-garagego-garagego-3",
-    "su": "pituduh-garagego-garagego-3",
-    "zh": "garagego-garagego-实用指南-3",
-    "ja": "garagegogaragego-ガイド-3"
+    "id": "servis-motor-alat-mana-yang-benar-benar-dipakai",
+    "en": "motorbike-service-which-tool-you-will-actually-use",
+    "ar": "syana-aldraja-ay-adaa-ststkhdmha-fala",
+    "jv": "servis-motor-piranti-endi-sing-tenan-dipigunakake",
+    "su": "servis-motor-alat-mana-anu-beneran-dipake",
+    "zh": "mo-tuo-che-bao-yang-na-ge-gong-ju-zhen-de-hui-yong",
+    "ja": "baiku-seibi-jissaini-tsukau-dougu-hadoreka"
   },
   "titles": {
-    "id": "Alat Offline Terbaik untuk GarageGo",
-    "en": "Best Offline Tools for GarageGo",
-    "ar": "GarageGo — دليل GarageGo",
-    "jv": "Pandhuan: Alat Offline Terbaik untuk GarageGo",
-    "su": "Pituduh: Alat Offline Terbaik untuk GarageGo",
-    "zh": "GarageGo · GarageGo 实用指南",
-    "ja": "GarageGo｜GarageGo ガイド"
+    "id": "servis motor: alat mana yang benar-benar dipakai",
+    "en": "motorbike service: which tool you will actually use",
+    "ar": "صيانة الدراجة: أي أداة ستستخدمها فعلاً",
+    "jv": "servis motor: piranti endi sing tenan dipigunakaké",
+    "su": "servis motor: alat mana anu beneran dipaké",
+    "zh": "摩托车保养：哪个工具真的会用",
+    "ja": "バイク整備：実際に使う道具はどれか"
   },
-  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+  "quality_pass": "editorial-v3",
+  "descriptions": {
+    "id": "Alat servis motor yang benar-benar akan Anda pakai: alasan catatan sering putus, penyimpanan di perangkat, dan tinjauan mingguan sebagai patokan.",
+    "en": "The motorbike service tools you will actually use: why records often slip, what stays on your device, and a weekly check as your steady reference point.",
+    "ar": "أدوات servis motor التي ستستخدمها فعلاً: لماذا تتراجع السجلات، وما الذي يبقى على جهازك، والمراجعة الأسبوعية نقطة مرجعية ثابتة.",
+    "ja": "実際に使い続けられる道具として、servis motorを選ぶ視点。記録が抜ける理由と毎週の確認を解説。",
+    "zh": "真正会用下去的servis motor工具：为何记录常常滑落、哪些内容留在设备上，以及每周检查的作用。",
+    "jv": "Piranti servis motor sing bakal bener-bener dienggo: kenapa cathetan asring kelangan, panyimpenan ing piranti, lan tinjauan saben minggu minangka pathokan.",
+    "su": "Alat servis motor nu bakal bener dipaké: naha catetan remen kaliwat, panyimpenan di alat, jeung tinjauan mingguan minangka patokan nu tetep."
+  }
 }

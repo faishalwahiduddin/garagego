@@ -8,22 +8,31 @@
   "banner_ready": false,
   "seo": true,
   "slugs": {
-    "id": "jangan-screenshot-sembarangan-log-pajak-stnk-tahunan-mingguan",
-    "en": "don-t-casually-screenshot-pajak-stnk-tahunan-logs",
-    "ar": "pajak-stnk-tahunan-6",
-    "jv": "pandhuan-pajak-stnk-tahunan-garagego-6",
-    "su": "pituduh-pajak-stnk-tahunan-garagego-6",
-    "zh": "garagego-pajak-stnk-tahunan-实用指南-6",
-    "ja": "garagegopajak-stnk-tahunan-ガイド-6"
+    "id": "keamanan-data-pajak-stnk-tahunan-di-ponsel",
+    "en": "keeping-pajak-stnk-tahunan-data-safe-on-your-phone",
+    "ar": "hmaya-byanat-alsjlat-alywmya-ala-alhatf",
+    "jv": "keamanan-data-pajak-stnk-tahunan-ing-hp",
+    "su": "kaamanan-data-pajak-stnk-tahunan-dina-hp",
+    "zh": "shou-ji-shang-de-ri-chang-ji-lu-shu-ju-an-quan",
+    "ja": "sumaho-no-mainichi-no-kiroku-deeta-wo-mamoru"
   },
   "titles": {
-    "id": "Jangan Screenshot Sembarangan Log pajak stnk tahunan",
-    "en": "Don&#x27;t Casually Screenshot pajak stnk tahunan Logs — Offline First",
-    "ar": "pajak stnk tahunan — دليل GarageGo",
-    "jv": "Pandhuan: Jangan Screenshot Sembarangan Log pajak stnk tahunan",
-    "su": "Pituduh: Jangan Screenshot Sembarangan Log pajak stnk tahunan",
-    "zh": "GarageGo · pajak stnk tahunan 实用指南",
-    "ja": "GarageGo｜pajak stnk tahunan ガイド"
+    "id": "Keamanan data pajak stnk tahunan di ponsel",
+    "en": "Keeping pajak stnk tahunan data safe on your phone",
+    "ar": "حماية بيانات السجلات اليومية على الهاتف",
+    "jv": "Keamanan data pajak stnk tahunan ing HP",
+    "su": "Kaamanan data pajak stnk tahunan dina HP",
+    "zh": "手机上的日常记录数据安全",
+    "ja": "スマホの毎日の記録データを守る"
   },
-  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+  "quality_pass": "editorial-v3",
+  "descriptions": {
+    "id": "Menjaga data pajak stnk tahunan tetap aman di ponsel. Bahas penyimpanan di perangkat, tinjauan mingguan, dan langkah setelah catatan sempat berhenti.",
+    "en": "Keeping pajak stnk tahunan data safe on your phone: on-device storage, the weekly check, and steps to take if your records lapsed for a while.",
+    "ar": "حماية بيانات pajak stnk tahunan على هاتفك: التخزين على الجهاز، والمراجعة الأسبوعية، وخطوات العودة إذا توقفت السجلات مدة.",
+    "ja": "スマホに残るpajak stnk tahunanのデータを守る。端末内の保存、毎週の確認、しばらく途切れた時の手順。",
+    "zh": "在手机上保护pajak stnk tahunan数据：设备存储、每周检查，以及记录中断一段时间后的步骤。",
+    "jv": "Njaga data pajak stnk tahunan tetep aman ing HP: panyimpenan ing piranti, tinjauan saben minggu, lan langkah yen cathetan wis kendhat suwe.",
+    "su": "Ngajaga data pajak stnk tahunan tetep aman dina HP: panyimpenan di alat, tinjauan mingguan, jeung léngkah lamun catetan geus eureun lila."
+  }
 }

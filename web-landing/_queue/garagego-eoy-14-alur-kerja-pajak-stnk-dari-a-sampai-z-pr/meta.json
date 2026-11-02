@@ -8,22 +8,31 @@
   "banner_ready": false,
   "seo": true,
   "slugs": {
-    "id": "alur-kerja-pajak-stnk-dari-a-sampai-z-praktis",
-    "en": "pajak-stnk-workflow-a-to-z-practical",
-    "ar": "pajak-stnk-2",
-    "jv": "pandhuan-pajak-stnk-garagego-2",
-    "su": "pituduh-pajak-stnk-garagego-2",
-    "zh": "garagego-pajak-stnk-实用指南-2",
-    "ja": "garagegopajak-stnk-ガイド-2"
+    "id": "pajak-stnk-lima-langkah-pertama",
+    "en": "pajak-stnk-the-first-five-steps",
+    "ar": "alsjlat-alywmya-hyn-la-ybqa-wqt",
+    "jv": "pajak-stnk-limang-langkah-kapisan",
+    "su": "pajak-stnk-lima-lengkah-munggaran",
+    "zh": "shi-jian-hen-shao-shi-zen-me-zuo-ri-chang-ji-lu",
+    "ja": "jikan-gahotondonai-nichi-no-mainichi-no-kiroku"
   },
   "titles": {
-    "id": "Alur Kerja pajak STNK dari A sampai Z",
-    "en": "pajak STNK Workflow A to Z (Practical)",
-    "ar": "pajak STNK — دليل GarageGo",
-    "jv": "Pandhuan: Alur Kerja pajak STNK dari A sampai Z",
-    "su": "Pituduh: Alur Kerja pajak STNK dari A sampai Z",
-    "zh": "GarageGo · pajak STNK 实用指南",
-    "ja": "GarageGo｜pajak STNK ガイド"
+    "id": "pajak STNK: lima langkah pertama",
+    "en": "pajak STNK: the first five steps",
+    "ar": "السجلات اليومية حين لا يبقى وقت",
+    "jv": "pajak STNK: limang langkah kapisan",
+    "su": "pajak STNK: lima léngkah munggaran",
+    "zh": "时间很少时怎么做日常记录",
+    "ja": "時間がほとんどない日の毎日の記録"
   },
-  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+  "quality_pass": "editorial-v3",
+  "descriptions": {
+    "id": "Lima langkah pertama untuk pajak STNK: mulai dari versi paling kecil, waktu yang pas untuk menjalankannya, dan tinjauan mingguan agar alurnya tetap jalan.",
+    "en": "The first five steps for pajak STNK: begin with the smallest version, pick a sensible time to run it, and keep the flow moving with a weekly check.",
+    "ar": "الخطوات الخمس الأولى لـ pajak STNK: ابدأ بأصغر نسخة، واختر وقتاً مناسباً للتشغيل، وحافظ على سير العمل بمراجعة أسبوعية.",
+    "ja": "pajak STNKの最初の五ステップ。最小バージョンから始め、適した時期と毎週の確認を取り入れる方法。",
+    "zh": "pajak STNK的前五个步骤：从最小版本开始，选择合适时间执行，并通过每周检查保持节奏。",
+    "jv": "Limang langkah kapisan kanggo pajak STNK: miwiti saka versi paling cilik, milih wektu sing pas kanggo mlaku, lan ninjau saben minggu supaya alur tetep jalan.",
+    "su": "Lima léngkah munggaran pikeun pajak STNK: mimitian ti versi pang leutikna, milih waktu nu pas, jeung tinjauan mingguan supaya alurna tetep lancar."
+  }
 }

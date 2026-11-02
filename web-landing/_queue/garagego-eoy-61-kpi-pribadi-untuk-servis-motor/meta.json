@@ -8,22 +8,31 @@
   "banner_ready": false,
   "seo": true,
   "slugs": {
-    "id": "kpi-pribadi-untuk-servis-motor",
-    "en": "personal-kpis-for-servis-motor",
-    "ar": "servis-motor-7",
-    "jv": "pandhuan-servis-motor-garagego-7",
-    "su": "pituduh-servis-motor-garagego-7",
-    "zh": "garagego-servis-motor-实用指南-7",
-    "ja": "garagegoservis-motor-ガイド-7"
+    "id": "cara-mengukur-servis-motor-tanpa-angka-palsu",
+    "en": "measuring-motorbike-service-without-fake-numbers",
+    "ar": "qyas-syana-aldraja-dwn-arqam-whmya",
+    "jv": "ngukur-servis-motor-tanpa-angka-goroh",
+    "su": "ngukur-servis-motor-tanpa-angka-bohong",
+    "zh": "ru-he-heng-liang-mo-tuo-che-bao-yang-er-bu-kao-gu-ji",
+    "ja": "suisoku-ni-tayora-zu-baiku-seibi-wo-hakaru"
   },
   "titles": {
-    "id": "KPI Pribadi untuk servis motor",
-    "en": "Personal KPIs for servis motor",
-    "ar": "servis motor — دليل GarageGo",
-    "jv": "Pandhuan: KPI Pribadi untuk servis motor",
-    "su": "Pituduh: KPI Pribadi untuk servis motor",
-    "zh": "GarageGo · servis motor 实用指南",
-    "ja": "GarageGo｜servis motor ガイド"
+    "id": "Cara mengukur servis motor tanpa angka palsu",
+    "en": "Measuring motorbike service without fake numbers",
+    "ar": "قياس صيانة الدراجة دون أرقام وهمية",
+    "jv": "Ngukur servis motor tanpa angka goroh",
+    "su": "Ngukur servis motor tanpa angka bohong",
+    "zh": "如何衡量摩托车保养而不靠估计",
+    "ja": "推測に頼らずバイク整備を測る"
   },
-  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+  "quality_pass": "editorial-v3",
+  "descriptions": {
+    "id": "Mengukur servis motor tanpa angka palsu: tinjauan mingguan, data yang tersimpan di perangkat, dan cara melanjutkan setelah catatan sempat terputus.",
+    "en": "Measuring motorbike service without fake numbers: the weekly check, data stored on your device, and how to carry on after records have been interrupted.",
+    "ar": "قياس servis motor دون أرقام مزيفة: المراجعة الأسبوعية، والبيانات المحفوظة على جهازك، وكيف تواصل بعد انقطاع السجلات.",
+    "ja": "偽の数字に頼らずservis motorを測る方法。毎週の確認、端末に保存されるデータ、続け方。",
+    "zh": "不靠虚假数字来衡量servis motor：每周检查、设备上保存的数据，以及记录中断后如何继续。",
+    "jv": "Ngukur servis motor tanpa angka palsu: tinjauan saben minggu, data kasimpen ing piranti, lan carane terus sawisé cathetan kepotong.",
+    "su": "Ngukur servis motor tanpa angka palsu: tinjauan mingguan, data disimpen di alat, jeung kumaha neruskeun sanggeus catetan kaputus."
+  }
 }

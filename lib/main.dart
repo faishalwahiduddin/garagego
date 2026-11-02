@@ -71,7 +71,9 @@ class _GarageGoAppState extends ConsumerState<GarageGoApp>
     final themeMode = ref.watch(themeModeProvider);
 
     return MaterialApp.router(
-      title: 'GarageGo — Car & Motorcycle Manager',
+      // Localized so the OS task switcher follows the selected language.
+      onGenerateTitle: (context) =>
+          AppLocalizations.of(context)?.appTitle ?? 'GarageGo',
       debugShowCheckedModeBanner: false,
       theme: AppTheme.lightTheme,
       darkTheme: AppTheme.darkTheme,

@@ -1,0 +1,85 @@
+{
+  "title": "Rencana 30 poé pikeun catatan BBM",
+  "description": "Rencana 30 poé pikeun catatan BBM: versi pang leutikna pikeun mimitian, iraha ngajalankeunana, jeung tinjauan mingguan nu bisa diteruskeun sapanjang bulan.",
+  "badge": "produktivitas · offline",
+  "answer": "Jumaah soré catetan catatan BBM anjeun belasan baris satengah jadi tanpa tanggal. GarageGo nyimpen catatan BBM dina alat, jadi tetep kabuka tanpa kuota jeung tanpa akun.",
+  "toc": [
+    "Versi pangleutikna",
+    "Iraha ngalakukeunana",
+    "Tinjauan unggal minggu"
+  ],
+  "sections": [
+    {
+      "h2": "Versi pangleutikna",
+      "p": "Eusian tilu waé: waktu, status, hiji halangan. Sésana opsional.",
+      "h3": null,
+      "p3": null
+    },
+    {
+      "h2": "Iraha ngalakukeunana",
+      "p": "Buka GarageGo dina jam anu sarua unggal poé; ulah ngadagoan haté.",
+      "h3": null,
+      "p3": null
+    },
+    {
+      "h2": "Tinjauan unggal minggu",
+      "p": "Saminggu sakali, tempo bagian anu paling sering bolong, tuluy leutikan targetna.",
+      "h3": null,
+      "p3": null
+    }
+  ],
+  "table": {
+    "caption": "Rangka catatan BBM",
+    "headers": [
+      "Léngkah",
+      "Eusi minimal",
+      "Bérés lamun"
+    ],
+    "rows": [
+      [
+        "Éntri sapopoé",
+        "waktu + status",
+        "kasimpen < 2 menit"
+      ],
+      [
+        "Pananda",
+        "posisi panungtungan",
+        "bisa diteruskeun isukan"
+      ],
+      [
+        "Evaluasi minggu",
+        "hiji panyesuaian",
+        "diterapkeun Senén"
+      ]
+    ]
+  },
+  "list": [
+    "Tangtukeun hiji waktu tetep, lain “mun sempet”.",
+    "Buka GarageGo basa waktu éta datang, ulah engké peuting.",
+    "Catet hiji halangan, lain alesan panjang.",
+    "Cadangkeun data saméméh ganti HP."
+  ],
+  "faqs": [
+    [
+      "Naha catatan BBM bisa dibuka offline?",
+      "Bisa. GarageGo nyimpen kabéh dina alat, jadi teu butuh kuota."
+    ],
+    [
+      "Kudu akun heula?",
+      "Teu. Mimitian tanpa login; cadangkeun data sakapeung."
+    ],
+    [
+      "Mimitian ti mana?",
+      "Ti bagian pangpondokna. Tambahan yén geus dua minggu stabil."
+    ],
+    [
+      "Lamun bolong sababaraha poé?",
+      "Ulah mupus riwayat. Teraskeun tina catetan panungtungan jeung catet hiji halangan."
+    ]
+  ],
+  "cta": [
+    "Mimitian catatan BBM poé ieu",
+    "Buka GarageGo"
+  ],
+  "slug": "pituduh-catatan-bbm-garagego-7"
+}

@@ -8,22 +8,31 @@
   "banner_ready": false,
   "seo": true,
   "slugs": {
-    "id": "catatan-bbm-saat-jadwal-padat-akhir-tahun-offline",
-    "en": "catatan-bbm-during-busy-year-end-weeks",
-    "ar": "catatan-bbm-4",
-    "jv": "pandhuan-catatan-bbm-garagego-4",
-    "su": "pituduh-catatan-bbm-garagego-4",
-    "zh": "garagego-catatan-bbm-实用指南-4",
-    "ja": "garagegocatatan-bbm-ガイド-4"
+    "id": "catatan-bbm-di-musim-paling-ramai",
+    "en": "daily-records-in-the-busiest-season",
+    "ar": "alsjlat-alywmya-fy-akthr-almwasm-anshghala-aljz-2",
+    "jv": "catatan-bbm-ing-mangsa-paling-rame",
+    "su": "catatan-bbm-dina-usum-pangsibukna",
+    "zh": "zui-mang-de-ji-jie-li-de-ri-chang-ji-lu-di-2-pian",
+    "ja": "ichiban-isogashii-jiki-no-mainichi-no-kiroku-dai-2-kai"
   },
   "titles": {
-    "id": "Catatan BBM saat Jadwal Padat Akhir Tahun",
-    "en": "catatan BBM During Busy Year-End Weeks",
-    "ar": "catatan BBM — دليل GarageGo",
-    "jv": "Pandhuan: Catatan BBM saat Jadwal Padat Akhir Tahun",
-    "su": "Pituduh: Catatan BBM saat Jadwal Padat Akhir Tahun",
-    "zh": "GarageGo · catatan BBM 实用指南",
-    "ja": "GarageGo｜catatan BBM ガイド"
+    "id": "catatan BBM di musim paling ramai",
+    "en": "daily records in the busiest season",
+    "ar": "السجلات اليومية في أكثر المواسم انشغالاً · الجزء 2",
+    "jv": "catatan BBM ing mangsa paling rame",
+    "su": "catatan BBM dina usum pangsibukna",
+    "zh": "最忙的季节里的日常记录 · 第2篇",
+    "ja": "いちばん忙しい時期の毎日の記録 · 第2回"
   },
-  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+  "quality_pass": "editorial-v3",
+  "descriptions": {
+    "id": "Catatan BBM di musim paling sibuk: versi paling kecil yang tetap dijalankan, kapan waktu yang pas, dan tinjauan mingguan saat jadwal sedang padat.",
+    "en": "Daily records in the busiest season: the smallest version you can keep running, when the right time to log is, and a weekly check during heavy weeks.",
+    "ar": "catatan BBM في أكثر المواسم انشغالاً: أصغر نسخة يمكنك الاستمرار بها، ومتى يكون وقت التسجيل مناسباً، ومراجعة أسبوعية خلال الأسابيع الثقيلة.",
+    "ja": "一年で最も忙しい時期の毎日の記録。続けられる最小バージョン、記録に適した時期、忙しい週の確認。",
+    "zh": "最忙碌季节里的catatan BBM：你能坚持的最小版本、合适的记录时间，以及繁忙周的每周检查。",
+    "jv": "Catatan BBM ing mangsa paling sibuk: versi paling cilik sing tetep dilakoni, wektu sing pas kanggo nyathet, lan tinjauan saben minggu nalika jadwal padat.",
+    "su": "Catatan BBM dina mangsa paling sibuk: versi pang leutikna nu tetep dijalankeun, waktu nu pas keur nyatet, jeung tinjauan mingguan waktu jadwal keur pinuh."
+  }
 }

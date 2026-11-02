@@ -8,22 +8,31 @@
   "banner_ready": false,
   "seo": true,
   "slugs": {
-    "id": "studi-kasus-14-hari-konsisten-ganti-oli-offline",
-    "en": "case-study-14-consistent-days-of-ganti-oli",
-    "ar": "ganti-oli-6",
-    "jv": "pandhuan-ganti-oli-garagego-6",
-    "su": "pituduh-ganti-oli-garagego-6",
-    "zh": "garagego-ganti-oli-实用指南-6",
-    "ja": "garagegoganti-oli-ガイド-6"
+    "id": "studi-kasus-ganti-oli-selama-14-hari",
+    "en": "case-study-ganti-oli-for-14-days",
+    "ar": "qyas-alsjlat-alywmya-dwn-arqam-whmya",
+    "jv": "studi-kasus-ganti-oli-14-dina",
+    "su": "studi-kasus-ganti-oli-14-poe",
+    "zh": "ru-he-heng-liang-ri-chang-ji-lu-er-bu-kao-gu-ji",
+    "ja": "suisoku-ni-tayora-zu-mainichi-no-kiroku-wo-hakaru"
   },
   "titles": {
-    "id": "Studi Kasus: 14 Hari Konsisten ganti oli",
-    "en": "Case Study: 14 Consistent Days of ganti oli",
-    "ar": "ganti oli — دليل GarageGo",
-    "jv": "Pandhuan: Studi Kasus: 14 Hari Konsisten ganti oli",
-    "su": "Pituduh: Studi Kasus: 14 Hari Konsisten ganti oli",
-    "zh": "GarageGo · ganti oli 实用指南",
-    "ja": "GarageGo｜ganti oli ガイド"
+    "id": "Studi kasus: ganti oli selama 14 hari",
+    "en": "Case study: ganti oli for 14 days",
+    "ar": "قياس السجلات اليومية دون أرقام وهمية",
+    "jv": "Studi kasus: ganti oli 14 dina",
+    "su": "Studi kasus: ganti oli 14 poé",
+    "zh": "如何衡量日常记录而不靠估计",
+    "ja": "推測に頼らず毎日の記録を測る"
   },
-  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+  "quality_pass": "editorial-v3",
+  "descriptions": {
+    "id": "Studi kasus ganti oli selama 14 hari: alur tinjauan mingguan, penyimpanan di perangkat, dan langkah setelah catatan sempat bolong.",
+    "en": "Case study: ganti oli for 14 days, covering the weekly check, on-device storage, and the steps to take when records have a gap in them.",
+    "ar": "دراسة حالة: ganti oli لمدة 14 يوماً، تشمل المراجعة الأسبوعية، والتخزين على الجهاز، والخطوات عند وجود فجوة في السجلات.",
+    "ja": "ganti oliの14日間のケーススタディ。毎週の確認の流れ、端末内の保存、空白が生じた時の手順。",
+    "zh": "ganti oli 14天案例研究：每周检查的流程、设备存储，以及记录出现空档时应采取的步骤。",
+    "jv": "Studi kasus ganti oli sajrone 14 dina: alur tinjauan saben minggu, panyimpenan ing piranti, lan langkah nalika cathetan sempat bolong.",
+    "su": "Studi kasus ganti oli salila 14 poé: alur tinjauan mingguan, panyimpenan di alat, jeung léngkah lamun catetan sempat bolong."
+  }
 }

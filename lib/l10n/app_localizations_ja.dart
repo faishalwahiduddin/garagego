@@ -865,4 +865,776 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get validationDocNameRequired => '書類名を入力してください';
+
+  @override
+  String get appTitle => 'GarageGo';
+
+  @override
+  String get appTagline => '整備・オイル・給油・税金をひとつのガレージに';
+
+  @override
+  String get loadingLabel => '読み込み中…';
+
+  @override
+  String get onbSkip => 'スキップ';
+
+  @override
+  String get onbNext => '次へ';
+
+  @override
+  String get onbGetStarted => 'はじめる';
+
+  @override
+  String get onbPrivacyHeadline => 'プライバシー重視・オフライン';
+
+  @override
+  String get onbPrivacyDetail => '車両データはすべて端末内に保存され、トラッカーはありません。';
+
+  @override
+  String get onbSlide1Title => 'あなたのガレージ';
+
+  @override
+  String get onbSlide1Sub => 'クルマもバイクも一か所に';
+
+  @override
+  String get onbSlide1Badge => '100% オフライン・プライベート';
+
+  @override
+  String get onbSlide2Title => 'メンテナンス';
+
+  @override
+  String get onbSlide2Sub => '整備・オイル・自動車税';
+
+  @override
+  String get onbSlide2Badge => '定期リマインダー';
+
+  @override
+  String get onbSlide3Title => '給油';
+
+  @override
+  String get onbSlide3Sub => 'km/L 燃費と 1km あたりのコスト';
+
+  @override
+  String get onbSlide3Badge => '広告なし・アカウント不要';
+
+  @override
+  String get onbSlide4Title => 'オフラインでプライベート';
+
+  @override
+  String get onbSlide4Sub => 'データは端末内に保存';
+
+  @override
+  String get onbSlide4Badge => 'データは端末に保存';
+
+  @override
+  String get urgencySafe => '良好';
+
+  @override
+  String get urgencyDueSoon => 'まもなく';
+
+  @override
+  String get urgencyOverdue => '期限超過';
+
+  @override
+  String get docTypeTax => '自動車税（年額）';
+
+  @override
+  String get docTypePlate => '5年ごとのナンバー・車検証更新';
+
+  @override
+  String get docTypeInsurance => '任意保険';
+
+  @override
+  String get docTypeEmissions => '排出ガス検査・車検';
+
+  @override
+  String get docTypeLicense => '運転免許証';
+
+  @override
+  String get docTypeTitle => '車両所有権証明書';
+
+  @override
+  String get docTypeOther => 'その他の書類';
+
+  @override
+  String get mtCatOilFluids => 'オイル・油脂';
+
+  @override
+  String get mtCatOilFilter => 'オイル・フィルター';
+
+  @override
+  String get mtCatAirFilter => 'エアコン・エアフィルター';
+
+  @override
+  String get mtCatBrakes => 'ブレーキ';
+
+  @override
+  String get mtCatTires => 'タイヤ・サスペンション';
+
+  @override
+  String get mtCatIgnition => '点火系';
+
+  @override
+  String get mtCatTransmission => 'トランスミッション・駆動系';
+
+  @override
+  String get mtCatCvt => 'CVT トランスミッション';
+
+  @override
+  String get mtCatElectrical => '電装・バッテリー';
+
+  @override
+  String get mtCatCoolant => '冷却液・ラジエーター';
+
+  @override
+  String get mtCatGeneral => '定期整備';
+
+  @override
+  String get mtPresetCarOil => '合成エンジンオイル交換';
+
+  @override
+  String get mtPresetCarOilFilter => 'オイルフィルター交換';
+
+  @override
+  String get mtPresetCarAirFilter => 'エアフィルター・エアコンフィルター';
+
+  @override
+  String get mtPresetCarBrakeFluid => 'ブレーキフルード・パッド交換';
+
+  @override
+  String get mtPresetCarTireRotation => 'タイヤローテーション・アライメント';
+
+  @override
+  String get mtPresetCarSparkPlugs => 'イリジウムプラグ交換';
+
+  @override
+  String get mtPresetMotoOil => 'バイクのエンジンオイル交換';
+
+  @override
+  String get mtPresetMotoGearOil => 'ファイナルギアオイル交換';
+
+  @override
+  String get mtPresetMotoCvt => 'CVT 整備・Vベルト・ローラー';
+
+  @override
+  String get mtPresetMotoBrakes => 'ブレーキパッド点検・交換';
+
+  @override
+  String get mtPresetMotoSparkPlug => 'バイクのプラグ交換';
+
+  @override
+  String inspPreTripTitle(String type) {
+    return '出発前点検（$type）';
+  }
+
+  @override
+  String inspRoadworthiness(String passed, String total) {
+    return '適合度：$total 項目中 $passed 項目合格';
+  }
+
+  @override
+  String inspPassedCount(String pct, String passed, String total) {
+    return '$pct% 合格（$passed/$total）';
+  }
+
+  @override
+  String get inspCatEngine => 'エンジン・油脂';
+
+  @override
+  String get inspCatWheelsBrakes => 'ホイール・ブレーキ';
+
+  @override
+  String get inspCatLights => 'ライト・電装';
+
+  @override
+  String get inspCatSafety => '安全装備';
+
+  @override
+  String get inspCatDrivetrain => '駆動系';
+
+  @override
+  String get inspCatWheelsSteering => 'ホイール・ステアリング';
+
+  @override
+  String get inspCatBrakes => 'ブレーキ';
+
+  @override
+  String get inspCatElectrical => '電装';
+
+  @override
+  String get inspCatEquipment => '装備品';
+
+  @override
+  String get inspCar1 => 'オイルレベルゲージとオイルの清浄度';
+
+  @override
+  String get inspCar2 => 'ラジエーター冷却液の量';
+
+  @override
+  String get inspCar3 => 'ブレーキ・クラッチ・パワステオイルの量';
+
+  @override
+  String get inspCar4 => '4本＋スペアの空気圧と溝の深さ';
+
+  @override
+  String get inspCar5 => 'ブレーキパッドの状態とサイドブレーキの効き';
+
+  @override
+  String get inspCar6 => 'ヘッドライト・ブレーキランプ・ウインカー・ハザード';
+
+  @override
+  String get inspCar7 => 'バッテリー端子と 12V 電圧表示';
+
+  @override
+  String get inspCar8 => 'ワイパーゴムとウォッシャー液の量';
+
+  @override
+  String get inspCar9 => 'ジャッキ・ホイールレンチ・三角表示板・救急箱';
+
+  @override
+  String get inspMoto1 => 'エンジンオイルの量と状態';
+
+  @override
+  String get inspMoto2 => 'ファイナルギアオイル／チェーンの張り';
+
+  @override
+  String get inspMoto3 => '前後タイヤの空気圧';
+
+  @override
+  String get inspMoto4 => '前後ブレーキパッドの厚さ';
+
+  @override
+  String get inspMoto5 => 'ヘッドライト・テールランプ・ウインカー';
+
+  @override
+  String get inspMoto6 => 'ホーンとセルスターターの作動（バッテリー状態）';
+
+  @override
+  String get inspMoto7 => '左右のミラーと車載工具';
+
+  @override
+  String gamesLvl(String level) {
+    return 'レベル$level';
+  }
+
+  @override
+  String gamesProgress(String xp, String unlocked, String total) {
+    return '$xp XP・バッジ $unlocked/$total 個解除';
+  }
+
+  @override
+  String gamesNextLevel(String next, String xp) {
+    return '次へ：$next（$xp XP）';
+  }
+
+  @override
+  String get gamesMaxRank => '最高ランク到達';
+
+  @override
+  String get gamesBadgesTitle => 'ガレージ整備バッジ';
+
+  @override
+  String get gamesShare => '共有';
+
+  @override
+  String get gamesUnlocked => '解除済み（+100 XP）';
+
+  @override
+  String get gamesLocked => '未解除';
+
+  @override
+  String gamesBadgeUnlockedLine(String highlight) {
+    return '解除したバッジ：$highlight';
+  }
+
+  @override
+  String get gamesLvl1 => '駆け出しドライバー';
+
+  @override
+  String get gamesLvl2 => 'こまめなオーナー';
+
+  @override
+  String get gamesLvl3 => 'フリートの守護者';
+
+  @override
+  String get gamesLvl4 => '整備の専門家';
+
+  @override
+  String get gamesLvl5 => 'ガレージの達人';
+
+  @override
+  String get badgeFirstRideTitle => '記念すべき1台目';
+
+  @override
+  String get badgeFirstRideDesc => 'デジタルガレージに最初の車両を登録しました。';
+
+  @override
+  String get badgeOilCareTitle => 'オイル番';
+
+  @override
+  String get badgeOilCareDesc => 'エンジンオイル交換を期限内に記録しました。';
+
+  @override
+  String get badgeServiceVeteranTitle => '定期整備の常連';
+
+  @override
+  String get badgeServiceVeteranDesc => '定期整備を3回以上記録しました。';
+
+  @override
+  String get badgeFuelWatcherTitle => '燃費トラッカー';
+
+  @override
+  String get badgeFuelWatcherDesc => '給油を3回以上記録して燃費を把握しました。';
+
+  @override
+  String get badgeSafeVoyageTitle => '安全点検の達人';
+
+  @override
+  String get badgeSafeVoyageDesc => '車両の安全点検チェックリストを完了しました。';
+
+  @override
+  String get badgeDocKeeperTitle => '書類の管理人';
+
+  @override
+  String get badgeDocKeeperDesc => '車両の法定書類（車検証・税・免許・保険）を保存しました。';
+
+  @override
+  String get badgePrimeFleetTitle => '良好なコンディション';
+
+  @override
+  String get badgePrimeFleetDesc => '車両健康スコア 90 以上を達成しました。';
+
+  @override
+  String get badgeRoadWarriorTitle => 'ロードウォリアー';
+
+  @override
+  String get badgeRoadWarriorDesc => '走行距離 10,000km 超の車両を記録しました。';
+
+  @override
+  String healthOilOverdue(String km) {
+    return 'オイル交換が $km km 超過しています';
+  }
+
+  @override
+  String healthOilDue(String km) {
+    return 'オイル交換まであと $km km';
+  }
+
+  @override
+  String get healthOilOptimal => 'オイル交換時期は良好です';
+
+  @override
+  String get healthTaxOverdue => '自動車税が期限を過ぎています';
+
+  @override
+  String healthTaxDue(String days) {
+    return '自動車税の期限まであと $days 日';
+  }
+
+  @override
+  String get healthTaxSafe => '自動車税は有効期限内です';
+
+  @override
+  String get healthPlateExpired => '5年ナンバーの有効期限が切れています';
+
+  @override
+  String healthPlateDue(String days) {
+    return '5年ナンバーの更新まであと $days 日';
+  }
+
+  @override
+  String healthScheduleOverdue(String title) {
+    return '$title が期限超過です';
+  }
+
+  @override
+  String healthScheduleDueSoon(String title) {
+    return '$title の時期が近づいています';
+  }
+
+  @override
+  String get healthPrime => 'とても良好';
+
+  @override
+  String get healthAttention => '要注意';
+
+  @override
+  String get healthCritical => '深刻 / 早めの整備を';
+
+  @override
+  String get fuelEstTotalCost => '推定合計金額：';
+
+  @override
+  String get fuelTripDistance => '今回の走行距離：';
+
+  @override
+  String get fuelAvgConsumption => '平均燃費：';
+
+  @override
+  String get fuelOperatingCost => '運行コスト：';
+
+  @override
+  String get fuelFullTank => '満タン';
+
+  @override
+  String get fuelPartial => '一部給油';
+
+  @override
+  String fuelPricePerLiterLine(String price, String state) {
+    return '@ $price/L・$state';
+  }
+
+  @override
+  String fuelOdometerValue(String value) {
+    return '走行距離：$value km';
+  }
+
+  @override
+  String fuelKmL(String value) {
+    return '$value km/ℓ';
+  }
+
+  @override
+  String get aboutApplication => 'アプリ';
+
+  @override
+  String get aboutVersion => 'バージョン';
+
+  @override
+  String get aboutArchitecture => 'アーキテクチャ';
+
+  @override
+  String get aboutArchitectureValue => '100% オフラインファースト（サーバーなし・追跡なし）';
+
+  @override
+  String get aboutDomain => 'ドメイン';
+
+  @override
+  String get aboutPackageId => 'パッケージ ID';
+
+  @override
+  String settingsVehicleOdo(String plate, String value) {
+    return '$plate・走行距離：$value km';
+  }
+
+  @override
+  String get backupInvalidFile => '.grg ファイルが無効、または構造が壊れています';
+
+  @override
+  String get filterAll => 'すべて';
+
+  @override
+  String get filterAttention => '要注意';
+
+  @override
+  String get maintenanceScreenTitle => 'メンテナンス・整備';
+
+  @override
+  String get serviceTitleHint => '例：エンジンオイルとフィルター交換';
+
+  @override
+  String get workshopHint => '例：正規ディーラー／整備工場';
+
+  @override
+  String get mustBePositive => '0 より大きい値を入力してください';
+
+  @override
+  String get editScheduleTitle => '整備予定を編集';
+
+  @override
+  String get scheduleUpdated => '予定を更新しました';
+
+  @override
+  String get scheduleSaved => '整備予定を保存しました';
+
+  @override
+  String get updateSchedule => '予定を更新';
+
+  @override
+  String get saveSchedule => '整備予定を保存';
+
+  @override
+  String scheduleCompleted(String title) {
+    return '$title を完了しました';
+  }
+
+  @override
+  String kmOverdue(String km) {
+    return '$km km 超過';
+  }
+
+  @override
+  String kmRemaining(String km) {
+    return '残り $km km';
+  }
+
+  @override
+  String kmOverdueShort(String km) {
+    return '$km km 超過';
+  }
+
+  @override
+  String kmRemainingShort(String km) {
+    return '残り $km km';
+  }
+
+  @override
+  String daysOverdue(String days) {
+    return '$days 日超過';
+  }
+
+  @override
+  String daysLeft(String days) {
+    return '残り $days 日';
+  }
+
+  @override
+  String scheduleIntervalSummary(
+    String km,
+    String months,
+    String odo,
+    String date,
+  ) {
+    return '$km km または $months か月ごと・前回：$odo km（$date）';
+  }
+
+  @override
+  String get shareVehiclePassport => '車両パスポートを共有';
+
+  @override
+  String get shareVehiclePassportSubtitle => 'ステータスカード・健康スコア・履歴を SNS へ共有';
+
+  @override
+  String get garageEmptyBody => '家族の最初のクルマかバイクを追加して、整備・オイル・給油の記録を始めましょう。';
+
+  @override
+  String resetOilConfirm(String name, String odo) {
+    return '$name のオイル交換カウンターを現在の走行距離（$odo km）にリセットします。';
+  }
+
+  @override
+  String get resetOilServiceNote => 'オイル交換間隔カウンターをリセット';
+
+  @override
+  String oilIntervalEvery(String km) {
+    return '交換間隔：$km km ごと';
+  }
+
+  @override
+  String garageYear(String year) {
+    return '$year 年式';
+  }
+
+  @override
+  String get shareDialogTitle => '車両パスポートを共有';
+
+  @override
+  String get shareCopySummary => '要約をコピー';
+
+  @override
+  String get sharePreparing => '準備中…';
+
+  @override
+  String get shareDownloadPassport => 'パスポートを保存';
+
+  @override
+  String get shareSharePassport => 'パスポートを共有';
+
+  @override
+  String get shareImageFailed => '車両パスポート画像を作成できませんでした';
+
+  @override
+  String get shareImageDownloaded => '車両パスポートを保存しました';
+
+  @override
+  String get shareSummaryCopied => '車両ステータスの要約をコピーしました';
+
+  @override
+  String get shareCardHealthHeader => 'フリートの健康状態';
+
+  @override
+  String shareCardCondition(String status) {
+    return '状態：$status';
+  }
+
+  @override
+  String get shareCardOdometer => '走行距離';
+
+  @override
+  String get shareCardOil => 'オイル交換';
+
+  @override
+  String get shareCardTax => '自動車税';
+
+  @override
+  String get shareCardNeedService => '整備が必要';
+
+  @override
+  String shareCardDaysShort(String days) {
+    return '$days 日';
+  }
+
+  @override
+  String shareCardLogbook(String date) {
+    return 'ログ：$date';
+  }
+
+  @override
+  String shareTextHeader(String name, String plate) {
+    return '🚗 車両メンテナンスパスポート — $name（$plate）';
+  }
+
+  @override
+  String shareTextHealth(String score, String status) {
+    return '🏆 健康スコア：$score/100（$status）';
+  }
+
+  @override
+  String shareTextOdometer(String odo) {
+    return '⚡ 走行距離：$odo km';
+  }
+
+  @override
+  String shareTextOil(String km) {
+    return '🛢️ オイル交換まで $km km';
+  }
+
+  @override
+  String get shareTextOilDue => '🛢️ 至急オイル交換が必要です';
+
+  @override
+  String shareTextTax(String days) {
+    return '📋 自動車税：残り $days 日';
+  }
+
+  @override
+  String get shareTextFooter =>
+      'GarageGo ならガレージ整備をオフラインで管理できます：https://garagego.faishal.id';
+
+  @override
+  String gloveboxHeader(String name) {
+    return 'デジタル・グローブボックス — $name';
+  }
+
+  @override
+  String gloveboxDocCount(String plate, String count) {
+    return '$plate・書類 $count 件登録';
+  }
+
+  @override
+  String docExpiredAgo(String days) {
+    return '$days 日前に期限切れ';
+  }
+
+  @override
+  String docDueIn(String days) {
+    return 'あと $days 日で期限';
+  }
+
+  @override
+  String docDaysLeft(String days) {
+    return '残り $days 日';
+  }
+
+  @override
+  String docValidUntil(String date) {
+    return '有効期限：$date';
+  }
+
+  @override
+  String get docEditTitle => '書類を編集';
+
+  @override
+  String get docAddTitle => 'ガレージ書類を追加';
+
+  @override
+  String get docTitleHint => '例：自動車税／オールリスク保険';
+
+  @override
+  String get docNumberHint => '例：B 1234 CD / POL-88902';
+
+  @override
+  String get docCostHint => '例：3500000';
+
+  @override
+  String get docNotesLabel => 'メモ・更新の手引き';
+
+  @override
+  String get docNotesHint => '例：オンライン決済、または窓口へ';
+
+  @override
+  String get docUpdated => '書類を更新しました';
+
+  @override
+  String get docAdded => '書類を追加しました';
+
+  @override
+  String get docUpdate => '書類を更新';
+
+  @override
+  String get docSave => '書類を保存';
+
+  @override
+  String get vehicleNameHint => '例：Honda HR-V／Yamaha NMAX';
+
+  @override
+  String get plateHint => 'B 1234 CD';
+
+  @override
+  String get invalidYear => '年式が正しくありません';
+
+  @override
+  String get taxDueLabel => '自動車税の納期限';
+
+  @override
+  String scheduleDoneNote(String category) {
+    return '定期予定どおり完了（$category）';
+  }
+
+  @override
+  String get backupErrEmpty => 'バックアップデータが空です。';
+
+  @override
+  String get backupErrRawJson => '安全のため生の JSON は使用できません。公式のバックアップファイルをご利用ください。';
+
+  @override
+  String get backupErrFormat => 'バックアップファイルの形式が無効、または認識できません。';
+
+  @override
+  String backupErrWrongApp(String other, String expected) {
+    return 'このバックアップは $other のもので、$expected には復元できません。';
+  }
+
+  @override
+  String get backupErrCorrupt => 'バックアップデータが破損しているか、エンコードが不正です。';
+
+  @override
+  String get backupErrIntegrity => 'バックアップの整合性チェックに失敗しました。データが改変または破損しています。';
+
+  @override
+  String get backupErrNotObject => 'バックアップの中身が有効なデータオブジェクトではありません。';
+
+  @override
+  String get mtCatEngine => 'エンジン';
+
+  @override
+  String get mtCatOther => 'その他';
+
+  @override
+  String get unitMonthsShort => 'か月';
+
+  @override
+  String get docNoteTax =>
+      'Samsat Digital（SIGNAL）アプリ、または最寄りの Samsat 窓口で納付してください';
+
+  @override
+  String get docNotePlate => 'Samsat 本所での実車確認が必要です';
+
+  @override
+  String get docNoteInsurance => '緊急連絡先とロードサービス番号は保険証券に記載されています';
+
+  @override
+  String gamesBadgeCount(String unlocked, String total) {
+    return 'バッジ $unlocked/$total 個解除';
+  }
 }

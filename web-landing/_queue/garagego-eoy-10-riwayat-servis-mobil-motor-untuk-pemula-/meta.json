@@ -8,22 +8,31 @@
   "banner_ready": false,
   "seo": true,
   "slugs": {
-    "id": "riwayat-servis-mobil-motor-untuk-pemula-total-mingguan",
-    "en": "riwayat-servis-mobil-motor-for-absolute-beginners",
-    "ar": "riwayat-servis-mobil-motor",
-    "jv": "pandhuan-riwayat-servis-mobil-motor-garagego",
-    "su": "pituduh-riwayat-servis-mobil-motor-garagego",
-    "zh": "garagego-riwayat-servis-mobil-motor-实用指南",
-    "ja": "garagegoriwayat-servis-mobil-motor-ガイド"
+    "id": "riwayat-servis-mobil-motor-untuk-orang-yang-waktunya-sempit",
+    "en": "riwayat-servis-mobil-motor-for-people-with-no-spare-time",
+    "ar": "alsjlat-alywmya-lmn-la-ymlk-wqta-aljz-2",
+    "jv": "riwayat-servis-mobil-motor-kanggo-sing-wektune-sempit",
+    "su": "riwayat-servis-mobil-motor-pikeun-anu-waktosna-heureut",
+    "zh": "shi-jian-hen-shao-de-ren-zen-me-zuo-ri-chang-ji-lu-di-2-pian",
+    "ja": "jikan-ganai-nin-notameno-mainichi-no-kiroku-dai-2-kai"
   },
   "titles": {
     "id": "riwayat servis mobil motor untuk orang yang waktunya sempit",
-    "en": "riwayat servis mobil motor for Absolute Beginners — Offline First",
-    "ar": "riwayat servis mobil motor — دليل GarageGo",
-    "jv": "Pandhuan: riwayat servis mobil motor untuk orang yang waktunya sempit",
-    "su": "Pituduh: riwayat servis mobil motor untuk orang yang waktunya sempit",
-    "zh": "GarageGo · riwayat servis mobil motor 实用指南",
-    "ja": "GarageGo｜riwayat servis mobil motor ガイド"
+    "en": "riwayat servis mobil motor for people with no spare time",
+    "ar": "السجلات اليومية لمن لا يملك وقتاً · الجزء 2",
+    "jv": "riwayat servis mobil motor kanggo sing wektuné sempit",
+    "su": "riwayat servis mobil motor pikeun anu waktosna heureut",
+    "zh": "时间很少的人怎么做日常记录 · 第2篇",
+    "ja": "時間がない人のための毎日の記録 · 第2回"
   },
-  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+  "quality_pass": "editorial-v3",
+  "descriptions": {
+    "id": "Riwayat servis mobil motor untuk orang yang waktunya sempit. Panduan waktu menjalankannya, versi paling kecil, dan langkah kembali rutin setelah sempat bolong.",
+    "en": "Riwayat servis mobil motor for people with no spare time: when to run it, the smallest version to start with, and a simple routine to restart after a gap.",
+    "ar": "riwayat servis mobil motor لمن لا يملك وقتاً: متى تبدأ، وأصغر نسخة للانطلاق، وروتين بسيط للعودة بعد فترة من الانقطاع.",
+    "ja": "時間が限られた人向けに、riwayat servis mobil motorの実行時期と最小バージョン、空白後の再開を紹介。",
+    "zh": "写给没有空闲时间的人，讲解riwayat servis mobil motor的执行时间、最小版本和间断后的重启。",
+    "jv": "Riwayat servis mobil motor kanggo wong sing wektuné sempit: wektu mlaku, versi paling cilik kanggo miwiti, lan rutinitas gampang kanggo bali sawisé jeda.",
+    "su": "Riwayat servis mobil motor pikeun nu waktuna heureut: waktu ngajalankeunana, versi pang leutikna, jeung rutinitas basajan pikeun balik sanggeus eureun."
+  }
 }

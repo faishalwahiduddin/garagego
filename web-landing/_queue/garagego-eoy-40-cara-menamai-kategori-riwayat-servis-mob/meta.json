@@ -8,22 +8,31 @@
   "banner_ready": false,
   "seo": true,
   "slugs": {
-    "id": "cara-menamai-kategori-riwayat-servis-mobil-motor-mingguan",
-    "en": "how-to-name-riwayat-servis-mobil-motor-categories",
-    "ar": "riwayat-servis-mobil-motor-4",
-    "jv": "pandhuan-riwayat-servis-mobil-motor-garagego-4",
-    "su": "pituduh-riwayat-servis-mobil-motor-garagego-4",
-    "zh": "garagego-riwayat-servis-mobil-motor-实用指南-4",
-    "ja": "garagegoriwayat-servis-mobil-motor-ガイド-4"
+    "id": "riwayat-servis-mobil-motor-secara-mendalam-tanpa-muter-muter",
+    "en": "riwayat-servis-mobil-motor-explained-without-the-runaround",
+    "ar": "alsjlat-alywmya-bshrh-mbashr-bla-lf-aljz-3",
+    "jv": "riwayat-servis-mobil-motor-kanthi-jero-tanpa-mubeng-mubeng",
+    "su": "riwayat-servis-mobil-motor-diwincik-tanpa-muter-muter",
+    "zh": "ri-chang-ji-lu-shen-ru-jiang-qing-chu-di-3-pian",
+    "ja": "mainichi-no-kiroku-wo-toomawari-sezuni-shin-hori-dai-3-kai"
   },
   "titles": {
-    "id": "Cara Menamai Kategori riwayat servis mobil motor",
-    "en": "How to Name riwayat servis mobil motor Categories — Offline First",
-    "ar": "riwayat servis mobil motor — دليل GarageGo",
-    "jv": "Pandhuan: Cara Menamai Kategori riwayat servis mobil motor",
-    "su": "Pituduh: Cara Menamai Kategori riwayat servis mobil motor",
-    "zh": "GarageGo · riwayat servis mobil motor 实用指南",
-    "ja": "GarageGo｜riwayat servis mobil motor ガイド"
+    "id": "riwayat servis mobil motor secara mendalam tanpa muter-muter",
+    "en": "riwayat servis mobil motor, explained without the runaround",
+    "ar": "السجلات اليومية بشرح مباشر بلا لفّ · الجزء 3",
+    "jv": "riwayat servis mobil motor kanthi jero tanpa mubeng-mubeng",
+    "su": "riwayat servis mobil motor diwincik tanpa muter-muter",
+    "zh": "日常记录深入讲清楚 · 第3篇",
+    "ja": "毎日の記録を遠回りせずに深掘り · 第3回"
   },
-  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+  "quality_pass": "editorial-v3",
+  "descriptions": {
+    "id": "Riwayat servis mobil motor dijelaskan tanpa berputar-putar: arti praktisnya, versi paling kecil, dan penjelasan data yang tersimpan di perangkat.",
+    "en": "Riwayat servis mobil motor explained plainly, with no runaround: what it means in practice, the smallest version, and how data is stored on device.",
+    "ar": "riwayat servis mobil motor بشرح واضح دون مماطلة: معناه في الممارسة، وأصغر نسخة، وكيف تُخزَّن البيانات على الجهاز.",
+    "ja": "riwayat servis mobil motorを遠回りせずに説明。実践での意味、最小バージョン、端末でのデータ保存。",
+    "zh": "直接讲清riwayat servis mobil motor：它在实践中的含义、最小版本，以及数据如何存储在设备上。",
+    "jv": "Riwayat servis mobil motor dijlentrehké cetha ora muter-muter: tegesé ing praktik, versi paling cilik, lan carane data kasimpen ing piranti.",
+    "su": "Riwayat servis mobil motor dijéntrékeun écés tanpa muter-muter: harti praktisna, versi pang leutikna, jeung kumaha data disimpen di alat."
+  }
 }

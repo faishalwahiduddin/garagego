@@ -8,22 +8,31 @@
   "banner_ready": false,
   "seo": true,
   "slugs": {
-    "id": "privasi-data-saat-mencatat-servis-motor-harian",
-    "en": "data-privacy-when-logging-servis-motor",
-    "ar": "servis-motor-3",
-    "jv": "pandhuan-servis-motor-garagego-3",
-    "su": "pituduh-servis-motor-garagego-3",
-    "zh": "garagego-servis-motor-实用指南-3",
-    "ja": "garagegoservis-motor-ガイド-3"
+    "id": "privasi-servis-motor-apa-yang-tersimpan-di-perangkat",
+    "en": "where-your-motorbike-service-data-actually-lives",
+    "ar": "ayn-thfz-byanat-syana-aldraja",
+    "jv": "data-servis-motor-kasimpen-ing-ngendi",
+    "su": "data-servis-motor-disimpen-di-mana",
+    "zh": "mo-tuo-che-bao-yang-de-shu-ju-bao-cun-zai-na-li",
+    "ja": "baiku-seibi-no-deeta-hadokoni-hozon-sareruka"
   },
   "titles": {
-    "id": "Privasi Data saat Mencatat servis motor",
-    "en": "Data Privacy When Logging servis motor",
-    "ar": "servis motor — دليل GarageGo",
-    "jv": "Pandhuan: Privasi Data saat Mencatat servis motor",
-    "su": "Pituduh: Privasi Data saat Mencatat servis motor",
-    "zh": "GarageGo · servis motor 实用指南",
-    "ja": "GarageGo｜servis motor ガイド"
+    "id": "Privasi servis motor: apa yang tersimpan di perangkat",
+    "en": "Where your motorbike service data actually lives",
+    "ar": "أين تُحفظ بيانات صيانة الدراجة",
+    "jv": "Data servis motor kasimpen ing ngendi",
+    "su": "Data servis motor disimpen di mana",
+    "zh": "摩托车保养的数据保存在哪里",
+    "ja": "バイク整備のデータはどこに保存されるか"
   },
-  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+  "quality_pass": "editorial-v3",
+  "descriptions": {
+    "id": "Privasi servis motor: apa saja yang tersimpan di perangkat, bagaimana tinjauan mingguan dilakukan, dan hal yang perlu diperhatikan setelah jeda pemakaian.",
+    "en": "Where motorbike service data lives: what is stored on your device, how a weekly check works, and what to watch for after a gap in your records.",
+    "ar": "أين تعيش بيانات servis motor: ما الذي يُحفظ على جهازك، وكيف تعمل المراجعة الأسبوعية، وما الذي يلزم الانتباه إليه بعد أي فجوة.",
+    "ja": "端末に保存されるservis motorのデータ。毎週の確認の進め方と、記録に空白が生じた後の注意点。",
+    "zh": "servis motor数据保存在哪里：设备上存了什么、每周检查如何进行，以及记录出现空档后要注意什么。",
+    "jv": "Privasi servis motor: apa wae sing kasimpen ing piranti, carane tinjauan saben minggu ditindakaké, lan perkara sing kudu digatekaké sawisé jeda panggunaan.",
+    "su": "Privasi servis motor: naon waé nu disimpen di alat, kumaha tinjauan mingguan dilaksanakeun, jeung hal nu kudu dititénan sanggeus eureun ngagunakeun."
+  }
 }

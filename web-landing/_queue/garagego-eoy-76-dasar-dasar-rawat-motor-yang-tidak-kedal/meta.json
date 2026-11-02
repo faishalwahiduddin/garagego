@@ -8,22 +8,31 @@
   "banner_ready": false,
   "seo": true,
   "slugs": {
-    "id": "dasar-dasar-rawat-motor-yang-tidak-kedaluwarsa-mingguan",
-    "en": "evergreen-basics-of-rawat-motor",
-    "ar": "rawat-motor-8",
-    "jv": "pandhuan-rawat-motor-garagego-8",
-    "su": "pituduh-rawat-motor-garagego-8",
-    "zh": "garagego-rawat-motor-实用指南-8",
-    "ja": "garagegorawat-motor-ガイド-8"
+    "id": "rawat-motor-panduan-yang-tetap-relevan",
+    "en": "rawat-motor-a-guide-that-stays-useful",
+    "ar": "alsjlat-alywmya-dlyl-ybqa-mfyda-aljz-2",
+    "jv": "rawat-motor-pandhuan-sing-tetep-migunani",
+    "su": "rawat-motor-pituduh-anu-tetep-mangpaat",
+    "zh": "ri-chang-ji-lu-chang-qi-you-xiao-de-zhi-nan-di-2-pian",
+    "ja": "mainichi-no-kiroku-nagaku-tsukae-ru-gaido-dai-2-kai"
   },
   "titles": {
-    "id": "Dasar-Dasar rawat motor yang Tidak Kedaluwarsa",
-    "en": "Evergreen Basics of rawat motor — Offline First",
-    "ar": "rawat motor — دليل GarageGo",
-    "jv": "Pandhuan: Dasar-Dasar rawat motor yang Tidak Kedaluwarsa",
-    "su": "Pituduh: Dasar-Dasar rawat motor yang Tidak Kedaluwarsa",
-    "zh": "GarageGo · rawat motor 实用指南",
-    "ja": "GarageGo｜rawat motor ガイド"
+    "id": "rawat motor: panduan yang tetap relevan",
+    "en": "rawat motor: a guide that stays useful",
+    "ar": "السجلات اليومية: دليل يبقى مفيداً · الجزء 2",
+    "jv": "rawat motor: pandhuan sing tetep migunani",
+    "su": "rawat motor: pituduh anu tetep mangpaat",
+    "zh": "日常记录：长期有效的指南 · 第2篇",
+    "ja": "毎日の記録：長く使えるガイド · 第2回"
   },
-  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+  "quality_pass": "editorial-v3",
+  "descriptions": {
+    "id": "Rawat motor: panduan yang tetap berguna dari waktu ke waktu. Membahas arti praktisnya, versi paling kecil, dan penyimpanan data di perangkat.",
+    "en": "Rawat motor: a guide that stays useful over time. Covers what the practice means, the smallest version to start, and where data is stored on device.",
+    "ar": "rawat motor: دليل يبقى مفيداً مع الوقت. يغطي المعنى العملي، وأصغر نسخة للبدء، ومكان حفظ البيانات على الجهاز.",
+    "ja": "rawat motorの時間が経っても役立つガイド。実践的な意味、最初の最小バージョン、端末内保存。",
+    "zh": "随时间推移仍然有用的rawat motor指南：实际含义、起步的最小版本，以及设备上的数据保存。",
+    "jv": "Rawat motor: pandhuan sing tetep migunani saka wektu kawit. Ngrembug tegesé ing praktik, versi paling cilik kanggo miwiti, lan panyimpenan ing piranti.",
+    "su": "Rawat motor: pituduh nu tetep mangpaat ti mimiti nepi ka engkéna. Ngabahas harti praktisna, versi pang leutikna pikeun mimitian, jeung panyimpenan di alat."
+  }
 }

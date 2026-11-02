@@ -8,22 +8,31 @@
   "banner_ready": false,
   "seo": true,
   "slugs": {
-    "id": "kapan-saatnya-pakai-aplikasi-untuk-pajak-stnk-praktis",
-    "en": "when-to-use-an-app-for-pajak-stnk-practical",
-    "ar": "pajak-stnk-8",
-    "jv": "pandhuan-pajak-stnk-garagego-8",
-    "su": "pituduh-pajak-stnk-garagego-8",
-    "zh": "garagego-pajak-stnk-实用指南-8",
-    "ja": "garagegopajak-stnk-ガイド-8"
+    "id": "pajak-stnk-yang-perlu-dicek-sebelum-memilih",
+    "en": "pajak-stnk-what-to-check-before-you-choose",
+    "ar": "alsjlat-alywmya-ma-tthqq-mnh-qbl-alakhtyar",
+    "jv": "pajak-stnk-sing-kudu-dipriksa-sadurunge-milih",
+    "su": "pajak-stnk-anu-kudu-dipariksa-samemeh-milih",
+    "zh": "ri-chang-ji-lu-xuan-ze-qian-gai-que-ren-shen-me",
+    "ja": "mainichi-no-kiroku-erabu-mae-ni-kakuninsu-rukoto"
   },
   "titles": {
-    "id": "Kapan Saatnya Pakai Aplikasi untuk pajak STNK",
-    "en": "When to Use an App for pajak STNK (Practical)",
-    "ar": "pajak STNK — دليل GarageGo",
-    "jv": "Pandhuan: Kapan Saatnya Pakai Aplikasi untuk pajak STNK",
-    "su": "Pituduh: Kapan Saatnya Pakai Aplikasi untuk pajak STNK",
-    "zh": "GarageGo · pajak STNK 实用指南",
-    "ja": "GarageGo｜pajak STNK ガイド"
+    "id": "pajak STNK: yang perlu dicek sebelum memilih",
+    "en": "pajak STNK: what to check before you choose",
+    "ar": "السجلات اليومية: ما تتحقق منه قبل الاختيار",
+    "jv": "pajak STNK: sing kudu dipriksa sadurungé milih",
+    "su": "pajak STNK: anu kudu dipariksa saméméh milih",
+    "zh": "日常记录：选择前该确认什么",
+    "ja": "毎日の記録：選ぶ前に確認すること"
   },
-  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+  "quality_pass": "editorial-v3",
+  "descriptions": {
+    "id": "pajak STNK: hal yang perlu dicek sebelum Anda memilih. Bahas alasan catatan putus, penyimpanan di perangkat, dan tinjauan mingguan.",
+    "en": "pajak STNK: what to check before you choose. Covers why records slip, on-device storage, and a weekly check that helps you judge the options fairly.",
+    "ar": "pajak STNK: ما الذي يُفحص قبل الاختيار. يغطي سبب تفلّت السجلات، والتخزين على الجهاز، ومراجعة أسبوعية تساعد في الحكم المنصف.",
+    "ja": "選ぶ前のチェック項目。pajak STNKで記録が崩れる理由、端末保存、毎週の確認による判断。",
+    "zh": "选择前需要检查的事项：pajak STNK为何会乱，设备存储，以及每周检查如何帮你判断。",
+    "jv": "pajak STNK: apa sing kudu dicek sadurunge milih. Ngrembug sebab cathetan ambruk, panyimpenan ing piranti, lan tinjauan saben minggu.",
+    "su": "pajak STNK: naon nu kudu dipariksa sateuacan milih. Ngabahas sabab catetan ambruk, panyimpenan di alat, jeung tinjauan mingguan."
+  }
 }

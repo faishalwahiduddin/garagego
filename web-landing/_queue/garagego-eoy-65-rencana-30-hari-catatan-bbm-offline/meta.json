@@ -8,22 +8,31 @@
   "banner_ready": false,
   "seo": true,
   "slugs": {
-    "id": "rencana-30-hari-catatan-bbm-offline",
-    "en": "30-day-catatan-bbm-plan",
-    "ar": "catatan-bbm-7",
-    "jv": "pandhuan-catatan-bbm-garagego-7",
-    "su": "pituduh-catatan-bbm-garagego-7",
-    "zh": "garagego-catatan-bbm-实用指南-7",
-    "ja": "garagegocatatan-bbm-ガイド-7"
+    "id": "rencana-30-hari-untuk-catatan-bbm",
+    "en": "a-30-day-plan-for-daily-records",
+    "ar": "khta-thlathyn-ywma-lalsjlat-alywmya-aljz-2",
+    "jv": "rencana-30-dina-kanggo-catatan-bbm",
+    "su": "rencana-30-poe-pikeun-catatan-bbm",
+    "zh": "ri-chang-ji-lu-de-30-tian-ji-hua-di-2-pian",
+    "ja": "mainichi-no-kiroku-no-30-nichi-puran-dai-2-kai"
   },
   "titles": {
-    "id": "Rencana 30 Hari catatan BBM",
-    "en": "30-Day catatan BBM Plan",
-    "ar": "catatan BBM — دليل GarageGo",
-    "jv": "Pandhuan: Rencana 30 Hari catatan BBM",
-    "su": "Pituduh: Rencana 30 Hari catatan BBM",
-    "zh": "GarageGo · catatan BBM 实用指南",
-    "ja": "GarageGo｜catatan BBM ガイド"
+    "id": "Rencana 30 hari untuk catatan BBM",
+    "en": "A 30-day plan for daily records",
+    "ar": "خطة ثلاثين يوماً لـالسجلات اليومية · الجزء 2",
+    "jv": "Rencana 30 dina kanggo catatan BBM",
+    "su": "Rencana 30 poé pikeun catatan BBM",
+    "zh": "日常记录的30天计划 · 第2篇",
+    "ja": "毎日の記録の30日プラン · 第2回"
   },
-  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+  "quality_pass": "editorial-v3",
+  "descriptions": {
+    "id": "Rencana 30 hari untuk catatan BBM: versi paling kecil untuk dimulai, kapan menjalankannya, dan tinjauan mingguan yang bisa diikuti sepanjang bulan.",
+    "en": "A 30-day plan for daily records: the smallest version to start with, when to run it, and a weekly check you can keep up through the whole month.",
+    "ar": "خطة 30 يوماً لـ catatan BBM: أصغر نسخة للبدء، ومتى تشغّلها، ومراجعة أسبوعية يمكن الاستمرار بها طوال الشهر.",
+    "ja": "catatan BBMの30日計画。最初の最小バージョン、実行のタイミング、一か月続けられる毎週の確認。",
+    "zh": "catatan BBM的30天计划：从最小版本起步，确定执行时机，并坚持整月的每周检查。",
+    "jv": "Rencana 30 dina kanggo catatan BBM: versi paling cilik kanggo miwiti, kapan mlaku, lan tinjauan saben minggu sing bisa diterusaké sak sasi.",
+    "su": "Rencana 30 poé pikeun catatan BBM: versi pang leutikna pikeun mimitian, iraha ngajalankeunana, jeung tinjauan mingguan nu bisa diteruskeun sapanjang bulan."
+  }
 }

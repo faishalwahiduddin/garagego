@@ -8,22 +8,31 @@
   "banner_ready": false,
   "seo": true,
   "slugs": {
-    "id": "pengingat-ganti-oli-level-lanjut-pola-insight-offline",
-    "en": "advanced-pengingat-ganti-oli-patterns-insights",
-    "ar": "pengingat-ganti-oli-3",
-    "jv": "pandhuan-pengingat-ganti-oli-garagego-3",
-    "su": "pituduh-pengingat-ganti-oli-garagego-3",
-    "zh": "garagego-pengingat-ganti-oli-实用指南-3",
-    "ja": "garagegopengingat-ganti-oli-ガイド-3"
+    "id": "pengingat-ganti-oli-tingkat-lanjut-setelah-rutin-stabil",
+    "en": "advanced-pengingat-ganti-oli-once-the-routine-holds",
+    "ar": "alsjlat-alywmya-almtqdm-bad-thbat-alrwtyn",
+    "jv": "pengingat-ganti-oli-lanjutan-sawise-rutinitas-mantep",
+    "su": "pengingat-ganti-oli-lanjutan-sanggeus-rutinitas-mantep",
+    "zh": "xi-guan-wen-ding-hou-de-ri-chang-ji-lu-jin-jie",
+    "ja": "shuukan-ga-antei-shita-nochino-mainichi-no-kiroku-ouyou"
   },
   "titles": {
-    "id": "pengingat ganti oli: panduan praktis di GarageGo",
-    "en": "Advanced pengingat ganti oli: Patterns &amp; Insights",
-    "ar": "pengingat ganti oli — دليل GarageGo",
-    "jv": "Pandhuan: pengingat ganti oli: panduan praktis di GarageGo",
-    "su": "Pituduh: pengingat ganti oli: panduan praktis di GarageGo",
-    "zh": "GarageGo · pengingat ganti oli 实用指南",
-    "ja": "GarageGo｜pengingat ganti oli ガイド"
+    "id": "pengingat ganti oli tingkat lanjut setelah rutin stabil",
+    "en": "Advanced pengingat ganti oli once the routine holds",
+    "ar": "السجلات اليومية المتقدم بعد ثبات الروتين",
+    "jv": "pengingat ganti oli lanjutan sawisé rutinitas mantep",
+    "su": "pengingat ganti oli lanjutan sanggeus rutinitas mantep",
+    "zh": "习惯稳定后的日常记录进阶",
+    "ja": "習慣が安定した後の毎日の記録応用"
   },
-  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+  "quality_pass": "editorial-v3",
+  "descriptions": {
+    "id": "Lanjutan pengingat ganti oli setelah rutinitas berjalan. Membahas arti praktisnya, versi paling kecil sebagai dasar, dan data yang tersimpan di perangkat.",
+    "en": "Advanced pengingat ganti oli once your routine holds steady: what the practice means, the smallest version as your base, and what stays on your device.",
+    "ar": "pengingat ganti oli المتقدم بعد أن يستقر الروتين: ما المعنى العملي، وأصغر نسخة كقاعدة، وما الذي يبقى على جهازك.",
+    "ja": "習慣が安定してから進む、pengingat ganti oliの応用編。実践的な意味、基礎の最小バージョン、保存。",
+    "zh": "习惯稳定后的pengingat ganti oli进阶用法：实际含义、作为基础的最小版本，以及设备上保留什么。",
+    "jv": "Lanjutan pengingat ganti oli sawisé rutinitas wis mapan: tegesé ing praktik, versi paling cilik minangka dhasar, lan data kasimpen ing piranti.",
+    "su": "Lanjutan pengingat ganti oli sanggeus rutinitas kawilang kuat: harti praktisna, versi pang leutikna minangka dasar, jeung data nu disimpen di alat."
+  }
 }

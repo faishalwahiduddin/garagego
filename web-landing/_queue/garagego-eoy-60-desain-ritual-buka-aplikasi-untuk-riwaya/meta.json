@@ -8,22 +8,31 @@
   "banner_ready": false,
   "seo": true,
   "slugs": {
-    "id": "desain-ritual-buka-aplikasi-untuk-riwayat-servis-mobil-motor-2026",
-    "en": "app-open-ritual-design-for-riwayat-servis-mobil-motor",
-    "ar": "riwayat-servis-mobil-motor-6",
-    "jv": "pandhuan-riwayat-servis-mobil-motor-garagego-6",
-    "su": "pituduh-riwayat-servis-mobil-motor-garagego-6",
-    "zh": "garagego-riwayat-servis-mobil-motor-实用指南-6",
-    "ja": "garagegoriwayat-servis-mobil-motor-ガイド-6"
+    "id": "riwayat-servis-mobil-motor-yang-tidak-bikin-malas-membuka-app",
+    "en": "riwayat-servis-mobil-motor-that-does-not-feel-like-a-chore-to-open",
+    "ar": "alsjlat-alywmya-la-ythql-fthh-aljz-3",
+    "jv": "riwayat-servis-mobil-motor-sing-ora-males-dibukak",
+    "su": "riwayat-servis-mobil-motor-anu-teu-hoream-dibuka",
+    "zh": "da-kai-bu-fei-jin-de-ri-chang-ji-lu-di-3-pian",
+    "ja": "hiraku-noga-okkuu-ninaranai-mainichi-no-kiroku-dai-3-kai"
   },
   "titles": {
-    "id": "Desain Ritual Buka Aplikasi untuk riwayat servis mobil motor",
-    "en": "App-Open Ritual Design for riwayat servis mobil motor",
-    "ar": "riwayat servis mobil motor — دليل GarageGo",
-    "jv": "Pandhuan: Desain Ritual Buka Aplikasi untuk riwayat servis mobil motor",
-    "su": "Pituduh: Desain Ritual Buka Aplikasi untuk riwayat servis mobil motor",
-    "zh": "GarageGo · riwayat servis mobil motor 实用指南",
-    "ja": "GarageGo｜riwayat servis mobil motor ガイド"
+    "id": "riwayat servis mobil motor yang tidak bikin malas membuka app",
+    "en": "riwayat servis mobil motor that does not feel like a chore to open",
+    "ar": "السجلات اليومية لا يثقل فتحه · الجزء 3",
+    "jv": "riwayat servis mobil motor sing ora males dibukak",
+    "su": "riwayat servis mobil motor anu teu hoream dibuka",
+    "zh": "打开不费劲的日常记录 · 第3篇",
+    "ja": "開くのが億劫にならない毎日の記録 · 第3回"
   },
-  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+  "quality_pass": "editorial-v3",
+  "descriptions": {
+    "id": "Riwayat servis mobil motor yang tidak terasa merepotkan untuk dibuka. Bahas penyebab malas mencatat, versi paling kecil, dan langkah setelah jeda.",
+    "en": "A riwayat servis mobil motor that does not feel like a chore to open: the reasons logging feels tedious, the smallest version, and what to do after a pause.",
+    "ar": "riwayat servis mobil motor لا يبدو عبئاً عند فتحه: أسباب ثقل التسجيل، وأصغر نسخة، وما يلزم فعله بعد توقف.",
+    "ja": "開くのが負担にならないriwayat servis mobil motor。記録が面倒に感じる理由、最小バージョン、中断後。",
+    "zh": "不会让人觉得打开费力的riwayat servis mobil motor：记录感到繁琐的原因、最小版本，以及暂停后的做法。",
+    "jv": "Riwayat servis mobil motor sing ora kerasa ngrepotké kanggo dibukak: sebab nyathet kerasa ruwet, versi paling cilik, lan langkah sawisé jeda.",
+    "su": "Riwayat servis mobil motor nu teu karasa ngarepotkeun pikeun dibuka: sabab nyatet karasa ribet, versi pang leutikna, jeung léngkah sanggeus eureun."
+  }
 }

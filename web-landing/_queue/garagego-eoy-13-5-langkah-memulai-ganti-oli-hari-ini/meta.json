@@ -8,22 +8,31 @@
   "banner_ready": false,
   "seo": true,
   "slugs": {
-    "id": "5-langkah-memulai-ganti-oli-hari-ini",
-    "en": "5-steps-to-start-ganti-oli-today",
-    "ar": "ganti-oli-2",
-    "jv": "pandhuan-ganti-oli-garagego-2",
-    "su": "pituduh-ganti-oli-garagego-2",
-    "zh": "garagego-ganti-oli-实用指南-2",
-    "ja": "garagegoganti-oli-ガイド-2"
+    "id": "ganti-oli-lima-langkah-pertama",
+    "en": "ganti-oli-the-first-five-steps",
+    "ar": "alsjlat-alywmya-alkhtwat-alkhms-alawla",
+    "jv": "ganti-oli-limang-langkah-kapisan",
+    "su": "ganti-oli-lima-lengkah-munggaran",
+    "zh": "ri-chang-ji-lu-de-tou-wu-ge-bu-zhou",
+    "ja": "mainichi-no-kiroku-no-saisho-no-5-suteppu"
   },
   "titles": {
-    "id": "5 Langkah Memulai ganti oli Hari Ini",
-    "en": "5 Steps to Start ganti oli Today",
-    "ar": "ganti oli — دليل GarageGo",
-    "jv": "Pandhuan: 5 Langkah Memulai ganti oli Hari Ini",
-    "su": "Pituduh: 5 Langkah Memulai ganti oli Hari Ini",
-    "zh": "GarageGo · ganti oli 实用指南",
-    "ja": "GarageGo｜ganti oli ガイド"
+    "id": "ganti oli: lima langkah pertama",
+    "en": "ganti oli: the first five steps",
+    "ar": "السجلات اليومية: الخطوات الخمس الأولى",
+    "jv": "ganti oli: limang langkah kapisan",
+    "su": "ganti oli: lima léngkah munggaran",
+    "zh": "日常记录的头五个步骤",
+    "ja": "毎日の記録の最初の5ステップ"
   },
-  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+  "quality_pass": "editorial-v3",
+  "descriptions": {
+    "id": "Lima langkah pertama untuk ganti oli hari ini. Mulai dari versi paling kecil, tentukan kapan menjalankannya, lalu lakukan tinjauan mingguan.",
+    "en": "The first five steps for ganti oli, starting with the smallest version, deciding when to run it, and building in a weekly check from day one.",
+    "ar": "الخطوات الخمس الأولى لـ ganti oli اليوم: تبدأ بأصغر نسخة، ثم تحدد وقت التشغيل، وتضيف مراجعة أسبوعية منذ اليوم الأول.",
+    "ja": "ganti oliを今日から始める最初の五ステップ。最小バージョン、実行時期、毎週の確認を順に解説。",
+    "zh": "今天就开始ganti oli的前五个步骤：从最小版本入手，确定执行时间，并从第一天加入每周检查。",
+    "jv": "Limang langkah kapisan kanggo ganti oli dina iki: wiwit saka versi paling cilik, mutusaké kapan mlaku, banjur ninjau saben minggu supaya kebiasan awet.",
+    "su": "Lima léngkah munggaran pikeun ganti oli dinten ieu: mimitian ti versi pang leutikna, nangtukeun iraha ngajalankeunana, lalu tinjauan mingguan tetep jalan."
+  }
 }

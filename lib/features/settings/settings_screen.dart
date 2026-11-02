@@ -35,19 +35,16 @@ class SettingsScreen extends ConsumerWidget {
     final storage = ref.read(localStorageServiceProvider);
     try {
       final payload = await storage.exportBackupJson();
-      await BackupFileIo.exportToShareSheet(
-        payload,
-        subject: 'GarageGo',
-      );
+      await BackupFileIo.exportToShareSheet(payload, subject: l10n.appTitle);
       if (!context.mounted) return;
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(content: Text(l10n.salinanJsonBackupBerhasilDisal)),
       );
     } catch (e) {
       if (!context.mounted) return;
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text(l10n.gagalMemulihkanBackup(e.toString()))),
-      );
+      ScaffoldMessenger.of(
+        context,
+      ).showSnackBar(SnackBar(content: Text(localizeBackupError(e, l10n))));
     }
   }
 
@@ -72,33 +69,37 @@ class SettingsScreen extends ConsumerWidget {
           SnackBar(content: Text(l10n.dataCadanganBerhasilDipulihkan)),
         );
       } else {
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
-            content: Text(
-              l10n.gagalMemulihkanBackup(
-                Localizations.localeOf(context).languageCode == 'id'
-                    ? 'Berkas .grg tidak valid atau struktur rusak'
-                    : 'Invalid .grg file or corrupted structure',
-              ),
-            ),
-          ),
-        );
+        ScaffoldMessenger.of(
+          context,
+        ).showSnackBar(SnackBar(content: Text(l10n.backupInvalidFile)));
       }
     } catch (e) {
       if (!context.mounted) return;
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text(l10n.gagalMemulihkanBackup(e.toString()))),
-      );
+      ScaffoldMessenger.of(
+        context,
+      ).showSnackBar(SnackBar(content: Text(localizeBackupError(e, l10n))));
     }
   }
 
-  void _showCsvExportDialog(BuildContext context, WidgetRef ref, String title, String csvData) {
+  void _showCsvExportDialog(
+    BuildContext context,
+    WidgetRef ref,
+    String title,
+    String csvData,
+  ) {
     final l10n = AppLocalizations.of(context)!;
     showDialog(
       context: context,
       builder: (ctx) => AlertDialog(
         backgroundColor: context.cardBg,
-        title: Text(title, style: TextStyle(color: context.textPrimary, fontSize: 16, fontWeight: FontWeight.w700)),
+        title: Text(
+          title,
+          style: TextStyle(
+            color: context.textPrimary,
+            fontSize: 16,
+            fontWeight: FontWeight.w700,
+          ),
+        ),
         content: SizedBox(
           width: 500,
           child: Column(
@@ -121,7 +122,11 @@ class SettingsScreen extends ConsumerWidget {
                 child: SingleChildScrollView(
                   child: SelectableText(
                     csvData,
-                    style: TextStyle(fontFamily: 'monospace', fontSize: 10, color: context.textPrimary),
+                    style: TextStyle(
+                      fontFamily: 'monospace',
+                      fontSize: 10,
+                      color: context.textPrimary,
+                    ),
                   ),
                 ),
               ),
@@ -131,7 +136,10 @@ class SettingsScreen extends ConsumerWidget {
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(ctx),
-            child: Text(l10n.tutup, style: TextStyle(color: context.textSecondary)),
+            child: Text(
+              l10n.tutup,
+              style: TextStyle(color: context.textSecondary),
+            ),
           ),
           ElevatedButton.icon(
             onPressed: () {
@@ -163,7 +171,11 @@ class SettingsScreen extends ConsumerWidget {
       appBar: AppBar(
         title: Text(
           l10n.pengaturanGarasi,
-          style: TextStyle(fontWeight: FontWeight.w800, fontSize: 18, color: context.textPrimary),
+          style: TextStyle(
+            fontWeight: FontWeight.w800,
+            fontSize: 18,
+            color: context.textPrimary,
+          ),
         ),
       ),
       body: ListView(
@@ -175,7 +187,11 @@ class SettingsScreen extends ConsumerWidget {
             children: [
               Text(
                 l10n.daftarKendaraanDiGarasi,
-                style: TextStyle(fontSize: 14, fontWeight: FontWeight.w700, color: context.textSecondary),
+                style: TextStyle(
+                  fontSize: 14,
+                  fontWeight: FontWeight.w700,
+                  color: context.textSecondary,
+                ),
               ),
               TextButton.icon(
                 onPressed: () {
@@ -185,13 +201,21 @@ class SettingsScreen extends ConsumerWidget {
                     isScrollControlled: true,
                     backgroundColor: context.cardBg,
                     shape: const RoundedRectangleBorder(
-                      borderRadius: BorderRadius.vertical(top: Radius.circular(24)),
+                      borderRadius: BorderRadius.vertical(
+                        top: Radius.circular(24),
+                      ),
                     ),
                     builder: (_) => const AddVehicleSheet(),
                   );
                 },
                 icon: const Icon(Icons.add_rounded, size: 16),
-                label: Text(l10n.tambahKendaraan, style: const TextStyle(fontSize: 12, fontWeight: FontWeight.w700)),
+                label: Text(
+                  l10n.tambahKendaraan,
+                  style: const TextStyle(
+                    fontSize: 12,
+                    fontWeight: FontWeight.w700,
+                  ),
+                ),
               ),
             ],
           ),
@@ -204,7 +228,10 @@ class SettingsScreen extends ConsumerWidget {
               padding: const EdgeInsets.only(bottom: 8),
               child: Card(
                 child: ListTile(
-                  contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
+                  contentPadding: const EdgeInsets.symmetric(
+                    horizontal: 16,
+                    vertical: 4,
+                  ),
                   leading: Container(
                     width: 40,
                     height: 40,
@@ -220,17 +247,33 @@ class SettingsScreen extends ConsumerWidget {
                   ),
                   title: Text(
                     v.name,
-                    style: TextStyle(fontWeight: FontWeight.w700, color: context.textPrimary, fontSize: 14),
+                    style: TextStyle(
+                      fontWeight: FontWeight.w700,
+                      color: context.textPrimary,
+                      fontSize: 14,
+                    ),
                   ),
                   subtitle: Text(
-                    '${v.plateNumber} • Odo: ${v.currentOdometer} km',
-                    style: TextStyle(fontSize: 12, color: context.textSecondary),
+                    l10n.settingsVehicleOdo(
+                      v.plateNumber,
+                      '${v.currentOdometer}',
+                    ),
+                    style: TextStyle(
+                      fontSize: 12,
+                      color: context.textSecondary,
+                    ),
                   ),
                   trailing: vehicles.length > 1
                       ? IconButton(
-                          icon: const Icon(Icons.delete_outline, color: AppColors.danger, size: 20),
+                          icon: const Icon(
+                            Icons.delete_outline,
+                            color: AppColors.danger,
+                            size: 20,
+                          ),
                           onPressed: () {
-                            ref.read(vehiclesProvider.notifier).deleteVehicle(v.id);
+                            ref
+                                .read(vehiclesProvider.notifier)
+                                .deleteVehicle(v.id);
                           },
                         )
                       : null,
@@ -243,7 +286,11 @@ class SettingsScreen extends ConsumerWidget {
           // Tampilan & Bahasa
           Text(
             l10n.tampilanBahasa,
-            style: TextStyle(fontSize: 14, fontWeight: FontWeight.w700, color: context.textSecondary),
+            style: TextStyle(
+              fontSize: 14,
+              fontWeight: FontWeight.w700,
+              color: context.textSecondary,
+            ),
           ),
           const SizedBox(height: 10),
           Card(
@@ -260,23 +307,36 @@ class SettingsScreen extends ConsumerWidget {
                           color: AppColors.primary.withValues(alpha: 0.12),
                           borderRadius: BorderRadius.circular(8),
                         ),
-                        child: const Icon(Icons.palette_outlined, color: AppColors.primary, size: 18),
+                        child: const Icon(
+                          Icons.palette_outlined,
+                          color: AppColors.primary,
+                          size: 18,
+                        ),
                       ),
                       const SizedBox(width: 10),
                       Expanded(
                         child: Text(
                           l10n.modeTema,
-                          style: TextStyle(fontSize: 14, fontWeight: FontWeight.w700, color: context.textPrimary),
+                          style: TextStyle(
+                            fontSize: 14,
+                            fontWeight: FontWeight.w700,
+                            color: context.textPrimary,
+                          ),
                         ),
                       ),
                       SegmentedButton<ThemeMode>(
                         style: SegmentedButton.styleFrom(
-                          visualDensity: VisualDensity.compact,
+                          // Icon-only segments: the default check icon would
+                          // sit jammed against the segment glyph. The filled
+                          // selectedBackgroundColor already marks selection.
+                          // 44dp min height keeps the segment a legal target.
+                          minimumSize: const Size(48, 44),
                           selectedBackgroundColor: AppColors.primaryDark,
                           selectedForegroundColor: Colors.white,
                           foregroundColor: context.textSecondary,
                           backgroundColor: context.surfaceBg,
                         ),
+                        showSelectedIcon: false,
                         segments: const [
                           ButtonSegment(
                             value: ThemeMode.system,
@@ -293,7 +353,9 @@ class SettingsScreen extends ConsumerWidget {
                         ],
                         selected: {themeMode},
                         onSelectionChanged: (selected) {
-                          ref.read(themeModeProvider.notifier).setThemeMode(selected.first);
+                          ref
+                              .read(themeModeProvider.notifier)
+                              .setThemeMode(selected.first);
                         },
                       ),
                     ],
@@ -307,18 +369,33 @@ class SettingsScreen extends ConsumerWidget {
                         color: AppColors.accent.withValues(alpha: 0.12),
                         borderRadius: BorderRadius.circular(8),
                       ),
-                      child: const Icon(Icons.translate, color: AppColors.accent, size: 18),
+                      child: const Icon(
+                        Icons.translate,
+                        color: AppColors.accent,
+                        size: 18,
+                      ),
                     ),
                     title: Text(
                       l10n.bahasaAplikasi,
-                      style: TextStyle(fontSize: 14, fontWeight: FontWeight.w700, color: context.textPrimary),
+                      style: TextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeight.w700,
+                        color: context.textPrimary,
+                      ),
                     ),
                     subtitle: Text(
                       languageName(langCode, l10n),
-                      style: TextStyle(fontSize: 12, color: context.textSecondary),
+                      style: TextStyle(
+                        fontSize: 12,
+                        color: context.textSecondary,
+                      ),
                     ),
-                    trailing: Icon(Icons.chevron_right, color: context.textMuted),
-                    onTap: () => _showLanguageModal(context, ref, currentLocale),
+                    trailing: Icon(
+                      Icons.chevron_right,
+                      color: context.textMuted,
+                    ),
+                    onTap: () =>
+                        _showLanguageModal(context, ref, currentLocale),
                   ),
                   Divider(color: context.borderColor, height: 24),
                   Semantics(
@@ -333,17 +410,31 @@ class SettingsScreen extends ConsumerWidget {
                           color: AppColors.primary.withValues(alpha: 0.12),
                           borderRadius: BorderRadius.circular(8),
                         ),
-                        child: const Icon(Icons.schedule, color: AppColors.primary, size: 18),
+                        child: const Icon(
+                          Icons.schedule,
+                          color: AppColors.primary,
+                          size: 18,
+                        ),
                       ),
                       title: Text(
                         l10n.timezone,
-                        style: TextStyle(fontSize: 14, fontWeight: FontWeight.w700, color: context.textPrimary),
+                        style: TextStyle(
+                          fontSize: 14,
+                          fontWeight: FontWeight.w700,
+                          color: context.textPrimary,
+                        ),
                       ),
                       subtitle: Text(
                         _currentTimezoneLabel(ref, l10n),
-                        style: TextStyle(fontSize: 12, color: context.textSecondary),
+                        style: TextStyle(
+                          fontSize: 12,
+                          color: context.textSecondary,
+                        ),
                       ),
-                      trailing: Icon(Icons.chevron_right, color: context.textMuted),
+                      trailing: Icon(
+                        Icons.chevron_right,
+                        color: context.textMuted,
+                      ),
                       onTap: () => _showTimezoneModal(context, ref),
                     ),
                   ),
@@ -356,7 +447,11 @@ class SettingsScreen extends ConsumerWidget {
           // 2. Data Portability & Backup
           Text(
             l10n.portabilitasCadanganData,
-            style: TextStyle(fontSize: 14, fontWeight: FontWeight.w700, color: context.textSecondary),
+            style: TextStyle(
+              fontSize: 14,
+              fontWeight: FontWeight.w700,
+              color: context.textSecondary,
+            ),
           ),
           const SizedBox(height: 10),
           Card(
@@ -369,15 +464,26 @@ class SettingsScreen extends ConsumerWidget {
                       color: AppColors.primary.withValues(alpha: 0.1),
                       borderRadius: BorderRadius.circular(8),
                     ),
-                    child: const Icon(Icons.file_download_outlined, color: AppColors.primary, size: 20),
+                    child: const Icon(
+                      Icons.file_download_outlined,
+                      color: AppColors.primary,
+                      size: 20,
+                    ),
                   ),
                   title: Text(
                     l10n.eksporCadanganJson,
-                    style: TextStyle(color: context.textPrimary, fontSize: 14, fontWeight: FontWeight.w700),
+                    style: TextStyle(
+                      color: context.textPrimary,
+                      fontSize: 14,
+                      fontWeight: FontWeight.w700,
+                    ),
                   ),
                   subtitle: Text(
                     l10n.cadangkanSeluruhKendaraanServi,
-                    style: TextStyle(fontSize: 12, color: context.textSecondary),
+                    style: TextStyle(
+                      fontSize: 12,
+                      color: context.textSecondary,
+                    ),
                   ),
                   onTap: () => _exportBackupFile(context, ref),
                 ),
@@ -389,15 +495,26 @@ class SettingsScreen extends ConsumerWidget {
                       color: AppColors.accent.withValues(alpha: 0.1),
                       borderRadius: BorderRadius.circular(8),
                     ),
-                    child: const Icon(Icons.file_upload_outlined, color: AppColors.accent, size: 20),
+                    child: const Icon(
+                      Icons.file_upload_outlined,
+                      color: AppColors.accent,
+                      size: 20,
+                    ),
                   ),
                   title: Text(
                     l10n.pulihkanDariBackupJson,
-                    style: TextStyle(color: context.textPrimary, fontSize: 14, fontWeight: FontWeight.w700),
+                    style: TextStyle(
+                      color: context.textPrimary,
+                      fontSize: 14,
+                      fontWeight: FontWeight.w700,
+                    ),
                   ),
                   subtitle: Text(
                     l10n.kembalikanDataDariBerkasCadang,
-                    style: TextStyle(fontSize: 12, color: context.textSecondary),
+                    style: TextStyle(
+                      fontSize: 12,
+                      color: context.textSecondary,
+                    ),
                   ),
                   onTap: () => _importBackupFile(context, ref),
                 ),
@@ -409,19 +526,35 @@ class SettingsScreen extends ConsumerWidget {
                       color: AppColors.success.withValues(alpha: 0.1),
                       borderRadius: BorderRadius.circular(8),
                     ),
-                    child: const Icon(Icons.table_chart_outlined, color: AppColors.success, size: 20),
+                    child: const Icon(
+                      Icons.table_chart_outlined,
+                      color: AppColors.success,
+                      size: 20,
+                    ),
                   ),
                   title: Text(
                     l10n.eksporCsvRiwayatServis,
-                    style: TextStyle(color: context.textPrimary, fontSize: 14, fontWeight: FontWeight.w700),
+                    style: TextStyle(
+                      color: context.textPrimary,
+                      fontSize: 14,
+                      fontWeight: FontWeight.w700,
+                    ),
                   ),
                   subtitle: Text(
                     l10n.eksporFormatTabelSpreadsheetUn,
-                    style: TextStyle(fontSize: 12, color: context.textSecondary),
+                    style: TextStyle(
+                      fontSize: 12,
+                      color: context.textSecondary,
+                    ),
                   ),
                   onTap: () {
                     final csv = storage.exportServiceLogsCsv(active?.id);
-                    _showCsvExportDialog(context, ref, l10n.eksporCsvRiwayatServis, csv);
+                    _showCsvExportDialog(
+                      context,
+                      ref,
+                      l10n.eksporCsvRiwayatServis,
+                      csv,
+                    );
                   },
                 ),
                 Divider(color: context.borderColor, height: 1),
@@ -432,19 +565,35 @@ class SettingsScreen extends ConsumerWidget {
                       color: AppColors.warning.withValues(alpha: 0.1),
                       borderRadius: BorderRadius.circular(8),
                     ),
-                    child: const Icon(Icons.receipt_long_outlined, color: AppColors.warning, size: 20),
+                    child: const Icon(
+                      Icons.receipt_long_outlined,
+                      color: AppColors.warning,
+                      size: 20,
+                    ),
                   ),
                   title: Text(
                     l10n.eksporCsvRiwayatBbm,
-                    style: TextStyle(color: context.textPrimary, fontSize: 14, fontWeight: FontWeight.w700),
+                    style: TextStyle(
+                      color: context.textPrimary,
+                      fontSize: 14,
+                      fontWeight: FontWeight.w700,
+                    ),
                   ),
                   subtitle: Text(
                     l10n.eksporSeluruhPengisianBbmKeFor,
-                    style: TextStyle(fontSize: 12, color: context.textSecondary),
+                    style: TextStyle(
+                      fontSize: 12,
+                      color: context.textSecondary,
+                    ),
                   ),
                   onTap: () {
                     final csv = storage.exportFuelLogsCsv(active?.id);
-                    _showCsvExportDialog(context, ref, l10n.eksporCsvRiwayatBbm, csv);
+                    _showCsvExportDialog(
+                      context,
+                      ref,
+                      l10n.eksporCsvRiwayatBbm,
+                      csv,
+                    );
                   },
                 ),
               ],
@@ -455,7 +604,11 @@ class SettingsScreen extends ConsumerWidget {
           // 3. Reset Data
           Text(
             l10n.aturUlangData,
-            style: TextStyle(fontSize: 14, fontWeight: FontWeight.w700, color: context.textSecondary),
+            style: TextStyle(
+              fontSize: 14,
+              fontWeight: FontWeight.w700,
+              color: context.textSecondary,
+            ),
           ),
           const SizedBox(height: 10),
           Card(
@@ -466,11 +619,19 @@ class SettingsScreen extends ConsumerWidget {
                   color: AppColors.danger.withValues(alpha: 0.1),
                   borderRadius: BorderRadius.circular(8),
                 ),
-                child: const Icon(Icons.delete_sweep_outlined, color: AppColors.danger, size: 20),
+                child: const Icon(
+                  Icons.delete_sweep_outlined,
+                  color: AppColors.danger,
+                  size: 20,
+                ),
               ),
               title: Text(
                 l10n.resetDataGarasi,
-                style: TextStyle(color: context.readable(AppColors.danger), fontSize: 14, fontWeight: FontWeight.w700),
+                style: TextStyle(
+                  color: context.readable(AppColors.danger),
+                  fontSize: 14,
+                  fontWeight: FontWeight.w700,
+                ),
               ),
               subtitle: Text(
                 l10n.menghapusSemuaLogServisBbmDanR,
@@ -481,7 +642,13 @@ class SettingsScreen extends ConsumerWidget {
                   context: context,
                   builder: (ctx) => AlertDialog(
                     backgroundColor: context.cardBg,
-                    title: Text(l10n.resetSeluruhData, style: TextStyle(color: context.textPrimary, fontWeight: FontWeight.w700)),
+                    title: Text(
+                      l10n.resetSeluruhData,
+                      style: TextStyle(
+                        color: context.textPrimary,
+                        fontWeight: FontWeight.w700,
+                      ),
+                    ),
                     content: Text(
                       l10n.tindakanIniAkanMengosongkanSem,
                       style: TextStyle(color: context.textSecondary),
@@ -489,11 +656,16 @@ class SettingsScreen extends ConsumerWidget {
                     actions: [
                       TextButton(
                         onPressed: () => Navigator.pop(ctx, false),
-                        child: Text(l10n.batal, style: TextStyle(color: context.textSecondary)),
+                        child: Text(
+                          l10n.batal,
+                          style: TextStyle(color: context.textSecondary),
+                        ),
                       ),
                       ElevatedButton(
                         onPressed: () => Navigator.pop(ctx, true),
-                        style: ElevatedButton.styleFrom(backgroundColor: AppColors.danger),
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: AppColors.danger,
+                        ),
                         child: Text(l10n.reset),
                       ),
                     ],
@@ -503,7 +675,7 @@ class SettingsScreen extends ConsumerWidget {
                 if (confirm == true) {
                   final s = ref.read(localStorageServiceProvider);
                   await s.clearAllData();
-                  s.seedInitialIfEmpty();
+                  s.seedInitialIfEmpty(l10n);
                   ref.invalidate(vehiclesProvider);
                   ref.invalidate(activeVehicleIdProvider);
                   ref.invalidate(serviceLogsProvider);
@@ -513,7 +685,9 @@ class SettingsScreen extends ConsumerWidget {
                   ref.invalidate(inspectionChecklistsProvider);
                   if (context.mounted) {
                     ScaffoldMessenger.of(context).showSnackBar(
-                      SnackBar(content: Text(l10n.dataGarasiBerhasilDiresetKeSta)),
+                      SnackBar(
+                        content: Text(l10n.dataGarasiBerhasilDiresetKeSta),
+                      ),
                     );
                   }
                 }
@@ -525,7 +699,11 @@ class SettingsScreen extends ConsumerWidget {
           // 4. About App & License
           Text(
             l10n.tentangAplikasiLisensi,
-            style: TextStyle(fontSize: 14, fontWeight: FontWeight.w700, color: context.textSecondary),
+            style: TextStyle(
+              fontSize: 14,
+              fontWeight: FontWeight.w700,
+              color: context.textSecondary,
+            ),
           ),
           const SizedBox(height: 10),
           Card(
@@ -534,7 +712,7 @@ class SettingsScreen extends ConsumerWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  _buildAboutRow(context, langCode == 'id' ? 'Aplikasi' : 'Application', AppConstants.appName),
+                  _buildAboutRow(context, l10n.aboutApplication, l10n.appTitle),
                   Divider(color: context.borderColor, height: 20),
                   FutureBuilder<PackageInfo>(
                     future: PackageInfo.fromPlatform(),
@@ -544,31 +722,52 @@ class SettingsScreen extends ConsumerWidget {
                           : '…';
                       return _buildAboutRow(
                         context,
-                        langCode == 'id' ? 'Versi' : 'Version',
+                        l10n.aboutVersion,
                         version,
                       );
                     },
                   ),
                   Divider(color: context.borderColor, height: 20),
-                  _buildAboutRow(context, langCode == 'id' ? 'Arsitektur' : 'Architecture', '100% Offline-First (No Server/No Tracking)'),
+                  _buildAboutRow(
+                    context,
+                    l10n.aboutArchitecture,
+                    l10n.aboutArchitectureValue,
+                  ),
                   Divider(color: context.borderColor, height: 20),
-                  _buildAboutRow(context, langCode == 'id' ? 'Domain' : 'Domain', 'garagego.faishal.id'),
+                  _buildAboutRow(
+                    context,
+                    l10n.aboutDomain,
+                    AppConstants.appDomainHost,
+                  ),
                   Divider(color: context.borderColor, height: 20),
-                  _buildAboutRow(context, langCode == 'id' ? 'Identitas' : 'Package ID', 'id.faishal.garagego'),
+                  _buildAboutRow(
+                    context,
+                    l10n.aboutPackageId,
+                    AppConstants.packageId,
+                  ),
                   Divider(color: context.borderColor, height: 20),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
                         l10n.licenseUsageTitle,
-                        style: TextStyle(fontSize: 13, fontWeight: FontWeight.bold, color: context.textPrimary),
+                        style: TextStyle(
+                          fontSize: 13,
+                          fontWeight: FontWeight.bold,
+                          color: context.textPrimary,
+                        ),
                       ),
                       Container(
-                        padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 8,
+                          vertical: 3,
+                        ),
                         decoration: BoxDecoration(
                           color: AppColors.primary.withValues(alpha: 0.12),
                           borderRadius: BorderRadius.circular(8),
-                          border: Border.all(color: AppColors.primary.withValues(alpha: 0.3)),
+                          border: Border.all(
+                            color: AppColors.primary.withValues(alpha: 0.3),
+                          ),
                         ),
                         child: Text(
                           l10n.licenseUsageBadgeText,
@@ -584,7 +783,11 @@ class SettingsScreen extends ConsumerWidget {
                   const SizedBox(height: 6),
                   Text(
                     l10n.licenseUsageNotice,
-                    style: TextStyle(fontSize: 12, color: context.textSecondary, height: 1.4),
+                    style: TextStyle(
+                      fontSize: 12,
+                      color: context.textSecondary,
+                      height: 1.4,
+                    ),
                   ),
                 ],
               ),
@@ -600,11 +803,18 @@ class SettingsScreen extends ConsumerWidget {
     final now = AppTimeZone.nowUtc();
     final manual = ref.watch(timezoneProvider);
     if (manual != null) {
-      return '$manual (${AppTimeZone.zoneShortLabel(manual, now)})';
+      return AppTimeZone.zoneOptionLabel(
+        iana: manual,
+        shortLabel: AppTimeZone.zoneShortLabel(manual, now),
+        utcInstant: now,
+      );
     }
     final device = ref.watch(timezoneNameProvider);
-    return '${l10n.timezoneAuto} · $device '
-        '(${AppTimeZone.offsetLabel(device, now)})';
+    final deviceLabel = AppTimeZone.zoneOptionLabel(
+      iana: device,
+      utcInstant: now,
+    );
+    return '${l10n.timezoneAuto}$kDotSeparator$deviceLabel';
   }
 
   void _showTimezoneModal(BuildContext context, WidgetRef ref) {
@@ -616,127 +826,189 @@ class SettingsScreen extends ConsumerWidget {
         final now = AppTimeZone.nowUtc();
         final current = ref.read(timezoneProvider);
         final device = ref.read(timezoneNameProvider);
-        final autoLabel = '${l10n.timezoneAuto} · $device '
-            '(${AppTimeZone.offsetLabel(device, now)})';
-        return SafeArea(
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              const SpringSheetHandle(),
-              Padding(
-                padding: const EdgeInsets.all(16),
-                child: Text(
-                  l10n.timezone,
-                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: context.textPrimary),
-                ),
-              ),
-              Divider(height: 1, color: context.borderColor),
-              Flexible(
-                child: ListView(
-                  shrinkWrap: true,
-                  children: [
-                    Semantics(
-                      button: true,
-                      selected: current == null,
-                      label: autoLabel,
-                      child: ListTile(
-                        key: const Key('timezone-option-auto'),
-                        title: Text(
-                          autoLabel,
-                          style: TextStyle(
-                            color: current == null ? context.readable(AppColors.primary) : context.textPrimary,
-                            fontWeight: current == null ? FontWeight.w700 : FontWeight.w500,
-                          ),
-                        ),
-                        trailing: current == null ? const Icon(Icons.check, color: AppColors.primary) : null,
-                        onTap: () {
-                          final zone = ref.read(timezoneProvider.notifier);
-                          // §VAL: resetToAuto drops the key; no raw string stored.
-                          zone.resetToAuto();
-                          Navigator.pop(ctx);
-                        },
-                      ),
+        final deviceLabel = AppTimeZone.zoneOptionLabel(
+          iana: device,
+          utcInstant: now,
+        );
+        final autoLabel = '${l10n.timezoneAuto}$kDotSeparator$deviceLabel';
+        // Cupertino popup supplies neither a Material ancestor (ListTile
+        // asserts one) nor a surface colour.
+        return Material(
+          color: context.cardBg,
+          borderRadius: const BorderRadius.vertical(top: Radius.circular(24)),
+          clipBehavior: Clip.antiAlias,
+          child: SafeArea(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                const SpringSheetHandle(),
+                Padding(
+                  padding: const EdgeInsets.all(16),
+                  child: Text(
+                    l10n.timezone,
+                    style: TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                      color: context.textPrimary,
                     ),
-                    for (final zone in kCuratedZones)
+                  ),
+                ),
+                Divider(height: 1, color: context.borderColor),
+                Flexible(
+                  child: ListView(
+                    shrinkWrap: true,
+                    children: [
                       Semantics(
                         button: true,
-                        selected: zone.iana == current,
-                        label: zone.iana,
+                        selected: current == null,
+                        label: autoLabel,
                         child: ListTile(
-                          key: Key('timezone-option-${zone.iana}'),
+                          key: const Key('timezone-option-auto'),
                           title: Text(
-                            zone.shortLabel == null
-                                ? '${zone.iana} (${AppTimeZone.offsetLabel(zone.iana, now)})'
-                                : '${zone.iana} (${zone.shortLabel}, ${AppTimeZone.offsetLabel(zone.iana, now)})',
+                            autoLabel,
                             style: TextStyle(
-                              color: zone.iana == current ? context.readable(AppColors.primary) : context.textPrimary,
-                              fontWeight: zone.iana == current ? FontWeight.w700 : FontWeight.w500,
+                              color: current == null
+                                  ? context.readable(AppColors.primary)
+                                  : context.textPrimary,
+                              fontWeight: current == null
+                                  ? FontWeight.w700
+                                  : FontWeight.w500,
                             ),
                           ),
-                          trailing: zone.iana == current ? const Icon(Icons.check, color: AppColors.primary) : null,
+                          trailing: current == null
+                              ? const Icon(
+                                  Icons.check,
+                                  color: AppColors.primary,
+                                )
+                              : null,
                           onTap: () {
-                            try {
-                              ref.read(timezoneProvider.notifier).setZone(zone.iana);
-                            } on ArgumentError {
-                              // Unresolvable IANA name: keep the current choice.
-                              return;
-                            }
+                            final zone = ref.read(timezoneProvider.notifier);
+                            // §VAL: resetToAuto drops the key; no raw string stored.
+                            zone.resetToAuto();
                             Navigator.pop(ctx);
                           },
                         ),
                       ),
-                  ],
+                      for (final zone in kCuratedZones)
+                        Semantics(
+                          button: true,
+                          selected: zone.iana == current,
+                          label: zone.iana,
+                          child: ListTile(
+                            key: Key('timezone-option-${zone.iana}'),
+                            title: Text(
+                              AppTimeZone.zoneOptionLabel(
+                                iana: zone.iana,
+                                shortLabel: zone.shortLabel,
+                                utcInstant: now,
+                              ),
+                              style: TextStyle(
+                                color: zone.iana == current
+                                    ? context.readable(AppColors.primary)
+                                    : context.textPrimary,
+                                fontWeight: zone.iana == current
+                                    ? FontWeight.w700
+                                    : FontWeight.w500,
+                              ),
+                            ),
+                            trailing: zone.iana == current
+                                ? const Icon(
+                                    Icons.check,
+                                    color: AppColors.primary,
+                                  )
+                                : null,
+                            onTap: () {
+                              try {
+                                ref
+                                    .read(timezoneProvider.notifier)
+                                    .setZone(zone.iana);
+                              } on ArgumentError {
+                                // Unresolvable IANA name: keep the current choice.
+                                return;
+                              }
+                              Navigator.pop(ctx);
+                            },
+                          ),
+                        ),
+                    ],
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         );
       },
     );
   }
 
-  void _showLanguageModal(BuildContext context, WidgetRef ref, Locale currentLocale) {
+  void _showLanguageModal(
+    BuildContext context,
+    WidgetRef ref,
+    Locale currentLocale,
+  ) {
     final l10n = AppLocalizations.of(context)!;
     showSpringSheet(
       context: context,
       dismissOffset: 480,
       builder: (ctx) {
-        return SafeArea(
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              const SpringSheetHandle(),
-              Padding(
-                padding: const EdgeInsets.all(16),
-                child: Text(
-                  l10n.pilihBahasaSelectLanguage,
-                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: context.textPrimary),
+        // Cupertino popup supplies neither a Material ancestor (ListTile
+        // asserts one) nor a surface colour.
+        return Material(
+          color: context.cardBg,
+          borderRadius: const BorderRadius.vertical(top: Radius.circular(24)),
+          clipBehavior: Clip.antiAlias,
+          child: SafeArea(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                const SpringSheetHandle(),
+                Padding(
+                  padding: const EdgeInsets.all(16),
+                  child: Text(
+                    l10n.pilihBahasaSelectLanguage,
+                    style: TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                      color: context.textPrimary,
+                    ),
+                  ),
                 ),
-              ),
-              Divider(height: 1, color: context.borderColor),
-              Expanded(
-                child: ListView(
-                  children: _supportedLocales.map((code) {
-                    final isSelected = code == currentLocale.languageCode;
-                    final name = languageName(code, l10n);
-                    return ListTile(
-                      title: Text(
-                        name,
-                        style: TextStyle(
-                          color: isSelected ? context.readable(AppColors.primary) : context.textPrimary,
-                          fontWeight: isSelected ? FontWeight.w700 : FontWeight.w500,
+                Divider(height: 1, color: context.borderColor),
+                // Flexible + shrinkWrap keeps the sheet hugging its 8 rows;
+                // Expanded stretched it to full screen and left ~40% dead space.
+                Flexible(
+                  child: ListView(
+                    shrinkWrap: true,
+                    children: _supportedLocales.map((code) {
+                      final isSelected = code == currentLocale.languageCode;
+                      final name = languageName(code, l10n);
+                      return ListTile(
+                        title: Text(
+                          name,
+                          style: TextStyle(
+                            color: isSelected
+                                ? context.readable(AppColors.primary)
+                                : context.textPrimary,
+                            fontWeight: isSelected
+                                ? FontWeight.w700
+                                : FontWeight.w500,
+                          ),
                         ),
-                      ),
-                      trailing: isSelected ? const Icon(Icons.check, color: AppColors.primary) : null,
-                      onTap: () {
-                        ref.read(localeProvider.notifier).setLocale(Locale(code));
-                        Navigator.pop(ctx);
-                      },
-                    );
-                  }).toList(),
+                        trailing: isSelected
+                            ? const Icon(Icons.check, color: AppColors.primary)
+                            : null,
+                        onTap: () {
+                          ref
+                              .read(localeProvider.notifier)
+                              .setLocale(Locale(code));
+                          Navigator.pop(ctx);
+                        },
+                      );
+                    }).toList(),
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         );
       },
@@ -747,8 +1019,18 @@ class SettingsScreen extends ConsumerWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Text(label, style: TextStyle(fontSize: 13, color: context.textSecondary)),
-        Text(value, style: TextStyle(fontSize: 13, fontWeight: FontWeight.w600, color: context.textPrimary)),
+        Text(
+          label,
+          style: TextStyle(fontSize: 13, color: context.textSecondary),
+        ),
+        Text(
+          value,
+          style: TextStyle(
+            fontSize: 13,
+            fontWeight: FontWeight.w600,
+            color: context.textPrimary,
+          ),
+        ),
       ],
     );
   }

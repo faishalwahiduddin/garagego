@@ -1,0 +1,85 @@
+{
+  "title": "Pitakon pajak stnk tahunan sing kerep ditakokaké",
+  "description": "FAQ pajak stnk tahunan: wangsulan kanggo pitakon sing kerep ditakokaké, tegesé ing praktik, versi paling cilik, lan carane data kasimpen ing piranti.",
+  "badge": "produktivitas · offline",
+  "answer": "Jemuwah sore cathetan pajak stnk tahunan panjenengan isine baris setengah dadi tanpa tanggal. GarageGo nyimpen pajak stnk tahunan ing piranti, dadi tetep kebukak tanpa kuota lan tanpa akun.",
+  "toc": [
+    "Tegesé pajak stnk tahunan ing praktik",
+    "Versi paling cilik",
+    "Kasimpen ing piranti"
+  ],
+  "sections": [
+    {
+      "h2": "Tegesé pajak stnk tahunan ing praktik",
+      "p": "Ing praktik, pajak stnk tahunan iku bukti kadated sing bisa dibukak manèh—dudu niat sing mung diéling-éling.",
+      "h3": null,
+      "p3": null
+    },
+    {
+      "h2": "Versi paling cilik",
+      "p": "Isinen telu waé: wektu, status, siji alangan. Liyané opsional.",
+      "h3": null,
+      "p3": null
+    },
+    {
+      "h2": "Kasimpen ing piranti",
+      "p": "GarageGo nyimpen pajak stnk tahunan ing piranti, dadi tetep kebukak tanpa kuota lan tanpa akun.",
+      "h3": null,
+      "p3": null
+    }
+  ],
+  "table": {
+    "caption": "Rangka pajak stnk tahunan",
+    "headers": [
+      "Langkah",
+      "Isi minimal",
+      "Rampung yèn"
+    ],
+    "rows": [
+      [
+        "Entri saben dina",
+        "wektu + status",
+        "kasimpen < 2 menit"
+      ],
+      [
+        "Pananda",
+        "posisi pungkasan",
+        "bisa diterusaké sesuk"
+      ],
+      [
+        "Evaluasi minggu",
+        "siji panyesuaian",
+        "diterapaké Senén"
+      ]
+    ]
+  },
+  "list": [
+    "Temtokna siji wektu tetep, dudu “yèn sempet”.",
+    "Bukak GarageGo nalika wektu iku teka, aja mengko bengi.",
+    "Catheten siji alangan, dudu alesan dawa.",
+    "Cadhangana data sadurungé ganti HP."
+  ],
+  "faqs": [
+    [
+      "Apa pajak stnk tahunan bisa dibukak offline?",
+      "Bisa. GarageGo nyimpen kabèh ing piranti, dadi ora butuh kuota."
+    ],
+    [
+      "Kudu akun dhisik?",
+      "Ora. Wiwit tanpa login; cadhangana data sak dhéwé."
+    ],
+    [
+      "Wiwit saka ngendi?",
+      "Saka bagéan paling cendhak. Tambah jembar yèn wis rong minggu stabil."
+    ],
+    [
+      "Yèn bolong sawetara dina?",
+      "Aja mbusak riwayat. Terusaké saka cathetan pungkasan lan catheten siji alangan."
+    ]
+  ],
+  "cta": [
+    "Wiwiti pajak stnk tahunan dina iki",
+    "Bukak GarageGo"
+  ],
+  "slug": "pandhuan-pajak-stnk-tahunan-garagego-2"
+}

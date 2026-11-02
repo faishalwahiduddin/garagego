@@ -103,7 +103,7 @@ class GloveboxScreen extends ConsumerWidget {
                                       crossAxisAlignment: CrossAxisAlignment.start,
                                       children: [
                                         Text(
-                                          'Digital Glovebox — ${active.name}',
+                                          l10n.gloveboxHeader(active.name),
                                           style: TextStyle(
                                             fontSize: 16,
                                             fontWeight: FontWeight.w800,
@@ -113,7 +113,10 @@ class GloveboxScreen extends ConsumerWidget {
                                         ),
                                         const SizedBox(height: 2),
                                         Text(
-                                          '${active.plateNumber} • ${documents.length} ${Localizations.localeOf(context).languageCode == 'id' ? 'Dokumen Terdaftar' : 'Registered Documents'}',
+                                          l10n.gloveboxDocCount(
+                                            active.plateNumber,
+                                            '${documents.length}',
+                                          ),
                                           style: TextStyle(fontSize: 12, color: context.textSecondary),
                                         ),
                                       ],
@@ -257,16 +260,15 @@ class GloveboxScreen extends ConsumerWidget {
                           Color statusColor;
                           String statusText;
 
-                          final isId = Localizations.localeOf(context).languageCode == 'id';
                           if (doc.isExpired) {
                             statusColor = context.readable(AppColors.danger);
-                            statusText = isId ? 'Kedaluwarsa ${-days} hari lalu' : 'Expired ${-days} days ago';
+                            statusText = l10n.docExpiredAgo('${-days}');
                           } else if (doc.isDueSoon) {
                             statusColor = context.readable(AppColors.warning);
-                            statusText = isId ? 'Jatuh tempo $days hari lagi' : 'Due in $days days';
+                            statusText = l10n.docDueIn('$days');
                           } else {
                             statusColor = context.readable(AppColors.success);
-                            statusText = isId ? '$days hari lagi' : '$days days remaining';
+                            statusText = l10n.docDaysLeft('$days');
                           }
 
                           IconData iconData;
@@ -348,9 +350,13 @@ class GloveboxScreen extends ConsumerWidget {
                                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                       children: [
                                         Text(
-                                          Localizations.localeOf(context).languageCode == 'id'
-                                              ? 'Masa Berlaku: ${AppTimeZone.formatDate(doc.expiryDate, loc, locale: localeCode)}'
-                                              : 'Valid until: ${AppTimeZone.formatDate(doc.expiryDate, loc, locale: localeCode)}',
+                                          l10n.docValidUntil(
+                                            AppTimeZone.formatDate(
+                                              doc.expiryDate,
+                                              loc,
+                                              locale: localeCode,
+                                            ),
+                                          ),
                                           style: TextStyle(fontSize: 12, color: context.textSecondary),
                                         ),
                                         if (doc.cost > 0)

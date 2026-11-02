@@ -8,22 +8,31 @@
   "banner_ready": false,
   "seo": true,
   "slugs": {
-    "id": "servis-mobil-pengingat-sistem-mingguan",
-    "en": "servis-mobil-system-reminders",
-    "ar": "servis-mobil-6",
-    "jv": "pandhuan-servis-mobil-garagego-6",
-    "su": "pituduh-servis-mobil-garagego-6",
-    "zh": "garagego-servis-mobil-实用指南-6",
-    "ja": "garagegoservis-mobil-ガイド-6"
+    "id": "servis-mobil-dan-aplikasi-lain-di-ponsel-anda",
+    "en": "servis-mobil-and-the-other-apps-on-your-phone",
+    "ar": "alsjlat-alywmya-dlyl-ybqa-mfyda",
+    "jv": "servis-mobil-lan-aplikasi-liya-ing-hp",
+    "su": "servis-mobil-jeung-aplikasi-sejen-dina-hp",
+    "zh": "ri-chang-ji-lu-chang-qi-you-xiao-de-zhi-nan",
+    "ja": "mainichi-no-kiroku-nagaku-tsukae-ru-gaido"
   },
   "titles": {
-    "id": "servis mobil: panduan praktis di GarageGo",
-    "en": "servis mobil + System Reminders — Offline First",
-    "ar": "servis mobil — دليل GarageGo",
-    "jv": "Pandhuan: servis mobil: panduan praktis di GarageGo",
-    "su": "Pituduh: servis mobil: panduan praktis di GarageGo",
-    "zh": "GarageGo · servis mobil 实用指南",
-    "ja": "GarageGo｜servis mobil ガイド"
+    "id": "servis mobil dan aplikasi lain di ponsel Anda",
+    "en": "servis mobil and the other apps on your phone",
+    "ar": "السجلات اليومية: دليل يبقى مفيداً",
+    "jv": "servis mobil lan aplikasi liya ing HP",
+    "su": "servis mobil jeung aplikasi séjén dina HP",
+    "zh": "日常记录：长期有效的指南",
+    "ja": "毎日の記録：長く使えるガイド"
   },
-  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+  "quality_pass": "editorial-v3",
+  "descriptions": {
+    "id": "Servis mobil bersama aplikasi lain di ponsel: arti praktisnya, versi paling kecil untuk mulai, dan catatan tentang data yang tetap ada di perangkat.",
+    "en": "servis mobil alongside the other apps on your phone: what it means in practice, the smallest version to begin with, and what stays stored on your device.",
+    "ar": "servis mobil مع التطبيقات الأخرى على هاتفك: معناه العملي، وأصغر نسخة للبدء، وما يبقى محفوظاً على جهازك.",
+    "ja": "スマホの他のアプリと併用するservis mobil。実践的な意味、始めるための最小バージョン、端末に残るもの。",
+    "zh": "与手机上其他应用并用servis mobil：实际含义、可以开始的最小版本，以及保留在设备上的内容。",
+    "jv": "Servis mobil bareng aplikasi liya ing HP: tegesé ing praktik, versi paling cilik kanggo miwiti, lan katrangan babagan data sing tetep ana ing piranti.",
+    "su": "Servis mobil bareng aplikasi lianna dina HP: harti praktisna, versi pang leutikna pikeun mimitian, jeung katerangan ngeunaan data nu tetep aya di alat."
+  }
 }

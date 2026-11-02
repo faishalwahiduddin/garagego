@@ -8,22 +8,31 @@
   "banner_ready": false,
   "seo": true,
   "slugs": {
-    "id": "troubleshooting-servis-motor-yang-macet",
-    "en": "troubleshooting-stuck-servis-motor-habits",
-    "ar": "servis-motor-4",
-    "jv": "pandhuan-servis-motor-garagego-4",
-    "su": "pituduh-servis-motor-garagego-4",
-    "zh": "garagego-servis-motor-实用指南-4",
-    "ja": "garagegoservis-motor-ガイド-4"
+    "id": "servis-motor-macet-perbaiki-friksi-dulu",
+    "en": "motorbike-service-stuck-fix-the-friction-first",
+    "ar": "syana-aldraja-mtwqf-qll-alahtkak-awla",
+    "jv": "servis-motor-macet-ngurangi-alangan-dhisik",
+    "su": "servis-motor-macet-kurangan-halangan-heula",
+    "zh": "mo-tuo-che-bao-yang-ka-zhu-le-xian-jian-shao-mo-ca",
+    "ja": "baiku-seibi-ga-toma-ttara-mazu-masatsu-wo-hera-su"
   },
   "titles": {
-    "id": "Troubleshooting servis motor yang Macet",
-    "en": "Troubleshooting Stuck servis motor Habits",
-    "ar": "servis motor — دليل GarageGo",
-    "jv": "Pandhuan: Troubleshooting servis motor yang Macet",
-    "su": "Pituduh: Troubleshooting servis motor yang Macet",
-    "zh": "GarageGo · servis motor 实用指南",
-    "ja": "GarageGo｜servis motor ガイド"
+    "id": "servis motor macet? Perbaiki friksi dulu",
+    "en": "motorbike service stuck? Fix the friction first",
+    "ar": "صيانة الدراجة متوقف؟ قلّل الاحتكاك أولاً",
+    "jv": "servis motor macet? Ngurangi alangan dhisik",
+    "su": "servis motor macét? Kurangan halangan heula",
+    "zh": "摩托车保养卡住了？先减少摩擦",
+    "ja": "バイク整備が止まったら、まず摩擦を減らす"
   },
-  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+  "quality_pass": "editorial-v3",
+  "descriptions": {
+    "id": "Servis motor macet? Perbaiki gesekannya dulu. Bahas penyebab catatan berhenti, versi paling kecil untuk melanjutkan, dan langkah setelah jeda.",
+    "en": "Motorbike service stuck? Fix the friction first. Learn why records stop, the smallest version to restart with, and steps to take after a break.",
+    "ar": "servis motor متوقف؟ أزل الاحتكاك أولاً. اعرف لماذا تتوقف السجلات، وأصغر نسخة للعودة إليها، وخطوات ما بعد الانقطاع.",
+    "ja": "servis motorが止まったら、まず摩擦を減らす。記録が止まる理由、再開のための最小バージョン。",
+    "zh": "servis motor停滞了？先消除阻力。说明记录停止的原因、重新开始的最小版本，以及中断后的步骤。",
+    "jv": "Servis motor mandheg? Warata gesekané dhisik. Ngrembug sebab cathetan mandheg, versi paling cilik kanggo nerusaké, lan langkah sawisé jeda.",
+    "su": "Servis motor macét? Benerkeun gesékanna heula. Ngabahas sabab catetan eureun, versi pang leutikna pikeun neruskeun, jeung léngkah sanggeus istirahat."
+  }
 }

@@ -1,0 +1,85 @@
+{
+  "title": "rawat motor: deciding without overthinking",
+  "description": "Rawat motor: deciding without overthinking. Covers the reasons the habit stops, on-device storage, and a weekly check to lean on when unsure.",
+  "badge": "productivity · offline",
+  "answer": "On Friday your rawat motor notes are a dozen half-finished lines with no comparable dates. GarageGo keeps rawat motor on-device, so it stays readable with no data plan and no account.",
+  "toc": [
+    "Why it breaks",
+    "Stored on your device",
+    "The weekly check"
+  ],
+  "sections": [
+    {
+      "h2": "Why it breaks",
+      "p": "On Friday your rawat motor notes are a dozen half-finished lines with no comparable dates.",
+      "h3": null,
+      "p3": null
+    },
+    {
+      "h2": "Stored on your device",
+      "p": "GarageGo keeps rawat motor on-device, so it stays readable with no data plan and no account.",
+      "h3": null,
+      "p3": null
+    },
+    {
+      "h2": "The weekly check",
+      "p": "Once a week, look at the part that breaks most often and shrink the target instead of adding willpower.",
+      "h3": null,
+      "p3": null
+    }
+  ],
+  "table": {
+    "caption": "A working frame for rawat motor",
+    "headers": [
+      "Step",
+      "Minimum",
+      "Done when"
+    ],
+    "rows": [
+      [
+        "Daily entry",
+        "time + status",
+        "saved in < 2 min"
+      ],
+      [
+        "Bookmark",
+        "last position",
+        "resumable tomorrow"
+      ],
+      [
+        "Weekly review",
+        "one adjustment",
+        "applied Monday"
+      ]
+    ]
+  },
+  "list": [
+    "Pick one fixed time, not “whenever there is room”.",
+    "Open GarageGo when that time arrives, not later tonight.",
+    "Note one blocker, not a long excuse.",
+    "Back up before you switch phones."
+  ],
+  "faqs": [
+    [
+      "Can I open rawat motor offline?",
+      "Yes. GarageGo keeps everything on-device, so no data plan is needed."
+    ],
+    [
+      "Do I need an account first?",
+      "No. Start without login; export a backup from time to time."
+    ],
+    [
+      "Where do I start?",
+      "With the shortest piece. Add scope only after two steady weeks."
+    ],
+    [
+      "What if I miss a few days?",
+      "Do not wipe history. Resume from the last entry and note one blocker."
+    ]
+  ],
+  "cta": [
+    "Start rawat motor today",
+    "Open GarageGo"
+  ],
+  "slug": "signs-you-re-ready-to-level-up-rawat-motor-practical"
+}

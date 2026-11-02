@@ -8,22 +8,31 @@
   "banner_ready": false,
   "seo": true,
   "slugs": {
-    "id": "template-catatan-catatan-bbm-siap-pakai-harian",
-    "en": "ready-to-use-catatan-bbm-log-template",
-    "ar": "catatan-bbm-2",
-    "jv": "pandhuan-catatan-bbm-garagego-2",
-    "su": "pituduh-catatan-bbm-garagego-2",
-    "zh": "garagego-catatan-bbm-实用指南-2",
-    "ja": "garagegocatatan-bbm-ガイド-2"
+    "id": "template-catatan-bbm-siap-pakai",
+    "en": "a-ready-to-use-daily-records-template",
+    "ar": "qalb-alsjlat-alywmya-jahz-llastkhdam",
+    "jv": "templat-catatan-bbm-siap-dipigunakake",
+    "su": "citakan-catatan-bbm-siap-dipake",
+    "zh": "ri-chang-ji-lu-mu-ban-ke-zhi-jie-tao-yong",
+    "ja": "sugu-tsukae-ru-mainichi-no-kiroku-tenpureeto"
   },
   "titles": {
-    "id": "Template Catatan catatan BBM Siap Pakai",
-    "en": "Ready-to-Use catatan BBM Log Template",
-    "ar": "catatan BBM — دليل GarageGo",
-    "jv": "Pandhuan: Template Catatan catatan BBM Siap Pakai",
-    "su": "Pituduh: Template Catatan catatan BBM Siap Pakai",
-    "zh": "GarageGo · catatan BBM 实用指南",
-    "ja": "GarageGo｜catatan BBM ガイド"
+    "id": "Template catatan BBM siap pakai",
+    "en": "A ready-to-use daily records template",
+    "ar": "قالب السجلات اليومية جاهز للاستخدام",
+    "jv": "Templat catatan BBM siap dipigunakaké",
+    "su": "Citakan catatan BBM siap dipaké",
+    "zh": "日常记录模板（可直接套用）",
+    "ja": "すぐ使える毎日の記録テンプレート"
   },
-  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+  "quality_pass": "editorial-v3",
+  "descriptions": {
+    "id": "Template catatan BBM siap pakai dengan versi paling kecil, panduan kapan menjalankannya, dan kerangka tinjauan mingguan yang bisa langsung diisi.",
+    "en": "A ready-to-use daily records template with the smallest version, guidance on when to run it, and a weekly check you can fill in straight away.",
+    "ar": "قالب catatan BBM جاهز للاستخدام، يتضمن أصغر نسخة، وإرشادات متى تشغّله، وإطار مراجعة أسبوعية يمكن تعبئته فوراً.",
+    "ja": "すぐ使えるcatatan BBMのテンプレート。最小バージョン、実行の目安、毎週の確認欄を備えた構成。",
+    "zh": "可直接套用的catatan BBM模板，包含最小版本、执行时机指引，以及可立即填写的每周检查框架。",
+    "jv": "Templat catatan BBM siap dipigunakaké karo versi paling cilik, pituduh kapan mlaku, lan kerangka tinjauan saben minggu sing bisa langsung diisi.",
+    "su": "Citakan catatan BBM siap dipaké kalayan versi pang leutikna, tungtunan iraha ngajalankeunana, jeung kerangka tinjauan mingguan nu bisa langsung dieusian."
+  }
 }

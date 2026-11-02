@@ -8,22 +8,31 @@
   "banner_ready": false,
   "seo": true,
   "slugs": {
-    "id": "optimasi-catatan-riwayat-servis-mobil-motor-bulanan-2026",
-    "en": "optimize-monthly-riwayat-servis-mobil-motor-logs",
-    "ar": "riwayat-servis-mobil-motor-3",
-    "jv": "pandhuan-riwayat-servis-mobil-motor-garagego-3",
-    "su": "pituduh-riwayat-servis-mobil-motor-garagego-3",
-    "zh": "garagego-riwayat-servis-mobil-motor-实用指南-3",
-    "ja": "garagegoriwayat-servis-mobil-motor-ガイド-3"
+    "id": "riwayat-servis-mobil-motor-tingkat-lanjut-setelah-rutin-stabil",
+    "en": "advanced-riwayat-servis-mobil-motor-once-the-routine-holds",
+    "ar": "alsjlat-alywmya-bshrh-mbashr-bla-lf",
+    "jv": "riwayat-servis-mobil-motor-lanjutan-sawise-rutinitas-mantep",
+    "su": "riwayat-servis-mobil-motor-lanjutan-sanggeus-rutinitas-mantep",
+    "zh": "ri-chang-ji-lu-shen-ru-jiang-qing-chu",
+    "ja": "mainichi-no-kiroku-wo-toomawari-sezuni-shin-hori"
   },
   "titles": {
-    "id": "Optimasi Catatan riwayat servis mobil motor Bulanan",
-    "en": "Optimize Monthly riwayat servis mobil motor Logs",
-    "ar": "riwayat servis mobil motor — دليل GarageGo",
-    "jv": "Pandhuan: Optimasi Catatan riwayat servis mobil motor Bulanan",
-    "su": "Pituduh: Optimasi Catatan riwayat servis mobil motor Bulanan",
-    "zh": "GarageGo · riwayat servis mobil motor 实用指南",
-    "ja": "GarageGo｜riwayat servis mobil motor ガイド"
+    "id": "riwayat servis mobil motor tingkat lanjut setelah rutin stabil",
+    "en": "Advanced riwayat servis mobil motor once the routine holds",
+    "ar": "السجلات اليومية بشرح مباشر بلا لفّ",
+    "jv": "riwayat servis mobil motor lanjutan sawisé rutinitas mantep",
+    "su": "riwayat servis mobil motor lanjutan sanggeus rutinitas mantep",
+    "zh": "日常记录深入讲清楚",
+    "ja": "毎日の記録を遠回りせずに深掘り"
   },
-  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+  "quality_pass": "editorial-v3",
+  "descriptions": {
+    "id": "Lanjutan riwayat servis mobil motor setelah kebiasaannya kokoh. Membahas arti praktis, versi paling kecil sebagai dasar, dan penyimpanan di perangkat.",
+    "en": "Advanced riwayat servis mobil motor after the habit is solid: what it means in practice, the smallest version as a base, and on-device storage.",
+    "ar": "riwayat servis mobil motor المتقدم بعد ترسخ العادة: معناه العملي، وأصغر نسخة أساساً، وحفظ البيانات على الجهاز.",
+    "ja": "習慣が定着したriwayat servis mobil motorの応用。実践的な意味、基盤となる最小バージョン、端末内の保存。",
+    "zh": "习惯稳固之后的riwayat servis mobil motor进阶篇：实际含义、作为基础的最小版本与设备存储。",
+    "jv": "Lanjutan riwayat servis mobil motor sawisé kebiasan wis kuwat: tegesé ing praktik, versi paling cilik minangka dhasar, lan panyimpenan ing piranti.",
+    "su": "Lanjutan riwayat servis mobil motor sanggeus kabiasaan geus kuat: harti praktisna, versi pang leutikna minangka dasar, jeung panyimpenan di alat."
+  }
 }

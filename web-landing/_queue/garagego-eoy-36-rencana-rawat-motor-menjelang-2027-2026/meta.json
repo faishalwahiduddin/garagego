@@ -8,22 +8,31 @@
   "banner_ready": false,
   "seo": true,
   "slugs": {
-    "id": "rencana-rawat-motor-menjelang-2027-2026",
-    "en": "rawat-motor-plan-heading-into-2027",
-    "ar": "rawat-motor-4",
-    "jv": "pandhuan-rawat-motor-garagego-4",
-    "su": "pituduh-rawat-motor-garagego-4",
-    "zh": "garagego-rawat-motor-实用指南-4",
-    "ja": "garagegorawat-motor-ガイド-4"
+    "id": "rawat-motor-di-musim-paling-ramai",
+    "en": "rawat-motor-in-the-busiest-season",
+    "ar": "alsjlat-alywmya-fy-akthr-almwasm-anshghala-aljz-3",
+    "jv": "rawat-motor-ing-mangsa-paling-rame",
+    "su": "rawat-motor-dina-usum-pangsibukna",
+    "zh": "zui-mang-de-ji-jie-li-de-ri-chang-ji-lu-di-3-pian",
+    "ja": "ichiban-isogashii-jiki-no-mainichi-no-kiroku-dai-3-kai"
   },
   "titles": {
-    "id": "Rencana rawat motor Menjelang 2027",
-    "en": "rawat motor Plan Heading into 2027",
-    "ar": "rawat motor — دليل GarageGo",
-    "jv": "Pandhuan: Rencana rawat motor Menjelang 2027",
-    "su": "Pituduh: Rencana rawat motor Menjelang 2027",
-    "zh": "GarageGo · rawat motor 实用指南",
-    "ja": "GarageGo｜rawat motor ガイド"
+    "id": "rawat motor di musim paling ramai",
+    "en": "rawat motor in the busiest season",
+    "ar": "السجلات اليومية في أكثر المواسم انشغالاً · الجزء 3",
+    "jv": "rawat motor ing mangsa paling rame",
+    "su": "rawat motor dina usum pangsibukna",
+    "zh": "最忙的季节里的日常记录 · 第3篇",
+    "ja": "いちばん忙しい時期の毎日の記録 · 第3回"
   },
-  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+  "quality_pass": "editorial-v3",
+  "descriptions": {
+    "id": "Rawat motor di musim paling sibuk: versi paling kecil yang tetap bisa dijalankan, kapan menjalankannya, dan tinjauan mingguan saat jadwal sedang padat.",
+    "en": "Rawat motor in the busiest season: the smallest version you can still run, when to do it, and a weekly check that works during heavy schedules.",
+    "ar": "rawat motor في أكثر المواسم انشغالاً: أصغر نسخة ما زلت تستطيع تشغيلها، ومتى تفعلها، ومراجعة أسبوعية تناسب الجداول المزدحمة.",
+    "ja": "最も忙しい時期にrawat motorを続ける方法。続けられる最小バージョン、取り組む時期、予定が詰まった週の確認。",
+    "zh": "最忙碌季节里的rawat motor：仍能执行的最小版本、何时进行，以及在日程紧张时也适用的每周检查。",
+    "jv": "Rawat motor ing mangsa paling sibuk: versi paling cilik sing isih bisa mlaku, kapan dilakoni, lan tinjauan saben minggu sing cocok kanggo jadwal padat.",
+    "su": "Rawat motor dina mangsa paling sibuk: versi pang leutikna nu masih bisa dijalankeun, iraha dilakukeunana, jeung tinjauan mingguan nu pas keur jadwal pinuh."
+  }
 }

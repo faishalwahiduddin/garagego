@@ -8,22 +8,31 @@
   "banner_ready": false,
   "seo": true,
   "slugs": {
-    "id": "metrik-sederhana-untuk-pajak-stnk-2026",
-    "en": "simple-metrics-for-pajak-stnk",
-    "ar": "pajak-stnk-3",
-    "jv": "pandhuan-pajak-stnk-garagego-3",
-    "su": "pituduh-pajak-stnk-garagego-3",
-    "zh": "garagego-pajak-stnk-实用指南-3",
-    "ja": "garagegopajak-stnk-ガイド-3"
+    "id": "cara-meninjau-pajak-stnk-tiap-minggu",
+    "en": "how-to-review-pajak-stnk-every-week",
+    "ar": "ktaba-alsjlat-alywmya-bshkl-yqra",
+    "jv": "kepriye-ninjau-pajak-stnk-saben-minggu",
+    "su": "kumaha-ninjau-pajak-stnk-unggal-minggu",
+    "zh": "ba-ri-chang-ji-lu-xie-de-rang-ren-du-de-xia-qu",
+    "ja": "yome-ru-mainichi-no-kiroku-no-kakikata"
   },
   "titles": {
-    "id": "Metrik Sederhana untuk pajak STNK",
-    "en": "Simple Metrics for pajak STNK",
-    "ar": "pajak STNK — دليل GarageGo",
-    "jv": "Pandhuan: Metrik Sederhana untuk pajak STNK",
-    "su": "Pituduh: Metrik Sederhana untuk pajak STNK",
-    "zh": "GarageGo · pajak STNK 实用指南",
-    "ja": "GarageGo｜pajak STNK ガイド"
+    "id": "Cara meninjau pajak STNK tiap minggu",
+    "en": "How to review pajak STNK every week",
+    "ar": "كتابة السجلات اليومية بشكل يُقرأ",
+    "jv": "Kepriyé ninjau pajak STNK saben minggu",
+    "su": "Kumaha ninjau pajak STNK unggal minggu",
+    "zh": "把日常记录写得让人读得下去",
+    "ja": "読める毎日の記録の書き方"
   },
-  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+  "quality_pass": "editorial-v3",
+  "descriptions": {
+    "id": "Cara meninjau pajak STNK tiap minggu, mulai dari tinjauan mingguan, penyimpanan data di perangkat, dan langkah ketika catatan sempat terlewat.",
+    "en": "How to review pajak STNK every week, from the weekly check and on-device storage to the steps to take when a week of records was missed.",
+    "ar": "كيف تراجع pajak STNK كل أسبوع، من المراجعة الأسبوعية وحفظ البيانات على الجهاز إلى الخطوات عند تفويت أسبوع من السجلات.",
+    "ja": "pajak STNKを毎週見直す手順。毎週の確認、端末内の保存、一週間分の記録を逃した時の対処。",
+    "zh": "每周如何回顾pajak STNK：从每周检查、设备存储到发现一周记录遗漏时应采取的步骤。",
+    "jv": "Cara ninjau pajak STNK saben minggu, wiwit saka tinjauan mingguan lan panyimpenan ing piranti nganti langkah nalika cathetan kelewatan seminggu.",
+    "su": "Kumaha ninjau pajak STNK unggal minggu, ti tinjauan mingguan jeung panyimpenan di alat nepi ka léngkah lamun catetan hiji minggu kaliwat."
+  }
 }

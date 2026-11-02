@@ -1,0 +1,85 @@
+{
+  "title": "Ekspor data servis mobil: apa yang ikut tersimpan",
+  "description": "Ekspor servis mobil: penjelasan isi file yang dihasilkan, tinjauan mingguan, dan catatan penyimpanan di perangkat saat Anda berganti perangkat.",
+  "badge": "produktivitas · offline",
+  "answer": "Jumat sore catatan servis mobil Anda berisi belasan baris setengah jadi tanpa tanggal yang bisa dibandingkan. GarageGo menyimpan servis mobil di perangkat, jadi datanya tetap terbuka tanpa kuota dan tanpa akun.",
+  "toc": [
+    "Tinjauan mingguan",
+    "Tersimpan di perangkat",
+    "Setelah bolong"
+  ],
+  "sections": [
+    {
+      "h2": "Tinjauan mingguan",
+      "p": "Sekali seminggu, lihat bagian mana yang paling sering bolong, lalu kecilkan target—bukan menambah semangat.",
+      "h3": null,
+      "p3": null
+    },
+    {
+      "h2": "Tersimpan di perangkat",
+      "p": "GarageGo menyimpan servis mobil di perangkat, jadi datanya tetap terbuka tanpa kuota dan tanpa akun.",
+      "h3": null,
+      "p3": null
+    },
+    {
+      "h2": "Setelah bolong",
+      "p": "Kalau bolong beberapa hari, jangan hapus riwayat. Lanjut dari bagian terakhir yang sudah dibaca—satu sesi pendek, lalu tutup.",
+      "h3": null,
+      "p3": null
+    }
+  ],
+  "table": {
+    "caption": "Kerangka servis mobil",
+    "headers": [
+      "Langkah",
+      "Isi minimal",
+      "Selesai bila"
+    ],
+    "rows": [
+      [
+        "Entri harian",
+        "waktu + status",
+        "tersimpan < 2 menit"
+      ],
+      [
+        "Penanda",
+        "posisi terakhir",
+        "bisa dilanjut besok"
+      ],
+      [
+        "Evaluasi minggu",
+        "satu penyesuaian",
+        "diterapkan Senin"
+      ]
+    ]
+  },
+  "list": [
+    "Tetapkan satu waktu tetap, bukan “kapan sempat”.",
+    "Buka GarageGo saat waktu itu tiba, bukan nanti malam.",
+    "Catat satu hambatan, bukan alasan panjang.",
+    "Cadangkan data sebelum ganti ponsel."
+  ],
+  "faqs": [
+    [
+      "Apakah servis mobil bisa dibuka offline?",
+      "Ya. GarageGo menyimpan semuanya di perangkat, jadi tidak butuh kuota."
+    ],
+    [
+      "Perlu akun dulu?",
+      "Tidak. Mulai tanpa login; cadangkan data secara berkala."
+    ],
+    [
+      "Mulai dari mana?",
+      "Dari bagian terpendek. Tambah cakupan hanya setelah dua minggu stabil."
+    ],
+    [
+      "Kalau bolong beberapa hari?",
+      "Jangan hapus riwayat. Lanjut dari bagian terakhir dan catat satu hambatan."
+    ]
+  ],
+  "cta": [
+    "Mulai servis mobil hari ini",
+    "Buka GarageGo"
+  ],
+  "slug": "pindah-perangkat-tanpa-hilang-servis-mobil-2026"
+}

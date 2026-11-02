@@ -8,22 +8,31 @@
   "banner_ready": false,
   "seo": true,
   "slugs": {
-    "id": "cara-review-progres-ganti-oli-tiap-minggu-offline",
-    "en": "how-to-review-ganti-oli-progress-weekly",
-    "ar": "ganti-oli-3",
-    "jv": "pandhuan-ganti-oli-garagego-3",
-    "su": "pituduh-ganti-oli-garagego-3",
-    "zh": "garagego-ganti-oli-实用指南-3",
-    "ja": "garagegoganti-oli-ガイド-3"
+    "id": "cara-meninjau-ganti-oli-tiap-minggu",
+    "en": "how-to-review-ganti-oli-every-week",
+    "ar": "kyf-traja-alsjlat-alywmya-asbwaya",
+    "jv": "kepriye-ninjau-ganti-oli-saben-minggu",
+    "su": "kumaha-ninjau-ganti-oli-unggal-minggu",
+    "zh": "mei-zhou-ru-he-fu-pan-ri-chang-ji-lu",
+    "ja": "maishuu-mainichi-no-kiroku-wo-minaosu-houhou"
   },
   "titles": {
-    "id": "Cara Review Progres ganti oli Tiap Minggu",
-    "en": "How to Review ganti oli Progress Weekly",
-    "ar": "ganti oli — دليل GarageGo",
-    "jv": "Pandhuan: Cara Review Progres ganti oli Tiap Minggu",
-    "su": "Pituduh: Cara Review Progres ganti oli Tiap Minggu",
-    "zh": "GarageGo · ganti oli 实用指南",
-    "ja": "GarageGo｜ganti oli ガイド"
+    "id": "Cara meninjau ganti oli tiap minggu",
+    "en": "How to review ganti oli every week",
+    "ar": "كيف تراجع السجلات اليومية أسبوعياً",
+    "jv": "Kepriyé ninjau ganti oli saben minggu",
+    "su": "Kumaha ninjau ganti oli unggal minggu",
+    "zh": "每周如何复盘日常记录",
+    "ja": "毎週毎日の記録を見直す方法"
   },
-  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+  "quality_pass": "editorial-v3",
+  "descriptions": {
+    "id": "Cara meninjau ganti oli tiap minggu: fokus pada tinjauan mingguan, data yang tersimpan di perangkat, dan cara melanjutkan jika sempat tidak mencatat.",
+    "en": "How to review ganti oli every week: focus on the weekly check, see where your data is stored on the device, and restart if a week went unrecorded.",
+    "ar": "كيف تراجع ganti oli كل أسبوع: ركّز على المراجعة الأسبوعية، وتحقق من مكان حفظ البيانات على الجهاز، وأعد البدء إذا فاتك أسبوع.",
+    "ja": "ganti oliを毎週見直す方法。毎週の確認に集中し、端末内のデータの場所を確かめ、空白の週は再開。",
+    "zh": "每周如何回顾ganti oli：重点放在每周检查，确认数据在设备上的位置，并在未记录的那周重新开始。",
+    "jv": "Cara ninjau ganti oli saben minggu: fokus ing tinjauan mingguan, data sing kasimpen ing piranti, lan carane nerusaké yen sawetara wektu ora nyathet.",
+    "su": "Kumaha ninjau ganti oli unggal minggu: fokus kana tinjauan mingguan, data nu disimpen di alat, jeung kumaha neruskeun lamun sataun teu nyatet."
+  }
 }

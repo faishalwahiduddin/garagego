@@ -1,5 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:garagego/core/models/vehicle.dart';
+import 'package:garagego/l10n/app_localizations_id.dart';
 import 'package:garagego/core/services/analytics_service.dart';
 
 void main() {
@@ -68,12 +69,13 @@ void main() {
         ),
       ];
 
-      final docs = VehicleDocument.defaultDocumentsFor(sampleVehicle);
+      final docs = VehicleDocument.defaultDocumentsFor(sampleVehicle, AppLocalizationsId());
 
       final result = AnalyticsService.computeHealthScore(
         vehicle: sampleVehicle,
         schedules: schedules,
         documents: docs,
+        l10n: AppLocalizationsId(),
       );
 
       // Since one schedule is overdue, score is deducted
@@ -165,7 +167,7 @@ void main() {
     });
 
     test('InspectionChecklist calculation and presets', () {
-      final items = InspectionChecklist.generateDefaultItems(VehicleType.car);
+      final items = InspectionChecklist.generateDefaultItems(VehicleType.car, AppLocalizationsId());
       expect(items.length, greaterThanOrEqualTo(8));
 
       final checklist = InspectionChecklist(

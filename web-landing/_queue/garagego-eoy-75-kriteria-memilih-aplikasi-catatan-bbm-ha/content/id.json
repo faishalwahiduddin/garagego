@@ -1,0 +1,85 @@
+{
+  "title": "catatan BBM: yang perlu dicek sebelum memilih",
+  "description": "Catatan BBM: kriteria yang perlu dicek sebelum memilih. Bahas alasan kebiasaan putus, penyimpanan di perangkat, dan tinjauan mingguan.",
+  "badge": "produktivitas · offline",
+  "answer": "Jumat sore catatan catatan BBM Anda berisi belasan baris setengah jadi tanpa tanggal yang bisa dibandingkan. GarageGo menyimpan catatan BBM di perangkat, jadi datanya tetap terbuka tanpa kuota dan tanpa akun.",
+  "toc": [
+    "Kenapa mudah putus",
+    "Tersimpan di perangkat",
+    "Tinjauan mingguan"
+  ],
+  "sections": [
+    {
+      "h2": "Kenapa mudah putus",
+      "p": "Jumat sore catatan catatan BBM Anda berisi belasan baris setengah jadi tanpa tanggal yang bisa dibandingkan.",
+      "h3": null,
+      "p3": null
+    },
+    {
+      "h2": "Tersimpan di perangkat",
+      "p": "GarageGo menyimpan catatan BBM di perangkat, jadi datanya tetap terbuka tanpa kuota dan tanpa akun.",
+      "h3": null,
+      "p3": null
+    },
+    {
+      "h2": "Tinjauan mingguan",
+      "p": "Sekali seminggu, lihat bagian mana yang paling sering bolong, lalu kecilkan target—bukan menambah semangat.",
+      "h3": null,
+      "p3": null
+    }
+  ],
+  "table": {
+    "caption": "Kerangka catatan BBM",
+    "headers": [
+      "Langkah",
+      "Isi minimal",
+      "Selesai bila"
+    ],
+    "rows": [
+      [
+        "Entri harian",
+        "waktu + status",
+        "tersimpan < 2 menit"
+      ],
+      [
+        "Penanda",
+        "posisi terakhir",
+        "bisa dilanjut besok"
+      ],
+      [
+        "Evaluasi minggu",
+        "satu penyesuaian",
+        "diterapkan Senin"
+      ]
+    ]
+  },
+  "list": [
+    "Tetapkan satu waktu tetap, bukan “kapan sempat”.",
+    "Buka GarageGo saat waktu itu tiba, bukan nanti malam.",
+    "Catat satu hambatan, bukan alasan panjang.",
+    "Cadangkan data sebelum ganti ponsel."
+  ],
+  "faqs": [
+    [
+      "Apakah catatan BBM bisa dibuka offline?",
+      "Ya. GarageGo menyimpan semuanya di perangkat, jadi tidak butuh kuota."
+    ],
+    [
+      "Perlu akun dulu?",
+      "Tidak. Mulai tanpa login; cadangkan data secara berkala."
+    ],
+    [
+      "Mulai dari mana?",
+      "Dari bagian terpendek. Tambah cakupan hanya setelah dua minggu stabil."
+    ],
+    [
+      "Kalau bolong beberapa hari?",
+      "Jangan hapus riwayat. Lanjut dari bagian terakhir dan catat satu hambatan."
+    ]
+  ],
+  "cta": [
+    "Mulai catatan BBM hari ini",
+    "Buka GarageGo"
+  ],
+  "slug": "kriteria-memilih-aplikasi-catatan-bbm-harian"
+}

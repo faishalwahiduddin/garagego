@@ -8,22 +8,31 @@
   "banner_ready": false,
   "seo": true,
   "slugs": {
-    "id": "tutorial-riwayat-servis-mobil-motor-dari-nol-tanpa-ribet-mingguan",
-    "en": "riwayat-servis-mobil-motor-tutorial-from-zero-no-fluff",
-    "ar": "riwayat-servis-mobil-motor-7",
-    "jv": "pandhuan-riwayat-servis-mobil-motor-garagego-7",
-    "su": "pituduh-riwayat-servis-mobil-motor-garagego-7",
-    "zh": "garagego-riwayat-servis-mobil-motor-实用指南-7",
-    "ja": "garagegoriwayat-servis-mobil-motor-ガイド-7"
+    "id": "riwayat-servis-mobil-motor-untuk-pemula-mulai-dari-mana",
+    "en": "riwayat-servis-mobil-motor-for-beginners-where-to-start",
+    "ar": "alsjlat-alywmya-llmbtdiyn-mn-ayn-tbda-aljz-3",
+    "jv": "riwayat-servis-mobil-motor-kanggo-pamula-wiwit-saka-ngendi",
+    "su": "riwayat-servis-mobil-motor-pikeun-pamula-mimitian-ti-mana",
+    "zh": "ri-chang-ji-lu-ru-men-cong-na-li-kai-shi-di-3-pian",
+    "ja": "mainichi-no-kiroku-nyuumon-dokokara-hajime-ruka-dai-3-kai"
   },
   "titles": {
-    "id": "Tutorial riwayat servis mobil motor dari Nol (Tanpa Ribet)",
-    "en": "riwayat servis mobil motor Tutorial from Zero (No Fluff) — Offline Fir",
-    "ar": "riwayat servis mobil motor — دليل GarageGo",
-    "jv": "Pandhuan: Tutorial riwayat servis mobil motor dari Nol (Tanpa Ribet)",
-    "su": "Pituduh: Tutorial riwayat servis mobil motor dari Nol (Tanpa Ribet)",
-    "zh": "GarageGo · riwayat servis mobil motor 实用指南",
-    "ja": "GarageGo｜riwayat servis mobil motor ガイド"
+    "id": "riwayat servis mobil motor untuk pemula: mulai dari mana",
+    "en": "riwayat servis mobil motor for beginners: where to start",
+    "ar": "السجلات اليومية للمبتدئين: من أين تبدأ · الجزء 3",
+    "jv": "riwayat servis mobil motor kanggo pamula: wiwit saka ngendi",
+    "su": "riwayat servis mobil motor pikeun pamula: mimitian ti mana",
+    "zh": "日常记录入门：从哪里开始 · 第3篇",
+    "ja": "毎日の記録入門：どこから始めるか · 第3回"
   },
-  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+  "quality_pass": "editorial-v3",
+  "descriptions": {
+    "id": "Riwayat servis mobil motor untuk pemula: panduan dari mana memulai, arti praktisnya, versi paling kecil, dan penyimpanan data di perangkat.",
+    "en": "riwayat servis mobil motor for beginners: a clear place to start, what it means in practice, the smallest version, and on-device data storage.",
+    "ar": "riwayat servis mobil motor للمبتدئين: مكان واضح للبدء، ومعناه العملي، وأصغر نسخة، وحفظ البيانات على الجهاز.",
+    "ja": "初心者向けのriwayat servis mobil motor。始める場所、実践的な意味、最小バージョン、端末内の保存。",
+    "zh": "给新手的riwayat servis mobil motor：明确的起点、实际含义、最小版本，以及设备数据存储。",
+    "jv": "Riwayat servis mobil motor kanggo pemula: pituduh saka endi miwiti, tegesé ing praktik, versi paling cilik, lan panyimpenan data ing piranti.",
+    "su": "Riwayat servis mobil motor pikeun pemula: pituduh ti mana mimitian, harti praktisna, versi pang leutikna, jeung panyimpenan data di alat."
+  }
 }

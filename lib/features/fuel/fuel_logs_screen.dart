@@ -3,6 +3,7 @@ import 'package:garagego/l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:intl/intl.dart';
 import '../../core/constants/app_colors.dart';
+import '../../core/constants/fuel_brands.dart';
 import '../../core/models/vehicle.dart';
 import '../../core/providers/app_providers.dart';
 import '../../core/providers/timezone_provider.dart';
@@ -10,6 +11,7 @@ import '../../core/ui/press_scale.dart';
 import '../../core/utils/app_timezone.dart';
 import '../../core/utils/l10n_helpers.dart';
 import '../../core/utils/validators.dart';
+import '../../core/constants/units.dart';
 
 class FuelLogsScreen extends ConsumerWidget {
   const FuelLogsScreen({super.key});
@@ -19,25 +21,17 @@ class FuelLogsScreen extends ConsumerWidget {
     final formKey = GlobalKey<FormState>();
     final odoController = TextEditingController(text: active.currentOdometer.toString());
     final litersController = TextEditingController();
+    final currency = NumberFormat.currency(
+      locale: 'id_ID',
+      symbol: 'Rp ',
+      decimalDigits: 0,
+    );
     final priceController = TextEditingController(text: '13700');
-    final stationController = TextEditingController(text: 'Pertamina ');
+    final stationController = TextEditingController(text: FuelBrands.stationPrefix);
     bool isFullTank = true;
-    String selectedFuelType = 'Pertamax (RON 92)';
+    String selectedFuelType = FuelBrands.defaultBrand;
 
-    final fuelTypes = [
-      'Pertalite (RON 90)',
-      'Pertamax (RON 92)',
-      'Pertamax Turbo (RON 98)',
-      'Pertamina Dex (CN 53)',
-      'Dexlite (CN 51)',
-      'Shell Super (RON 92)',
-      'Shell V-Power (RON 95)',
-      'Shell V-Power Nitro+',
-      'Shell V-Power Diesel',
-      'BP 92',
-      'BP Ultimate',
-      'SPKLU Listrik (kWh)',
-    ];
+    final fuelTypes = FuelBrands.all;
 
     showDialog(
       context: context,
@@ -131,7 +125,7 @@ class FuelLogsScreen extends ConsumerWidget {
                     controller: stationController,
                     decoration: InputDecoration(
                       labelText: l10n.namaSpbuLokasi,
-                      hintText: 'Pertamina 34.15321 Serpong',
+                      hintText: FuelBrands.stationHint,
                     ),
                   ),
                   const SizedBox(height: 12),
@@ -167,7 +161,7 @@ class FuelLogsScreen extends ConsumerWidget {
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Text(
-                                'Estimasi Total Biaya:',
+                                l10n.fuelEstTotalCost,
                                 style: TextStyle(
                                   fontSize: 12,
                                   fontWeight: FontWeight.w600,
@@ -175,7 +169,7 @@ class FuelLogsScreen extends ConsumerWidget {
                                 ),
                               ),
                               Text(
-                                'Rp ${NumberFormat('#,###', 'id_ID').format(totalCost.round())}',
+                                currency.format(totalCost.round()),
                                 style: TextStyle(
                                   fontSize: 14,
                                   fontWeight: FontWeight.w800,
@@ -190,14 +184,14 @@ class FuelLogsScreen extends ConsumerWidget {
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Text(
-                                  'Jarak Tempuh Trip:',
+                                  l10n.fuelTripDistance,
                                   style: TextStyle(
                                     fontSize: 11,
                                     color: context.textSecondary,
                                   ),
                                 ),
                                 Text(
-                                  '+$deltaKm km',
+                                  '$kPlusSign$deltaKm$kSpaceChar$kKmUnit',
                                   style: TextStyle(
                                     fontSize: 12,
                                     fontWeight: FontWeight.w700,
@@ -213,14 +207,14 @@ class FuelLogsScreen extends ConsumerWidget {
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Text(
-                                  'Konsumsi Rata-rata:',
+                                  l10n.fuelAvgConsumption,
                                   style: TextStyle(
                                     fontSize: 11,
                                     color: context.textSecondary,
                                   ),
                                 ),
                                 Text(
-                                  '${kmPerLiter.toStringAsFixed(1)} km/L',
+                                  l10n.fuelKmL(kmPerLiter.toStringAsFixed(1)),
                                   style: const TextStyle(
                                     fontSize: 12,
                                     fontWeight: FontWeight.w700,
@@ -236,14 +230,14 @@ class FuelLogsScreen extends ConsumerWidget {
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Text(
-                                  'Biaya Operasional:',
+                                  l10n.fuelOperatingCost,
                                   style: TextStyle(
                                     fontSize: 11,
                                     color: context.textSecondary,
                                   ),
                                 ),
                                 Text(
-                                  'Rp ${NumberFormat('#,###', 'id_ID').format(costPerKm.round())}/km',
+                                  '${currency.format(costPerKm.round())}/km',
                                   style: TextStyle(
                                     fontSize: 11,
                                     fontWeight: FontWeight.w600,
@@ -360,9 +354,11 @@ class FuelLogsScreen extends ConsumerWidget {
                             child: _buildKpiCard(
                               context: context,
                               title: l10n.rataRataEfisiensi,
-                              value: efficiencySummary.averageKmPerLiter > 0
-                                  ? '${efficiencySummary.averageKmPerLiter.toStringAsFixed(1)} km/L'
-                                  : '— km/L',
+                              value: l10n.fuelKmL(
+                                efficiencySummary.averageKmPerLiter > 0
+                                    ? efficiencySummary.averageKmPerLiter.toStringAsFixed(1)
+                                    : '—',
+                              ),
                               icon: Icons.speed_outlined,
                               color: AppColors.accent,
                             ),
@@ -373,7 +369,7 @@ class FuelLogsScreen extends ConsumerWidget {
                               context: context,
                               title: l10n.biayaPerKm,
                               value: efficiencySummary.averageCostPerKm > 0
-                                  ? 'Rp ${NumberFormat('#,###', 'id_ID').format(efficiencySummary.averageCostPerKm)}/km'
+                                  ? '${currency.format(efficiencySummary.averageCostPerKm)}$kPerKmSuffix'
                                   : '—',
                               icon: Icons.route_outlined,
                               color: AppColors.primary,
@@ -388,9 +384,11 @@ class FuelLogsScreen extends ConsumerWidget {
                             child: _buildKpiCard(
                               context: context,
                               title: l10n.rekorIritTerbaik,
-                              value: efficiencySummary.bestKmPerLiter > 0
-                                  ? '${efficiencySummary.bestKmPerLiter.toStringAsFixed(1)} km/L'
-                                  : '— km/L',
+                              value: l10n.fuelKmL(
+                                efficiencySummary.bestKmPerLiter > 0
+                                    ? efficiencySummary.bestKmPerLiter.toStringAsFixed(1)
+                                    : '—',
+                              ),
                               icon: Icons.trending_up,
                               color: AppColors.success,
                             ),
@@ -482,7 +480,7 @@ class FuelLogsScreen extends ConsumerWidget {
                                             borderRadius: BorderRadius.circular(6),
                                           ),
                                           child: Text(
-                                            '${log.liters.toStringAsFixed(1)} L',
+                                            '${log.liters.toStringAsFixed(1)}$kSpaceChar$kLiterUnit',
                                             style: TextStyle(fontSize: 11, fontWeight: FontWeight.w800, color: context.readable(AppColors.warning)),
                                           ),
                                         ),
@@ -518,7 +516,9 @@ class FuelLogsScreen extends ConsumerWidget {
                                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                       children: [
                                         Text(
-                                          'Odo: ${NumberFormat('#,###', 'id_ID').format(log.odometer)} km',
+                                          l10n.fuelOdometerValue(
+                                            NumberFormat('#,###', 'id_ID').format(log.odometer),
+                                          ),
                                           style: TextStyle(
                                             fontSize: 15,
                                             fontWeight: FontWeight.w800,
@@ -541,7 +541,12 @@ class FuelLogsScreen extends ConsumerWidget {
                                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                       children: [
                                         Text(
-                                          '@ ${currency.format(log.pricePerLiter)} / L • ${log.isFullTank ? (Localizations.localeOf(context).languageCode == 'id' ? "Tangki Penuh" : "Full Tank") : (Localizations.localeOf(context).languageCode == 'id' ? "Sebagian" : "Partial")}',
+                                          l10n.fuelPricePerLiterLine(
+                                            currency.format(log.pricePerLiter),
+                                            log.isFullTank
+                                                ? l10n.fuelFullTank
+                                                : l10n.fuelPartial,
+                                          ),
                                           style: TextStyle(fontSize: 12, color: context.textSecondary),
                                         ),
                                         if (pt != null)
@@ -552,7 +557,7 @@ class FuelLogsScreen extends ConsumerWidget {
                                               borderRadius: BorderRadius.circular(6),
                                             ),
                                             child: Text(
-                                              '${pt.kmPerLiter.toStringAsFixed(1)} km/L',
+                                              l10n.fuelKmL(pt.kmPerLiter.toStringAsFixed(1)),
                                               style: TextStyle(
                                                 fontSize: 11,
                                                 fontWeight: FontWeight.w800,

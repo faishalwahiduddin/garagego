@@ -1,4 +1,5 @@
 import '../../l10n/app_localizations.dart';
+import 'backup_codec.dart';
 
 String languageName(String code, AppLocalizations l10n) {
   return switch (code) {
@@ -18,54 +19,66 @@ String? mapValidationError(String? error, AppLocalizations l10n) {
   if (error == null) return null;
   switch (error) {
     case 'validationVehicleNameRequired':
-    case 'Nama kendaraan tidak boleh kosong':
       return l10n.validationVehicleNameRequired;
     case 'validationVehicleNameMinLength':
       return l10n.validationVehicleNameMinLength;
     case 'validationVehicleNameMaxLength':
       return l10n.validationVehicleNameMaxLength;
     case 'validationPlateRequired':
-    case 'Nomor pelat polisi tidak boleh kosong':
       return l10n.validationPlateRequired;
     case 'validationPlateMaxLength':
       return l10n.validationPlateMaxLength;
     case 'validationOdometerNegative':
-    case 'Kilometer odometer tidak boleh negatif':
       return l10n.validationOdometerNegative;
     case 'validationOdometerTooHigh':
-    case 'Kilometer odometer melebihi batas wajar':
       return l10n.validationOdometerTooHigh;
     case 'validationOdometerLessThanPrevious':
       return l10n.validationOdometerLessThanPrevious;
     case 'validationCostNegative':
-    case 'Biaya tidak boleh bernilai negatif':
       return l10n.validationCostNegative;
     case 'validationFuelLitersPositive':
-    case 'Volume bahan bakar harus lebih dari 0 liter':
       return l10n.validationFuelLitersPositive;
     case 'validationFuelLitersTooHigh':
-    case 'Volume tangki melebihi kapasitas wajar':
       return l10n.validationFuelLitersTooHigh;
     case 'validationServiceNameRequired':
-    case 'Nama servis wajib diisi':
-    case 'Nama pekerjaan wajib diisi':
       return l10n.validationServiceNameRequired;
     case 'validationDocNameRequired':
-    case 'Nama dokumen wajib diisi':
       return l10n.validationDocNameRequired;
     default:
-      if (error.startsWith('Nama kendaraan minimal')) {
-        return l10n.validationVehicleNameMinLength;
-      }
-      if (error.startsWith('Nama kendaraan maksimal')) {
-        return l10n.validationVehicleNameMaxLength;
-      }
-      if (error.startsWith('Nomor pelat maksimal')) {
-        return l10n.validationPlateMaxLength;
-      }
-      if (error.startsWith('Odometer baru')) {
-        return l10n.validationOdometerLessThanPrevious;
-      }
       return error;
   }
+}
+
+/// Turns a backup-decoding failure into localized copy.
+///
+/// The codec throws stable codes (never sentences) so exported/imported data
+/// carries no language; this maps them for the snackbar that reports the error.
+String localizeBackupError(Object error, AppLocalizations l10n) {
+  if (error is FormatException) {
+    switch (error.message) {
+      case kBackupErrEmpty:
+        return l10n.backupErrEmpty;
+      case kBackupErrRawJson:
+        return l10n.backupErrRawJson;
+      case kBackupErrFormat:
+        return l10n.backupErrFormat;
+      case kBackupErrWrongApp:
+        final source = error.source?.toString() ?? '';
+        final parts = source.split('|');
+        return l10n.backupErrWrongApp(
+          parts.isNotEmpty ? parts.first : '',
+          parts.length > 1 ? parts[1] : '',
+        );
+      case kBackupErrCorrupt:
+        return l10n.backupErrCorrupt;
+      case kBackupErrIntegrity:
+        return l10n.backupErrIntegrity;
+      case kBackupErrNotObject:
+        return l10n.backupErrNotObject;
+      case kBackupErrNoVehicles:
+      case kBackupErrInvalidVehicles:
+        return l10n.backupErrFormat;
+    }
+  }
+  return l10n.gagalMemulihkanBackup(error.toString());
 }

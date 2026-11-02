@@ -8,22 +8,31 @@
   "banner_ready": false,
   "seo": true,
   "slugs": {
-    "id": "checklist-mingguan-pajak-stnk-review-mingguan",
-    "en": "weekly-pajak-stnk-checklist-review",
-    "ar": "pajak-stnk",
-    "jv": "pandhuan-pajak-stnk-garagego",
-    "su": "pituduh-pajak-stnk-garagego",
-    "zh": "garagego-pajak-stnk-实用指南",
-    "ja": "garagegopajak-stnk-ガイド"
+    "id": "checklist-pajak-stnk-untuk-satu-layar",
+    "en": "a-one-screen-pajak-stnk-checklist",
+    "ar": "alsjlat-alywmya-lqra-indwnysya",
+    "jv": "dhaftar-priksa-pajak-stnk-mung-siji-layar",
+    "su": "daptar-pariksa-pajak-stnk-dina-hiji-layar",
+    "zh": "gei-yin-du-ni-xi-ya-du-zhe-de-ri-chang-ji-lu",
+    "ja": "indoneshia-no-dokusha-notameno-mainichi-no-kiroku"
   },
   "titles": {
-    "id": "Checklist Mingguan pajak STNK + Review",
-    "en": "Weekly pajak STNK Checklist + Review — Offline First",
-    "ar": "pajak STNK — دليل GarageGo",
-    "jv": "Pandhuan: Checklist Mingguan pajak STNK + Review",
-    "su": "Pituduh: Checklist Mingguan pajak STNK + Review",
-    "zh": "GarageGo · pajak STNK 实用指南",
-    "ja": "GarageGo｜pajak STNK ガイド"
+    "id": "Checklist pajak STNK untuk satu layar",
+    "en": "A one-screen pajak STNK checklist",
+    "ar": "السجلات اليومية لقرّاء إندونيسيا",
+    "jv": "Dhaftar priksa pajak STNK mung siji layar",
+    "su": "Daptar pariksa pajak STNK dina hiji layar",
+    "zh": "给印度尼西亚读者的日常记录",
+    "ja": "インドネシアの読者のための毎日の記録"
   },
-  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+  "quality_pass": "editorial-v3",
+  "descriptions": {
+    "id": "Checklist pajak STNK untuk satu layar: mulai dari versi paling kecil, kapan memeriksanya, dan tinjauan mingguan untuk mengecek tanggal pajak secara rutin.",
+    "en": "A one-screen pajak STNK checklist: start with the smallest version, know when to check it, and use a weekly review to keep your tax dates in view.",
+    "ar": "قائمة مراجعة pajak STNK في شاشة واحدة: ابدأ بأصغر نسخة، واعرف متى تفحص الأمر، واستخدم مراجعة أسبوعية لتبقي مواعيد الضريبة أمام عينيك.",
+    "ja": "pajak STNKの確認を一画面にまとめました。最小バージョン、確認の時期、毎週の見直しを解説します。",
+    "zh": "一屏查看的pajak STNK清单，包括最小版本、检查时间和每周回顾，帮你看清税期。",
+    "jv": "Dhaftar priksa pajak STNK mung siji layar: wiwit saka versi paling cilik, ngerti kapan kudu mriksa, lan ninjau saben minggu kanggo ngecek tanggal pajak.",
+    "su": "Daptar pariksa pajak STNK dina hiji layar: mimitian ti versi pang leutikna, nyaho iraha kudu meriksa, jeung tinjauan mingguan pikeun ngecek tanggal pajakna."
+  }
 }

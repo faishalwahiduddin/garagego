@@ -32,8 +32,12 @@ class _AddDocumentSheetState extends ConsumerState<AddDocumentSheet> {
     super.initState();
     final d = widget.initialDoc;
     _titleController = TextEditingController(text: d?.title ?? '');
-    _docNumberController = TextEditingController(text: d?.documentNumber ?? widget.vehicle.plateNumber);
-    _costController = TextEditingController(text: d != null ? d.cost.toStringAsFixed(0) : '0');
+    _docNumberController = TextEditingController(
+      text: d?.documentNumber ?? widget.vehicle.plateNumber,
+    );
+    _costController = TextEditingController(
+      text: d != null ? d.cost.toStringAsFixed(0) : '0',
+    );
     _notesController = TextEditingController(text: d?.notes ?? '');
     _selectedType = d?.type ?? DocumentType.stnkTahunan;
     _expiryDate = d?.expiryDate ?? DateTime.now().add(const Duration(days: 365));
@@ -71,9 +75,7 @@ class _AddDocumentSheetState extends ConsumerState<AddDocumentSheet> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    isEditing
-                        ? (Localizations.localeOf(context).languageCode == 'id' ? 'Ubah Dokumen' : 'Edit Document')
-                        : (Localizations.localeOf(context).languageCode == 'id' ? 'Tambah Dokumen Garasi' : 'Add Garage Document'),
+                    isEditing ? l10n.docEditTitle : l10n.docAddTitle,
                     style: TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.w800,
@@ -93,17 +95,25 @@ class _AddDocumentSheetState extends ConsumerState<AddDocumentSheet> {
                 decoration: InputDecoration(labelText: l10n.jenisDokumen),
                 dropdownColor: context.cardBg,
                 items: DocumentType.values
-                    .map((t) => DropdownMenuItem(
-                          value: t,
-                          child: Text(t.getLocalizedLabel(context), style: TextStyle(color: context.textPrimary, fontSize: 13)),
-                        ))
+                    .map(
+                      (t) => DropdownMenuItem(
+                        value: t,
+                        child: Text(
+                          t.getLocalizedLabel(context),
+                          style: TextStyle(
+                            color: context.textPrimary,
+                            fontSize: 13,
+                          ),
+                        ),
+                      ),
+                    )
                     .toList(),
                 onChanged: (val) {
                   if (val != null) {
                     setState(() {
                       _selectedType = val;
                       if (_titleController.text.isEmpty) {
-                        _titleController.text = val.label;
+                        _titleController.text = val.getLocalizedLabel(context);
                       }
                     });
                   }
@@ -115,7 +125,7 @@ class _AddDocumentSheetState extends ConsumerState<AddDocumentSheet> {
                 controller: _titleController,
                 decoration: InputDecoration(
                   labelText: l10n.judulKeteranganDokumen,
-                  hintText: 'Misal: PKB Tahunan / Asuransi All Risk',
+                  hintText: l10n.docTitleHint,
                 ),
                 validator: (val) => val == null || val.trim().isEmpty
                     ? l10n.validationDocNameRequired
@@ -127,7 +137,7 @@ class _AddDocumentSheetState extends ConsumerState<AddDocumentSheet> {
                 controller: _docNumberController,
                 decoration: InputDecoration(
                   labelText: l10n.nomorDokumenNoPolisNoPolisi,
-                  hintText: 'Misal: B 1234 CD / POL-88902',
+                  hintText: l10n.docNumberHint,
                 ),
               ),
               const SizedBox(height: 12),
@@ -147,10 +157,16 @@ class _AddDocumentSheetState extends ConsumerState<AddDocumentSheet> {
                 child: InputDecorator(
                   decoration: InputDecoration(
                     labelText: l10n.tanggalMasaBerlakuJatuhTempo,
-                    suffixIcon: Icon(Icons.calendar_today, size: 18, color: context.textSecondary),
+                    suffixIcon: Icon(
+                      Icons.calendar_today,
+                      size: 18,
+                      color: context.textSecondary,
+                    ),
                   ),
                   child: Text(
-                    '${_expiryDate.day}/${_expiryDate.month}/${_expiryDate.year}',
+                    MaterialLocalizations.of(
+                      context,
+                    ).formatCompactDate(_expiryDate),
                     style: TextStyle(color: context.textPrimary, fontSize: 14),
                   ),
                 ),
@@ -162,9 +178,12 @@ class _AddDocumentSheetState extends ConsumerState<AddDocumentSheet> {
                 keyboardType: TextInputType.number,
                 decoration: InputDecoration(
                   labelText: l10n.totalBiayaRp,
-                  hintText: 'Misal: 3500000',
+                  hintText: l10n.docCostHint,
                 ),
-                validator: (val) => mapValidationError(AppValidators.validateCost(double.tryParse(val ?? '')), l10n),
+                validator: (val) => mapValidationError(
+                  AppValidators.validateCost(double.tryParse(val ?? '')),
+                  l10n,
+                ),
               ),
               const SizedBox(height: 12),
 
@@ -172,8 +191,8 @@ class _AddDocumentSheetState extends ConsumerState<AddDocumentSheet> {
                 controller: _notesController,
                 maxLines: 2,
                 decoration: InputDecoration(
-                  labelText: Localizations.localeOf(context).languageCode == 'id' ? 'Catatan & Petunjuk Perpanjangan' : 'Notes & Renewal Instructions',
-                  hintText: Localizations.localeOf(context).languageCode == 'id' ? 'Misal: Bayar online via Signal app' : 'e.g. Pay online or visit office',
+                  labelText: l10n.docNotesLabel,
+                  hintText: l10n.docNotesHint,
                 ),
               ),
               const SizedBox(height: 20),
@@ -183,7 +202,9 @@ class _AddDocumentSheetState extends ConsumerState<AddDocumentSheet> {
                   if (!_formKey.currentState!.validate()) return;
 
                   final doc = VehicleDocument(
-                    id: widget.initialDoc?.id ?? 'doc_${DateTime.now().millisecondsSinceEpoch}',
+                    id:
+                        widget.initialDoc?.id ??
+                        'doc_${DateTime.now().millisecondsSinceEpoch}',
                     vehicleId: widget.vehicle.id,
                     title: _titleController.text.trim(),
                     type: _selectedType,
@@ -194,27 +215,25 @@ class _AddDocumentSheetState extends ConsumerState<AddDocumentSheet> {
                   );
 
                   if (isEditing) {
-                    ref.read(vehicleDocumentsProvider.notifier).updateDocument(doc);
+                    ref
+                        .read(vehicleDocumentsProvider.notifier)
+                        .updateDocument(doc);
                   } else {
-                    ref.read(vehicleDocumentsProvider.notifier).addDocument(doc);
+                    ref
+                        .read(vehicleDocumentsProvider.notifier)
+                        .addDocument(doc);
                   }
 
                   Navigator.pop(context);
                   ScaffoldMessenger.of(context).showSnackBar(
                     SnackBar(
                       content: Text(
-                        isEditing
-                            ? (Localizations.localeOf(context).languageCode == 'id' ? 'Dokumen berhasil diperbarui!' : 'Document updated successfully!')
-                            : (Localizations.localeOf(context).languageCode == 'id' ? 'Dokumen berhasil ditambahkan!' : 'Document added successfully!'),
+                        isEditing ? l10n.docUpdated : l10n.docAdded,
                       ),
                     ),
                   );
                 },
-                child: Text(
-                  isEditing
-                      ? (Localizations.localeOf(context).languageCode == 'id' ? 'Perbarui Dokumen' : 'Update Document')
-                      : (Localizations.localeOf(context).languageCode == 'id' ? 'Simpan Dokumen' : 'Save Document'),
-                ),
+                child: Text(isEditing ? l10n.docUpdate : l10n.docSave),
               ),
             ],
           ),

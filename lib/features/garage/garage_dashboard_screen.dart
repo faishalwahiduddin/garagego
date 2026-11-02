@@ -18,6 +18,7 @@ import '../maintenance/add_schedule_sheet.dart';
 import '../maintenance/inspection_sheet.dart';
 import 'add_vehicle_sheet.dart';
 import 'widgets/garage_share_dialog.dart';
+import '../../core/constants/units.dart';
 
 class GarageDashboardScreen extends ConsumerWidget {
   static const _shellNavHeight = 80.0;
@@ -29,117 +30,126 @@ class GarageDashboardScreen extends ConsumerWidget {
     showSpringSheet(
       context: context,
       dismissOffset: 520,
-      builder: (ctx) => SafeArea(
-        child: SingleChildScrollView(
-          physics: const BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
-          padding: const EdgeInsets.fromLTRB(20, 8, 20, 24),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              const SpringSheetHandle(),
-              Text(
-                l10n.aksiCepatGarasi,
-                style: TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.w800,
-                  color: context.textPrimary,
-                  letterSpacing: -0.4,
+      // showSpringSheet floats on a Cupertino popup, which supplies neither a
+      // Material ancestor (ListTile asserts one) nor a surface colour.
+      builder: (ctx) => Material(
+        color: context.cardBg,
+        borderRadius: const BorderRadius.vertical(top: Radius.circular(24)),
+        clipBehavior: Clip.antiAlias,
+        child: SafeArea(
+          child: SingleChildScrollView(
+            physics: const BouncingScrollPhysics(
+              parent: AlwaysScrollableScrollPhysics(),
+            ),
+            padding: const EdgeInsets.fromLTRB(20, 8, 20, 24),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                const SpringSheetHandle(),
+                Text(
+                  l10n.aksiCepatGarasi,
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.w800,
+                    color: context.textPrimary,
+                    letterSpacing: -0.4,
+                  ),
                 ),
-              ),
-              const SizedBox(height: 16),
-              _buildQuickActionTile(
-                context: context,
-                icon: Icons.build_outlined,
-                iconColor: AppColors.primary,
-                title: l10n.catatServisBaru,
-                subtitle: l10n.simpanRiwayatBengkelDanGantiOl,
-                onTap: () {
-                  Navigator.pop(ctx);
-                  context.go('/maintenance');
-                },
-              ),
-              _buildQuickActionTile(
-                context: context,
-                icon: Icons.local_gas_station_outlined,
-                iconColor: AppColors.warning,
-                title: l10n.catatPengisianBbm,
-                subtitle: l10n.hitungKonsumsiKmLDanBiayaBensi,
-                onTap: () {
-                  Navigator.pop(ctx);
-                  context.go('/fuel');
-                },
-              ),
-              if (active != null)
+                const SizedBox(height: 16),
                 _buildQuickActionTile(
                   context: context,
-                  icon: Icons.alarm_outlined,
-                  iconColor: AppColors.accent,
-                  title: l10n.tambahJadwalPerawatan,
-                  subtitle: l10n.setPengingatBerkalaGantiPartKm,
-                  onTap: () {
-                    Navigator.pop(ctx);
-                    showModalBottomSheet(
-                      context: context,
-                      useRootNavigator: true,
-                      isScrollControlled: true,
-                      backgroundColor: context.cardBg,
-                      builder: (_) => AddScheduleSheet(vehicle: active),
-                    );
-                  },
-                ),
-              if (active != null)
-                _buildQuickActionTile(
-                  context: context,
-                  icon: Icons.fact_check_outlined,
-                  iconColor: AppColors.success,
-                  title: l10n.checklistInspeksiKendaraan,
-                  subtitle: l10n.audit10PoinKeselamatanJalanMud,
-                  onTap: () {
-                    Navigator.pop(ctx);
-                    showModalBottomSheet(
-                      context: context,
-                      useRootNavigator: true,
-                      isScrollControlled: true,
-                      backgroundColor: context.cardBg,
-                      builder: (_) => InspectionSheet(vehicle: active),
-                    );
-                  },
-                ),
-              if (active != null)
-                _buildQuickActionTile(
-                  context: context,
-                  icon: Icons.share_rounded,
+                  icon: Icons.build_outlined,
                   iconColor: AppColors.primary,
-                  title: 'Bagikan Paspor Kendaraan',
-                  subtitle: 'Bagikan kartu status, skor kesehatan, & riwayat ke sosmed',
+                  title: l10n.catatServisBaru,
+                  subtitle: l10n.simpanRiwayatBengkelDanGantiOl,
                   onTap: () {
                     Navigator.pop(ctx);
-                    GarageShareDialog.show(
-                      context,
-                      vehicle: active,
-                      health: ref.read(vehicleHealthScoreProvider),
+                    context.go('/maintenance');
+                  },
+                ),
+                _buildQuickActionTile(
+                  context: context,
+                  icon: Icons.local_gas_station_outlined,
+                  iconColor: AppColors.warning,
+                  title: l10n.catatPengisianBbm,
+                  subtitle: l10n.hitungKonsumsiKmLDanBiayaBensi,
+                  onTap: () {
+                    Navigator.pop(ctx);
+                    context.go('/fuel');
+                  },
+                ),
+                if (active != null)
+                  _buildQuickActionTile(
+                    context: context,
+                    icon: Icons.alarm_outlined,
+                    iconColor: AppColors.accent,
+                    title: l10n.tambahJadwalPerawatan,
+                    subtitle: l10n.setPengingatBerkalaGantiPartKm,
+                    onTap: () {
+                      Navigator.pop(ctx);
+                      showModalBottomSheet(
+                        context: context,
+                        useRootNavigator: true,
+                        isScrollControlled: true,
+                        backgroundColor: context.cardBg,
+                        builder: (_) => AddScheduleSheet(vehicle: active),
+                      );
+                    },
+                  ),
+                if (active != null)
+                  _buildQuickActionTile(
+                    context: context,
+                    icon: Icons.fact_check_outlined,
+                    iconColor: AppColors.success,
+                    title: l10n.checklistInspeksiKendaraan,
+                    subtitle: l10n.audit10PoinKeselamatanJalanMud,
+                    onTap: () {
+                      Navigator.pop(ctx);
+                      showModalBottomSheet(
+                        context: context,
+                        useRootNavigator: true,
+                        isScrollControlled: true,
+                        backgroundColor: context.cardBg,
+                        builder: (_) => InspectionSheet(vehicle: active),
+                      );
+                    },
+                  ),
+                if (active != null)
+                  _buildQuickActionTile(
+                    context: context,
+                    icon: Icons.share_rounded,
+                    iconColor: AppColors.primary,
+                    title: l10n.shareVehiclePassport,
+                    subtitle: l10n.shareVehiclePassportSubtitle,
+                    onTap: () {
+                      Navigator.pop(ctx);
+                      GarageShareDialog.show(
+                        context,
+                        vehicle: active,
+                        health: ref.read(vehicleHealthScoreProvider),
+                      );
+                    },
+                  ),
+                _buildQuickActionTile(
+                  context: context,
+                  icon: Icons.add_circle_outline,
+                  iconColor: AppColors.carColor,
+                  title: l10n.tambahKendaraanBaru,
+                  subtitle: l10n.mobilAtauMotorKeluargaBaru,
+                  onTap: () {
+                    Navigator.pop(ctx);
+                    showModalBottomSheet(
+                      context: context,
+                      useRootNavigator: true,
+                      isScrollControlled: true,
+                      backgroundColor: context.cardBg,
+                      builder: (_) => const AddVehicleSheet(),
                     );
                   },
                 ),
-              _buildQuickActionTile(
-                context: context,
-                icon: Icons.add_circle_outline,
-                iconColor: AppColors.carColor,
-                title: l10n.tambahKendaraanBaru,
-                subtitle: l10n.mobilAtauMotorKeluargaBaru,
-                onTap: () {
-                  Navigator.pop(ctx);
-                  showModalBottomSheet(
-                    context: context,
-                    useRootNavigator: true,
-                    isScrollControlled: true,
-                    backgroundColor: context.cardBg,
-                    builder: (_) => const AddVehicleSheet(),
-                  );
-                },
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),
@@ -179,7 +189,7 @@ class GarageDashboardScreen extends ConsumerWidget {
         subtitle: Text(
           subtitle,
           style: TextStyle(fontSize: 12, color: context.textSecondary),
-          maxLines: 1,
+          maxLines: 2,
           overflow: TextOverflow.ellipsis,
         ),
         trailing: Icon(Icons.chevron_right, size: 20, color: context.textMuted),
@@ -190,7 +200,10 @@ class GarageDashboardScreen extends ConsumerWidget {
 
   void _showResetOilDialog(BuildContext context, WidgetRef ref, Vehicle v) {
     final l10n = AppLocalizations.of(context)!;
-    final formattedOdo = NumberFormat('#,###', 'id_ID').format(v.currentOdometer);
+    final formattedOdo = NumberFormat(
+      '#,###',
+      'id_ID',
+    ).format(v.currentOdometer);
 
     showDialog(
       context: context,
@@ -205,15 +218,20 @@ class GarageDashboardScreen extends ConsumerWidget {
           ),
         ),
         content: Text(
-          Localizations.localeOf(context).languageCode == 'id'
-              ? 'Counter penggantian oli untuk ${v.name} akan diatur ulang ke odometer saat ini ($formattedOdo km).'
-              : 'Oil change counter for ${v.name} will be reset to current odometer ($formattedOdo km).',
-          style: TextStyle(color: context.textSecondary, fontSize: 13, height: 1.4),
+          l10n.resetOilConfirm(v.name, formattedOdo),
+          style: TextStyle(
+            color: context.textSecondary,
+            fontSize: 13,
+            height: 1.4,
+          ),
         ),
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(ctx),
-            child: Text(l10n.batal, style: TextStyle(color: context.textSecondary)),
+            child: Text(
+              l10n.batal,
+              style: TextStyle(color: context.textSecondary),
+            ),
           ),
           ElevatedButton(
             onPressed: () async {
@@ -227,9 +245,9 @@ class GarageDashboardScreen extends ConsumerWidget {
                 odometer: v.currentOdometer,
                 title: l10n.penggantianOliMesinResetCounte,
                 cost: 0,
-                notes: 'Reset counter interval oli mesin',
+                notes: l10n.resetOilServiceNote,
                 isOilChange: true,
-                category: 'Ganti Oli & Filter',
+                category: l10n.mtCatOilFilter,
               );
               await ref.read(serviceLogsProvider.notifier).addLog(log);
 
@@ -258,7 +276,11 @@ class GarageDashboardScreen extends ConsumerWidget {
     final schedules = ref.watch(activeMaintenanceSchedulesProvider);
     final serviceLogs = ref.watch(activeServiceLogsProvider);
 
-    final currency = NumberFormat.currency(locale: 'id_ID', symbol: 'Rp ', decimalDigits: 0);
+    final currency = NumberFormat.currency(
+      locale: 'id_ID',
+      symbol: 'Rp ',
+      decimalDigits: 0,
+    );
 
     return Scaffold(
       appBar: AppBar(
@@ -270,11 +292,24 @@ class GarageDashboardScreen extends ConsumerWidget {
                 color: AppColors.primary.withValues(alpha: 0.12),
                 borderRadius: BorderRadius.circular(10),
               ),
-              child: const Icon(Icons.garage, color: AppColors.primary, size: 20),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(6),
+                child: Image.asset(
+                  'assets/icon/icon.png',
+                  width: 20,
+                  height: 20,
+                  fit: BoxFit.contain,
+                  errorBuilder: (context, error, stackTrace) => const Icon(
+                    Icons.garage,
+                    color: AppColors.primary,
+                    size: 20,
+                  ),
+                ),
+              ),
             ),
             const SizedBox(width: 10),
             Text(
-              'GarageGo',
+              l10n.appTitle,
               style: TextStyle(
                 fontWeight: FontWeight.w800,
                 fontSize: 19,
@@ -295,9 +330,13 @@ class GarageDashboardScreen extends ConsumerWidget {
                     color: AppColors.primary.withValues(alpha: 0.1),
                     shape: BoxShape.circle,
                   ),
-                  child: const Icon(Icons.share_rounded, color: AppColors.primary, size: 18),
+                  child: const Icon(
+                    Icons.share_rounded,
+                    color: AppColors.primary,
+                    size: 18,
+                  ),
                 ),
-                tooltip: 'Bagikan Paspor Kendaraan',
+                tooltip: l10n.shareVehiclePassport,
                 onPressed: () => GarageShareDialog.show(
                   context,
                   vehicle: activeVehicle,
@@ -314,7 +353,11 @@ class GarageDashboardScreen extends ConsumerWidget {
                   color: AppColors.primary.withValues(alpha: 0.1),
                   shape: BoxShape.circle,
                 ),
-                child: const Icon(Icons.add, color: AppColors.primary, size: 18),
+                child: const Icon(
+                  Icons.add,
+                  color: AppColors.primary,
+                  size: 18,
+                ),
               ),
               tooltip: l10n.tambahKendaraan,
               onPressed: () {
@@ -324,7 +367,9 @@ class GarageDashboardScreen extends ConsumerWidget {
                   isScrollControlled: true,
                   backgroundColor: context.cardBg,
                   shape: const RoundedRectangleBorder(
-                    borderRadius: BorderRadius.vertical(top: Radius.circular(24)),
+                    borderRadius: BorderRadius.vertical(
+                      top: Radius.circular(24),
+                    ),
                   ),
                   builder: (_) => const AddVehicleSheet(),
                 );
@@ -347,7 +392,11 @@ class GarageDashboardScreen extends ConsumerWidget {
             icon: const Icon(Icons.bolt, color: Colors.white, size: 20),
             label: Text(
               l10n.aksiCepat,
-              style: const TextStyle(fontWeight: FontWeight.w700, color: Colors.white, fontSize: 13),
+              style: const TextStyle(
+                fontWeight: FontWeight.w700,
+                color: Colors.white,
+                fontSize: 13,
+              ),
             ),
             onPressed: () => _showQuickActions(context, ref, activeVehicle),
           ),
@@ -367,7 +416,11 @@ class GarageDashboardScreen extends ConsumerWidget {
                         color: AppColors.primary.withValues(alpha: 0.1),
                         shape: BoxShape.circle,
                       ),
-                      child: const Icon(Icons.directions_car_outlined, size: 40, color: AppColors.primary),
+                      child: const Icon(
+                        Icons.directions_car_outlined,
+                        size: 40,
+                        color: AppColors.primary,
+                      ),
                     ),
                     const SizedBox(height: 20),
                     Text(
@@ -380,11 +433,12 @@ class GarageDashboardScreen extends ConsumerWidget {
                     ),
                     const SizedBox(height: 8),
                     Text(
-                      Localizations.localeOf(context).languageCode == 'id'
-                          ? 'Tambahkan mobil atau motor keluarga pertama Anda untuk mulai memantau servis, oli, dan BBM.'
-                          : 'Add your family\'s first car or motorcycle to start tracking services, oil changes, and fuel economy.',
+                      l10n.garageEmptyBody,
                       textAlign: TextAlign.center,
-                      style: TextStyle(fontSize: 13, color: context.textSecondary),
+                      style: TextStyle(
+                        fontSize: 13,
+                        color: context.textSecondary,
+                      ),
                     ),
                     const SizedBox(height: 24),
                     PressScale(
@@ -408,8 +462,15 @@ class GarageDashboardScreen extends ConsumerWidget {
               ),
             )
           : SingleChildScrollView(
-              physics: const BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
-              padding: const EdgeInsets.only(left: 16, right: 16, top: 12, bottom: 96),
+              physics: const BouncingScrollPhysics(
+                parent: AlwaysScrollableScrollPhysics(),
+              ),
+              padding: const EdgeInsets.only(
+                left: 16,
+                right: 16,
+                top: 12,
+                bottom: 96,
+              ),
               child: Center(
                 child: ConstrainedBox(
                   constraints: const BoxConstraints(maxWidth: 800),
@@ -420,80 +481,109 @@ class GarageDashboardScreen extends ConsumerWidget {
                       SizedBox(
                         height: 40,
                         child: ListView.separated(
-                          physics: const BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
+                          physics: const BouncingScrollPhysics(
+                            parent: AlwaysScrollableScrollPhysics(),
+                          ),
                           scrollDirection: Axis.horizontal,
                           itemCount: vehicles.length,
-                          separatorBuilder: (ctx, i) => const SizedBox(width: 8),
+                          separatorBuilder: (ctx, i) =>
+                              const SizedBox(width: 8),
                           itemBuilder: (context, index) {
                             final v = vehicles[index];
                             final isSelected = v.id == activeVehicle?.id;
                             final isCar = v.type == VehicleType.car;
-                            final brandColor = isCar ? AppColors.carColor : AppColors.motoColor;
+                            final brandColor = isCar
+                                ? AppColors.carColor
+                                : AppColors.motoColor;
 
                             return StaggerFadeIn(
                               index: index,
                               child: PressScale(
-                              scale: 0.96,
-                              onTap: () {
-                                ref.read(activeVehicleIdProvider.notifier).setActiveId(v.id);
-                              },
-                              child: AnimatedContainer(
-                                duration: AppMotion.resolve(
-                                  context,
-                                  const Duration(milliseconds: 200),
-                                ),
-                                padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
-                                decoration: BoxDecoration(
-                                  color: isSelected
-                                      ? context.brandFill
-                                      : context.surfaceBg,
-                                  borderRadius: BorderRadius.circular(20),
-                                  border: Border.all(
-                                    color: isSelected ? context.brandFill : context.borderColor,
-                                    width: 1,
+                                scale: 0.96,
+                                onTap: () {
+                                  ref
+                                      .read(activeVehicleIdProvider.notifier)
+                                      .setActiveId(v.id);
+                                },
+                                child: AnimatedContainer(
+                                  duration: AppMotion.resolve(
+                                    context,
+                                    const Duration(milliseconds: 200),
                                   ),
-                                ),
-                                child: Row(
-                                  mainAxisSize: MainAxisSize.min,
-                                  children: [
-                                    Icon(
-                                      isCar ? Icons.directions_car : Icons.two_wheeler,
-                                      size: 16,
-                                      color: isSelected ? Colors.white : brandColor,
+                                  padding: const EdgeInsets.symmetric(
+                                    horizontal: 14,
+                                    vertical: 8,
+                                  ),
+                                  decoration: BoxDecoration(
+                                    color: isSelected
+                                        ? context.brandFill
+                                        : context.surfaceBg,
+                                    borderRadius: BorderRadius.circular(20),
+                                    border: Border.all(
+                                      color: isSelected
+                                          ? context.brandFill
+                                          : context.borderColor,
+                                      width: 1,
                                     ),
-                                    const SizedBox(width: 8),
-                                    Text(
-                                      v.name,
-                                      style: TextStyle(
-                                        fontSize: 12,
-                                        fontWeight: isSelected ? FontWeight.w700 : FontWeight.w600,
-                                        color: isSelected ? Colors.white : context.textPrimary,
-                                        letterSpacing: -0.2,
-                                      ),
-                                    ),
-                                    const SizedBox(width: 6),
-                                    Container(
-                                      padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
-                                      decoration: BoxDecoration(
+                                  ),
+                                  child: Row(
+                                    mainAxisSize: MainAxisSize.min,
+                                    children: [
+                                      Icon(
+                                        isCar
+                                            ? Icons.directions_car
+                                            : Icons.two_wheeler,
+                                        size: 16,
                                         color: isSelected
-                                            ? Colors.black.withValues(alpha: 0.2)
-                                            : context.cardBg,
-                                        borderRadius: BorderRadius.circular(6),
+                                            ? Colors.white
+                                            : brandColor,
                                       ),
-                                      child: Text(
-                                        v.plateNumber,
+                                      const SizedBox(width: 8),
+                                      Text(
+                                        v.name,
                                         style: TextStyle(
-                                          fontSize: 10,
-                                          fontWeight: FontWeight.w700,
-                                          color: isSelected ? Colors.white : context.textSecondary,
-                                          letterSpacing: 0.3,
+                                          fontSize: 12,
+                                          fontWeight: isSelected
+                                              ? FontWeight.w700
+                                              : FontWeight.w600,
+                                          color: isSelected
+                                              ? Colors.white
+                                              : context.textPrimary,
+                                          letterSpacing: -0.2,
                                         ),
                                       ),
-                                    ),
-                                  ],
+                                      const SizedBox(width: 6),
+                                      Container(
+                                        padding: const EdgeInsets.symmetric(
+                                          horizontal: 6,
+                                          vertical: 2,
+                                        ),
+                                        decoration: BoxDecoration(
+                                          color: isSelected
+                                              ? Colors.black.withValues(
+                                                  alpha: 0.2,
+                                                )
+                                              : context.cardBg,
+                                          borderRadius: BorderRadius.circular(
+                                            6,
+                                          ),
+                                        ),
+                                        child: Text(
+                                          v.plateNumber,
+                                          style: TextStyle(
+                                            fontSize: 10,
+                                            fontWeight: FontWeight.w700,
+                                            color: isSelected
+                                                ? Colors.white
+                                                : context.textSecondary,
+                                            letterSpacing: 0.3,
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
                                 ),
                               ),
-                            ),
                             );
                           },
                         ),
@@ -504,7 +594,12 @@ class GarageDashboardScreen extends ConsumerWidget {
                         // 1. Vehicle Health Score & Hero Card
                         StaggerFadeIn(
                           index: 0,
-                          child: _buildHealthHeroCard(context, ref, activeVehicle, healthResult),
+                          child: _buildHealthHeroCard(
+                            context,
+                            ref,
+                            activeVehicle,
+                            healthResult,
+                          ),
                         ),
                         const SizedBox(height: 14),
 
@@ -519,66 +614,74 @@ class GarageDashboardScreen extends ConsumerWidget {
                         StaggerFadeIn(
                           index: 2,
                           child: Row(
-                          children: [
-                            Expanded(
-                              child: _buildMetricCard(
-                                context: context,
-                                title: l10n.odometer,
-                                value: '${NumberFormat('#,###', 'id_ID').format(activeVehicle.currentOdometer)} km',
-                                icon: Icons.speed,
-                                iconColor: AppColors.accent,
+                            children: [
+                              Expanded(
+                                child: _buildMetricCard(
+                                  context: context,
+                                  title: l10n.odometer,
+                                  value:
+                                      '${NumberFormat('#,###', 'id_ID').format(activeVehicle.currentOdometer)} km',
+                                  icon: Icons.speed,
+                                  iconColor: AppColors.accent,
+                                ),
                               ),
-                            ),
-                            const SizedBox(width: 10),
-                            Expanded(
-                              child: _buildMetricCard(
-                                context: context,
-                                title: l10n.biayaKm,
-                                value: fuelEfficiency.averageCostPerKm > 0
-                                    ? 'Rp ${fuelEfficiency.averageCostPerKm.toStringAsFixed(0)}/km'
-                                    : '—',
-                                icon: Icons.route_outlined,
-                                iconColor: AppColors.primary,
+                              const SizedBox(width: 10),
+                              Expanded(
+                                child: _buildMetricCard(
+                                  context: context,
+                                  title: l10n.biayaKm,
+                                  value: fuelEfficiency.averageCostPerKm > 0
+                                      ? '${currency.format(fuelEfficiency.averageCostPerKm)}$kPerKmSuffix'
+                                      : '—',
+                                  icon: Icons.route_outlined,
+                                  iconColor: AppColors.primary,
+                                ),
                               ),
-                            ),
-                          ],
-                        ),
+                            ],
+                          ),
                         ),
                         const SizedBox(height: 10),
                         StaggerFadeIn(
                           index: 3,
                           child: Row(
-                          children: [
-                            Expanded(
-                              child: _buildMetricCard(
-                                context: context,
-                                title: l10n.konsumsiBbm,
-                                value: fuelEfficiency.averageKmPerLiter > 0
-                                    ? '${fuelEfficiency.averageKmPerLiter.toStringAsFixed(1)} km/L'
-                                    : '— km/L',
-                                icon: Icons.local_gas_station_outlined,
-                                iconColor: AppColors.warning,
+                            children: [
+                              Expanded(
+                                child: _buildMetricCard(
+                                  context: context,
+                                  title: l10n.konsumsiBbm,
+                                  value: l10n.fuelKmL(
+                                    fuelEfficiency.averageKmPerLiter > 0
+                                        ? fuelEfficiency.averageKmPerLiter
+                                              .toStringAsFixed(1)
+                                        : '—',
+                                  ),
+                                  icon: Icons.local_gas_station_outlined,
+                                  iconColor: AppColors.warning,
+                                ),
                               ),
-                            ),
-                            const SizedBox(width: 10),
-                            Expanded(
-                              child: _buildMetricCard(
-                                context: context,
-                                title: l10n.totalBiayaTco,
-                                value: currency.format(tco.totalCost),
-                                icon: Icons.account_balance_wallet_outlined,
-                                iconColor: AppColors.success,
+                              const SizedBox(width: 10),
+                              Expanded(
+                                child: _buildMetricCard(
+                                  context: context,
+                                  title: l10n.totalBiayaTco,
+                                  value: currency.format(tco.totalCost),
+                                  icon: Icons.account_balance_wallet_outlined,
+                                  iconColor: AppColors.success,
+                                ),
                               ),
-                            ),
-                          ],
-                        ),
+                            ],
+                          ),
                         ),
                         const SizedBox(height: 14),
 
                         // 3. Oil Status Card with Reset Oil Button
                         StaggerFadeIn(
                           index: 4,
-                          child: _buildOilStatusCard(context, ref, activeVehicle),
+                          child: _buildOilStatusCard(
+                            context,
+                            ref,
+                            activeVehicle,
+                          ),
                         ),
                         const SizedBox(height: 14),
 
@@ -591,11 +694,20 @@ class GarageDashboardScreen extends ConsumerWidget {
                         const SizedBox(height: 14),
 
                         // 6. Upcoming Maintenance Alerts
-                        _buildUpcomingMaintenanceCard(context, activeVehicle, schedules),
+                        _buildUpcomingMaintenanceCard(
+                          context,
+                          activeVehicle,
+                          schedules,
+                        ),
                         const SizedBox(height: 14),
 
                         // 7. Recent Service List Preview
-                        _buildRecentServicesCard(context, ref, serviceLogs, currency),
+                        _buildRecentServicesCard(
+                          context,
+                          ref,
+                          serviceLogs,
+                          currency,
+                        ),
                       ],
                     ],
                   ),
@@ -611,6 +723,7 @@ class GarageDashboardScreen extends ConsumerWidget {
     Vehicle v,
     VehicleHealthResult? health,
   ) {
+    final l10n = AppLocalizations.of(context)!;
     final score = health?.score ?? 100;
     final color = context.readable(Color(health?.statusColor ?? 0xFF10B981));
     final isCar = v.type == VehicleType.car;
@@ -655,130 +768,152 @@ class GarageDashboardScreen extends ConsumerWidget {
                             letterSpacing: -0.4,
                           ),
                         ),
-                      const SizedBox(height: 3),
-                      Row(
-                        children: [
-                          Container(
-                            padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
-                            decoration: BoxDecoration(
-                              color: context.surfaceBg,
-                              borderRadius: BorderRadius.circular(4),
-                              border: Border.all(color: context.borderColor),
-                            ),
-                            child: Text(
-                              v.plateNumber,
-                              style: TextStyle(
-                                fontSize: 11,
-                                fontWeight: FontWeight.w700,
-                                color: context.textPrimary,
-                                letterSpacing: 0.4,
+                        const SizedBox(height: 3),
+                        Row(
+                          children: [
+                            Container(
+                              padding: const EdgeInsets.symmetric(
+                                horizontal: 6,
+                                vertical: 2,
+                              ),
+                              decoration: BoxDecoration(
+                                color: context.surfaceBg,
+                                borderRadius: BorderRadius.circular(4),
+                                border: Border.all(color: context.borderColor),
+                              ),
+                              child: Text(
+                                v.plateNumber,
+                                style: TextStyle(
+                                  fontSize: 11,
+                                  fontWeight: FontWeight.w700,
+                                  color: context.textPrimary,
+                                  letterSpacing: 0.4,
+                                ),
                               ),
                             ),
+                            const SizedBox(width: 8),
+                            Text(
+                              l10n.garageYear('${v.manufactureYear}'),
+                              style: TextStyle(
+                                fontSize: 12,
+                                color: context.textSecondary,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                  // Health Score Circular Badge
+                  Column(
+                    children: [
+                      Stack(
+                        alignment: Alignment.center,
+                        children: [
+                          SizedBox(
+                            width: 48,
+                            height: 48,
+                            child: CircularProgressIndicator(
+                              value: score / 100,
+                              backgroundColor: context.surfaceBg,
+                              color: color,
+                              strokeWidth: 4.5,
+                            ),
                           ),
-                          const SizedBox(width: 8),
                           Text(
-                            '${Localizations.localeOf(context).languageCode == 'id' ? 'Tahun' : 'Year'} ${v.manufactureYear}',
-                            style: TextStyle(fontSize: 12, color: context.textSecondary),
+                            '$score',
+                            style: TextStyle(
+                              fontSize: 15,
+                              fontWeight: FontWeight.w900,
+                              color: color,
+                            ),
                           ),
                         ],
+                      ),
+                      const SizedBox(height: 4),
+                      Text(
+                        health?.statusText ?? l10n.healthPrime,
+                        style: TextStyle(
+                          fontSize: 10,
+                          fontWeight: FontWeight.w700,
+                          color: color,
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+              if (health != null && health.warnings.isNotEmpty) ...[
+                const SizedBox(height: 12),
+                Container(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 12,
+                    vertical: 8,
+                  ),
+                  decoration: BoxDecoration(
+                    color: AppColors.danger.withValues(alpha: 0.08),
+                    borderRadius: BorderRadius.circular(10),
+                    border: Border.all(
+                      color: AppColors.danger.withValues(alpha: 0.2),
+                    ),
+                  ),
+                  child: Row(
+                    children: [
+                      const Icon(
+                        Icons.warning_amber_rounded,
+                        size: 16,
+                        color: AppColors.danger,
+                      ),
+                      const SizedBox(width: 8),
+                      Expanded(
+                        child: Text(
+                          health.warnings.first,
+                          style: TextStyle(
+                            fontSize: 11,
+                            color: context.readable(AppColors.danger),
+                            fontWeight: FontWeight.w600,
+                          ),
+                          maxLines: 2,
+                          overflow: TextOverflow.ellipsis,
+                        ),
                       ),
                     ],
                   ),
                 ),
-                // Health Score Circular Badge
-                Column(
-                  children: [
-                    Stack(
-                      alignment: Alignment.center,
-                      children: [
-                        SizedBox(
-                          width: 48,
-                          height: 48,
-                          child: CircularProgressIndicator(
-                            value: score / 100,
-                            backgroundColor: context.surfaceBg,
-                            color: color,
-                            strokeWidth: 4.5,
-                          ),
-                        ),
-                        Text(
-                          '$score',
-                          style: TextStyle(
-                            fontSize: 15,
-                            fontWeight: FontWeight.w900,
-                            color: color,
-                          ),
-                        ),
-                      ],
-                    ),
-                    const SizedBox(height: 4),
-                    Text(
-                      health?.statusText ?? (Localizations.localeOf(context).languageCode == 'id' ? 'Prima' : 'Prime'),
-                      style: TextStyle(fontSize: 10, fontWeight: FontWeight.w700, color: color),
-                    ),
-                  ],
-                ),
               ],
-            ),
-            if (health != null && health.warnings.isNotEmpty) ...[
-              const SizedBox(height: 12),
-              Container(
-                padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
-                decoration: BoxDecoration(
-                  color: AppColors.danger.withValues(alpha: 0.08),
-                  borderRadius: BorderRadius.circular(10),
-                  border: Border.all(color: AppColors.danger.withValues(alpha: 0.2)),
-                ),
-                child: Row(
-                  children: [
-                    const Icon(Icons.warning_amber_rounded, size: 16, color: AppColors.danger),
-                    const SizedBox(width: 8),
-                    Expanded(
-                      child: Text(
-                        health.warnings.first,
-                        style: TextStyle(
-                          fontSize: 11,
-                          color: context.readable(AppColors.danger),
-                          fontWeight: FontWeight.w600,
+              const SizedBox(height: 10),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  PressScale(
+                    scale: 0.95,
+                    child: TextButton.icon(
+                      style: TextButton.styleFrom(
+                        visualDensity: VisualDensity.compact,
+                        foregroundColor: context.readable(AppColors.primary),
+                      ),
+                      icon: const Icon(Icons.share_rounded, size: 15),
+                      label: Text(
+                        l10n.shareVehiclePassport,
+                        style: const TextStyle(
+                          fontSize: 12,
+                          fontWeight: FontWeight.w700,
                         ),
-                        maxLines: 2,
-                        overflow: TextOverflow.ellipsis,
+                      ),
+                      onPressed: () => GarageShareDialog.show(
+                        context,
+                        vehicle: v,
+                        health: health,
                       ),
                     ),
-                  ],
-                ),
+                  ),
+                ],
               ),
             ],
-            const SizedBox(height: 10),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                PressScale(
-                  scale: 0.95,
-                  child: TextButton.icon(
-                    style: TextButton.styleFrom(
-                      visualDensity: VisualDensity.compact,
-                      foregroundColor: context.readable(AppColors.primary),
-                    ),
-                    icon: const Icon(Icons.share_rounded, size: 15),
-                    label: const Text(
-                      'Bagikan Paspor Kendaraan',
-                      style: TextStyle(fontSize: 12, fontWeight: FontWeight.w700),
-                    ),
-                    onPressed: () => GarageShareDialog.show(
-                      context,
-                      vehicle: v,
-                      health: health,
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ],
+          ),
         ),
       ),
-    ),
-  );
+    );
   }
 
   Widget _buildOilStatusCard(BuildContext context, WidgetRef ref, Vehicle v) {
@@ -786,7 +921,11 @@ class GarageDashboardScreen extends ConsumerWidget {
     final remainingOilKm = v.kmUntilNextOilChange;
     final isOilOverdue = remainingOilKm < 0;
     final progress = (1.0 - (remainingOilKm / v.oilIntervalKm)).clamp(0.0, 1.0);
-    final statusColor = isOilOverdue ? context.readable(AppColors.danger) : (remainingOilKm <= 1000 ? context.readable(AppColors.warning) : context.readable(AppColors.accent));
+    final statusColor = isOilOverdue
+        ? context.readable(AppColors.danger)
+        : (remainingOilKm <= 1000
+              ? context.readable(AppColors.warning)
+              : context.readable(AppColors.accent));
 
     return Card(
       child: Padding(
@@ -805,7 +944,11 @@ class GarageDashboardScreen extends ConsumerWidget {
                         color: statusColor.withValues(alpha: 0.12),
                         borderRadius: BorderRadius.circular(8),
                       ),
-                      child: Icon(Icons.oil_barrel_outlined, size: 16, color: statusColor),
+                      child: Icon(
+                        Icons.oil_barrel_outlined,
+                        size: 16,
+                        color: statusColor,
+                      ),
                     ),
                     const SizedBox(width: 10),
                     Text(
@@ -824,13 +967,24 @@ class GarageDashboardScreen extends ConsumerWidget {
                   child: TextButton.icon(
                     style: TextButton.styleFrom(
                       visualDensity: VisualDensity.compact,
-                      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 10,
+                        vertical: 4,
+                      ),
                     ),
                     onPressed: () => _showResetOilDialog(context, ref, v),
-                    icon: const Icon(Icons.refresh, size: 14, color: AppColors.primary),
+                    icon: const Icon(
+                      Icons.refresh,
+                      size: 14,
+                      color: AppColors.primary,
+                    ),
                     label: Text(
                       l10n.resetOli,
-                      style: TextStyle(fontSize: 12, color: context.readable(AppColors.primary), fontWeight: FontWeight.w700),
+                      style: TextStyle(
+                        fontSize: 12,
+                        color: context.readable(AppColors.primary),
+                        fontWeight: FontWeight.w700,
+                      ),
                     ),
                   ),
                 ),
@@ -841,25 +995,24 @@ class GarageDashboardScreen extends ConsumerWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  Localizations.localeOf(context).languageCode == 'id'
-                      ? 'Interval: tiap ${NumberFormat('#,###', 'id_ID').format(v.oilIntervalKm)} km'
-                      : 'Interval: every ${NumberFormat('#,###', 'en_US').format(v.oilIntervalKm)} km',
+                  l10n.oilIntervalEvery(
+                    NumberFormat('#,###', 'id_ID').format(v.oilIntervalKm),
+                  ),
                   style: TextStyle(fontSize: 12, color: context.textSecondary),
                 ),
                 Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 8,
+                    vertical: 2,
+                  ),
                   decoration: BoxDecoration(
                     color: statusColor.withValues(alpha: 0.1),
                     borderRadius: BorderRadius.circular(6),
                   ),
                   child: Text(
                     isOilOverdue
-                        ? (Localizations.localeOf(context).languageCode == 'id'
-                            ? 'Terlewat ${-remainingOilKm} km'
-                            : 'Overdue by ${-remainingOilKm} km')
-                        : (Localizations.localeOf(context).languageCode == 'id'
-                            ? 'Sisa $remainingOilKm km'
-                            : '$remainingOilKm km remaining'),
+                        ? l10n.kmOverdue('${-remainingOilKm}')
+                        : l10n.kmRemainingShort('$remainingOilKm'),
                     style: TextStyle(
                       fontSize: 11,
                       fontWeight: FontWeight.w700,
@@ -887,8 +1040,12 @@ class GarageDashboardScreen extends ConsumerWidget {
 
   Widget _buildTaxReminderCard(BuildContext context, Vehicle v) {
     final l10n = AppLocalizations.of(context)!;
-    final pkbColor = v.isTaxClose ? context.readable(AppColors.danger) : context.readable(AppColors.success);
-    final plateColor = v.isPlateClose ? context.readable(AppColors.warning) : context.textPrimary;
+    final pkbColor = v.isTaxClose
+        ? context.readable(AppColors.danger)
+        : context.readable(AppColors.success);
+    final plateColor = v.isPlateClose
+        ? context.readable(AppColors.warning)
+        : context.textPrimary;
 
     return Card(
       child: Padding(
@@ -904,7 +1061,11 @@ class GarageDashboardScreen extends ConsumerWidget {
                     color: AppColors.warning.withValues(alpha: 0.12),
                     borderRadius: BorderRadius.circular(8),
                   ),
-                  child: const Icon(Icons.badge_outlined, size: 16, color: AppColors.warning),
+                  child: const Icon(
+                    Icons.badge_outlined,
+                    size: 16,
+                    color: AppColors.warning,
+                  ),
                 ),
                 const SizedBox(width: 10),
                 Text(
@@ -922,7 +1083,10 @@ class GarageDashboardScreen extends ConsumerWidget {
                   child: TextButton(
                     style: TextButton.styleFrom(
                       visualDensity: VisualDensity.compact,
-                      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 8,
+                        vertical: 2,
+                      ),
                     ),
                     onPressed: () => context.go('/glovebox'),
                     child: Row(
@@ -930,10 +1094,18 @@ class GarageDashboardScreen extends ConsumerWidget {
                       children: [
                         Text(
                           l10n.bukaBrankas,
-                          style: TextStyle(fontSize: 12, color: context.readable(AppColors.primary), fontWeight: FontWeight.w600),
+                          style: TextStyle(
+                            fontSize: 12,
+                            color: context.readable(AppColors.primary),
+                            fontWeight: FontWeight.w600,
+                          ),
                         ),
                         const SizedBox(width: 2),
-                        const Icon(Icons.chevron_right, size: 16, color: AppColors.primary),
+                        const Icon(
+                          Icons.chevron_right,
+                          size: 16,
+                          color: AppColors.primary,
+                        ),
                       ],
                     ),
                   ),
@@ -956,7 +1128,11 @@ class GarageDashboardScreen extends ConsumerWidget {
                       children: [
                         Text(
                           l10n.pkbTahunan,
-                          style: TextStyle(fontSize: 11, fontWeight: FontWeight.w600, color: context.textSecondary),
+                          style: TextStyle(
+                            fontSize: 11,
+                            fontWeight: FontWeight.w600,
+                            color: context.textSecondary,
+                          ),
                         ),
                         const SizedBox(height: 4),
                         Text(
@@ -985,7 +1161,11 @@ class GarageDashboardScreen extends ConsumerWidget {
                       children: [
                         Text(
                           l10n.pelat5Th,
-                          style: TextStyle(fontSize: 11, fontWeight: FontWeight.w600, color: context.textSecondary),
+                          style: TextStyle(
+                            fontSize: 11,
+                            fontWeight: FontWeight.w600,
+                            color: context.textSecondary,
+                          ),
                         ),
                         const SizedBox(height: 4),
                         Text(
@@ -1008,7 +1188,11 @@ class GarageDashboardScreen extends ConsumerWidget {
     );
   }
 
-  Widget _buildTcoBreakdownCard(BuildContext context, TCOResult tco, NumberFormat currency) {
+  Widget _buildTcoBreakdownCard(
+    BuildContext context,
+    TCOResult tco,
+    NumberFormat currency,
+  ) {
     final l10n = AppLocalizations.of(context)!;
     return Card(
       child: Padding(
@@ -1024,7 +1208,11 @@ class GarageDashboardScreen extends ConsumerWidget {
                     color: AppColors.primary.withValues(alpha: 0.12),
                     borderRadius: BorderRadius.circular(8),
                   ),
-                  child: const Icon(Icons.pie_chart_outline, size: 16, color: AppColors.primary),
+                  child: const Icon(
+                    Icons.pie_chart_outline,
+                    size: 16,
+                    color: AppColors.primary,
+                  ),
                 ),
                 const SizedBox(width: 10),
                 Text(
@@ -1042,9 +1230,24 @@ class GarageDashboardScreen extends ConsumerWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                _buildTcoItem(context, l10n.navFuel, currency.format(tco.fuelCost), AppColors.warning),
-                _buildTcoItem(context, l10n.navMaintenance, currency.format(tco.serviceCost), AppColors.accent),
-                _buildTcoItem(context, l10n.pajakStnk, currency.format(tco.documentCost), AppColors.primary),
+                _buildTcoItem(
+                  context,
+                  l10n.navFuel,
+                  currency.format(tco.fuelCost),
+                  AppColors.warning,
+                ),
+                _buildTcoItem(
+                  context,
+                  l10n.navMaintenance,
+                  currency.format(tco.serviceCost),
+                  AppColors.accent,
+                ),
+                _buildTcoItem(
+                  context,
+                  l10n.pajakStnk,
+                  currency.format(tco.documentCost),
+                  AppColors.primary,
+                ),
               ],
             ),
           ],
@@ -1053,15 +1256,31 @@ class GarageDashboardScreen extends ConsumerWidget {
     );
   }
 
-  Widget _buildTcoItem(BuildContext context, String label, String amount, Color color) {
+  Widget _buildTcoItem(
+    BuildContext context,
+    String label,
+    String amount,
+    Color color,
+  ) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Row(
           children: [
-            Container(width: 8, height: 8, decoration: BoxDecoration(color: color, shape: BoxShape.circle)),
+            Container(
+              width: 8,
+              height: 8,
+              decoration: BoxDecoration(color: color, shape: BoxShape.circle),
+            ),
             const SizedBox(width: 6),
-            Text(label, style: TextStyle(fontSize: 11, fontWeight: FontWeight.w600, color: context.textSecondary)),
+            Text(
+              label,
+              style: TextStyle(
+                fontSize: 11,
+                fontWeight: FontWeight.w600,
+                color: context.textSecondary,
+              ),
+            ),
           ],
         ),
         const SizedBox(height: 4),
@@ -1077,7 +1296,11 @@ class GarageDashboardScreen extends ConsumerWidget {
     );
   }
 
-  Widget _buildUpcomingMaintenanceCard(BuildContext context, Vehicle v, List<MaintenanceSchedule> schedules) {
+  Widget _buildUpcomingMaintenanceCard(
+    BuildContext context,
+    Vehicle v,
+    List<MaintenanceSchedule> schedules,
+  ) {
     final l10n = AppLocalizations.of(context)!;
     final nearest = schedules.take(3).toList();
 
@@ -1098,7 +1321,11 @@ class GarageDashboardScreen extends ConsumerWidget {
                         color: AppColors.accent.withValues(alpha: 0.12),
                         borderRadius: BorderRadius.circular(8),
                       ),
-                      child: const Icon(Icons.alarm, size: 16, color: AppColors.accent),
+                      child: const Icon(
+                        Icons.alarm,
+                        size: 16,
+                        color: AppColors.accent,
+                      ),
                     ),
                     const SizedBox(width: 10),
                     Text(
@@ -1117,7 +1344,10 @@ class GarageDashboardScreen extends ConsumerWidget {
                   child: TextButton(
                     style: TextButton.styleFrom(
                       visualDensity: VisualDensity.compact,
-                      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 8,
+                        vertical: 2,
+                      ),
                     ),
                     onPressed: () => context.go('/maintenance'),
                     child: Row(
@@ -1125,10 +1355,18 @@ class GarageDashboardScreen extends ConsumerWidget {
                       children: [
                         Text(
                           l10n.lihatSemua,
-                          style: TextStyle(fontSize: 12, color: context.readable(AppColors.primary), fontWeight: FontWeight.w600),
+                          style: TextStyle(
+                            fontSize: 12,
+                            color: context.readable(AppColors.primary),
+                            fontWeight: FontWeight.w600,
+                          ),
                         ),
                         const SizedBox(width: 2),
-                        const Icon(Icons.chevron_right, size: 16, color: AppColors.primary),
+                        const Icon(
+                          Icons.chevron_right,
+                          size: 16,
+                          color: AppColors.primary,
+                        ),
                       ],
                     ),
                   ),
@@ -1148,9 +1386,13 @@ class GarageDashboardScreen extends ConsumerWidget {
               ...nearest.map((s) {
                 final urgency = s.urgency(v.currentOdometer);
                 final km = s.kmRemaining(v.currentOdometer);
-                final c = context.readable(urgency == ScheduleUrgency.overdue
-                    ? AppColors.danger
-                    : (urgency == ScheduleUrgency.dueSoon ? AppColors.warning : AppColors.success));
+                final c = context.readable(
+                  urgency == ScheduleUrgency.overdue
+                      ? AppColors.danger
+                      : (urgency == ScheduleUrgency.dueSoon
+                            ? AppColors.warning
+                            : AppColors.success),
+                );
 
                 return Padding(
                   padding: const EdgeInsets.only(bottom: 8),
@@ -1172,7 +1414,11 @@ class GarageDashboardScreen extends ConsumerWidget {
                               color: c.withValues(alpha: 0.12),
                               borderRadius: BorderRadius.circular(6),
                             ),
-                            child: Icon(Icons.build_circle_outlined, size: 16, color: c),
+                            child: Icon(
+                              Icons.build_circle_outlined,
+                              size: 16,
+                              color: c,
+                            ),
                           ),
                           const SizedBox(width: 10),
                           Expanded(
@@ -1186,20 +1432,23 @@ class GarageDashboardScreen extends ConsumerWidget {
                             ),
                           ),
                           Container(
-                            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
+                            padding: const EdgeInsets.symmetric(
+                              horizontal: 8,
+                              vertical: 2,
+                            ),
                             decoration: BoxDecoration(
                               color: c.withValues(alpha: 0.1),
                               borderRadius: BorderRadius.circular(6),
                             ),
                             child: Text(
                               km < 0
-                                  ? (Localizations.localeOf(context).languageCode == 'id'
-                                      ? 'Lewat ${-km} km'
-                                      : 'Overdue by ${-km} km')
-                                  : (Localizations.localeOf(context).languageCode == 'id'
-                                      ? 'Sisa $km km'
-                                      : '$km km left'),
-                              style: TextStyle(fontSize: 11, fontWeight: FontWeight.w700, color: c),
+                                  ? l10n.kmOverdueShort('${-km}')
+                                  : l10n.kmRemainingShort('$km'),
+                              style: TextStyle(
+                                fontSize: 11,
+                                fontWeight: FontWeight.w700,
+                                color: c,
+                              ),
                             ),
                           ),
                         ],
@@ -1214,11 +1463,18 @@ class GarageDashboardScreen extends ConsumerWidget {
     );
   }
 
-  Widget _buildRecentServicesCard(BuildContext context, WidgetRef ref, List<ServiceLog> serviceLogs, NumberFormat currency) {
+  Widget _buildRecentServicesCard(
+    BuildContext context,
+    WidgetRef ref,
+    List<ServiceLog> serviceLogs,
+    NumberFormat currency,
+  ) {
     final l10n = AppLocalizations.of(context)!;
     // Stored instants are UTC; display in the selected zone (§TZ).
     final loc = ref.watch(timezoneLocationProvider);
-    final localeCode = AppTimeZone.intlLocale(Localizations.localeOf(context).languageCode);
+    final localeCode = AppTimeZone.intlLocale(
+      Localizations.localeOf(context).languageCode,
+    );
     return Card(
       child: Padding(
         padding: const EdgeInsets.all(16),
@@ -1236,7 +1492,11 @@ class GarageDashboardScreen extends ConsumerWidget {
                         color: AppColors.primary.withValues(alpha: 0.12),
                         borderRadius: BorderRadius.circular(8),
                       ),
-                      child: const Icon(Icons.history, size: 16, color: AppColors.primary),
+                      child: const Icon(
+                        Icons.history,
+                        size: 16,
+                        color: AppColors.primary,
+                      ),
                     ),
                     const SizedBox(width: 10),
                     Text(
@@ -1255,7 +1515,10 @@ class GarageDashboardScreen extends ConsumerWidget {
                   child: TextButton(
                     style: TextButton.styleFrom(
                       visualDensity: VisualDensity.compact,
-                      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 8,
+                        vertical: 2,
+                      ),
                     ),
                     onPressed: () => context.go('/maintenance'),
                     child: Row(
@@ -1263,10 +1526,18 @@ class GarageDashboardScreen extends ConsumerWidget {
                       children: [
                         Text(
                           l10n.riwayatLengkap,
-                          style: TextStyle(fontSize: 12, color: context.readable(AppColors.primary), fontWeight: FontWeight.w600),
+                          style: TextStyle(
+                            fontSize: 12,
+                            color: context.readable(AppColors.primary),
+                            fontWeight: FontWeight.w600,
+                          ),
                         ),
                         const SizedBox(width: 2),
-                        const Icon(Icons.chevron_right, size: 16, color: AppColors.primary),
+                        const Icon(
+                          Icons.chevron_right,
+                          size: 16,
+                          color: AppColors.primary,
+                        ),
                       ],
                     ),
                   ),
@@ -1283,62 +1554,75 @@ class GarageDashboardScreen extends ConsumerWidget {
                 ),
               )
             else
-              ...serviceLogs.take(3).map((log) => Padding(
-                    padding: const EdgeInsets.only(bottom: 8),
-                    child: PressScale(
-                      scale: 0.98,
-                      onTap: () => context.go('/maintenance'),
-                      child: Container(
-                        padding: const EdgeInsets.all(10),
-                        decoration: BoxDecoration(
-                          color: context.surfaceBg,
-                          borderRadius: BorderRadius.circular(10),
-                          border: Border.all(color: context.borderColor),
-                        ),
-                        child: Row(
-                          children: [
-                            Container(
-                              padding: const EdgeInsets.all(8),
-                              decoration: BoxDecoration(
-                                color: AppColors.primary.withValues(alpha: 0.12),
-                                borderRadius: BorderRadius.circular(8),
+              ...serviceLogs
+                  .take(3)
+                  .map(
+                    (log) => Padding(
+                      padding: const EdgeInsets.only(bottom: 8),
+                      child: PressScale(
+                        scale: 0.98,
+                        onTap: () => context.go('/maintenance'),
+                        child: Container(
+                          padding: const EdgeInsets.all(10),
+                          decoration: BoxDecoration(
+                            color: context.surfaceBg,
+                            borderRadius: BorderRadius.circular(10),
+                            border: Border.all(color: context.borderColor),
+                          ),
+                          child: Row(
+                            children: [
+                              Container(
+                                padding: const EdgeInsets.all(8),
+                                decoration: BoxDecoration(
+                                  color: AppColors.primary.withValues(
+                                    alpha: 0.12,
+                                  ),
+                                  borderRadius: BorderRadius.circular(8),
+                                ),
+                                child: const Icon(
+                                  Icons.build_outlined,
+                                  size: 16,
+                                  color: AppColors.primary,
+                                ),
                               ),
-                              child: const Icon(Icons.build_outlined, size: 16, color: AppColors.primary),
-                            ),
-                            const SizedBox(width: 12),
-                            Expanded(
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    log.title,
-                                    style: TextStyle(
-                                      fontSize: 13,
-                                      fontWeight: FontWeight.w600,
-                                      color: context.textPrimary,
+                              const SizedBox(width: 12),
+                              Expanded(
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      log.title,
+                                      style: TextStyle(
+                                        fontSize: 13,
+                                        fontWeight: FontWeight.w600,
+                                        color: context.textPrimary,
+                                      ),
                                     ),
-                                  ),
-                                  const SizedBox(height: 2),
-                                  Text(
-                                    '${NumberFormat('#,###', 'id_ID').format(log.odometer)} km • ${AppTimeZone.formatDate(log.date, loc, locale: localeCode)}',
-                                    style: TextStyle(fontSize: 11, color: context.textSecondary),
-                                  ),
-                                ],
+                                    const SizedBox(height: 2),
+                                    Text(
+                                      '${NumberFormat('#,###', 'id_ID').format(log.odometer)} km • ${AppTimeZone.formatDate(log.date, loc, locale: localeCode)}',
+                                      style: TextStyle(
+                                        fontSize: 11,
+                                        color: context.textSecondary,
+                                      ),
+                                    ),
+                                  ],
+                                ),
                               ),
-                            ),
-                            Text(
-                              currency.format(log.cost),
-                              style: TextStyle(
-                                fontSize: 13,
-                                fontWeight: FontWeight.w700,
-                                color: context.readable(AppColors.primary),
+                              Text(
+                                currency.format(log.cost),
+                                style: TextStyle(
+                                  fontSize: 13,
+                                  fontWeight: FontWeight.w700,
+                                  color: context.readable(AppColors.primary),
+                                ),
                               ),
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
                       ),
                     ),
-                  )),
+                  ),
           ],
         ),
       ),

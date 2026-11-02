@@ -8,22 +8,31 @@
   "banner_ready": false,
   "seo": true,
   "slugs": {
-    "id": "ganti-oli-untuk-dipakai-bergantian",
-    "en": "sharing-a-device-for-ganti-oli",
-    "ar": "ganti-oli-5",
-    "jv": "pandhuan-ganti-oli-garagego-5",
-    "su": "pituduh-ganti-oli-garagego-5",
-    "zh": "garagego-ganti-oli-实用指南-5",
-    "ja": "garagegoganti-oli-ガイド-5"
+    "id": "ganti-oli-untuk-satu-rumah",
+    "en": "ganti-oli-for-the-whole-household",
+    "ar": "alsjlat-alywmya-lkl-afrad-almnzl",
+    "jv": "ganti-oli-kanggo-sakulawarga",
+    "su": "ganti-oli-pikeun-sakulawarga",
+    "zh": "quan-jia-yi-qi-yong-de-ri-chang-ji-lu",
+    "ja": "kazoku-minnade-tsukau-mainichi-no-kiroku"
   },
   "titles": {
-    "id": "ganti oli: panduan praktis di GarageGo",
-    "en": "Sharing a Device for ganti oli",
-    "ar": "ganti oli — دليل GarageGo",
-    "jv": "Pandhuan: ganti oli: panduan praktis di GarageGo",
-    "su": "Pituduh: ganti oli: panduan praktis di GarageGo",
-    "zh": "GarageGo · ganti oli 实用指南",
-    "ja": "GarageGo｜ganti oli ガイド"
+    "id": "ganti oli untuk satu rumah",
+    "en": "ganti oli for the whole household",
+    "ar": "السجلات اليومية لكل أفراد المنزل",
+    "jv": "ganti oli kanggo sakulawarga",
+    "su": "ganti oli pikeun sakulawarga",
+    "zh": "全家一起用的日常记录",
+    "ja": "家族みんなで使う毎日の記録"
   },
-  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+  "quality_pass": "editorial-v3",
+  "descriptions": {
+    "id": "ganti oli untuk seluruh anggota rumah tangga: tinjauan mingguan bersama, data yang tersimpan di perangkat, dan cara melanjutkan setelah ada jeda.",
+    "en": "ganti oli for the whole household: a shared weekly check, data kept on your device, and how to pick things back up after everyone has had a break.",
+    "ar": "ganti oli لأفراد الأسرة كلها: مراجعة أسبوعية مشتركة، وبيانات محفوظة على جهازك، وطريقة استئناف العمل بعد استراحة الجميع.",
+    "ja": "家族全員で使うganti oli。毎週の確認を共有し、端末にデータを残し、休止後に再開する方法。",
+    "zh": "全家人一起用的ganti oli：共享的每周检查，数据保存在设备上，以及大家休息后如何重新接上。",
+    "jv": "ganti oli kanggo kabeh anggota kulawarga: tinjauan saben minggu bareng, data kasimpen ing piranti, lan carane nerusaké sawisé kabeh wis istirahat.",
+    "su": "ganti oli pikeun sakabéh anggota kulawarga: tinjauan mingguan bareng, data disimpen di alat, jeung kumaha neruskeun sanggeus sakabéh istirahat."
+  }
 }

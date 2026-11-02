@@ -5,6 +5,7 @@ import '../../core/constants/app_colors.dart';
 import '../../core/models/vehicle.dart';
 import '../../core/providers/app_providers.dart';
 import '../../core/ui/press_scale.dart';
+import '../../core/constants/units.dart';
 
 class InspectionSheet extends ConsumerStatefulWidget {
   final Vehicle vehicle;
@@ -25,7 +26,7 @@ class _InspectionSheetState extends ConsumerState<InspectionSheet> {
   @override
   void initState() {
     super.initState();
-    _items = InspectionChecklist.generateDefaultItems(widget.vehicle.type);
+    _items = const <InspectionItem>[];
     _notesController = TextEditingController();
     _titleController = TextEditingController();
   }
@@ -34,14 +35,14 @@ class _InspectionSheetState extends ConsumerState<InspectionSheet> {
   void didChangeDependencies() {
     super.didChangeDependencies();
     if (!_initialized) {
-      final isId = Localizations.localeOf(context).languageCode == 'id';
-      _items = InspectionChecklist.generateDefaultItems(widget.vehicle.type, isEnglish: !isId);
-      final typeLabel = widget.vehicle.type == VehicleType.car
-          ? (isId ? 'Mobil' : 'Car')
-          : (isId ? 'Motor' : 'Motorcycle');
-      _titleController.text = isId
-          ? 'Inspeksi Pra-Perjalanan ($typeLabel)'
-          : 'Pre-Trip Inspection ($typeLabel)';
+      final l10n = AppLocalizations.of(context)!;
+      _items = InspectionChecklist.generateDefaultItems(
+        widget.vehicle.type,
+        l10n,
+      );
+      _titleController.text = l10n.inspPreTripTitle(
+        widget.vehicle.type.getLocalizedLabel(context),
+      );
       _initialized = true;
     }
   }
@@ -58,6 +59,8 @@ class _InspectionSheetState extends ConsumerState<InspectionSheet> {
     final passedCount = _items.where((i) => i.isChecked).length;
     final totalCount = _items.length;
     final percentage = totalCount > 0 ? (passedCount / totalCount) : 0.0;
+    final pct = (percentage * 100).toStringAsFixed(0);
+    final pctLabel = '$pct$kPercentSign';
     final l10n = AppLocalizations.of(context)!;
 
     return Container(
@@ -114,13 +117,11 @@ class _InspectionSheetState extends ConsumerState<InspectionSheet> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      Localizations.localeOf(context).languageCode == 'id'
-                          ? 'Kelayakan: $passedCount dari $totalCount Poin Lolos'
-                          : 'Roadworthiness: $passedCount of $totalCount Points Passed',
+                      l10n.inspRoadworthiness('$passedCount', '$totalCount'),
                       style: TextStyle(fontSize: 13, fontWeight: FontWeight.w700, color: context.textPrimary),
                     ),
                     Text(
-                      '${(percentage * 100).toStringAsFixed(0)}%',
+                      pctLabel,
                       style: TextStyle(
                         fontSize: 14,
                         fontWeight: FontWeight.w900,

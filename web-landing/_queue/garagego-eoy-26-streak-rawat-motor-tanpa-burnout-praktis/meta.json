@@ -8,22 +8,31 @@
   "banner_ready": false,
   "seo": true,
   "slugs": {
-    "id": "streak-rawat-motor-tanpa-burnout-praktis",
-    "en": "rawat-motor-streaks-without-burnout-practical",
-    "ar": "rawat-motor-3",
-    "jv": "pandhuan-rawat-motor-garagego-3",
-    "su": "pituduh-rawat-motor-garagego-3",
-    "zh": "garagego-rawat-motor-实用指南-3",
-    "ja": "garagegorawat-motor-ガイド-3"
+    "id": "membangun-kebiasaan-rawat-motor-tanpa-burnout",
+    "en": "build-a-rawat-motor-habit-without-burnout",
+    "ar": "alahtfaz-balsjlat-alywmya-hyn-tdaf-alhmasa",
+    "jv": "mbangun-kebiasan-rawat-motor-tanpa-kesel",
+    "su": "ngawangun-kabiasaan-rawat-motor-tanpa-kacape",
+    "zh": "re-qing-xia-jiang-shi-ru-he-shou-zhu-ri-chang-ji-lu",
+    "ja": "yaru-kiga-saga-tta-nichi-no-mainichi-no-kiroku"
   },
   "titles": {
-    "id": "Streak rawat motor tanpa Burnout",
-    "en": "rawat motor Streaks Without Burnout (Practical)",
-    "ar": "rawat motor — دليل GarageGo",
-    "jv": "Pandhuan: Streak rawat motor tanpa Burnout",
-    "su": "Pituduh: Streak rawat motor tanpa Burnout",
-    "zh": "GarageGo · rawat motor 实用指南",
-    "ja": "GarageGo｜rawat motor ガイド"
+    "id": "Membangun kebiasaan rawat motor tanpa burnout",
+    "en": "Build a rawat motor habit without burnout",
+    "ar": "الاحتفاظ بـالسجلات اليومية حين تضعف الحماسة",
+    "jv": "Mbangun kebiasan rawat motor tanpa kesel",
+    "su": "Ngawangun kabiasaan rawat motor tanpa kacapé",
+    "zh": "热情下降时如何守住日常记录",
+    "ja": "やる気が下がった日の毎日の記録"
   },
-  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+  "quality_pass": "editorial-v3",
+  "descriptions": {
+    "id": "Membangun kebiasaan rawat motor tanpa burnout: penyebab kebiasaan putus, versi paling kecil yang ringan, dan cara melanjutkan setelah jeda.",
+    "en": "Build a rawat motor habit without burnout by starting small: the common reasons it breaks, a light smallest version, and how to continue after a pause.",
+    "ar": "بناء عادة rawat motor دون إنهاك بالبدء الخفيف: الأسباب الشائعة للانقطاع، وأصغر نسخة خفيفة، وكيف تستمر بعد توقف.",
+    "ja": "rawat motorの習慣を無理なく続けるため。途切れる理由、軽い最小バージョン、中断後の続け方を紹介。",
+    "zh": "无倦怠地建立rawat motor习惯：常见的中断原因、轻量的最小版本，以及暂停后如何继续。",
+    "jv": "Mbangun kebiasan rawat motor tanpa kesel: sebab kebiasan kepethuk, versi paling cilik sing entheng, lan carane nerusaké sawisé mandheg sedhela.",
+    "su": "Ngawangun kabiasaan rawat motor tanpa burnout: sabab kabiasaan putus, versi pang leutikna nu enteng, jeung kumaha neruskeun sanggeus eureun sakedap."
+  }
 }

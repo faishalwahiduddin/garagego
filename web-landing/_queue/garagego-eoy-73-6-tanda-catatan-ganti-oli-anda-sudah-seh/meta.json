@@ -8,22 +8,31 @@
   "banner_ready": false,
   "seo": true,
   "slugs": {
-    "id": "6-tanda-catatan-ganti-oli-anda-sudah-sehat",
-    "en": "6-signs-your-ganti-oli-log-is-healthy",
-    "ar": "ganti-oli-8",
-    "jv": "pandhuan-ganti-oli-garagego-8",
-    "su": "pituduh-ganti-oli-garagego-8",
-    "zh": "garagego-ganti-oli-实用指南-8",
-    "ja": "garagegoganti-oli-ガイド-8"
+    "id": "ganti-oli-daftar-pilihan-yang-masuk-akal",
+    "en": "ganti-oli-a-shortlist-that-makes-sense",
+    "ar": "alsjlat-alywmya-khyarat-qlyla-mntqya-aljz-3",
+    "jv": "ganti-oli-pilihan-sing-cukup-masuk-akal",
+    "su": "ganti-oli-pilihan-anu-asup-akal",
+    "zh": "ri-chang-ji-lu-zhi-de-kao-lv-de-ji-zhong-xuan-ze-di-3-pian",
+    "ja": "mainichi-no-kiroku-nattoku-dekiru-sentakushi-dai-3-kai"
   },
   "titles": {
-    "id": "6 Tanda Catatan ganti oli Anda Sudah Sehat",
-    "en": "6 Signs Your ganti oli Log Is Healthy",
-    "ar": "ganti oli — دليل GarageGo",
-    "jv": "Pandhuan: 6 Tanda Catatan ganti oli Anda Sudah Sehat",
-    "su": "Pituduh: 6 Tanda Catatan ganti oli Anda Sudah Sehat",
-    "zh": "GarageGo · ganti oli 实用指南",
-    "ja": "GarageGo｜ganti oli ガイド"
+    "id": "ganti oli: daftar pilihan yang masuk akal",
+    "en": "ganti oli: a shortlist that makes sense",
+    "ar": "السجلات اليومية: خيارات قليلة منطقية · الجزء 3",
+    "jv": "ganti oli: pilihan sing cukup masuk akal",
+    "su": "ganti oli: pilihan anu asup akal",
+    "zh": "日常记录：值得考虑的几种选择 · 第3篇",
+    "ja": "毎日の記録：納得できる選択肢 · 第3回"
   },
-  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+  "quality_pass": "editorial-v3",
+  "descriptions": {
+    "id": "ganti oli: daftar pendek yang masuk akal untuk dipilih. Berisi versi paling kecil, waktu menjalankannya, dan tinjauan mingguan.",
+    "en": "ganti oli: a shortlist that makes sense to pick from. Includes the smallest version, the right time to run it, and a weekly check to keep it going.",
+    "ar": "ganti oli: قائمة مختصرة منطقية للاختيار منها. تشمل أصغر نسخة، والوقت المناسب للتشغيل، ومراجعة أسبوعية تحفظ الاستمرار.",
+    "ja": "ganti oliを選ぶための短いリスト。最小バージョン、実行に適した時期、毎週の確認を紹介します。",
+    "zh": "帮你挑选ganti oli的简短清单：最小版本、适合的执行时机，以及帮助持续的每周检查。",
+    "jv": "ganti oli: dhaftar cendhak sing masuk akal kanggo dipilih. Isiné versi paling cilik, wektu mlaku, lan tinjauan saben minggu supaya tetep kejaga.",
+    "su": "ganti oli: daptar pondok nu masuk akal pikeun dipilih. Eusina versi pang leutikna, waktu ngajalankeunana, jeung tinjauan mingguan supaya tetep kajaga."
+  }
 }

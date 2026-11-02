@@ -1,6 +1,22 @@
 import 'package:flutter/widgets.dart';
 
+import '../../l10n/app_localizations.dart';
 import '../utils/app_timezone.dart';
+
+/// Default values written into stored records (data, not UI copy). They are
+/// stable keys the filters compare against, so they never follow the locale.
+const kDefaultServiceCategory = 'Servis Rutin';
+const kDemoCarName = 'Toyota Innova Zenix';
+const kDemoCarPlate = 'B 1234 ABC';
+const kDemoCarInsurer = 'Garda Oto Total Loss / All Risk';
+const kDemoCarPolicy = 'POL-ID-2023-778';
+const kDemoMotoName = 'Honda Vario 160';
+const kDemoMotoPlate = 'B 5678 XYZ';
+const kDemoMotoInsurer = 'Asuransi Astra Motor TLO';
+const kDemoMotoPolicy = 'POL-MT-2022-311';
+const kOilChangeServiceCategory = 'Ganti Oli';
+const kDefaultMaintenanceCategory = 'Perawatan Berkala';
+const kDefaultFuelType = 'Pertamax (RON 92)';
 
 /// Storage contract (§TZ): every stored instant is UTC (`Z` string), every
 /// instant a human reads is shown in the SELECTED zone (Settings manual zone,
@@ -23,75 +39,74 @@ String? _encodeDateOpt(DateTime? instant) =>
     instant == null ? null : AppTimeZone.encodeForPrefs(instant);
 
 enum VehicleType {
-  car('Mobil', 'Roda Empat'),
-  motorcycle('Motor', 'Roda Dua');
+  car,
+  motorcycle;
 
-  final String label;
-  final String sublabel;
-  const VehicleType(this.label, this.sublabel);
+  const VehicleType();
 
+  /// Localized vehicle type name; the copy lives in the ARB files.
   String getLocalizedLabel(BuildContext context) {
-    final isId = Localizations.localeOf(context).languageCode == 'id';
+    final l10n = AppLocalizations.of(context)!;
     switch (this) {
       case VehicleType.car:
-        return isId ? 'Mobil' : 'Car';
+        return l10n.car;
       case VehicleType.motorcycle:
-        return isId ? 'Motor' : 'Motorcycle';
+        return l10n.motorcycle;
     }
   }
 }
 
 enum ScheduleUrgency {
-  safe('Aman', 0xFF10B981),
-  dueSoon('Segera', 0xFFF59E0B),
-  overdue('Terlewat', 0xFFEF4444);
+  safe(0xFF10B981),
+  dueSoon(0xFFF59E0B),
+  overdue(0xFFEF4444);
 
-  final String label;
   final int colorValue;
-  const ScheduleUrgency(this.label, this.colorValue);
+  const ScheduleUrgency(this.colorValue);
 
+  /// Localized urgency label; the copy lives in the ARB files.
   String getLocalizedLabel(BuildContext context) {
-    final isId = Localizations.localeOf(context).languageCode == 'id';
+    final l10n = AppLocalizations.of(context)!;
     switch (this) {
       case ScheduleUrgency.safe:
-        return isId ? 'Aman' : 'Safe';
+        return l10n.urgencySafe;
       case ScheduleUrgency.dueSoon:
-        return isId ? 'Segera' : 'Due Soon';
+        return l10n.urgencyDueSoon;
       case ScheduleUrgency.overdue:
-        return isId ? 'Terlewat' : 'Overdue';
+        return l10n.urgencyOverdue;
     }
   }
 }
 
 enum DocumentType {
-  stnkTahunan('Pajak PKB Tahunan'),
-  stnkLimaTahunan('Ganti Pelat & STNK 5 Th'),
-  asuransi('Asuransi Kendaraan'),
-  ujiEmisi('Uji Emisi / KIR'),
-  sim('SIM Pengemudi'),
-  bpkb('BPKB Kendaraan'),
-  lainnya('Dokumen Lainnya');
+  stnkTahunan,
+  stnkLimaTahunan,
+  asuransi,
+  ujiEmisi,
+  sim,
+  bpkb,
+  lainnya;
 
-  final String label;
-  const DocumentType(this.label);
+  const DocumentType();
 
+  /// Localized document type name; the copy lives in the ARB files.
   String getLocalizedLabel(BuildContext context) {
-    final isId = Localizations.localeOf(context).languageCode == 'id';
+    final l10n = AppLocalizations.of(context)!;
     switch (this) {
       case DocumentType.stnkTahunan:
-        return isId ? 'Pajak PKB Tahunan' : 'Annual Vehicle Tax';
+        return l10n.docTypeTax;
       case DocumentType.stnkLimaTahunan:
-        return isId ? 'Ganti Pelat & STNK 5 Th' : '5-Year Plate & Registration';
+        return l10n.docTypePlate;
       case DocumentType.asuransi:
-        return isId ? 'Asuransi Kendaraan' : 'Vehicle Insurance';
+        return l10n.docTypeInsurance;
       case DocumentType.ujiEmisi:
-        return isId ? 'Uji Emisi / KIR' : 'Emissions Test / Inspection';
+        return l10n.docTypeEmissions;
       case DocumentType.sim:
-        return isId ? 'SIM Pengemudi' : "Driver's License";
+        return l10n.docTypeLicense;
       case DocumentType.bpkb:
-        return isId ? 'BPKB Kendaraan' : 'Vehicle Title (BPKB)';
+        return l10n.docTypeTitle;
       case DocumentType.lainnya:
-        return isId ? 'Dokumen Lainnya' : 'Other Document';
+        return l10n.docTypeOther;
     }
   }
 }
@@ -131,9 +146,9 @@ class Vehicle {
 
   factory Vehicle.sampleCar() => Vehicle(
         id: 'sample-car-1',
-        name: 'Toyota Innova Zenix',
+        name: kDemoCarName,
         type: VehicleType.car,
-        plateNumber: 'B 1234 ABC',
+        plateNumber: kDemoCarPlate,
         currentOdometer: 24500,
         manufactureYear: 2023,
         taxDueDate: DateTime.now().add(const Duration(days: 75)),
@@ -141,16 +156,16 @@ class Vehicle {
         oilIntervalKm: 5000,
         lastOilOdometer: 20000,
         estimatedAnnualTax: 5200000,
-        insuranceProvider: 'Garda Oto Total Loss / All Risk',
-        insurancePolicyNumber: 'POL-ID-2023-778',
+        insuranceProvider: kDemoCarInsurer,
+        insurancePolicyNumber: kDemoCarPolicy,
         insuranceExpiryDate: DateTime.now().add(const Duration(days: 190)),
       );
 
   factory Vehicle.sampleMotorcycle() => Vehicle(
         id: 'sample-moto-1',
-        name: 'Honda Vario 160',
+        name: kDemoMotoName,
         type: VehicleType.motorcycle,
-        plateNumber: 'B 5678 XYZ',
+        plateNumber: kDemoMotoPlate,
         currentOdometer: 14200,
         manufactureYear: 2022,
         taxDueDate: DateTime.now().add(const Duration(days: 30)),
@@ -158,8 +173,8 @@ class Vehicle {
         oilIntervalKm: 2500,
         lastOilOdometer: 12500,
         estimatedAnnualTax: 450000,
-        insuranceProvider: 'Asuransi Astra Motor TLO',
-        insurancePolicyNumber: 'POL-MT-2022-311',
+        insuranceProvider: kDemoMotoInsurer,
+        insurancePolicyNumber: kDemoMotoPolicy,
         insuranceExpiryDate: DateTime.now().add(const Duration(days: 120)),
       );
 
@@ -275,7 +290,7 @@ class ServiceLog {
     this.notes = '',
     this.isOilChange = false,
     this.workshop = '',
-    this.category = 'Servis Rutin',
+    this.category = kDefaultServiceCategory,
   });
 
   Map<String, dynamic> toJson() => {
@@ -301,7 +316,10 @@ class ServiceLog {
         notes: json['notes'] as String? ?? '',
         isOilChange: json['isOilChange'] as bool? ?? false,
         workshop: json['workshop'] as String? ?? '',
-        category: json['category'] as String? ?? (json['isOilChange'] == true ? 'Ganti Oli' : 'Servis Rutin'),
+        category: json['category'] as String? ??
+            (json['isOilChange'] == true
+                ? kOilChangeServiceCategory
+                : kDefaultServiceCategory),
       );
 }
 
@@ -324,7 +342,7 @@ class FuelLog {
     required this.liters,
     required this.pricePerLiter,
     this.isFullTank = true,
-    this.fuelType = 'Pertamax (RON 92)',
+    this.fuelType = kDefaultFuelType,
     this.gasStation = '',
   });
 
@@ -350,7 +368,7 @@ class FuelLog {
         liters: (json['liters'] as num).toDouble(),
         pricePerLiter: (json['pricePerLiter'] as num).toDouble(),
         isFullTank: json['isFullTank'] as bool? ?? true,
-        fuelType: json['fuelType'] as String? ?? 'Pertamax (RON 92)',
+        fuelType: json['fuelType'] as String? ?? kDefaultFuelType,
         gasStation: json['gasStation'] as String? ?? '',
       );
 }
@@ -442,7 +460,7 @@ class MaintenanceSchedule {
         id: json['id'] as String,
         vehicleId: json['vehicleId'] as String,
         title: json['title'] as String,
-        category: json['category'] as String? ?? 'Perawatan Berkala',
+        category: json['category'] as String? ?? kDefaultMaintenanceCategory,
         intervalKm: (json['intervalKm'] as num).toInt(),
         intervalMonths: (json['intervalMonths'] as num).toInt(),
         lastPerformedOdometer: (json['lastPerformedOdometer'] as num).toInt(),
@@ -450,15 +468,18 @@ class MaintenanceSchedule {
         isPreset: json['isPreset'] as bool? ?? false,
       );
 
-  static List<MaintenanceSchedule> defaultPresetsFor(Vehicle v, {bool isEnglish = false}) {
+  static List<MaintenanceSchedule> defaultPresetsFor(
+    Vehicle v,
+    AppLocalizations l10n,
+  ) {
     final now = DateTime.now();
     if (v.type == VehicleType.car) {
       return [
         MaintenanceSchedule(
           id: 'preset_${v.id}_oil',
           vehicleId: v.id,
-          title: isEnglish ? 'Synthetic Engine Oil Change' : 'Ganti Oli Mesin Sintetik',
-          category: isEnglish ? 'Oil & Fluids' : 'Oli & Pelumas',
+          title: l10n.mtPresetCarOil,
+          category: l10n.mtCatOilFluids,
           intervalKm: 5000,
           intervalMonths: 6,
           lastPerformedOdometer: v.lastOilOdometer,
@@ -468,8 +489,8 @@ class MaintenanceSchedule {
         MaintenanceSchedule(
           id: 'preset_${v.id}_filter_oil',
           vehicleId: v.id,
-          title: isEnglish ? 'Engine Oil Filter Replacement' : 'Ganti Filter Oli Mesin',
-          category: isEnglish ? 'Oil & Filter' : 'Oli & Filter',
+          title: l10n.mtPresetCarOilFilter,
+          category: l10n.mtCatOilFilter,
           intervalKm: 10000,
           intervalMonths: 12,
           lastPerformedOdometer: (v.lastOilOdometer > 10000 ? v.lastOilOdometer - 10000 : 0),
@@ -479,8 +500,8 @@ class MaintenanceSchedule {
         MaintenanceSchedule(
           id: 'preset_${v.id}_filter_air',
           vehicleId: v.id,
-          title: isEnglish ? 'Air Filter & Cabin AC Filter' : 'Filter Udara & AC Kabin',
-          category: isEnglish ? 'Filters' : 'Filter & Udara',
+          title: l10n.mtPresetCarAirFilter,
+          category: l10n.mtCatAirFilter,
           intervalKm: 10000,
           intervalMonths: 12,
           lastPerformedOdometer: (v.currentOdometer > 8000 ? v.currentOdometer - 8000 : 0),
@@ -490,8 +511,8 @@ class MaintenanceSchedule {
         MaintenanceSchedule(
           id: 'preset_${v.id}_brake_fluid',
           vehicleId: v.id,
-          title: isEnglish ? 'Brake Fluid Flush & Brake Pads' : 'Kuras Minyak Rem & Kampas',
-          category: isEnglish ? 'Brakes' : 'Pengereman',
+          title: l10n.mtPresetCarBrakeFluid,
+          category: l10n.mtCatBrakes,
           intervalKm: 20000,
           intervalMonths: 24,
           lastPerformedOdometer: 10000,
@@ -501,8 +522,8 @@ class MaintenanceSchedule {
         MaintenanceSchedule(
           id: 'preset_${v.id}_tire_rotation',
           vehicleId: v.id,
-          title: isEnglish ? 'Tire Rotation & Wheel Alignment' : 'Rotasi Ban & Spooring Balancing',
-          category: isEnglish ? 'Tires & Wheels' : 'Ban & Suspensi',
+          title: l10n.mtPresetCarTireRotation,
+          category: l10n.mtCatTires,
           intervalKm: 10000,
           intervalMonths: 6,
           lastPerformedOdometer: 15000,
@@ -512,8 +533,8 @@ class MaintenanceSchedule {
         MaintenanceSchedule(
           id: 'preset_${v.id}_spark_plugs',
           vehicleId: v.id,
-          title: isEnglish ? 'Iridium Spark Plugs' : 'Ganti Busi Iridium',
-          category: isEnglish ? 'Ignition' : 'Pengapian',
+          title: l10n.mtPresetCarSparkPlugs,
+          category: l10n.mtCatIgnition,
           intervalKm: 40000,
           intervalMonths: 36,
           lastPerformedOdometer: 0,
@@ -526,8 +547,8 @@ class MaintenanceSchedule {
         MaintenanceSchedule(
           id: 'preset_${v.id}_moto_oil',
           vehicleId: v.id,
-          title: isEnglish ? 'Motorcycle Engine Oil Change' : 'Ganti Oli Mesin Matic/Manual',
-          category: isEnglish ? 'Oil & Fluids' : 'Oli & Pelumas',
+          title: l10n.mtPresetMotoOil,
+          category: l10n.mtCatOilFluids,
           intervalKm: 2500,
           intervalMonths: 3,
           lastPerformedOdometer: v.lastOilOdometer,
@@ -537,8 +558,8 @@ class MaintenanceSchedule {
         MaintenanceSchedule(
           id: 'preset_${v.id}_gear_oil',
           vehicleId: v.id,
-          title: isEnglish ? 'Final Drive Gear Oil' : 'Ganti Oli Gardan (Gear Oil)',
-          category: isEnglish ? 'Transmission' : 'Oli & Transmisi',
+          title: l10n.mtPresetMotoGearOil,
+          category: l10n.mtCatTransmission,
           intervalKm: 6000,
           intervalMonths: 6,
           lastPerformedOdometer: 10000,
@@ -548,8 +569,8 @@ class MaintenanceSchedule {
         MaintenanceSchedule(
           id: 'preset_${v.id}_vbelt',
           vehicleId: v.id,
-          title: isEnglish ? 'CVT Service, V-Belt & Rollers' : 'Servis CVT, V-Belt & Roller',
-          category: isEnglish ? 'Transmission' : 'Transmisi CVT',
+          title: l10n.mtPresetMotoCvt,
+          category: l10n.mtCatCvt,
           intervalKm: 20000,
           intervalMonths: 24,
           lastPerformedOdometer: 0,
@@ -559,8 +580,8 @@ class MaintenanceSchedule {
         MaintenanceSchedule(
           id: 'preset_${v.id}_moto_brakes',
           vehicleId: v.id,
-          title: isEnglish ? 'Front & Rear Brake Pads Inspection' : 'Cek & Ganti Kampas Rem',
-          category: isEnglish ? 'Brakes' : 'Pengereman',
+          title: l10n.mtPresetMotoBrakes,
+          category: l10n.mtCatBrakes,
           intervalKm: 10000,
           intervalMonths: 12,
           lastPerformedOdometer: 8000,
@@ -570,8 +591,8 @@ class MaintenanceSchedule {
         MaintenanceSchedule(
           id: 'preset_${v.id}_moto_spark',
           vehicleId: v.id,
-          title: isEnglish ? 'Motorcycle Spark Plug' : 'Ganti Busi Motor',
-          category: isEnglish ? 'Ignition' : 'Pengapian',
+          title: l10n.mtPresetMotoSparkPlug,
+          category: l10n.mtCatIgnition,
           intervalKm: 8000,
           intervalMonths: 10,
           lastPerformedOdometer: 8000,
@@ -638,38 +659,43 @@ class VehicleDocument {
         notes: json['notes'] as String? ?? '',
       );
 
-  static List<VehicleDocument> defaultDocumentsFor(Vehicle v) {
+  static List<VehicleDocument> defaultDocumentsFor(
+    Vehicle v,
+    AppLocalizations l10n,
+  ) {
     return [
       VehicleDocument(
         id: 'doc_${v.id}_tax',
         vehicleId: v.id,
-        title: 'Pajak PKB Tahunan STNK',
+        title: l10n.docTypeTax,
         type: DocumentType.stnkTahunan,
         documentNumber: v.plateNumber,
         expiryDate: v.taxDueDate,
         cost: v.estimatedAnnualTax,
-        notes: 'Bayar via Samsat Digital Nasional (SIGNAL) atau Samsat terdekat',
+        notes: l10n.docNoteTax,
       ),
       VehicleDocument(
         id: 'doc_${v.id}_plate',
         vehicleId: v.id,
-        title: 'Perpanjangan Pelat & STNK 5 Tahunan',
+        title: l10n.docTypePlate,
         type: DocumentType.stnkLimaTahunan,
         documentNumber: v.plateNumber,
         expiryDate: v.plateDueDate ?? v.taxDueDate.add(const Duration(days: 365 * 3)),
         cost: v.estimatedAnnualTax + 350000,
-        notes: 'Wajib cek fisik kendaraan langsung di Samsat Induk',
+        notes: l10n.docNotePlate,
       ),
       if (v.insuranceExpiryDate != null)
         VehicleDocument(
           id: 'doc_${v.id}_ins',
           vehicleId: v.id,
-          title: v.insuranceProvider.isNotEmpty ? v.insuranceProvider : 'Asuransi Kendaraan',
+          title: v.insuranceProvider.isNotEmpty
+              ? v.insuranceProvider
+              : l10n.docTypeInsurance,
           type: DocumentType.asuransi,
           documentNumber: v.insurancePolicyNumber,
           expiryDate: v.insuranceExpiryDate!,
           cost: 3200000,
-          notes: 'Nomor klaim darurat atau towing tersedia di polis',
+          notes: l10n.docNoteInsurance,
         ),
     ];
   }
@@ -754,61 +780,64 @@ class InspectionChecklist {
         inspectorNotes: json['inspectorNotes'] as String? ?? '',
       );
 
-  static List<InspectionItem> generateDefaultItems(VehicleType type, {bool isEnglish = false}) {
+  static List<InspectionItem> generateDefaultItems(
+    VehicleType type,
+    AppLocalizations l10n,
+  ) {
     if (type == VehicleType.car) {
       return [
         InspectionItem(
           id: 'i1',
-          label: isEnglish ? 'Dipstick Level & Engine Oil Clarity' : 'Dipstick Level & Kejernihan Oli Mesin',
-          category: isEnglish ? 'Engine & Fluids' : 'Mesin & Cairan',
+          label: l10n.inspCar1,
+          category: l10n.inspCatEngine,
           isChecked: true,
         ),
         InspectionItem(
           id: 'i2',
-          label: isEnglish ? 'Radiator Coolant Reservoir Level' : 'Level Air Reservoir Radiator Coolant',
-          category: isEnglish ? 'Engine & Fluids' : 'Mesin & Cairan',
+          label: l10n.inspCar2,
+          category: l10n.inspCatEngine,
           isChecked: true,
         ),
         InspectionItem(
           id: 'i3',
-          label: isEnglish ? 'Brake & Clutch / Power Steering Fluid Level' : 'Level Minyak Rem & Minyak Kopling/Power Steering',
-          category: isEnglish ? 'Engine & Fluids' : 'Mesin & Cairan',
+          label: l10n.inspCar3,
+          category: l10n.inspCatEngine,
           isChecked: true,
         ),
         InspectionItem(
           id: 'i4',
-          label: isEnglish ? 'Tire Pressure & Tread Depth (4 Tires + Spare)' : 'Tekanan Udara & Alur Ketebalan 4 Ban + Ban Serep',
-          category: isEnglish ? 'Wheels & Brakes' : 'Roda & Pengereman',
+          label: l10n.inspCar4,
+          category: l10n.inspCatWheelsBrakes,
           isChecked: true,
         ),
         InspectionItem(
           id: 'i5',
-          label: isEnglish ? 'Brake Pads Condition & Handbrake Grip' : 'Kondisi Kampas Rem & Daya Cengkeram Rem Tangan',
-          category: isEnglish ? 'Wheels & Brakes' : 'Roda & Pengereman',
+          label: l10n.inspCar5,
+          category: l10n.inspCatWheelsBrakes,
           isChecked: true,
         ),
         InspectionItem(
           id: 'i6',
-          label: isEnglish ? 'Headlights, Brake Lights, Turn Signals & Hazard' : 'Lampu Utama, Lampu Rem, Sein & Lampu Hazard',
-          category: isEnglish ? 'Lights & Electrical' : 'Lampu & Kelistrikan',
+          label: l10n.inspCar6,
+          category: l10n.inspCatLights,
           isChecked: true,
         ),
         InspectionItem(
           id: 'i7',
-          label: isEnglish ? 'Battery Terminals & 12V Voltage Indicator' : 'Kondisi Terminal & Tegangan Indikator Aki (12V)',
-          category: isEnglish ? 'Lights & Electrical' : 'Lampu & Kelistrikan',
+          label: l10n.inspCar7,
+          category: l10n.inspCatLights,
           isChecked: true,
         ),
         InspectionItem(
           id: 'i8',
-          label: isEnglish ? 'Windshield Wipers & Washer Fluid Level' : 'Karet Wiper & Air Tabung Washer Kaca Depan',
-          category: isEnglish ? 'Safety' : 'Keselamatan',
+          label: l10n.inspCar8,
+          category: l10n.inspCatSafety,
           isChecked: true,
         ),
         InspectionItem(
           id: 'i9',
-          label: isEnglish ? 'Jack, Lug Wrench, Warning Triangle & First Aid Kit' : 'Dongkrak, Kunci Roda, Segitiga Pengaman & Kotak P3K',
-          category: isEnglish ? 'Safety' : 'Keselamatan',
+          label: l10n.inspCar9,
+          category: l10n.inspCatSafety,
           isChecked: true,
         ),
       ];
@@ -816,44 +845,44 @@ class InspectionChecklist {
       return [
         InspectionItem(
           id: 'm1',
-          label: isEnglish ? 'Engine Oil Level & Condition' : 'Ketinggian & Kualitas Oli Mesin',
-          category: isEnglish ? 'Engine & Fluids' : 'Mesin & Pelumas',
+          label: l10n.inspMoto1,
+          category: l10n.inspCatEngine,
           isChecked: true,
         ),
         InspectionItem(
           id: 'm2',
-          label: isEnglish ? 'Final Drive Oil / Drive Chain Slack' : 'Kondisi Oli Gardan / Ketegangan Rantai Roda',
-          category: isEnglish ? 'Drivetrain' : 'Transmisi & Penggerak',
+          label: l10n.inspMoto2,
+          category: l10n.inspCatDrivetrain,
           isChecked: true,
         ),
         InspectionItem(
           id: 'm3',
-          label: isEnglish ? 'Front & Rear Tire Pressures' : 'Tekanan Angin Ban Depan & Belakang',
-          category: isEnglish ? 'Wheels & Steering' : 'Roda & Kemudi',
+          label: l10n.inspMoto3,
+          category: l10n.inspCatWheelsSteering,
           isChecked: true,
         ),
         InspectionItem(
           id: 'm4',
-          label: isEnglish ? 'Front & Rear Brake Pads Thickness' : 'Ketebalan Kampas Rem Depan & Belakang',
-          category: isEnglish ? 'Brakes' : 'Pengereman',
+          label: l10n.inspMoto4,
+          category: l10n.inspCatBrakes,
           isChecked: true,
         ),
         InspectionItem(
           id: 'm5',
-          label: isEnglish ? 'Headlight, Taillight & Turn Signals' : 'Lampu Depan, Lampu Belakang & Lampu Sein',
-          category: isEnglish ? 'Electrical' : 'Kelistrikan',
+          label: l10n.inspMoto5,
+          category: l10n.inspCatElectrical,
           isChecked: true,
         ),
         InspectionItem(
           id: 'm6',
-          label: isEnglish ? 'Horn & Electric Starter Operation' : 'Fungsi Klakson & Starter Elektrik (Kondisi Aki)',
-          category: isEnglish ? 'Electrical' : 'Kelistrikan',
+          label: l10n.inspMoto6,
+          category: l10n.inspCatElectrical,
           isChecked: true,
         ),
         InspectionItem(
           id: 'm7',
-          label: isEnglish ? 'Rearview Mirrors & Toolkit' : 'Spion Kanan & Kiri serta Kunci Kelengkapan',
-          category: isEnglish ? 'Equipment' : 'Kelengkapan',
+          label: l10n.inspMoto7,
+          category: l10n.inspCatEquipment,
           isChecked: true,
         ),
       ];

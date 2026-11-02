@@ -8,22 +8,31 @@
   "banner_ready": false,
   "seo": true,
   "slugs": {
-    "id": "jadwal-terbaik-dalam-sehari-untuk-rawat-motor-mingguan",
-    "en": "best-time-of-day-for-rawat-motor",
-    "ar": "rawat-motor-5",
-    "jv": "pandhuan-rawat-motor-garagego-5",
-    "su": "pituduh-rawat-motor-garagego-5",
-    "zh": "garagego-rawat-motor-实用指南-5",
-    "ja": "garagegorawat-motor-ガイド-5"
+    "id": "rawat-motor-saat-waktu-cuma-sedikit",
+    "en": "rawat-motor-when-you-barely-have-time",
+    "ar": "alsjlat-alywmya-hyn-la-ybqa-wqt-aljz-3",
+    "jv": "rawat-motor-nalika-wektune-mung-sithik",
+    "su": "rawat-motor-nalika-waktu-ukur-saeutik",
+    "zh": "shi-jian-hen-shao-shi-zen-me-zuo-ri-chang-ji-lu-di-3-pian",
+    "ja": "jikan-gahotondonai-nichi-no-mainichi-no-kiroku-dai-3-kai"
   },
   "titles": {
-    "id": "Jadwal Terbaik dalam Sehari untuk rawat motor",
-    "en": "Best Time of Day for rawat motor — Offline First",
-    "ar": "rawat motor — دليل GarageGo",
-    "jv": "Pandhuan: Jadwal Terbaik dalam Sehari untuk rawat motor",
-    "su": "Pituduh: Jadwal Terbaik dalam Sehari untuk rawat motor",
-    "zh": "GarageGo · rawat motor 实用指南",
-    "ja": "GarageGo｜rawat motor ガイド"
+    "id": "rawat motor saat waktu cuma sedikit",
+    "en": "rawat motor when you barely have time",
+    "ar": "السجلات اليومية حين لا يبقى وقت · الجزء 3",
+    "jv": "rawat motor nalika wektuné mung sithik",
+    "su": "rawat motor nalika waktu ukur saeutik",
+    "zh": "时间很少时怎么做日常记录 · 第3篇",
+    "ja": "時間がほとんどない日の毎日の記録 · 第3回"
   },
-  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+  "quality_pass": "editorial-v3",
+  "descriptions": {
+    "id": "Rawat motor saat waktu hampir tidak ada: jadwal yang bisa dijalankan, versi paling kecil, dan tinjauan mingguan yang tidak memakan banyak waktu.",
+    "en": "Rawat motor when you barely have time: a schedule you can keep, the smallest version to run, and a weekly check that does not take much of your week.",
+    "ar": "rawat motor حين يكون وقتك نادراً: جدول يمكنك الالتزام به، وأصغر نسخة للتشغيل، ومراجعة أسبوعية لا تستنزف أسبوعك.",
+    "ja": "時間がほとんどない時のrawat motor。続けられる予定、最小バージョン、負担を抑えた毎週の確認。",
+    "zh": "几乎没有时间时的rawat motor：可坚持的时间安排、最小版本，以及不占用太多时间的每周检查。",
+    "jv": "Rawat motor nalika wektu meh ora ana: jadwal sing bisa dilakoni, versi paling cilik kanggo mlaku, lan tinjauan saben minggu sing ora makan wektu akeh.",
+    "su": "Rawat motor lamun waktu hampir teu aya: jadwal nu bisa dijalankeun, versi pang leutikna, jeung tinjauan mingguan nu teu nyita loba waktu."
+  }
 }

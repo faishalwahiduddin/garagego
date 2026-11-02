@@ -8,22 +8,31 @@
   "banner_ready": false,
   "seo": true,
   "slugs": {
-    "id": "pajak-stnk-tahunan-2",
-    "en": "pajak-stnk-tahunan",
-    "ar": "pajak-stnk-tahunan-2",
-    "jv": "pandhuan-pajak-stnk-tahunan-garagego-2",
-    "su": "pituduh-pajak-stnk-tahunan-garagego-2",
-    "zh": "garagego-pajak-stnk-tahunan-实用指南-2",
-    "ja": "garagegopajak-stnk-tahunan-ガイド-2"
+    "id": "faq-pajak-stnk-tahunan-jawaban-yang-sering-dicari",
+    "en": "pajak-stnk-tahunan-faq-the-questions-people-actually-ask",
+    "ar": "asila-alsjlat-alywmya-alshaiaa",
+    "jv": "pitakon-pajak-stnk-tahunan-sing-kerep-ditakokake",
+    "su": "patarosan-pajak-stnk-tahunan-anu-sering-ditaroskeun",
+    "zh": "ri-chang-ji-lu-chang-jian-wen-ti-da-jia-zhen-zheng-hui-wen-de",
+    "ja": "mainichi-no-kiroku-noyokuaru-shitsumon"
   },
   "titles": {
-    "id": "FAQ pajak stnk tahunan: jawaban singkat yang dipakai",
-    "en": "pajak stnk tahunan — Practical Q&amp;A",
-    "ar": "pajak stnk tahunan — دليل GarageGo",
-    "jv": "Pandhuan: FAQ pajak stnk tahunan: jawaban singkat yang dipakai",
-    "su": "Pituduh: FAQ pajak stnk tahunan: jawaban singkat yang dipakai",
-    "zh": "GarageGo · pajak stnk tahunan 实用指南",
-    "ja": "GarageGo｜pajak stnk tahunan ガイド"
+    "id": "FAQ pajak stnk tahunan: jawaban yang sering dicari",
+    "en": "pajak stnk tahunan FAQ: the questions people actually ask",
+    "ar": "أسئلة السجلات اليومية الشائعة",
+    "jv": "Pitakon pajak stnk tahunan sing kerep ditakokaké",
+    "su": "Patarosan pajak stnk tahunan anu sering ditaroskeun",
+    "zh": "日常记录常见问题：大家真正会问的",
+    "ja": "毎日の記録のよくある質問"
   },
-  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+  "quality_pass": "editorial-v3",
+  "descriptions": {
+    "id": "FAQ pajak stnk tahunan: jawaban untuk pertanyaan yang paling sering muncul, arti praktisnya, versi paling kecil, dan data yang tersimpan di perangkat.",
+    "en": "pajak stnk tahunan FAQ: answers to the questions people ask most, what the practice means, the smallest version to start, and how data is kept on device.",
+    "ar": "أسئلة شائعة عن pajak stnk tahunan: إجابات عن الأسئلة الأكثر تكراراً، والمعنى العملي، وأصغر نسخة للبدء، وكيف تُحفظ البيانات على الجهاز.",
+    "ja": "よくある質問をまとめた、pajak stnk tahunanのFAQ。実践的な意味、最小バージョン、端末内の保存。",
+    "zh": "pajak stnk tahunan常见问题：回答大家最常问的问题，说明实际含义、最小版本以及数据在设备中的保存。",
+    "jv": "FAQ pajak stnk tahunan: wangsulan kanggo pitakon sing kerep ditakokaké, tegesé ing praktik, versi paling cilik, lan carane data kasimpen ing piranti.",
+    "su": "FAQ pajak stnk tahunan: jawaban pikeun patarosan nu sering ditaroskeun, harti praktisna, versi pang leutikna, jeung kumaha data disimpen di alat."
+  }
 }

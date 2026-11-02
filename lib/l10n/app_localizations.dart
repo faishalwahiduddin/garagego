@@ -1115,7 +1115,7 @@ abstract class AppLocalizations {
   /// No description provided for @lisensiPanganggo.
   ///
   /// In id, this message translates to:
-  /// **'Lisensi Panganggo'**
+  /// **'Lisensi Penggunaan'**
   String get lisensiPanganggo;
 
   /// No description provided for @lisensiPenggunaan.
@@ -1771,6 +1771,1361 @@ abstract class AppLocalizations {
   /// In id, this message translates to:
   /// **'Nama dokumen wajib diisi'**
   String get validationDocNameRequired;
+
+  /// App title used by the window title, splash and onboarding chrome.
+  ///
+  /// In id, this message translates to:
+  /// **'GarageGo'**
+  String get appTitle;
+
+  /// One-line product tagline shown on the splash screen.
+  ///
+  /// In id, this message translates to:
+  /// **'Catat servis, oli, BBM & pajak kendaraan dalam satu garasi'**
+  String get appTagline;
+
+  /// Accessible label shown while content is loading.
+  ///
+  /// In id, this message translates to:
+  /// **'Memuat…'**
+  String get loadingLabel;
+
+  /// Onboarding: skip button.
+  ///
+  /// In id, this message translates to:
+  /// **'Lewati'**
+  String get onbSkip;
+
+  /// Onboarding: next slide button.
+  ///
+  /// In id, this message translates to:
+  /// **'Lanjut'**
+  String get onbNext;
+
+  /// Onboarding: finish button on the last slide.
+  ///
+  /// In id, this message translates to:
+  /// **'Mulai Sekarang'**
+  String get onbGetStarted;
+
+  /// Onboarding last slide: short privacy reassurance.
+  ///
+  /// In id, this message translates to:
+  /// **'Privasi & Offline Terjamin'**
+  String get onbPrivacyHeadline;
+
+  /// Onboarding: longer privacy line (used by the consent/reference copy).
+  ///
+  /// In id, this message translates to:
+  /// **'Semua data kendaraan tersimpan aman di perangkat Anda tanpa pelacak.'**
+  String get onbPrivacyDetail;
+
+  /// Onboarding slide 1 headline.
+  ///
+  /// In id, this message translates to:
+  /// **'Garasi Anda'**
+  String get onbSlide1Title;
+
+  /// Onboarding slide 1 subtext.
+  ///
+  /// In id, this message translates to:
+  /// **'Mobil & motor dalam satu tempat'**
+  String get onbSlide1Sub;
+
+  /// Onboarding slide 1 badge.
+  ///
+  /// In id, this message translates to:
+  /// **'100% Offline & Privat'**
+  String get onbSlide1Badge;
+
+  /// Onboarding slide 2 headline.
+  ///
+  /// In id, this message translates to:
+  /// **'Perawatan'**
+  String get onbSlide2Title;
+
+  /// Onboarding slide 2 subtext.
+  ///
+  /// In id, this message translates to:
+  /// **'Servis, oli, dan pajak STNK'**
+  String get onbSlide2Sub;
+
+  /// Onboarding slide 2 badge.
+  ///
+  /// In id, this message translates to:
+  /// **'Pengingat Berkala'**
+  String get onbSlide2Badge;
+
+  /// Onboarding slide 3 headline.
+  ///
+  /// In id, this message translates to:
+  /// **'BBM'**
+  String get onbSlide3Title;
+
+  /// Onboarding slide 3 subtext.
+  ///
+  /// In id, this message translates to:
+  /// **'Konsumsi km/L & biaya per km'**
+  String get onbSlide3Sub;
+
+  /// Onboarding slide 3 badge.
+  ///
+  /// In id, this message translates to:
+  /// **'Tanpa Iklan & Tanpa Akun'**
+  String get onbSlide3Badge;
+
+  /// Onboarding slide 4 headline.
+  ///
+  /// In id, this message translates to:
+  /// **'Offline & Privat'**
+  String get onbSlide4Title;
+
+  /// Onboarding slide 4 subtext.
+  ///
+  /// In id, this message translates to:
+  /// **'Data tersimpan di perangkat Anda'**
+  String get onbSlide4Sub;
+
+  /// Onboarding slide 4 badge.
+  ///
+  /// In id, this message translates to:
+  /// **'Data Tersimpan di Perangkat'**
+  String get onbSlide4Badge;
+
+  /// Schedule urgency: everything is fine.
+  ///
+  /// In id, this message translates to:
+  /// **'Aman'**
+  String get urgencySafe;
+
+  /// Schedule urgency: due soon.
+  ///
+  /// In id, this message translates to:
+  /// **'Segera'**
+  String get urgencyDueSoon;
+
+  /// Schedule urgency: overdue.
+  ///
+  /// In id, this message translates to:
+  /// **'Terlewat'**
+  String get urgencyOverdue;
+
+  /// Document type: annual vehicle tax.
+  ///
+  /// In id, this message translates to:
+  /// **'Pajak PKB Tahunan'**
+  String get docTypeTax;
+
+  /// Document type: 5-year plate and registration renewal.
+  ///
+  /// In id, this message translates to:
+  /// **'Ganti Pelat & STNK 5 Th'**
+  String get docTypePlate;
+
+  /// Document type: vehicle insurance.
+  ///
+  /// In id, this message translates to:
+  /// **'Asuransi Kendaraan'**
+  String get docTypeInsurance;
+
+  /// Document type: emissions test / roadworthiness inspection.
+  ///
+  /// In id, this message translates to:
+  /// **'Uji Emisi / KIR'**
+  String get docTypeEmissions;
+
+  /// Document type: driver licence.
+  ///
+  /// In id, this message translates to:
+  /// **'SIM Pengemudi'**
+  String get docTypeLicense;
+
+  /// Document type: vehicle ownership title (BPKB).
+  ///
+  /// In id, this message translates to:
+  /// **'BPKB Kendaraan'**
+  String get docTypeTitle;
+
+  /// Document type: any other document.
+  ///
+  /// In id, this message translates to:
+  /// **'Dokumen Lainnya'**
+  String get docTypeOther;
+
+  /// Maintenance category: oil and fluids.
+  ///
+  /// In id, this message translates to:
+  /// **'Oli & Pelumas'**
+  String get mtCatOilFluids;
+
+  /// Maintenance category: oil and filters.
+  ///
+  /// In id, this message translates to:
+  /// **'Oli & Filter'**
+  String get mtCatOilFilter;
+
+  /// Maintenance category: air and cabin filters.
+  ///
+  /// In id, this message translates to:
+  /// **'Filter & Udara'**
+  String get mtCatAirFilter;
+
+  /// Maintenance category: braking system.
+  ///
+  /// In id, this message translates to:
+  /// **'Pengereman'**
+  String get mtCatBrakes;
+
+  /// Maintenance category: tyres and suspension.
+  ///
+  /// In id, this message translates to:
+  /// **'Ban & Suspensi'**
+  String get mtCatTires;
+
+  /// Maintenance category: ignition system.
+  ///
+  /// In id, this message translates to:
+  /// **'Pengapian'**
+  String get mtCatIgnition;
+
+  /// Maintenance category: transmission and drivetrain.
+  ///
+  /// In id, this message translates to:
+  /// **'Transmisi & Penggerak'**
+  String get mtCatTransmission;
+
+  /// Maintenance category: CVT transmission.
+  ///
+  /// In id, this message translates to:
+  /// **'Transmisi CVT'**
+  String get mtCatCvt;
+
+  /// Maintenance category: electrical system and battery.
+  ///
+  /// In id, this message translates to:
+  /// **'Kelistrikan & Aki'**
+  String get mtCatElectrical;
+
+  /// Maintenance category: coolant and radiator.
+  ///
+  /// In id, this message translates to:
+  /// **'Cairan & Radiator'**
+  String get mtCatCoolant;
+
+  /// Maintenance category: periodic servicing.
+  ///
+  /// In id, this message translates to:
+  /// **'Perawatan Berkala'**
+  String get mtCatGeneral;
+
+  /// Preset schedule (car): engine oil.
+  ///
+  /// In id, this message translates to:
+  /// **'Ganti Oli Mesin Sintetik'**
+  String get mtPresetCarOil;
+
+  /// Preset schedule (car): oil filter.
+  ///
+  /// In id, this message translates to:
+  /// **'Ganti Filter Oli Mesin'**
+  String get mtPresetCarOilFilter;
+
+  /// Preset schedule (car): air and cabin filter.
+  ///
+  /// In id, this message translates to:
+  /// **'Filter Udara & AC Kabin'**
+  String get mtPresetCarAirFilter;
+
+  /// Preset schedule (car): brake fluid and pads.
+  ///
+  /// In id, this message translates to:
+  /// **'Kuras Minyak Rem & Kampas'**
+  String get mtPresetCarBrakeFluid;
+
+  /// Preset schedule (car): tyre rotation and alignment.
+  ///
+  /// In id, this message translates to:
+  /// **'Rotasi Ban & Spooring Balancing'**
+  String get mtPresetCarTireRotation;
+
+  /// Preset schedule (car): spark plugs.
+  ///
+  /// In id, this message translates to:
+  /// **'Ganti Busi Iridium'**
+  String get mtPresetCarSparkPlugs;
+
+  /// Preset schedule (motorcycle): engine oil.
+  ///
+  /// In id, this message translates to:
+  /// **'Ganti Oli Mesin Matic/Manual'**
+  String get mtPresetMotoOil;
+
+  /// Preset schedule (motorcycle): final drive gear oil.
+  ///
+  /// In id, this message translates to:
+  /// **'Ganti Oli Gardan (Gear Oil)'**
+  String get mtPresetMotoGearOil;
+
+  /// Preset schedule (motorcycle): CVT service.
+  ///
+  /// In id, this message translates to:
+  /// **'Servis CVT, V-Belt & Roller'**
+  String get mtPresetMotoCvt;
+
+  /// Preset schedule (motorcycle): brake pads.
+  ///
+  /// In id, this message translates to:
+  /// **'Cek & Ganti Kampas Rem'**
+  String get mtPresetMotoBrakes;
+
+  /// Preset schedule (motorcycle): spark plug.
+  ///
+  /// In id, this message translates to:
+  /// **'Ganti Busi Motor'**
+  String get mtPresetMotoSparkPlug;
+
+  /// Title of a generated pre-trip inspection checklist.
+  ///
+  /// In id, this message translates to:
+  /// **'Inspeksi Pra-Perjalanan ({type})'**
+  String inspPreTripTitle(String type);
+
+  /// Inspection progress: how many of the checkpoints passed.
+  ///
+  /// In id, this message translates to:
+  /// **'Kelayakan: {passed} dari {total} Poin Lolos'**
+  String inspRoadworthiness(String passed, String total);
+
+  /// Inspection list badge: percentage and passed/total count.
+  ///
+  /// In id, this message translates to:
+  /// **'{pct}% Lolos ({passed}/{total})'**
+  String inspPassedCount(String pct, String passed, String total);
+
+  /// Inspection category: engine and fluids.
+  ///
+  /// In id, this message translates to:
+  /// **'Mesin & Cairan'**
+  String get inspCatEngine;
+
+  /// Inspection category: wheels and brakes.
+  ///
+  /// In id, this message translates to:
+  /// **'Roda & Pengereman'**
+  String get inspCatWheelsBrakes;
+
+  /// Inspection category: lights and electrical.
+  ///
+  /// In id, this message translates to:
+  /// **'Lampu & Kelistrikan'**
+  String get inspCatLights;
+
+  /// Inspection category: safety equipment.
+  ///
+  /// In id, this message translates to:
+  /// **'Keselamatan'**
+  String get inspCatSafety;
+
+  /// Inspection category: drivetrain.
+  ///
+  /// In id, this message translates to:
+  /// **'Transmisi & Penggerak'**
+  String get inspCatDrivetrain;
+
+  /// Inspection category: wheels and steering.
+  ///
+  /// In id, this message translates to:
+  /// **'Roda & Kemudi'**
+  String get inspCatWheelsSteering;
+
+  /// Inspection category: brakes.
+  ///
+  /// In id, this message translates to:
+  /// **'Pengereman'**
+  String get inspCatBrakes;
+
+  /// Inspection category: electrical.
+  ///
+  /// In id, this message translates to:
+  /// **'Kelistrikan'**
+  String get inspCatElectrical;
+
+  /// Inspection category: equipment.
+  ///
+  /// In id, this message translates to:
+  /// **'Kelengkapan'**
+  String get inspCatEquipment;
+
+  /// Inspection checkpoint (car): engine oil dipstick.
+  ///
+  /// In id, this message translates to:
+  /// **'Level Dipstick & Kejernihan Oli Mesin'**
+  String get inspCar1;
+
+  /// Inspection checkpoint (car): radiator coolant reservoir.
+  ///
+  /// In id, this message translates to:
+  /// **'Level Air Reservoir Radiator Coolant'**
+  String get inspCar2;
+
+  /// Inspection checkpoint (car): brake, clutch and power steering fluid.
+  ///
+  /// In id, this message translates to:
+  /// **'Level Minyak Rem & Minyak Kopling/Power Steering'**
+  String get inspCar3;
+
+  /// Inspection checkpoint (car): tyre pressure and tread.
+  ///
+  /// In id, this message translates to:
+  /// **'Tekanan Udara & Alur Ketebalan 4 Ban + Ban Serep'**
+  String get inspCar4;
+
+  /// Inspection checkpoint (car): brake pads and handbrake.
+  ///
+  /// In id, this message translates to:
+  /// **'Kondisi Kampas Rem & Daya Cengkeram Rem Tangan'**
+  String get inspCar5;
+
+  /// Inspection checkpoint (car): lights.
+  ///
+  /// In id, this message translates to:
+  /// **'Lampu Utama, Lampu Rem, Sein & Lampu Hazard'**
+  String get inspCar6;
+
+  /// Inspection checkpoint (car): battery terminals and voltage.
+  ///
+  /// In id, this message translates to:
+  /// **'Kondisi Terminal & Tegangan Indikator Aki (12V)'**
+  String get inspCar7;
+
+  /// Inspection checkpoint (car): wipers and washer fluid.
+  ///
+  /// In id, this message translates to:
+  /// **'Karet Wiper & Air Tabung Washer Kaca Depan'**
+  String get inspCar8;
+
+  /// Inspection checkpoint (car): emergency equipment.
+  ///
+  /// In id, this message translates to:
+  /// **'Dongkrak, Kunci Roda, Segitiga Pengaman & Kotak P3K'**
+  String get inspCar9;
+
+  /// Inspection checkpoint (motorcycle): engine oil.
+  ///
+  /// In id, this message translates to:
+  /// **'Ketinggian & Kualitas Oli Mesin'**
+  String get inspMoto1;
+
+  /// Inspection checkpoint (motorcycle): final drive oil or chain slack.
+  ///
+  /// In id, this message translates to:
+  /// **'Kondisi Oli Gardan / Ketegangan Rantai Roda'**
+  String get inspMoto2;
+
+  /// Inspection checkpoint (motorcycle): tyre pressures.
+  ///
+  /// In id, this message translates to:
+  /// **'Tekanan Angin Ban Depan & Belakang'**
+  String get inspMoto3;
+
+  /// Inspection checkpoint (motorcycle): brake pad thickness.
+  ///
+  /// In id, this message translates to:
+  /// **'Ketebalan Kampas Rem Depan & Belakang'**
+  String get inspMoto4;
+
+  /// Inspection checkpoint (motorcycle): lights.
+  ///
+  /// In id, this message translates to:
+  /// **'Lampu Depan, Lampu Belakang & Lampu Sein'**
+  String get inspMoto5;
+
+  /// Inspection checkpoint (motorcycle): horn and electric starter.
+  ///
+  /// In id, this message translates to:
+  /// **'Fungsi Klakson & Starter Elektrik (Kondisi Aki)'**
+  String get inspMoto6;
+
+  /// Inspection checkpoint (motorcycle): mirrors and toolkit.
+  ///
+  /// In id, this message translates to:
+  /// **'Spion Kanan & Kiri serta Kunci Kelengkapan'**
+  String get inspMoto7;
+
+  /// Level chip prefix.
+  ///
+  /// In id, this message translates to:
+  /// **'LVL {level}'**
+  String gamesLvl(String level);
+
+  /// Gamification header: total XP and unlocked badge count.
+  ///
+  /// In id, this message translates to:
+  /// **'{xp} XP • {unlocked}/{total} Lencana Terbuka'**
+  String gamesProgress(String xp, String unlocked, String total);
+
+  /// Progress hint towards the next level.
+  ///
+  /// In id, this message translates to:
+  /// **'Menuju {next} ({xp} XP)'**
+  String gamesNextLevel(String next, String xp);
+
+  /// Shown when the highest level is reached.
+  ///
+  /// In id, this message translates to:
+  /// **'Pangkat Maksimal'**
+  String get gamesMaxRank;
+
+  /// Section header above the badge grid.
+  ///
+  /// In id, this message translates to:
+  /// **'Lencana Disiplin Garasi'**
+  String get gamesBadgesTitle;
+
+  /// Tooltip/label for the share action.
+  ///
+  /// In id, this message translates to:
+  /// **'Bagikan'**
+  String get gamesShare;
+
+  /// Badge detail: unlocked state with XP reward.
+  ///
+  /// In id, this message translates to:
+  /// **'Terbuka (+100 XP)'**
+  String get gamesUnlocked;
+
+  /// Badge detail: not yet unlocked.
+  ///
+  /// In id, this message translates to:
+  /// **'Belum Tercapai'**
+  String get gamesLocked;
+
+  /// Badge share line: which badge was unlocked.
+  ///
+  /// In id, this message translates to:
+  /// **'Lencana terbuka: {highlight}'**
+  String gamesBadgeUnlockedLine(String highlight);
+
+  /// Level 1 title.
+  ///
+  /// In id, this message translates to:
+  /// **'Pengendara Pemula'**
+  String get gamesLvl1;
+
+  /// Level 2 title.
+  ///
+  /// In id, this message translates to:
+  /// **'Pemilik Peduli'**
+  String get gamesLvl2;
+
+  /// Level 3 title.
+  ///
+  /// In id, this message translates to:
+  /// **'Penjaga Armada'**
+  String get gamesLvl3;
+
+  /// Level 4 title.
+  ///
+  /// In id, this message translates to:
+  /// **'Spesialis Servis'**
+  String get gamesLvl4;
+
+  /// Level 5 title.
+  ///
+  /// In id, this message translates to:
+  /// **'Master Garasi'**
+  String get gamesLvl5;
+
+  /// Badge: first vehicle.
+  ///
+  /// In id, this message translates to:
+  /// **'Armada Pertama'**
+  String get badgeFirstRideTitle;
+
+  /// Badge description: first vehicle.
+  ///
+  /// In id, this message translates to:
+  /// **'Mendaftarkan kendaraan pertama ke dalam garasi digital.'**
+  String get badgeFirstRideDesc;
+
+  /// Badge: on-time oil change.
+  ///
+  /// In id, this message translates to:
+  /// **'Disiplin Oli'**
+  String get badgeOilCareTitle;
+
+  /// Badge description: on-time oil change.
+  ///
+  /// In id, this message translates to:
+  /// **'Mencatat riwayat ganti oli mesin tepat waktu.'**
+  String get badgeOilCareDesc;
+
+  /// Badge: repeated periodic service.
+  ///
+  /// In id, this message translates to:
+  /// **'Rutin Berkala'**
+  String get badgeServiceVeteranTitle;
+
+  /// Badge description: repeated periodic service.
+  ///
+  /// In id, this message translates to:
+  /// **'Mencatatkan minimal 3 log servis perawatan berkala.'**
+  String get badgeServiceVeteranDesc;
+
+  /// Badge: fuel logging.
+  ///
+  /// In id, this message translates to:
+  /// **'Jejak Efisiensi'**
+  String get badgeFuelWatcherTitle;
+
+  /// Badge description: fuel logging.
+  ///
+  /// In id, this message translates to:
+  /// **'Mencatat minimal 3 pengisian BBM untuk memantau konsumsi.'**
+  String get badgeFuelWatcherDesc;
+
+  /// Badge: safety inspection.
+  ///
+  /// In id, this message translates to:
+  /// **'Inspektur Teliti'**
+  String get badgeSafeVoyageTitle;
+
+  /// Badge description: safety inspection.
+  ///
+  /// In id, this message translates to:
+  /// **'Menyelesaikan checklist inspeksi keselamatan kendaraan.'**
+  String get badgeSafeVoyageDesc;
+
+  /// Badge: documents stored.
+  ///
+  /// In id, this message translates to:
+  /// **'Tertib Dokumen'**
+  String get badgeDocKeeperTitle;
+
+  /// Badge description: documents stored.
+  ///
+  /// In id, this message translates to:
+  /// **'Menyimpan dokumen legalitas (STNK/Pajak/SIM/Asuransi).'**
+  String get badgeDocKeeperDesc;
+
+  /// Badge: high health score.
+  ///
+  /// In id, this message translates to:
+  /// **'Kondisi Prima'**
+  String get badgePrimeFleetTitle;
+
+  /// Badge description: high health score.
+  ///
+  /// In id, this message translates to:
+  /// **'Mencapai skor kesehatan kendaraan 90 atau lebih.'**
+  String get badgePrimeFleetDesc;
+
+  /// Badge: long distance.
+  ///
+  /// In id, this message translates to:
+  /// **'Jelajah 10.000 KM'**
+  String get badgeRoadWarriorTitle;
+
+  /// Badge description: long distance.
+  ///
+  /// In id, this message translates to:
+  /// **'Memantau kendaraan dengan odometer melampaui 10.000 km.'**
+  String get badgeRoadWarriorDesc;
+
+  /// Health warning: oil change overdue.
+  ///
+  /// In id, this message translates to:
+  /// **'Ganti oli mesin sudah terlewat {km} km'**
+  String healthOilOverdue(String km);
+
+  /// Health warning: oil change due soon.
+  ///
+  /// In id, this message translates to:
+  /// **'Ganti oli mesin perlu dilakukan dalam {km} km lagi'**
+  String healthOilDue(String km);
+
+  /// Health good point: oil interval fine.
+  ///
+  /// In id, this message translates to:
+  /// **'Interval oli mesin dalam kondisi prima'**
+  String get healthOilOptimal;
+
+  /// Health warning: tax overdue.
+  ///
+  /// In id, this message translates to:
+  /// **'Pajak STNK tahunan telah lewat jatuh tempo'**
+  String get healthTaxOverdue;
+
+  /// Health warning: tax due soon.
+  ///
+  /// In id, this message translates to:
+  /// **'Pajak STNK tahunan jatuh tempo dalam {days} hari'**
+  String healthTaxDue(String days);
+
+  /// Health good point: tax is fine.
+  ///
+  /// In id, this message translates to:
+  /// **'Pajak PKB tahunan aktif & aman'**
+  String get healthTaxSafe;
+
+  /// Health warning: 5-year plate expired.
+  ///
+  /// In id, this message translates to:
+  /// **'Masa berlaku pelat 5 tahunan telah habis'**
+  String get healthPlateExpired;
+
+  /// Health warning: 5-year plate due soon.
+  ///
+  /// In id, this message translates to:
+  /// **'Pelat 5 tahunan perlu diperpanjang dalam {days} hari'**
+  String healthPlateDue(String days);
+
+  /// Health warning: a named schedule is overdue.
+  ///
+  /// In id, this message translates to:
+  /// **'{title} sudah terlewat'**
+  String healthScheduleOverdue(String title);
+
+  /// Health warning: a named schedule is due soon.
+  ///
+  /// In id, this message translates to:
+  /// **'{title} mendekati batas servis'**
+  String healthScheduleDueSoon(String title);
+
+  /// Vehicle health status: excellent.
+  ///
+  /// In id, this message translates to:
+  /// **'Sangat Prima'**
+  String get healthPrime;
+
+  /// Vehicle health status: needs attention.
+  ///
+  /// In id, this message translates to:
+  /// **'Perlu Perhatian'**
+  String get healthAttention;
+
+  /// Vehicle health status: critical.
+  ///
+  /// In id, this message translates to:
+  /// **'Kritis / Servis Segera'**
+  String get healthCritical;
+
+  /// Live fuel form preview: estimated total cost.
+  ///
+  /// In id, this message translates to:
+  /// **'Estimasi Total Biaya:'**
+  String get fuelEstTotalCost;
+
+  /// Live fuel form preview: trip distance.
+  ///
+  /// In id, this message translates to:
+  /// **'Jarak Tempuh Trip:'**
+  String get fuelTripDistance;
+
+  /// Live fuel form preview: average consumption.
+  ///
+  /// In id, this message translates to:
+  /// **'Konsumsi Rata-rata:'**
+  String get fuelAvgConsumption;
+
+  /// Live fuel form preview: running cost per km.
+  ///
+  /// In id, this message translates to:
+  /// **'Biaya Operasional:'**
+  String get fuelOperatingCost;
+
+  /// Fuel log: tank was filled completely.
+  ///
+  /// In id, this message translates to:
+  /// **'Tangki Penuh'**
+  String get fuelFullTank;
+
+  /// Fuel log: partial fill.
+  ///
+  /// In id, this message translates to:
+  /// **'Sebagian'**
+  String get fuelPartial;
+
+  /// Fuel log line: unit price and fill type.
+  ///
+  /// In id, this message translates to:
+  /// **'@ {price} / L • {state}'**
+  String fuelPricePerLiterLine(String price, String state);
+
+  /// Fuel log line: odometer reading.
+  ///
+  /// In id, this message translates to:
+  /// **'Odo: {value} km'**
+  String fuelOdometerValue(String value);
+
+  /// Fuel economy unit value.
+  ///
+  /// In id, this message translates to:
+  /// **'{value} km/L'**
+  String fuelKmL(String value);
+
+  /// About row label: application name.
+  ///
+  /// In id, this message translates to:
+  /// **'Aplikasi'**
+  String get aboutApplication;
+
+  /// About row label: version.
+  ///
+  /// In id, this message translates to:
+  /// **'Versi'**
+  String get aboutVersion;
+
+  /// About row label: architecture.
+  ///
+  /// In id, this message translates to:
+  /// **'Arsitektur'**
+  String get aboutArchitecture;
+
+  /// About row value: offline-first architecture.
+  ///
+  /// In id, this message translates to:
+  /// **'100% Offline-First (tanpa server, tanpa pelacakan)'**
+  String get aboutArchitectureValue;
+
+  /// About row label: domain.
+  ///
+  /// In id, this message translates to:
+  /// **'Domain'**
+  String get aboutDomain;
+
+  /// About row label: package identifier.
+  ///
+  /// In id, this message translates to:
+  /// **'ID Paket'**
+  String get aboutPackageId;
+
+  /// Settings vehicle row subtitle: plate and odometer.
+  ///
+  /// In id, this message translates to:
+  /// **'{plate} • Odo: {value} km'**
+  String settingsVehicleOdo(String plate, String value);
+
+  /// Backup import failed: the file is not a valid GarageGo backup.
+  ///
+  /// In id, this message translates to:
+  /// **'Berkas .grg tidak valid atau strukturnya rusak'**
+  String get backupInvalidFile;
+
+  /// Schedule filter: everything.
+  ///
+  /// In id, this message translates to:
+  /// **'Semua'**
+  String get filterAll;
+
+  /// Schedule filter: needs attention.
+  ///
+  /// In id, this message translates to:
+  /// **'Perhatian'**
+  String get filterAttention;
+
+  /// Maintenance screen title when no vehicle is selected.
+  ///
+  /// In id, this message translates to:
+  /// **'Perawatan & Servis'**
+  String get maintenanceScreenTitle;
+
+  /// Service log form: example title.
+  ///
+  /// In id, this message translates to:
+  /// **'Misal: Ganti Oli Mesin & Filter'**
+  String get serviceTitleHint;
+
+  /// Service log form: example workshop.
+  ///
+  /// In id, this message translates to:
+  /// **'Misal: Bengkel Resmi Astra'**
+  String get workshopHint;
+
+  /// Validation: the value must be greater than zero.
+  ///
+  /// In id, this message translates to:
+  /// **'Wajib lebih dari 0'**
+  String get mustBePositive;
+
+  /// Sheet title: edit an existing maintenance schedule.
+  ///
+  /// In id, this message translates to:
+  /// **'Ubah Jadwal Perawatan'**
+  String get editScheduleTitle;
+
+  /// Snackbar: schedule updated.
+  ///
+  /// In id, this message translates to:
+  /// **'Jadwal berhasil diperbarui!'**
+  String get scheduleUpdated;
+
+  /// Snackbar: schedule created.
+  ///
+  /// In id, this message translates to:
+  /// **'Jadwal perawatan berhasil disimpan!'**
+  String get scheduleSaved;
+
+  /// Button: save changes to a schedule.
+  ///
+  /// In id, this message translates to:
+  /// **'Perbarui Jadwal'**
+  String get updateSchedule;
+
+  /// Button: create a maintenance schedule.
+  ///
+  /// In id, this message translates to:
+  /// **'Simpan Jadwal Perawatan'**
+  String get saveSchedule;
+
+  /// Snackbar: a named schedule was marked done.
+  ///
+  /// In id, this message translates to:
+  /// **'{title} berhasil diselesaikan!'**
+  String scheduleCompleted(String title);
+
+  /// Schedule badge: kilometres overdue.
+  ///
+  /// In id, this message translates to:
+  /// **'Terlewat {km} km'**
+  String kmOverdue(String km);
+
+  /// Schedule badge: kilometres remaining.
+  ///
+  /// In id, this message translates to:
+  /// **'Sisa {km} km lagi'**
+  String kmRemaining(String km);
+
+  /// Compact schedule badge: kilometres overdue.
+  ///
+  /// In id, this message translates to:
+  /// **'Lewat {km} km'**
+  String kmOverdueShort(String km);
+
+  /// Compact schedule badge: kilometres left.
+  ///
+  /// In id, this message translates to:
+  /// **'Sisa {km} km'**
+  String kmRemainingShort(String km);
+
+  /// Schedule badge: days overdue.
+  ///
+  /// In id, this message translates to:
+  /// **'Terlewat {days} hari'**
+  String daysOverdue(String days);
+
+  /// Schedule badge: days left.
+  ///
+  /// In id, this message translates to:
+  /// **'Sisa {days} hari lagi'**
+  String daysLeft(String days);
+
+  /// Schedule card: interval, last odometer and last date.
+  ///
+  /// In id, this message translates to:
+  /// **'Setiap {km} km atau {months} bulan • Terakhir: {odo} km ({date})'**
+  String scheduleIntervalSummary(
+    String km,
+    String months,
+    String odo,
+    String date,
+  );
+
+  /// Action: share the vehicle status card.
+  ///
+  /// In id, this message translates to:
+  /// **'Bagikan Paspor Kendaraan'**
+  String get shareVehiclePassport;
+
+  /// Quick action subtitle for the share card.
+  ///
+  /// In id, this message translates to:
+  /// **'Bagikan kartu status, skor kesehatan & riwayat ke media sosial'**
+  String get shareVehiclePassportSubtitle;
+
+  /// Empty garage explanation.
+  ///
+  /// In id, this message translates to:
+  /// **'Tambahkan mobil atau motor keluarga pertama Anda untuk mulai memantau servis, oli, dan BBM.'**
+  String get garageEmptyBody;
+
+  /// Oil reset dialog body.
+  ///
+  /// In id, this message translates to:
+  /// **'Counter penggantian oli untuk {name} akan diatur ulang ke odometer saat ini ({odo} km).'**
+  String resetOilConfirm(String name, String odo);
+
+  /// Service log note created by the oil reset action.
+  ///
+  /// In id, this message translates to:
+  /// **'Reset counter interval oli mesin'**
+  String get resetOilServiceNote;
+
+  /// Oil card: interval in kilometres.
+  ///
+  /// In id, this message translates to:
+  /// **'Interval: tiap {km} km'**
+  String oilIntervalEvery(String km);
+
+  /// Vehicle subtitle: manufacture year.
+  ///
+  /// In id, this message translates to:
+  /// **'Tahun {year}'**
+  String garageYear(String year);
+
+  /// Share dialog header.
+  ///
+  /// In id, this message translates to:
+  /// **'Bagikan Paspor Kendaraan'**
+  String get shareDialogTitle;
+
+  /// Button: copy the summary text.
+  ///
+  /// In id, this message translates to:
+  /// **'Salin Ringkasan'**
+  String get shareCopySummary;
+
+  /// Button label while the image is being generated.
+  ///
+  /// In id, this message translates to:
+  /// **'Menyiapkan…'**
+  String get sharePreparing;
+
+  /// Web button: download the image.
+  ///
+  /// In id, this message translates to:
+  /// **'Unduh Paspor'**
+  String get shareDownloadPassport;
+
+  /// Button: share the image.
+  ///
+  /// In id, this message translates to:
+  /// **'Bagikan Paspor'**
+  String get shareSharePassport;
+
+  /// Snackbar: image generation failed.
+  ///
+  /// In id, this message translates to:
+  /// **'Gagal membuat gambar paspor kendaraan'**
+  String get shareImageFailed;
+
+  /// Snackbar: image downloaded.
+  ///
+  /// In id, this message translates to:
+  /// **'Paspor kendaraan berhasil diunduh'**
+  String get shareImageDownloaded;
+
+  /// Snackbar: summary copied to clipboard.
+  ///
+  /// In id, this message translates to:
+  /// **'Ringkasan status kendaraan berhasil disalin'**
+  String get shareSummaryCopied;
+
+  /// Share card: health section label.
+  ///
+  /// In id, this message translates to:
+  /// **'STATUS KESEHATAN ARMADA'**
+  String get shareCardHealthHeader;
+
+  /// Share card: condition line.
+  ///
+  /// In id, this message translates to:
+  /// **'Kondisi {status}'**
+  String shareCardCondition(String status);
+
+  /// Share card metric label: odometer.
+  ///
+  /// In id, this message translates to:
+  /// **'ODOMETER'**
+  String get shareCardOdometer;
+
+  /// Share card metric label: oil change.
+  ///
+  /// In id, this message translates to:
+  /// **'GANTI OLI'**
+  String get shareCardOil;
+
+  /// Share card metric label: road tax.
+  ///
+  /// In id, this message translates to:
+  /// **'PAJAK PKB'**
+  String get shareCardTax;
+
+  /// Share card: oil change needed now.
+  ///
+  /// In id, this message translates to:
+  /// **'Perlu Servis'**
+  String get shareCardNeedService;
+
+  /// Share card: days remaining in short form.
+  ///
+  /// In id, this message translates to:
+  /// **'{days} hr lagi'**
+  String shareCardDaysShort(String days);
+
+  /// Share card footer: logbook date.
+  ///
+  /// In id, this message translates to:
+  /// **'Logbook: {date}'**
+  String shareCardLogbook(String date);
+
+  /// Share text line 1: vehicle name and plate.
+  ///
+  /// In id, this message translates to:
+  /// **'🚗 Paspor Perawatan Kendaraan — {name} ({plate})'**
+  String shareTextHeader(String name, String plate);
+
+  /// Share text line 2: health score.
+  ///
+  /// In id, this message translates to:
+  /// **'🏆 Skor Kesehatan: {score}/100 ({status})'**
+  String shareTextHealth(String score, String status);
+
+  /// Share text line 3: odometer.
+  ///
+  /// In id, this message translates to:
+  /// **'⚡ Odometer: {odo} km'**
+  String shareTextOdometer(String odo);
+
+  /// Share text line 4: oil change countdown.
+  ///
+  /// In id, this message translates to:
+  /// **'🛢️ Interval Ganti Oli: {km} km lagi'**
+  String shareTextOil(String km);
+
+  /// Share text line 4 when an oil change is needed now.
+  ///
+  /// In id, this message translates to:
+  /// **'🛢️ Perlu Ganti Oli Segera'**
+  String get shareTextOilDue;
+
+  /// Share text line 5: road tax remaining days.
+  ///
+  /// In id, this message translates to:
+  /// **'📋 Pajak PKB: {days} hari lagi'**
+  String shareTextTax(String days);
+
+  /// Share text last line: call to action.
+  ///
+  /// In id, this message translates to:
+  /// **'Kelola perawatan garasi lengkap & offline di GarageGo: https://garagego.faishal.id'**
+  String get shareTextFooter;
+
+  /// Glovebox header card title with the vehicle name.
+  ///
+  /// In id, this message translates to:
+  /// **'Glovebox Digital — {name}'**
+  String gloveboxHeader(String name);
+
+  /// Glovebox header: plate and number of documents.
+  ///
+  /// In id, this message translates to:
+  /// **'{plate} • {count} Dokumen Terdaftar'**
+  String gloveboxDocCount(String plate, String count);
+
+  /// Document status: expired N days ago.
+  ///
+  /// In id, this message translates to:
+  /// **'Kedaluwarsa {days} hari lalu'**
+  String docExpiredAgo(String days);
+
+  /// Document status: due in N days.
+  ///
+  /// In id, this message translates to:
+  /// **'Jatuh tempo {days} hari lagi'**
+  String docDueIn(String days);
+
+  /// Document status: N days remaining.
+  ///
+  /// In id, this message translates to:
+  /// **'{days} hari lagi'**
+  String docDaysLeft(String days);
+
+  /// Document card: expiry date line.
+  ///
+  /// In id, this message translates to:
+  /// **'Masa Berlaku: {date}'**
+  String docValidUntil(String date);
+
+  /// Sheet title: edit a document.
+  ///
+  /// In id, this message translates to:
+  /// **'Ubah Dokumen'**
+  String get docEditTitle;
+
+  /// Sheet title: add a document.
+  ///
+  /// In id, this message translates to:
+  /// **'Tambah Dokumen Garasi'**
+  String get docAddTitle;
+
+  /// Document form: title hint.
+  ///
+  /// In id, this message translates to:
+  /// **'Misal: PKB Tahunan / Asuransi All Risk'**
+  String get docTitleHint;
+
+  /// Document form: document number hint.
+  ///
+  /// In id, this message translates to:
+  /// **'Misal: B 1234 CD / POL-88902'**
+  String get docNumberHint;
+
+  /// Document form: cost hint.
+  ///
+  /// In id, this message translates to:
+  /// **'Misal: 3500000'**
+  String get docCostHint;
+
+  /// Document form: notes label.
+  ///
+  /// In id, this message translates to:
+  /// **'Catatan & Petunjuk Perpanjangan'**
+  String get docNotesLabel;
+
+  /// Document form: notes hint.
+  ///
+  /// In id, this message translates to:
+  /// **'Misal: Bayar online via Signal app'**
+  String get docNotesHint;
+
+  /// Snackbar: document updated.
+  ///
+  /// In id, this message translates to:
+  /// **'Dokumen berhasil diperbarui!'**
+  String get docUpdated;
+
+  /// Snackbar: document added.
+  ///
+  /// In id, this message translates to:
+  /// **'Dokumen berhasil ditambahkan!'**
+  String get docAdded;
+
+  /// Button: save document changes.
+  ///
+  /// In id, this message translates to:
+  /// **'Perbarui Dokumen'**
+  String get docUpdate;
+
+  /// Button: save a new document.
+  ///
+  /// In id, this message translates to:
+  /// **'Simpan Dokumen'**
+  String get docSave;
+
+  /// Vehicle form: name hint.
+  ///
+  /// In id, this message translates to:
+  /// **'Misal: Honda HR-V / Yamaha NMAX'**
+  String get vehicleNameHint;
+
+  /// Vehicle form: plate number hint.
+  ///
+  /// In id, this message translates to:
+  /// **'B 1234 CD'**
+  String get plateHint;
+
+  /// Validation: manufacture year out of range.
+  ///
+  /// In id, this message translates to:
+  /// **'Tahun tidak valid'**
+  String get invalidYear;
+
+  /// Vehicle form: annual tax due date label.
+  ///
+  /// In id, this message translates to:
+  /// **'Jatuh Tempo Pajak STNK'**
+  String get taxDueLabel;
+
+  /// Service log note written when a schedule is completed.
+  ///
+  /// In id, this message translates to:
+  /// **'Selesai sesuai jadwal berkala ({category})'**
+  String scheduleDoneNote(String category);
+
+  /// Backup error: empty payload.
+  ///
+  /// In id, this message translates to:
+  /// **'Data cadangan kosong.'**
+  String get backupErrEmpty;
+
+  /// Backup error: raw JSON is not accepted.
+  ///
+  /// In id, this message translates to:
+  /// **'Format JSON mentah tidak didukung demi keamanan. Gunakan berkas cadangan resmi.'**
+  String get backupErrRawJson;
+
+  /// Backup error: unrecognised file format.
+  ///
+  /// In id, this message translates to:
+  /// **'Format berkas cadangan tidak valid atau tidak dikenali.'**
+  String get backupErrFormat;
+
+  /// Backup error: backup belongs to another app.
+  ///
+  /// In id, this message translates to:
+  /// **'Berkas cadangan milik aplikasi {other}, tidak dapat dipulihkan ke {expected}.'**
+  String backupErrWrongApp(String other, String expected);
+
+  /// Backup error: undecodable payload.
+  ///
+  /// In id, this message translates to:
+  /// **'Data cadangan rusak atau format encoding tidak sah.'**
+  String get backupErrCorrupt;
+
+  /// Backup error: checksum mismatch.
+  ///
+  /// In id, this message translates to:
+  /// **'Integritas data cadangan tidak valid: data telah dimodifikasi atau rusak.'**
+  String get backupErrIntegrity;
+
+  /// Backup error: payload is not a data object.
+  ///
+  /// In id, this message translates to:
+  /// **'Isi data cadangan bukan objek data yang sah.'**
+  String get backupErrNotObject;
+
+  /// Maintenance category: engine.
+  ///
+  /// In id, this message translates to:
+  /// **'Mesin'**
+  String get mtCatEngine;
+
+  /// Maintenance category: anything else.
+  ///
+  /// In id, this message translates to:
+  /// **'Lainnya'**
+  String get mtCatOther;
+
+  /// Short month unit used as an input field suffix.
+  ///
+  /// In id, this message translates to:
+  /// **'bln'**
+  String get unitMonthsShort;
+
+  /// Renewal note on a generated tax document.
+  ///
+  /// In id, this message translates to:
+  /// **'Bayar via Samsat Digital Nasional (SIGNAL) atau Samsat terdekat'**
+  String get docNoteTax;
+
+  /// Renewal note on a generated 5-year plate document.
+  ///
+  /// In id, this message translates to:
+  /// **'Wajib cek fisik kendaraan langsung di Samsat Induk'**
+  String get docNotePlate;
+
+  /// Renewal note on a generated insurance document.
+  ///
+  /// In id, this message translates to:
+  /// **'Nomor klaim darurat atau towing tersedia di polis'**
+  String get docNoteInsurance;
+
+  /// Share text: unlocked badge count.
+  ///
+  /// In id, this message translates to:
+  /// **'{unlocked}/{total} Lencana Terbuka'**
+  String gamesBadgeCount(String unlocked, String total);
 }
 
 class _AppLocalizationsDelegate

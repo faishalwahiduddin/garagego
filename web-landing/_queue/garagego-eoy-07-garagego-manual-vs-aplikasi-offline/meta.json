@@ -8,22 +8,31 @@
   "banner_ready": false,
   "seo": true,
   "slugs": {
-    "id": "garagego-manual-vs-aplikasi-offline",
-    "en": "garagego-manual-notes-vs-offline-app",
-    "ar": "garagego",
-    "jv": "pandhuan-garagego-garagego",
-    "su": "pituduh-garagego-garagego",
-    "zh": "garagego-garagego-实用指南",
-    "ja": "garagegogaragego-ガイド"
+    "id": "servis-motor-catatan-longgar-vs-aplikasi-offline",
+    "en": "motorbike-service-loose-notes-vs-an-offline-app",
+    "ar": "syana-aldraja-mlahzat-mtfrqa-am-ttbyq-bla-atsal",
+    "jv": "servis-motor-cathetan-longgar-utawa-aplikasi-offline",
+    "su": "servis-motor-catetan-longgar-atawa-aplikasi-offline",
+    "zh": "mo-tuo-che-bao-yang-ling-san-bi-ji-yu-li-xian-ying-yong-de-cha-bie",
+    "ja": "baiku-seibi-memo-to-ofurainapuri-no-chigai"
   },
   "titles": {
-    "id": "GarageGo Manual vs Aplikasi",
-    "en": "GarageGo: Manual Notes vs Offline App",
-    "ar": "GarageGo — دليل GarageGo",
-    "jv": "Pandhuan: GarageGo Manual vs Aplikasi",
-    "su": "Pituduh: GarageGo Manual vs Aplikasi",
-    "zh": "GarageGo · GarageGo 实用指南",
-    "ja": "GarageGo｜GarageGo ガイド"
+    "id": "servis motor: catatan longgar vs aplikasi offline",
+    "en": "motorbike service: loose notes vs an offline app",
+    "ar": "صيانة الدراجة: ملاحظات متفرقة أم تطبيق بلا اتصال",
+    "jv": "servis motor: cathetan longgar utawa aplikasi offline",
+    "su": "servis motor: catetan longgar atawa aplikasi offline",
+    "zh": "摩托车保养：零散笔记与离线应用的差别",
+    "ja": "バイク整備：メモとオフラインアプリの違い"
   },
-  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+  "quality_pass": "editorial-v3",
+  "descriptions": {
+    "id": "Perbandingan catatan servis motor yang longgar dengan aplikasi offline: mengapa catatan mudah putus, penyimpanan di perangkat, dan tinjauan mingguan.",
+    "en": "Loose notes versus an offline app for motorbike service: why notes tend to break down, where your data lives on your device, and what a weekly check looks like.",
+    "ar": "مقارنة بين ملاحظات servis motor المتفرقة وتطبيق يعمل دون اتصال: لماذا تنقطع الملاحظات، وأين تُحفظ البيانات، وكيف تبدو المراجعة الأسبوعية.",
+    "ja": "メモ書きと比べたときのservis motorの強み。途切れやすい理由、端末内保存、毎週の見直しを解説。",
+    "zh": "对比零散笔记与离线应用：为何servis motor记录容易中断，数据存在设备上，并如何每周检查。",
+    "jv": "Mbandhingaké cathetan longgar karo aplikasi offline kanggo servis motor: kenapa cathetan gampang ilang, data ing piranti, lan ninjau saben minggu.",
+    "su": "Ngabandingkeun catetan longgar jeung aplikasi offline keur servis motor: naha catetan gampang leungit, data di alat, jeung tinjauan mingguan."
+  }
 }

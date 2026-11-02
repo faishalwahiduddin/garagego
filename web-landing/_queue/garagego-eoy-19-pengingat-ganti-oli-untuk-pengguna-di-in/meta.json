@@ -9,21 +9,30 @@
   "seo": true,
   "slugs": {
     "id": "pengingat-ganti-oli-untuk-pengguna-di-indonesia",
-    "en": "pengingat-ganti-oli-for-users-in-indonesia",
-    "ar": "pengingat-ganti-oli-2",
-    "jv": "pandhuan-pengingat-ganti-oli-garagego-2",
-    "su": "pituduh-pengingat-ganti-oli-garagego-2",
-    "zh": "garagego-pengingat-ganti-oli-实用指南-2",
-    "ja": "garagegopengingat-ganti-oli-ガイド-2"
+    "en": "pengingat-ganti-oli-for-readers-in-indonesia",
+    "ar": "alsjlat-alywmya-khyarat-qlyla-mntqya",
+    "jv": "pengingat-ganti-oli-kanggo-pangguna-ing-indonesia",
+    "su": "pengingat-ganti-oli-pikeun-pamake-di-indonesia",
+    "zh": "ri-chang-ji-lu-zhi-de-kao-lv-de-ji-zhong-xuan-ze",
+    "ja": "mainichi-no-kiroku-nattoku-dekiru-sentakushi"
   },
   "titles": {
-    "id": "pengingat ganti oli: panduan praktis di GarageGo",
-    "en": "pengingat ganti oli for Users in Indonesia",
-    "ar": "pengingat ganti oli — دليل GarageGo",
-    "jv": "Pandhuan: pengingat ganti oli: panduan praktis di GarageGo",
-    "su": "Pituduh: pengingat ganti oli: panduan praktis di GarageGo",
-    "zh": "GarageGo · pengingat ganti oli 实用指南",
-    "ja": "GarageGo｜pengingat ganti oli ガイド"
+    "id": "pengingat ganti oli untuk pengguna di Indonesia",
+    "en": "pengingat ganti oli for readers in Indonesia",
+    "ar": "السجلات اليومية: خيارات قليلة منطقية",
+    "jv": "pengingat ganti oli kanggo pangguna ing Indonesia",
+    "su": "pengingat ganti oli pikeun pamaké di Indonésia",
+    "zh": "日常记录：值得考虑的几种选择",
+    "ja": "毎日の記録：納得できる選択肢"
   },
-  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+  "quality_pass": "editorial-v3",
+  "descriptions": {
+    "id": "Untuk pengguna di Indonesia, pengingat ganti oli dibahas dengan versi paling kecil yang bisa dicoba, kapan menjalankannya, dan tinjauan mingguan sederhana.",
+    "en": "Pengingat ganti oli for readers in Indonesia: a smallest version you can try, when to run it, and a simple weekly check to keep the routine going.",
+    "ar": "pengingat ganti oli للقراء في إندونيسيا: أصغر نسخة يمكن تجربتها، ومتى تشغّلها، ومراجعة أسبوعية بسيطة تحافظ على استمرار الروتين.",
+    "ja": "インドネシアの利用者向けpengingat ganti oli。試せる最小バージョン、実行のタイミング、毎週の確認。",
+    "zh": "面向印尼读者的pengingat ganti oli：可以尝试的最小版本、执行时机，以及简单的每周检查。",
+    "jv": "Pengingat ganti oli kanggo pangguna ing Indonesia: versi paling cilik sing bisa dicoba, kapan mlaku, lan tinjauan saben minggu kanggo jaga rutinitas.",
+    "su": "Pengingat ganti oli pikeun pamaké di Indonésia: versi pang leutikna nu bisa dicoba, iraha ngajalankeunana, jeung tinjauan mingguan nu basajan."
+  }
 }

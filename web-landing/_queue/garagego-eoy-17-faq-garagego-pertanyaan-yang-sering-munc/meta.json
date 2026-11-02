@@ -8,22 +8,31 @@
   "banner_ready": false,
   "seo": true,
   "slugs": {
-    "id": "faq-garagego-pertanyaan-yang-sering-muncul-offline",
-    "en": "garagego-faq-frequent-questions",
-    "ar": "garagego-2",
-    "jv": "pandhuan-garagego-garagego-2",
-    "su": "pituduh-garagego-garagego-2",
-    "zh": "garagego-garagego-实用指南-2",
-    "ja": "garagegogaragego-ガイド-2"
+    "id": "faq-servis-motor-jawaban-yang-sering-dicari",
+    "en": "motorbike-service-faq-the-questions-people-actually-ask",
+    "ar": "asila-syana-aldraja-alshaiaa",
+    "jv": "pitakon-servis-motor-sing-kerep-ditakokake",
+    "su": "patarosan-servis-motor-anu-sering-ditaroskeun",
+    "zh": "mo-tuo-che-bao-yang-chang-jian-wen-ti-da-jia-zhen-zheng-hui-wen-de",
+    "ja": "baiku-seibi-noyokuaru-shitsumon"
   },
   "titles": {
-    "id": "FAQ GarageGo: Pertanyaan yang Sering Muncul",
-    "en": "GarageGo FAQ: Frequent Questions",
-    "ar": "GarageGo — دليل GarageGo",
-    "jv": "Pandhuan: FAQ GarageGo: Pertanyaan yang Sering Muncul",
-    "su": "Pituduh: FAQ GarageGo: Pertanyaan yang Sering Muncul",
-    "zh": "GarageGo · GarageGo 实用指南",
-    "ja": "GarageGo｜GarageGo ガイド"
+    "id": "FAQ servis motor: jawaban yang sering dicari",
+    "en": "motorbike service FAQ: the questions people actually ask",
+    "ar": "أسئلة صيانة الدراجة الشائعة",
+    "jv": "Pitakon servis motor sing kerep ditakokaké",
+    "su": "Patarosan servis motor anu sering ditaroskeun",
+    "zh": "摩托车保养常见问题：大家真正会问的",
+    "ja": "バイク整備のよくある質問"
   },
-  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+  "quality_pass": "editorial-v3",
+  "descriptions": {
+    "id": "FAQ servis motor: jawaban atas pertanyaan yang sering dicari, arti praktisnya, versi paling kecil untuk mulai, dan catatan soal data di perangkat.",
+    "en": "Motorbike service FAQ: answers to the questions people search for most, what the practice means, the smallest version to start, and notes on on-device data.",
+    "ar": "أسئلة شائعة عن servis motor: إجابات عن الأسئلة الأكثر بحثاً، والمعنى العملي، وأصغر نسخة للبدء، وملاحظات عن البيانات المحفوظة على الجهاز.",
+    "ja": "servis motorのよくある質問への回答。意味の説明、最小バージョン、端末内に保存されるデータについて。",
+    "zh": "servis motor常见问题解答：回答人们最常搜索的问题，说明实际含义、起步的最小版本与设备数据。",
+    "jv": "FAQ servis motor: wangsulan kanggo pitakon sing kerep digoleki, tegesé ing praktik, versi paling cilik kanggo miwiti, lan cathetan babagan data ing piranti.",
+    "su": "FAQ servis motor: jawaban pikeun patarosan nu sering dipilarian, harti praktisna, versi pang leutikna pikeun mimitian, jeung catetan ngeunaan data di alat."
+  }
 }

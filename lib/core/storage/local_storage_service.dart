@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import '../../l10n/app_localizations.dart';
 import '../constants/app_constants.dart';
 import '../models/vehicle.dart';
 import '../utils/app_timezone.dart';
@@ -18,11 +19,15 @@ class LocalStorageService {
   static Future<LocalStorageService> init() async {
     final prefs = await SharedPreferences.getInstance();
     final service = LocalStorageService(prefs);
-    service.seedInitialIfEmpty();
+    // First-run demo content is written before the widget tree exists, so it is
+    // seeded in the template language; a reset from Settings re-seeds it in the
+    // language the user has selected.
+    final l10n = await AppLocalizations.delegate.load(const Locale('id'));
+    service.seedInitialIfEmpty(l10n);
     return service;
   }
 
-  void seedInitialIfEmpty() {
+  void seedInitialIfEmpty(AppLocalizations l10n) {
     if (!_prefs.containsKey(AppConstants.keyVehicles)) {
       final defaultVehicles = [Vehicle.sampleCar(), Vehicle.sampleMotorcycle()];
       saveVehicles(defaultVehicles);
@@ -35,24 +40,24 @@ class LocalStorageService {
           vehicleId: defaultVehicles.first.id,
           date: DateTime.now().subtract(const Duration(days: 45)),
           odometer: 20000,
-          title: 'Servis Berkala & Ganti Oli Mesin Sintetik 5W-30',
+          title: kDemoServiceTitle,
           cost: 850000,
-          notes: 'Ganti filter oli & filter AC kabin di bengkel resmi',
+          notes: kDemoServiceNotes,
           isOilChange: true,
-          workshop: 'Auto2000 BSD City',
-          category: 'Ganti Oli & Filter',
+          workshop: kDemoServiceWorkshop,
+          category: kOilChangeServiceCategory,
         ),
         ServiceLog(
           id: 'log-2',
           vehicleId: defaultVehicles.first.id,
           date: DateTime.now().subtract(const Duration(days: 120)),
           odometer: 15000,
-          title: 'Rotasi Ban & Spooring Balancing',
+          title: kDemoRotationTitle,
           cost: 320000,
-          notes: 'Tekanan ban disetel 33 psi nitrogen',
+          notes: kDemoRotationNotes,
           isOilChange: false,
-          workshop: 'Kios Ban Paramount',
-          category: 'Ban & Suspensi',
+          workshop: kDemoRotationWorkshop,
+          category: kTireServiceCategory,
         ),
       ];
       saveServiceLogs(defaultLogs);
@@ -67,8 +72,8 @@ class LocalStorageService {
           liters: 40.0,
           pricePerLiter: 13700,
           isFullTank: true,
-          fuelType: 'Pertamax (RON 92)',
-          gasStation: 'Pertamina 34.15321 Serpong',
+          fuelType: kDefaultFuelType,
+          gasStation: kDemoGasStation,
         ),
         FuelLog(
           id: 'fuel-2',
@@ -78,20 +83,20 @@ class LocalStorageService {
           liters: 32.5,
           pricePerLiter: 13700,
           isFullTank: true,
-          fuelType: 'Pertamax (RON 92)',
-          gasStation: 'Pertamina 34.15321 Serpong',
+          fuelType: kDefaultFuelType,
+          gasStation: kDemoGasStation,
         ),
       ];
       saveFuelLogs(defaultFuel);
 
       // Seed initial maintenance schedules
-      final carPresets = MaintenanceSchedule.defaultPresetsFor(defaultVehicles.first);
-      final motoPresets = MaintenanceSchedule.defaultPresetsFor(defaultVehicles[1]);
+      final carPresets = MaintenanceSchedule.defaultPresetsFor(defaultVehicles.first, l10n);
+      final motoPresets = MaintenanceSchedule.defaultPresetsFor(defaultVehicles[1], l10n);
       saveMaintenanceSchedules([...carPresets, ...motoPresets]);
 
       // Seed initial vehicle documents
-      final carDocs = VehicleDocument.defaultDocumentsFor(defaultVehicles.first);
-      final motoDocs = VehicleDocument.defaultDocumentsFor(defaultVehicles[1]);
+      final carDocs = VehicleDocument.defaultDocumentsFor(defaultVehicles.first, l10n);
+      final motoDocs = VehicleDocument.defaultDocumentsFor(defaultVehicles[1], l10n);
       saveVehicleDocuments([...carDocs, ...motoDocs]);
 
       // Seed sample inspection checklist
@@ -100,9 +105,9 @@ class LocalStorageService {
         vehicleId: defaultVehicles.first.id,
         date: DateTime.now().subtract(const Duration(days: 2)),
         odometer: 24500,
-        title: 'Inspeksi Lengkap Pra-Roadtrip',
-        items: InspectionChecklist.generateDefaultItems(VehicleType.car),
-        inspectorNotes: 'Kondisi kendaraan sangat prima, tekanan ban dan oli mesin dalam kondisi ideal.',
+        title: kDemoInspectionTitle,
+        items: InspectionChecklist.generateDefaultItems(VehicleType.car, l10n),
+        inspectorNotes: kDemoInspectionNotes,
       );
       saveInspectionChecklists([sampleInspection]);
     }
@@ -243,25 +248,25 @@ class LocalStorageService {
       'inspectionChecklists': getInspectionChecklists().map((c) => c.toJson()).toList(),
     };
     return FleetBackupCodec.encode(
-      appTag: 'GARAGEGO',
+      appTag: kBackupAppTag,
       data: data,
     );
   }
 
   Future<bool> importBackupJson(String jsonString) async {
     final decoded = FleetBackupCodec.decode(
-      appTag: 'GARAGEGO',
+      appTag: kBackupAppTag,
       encoded: jsonString,
     );
 
     if (decoded['vehicles'] is! List) {
-      throw const FormatException('Data kendaraan tidak ditemukan dalam berkas backup');
+      throw const FormatException(kBackupErrNoVehicles);
     }
 
     final rawVehicles = decoded['vehicles'] as List;
     final vehicles = rawVehicles.map((item) => Vehicle.fromJson(item as Map<String, dynamic>)).toList();
     if (vehicles.isEmpty) {
-      throw const FormatException('Berkas backup tidak memuat kendaraan valid');
+      throw const FormatException(kBackupErrInvalidVehicles);
     }
 
     await saveVehicles(vehicles);
@@ -313,7 +318,7 @@ class LocalStorageService {
   String exportServiceLogsCsv(String? vehicleId) {
     final logs = getServiceLogs().where((l) => vehicleId == null || l.vehicleId == vehicleId).toList();
     final buffer = StringBuffer();
-    buffer.writeln('ID,Tanggal,Odometer (km),Pekerjaan / Servis,Kategori,Biaya (Rp),Bengkel,Ganti Oli,Catatan');
+    buffer.writeln(kServiceCsvHeader);
     for (final l in logs) {
       final dateStr = '${l.date.year}-${l.date.month.toString().padLeft(2, '0')}-${l.date.day.toString().padLeft(2, '0')}';
       final cleanTitle = l.title.replaceAll('"', '""');
@@ -327,7 +332,7 @@ class LocalStorageService {
   String exportFuelLogsCsv(String? vehicleId) {
     final fuels = getFuelLogs().where((f) => vehicleId == null || f.vehicleId == vehicleId).toList();
     final buffer = StringBuffer();
-    buffer.writeln('ID,Tanggal,Odometer (km),Volume (Liter),Harga/L (Rp),Total Biaya (Rp),Jenis BBM,Full Tank,SPBU');
+    buffer.writeln(kFuelCsvHeader);
     for (final f in fuels) {
       final dateStr = '${f.date.year}-${f.date.month.toString().padLeft(2, '0')}-${f.date.day.toString().padLeft(2, '0')}';
       final cleanStation = f.gasStation.replaceAll('"', '""');
@@ -358,3 +363,23 @@ class LocalStorageService {
     return true;
   }
 }
+
+// --- Demo fixtures and export schema ----------------------------------------
+// Sample content written on first run, plus the CSV column headers. These are
+// data (a demo garage and a stable spreadsheet schema), not interface copy, so
+// they deliberately do not follow the selected locale.
+
+const kBackupAppTag = 'GARAGEGO';
+const kDemoServiceTitle = 'Servis Berkala & Ganti Oli Mesin Sintetik 5W-30';
+const kDemoServiceNotes = 'Ganti filter oli & filter AC kabin di bengkel resmi';
+const kDemoServiceWorkshop = 'Auto2000 BSD City';
+const kDemoRotationTitle = 'Rotasi Ban & Spooring Balancing';
+const kDemoRotationNotes = 'Tekanan ban disetel 33 psi nitrogen';
+const kDemoRotationWorkshop = 'Kios Ban Paramount';
+const kDemoGasStation = 'Pertamina 34.15321 Serpong';
+const kDemoInspectionTitle = 'Inspeksi Lengkap Pra-Roadtrip';
+const kDemoInspectionNotes = 'Kondisi kendaraan sangat prima, tekanan ban dan oli mesin dalam kondisi ideal.';
+const kTireServiceCategory = 'Ban & Suspensi';
+
+const kServiceCsvHeader = 'ID,Tanggal,Odometer (km),Pekerjaan / Servis,Kategori,Biaya (Rp),Bengkel,Ganti Oli,Catatan';
+const kFuelCsvHeader = 'ID,Tanggal,Odometer (km),Volume (Liter),Harga/L (Rp),Total Biaya (Rp),Jenis BBM,Full Tank,SPBU';

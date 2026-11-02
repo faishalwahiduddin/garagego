@@ -26,14 +26,14 @@ enum ScheduleFilterOption {
   safe;
 
   String localizedLabel(BuildContext context) {
-    final isId = Localizations.localeOf(context).languageCode == 'id';
+    final l10n = AppLocalizations.of(context)!;
     switch (this) {
       case ScheduleFilterOption.all:
-        return isId ? 'Semua' : 'All';
+        return l10n.filterAll;
       case ScheduleFilterOption.attention:
-        return isId ? 'Perhatian' : 'Attention';
+        return l10n.filterAttention;
       case ScheduleFilterOption.safe:
-        return isId ? 'Aman' : 'Safe';
+        return l10n.urgencySafe;
     }
   }
 }
@@ -63,11 +63,19 @@ class _MaintenanceScreenState extends ConsumerState<MaintenanceScreen> with Sing
     final costController = TextEditingController();
     final notesController = TextEditingController();
     final workshopController = TextEditingController();
-    String category = 'Servis Rutin';
+    String category = l10n.mtCatGeneral;
     bool isOilChange = true;
     DateTime serviceDate = DateTime.now();
 
-    final categories = ['Servis Rutin', 'Ganti Oli & Filter', 'Pengereman', 'Ban & Suspensi', 'Kelistrikan & Aki', 'Mesin', 'Lainnya'];
+    final categories = [
+      l10n.mtCatGeneral,
+      l10n.mtCatOilFilter,
+      l10n.mtCatBrakes,
+      l10n.mtCatTires,
+      l10n.mtCatElectrical,
+      l10n.mtCatEngine,
+      l10n.mtCatOther,
+    ];
 
     showDialog(
       context: context,
@@ -95,9 +103,7 @@ class _MaintenanceScreenState extends ConsumerState<MaintenanceScreen> with Sing
                     controller: titleController,
                     decoration: InputDecoration(
                       labelText: l10n.pekerjaanServis,
-                      hintText: Localizations.localeOf(context).languageCode == 'id'
-                          ? 'Misal: Ganti Oli Mesin & Filter'
-                          : 'e.g. Engine Oil & Filter Change',
+                      hintText: l10n.serviceTitleHint,
                     ),
                     validator: (val) => val == null || val.trim().isEmpty
                         ? l10n.validationServiceNameRequired
@@ -118,7 +124,7 @@ class _MaintenanceScreenState extends ConsumerState<MaintenanceScreen> with Sing
                       if (val != null) {
                         setState(() {
                           category = val;
-                          if (val.contains('Oli')) isOilChange = true;
+                          if (val == l10n.mtCatOilFilter) isOilChange = true;
                         });
                       }
                     },
@@ -148,9 +154,7 @@ class _MaintenanceScreenState extends ConsumerState<MaintenanceScreen> with Sing
                     controller: workshopController,
                     decoration: InputDecoration(
                       labelText: l10n.namaBengkelToko,
-                      hintText: Localizations.localeOf(context).languageCode == 'id'
-                          ? 'Misal: Bengkel Resmi Astra'
-                          : 'e.g. Authorized Dealership / Workshop',
+                      hintText: l10n.workshopHint,
                     ),
                   ),
                   const SizedBox(height: 12),
@@ -289,13 +293,12 @@ class _MaintenanceScreenState extends ConsumerState<MaintenanceScreen> with Sing
                     cost: double.parse(costController.text.trim()),
                     workshop: workshopController.text.trim(),
                     notes: notesController.text.trim(),
+                    l10n: l10n,
                   );
               Navigator.pop(ctx);
               ScaffoldMessenger.of(context).showSnackBar(
                 SnackBar(
-                  content: Text(Localizations.localeOf(context).languageCode == 'id'
-                      ? '${schedule.title} berhasil diselesaikan!'
-                      : '${schedule.title} successfully completed!'),
+                  content: Text(l10n.scheduleCompleted(schedule.title)),
                 ),
               );
             },
@@ -320,7 +323,7 @@ class _MaintenanceScreenState extends ConsumerState<MaintenanceScreen> with Sing
         title: Text(
           active != null
               ? '${l10n.navMaintenance}: ${active.name}'
-              : (Localizations.localeOf(context).languageCode == 'id' ? 'Perawatan & Servis' : 'Maintenance & Services'),
+              : l10n.maintenanceScreenTitle,
           style: TextStyle(fontWeight: FontWeight.w800, fontSize: 18, color: context.textPrimary, letterSpacing: -0.4),
         ),
         bottom: PreferredSize(
@@ -460,8 +463,7 @@ class _MaintenanceScreenState extends ConsumerState<MaintenanceScreen> with Sing
                 ),
                 onSelected: (val) {
                   if (val == 'preset') {
-                    final isEnglish = Localizations.localeOf(context).languageCode != 'id';
-                    ref.read(maintenanceSchedulesProvider.notifier).loadPresetsForVehicle(active, isEnglish: isEnglish);
+                    ref.read(maintenanceSchedulesProvider.notifier).loadPresetsForVehicle(active, l10n);
                     ScaffoldMessenger.of(context).showSnackBar(
                       SnackBar(content: Text(l10n.rekomendasiPabrikBerhasilDimuat(active.type.getLocalizedLabel(context)))),
                     );
@@ -549,8 +551,7 @@ class _MaintenanceScreenState extends ConsumerState<MaintenanceScreen> with Sing
                           scale: 0.97,
                           child: ElevatedButton.icon(
                             onPressed: () {
-                              final isEnglish = Localizations.localeOf(context).languageCode != 'id';
-                              ref.read(maintenanceSchedulesProvider.notifier).loadPresetsForVehicle(active, isEnglish: isEnglish);
+                              ref.read(maintenanceSchedulesProvider.notifier).loadPresetsForVehicle(active, l10n);
                             },
                             icon: const Icon(Icons.auto_awesome, size: 16),
                             label: Text(l10n.muatStandarPabrik(active.type.getLocalizedLabel(context))),
@@ -649,23 +650,15 @@ class _MaintenanceScreenState extends ConsumerState<MaintenanceScreen> with Sing
                                     Expanded(
                                       child: Text(
                                         kmLeft < 0
-                                            ? (Localizations.localeOf(context).languageCode == 'id'
-                                                ? 'Terlewat ${-kmLeft} km'
-                                                : 'Overdue by ${-kmLeft} km')
-                                            : (Localizations.localeOf(context).languageCode == 'id'
-                                                ? 'Sisa $kmLeft km lagi'
-                                                : '$kmLeft km remaining'),
+                                            ? l10n.kmOverdue('${-kmLeft}')
+                                            : l10n.kmRemaining('$kmLeft'),
                                         style: TextStyle(fontSize: 12, fontWeight: FontWeight.w700, color: urgencyColor),
                                       ),
                                     ),
                                     Text(
                                       daysLeft < 0
-                                          ? (Localizations.localeOf(context).languageCode == 'id'
-                                              ? 'Terlewat ${-daysLeft} hari'
-                                              : 'Overdue by ${-daysLeft} days')
-                                          : (Localizations.localeOf(context).languageCode == 'id'
-                                              ? 'Sisa $daysLeft hari lagi'
-                                              : '$daysLeft days remaining'),
+                                          ? l10n.daysOverdue('${-daysLeft}')
+                                          : l10n.daysLeft('$daysLeft'),
                                       style: TextStyle(
                                         fontSize: 12,
                                         fontWeight: FontWeight.w600,
@@ -676,9 +669,17 @@ class _MaintenanceScreenState extends ConsumerState<MaintenanceScreen> with Sing
                                 ),
                                 const SizedBox(height: 8),
                                 Text(
-                                  Localizations.localeOf(context).languageCode == 'id'
-                                      ? 'Setiap ${NumberFormat('#,###', 'id_ID').format(item.intervalKm)} km atau ${item.intervalMonths} bulan • Terakhir: ${item.lastPerformedOdometer} km (${AppTimeZone.formatDate(item.lastPerformedDate, loc, locale: localeCode)})'
-                                      : 'Every ${NumberFormat('#,###', 'en_US').format(item.intervalKm)} km or ${item.intervalMonths} months • Last: ${item.lastPerformedOdometer} km (${AppTimeZone.formatDate(item.lastPerformedDate, loc, locale: localeCode)})',
+                                  l10n.scheduleIntervalSummary(
+                                    NumberFormat('#,###', 'id_ID')
+                                        .format(item.intervalKm),
+                                    '${item.intervalMonths}',
+                                    '${item.lastPerformedOdometer}',
+                                    AppTimeZone.formatDate(
+                                      item.lastPerformedDate,
+                                      loc,
+                                      locale: localeCode,
+                                    ),
+                                  ),
                                   style: TextStyle(fontSize: 11, color: context.textMuted),
                                 ),
                                 Divider(color: context.borderColor, height: 20),
@@ -1007,9 +1008,11 @@ class _MaintenanceScreenState extends ConsumerState<MaintenanceScreen> with Sing
                                         borderRadius: BorderRadius.circular(6),
                                       ),
                                       child: Text(
-                                        Localizations.localeOf(context).languageCode == 'id'
-                                            ? '${pct.toStringAsFixed(0)}% Lolos (${item.passedCount}/${item.totalCount})'
-                                            : '${pct.toStringAsFixed(0)}% Passed (${item.passedCount}/${item.totalCount})',
+                                        l10n.inspPassedCount(
+                                          pct.toStringAsFixed(0),
+                                          '${item.passedCount}',
+                                          '${item.totalCount}',
+                                        ),
                                         style: TextStyle(fontSize: 11, fontWeight: FontWeight.w700, color: badgeColor),
                                       ),
                                     ),

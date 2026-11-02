@@ -8,22 +8,31 @@
   "banner_ready": false,
   "seo": true,
   "slugs": {
-    "id": "data-servis-mobil-hilang-cek-ini-dulu-praktis",
-    "en": "servis-mobil-data-missing-check-these-first-practical",
-    "ar": "servis-mobil-4",
-    "jv": "pandhuan-servis-mobil-garagego-4",
-    "su": "pituduh-servis-mobil-garagego-4",
-    "zh": "garagego-servis-mobil-实用指南-4",
-    "ja": "garagegoservis-mobil-ガイド-4"
+    "id": "servis-mobil-macet-perbaiki-friksi-dulu",
+    "en": "servis-mobil-stuck-fix-the-friction-first",
+    "ar": "alsjlat-alywmya-mtwqf-qll-alahtkak-awla",
+    "jv": "servis-mobil-macet-ngurangi-alangan-dhisik",
+    "su": "servis-mobil-macet-kurangan-halangan-heula",
+    "zh": "ri-chang-ji-lu-ka-zhu-le-xian-jian-shao-mo-ca",
+    "ja": "mainichi-no-kiroku-ga-toma-ttara-mazu-masatsu-wo-hera-su"
   },
   "titles": {
-    "id": "Data servis mobil Hilang? Cek Ini Dulu",
-    "en": "servis mobil Data Missing? Check These First (Practical)",
-    "ar": "servis mobil — دليل GarageGo",
-    "jv": "Pandhuan: Data servis mobil Hilang? Cek Ini Dulu",
-    "su": "Pituduh: Data servis mobil Hilang? Cek Ini Dulu",
-    "zh": "GarageGo · servis mobil 实用指南",
-    "ja": "GarageGo｜servis mobil ガイド"
+    "id": "servis mobil macet? Perbaiki friksi dulu",
+    "en": "servis mobil stuck? Fix the friction first",
+    "ar": "السجلات اليومية متوقف؟ قلّل الاحتكاك أولاً",
+    "jv": "servis mobil macet? Ngurangi alangan dhisik",
+    "su": "servis mobil macét? Kurangan halangan heula",
+    "zh": "日常记录卡住了？先减少摩擦",
+    "ja": "毎日の記録が止まったら、まず摩擦を減らす"
   },
-  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+  "quality_pass": "editorial-v3",
+  "descriptions": {
+    "id": "Servis mobil macet? Atasi hambatannya lebih dulu. Panduan penyebab berhenti, versi paling kecil untuk mulai lagi, dan langkah setelah bolong.",
+    "en": "servis mobil stuck? Clear the friction first. Covers why the log stops, the smallest version to restart with, and what to do after a gap.",
+    "ar": "servis mobil متوقف؟ عالج الاحتكاك أولاً. يشرح سبب توقف السجل، وأصغر نسخة للبدء من جديد، وما يجب فعله بعد فجوة.",
+    "ja": "servis mobilが止まった時の対処法。記録が途切れる原因、再び始める最小バージョン、空白後の手順。",
+    "zh": "servis mobil停滞了？先处理障碍。介绍日志中断的原因、重新开始的最小版本，以及空档后要做的事。",
+    "jv": "Servis mobil mandheg? Beresi alangan dhisik. Isiné sebab log mandheg, versi paling cilik kanggo miwiti manèh, lan apa sing kudu ditindakaké sawisé bolong.",
+    "su": "Servis mobil macét? Beresihkeun halangan heula. Eusina sabab log eureun, versi pang leutikna pikeun mimitian deui, jeung naon nu kudu dipigawé sanggeus bolong."
+  }
 }

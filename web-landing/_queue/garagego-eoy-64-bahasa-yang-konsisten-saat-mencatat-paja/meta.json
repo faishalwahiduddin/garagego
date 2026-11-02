@@ -8,22 +8,31 @@
   "banner_ready": false,
   "seo": true,
   "slugs": {
-    "id": "bahasa-yang-konsisten-saat-mencatat-pajak-stnk-mingguan",
-    "en": "consistent-language-when-logging-pajak-stnk",
-    "ar": "pajak-stnk-7",
-    "jv": "pandhuan-pajak-stnk-garagego-7",
-    "su": "pituduh-pajak-stnk-garagego-7",
-    "zh": "garagego-pajak-stnk-实用指南-7",
-    "ja": "garagegopajak-stnk-ガイド-7"
+    "id": "menyusun-pajak-stnk-yang-enak-dibaca",
+    "en": "writing-pajak-stnk-notes-people-can-read",
+    "ar": "ktaba-alsjlat-alywmya-bshkl-yqra-aljz-3",
+    "jv": "nulis-pajak-stnk-sing-kepenak-diwaca",
+    "su": "nulis-pajak-stnk-anu-genah-dibaca",
+    "zh": "ba-ri-chang-ji-lu-xie-de-rang-ren-du-de-xia-qu-di-3-pian",
+    "ja": "yome-ru-mainichi-no-kiroku-no-kakikata-dai-3-kai"
   },
   "titles": {
-    "id": "Bahasa yang Konsisten saat Mencatat pajak STNK",
-    "en": "Consistent Language When Logging pajak STNK — Offline First",
-    "ar": "pajak STNK — دليل GarageGo",
-    "jv": "Pandhuan: Bahasa yang Konsisten saat Mencatat pajak STNK",
-    "su": "Pituduh: Bahasa yang Konsisten saat Mencatat pajak STNK",
-    "zh": "GarageGo · pajak STNK 实用指南",
-    "ja": "GarageGo｜pajak STNK ガイド"
+    "id": "Menyusun pajak STNK yang enak dibaca",
+    "en": "Writing pajak STNK notes people can read",
+    "ar": "كتابة السجلات اليومية بشكل يُقرأ · الجزء 3",
+    "jv": "Nulis pajak STNK sing kepénak diwaca",
+    "su": "Nulis pajak STNK anu genah dibaca",
+    "zh": "把日常记录写得让人读得下去 · 第3篇",
+    "ja": "読める毎日の記録の書き方 · 第3回"
   },
-  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+  "quality_pass": "editorial-v3",
+  "descriptions": {
+    "id": "Menulis catatan pajak STNK yang mudah dibaca: tinjauan mingguan, data yang tersimpan di perangkat, dan langkah setelah catatan sempat terlewat.",
+    "en": "Writing pajak STNK notes people can read: the weekly check, data kept on your device, and the steps to take after an entry was missed.",
+    "ar": "كتابة ملاحظات pajak STNK سهلة القراءة: المراجعة الأسبوعية، والبيانات على جهازك، والخطوات بعد تفويت إدخال.",
+    "ja": "読みやすいpajak STNKのメモ書き。毎週の確認、端末に保存されるデータ、入力を逃した後の手順。",
+    "zh": "写出易读的pajak STNK笔记：每周检查、设备上保存的数据，以及漏记某条后的处理步骤。",
+    "jv": "Nulis cathetan pajak STNK sing gampang diwaca: tinjauan saben minggu, data kasimpen ing piranti, lan langkah sawisé entri kelewatan.",
+    "su": "Nulis catetan pajak STNK nu gampang dibaca: tinjauan mingguan, data disimpen di alat, jeung léngkah sanggeus éntri kaliwat."
+  }
 }

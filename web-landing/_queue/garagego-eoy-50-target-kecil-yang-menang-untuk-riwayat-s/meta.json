@@ -8,22 +8,31 @@
   "banner_ready": false,
   "seo": true,
   "slugs": {
-    "id": "target-kecil-yang-menang-untuk-riwayat-servis-mobil-motor-praktis",
-    "en": "small-winning-targets-for-riwayat-servis-mobil-motor-practical",
-    "ar": "riwayat-servis-mobil-motor-5",
-    "jv": "pandhuan-riwayat-servis-mobil-motor-garagego-5",
-    "su": "pituduh-riwayat-servis-mobil-motor-garagego-5",
-    "zh": "garagego-riwayat-servis-mobil-motor-实用指南-5",
-    "ja": "garagegoriwayat-servis-mobil-motor-ガイド-5"
+    "id": "menjaga-riwayat-servis-mobil-motor-saat-semangat-turun",
+    "en": "keeping-riwayat-servis-mobil-motor-going-when-motivation-drops",
+    "ar": "alahtfaz-balsjlat-alywmya-hyn-tdaf-alhmasa-aljz-3",
+    "jv": "njaga-riwayat-servis-mobil-motor-nalika-semangat-mudhun",
+    "su": "ngajaga-riwayat-servis-mobil-motor-nalika-sumanget-turun",
+    "zh": "re-qing-xia-jiang-shi-ru-he-shou-zhu-ri-chang-ji-lu-di-3-pian",
+    "ja": "yaru-kiga-saga-tta-nichi-no-mainichi-no-kiroku-dai-3-kai"
   },
   "titles": {
-    "id": "Target Kecil yang Menang untuk riwayat servis mobil motor",
-    "en": "Small Winning Targets for riwayat servis mobil motor (Practical)",
-    "ar": "riwayat servis mobil motor — دليل GarageGo",
-    "jv": "Pandhuan: Target Kecil yang Menang untuk riwayat servis mobil motor",
-    "su": "Pituduh: Target Kecil yang Menang untuk riwayat servis mobil motor",
-    "zh": "GarageGo · riwayat servis mobil motor 实用指南",
-    "ja": "GarageGo｜riwayat servis mobil motor ガイド"
+    "id": "Menjaga riwayat servis mobil motor saat semangat turun",
+    "en": "Keeping riwayat servis mobil motor going when motivation drops",
+    "ar": "الاحتفاظ بـالسجلات اليومية حين تضعف الحماسة · الجزء 3",
+    "jv": "Njaga riwayat servis mobil motor nalika semangat mudhun",
+    "su": "Ngajaga riwayat servis mobil motor nalika sumanget turun",
+    "zh": "热情下降时如何守住日常记录 · 第3篇",
+    "ja": "やる気が下がった日の毎日の記録 · 第3回"
   },
-  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+  "quality_pass": "editorial-v3",
+  "descriptions": {
+    "id": "Semangat turun? Riwayat servis mobil motor tetap berjalan dengan versi paling kecil. Bahas alasan berhenti dan langkah setelah jeda.",
+    "en": "Keep riwayat servis mobil motor going when motivation drops: why people stop, a small target to aim for, and how to restart after taking a break.",
+    "ar": "استمر في riwayat servis mobil motor عند تراجع الحافز: لماذا يتوقف الناس، وهدف صغير يمكن بلوغه، وكيف تبدأ من جديد بعد استراحة.",
+    "ja": "やる気が落ちてもriwayat servis mobil motorを続ける。やめてしまう理由、目指す小さな目標、再開方法。",
+    "zh": "动力下降时仍能坚持riwayat servis mobil motor：人们为何停下，可以瞄准的小目标，以及休息后重启。",
+    "jv": "Riwayat servis mobil motor tetep mlaku nalika semangat mudhun: kenapa wong mandheg, target cilik sing bisa digayuh, lan carane miwiti manèh sawisé istirahat.",
+    "su": "Riwayat servis mobil motor tetep jalan lamun sumangat turun: naha jalma eureun, target leutik nu bisa dihontal, jeung kumaha mimitian deui sanggeus istirahat."
+  }
 }

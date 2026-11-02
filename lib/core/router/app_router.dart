@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import '../ui/fleet_splash_screen.dart';
 import '../ui/fleet_onboarding_screen.dart';
+import '../ui/fleet_app_config.dart';
 import '../../features/fuel/fuel_logs_screen.dart';
 import '../../features/garage/garage_dashboard_screen.dart';
 import '../../features/glovebox/glovebox_screen.dart';
@@ -23,7 +24,7 @@ final appRouter = GoRouter(
     GoRoute(
       path: '/onboarding',
       parentNavigatorKey: _rootNavigatorKey,
-      builder: (context, state) => const FleetOnboardingScreen(),
+      builder: (context, state) => FleetOnboardingScreen(config: FleetAppConfig.current),
     ),
     StatefulShellRoute.indexedStack(
       builder: (context, state, navigationShell) {

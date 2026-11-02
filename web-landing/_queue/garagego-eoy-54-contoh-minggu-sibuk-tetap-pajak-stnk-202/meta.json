@@ -8,22 +8,31 @@
   "banner_ready": false,
   "seo": true,
   "slugs": {
-    "id": "contoh-minggu-sibuk-tetap-pajak-stnk-2026",
-    "en": "busy-week-example-still-doing-pajak-stnk",
-    "ar": "pajak-stnk-6",
-    "jv": "pandhuan-pajak-stnk-garagego-6",
-    "su": "pituduh-pajak-stnk-garagego-6",
-    "zh": "garagego-pajak-stnk-实用指南-6",
-    "ja": "garagegopajak-stnk-ガイド-6"
+    "id": "studi-kasus-pajak-stnk-selama-14-hari",
+    "en": "case-study-pajak-stnk-for-14-days",
+    "ar": "hala-amlya-alsjlat-alywmya-larbaa-ashr-ywma-aljz-3",
+    "jv": "studi-kasus-pajak-stnk-14-dina",
+    "su": "studi-kasus-pajak-stnk-14-poe",
+    "zh": "an-li-14-tian-de-ri-chang-ji-lu-di-3-pian",
+    "ja": "jirei-14-nichikan-no-mainichi-no-kiroku-dai-3-kai"
   },
   "titles": {
-    "id": "Contoh Minggu Sibuk tetap pajak STNK",
-    "en": "Busy-Week Example Still Doing pajak STNK",
-    "ar": "pajak STNK — دليل GarageGo",
-    "jv": "Pandhuan: Contoh Minggu Sibuk tetap pajak STNK",
-    "su": "Pituduh: Contoh Minggu Sibuk tetap pajak STNK",
-    "zh": "GarageGo · pajak STNK 实用指南",
-    "ja": "GarageGo｜pajak STNK ガイド"
+    "id": "Studi kasus: pajak STNK selama 14 hari",
+    "en": "Case study: pajak STNK for 14 days",
+    "ar": "حالة عملية: السجلات اليومية لأربعة عشر يوماً · الجزء 3",
+    "jv": "Studi kasus: pajak STNK 14 dina",
+    "su": "Studi kasus: pajak STNK 14 poé",
+    "zh": "案例：14 天的日常记录 · 第3篇",
+    "ja": "事例：14日間の毎日の記録 · 第3回"
   },
-  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+  "quality_pass": "editorial-v3",
+  "descriptions": {
+    "id": "Studi kasus pajak STNK selama 14 hari: alur tinjauan mingguan, penyimpanan data di perangkat, dan langkah setelah catatan sempat terlewat.",
+    "en": "Case study: pajak STNK for 14 days, covering the weekly check, on-device data storage, and the steps to take after a missed entry.",
+    "ar": "دراسة حالة: pajak STNK لمدة 14 يوماً، تشمل المراجعة الأسبوعية، وحفظ البيانات على الجهاز، والخطوات بعد تفويت إدخال.",
+    "ja": "14日間のpajak STNKの事例。毎週の確認の流れ、端末内のデータ保存、入力を逃した後の手順。",
+    "zh": "pajak STNK 14天案例：每周检查的流程、设备数据保存，以及漏记一次后应采取的步骤。",
+    "jv": "Studi kasus pajak STNK sajrone 14 dina: alur tinjauan saben minggu, panyimpenan data ing piranti, lan langkah sawisé entri kelewatan.",
+    "su": "Studi kasus pajak STNK salila 14 poé: alur tinjauan mingguan, panyimpenan data di alat, jeung léngkah sanggeus éntri kaliwat."
+  }
 }

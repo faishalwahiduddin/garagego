@@ -8,22 +8,31 @@
   "banner_ready": false,
   "seo": true,
   "slugs": {
-    "id": "pajak-stnk-tahunan-saat-travel-tanpa-internet-praktis",
-    "en": "pajak-stnk-tahunan-while-traveling-offline-practical",
-    "ar": "pajak-stnk-tahunan-7",
-    "jv": "pandhuan-pajak-stnk-tahunan-garagego-7",
-    "su": "pituduh-pajak-stnk-tahunan-garagego-7",
-    "zh": "garagego-pajak-stnk-tahunan-实用指南-7",
-    "ja": "garagegopajak-stnk-tahunan-ガイド-7"
+    "id": "pajak-stnk-tahunan-full-offline-apa-yang-tetap-jalan",
+    "en": "pajak-stnk-tahunan-fully-offline-what-still-works",
+    "ar": "alsjlat-alywmya-bla-atsal-tmama-ma-ybqa-yaml",
+    "jv": "pajak-stnk-tahunan-full-offline-apa-sing-tetep-mlaku",
+    "su": "pajak-stnk-tahunan-full-offline-naon-anu-tetep-jalan",
+    "zh": "ri-chang-ji-lu-wan-quan-li-xian-na-xie-gong-neng-hai-neng-yong",
+    "ja": "mainichi-no-kiroku-kanzen-ofurain-nani-ga-ugoku-ka"
   },
   "titles": {
-    "id": "pajak stnk tahunan full offline: uji & checklist",
-    "en": "pajak stnk tahunan While Traveling Offline (Practical)",
-    "ar": "pajak stnk tahunan — دليل GarageGo",
-    "jv": "Pandhuan: pajak stnk tahunan full offline: uji & checklist",
-    "su": "Pituduh: pajak stnk tahunan full offline: uji & checklist",
-    "zh": "GarageGo · pajak stnk tahunan 实用指南",
-    "ja": "GarageGo｜pajak stnk tahunan ガイド"
+    "id": "pajak stnk tahunan full offline: apa yang tetap jalan",
+    "en": "pajak stnk tahunan fully offline: what still works",
+    "ar": "السجلات اليومية بلا اتصال تماماً: ما يبقى يعمل",
+    "jv": "pajak stnk tahunan full offline: apa sing tetep mlaku",
+    "su": "pajak stnk tahunan full offline: naon anu tetep jalan",
+    "zh": "日常记录完全离线：哪些功能还能用",
+    "ja": "毎日の記録完全オフライン：何が動くか"
   },
-  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+  "quality_pass": "editorial-v3",
+  "descriptions": {
+    "id": "Pajak stnk tahunan sepenuhnya offline: bagian mana yang tetap berjalan, penyimpanan di perangkat, tinjauan mingguan, dan langkah setelah jeda.",
+    "en": "pajak stnk tahunan fully offline: what keeps working without a connection, on-device storage, the weekly check, and what to do after a pause.",
+    "ar": "pajak stnk tahunan دون اتصال بالكامل: ما يستمر عمله بلا شبكة، والتخزين على الجهاز، والمراجعة الأسبوعية، وما يُفعل بعد توقف.",
+    "ja": "完全オフラインのpajak stnk tahunan。接続なしで動く部分、端末内保存、毎週の確認、中断後の対応。",
+    "zh": "完全离线的pajak stnk tahunan：无连接时仍在运作的部分、设备存储、每周检查，以及暂停后的做法。",
+    "jv": "Pajak stnk tahunan kabeh offline: apa sing tetep mlaku tanpa sambungan, panyimpenan ing piranti, tinjauan saben minggu, lan langkah sawisé jeda.",
+    "su": "Pajak stnk tahunan sakabéhna offline: naon nu tetep jalan tanpa sambungan, panyimpenan di alat, tinjauan mingguan, jeung léngkah sanggeus eureun."
+  }
 }

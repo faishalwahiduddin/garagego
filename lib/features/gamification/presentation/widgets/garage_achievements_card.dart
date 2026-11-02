@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:intl/intl.dart';
 import '../../../../core/constants/app_colors.dart';
+import '../../../../l10n/app_localizations.dart';
 import '../../domain/models/garage_gamification.dart';
 import '../../providers/garage_gamification_provider.dart';
 import 'share_achievement.dart';
@@ -12,8 +13,12 @@ class GarageAchievementsCard extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final state = ref.watch(garageGamificationProvider);
-    final isId = Localizations.localeOf(context).languageCode == 'id';
-    final numberFmt = NumberFormat('#,###', isId ? 'id_ID' : 'en_US');
+    final l10n = AppLocalizations.of(context)!;
+    final numberFmt = NumberFormat(
+      '#,###',
+      Localizations.localeOf(context).languageCode == 'id' ? 'id_ID' : 'en_US',
+    );
+    final textScale = MediaQuery.textScalerOf(context).scale(1.0);
 
     return Card(
       color: context.cardBg,
@@ -52,13 +57,16 @@ class GarageAchievementsCard extends ConsumerWidget {
                       Row(
                         children: [
                           Container(
-                            padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
+                            padding: const EdgeInsets.symmetric(
+                              horizontal: 6,
+                              vertical: 2,
+                            ),
                             decoration: BoxDecoration(
                               color: AppColors.primary.withValues(alpha: 0.15),
                               borderRadius: BorderRadius.circular(6),
                             ),
                             child: Text(
-                              'LVL ${state.currentLevel.level}',
+                              l10n.gamesLvl('${state.currentLevel.level}'),
                               style: TextStyle(
                                 fontSize: 10,
                                 fontWeight: FontWeight.w800,
@@ -70,7 +78,7 @@ class GarageAchievementsCard extends ConsumerWidget {
                           const SizedBox(width: 6),
                           Flexible(
                             child: Text(
-                              state.currentLevel.getLocalizedTitle(context),
+                              state.currentLevel.getLocalizedTitle(l10n),
                               style: TextStyle(
                                 fontSize: 15,
                                 fontWeight: FontWeight.w800,
@@ -83,7 +91,11 @@ class GarageAchievementsCard extends ConsumerWidget {
                       ),
                       const SizedBox(height: 3),
                       Text(
-                        '${numberFmt.format(state.totalXp)} XP Total • ${state.unlockedCount}/${state.badges.length} ${isId ? "Lencana Terbuka" : "Badges Unlocked"}',
+                        l10n.gamesProgress(
+                          numberFmt.format(state.totalXp),
+                          '${state.unlockedCount}',
+                          '${state.badges.length}',
+                        ),
                         style: TextStyle(
                           fontSize: 12,
                           color: context.textSecondary,
@@ -96,18 +108,17 @@ class GarageAchievementsCard extends ConsumerWidget {
                   padding: EdgeInsets.zero,
                   constraints: const BoxConstraints(),
                   iconSize: 18,
-                  tooltip: isId ? 'Bagikan' : 'Share',
+                  tooltip: l10n.gamesShare,
                   icon: const Icon(Icons.share_outlined),
                   color: AppColors.primary,
                   onPressed: () => shareAchievementText(
                     buildGarageShareText(
                       level: state.currentLevel.level,
-                      levelTitle:
-                          state.currentLevel.getLocalizedTitle(context),
+                      levelTitle: state.currentLevel.getLocalizedTitle(l10n),
                       totalXp: state.totalXp,
                       unlockedCount: state.unlockedCount,
                       totalBadges: state.badges.length,
-                      isId: isId,
+                      l10n: l10n,
                     ),
                   ),
                 ),
@@ -122,7 +133,9 @@ class GarageAchievementsCard extends ConsumerWidget {
                 value: state.levelProgress,
                 minHeight: 7,
                 backgroundColor: context.surfaceBg,
-                valueColor: const AlwaysStoppedAnimation<Color>(AppColors.primary),
+                valueColor: const AlwaysStoppedAnimation<Color>(
+                  AppColors.primary,
+                ),
               ),
             ),
             const SizedBox(height: 6),
@@ -130,7 +143,7 @@ class GarageAchievementsCard extends ConsumerWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  state.currentLevel.getLocalizedTitle(context),
+                  state.currentLevel.getLocalizedTitle(l10n),
                   style: TextStyle(
                     fontSize: 11,
                     fontWeight: FontWeight.w600,
@@ -139,8 +152,11 @@ class GarageAchievementsCard extends ConsumerWidget {
                 ),
                 Text(
                   state.nextLevel != null
-                    ? '${isId ? "Menuju" : "Next"}: ${state.nextLevel!.getLocalizedTitle(context)} (${numberFmt.format(state.nextLevel!.requiredXp)} XP)'
-                    : (isId ? 'Pangkat Maksimal' : 'Max Rank Reached'),
+                      ? l10n.gamesNextLevel(
+                          state.nextLevel!.getLocalizedTitle(l10n),
+                          numberFmt.format(state.nextLevel!.requiredXp),
+                        )
+                      : l10n.gamesMaxRank,
                   style: TextStyle(
                     fontSize: 11,
                     fontWeight: FontWeight.w600,
@@ -153,7 +169,7 @@ class GarageAchievementsCard extends ConsumerWidget {
 
             // Badges grid
             Text(
-              isId ? 'Lencana Disiplin Garasi' : 'Garage Maintenance Badges',
+              l10n.gamesBadgesTitle,
               style: TextStyle(
                 fontSize: 13,
                 fontWeight: FontWeight.w700,
@@ -161,19 +177,27 @@ class GarageAchievementsCard extends ConsumerWidget {
               ),
             ),
             const SizedBox(height: 10),
-            GridView.builder(
-              shrinkWrap: true,
-              physics: const NeverScrollableScrollPhysics(),
-              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 4,
-                crossAxisSpacing: 8,
-                mainAxisSpacing: 8,
-                childAspectRatio: 0.9,
-              ),
-              itemCount: state.badges.length,
-              itemBuilder: (ctx, index) {
-                final item = state.badges[index];
-                return _buildBadgeItem(context, item, isId, state);
+            // Wrap (not GridView.shrinkWrap): a shrink-wrapped grid inside an
+            // unbounded Column reserves a phantom extra row, which painted
+            // ~40dp of dead space at the card's foot in both themes.
+            LayoutBuilder(
+              builder: (context, constraints) {
+                final cellWidth = (constraints.maxWidth - 24) / 4;
+                // Fixed cell height so a 2-line badge label + share row fit;
+                // an aspect ratio overflowed by a fraction of a pixel at 411dp.
+                final cellHeight = 74 + 22 * textScale;
+                return Wrap(
+                  spacing: 8,
+                  runSpacing: 8,
+                  children: [
+                    for (final item in state.badges)
+                      SizedBox(
+                        width: cellWidth,
+                        height: cellHeight,
+                        child: _buildBadgeItem(context, item, l10n, state),
+                      ),
+                  ],
+                );
               },
             ),
           ],
@@ -185,14 +209,14 @@ class GarageAchievementsCard extends ConsumerWidget {
   Widget _buildBadgeItem(
     BuildContext context,
     GarageBadgeStatus item,
-    bool isId,
+    AppLocalizations l10n,
     GarageGamificationState state,
   ) {
     final unlocked = item.isUnlocked;
     final badge = item.badge;
 
     return InkWell(
-      onTap: () => _showBadgeDetail(context, item, isId, state),
+      onTap: () => _showBadgeDetail(context, item, l10n, state),
       borderRadius: BorderRadius.circular(12),
       child: Container(
         decoration: BoxDecoration(
@@ -223,22 +247,22 @@ class GarageAchievementsCard extends ConsumerWidget {
               child: Icon(
                 badge.icon,
                 size: 18,
-                color: unlocked
-                    ? AppColors.primary
-                    : context.textMuted,
+                color: unlocked ? AppColors.primary : context.textMuted,
               ),
             ),
             const SizedBox(height: 6),
-            Text(
-              badge.getLocalizedTitle(context),
-              textAlign: TextAlign.center,
-              maxLines: 2,
-              overflow: TextOverflow.ellipsis,
-              style: TextStyle(
-                fontSize: 10,
-                fontWeight: unlocked ? FontWeight.w700 : FontWeight.w500,
-                color: unlocked ? context.textPrimary : context.textMuted,
-                height: 1.1,
+            Flexible(
+              child: Text(
+                badge.getLocalizedTitle(l10n),
+                textAlign: TextAlign.center,
+                maxLines: 2,
+                overflow: TextOverflow.ellipsis,
+                style: TextStyle(
+                  fontSize: 10,
+                  fontWeight: unlocked ? FontWeight.w700 : FontWeight.w500,
+                  color: unlocked ? context.textPrimary : context.textMuted,
+                  height: 1.1,
+                ),
               ),
             ),
             if (unlocked)
@@ -246,13 +270,14 @@ class GarageAchievementsCard extends ConsumerWidget {
                 onTap: () => shareAchievementText(
                   buildGarageShareText(
                     level: state.currentLevel.level,
-                    levelTitle: state.currentLevel.getLocalizedTitle(context),
+                    levelTitle: state.currentLevel.getLocalizedTitle(l10n),
                     totalXp: state.totalXp,
                     unlockedCount: state.unlockedCount,
                     totalBadges: state.badges.length,
-                    highlight:
-                        '${isId ? 'Lencana terbuka' : 'Badge unlocked'}: ${badge.getLocalizedTitle(context)}',
-                    isId: isId,
+                    highlight: l10n.gamesBadgeUnlockedLine(
+                      badge.getLocalizedTitle(l10n),
+                    ),
+                    l10n: l10n,
                   ),
                 ),
                 child: Padding(
@@ -261,7 +286,7 @@ class GarageAchievementsCard extends ConsumerWidget {
                     Icons.share_outlined,
                     size: 12,
                     color: AppColors.primary,
-                    semanticLabel: isId ? 'Bagikan' : 'Share',
+                    semanticLabel: l10n.gamesShare,
                   ),
                 ),
               ),
@@ -274,7 +299,7 @@ class GarageAchievementsCard extends ConsumerWidget {
   void _showBadgeDetail(
     BuildContext context,
     GarageBadgeStatus item,
-    bool isId,
+    AppLocalizations l10n,
     GarageGamificationState state,
   ) {
     final badge = item.badge;
@@ -293,15 +318,9 @@ class GarageAchievementsCard extends ConsumerWidget {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              Container(
-                width: 40,
-                height: 4,
-                decoration: BoxDecoration(
-                  color: context.borderColor,
-                  borderRadius: BorderRadius.circular(2),
-                ),
-              ),
-              const SizedBox(height: 16),
+              // Drag handle comes from bottomSheetTheme.showDragHandle — a
+              // second hand-drawn pill painted two handles in every theme.
+              const SizedBox(height: 8),
               Container(
                 width: 56,
                 height: 56,
@@ -323,7 +342,7 @@ class GarageAchievementsCard extends ConsumerWidget {
               ),
               const SizedBox(height: 12),
               Text(
-                badge.getLocalizedTitle(context),
+                badge.getLocalizedTitle(l10n),
                 style: TextStyle(
                   fontSize: 17,
                   fontWeight: FontWeight.w800,
@@ -332,7 +351,7 @@ class GarageAchievementsCard extends ConsumerWidget {
               ),
               const SizedBox(height: 6),
               Text(
-                badge.getLocalizedDescription(context),
+                badge.getLocalizedDescription(l10n),
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 13,
@@ -342,7 +361,10 @@ class GarageAchievementsCard extends ConsumerWidget {
               ),
               const SizedBox(height: 14),
               Container(
-                padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 12,
+                  vertical: 6,
+                ),
                 decoration: BoxDecoration(
                   color: unlocked
                       ? AppColors.success.withValues(alpha: 0.12)
@@ -359,13 +381,13 @@ class GarageAchievementsCard extends ConsumerWidget {
                     ),
                     const SizedBox(width: 6),
                     Text(
-                      unlocked
-                          ? (isId ? 'Terbuka (+100 XP)' : 'Unlocked (+100 XP)')
-                          : (isId ? 'Belum Tercapai' : 'Not Unlocked Yet'),
+                      unlocked ? l10n.gamesUnlocked : l10n.gamesLocked,
                       style: TextStyle(
                         fontSize: 12,
                         fontWeight: FontWeight.w700,
-                        color: unlocked ? context.readable(AppColors.success) : context.textMuted,
+                        color: unlocked
+                            ? context.readable(AppColors.success)
+                            : context.textMuted,
                       ),
                     ),
                   ],
@@ -377,7 +399,7 @@ class GarageAchievementsCard extends ConsumerWidget {
                   width: double.infinity,
                   child: OutlinedButton.icon(
                     icon: const Icon(Icons.share_outlined, size: 16),
-                    label: Text(isId ? 'Bagikan' : 'Share'),
+                    label: Text(l10n.gamesShare),
                     style: OutlinedButton.styleFrom(
                       foregroundColor: AppColors.primary,
                       shape: RoundedRectangleBorder(
@@ -388,14 +410,17 @@ class GarageAchievementsCard extends ConsumerWidget {
                       shareAchievementText(
                         buildGarageShareText(
                           level: state.currentLevel.level,
-                          levelTitle:
-                              state.currentLevel.getLocalizedTitle(context),
+                          levelTitle: state.currentLevel.getLocalizedTitle(
+                            l10n,
+                          ),
                           totalXp: state.totalXp,
                           unlockedCount: state.unlockedCount,
                           totalBadges: state.badges.length,
-                          highlight:
-                              '${isId ? 'Lencana terbuka' : 'Badge unlocked'}: ${badge.getLocalizedTitle(context)} — ${badge.getLocalizedDescription(context)}',
-                          isId: isId,
+                          highlight: l10n.gamesBadgeUnlockedLine(
+                            '${badge.getLocalizedTitle(l10n)}$kShareDash'
+                            '${badge.getLocalizedDescription(l10n)}',
+                          ),
+                          l10n: l10n,
                         ),
                       );
                       Navigator.pop(ctx);
@@ -414,7 +439,7 @@ class GarageAchievementsCard extends ConsumerWidget {
                     ),
                   ),
                   onPressed: () => Navigator.pop(ctx),
-                  child: Text(isId ? 'Tutup' : 'Close'),
+                  child: Text(l10n.tutup),
                 ),
               ),
             ],

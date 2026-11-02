@@ -8,22 +8,31 @@
   "banner_ready": false,
   "seo": true,
   "slugs": {
-    "id": "amankan-log-garagego-di-hp-bersama-harian",
-    "en": "secure-garagego-logs-on-a-shared-phone",
-    "ar": "garagego-6",
-    "jv": "pandhuan-garagego-garagego-6",
-    "su": "pituduh-garagego-garagego-6",
-    "zh": "garagego-garagego-实用指南-6",
-    "ja": "garagegogaragego-ガイド-6"
+    "id": "keamanan-data-servis-motor-di-ponsel",
+    "en": "keeping-motorbike-service-data-safe-on-your-phone",
+    "ar": "hmaya-byanat-syana-aldraja-ala-alhatf",
+    "jv": "keamanan-data-servis-motor-ing-hp",
+    "su": "kaamanan-data-servis-motor-dina-hp",
+    "zh": "shou-ji-shang-de-mo-tuo-che-bao-yang-shu-ju-an-quan",
+    "ja": "sumaho-no-baiku-seibi-deeta-wo-mamoru"
   },
   "titles": {
-    "id": "Amankan Log GarageGo di HP Bersama",
-    "en": "Secure GarageGo Logs on a Shared Phone",
-    "ar": "GarageGo — دليل GarageGo",
-    "jv": "Pandhuan: Amankan Log GarageGo di HP Bersama",
-    "su": "Pituduh: Amankan Log GarageGo di HP Bersama",
-    "zh": "GarageGo · GarageGo 实用指南",
-    "ja": "GarageGo｜GarageGo ガイド"
+    "id": "Keamanan data servis motor di ponsel",
+    "en": "Keeping motorbike service data safe on your phone",
+    "ar": "حماية بيانات صيانة الدراجة على الهاتف",
+    "jv": "Keamanan data servis motor ing HP",
+    "su": "Kaamanan data servis motor dina HP",
+    "zh": "手机上的摩托车保养数据安全",
+    "ja": "スマホのバイク整備データを守る"
   },
-  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+  "quality_pass": "editorial-v3",
+  "descriptions": {
+    "id": "Menjaga data servis motor tetap aman di ponsel: penyimpanan di perangkat, tinjauan mingguan, dan langkah yang perlu diambil setelah jeda pemakaian.",
+    "en": "Keeping motorbike service data safe on your phone: what stays on the device, how to run the weekly check, and what to do after a break in use.",
+    "ar": "حماية بيانات servis motor على هاتفك: ما الذي يبقى على الجهاز، وكيف تُجرى المراجعة الأسبوعية، وما الذي يُفعل بعد توقف الاستخدام.",
+    "ja": "スマホでservis motorのデータを安全に保つ。端末内に残るもの、毎週の確認、利用中断後の対応。",
+    "zh": "在手机上安全保存servis motor数据：设备上留存的内容、每周检查的方法，以及停用后的处理。",
+    "jv": "Njaga data servis motor tetep aman ing HP: apa sing tetep ana ing piranti, carane tinjauan saben minggu, lan langkah sawisé jeda panggunaan.",
+    "su": "Ngajaga data servis motor tetep aman dina HP: naon nu tetep aya di alat, kumaha tinjauan mingguan, jeung léngkah sanggeus eureun ngagunakeun."
+  }
 }

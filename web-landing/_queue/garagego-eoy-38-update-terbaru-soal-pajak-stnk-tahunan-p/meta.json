@@ -8,22 +8,31 @@
   "banner_ready": false,
   "seo": true,
   "slugs": {
-    "id": "update-terbaru-soal-pajak-stnk-tahunan-praktis",
-    "en": "latest-practical-update-on-pajak-stnk-tahunan-practical",
-    "ar": "pajak-stnk-tahunan-4",
-    "jv": "pandhuan-pajak-stnk-tahunan-garagego-4",
-    "su": "pituduh-pajak-stnk-tahunan-garagego-4",
-    "zh": "garagego-pajak-stnk-tahunan-实用指南-4",
-    "ja": "garagegopajak-stnk-tahunan-ガイド-4"
+    "id": "pajak-stnk-tahunan-di-2026-apa-yang-berubah",
+    "en": "pajak-stnk-tahunan-in-2026-what-changed",
+    "ar": "alsjlat-alywmya-llmbtdiyn-mn-ayn-tbda",
+    "jv": "pajak-stnk-tahunan-ing-2026-apa-sing-owah",
+    "su": "pajak-stnk-tahunan-taun-2026-naon-anu-robah",
+    "zh": "ri-chang-ji-lu-ru-men-cong-na-li-kai-shi",
+    "ja": "mainichi-no-kiroku-nyuumon-dokokara-hajime-ruka"
   },
   "titles": {
-    "id": "Update Terbaru Soal pajak stnk tahunan",
-    "en": "Latest Practical Update on pajak stnk tahunan (Practical)",
-    "ar": "pajak stnk tahunan — دليل GarageGo",
-    "jv": "Pandhuan: Update Terbaru Soal pajak stnk tahunan",
-    "su": "Pituduh: Update Terbaru Soal pajak stnk tahunan",
-    "zh": "GarageGo · pajak stnk tahunan 实用指南",
-    "ja": "GarageGo｜pajak stnk tahunan ガイド"
+    "id": "pajak stnk tahunan di 2026: apa yang berubah",
+    "en": "pajak stnk tahunan in 2026: what changed",
+    "ar": "السجلات اليومية للمبتدئين: من أين تبدأ",
+    "jv": "pajak stnk tahunan ing 2026: apa sing owah",
+    "su": "pajak stnk tahunan taun 2026: naon anu robah",
+    "zh": "日常记录入门：从哪里开始",
+    "ja": "毎日の記録入門：どこから始めるか"
   },
-  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+  "quality_pass": "editorial-v3",
+  "descriptions": {
+    "id": "Pajak stnk tahunan di tahun 2026: yang berubah dibahas dengan arti praktisnya, versi paling kecil, dan penjelasan penyimpanan data di perangkat.",
+    "en": "pajak stnk tahunan in 2026: a look at what changed, what the practice means now, the smallest version to start, and on-device data storage.",
+    "ar": "pajak stnk tahunan في عام 2026: نظرة على ما تغيّر، والمعنى العملي اليوم، وأصغر نسخة للبدء، وحفظ البيانات على الجهاز.",
+    "ja": "2026年のpajak stnk tahunan。変わった点、実践的な意味、最小バージョン、端末に保存されるデータ。",
+    "zh": "2026年的pajak stnk tahunan：了解变化内容、当前的实际含义、最小版本，以及设备数据存储。",
+    "jv": "Pajak stnk tahunan ing taun 2026: ndeleng apa sing owah, tegesé saiki ing praktik, versi paling cilik kanggo miwiti, lan panyimpenan data ing piranti.",
+    "su": "Pajak stnk tahunan taun 2026: nyawang naon nu robah, harti praktisna ayeuna, versi pang leutikna pikeun mimitian, jeung panyimpenan data di alat."
+  }
 }

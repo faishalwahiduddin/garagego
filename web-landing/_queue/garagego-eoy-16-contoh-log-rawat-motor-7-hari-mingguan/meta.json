@@ -8,22 +8,31 @@
   "banner_ready": false,
   "seo": true,
   "slugs": {
-    "id": "contoh-log-rawat-motor-7-hari-mingguan",
-    "en": "sample-7-day-rawat-motor-log",
-    "ar": "rawat-motor-2",
-    "jv": "pandhuan-rawat-motor-garagego-2",
-    "su": "pituduh-rawat-motor-garagego-2",
-    "zh": "garagego-rawat-motor-实用指南-2",
-    "ja": "garagegorawat-motor-ガイド-2"
+    "id": "template-rawat-motor-siap-pakai",
+    "en": "a-ready-to-use-rawat-motor-template",
+    "ar": "khta-thlathyn-ywma-lalsjlat-alywmya",
+    "jv": "templat-rawat-motor-siap-dipigunakake",
+    "su": "citakan-rawat-motor-siap-dipake",
+    "zh": "ri-chang-ji-lu-de-30-tian-ji-hua",
+    "ja": "mainichi-no-kiroku-no-30-nichi-puran"
   },
   "titles": {
-    "id": "Contoh Log rawat motor 7 Hari",
-    "en": "Sample 7-Day rawat motor Log — Offline First",
-    "ar": "rawat motor — دليل GarageGo",
-    "jv": "Pandhuan: Contoh Log rawat motor 7 Hari",
-    "su": "Pituduh: Contoh Log rawat motor 7 Hari",
-    "zh": "GarageGo · rawat motor 实用指南",
-    "ja": "GarageGo｜rawat motor ガイド"
+    "id": "Template rawat motor siap pakai",
+    "en": "A ready-to-use rawat motor template",
+    "ar": "خطة ثلاثين يوماً لـالسجلات اليومية",
+    "jv": "Templat rawat motor siap dipigunakaké",
+    "su": "Citakan rawat motor siap dipaké",
+    "zh": "日常记录的30天计划",
+    "ja": "毎日の記録の30日プラン"
   },
-  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+  "quality_pass": "editorial-v3",
+  "descriptions": {
+    "id": "Template rawat motor siap pakai. Berisi versi paling kecil, waktu yang tepat untuk mengisinya, dan kerangka tinjauan mingguan agar mudah diikuti.",
+    "en": "A ready-to-use rawat motor template with the smallest version, a clear time to fill it in, and a weekly check layout that is easy to keep up with.",
+    "ar": "قالب rawat motor جاهز للاستخدام، فيه أصغر نسخة، ووقت واضح للتعبئة، وتخطيط مراجعة أسبوعية سهل المتابعة.",
+    "ja": "すぐ使えるrawat motorのテンプレート。最小バージョン、記入の時期、毎週の確認の枠組みを紹介。",
+    "zh": "可直接套用的rawat motor模板，包含最小版本、明确的填写时间，以及容易坚持的每周检查结构。",
+    "jv": "Templat rawat motor siap dipigunakaké: versi paling cilik, wektu sing jelas kanggo ngisi, lan tata tinjauan saben minggu sing gampang diterusaké.",
+    "su": "Citakan rawat motor siap dipaké: versi pang leutikna, waktu nu jelas pikeun ngeusian, jeung tata tinjauan mingguan nu gampang diteruskeun."
+  }
 }

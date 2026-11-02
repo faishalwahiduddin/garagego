@@ -1,0 +1,85 @@
+{
+  "title": "Naon éta rawat motor? Katerangan pondok",
+  "description": "Harti rawat motor dina prakték, versi pang leutikna pikeun mimitian, jeung data disimpen dina alat. Glosarium pondok pikeun nu boga motor.",
+  "badge": "produktivitas · offline",
+  "answer": "Jumaah soré catetan rawat motor anjeun belasan baris satengah jadi tanpa tanggal. GarageGo nyimpen rawat motor dina alat, jadi tetep kabuka tanpa kuota jeung tanpa akun.",
+  "toc": [
+    "Hartina rawat motor dina prakték",
+    "Versi pangleutikna",
+    "Kasimpen dina alat"
+  ],
+  "sections": [
+    {
+      "h2": "Hartina rawat motor dina prakték",
+      "p": "Dina praktékna, rawat motor téh bukti tanggalan anu bisa dibuka deui—lain niat anu ngan diinget-inget.",
+      "h3": null,
+      "p3": null
+    },
+    {
+      "h2": "Versi pangleutikna",
+      "p": "Eusian tilu waé: waktu, status, hiji halangan. Sésana opsional.",
+      "h3": null,
+      "p3": null
+    },
+    {
+      "h2": "Kasimpen dina alat",
+      "p": "GarageGo nyimpen rawat motor dina alat, jadi tetep kabuka tanpa kuota jeung tanpa akun.",
+      "h3": null,
+      "p3": null
+    }
+  ],
+  "table": {
+    "caption": "Rangka rawat motor",
+    "headers": [
+      "Léngkah",
+      "Eusi minimal",
+      "Bérés lamun"
+    ],
+    "rows": [
+      [
+        "Éntri sapopoé",
+        "waktu + status",
+        "kasimpen < 2 menit"
+      ],
+      [
+        "Pananda",
+        "posisi panungtungan",
+        "bisa diteruskeun isukan"
+      ],
+      [
+        "Evaluasi minggu",
+        "hiji panyesuaian",
+        "diterapkeun Senén"
+      ]
+    ]
+  },
+  "list": [
+    "Tangtukeun hiji waktu tetep, lain “mun sempet”.",
+    "Buka GarageGo basa waktu éta datang, ulah engké peuting.",
+    "Catet hiji halangan, lain alesan panjang.",
+    "Cadangkeun data saméméh ganti HP."
+  ],
+  "faqs": [
+    [
+      "Naha rawat motor bisa dibuka offline?",
+      "Bisa. GarageGo nyimpen kabéh dina alat, jadi teu butuh kuota."
+    ],
+    [
+      "Kudu akun heula?",
+      "Teu. Mimitian tanpa login; cadangkeun data sakapeung."
+    ],
+    [
+      "Mimitian ti mana?",
+      "Ti bagian pangpondokna. Tambahan yén geus dua minggu stabil."
+    ],
+    [
+      "Lamun bolong sababaraha poé?",
+      "Ulah mupus riwayat. Teraskeun tina catetan panungtungan jeung catet hiji halangan."
+    ]
+  ],
+  "cta": [
+    "Mimitian rawat motor poé ieu",
+    "Buka GarageGo"
+  ],
+  "slug": "pituduh-rawat-motor-garagego"
+}

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:garagego/core/models/vehicle.dart';
+import 'package:garagego/l10n/app_localizations_id.dart';
 import 'package:garagego/core/providers/app_providers.dart';
 import 'package:garagego/core/services/analytics_service.dart';
 import 'package:garagego/core/storage/local_storage_service.dart';
@@ -111,7 +112,11 @@ void main() {
       final sch = _schedule(lastOdo: 8000, lastDate: DateTime(2026, 1, 1));
       await c.read(maintenanceSchedulesProvider.notifier).addSchedule(sch);
       await c.read(maintenanceSchedulesProvider.notifier).markScheduleDone(
-          schedule: sch, performedOdometer: 13000, performedDate: DateTime(2026, 6, 1), cost: 450000);
+          schedule: sch,
+          performedOdometer: 13000,
+          performedDate: DateTime(2026, 6, 1),
+          cost: 450000,
+          l10n: AppLocalizationsId());
       expect(c.read(maintenanceSchedulesProvider).single.lastPerformedOdometer, 13000);
       final log = c.read(serviceLogsProvider).single;
       expect(log.cost, 450000);
@@ -146,7 +151,7 @@ void main() {
     });
 
     test('FLOW-SRV-01-T05 inspeksi menghitung persentase lolos dari butir tercentang', () {
-      final items = InspectionChecklist.generateDefaultItems(VehicleType.car);
+      final items = InspectionChecklist.generateDefaultItems(VehicleType.car, AppLocalizationsId());
       for (var i = 0; i < items.length; i++) {
         items[i].isChecked = i.isEven;
       }
@@ -190,7 +195,7 @@ void main() {
 
   group('FLOW-DOC-01 brankas dokumen & pajak', () {
     test('FLOW-DOC-01-T01 mobil contoh punya pengingat PKB tahunan, STNK 5 tahunan, dan asuransi', () {
-      final docs = VehicleDocument.defaultDocumentsFor(Vehicle.sampleCar());
+      final docs = VehicleDocument.defaultDocumentsFor(Vehicle.sampleCar(), AppLocalizationsId());
       expect(docs.map((d) => d.type), containsAll([DocumentType.stnkTahunan, DocumentType.stnkLimaTahunan, DocumentType.asuransi]));
       expect(docs.first.expiryDate.difference(Vehicle.sampleCar().taxDueDate).inMinutes.abs(), lessThan(1));
     });
@@ -210,7 +215,7 @@ void main() {
     test('FLOW-DOC-01-T04 tipe dokumen tak dikenal di data tersimpan menjadi Lainnya; tanpa asuransi tidak dibuat', () {
       final json = _doc(10).toJson()..['type'] = 'hilang';
       expect(VehicleDocument.fromJson(json).type, DocumentType.lainnya);
-      final docs = VehicleDocument.defaultDocumentsFor(_car());
+      final docs = VehicleDocument.defaultDocumentsFor(_car(), AppLocalizationsId());
       expect(docs.any((d) => d.type == DocumentType.asuransi), isFalse);
     });
   });
@@ -241,9 +246,9 @@ void main() {
     });
 
     test('FLOW-TCO-01-T04 oli terlewat dan dokumen kedaluwarsa menurunkan skor kesehatan', () {
-      final healthy = AnalyticsService.computeHealthScore(vehicle: _car(odo: 10000, lastOil: 9000), schedules: const [], documents: [_doc(200)]);
+      final healthy = AnalyticsService.computeHealthScore(vehicle: _car(odo: 10000, lastOil: 9000), schedules: const [], documents: [_doc(200)], l10n: AppLocalizationsId());
       final neglected = AnalyticsService.computeHealthScore(
-          vehicle: _car(odo: 20000, lastOil: 9000), schedules: [_schedule(lastOdo: 1000, lastDate: DateTime(2020))], documents: [_doc(-5)]);
+          vehicle: _car(odo: 20000, lastOil: 9000), schedules: [_schedule(lastOdo: 1000, lastDate: DateTime(2020))], documents: [_doc(-5)], l10n: AppLocalizationsId());
       expect(neglected.score, lessThan(healthy.score));
       expect(neglected.warnings, isNotEmpty);
     });

@@ -8,22 +8,31 @@
   "banner_ready": false,
   "seo": true,
   "slugs": {
-    "id": "setup-riwayat-servis-mobil-motor-offline-tanpa-kuota-praktis",
-    "en": "set-up-offline-riwayat-servis-mobil-motor-without-data-practical",
-    "ar": "riwayat-servis-mobil-motor-2",
-    "jv": "pandhuan-riwayat-servis-mobil-motor-garagego-2",
-    "su": "pituduh-riwayat-servis-mobil-motor-garagego-2",
-    "zh": "garagego-riwayat-servis-mobil-motor-实用指南-2",
-    "ja": "garagegoriwayat-servis-mobil-motor-ガイド-2"
+    "id": "riwayat-servis-mobil-motor-untuk-pengguna-di-indonesia",
+    "en": "riwayat-servis-mobil-motor-for-readers-in-indonesia",
+    "ar": "alsjlat-alywmya-fy-akthr-almwasm-anshghala",
+    "jv": "riwayat-servis-mobil-motor-kanggo-pangguna-ing-indonesia",
+    "su": "riwayat-servis-mobil-motor-pikeun-pamake-di-indonesia",
+    "zh": "zui-mang-de-ji-jie-li-de-ri-chang-ji-lu",
+    "ja": "ichiban-isogashii-jiki-no-mainichi-no-kiroku"
   },
   "titles": {
-    "id": "Setup riwayat servis mobil motor Offline tanpa Kuota",
-    "en": "Set Up Offline riwayat servis mobil motor Without Data (Practical)",
-    "ar": "riwayat servis mobil motor — دليل GarageGo",
-    "jv": "Pandhuan: Setup riwayat servis mobil motor Offline tanpa Kuota",
-    "su": "Pituduh: Setup riwayat servis mobil motor Offline tanpa Kuota",
-    "zh": "GarageGo · riwayat servis mobil motor 实用指南",
-    "ja": "GarageGo｜riwayat servis mobil motor ガイド"
+    "id": "riwayat servis mobil motor untuk pengguna di Indonesia",
+    "en": "riwayat servis mobil motor for readers in Indonesia",
+    "ar": "السجلات اليومية في أكثر المواسم انشغالاً",
+    "jv": "riwayat servis mobil motor kanggo pangguna ing Indonesia",
+    "su": "riwayat servis mobil motor pikeun pamaké di Indonésia",
+    "zh": "最忙的季节里的日常记录",
+    "ja": "いちばん忙しい時期の毎日の記録"
   },
-  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+  "quality_pass": "editorial-v3",
+  "descriptions": {
+    "id": "Untuk pengguna di Indonesia, riwayat servis mobil motor dimulai dari versi paling kecil. Tentukan kapan menjalankannya, lalu lakukan tinjauan mingguan.",
+    "en": "Riwayat servis mobil motor for readers in Indonesia: start with the smallest version, decide when to run it, and finish each week with a short review.",
+    "ar": "riwayat servis mobil motor للقراء في إندونيسيا: ابدأ بأصغر نسخة، وحدّد موعد التشغيل، واختتم كل أسبوع بمراجعة قصيرة.",
+    "ja": "インドネシアの読者向けriwayat servis mobil motor。最小バージョンから始め、実行時期を決めて振り返る。",
+    "zh": "面向印尼读者的riwayat servis mobil motor：从最小版本开始，确定执行时间，并每周简短回顾。",
+    "jv": "Riwayat servis mobil motor kanggo pangguna ing Indonesia: miwiti saka versi paling cilik, mutusaké wektu mlaku, lan rampung saben minggu kanthi tinjauan cekak.",
+    "su": "Riwayat servis mobil motor pikeun pamaké Indonésia: mimitian ti versi pang leutikna, nangtukeun waktu ngajalankeunana, jeung réngsé unggal minggu ku tinjauan."
+  }
 }

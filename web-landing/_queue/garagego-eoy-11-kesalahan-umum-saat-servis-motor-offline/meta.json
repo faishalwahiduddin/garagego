@@ -8,22 +8,31 @@
   "banner_ready": false,
   "seo": true,
   "slugs": {
-    "id": "kesalahan-umum-saat-servis-motor-offline",
-    "en": "common-mistakes-when-doing-servis-motor",
-    "ar": "servis-motor-2",
-    "jv": "pandhuan-servis-motor-garagego-2",
-    "su": "pituduh-servis-motor-garagego-2",
-    "zh": "garagego-servis-motor-实用指南-2",
-    "ja": "garagegoservis-motor-ガイド-2"
+    "id": "kenapa-servis-motor-sulit-konsisten",
+    "en": "why-motorbike-service-habits-break",
+    "ar": "lmadha-ytathr-syana-aldraja",
+    "jv": "kenapa-servis-motor-angel-konsisten",
+    "su": "naha-servis-motor-hese-konsisten",
+    "zh": "wei-shen-me-mo-tuo-che-bao-yang-zong-shi-nan-yi-jian-chi",
+    "ja": "baiku-seibi-ga-tsuzuka-nai-riyuu"
   },
   "titles": {
-    "id": "Kesalahan Umum saat servis motor",
-    "en": "Common Mistakes When Doing servis motor",
-    "ar": "servis motor — دليل GarageGo",
-    "jv": "Pandhuan: Kesalahan Umum saat servis motor",
-    "su": "Pituduh: Kesalahan Umum saat servis motor",
-    "zh": "GarageGo · servis motor 实用指南",
-    "ja": "GarageGo｜servis motor ガイド"
+    "id": "Kenapa servis motor sulit konsisten?",
+    "en": "Why motorbike service habits break",
+    "ar": "لماذا يتعثر صيانة الدراجة؟",
+    "jv": "Kenapa servis motor angel konsisten?",
+    "su": "Naha servis motor hésé konsisten?",
+    "zh": "为什么摩托车保养总是难以坚持",
+    "ja": "バイク整備が続かない理由"
   },
-  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+  "quality_pass": "editorial-v3",
+  "descriptions": {
+    "id": "Alasan servis motor sulit konsisten: mengapa kebiasaan mudah putus, versi paling kecil yang tetap bisa dijalankan, dan cara melanjutkan setelah bolong.",
+    "en": "Why motorbike service habits are hard to keep: the usual reasons they break, a smallest version you can still run on busy days, and how to resume after a gap.",
+    "ar": "لماذا يصعب الاستمرار على servis motor؟ الأسباب المعتادة للانقطاع، وأصغر نسخة يمكن تنفيذها في الأيام المزدحمة، وكيف تستأنف بعد فجوة.",
+    "ja": "習慣が続きにくい理由から考える、servis motorの最小バージョン。空白期間のあとに戻る考え方も。",
+    "zh": "servis motor的习惯为什么难坚持：常见的中断原因、忙碌日也能做的最小版本，以及间断后的恢复。",
+    "jv": "Kenapa kebiasan servis motor angel tetep: sebab-sebab sing umum, versi paling cilik sing isih bisa dilakoni, lan carane nerusaké sawisé bolong suwé.",
+    "su": "Naha kabiasaan servis motor hésé konsisten: sabab-sabab umum, versi pang leutikna anu masih bisa dilakukeun, jeung kumaha neruskeun sanggeus bolong lila."
+  }
 }

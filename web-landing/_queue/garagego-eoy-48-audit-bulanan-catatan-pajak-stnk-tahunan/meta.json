@@ -8,22 +8,31 @@
   "banner_ready": false,
   "seo": true,
   "slugs": {
-    "id": "audit-bulanan-catatan-pajak-stnk-tahunan-2026",
-    "en": "monthly-audit-of-pajak-stnk-tahunan-logs",
-    "ar": "pajak-stnk-tahunan-5",
-    "jv": "pandhuan-pajak-stnk-tahunan-garagego-5",
-    "su": "pituduh-pajak-stnk-tahunan-garagego-5",
-    "zh": "garagego-pajak-stnk-tahunan-实用指南-5",
-    "ja": "garagegopajak-stnk-tahunan-ガイド-5"
+    "id": "pajak-stnk-tahunan-yang-datanya-bisa-dipercaya",
+    "en": "pajak-stnk-tahunan-whose-records-you-can-trust",
+    "ar": "alsjlat-alywmya-bsjlat-mwthwqa",
+    "jv": "pajak-stnk-tahunan-sing-dhatae-bisa-dipercaya",
+    "su": "pajak-stnk-tahunan-anu-datana-bisa-dipercaya",
+    "zh": "ji-lu-ke-xin-de-ri-chang-ji-lu",
+    "ja": "kiroku-wo-shinrai-dekiru-mainichi-no-kiroku"
   },
   "titles": {
-    "id": "Audit Bulanan Catatan pajak stnk tahunan",
-    "en": "Monthly Audit of pajak stnk tahunan Logs",
-    "ar": "pajak stnk tahunan — دليل GarageGo",
-    "jv": "Pandhuan: Audit Bulanan Catatan pajak stnk tahunan",
-    "su": "Pituduh: Audit Bulanan Catatan pajak stnk tahunan",
-    "zh": "GarageGo · pajak stnk tahunan 实用指南",
-    "ja": "GarageGo｜pajak stnk tahunan ガイド"
+    "id": "pajak stnk tahunan yang datanya bisa dipercaya",
+    "en": "pajak stnk tahunan whose records you can trust",
+    "ar": "السجلات اليومية بسجلات موثوقة",
+    "jv": "pajak stnk tahunan sing dhataé bisa dipercaya",
+    "su": "pajak stnk tahunan anu datana bisa dipercaya",
+    "zh": "记录可信的日常记录",
+    "ja": "記録を信頼できる毎日の記録"
   },
-  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+  "quality_pass": "editorial-v3",
+  "descriptions": {
+    "id": "Pajak stnk tahunan dengan catatan yang bisa dipercaya. Bahas penyebab data tidak akurat, versi paling kecil, dan cara merapikan catatan setelah jeda.",
+    "en": "pajak stnk tahunan records you can trust: the reasons data goes wrong, the smallest version to keep it accurate, and how to tidy up after a pause.",
+    "ar": "pajak stnk tahunan بسجلات موثوقة: أسباب خروج البيانات عن الدقة، وأصغر نسخة للحفاظ على صحتها، وكيف ترتب السجل بعد توقف.",
+    "ja": "信頼できる記録のためのpajak stnk tahunan。データが不正確になる原因、正確さを保つ最小バージョン。",
+    "zh": "为获得可信记录的pajak stnk tahunan：数据为何失准，保持准确的最小版本，以及停顿后如何整理。",
+    "jv": "Pajak stnk tahunan kanthi cathetan sing bisa dipercaya: sebab data ora akurat, versi paling cilik kanggo njaga, lan carane ngrapikaké cathetan sawisé jeda.",
+    "su": "Pajak stnk tahunan kalayan catetan nu bisa dipercaya: sabab data teu akurat, versi pang leutikna pikeun ngajaga, jeung kumaha ngarapihkeun sanggeus eureun."
+  }
 }

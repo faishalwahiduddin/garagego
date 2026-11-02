@@ -8,22 +8,31 @@
   "banner_ready": false,
   "seo": true,
   "slugs": {
-    "id": "checklist-ganti-oli-harian-yang-bisa-ditiru-harian",
-    "en": "daily-ganti-oli-checklist-you-can-copy",
-    "ar": "ganti-oli",
-    "jv": "pandhuan-ganti-oli-garagego",
-    "su": "pituduh-ganti-oli-garagego",
-    "zh": "garagego-ganti-oli-实用指南",
-    "ja": "garagegoganti-oli-ガイド"
+    "id": "checklist-ganti-oli-untuk-satu-layar",
+    "en": "a-one-screen-ganti-oli-checklist",
+    "ar": "qaima-alsjlat-alywmya-fy-shasha-wahda",
+    "jv": "dhaftar-priksa-ganti-oli-mung-siji-layar",
+    "su": "daptar-pariksa-ganti-oli-dina-hiji-layar",
+    "zh": "yi-ye-zhi-de-ri-chang-ji-lu-qing-dan",
+    "ja": "1-gamen-de-owa-ru-mainichi-no-kiroku-chekkurisuto"
   },
   "titles": {
-    "id": "Checklist ganti oli Harian yang Bisa Ditiru",
-    "en": "Daily ganti oli Checklist You Can Copy",
-    "ar": "ganti oli — دليل GarageGo",
-    "jv": "Pandhuan: Checklist ganti oli Harian yang Bisa Ditiru",
-    "su": "Pituduh: Checklist ganti oli Harian yang Bisa Ditiru",
-    "zh": "GarageGo · ganti oli 实用指南",
-    "ja": "GarageGo｜ganti oli ガイド"
+    "id": "Checklist ganti oli untuk satu layar",
+    "en": "A one-screen ganti oli checklist",
+    "ar": "قائمة السجلات اليومية في شاشة واحدة",
+    "jv": "Dhaftar priksa ganti oli mung siji layar",
+    "su": "Daptar pariksa ganti oli dina hiji layar",
+    "zh": "一页纸的日常记录清单",
+    "ja": "1画面で終わる毎日の記録チェックリスト"
   },
-  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+  "quality_pass": "editorial-v3",
+  "descriptions": {
+    "id": "Checklist ganti oli yang muat dalam satu layar. Isinya versi paling kecil, waktu menjalankannya, dan tinjauan mingguan supaya jadwal oli tidak terlewat.",
+    "en": "A one-screen ganti oli checklist with the smallest version, the right moment to run it, and a weekly check so your oil schedule never slips past you.",
+    "ar": "قائمة مراجعة ganti oli في شاشة واحدة: أصغر نسخة للبدء، والوقت المناسب لتشغيلها، ومراجعة أسبوعية حتى لا يفوتك موعد تغيير الزيت.",
+    "ja": "一画面で確認できるganti oliのチェックリスト。最小の手順、実行の目安、毎週の確認まで含みます。",
+    "zh": "一屏即可看完的ganti oli清单：最小步骤、执行时机，以及每周检查，避免忘记换油。",
+    "jv": "Dhaftar priksa ganti oli sing muat ing siji layar: versi paling cilik, wektu sing pas kanggo mlaku, lan tinjauan saben minggu supaya jadwal oli ora kelangan.",
+    "su": "Daptar pariksa ganti oli nu muat dina hiji layar: versi pang leutikna, waktu ngajalankeunana, jeung tinjauan mingguan supaya jadwal olina teu kaliwat."
+  }
 }

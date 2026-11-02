@@ -8,22 +8,31 @@
   "banner_ready": false,
   "seo": true,
   "slugs": {
-    "id": "pajak-stnk-tahunan-di-hp-vs-buku-catatan-praktis",
-    "en": "pajak-stnk-tahunan-on-phone-vs-paper-log-practical",
-    "ar": "pajak-stnk-tahunan",
-    "jv": "pandhuan-pajak-stnk-tahunan-garagego",
-    "su": "pituduh-pajak-stnk-tahunan-garagego",
-    "zh": "garagego-pajak-stnk-tahunan-实用指南",
-    "ja": "garagegopajak-stnk-tahunan-ガイド"
+    "id": "pajak-stnk-tahunan-catatan-longgar-vs-aplikasi-offline",
+    "en": "pajak-stnk-tahunan-loose-notes-vs-an-offline-app",
+    "ar": "alsjlat-alywmya-mlahzat-mtfrqa-am-ttbyq-bla-atsal",
+    "jv": "pajak-stnk-tahunan-cathetan-longgar-utawa-aplikasi-offline",
+    "su": "pajak-stnk-tahunan-catetan-longgar-atawa-aplikasi-offline",
+    "zh": "ri-chang-ji-lu-ling-san-bi-ji-yu-li-xian-ying-yong-de-cha-bie",
+    "ja": "mainichi-no-kiroku-memo-to-ofurainapuri-no-chigai"
   },
   "titles": {
-    "id": "pajak stnk tahunan: catatan longgar vs aplikasi",
-    "en": "pajak stnk tahunan on Phone vs Paper Log (Practical)",
-    "ar": "pajak stnk tahunan — دليل GarageGo",
-    "jv": "Pandhuan: pajak stnk tahunan: catatan longgar vs aplikasi",
-    "su": "Pituduh: pajak stnk tahunan: catatan longgar vs aplikasi",
-    "zh": "GarageGo · pajak stnk tahunan 实用指南",
-    "ja": "GarageGo｜pajak stnk tahunan ガイド"
+    "id": "pajak stnk tahunan: catatan longgar vs aplikasi offline",
+    "en": "pajak stnk tahunan: loose notes vs an offline app",
+    "ar": "السجلات اليومية: ملاحظات متفرقة أم تطبيق بلا اتصال",
+    "jv": "pajak stnk tahunan: cathetan longgar utawa aplikasi offline",
+    "su": "pajak stnk tahunan: catetan longgar atawa aplikasi offline",
+    "zh": "日常记录：零散笔记与离线应用的差别",
+    "ja": "毎日の記録：メモとオフラインアプリの違い"
   },
-  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+  "quality_pass": "editorial-v3",
+  "descriptions": {
+    "id": "Catatan pajak stnk tahunan yang longgar dibandingkan aplikasi offline. Bahas mengapa catatan mudah terlupa, penyimpanan di perangkat, dan tinjauan mingguan.",
+    "en": "pajak stnk tahunan with loose notes compared to an offline app: why scattered notes get forgotten, on-device storage, and a weekly check to keep you on track.",
+    "ar": "مقارنة pajak stnk tahunan بين ملاحظات متفرقة وتطبيق يعمل دون اتصال: لماذا تُنسى الملاحظات المبعثرة، وحفظ البيانات على الجهاز، ومراجعة أسبوعية.",
+    "ja": "pajak stnk tahunanの記録をメモとオフラインアプリで比べると。散らかる理由、端末保存、毎週の確認。",
+    "zh": "pajak stnk tahunan用零散笔记还是离线应用？分析笔记为何容易遗忘、设备存储与每周检查。",
+    "jv": "Pajak stnk tahunan: cathetan longgar utawa aplikasi offline? Ngrembug kenapa cathetan kesebar gampang kelalen, panyimpenan ing piranti, lan ninjau saben minggu.",
+    "su": "pajak stnk tahunan: catetan longgar atawa aplikasi offline? Ngabahas naha catetan nyebar gampang hilap, panyimpenan di alat, jeung tinjauan mingguan."
+  }
 }

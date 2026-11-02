@@ -75,7 +75,7 @@ class AppLocalizationsSu extends AppLocalizations {
   String get save => 'Simpen';
 
   @override
-  String get delete => 'Hapus';
+  String get delete => 'Pupus';
 
   @override
   String get edit => 'Édit';
@@ -262,7 +262,7 @@ class AppLocalizationsSu extends AppLocalizations {
 
   @override
   String daysRemaining(Object count) {
-    return 'Dinten deui';
+    return '$count poé deui';
   }
 
   @override
@@ -543,7 +543,7 @@ class AppLocalizationsSu extends AppLocalizations {
 
   @override
   String get menghapusSemuaLogServisBbmDanR =>
-      'Menghapus semua log servis, BBM, dan riwayat Garasi';
+      'Mupus sadaya log servis, BBM, jeung riwayat Garasi';
 
   @override
   String get mobil => 'Mobil';
@@ -625,14 +625,14 @@ class AppLocalizationsSu extends AppLocalizations {
 
   @override
   String get pilihAtauBuatKendaraanTerlebih =>
-      'Pilih atau buat Kandaraan terlebih dahulu.';
+      'Pilih atawa jieun kandaraan heula.';
 
   @override
   String get pilihAtauTambahKendaraanTerleb =>
-      'Pilih atau Tambih Kandaraan terlebih dahulu.';
+      'Pilih atawa tambihkeun kandaraan heula.';
 
   @override
-  String get portabilitasCadanganData => 'Portabilitas & Cadangan Data';
+  String get portabilitasCadanganData => 'Portabilitas & Nyadangkeun Data';
 
   @override
   String get pulihkanData => 'Pulihkeun Data';
@@ -650,7 +650,7 @@ class AppLocalizationsSu extends AppLocalizations {
   String get resetCounterOliMesin => 'Reset Pangitung Oli Mesin';
 
   @override
-  String get resetDataGarasi => 'Reset Data Garasi';
+  String get resetDataGarasi => 'Mupus Data Garasi';
 
   @override
   String get resetOli => 'Reset Oli';
@@ -695,11 +695,11 @@ class AppLocalizationsSu extends AppLocalizations {
 
   @override
   String get simpanRiwayatBengkelDanGantiOl =>
-      'Simpen riwayat bengkel dan ganti oli';
+      'Simpen riwayat bengkel jeung ganti oli';
 
   @override
   String get simpanTanggalJatuhTempoStnkAsu =>
-      'Simpen tanggal jatuh tempo STNK, asuransi, dan dokumen Kandaraan Anda.';
+      'Simpen tanggal jatuh tempo STNK, asuransi, jeung dokumén kandaraan anjeun.';
 
   @override
   String get statusOliMesin => 'Status Oli Mesin';
@@ -760,7 +760,7 @@ class AppLocalizationsSu extends AppLocalizations {
 
   @override
   String get tindakanIniAkanMengosongkanSem =>
-      'Tindakan ini akan mengosongkan semua data dan mengembalikan contoh awal Garasi.';
+      'Tindakan ieu bakal ngosongkeun sadaya data jeung mulangkeun conto awal garasi.';
 
   @override
   String get totalBiayaRp => 'Total Biaya (Rp)';
@@ -831,7 +831,7 @@ class AppLocalizationsSu extends AppLocalizations {
 
   @override
   String muatStandarPabrik(String label) {
-    return 'Muat Standar $label';
+    return 'Muat Standar Pabrik ($label)';
   }
 
   @override
@@ -906,4 +906,797 @@ class AppLocalizationsSu extends AppLocalizations {
 
   @override
   String get validationDocNameRequired => 'Nami dokumen kedah dieusian';
+
+  @override
+  String get appTitle => 'GarageGo';
+
+  @override
+  String get appTagline =>
+      'Nyatet servis, oli, BBM & pajak kandaraan dina hiji garasi';
+
+  @override
+  String get loadingLabel => 'Ngamuat…';
+
+  @override
+  String get onbSkip => 'Léwati';
+
+  @override
+  String get onbNext => 'Lajeng';
+
+  @override
+  String get onbGetStarted => 'Mimitian Ayeuna';
+
+  @override
+  String get onbPrivacyHeadline => 'Privasi & Offline Kajaga';
+
+  @override
+  String get onbPrivacyDetail =>
+      'Sadaya data kandaraan disimpen aman dina alat anjeun tanpa palacak.';
+
+  @override
+  String get onbSlide1Title => 'Garasi Anjeun';
+
+  @override
+  String get onbSlide1Sub => 'Mobil & motor dina hiji tempat';
+
+  @override
+  String get onbSlide1Badge => '100% Offline & Pribadi';
+
+  @override
+  String get onbSlide2Title => 'Pangropéa';
+
+  @override
+  String get onbSlide2Sub => 'Servis, oli, jeung pajak STNK';
+
+  @override
+  String get onbSlide2Badge => 'Pangéling Berka';
+
+  @override
+  String get onbSlide3Title => 'BBM';
+
+  @override
+  String get onbSlide3Sub => 'Konsumsi km/L & biaya per km';
+
+  @override
+  String get onbSlide3Badge => 'Taya Iklan & Taya Akun';
+
+  @override
+  String get onbSlide4Title => 'Offline & Pribadi';
+
+  @override
+  String get onbSlide4Sub => 'Data disimpen dina alat anjeun';
+
+  @override
+  String get onbSlide4Badge => 'Data Disimpen dina Alat';
+
+  @override
+  String get urgencySafe => 'Aman';
+
+  @override
+  String get urgencyDueSoon => 'Geura-giru';
+
+  @override
+  String get urgencyOverdue => 'Kaliwat';
+
+  @override
+  String get docTypeTax => 'Pajak PKB Taunan';
+
+  @override
+  String get docTypePlate => 'Ganti Pelat & STNK 5 Taun';
+
+  @override
+  String get docTypeInsurance => 'Asuransi Kandaraan';
+
+  @override
+  String get docTypeEmissions => 'Uji Émisi / KIR';
+
+  @override
+  String get docTypeLicense => 'SIM Supir';
+
+  @override
+  String get docTypeTitle => 'BPKB Kandaraan';
+
+  @override
+  String get docTypeOther => 'Dokumén Lianna';
+
+  @override
+  String get mtCatOilFluids => 'Oli & Pelumas';
+
+  @override
+  String get mtCatOilFilter => 'Oli & Filter';
+
+  @override
+  String get mtCatAirFilter => 'Filter & Hawa';
+
+  @override
+  String get mtCatBrakes => 'Rém';
+
+  @override
+  String get mtCatTires => 'Ban & Suspensi';
+
+  @override
+  String get mtCatIgnition => 'Panyalaan';
+
+  @override
+  String get mtCatTransmission => 'Transmisi & Panggérék';
+
+  @override
+  String get mtCatCvt => 'Transmisi CVT';
+
+  @override
+  String get mtCatElectrical => 'Kalistrikan & Aki';
+
+  @override
+  String get mtCatCoolant => 'Cairan & Radiator';
+
+  @override
+  String get mtCatGeneral => 'Pangropéa Berka';
+
+  @override
+  String get mtPresetCarOil => 'Ganti Oli Mesin Sintétik';
+
+  @override
+  String get mtPresetCarOilFilter => 'Ganti Filter Oli Mesin';
+
+  @override
+  String get mtPresetCarAirFilter => 'Filter Hawa & AC Kabin';
+
+  @override
+  String get mtPresetCarBrakeFluid => 'Kuras Minyak Rém & Kampas';
+
+  @override
+  String get mtPresetCarTireRotation => 'Rotasi Ban & Spooring Balancing';
+
+  @override
+  String get mtPresetCarSparkPlugs => 'Ganti Busi Iridium';
+
+  @override
+  String get mtPresetMotoOil => 'Ganti Oli Mesin Matic/Manual';
+
+  @override
+  String get mtPresetMotoGearOil => 'Ganti Oli Gardan (Gear Oil)';
+
+  @override
+  String get mtPresetMotoCvt => 'Servis CVT, V-Belt & Roller';
+
+  @override
+  String get mtPresetMotoBrakes => 'Cék & Ganti Kampas Rém';
+
+  @override
+  String get mtPresetMotoSparkPlug => 'Ganti Busi Motor';
+
+  @override
+  String inspPreTripTitle(String type) {
+    return 'Inspeksi Pra-Perjalanan ($type)';
+  }
+
+  @override
+  String inspRoadworthiness(String passed, String total) {
+    return 'Kalayakan: $passed ti $total Poin Lolos';
+  }
+
+  @override
+  String inspPassedCount(String pct, String passed, String total) {
+    return '$pct% Lolos ($passed/$total)';
+  }
+
+  @override
+  String get inspCatEngine => 'Mesin & Cairan';
+
+  @override
+  String get inspCatWheelsBrakes => 'Roda & Rém';
+
+  @override
+  String get inspCatLights => 'Lampu & Kalistrikan';
+
+  @override
+  String get inspCatSafety => 'Kasalametan';
+
+  @override
+  String get inspCatDrivetrain => 'Transmisi & Panggérék';
+
+  @override
+  String get inspCatWheelsSteering => 'Roda & Setir';
+
+  @override
+  String get inspCatBrakes => 'Rém';
+
+  @override
+  String get inspCatElectrical => 'Kalistrikan';
+
+  @override
+  String get inspCatEquipment => 'Kalengkepan';
+
+  @override
+  String get inspCar1 => 'Level Dipstick & Kajernihan Oli Mesin';
+
+  @override
+  String get inspCar2 => 'Level Cai Reservoir Radiator Coolant';
+
+  @override
+  String get inspCar3 => 'Level Minyak Rém & Minyak Kopling/Power Steering';
+
+  @override
+  String get inspCar4 => 'Tekanan Angin & Alur Kandelna 4 Ban + Ban Serep';
+
+  @override
+  String get inspCar5 => 'Kondisi Kampas Rém & Kakuatan Rém Tangan';
+
+  @override
+  String get inspCar6 => 'Lampu Utama, Lampu Rém, Sinyal & Lampu Hazard';
+
+  @override
+  String get inspCar7 => 'Kondisi Terminal & Tegangan Indikator Aki (12V)';
+
+  @override
+  String get inspCar8 => 'Karét Wiper & Cai Tabung Washer Kaca Hareup';
+
+  @override
+  String get inspCar9 => 'Dongkrak, Konci Roda, Segitiga Pangaman & Kotak P3K';
+
+  @override
+  String get inspMoto1 => 'Luhur & Kualitas Oli Mesin';
+
+  @override
+  String get inspMoto2 => 'Kondisi Oli Gardan / Ketegangan Ranté Roda';
+
+  @override
+  String get inspMoto3 => 'Tekanan Angin Ban Hareup & Tukang';
+
+  @override
+  String get inspMoto4 => 'Kandelna Kampas Rém Hareup & Tukang';
+
+  @override
+  String get inspMoto5 => 'Lampu Hareup, Lampu Tukang & Lampu Sinyal';
+
+  @override
+  String get inspMoto6 => 'Fungsi Klakson & Starter Listrik (Kondisi Aki)';
+
+  @override
+  String get inspMoto7 => 'Spion Katuhu & Kénca sarta Konci Kalengkepan';
+
+  @override
+  String gamesLvl(String level) {
+    return 'Tingkat $level';
+  }
+
+  @override
+  String gamesProgress(String xp, String unlocked, String total) {
+    return '$xp XP • $unlocked/$total Lencana Kabuka';
+  }
+
+  @override
+  String gamesNextLevel(String next, String xp) {
+    return 'Nuju $next ($xp XP)';
+  }
+
+  @override
+  String get gamesMaxRank => 'Pangkat Pungkasan';
+
+  @override
+  String get gamesBadgesTitle => 'Lencana Disiplin Garasi';
+
+  @override
+  String get gamesShare => 'Bagikeun';
+
+  @override
+  String get gamesUnlocked => 'Kabuka (+100 XP)';
+
+  @override
+  String get gamesLocked => 'Teu Acan Kahontal';
+
+  @override
+  String gamesBadgeUnlockedLine(String highlight) {
+    return 'Lencana kabuka: $highlight';
+  }
+
+  @override
+  String get gamesLvl1 => 'Supir Anyaran';
+
+  @override
+  String get gamesLvl2 => 'Nu Boga Merhatikeun';
+
+  @override
+  String get gamesLvl3 => 'Pangjaga Armada';
+
+  @override
+  String get gamesLvl4 => 'Spesialis Servis';
+
+  @override
+  String get gamesLvl5 => 'Master Garasi';
+
+  @override
+  String get badgeFirstRideTitle => 'Armada Kahiji';
+
+  @override
+  String get badgeFirstRideDesc =>
+      'Ngadaptarkeun kandaraan kahiji dina garasi digital.';
+
+  @override
+  String get badgeOilCareTitle => 'Disiplin Oli';
+
+  @override
+  String get badgeOilCareDesc =>
+      'Nyatet riwayat ganti oli mesin dina waktosna.';
+
+  @override
+  String get badgeServiceVeteranTitle => 'Rutin Berka';
+
+  @override
+  String get badgeServiceVeteranDesc =>
+      'Nyatet sahenteuna 3 log servis pangropéa berka.';
+
+  @override
+  String get badgeFuelWatcherTitle => 'Jejak Éfisiénsi';
+
+  @override
+  String get badgeFuelWatcherDesc =>
+      'Nyatet sahenteuna 3 eusi BBM pikeun ngawas konsumsi.';
+
+  @override
+  String get badgeSafeVoyageTitle => 'Inspektur Taliti';
+
+  @override
+  String get badgeSafeVoyageDesc =>
+      'Ngaréngsékeun checklist inspeksi kasalametan kandaraan.';
+
+  @override
+  String get badgeDocKeeperTitle => 'Tartib Dokumén';
+
+  @override
+  String get badgeDocKeeperDesc =>
+      'Nyimpen dokumén legalitas (STNK/Pajak/SIM/Asuransi).';
+
+  @override
+  String get badgePrimeFleetTitle => 'Kondisi Prima';
+
+  @override
+  String get badgePrimeFleetDesc =>
+      'Ngahontal skor kasehatan kandaraan 90 atawa leuwih.';
+
+  @override
+  String get badgeRoadWarriorTitle => 'Jelajah 10.000 KM';
+
+  @override
+  String get badgeRoadWarriorDesc =>
+      'Ngawas kandaraan kalayan odometer ngaleuwihan 10.000 km.';
+
+  @override
+  String healthOilOverdue(String km) {
+    return 'Ganti oli mesin geus kaliwat $km km';
+  }
+
+  @override
+  String healthOilDue(String km) {
+    return 'Ganti oli mesin kedah dilakukeun dina $km km deui';
+  }
+
+  @override
+  String get healthOilOptimal => 'Interval oli mesin dina kondisi prima';
+
+  @override
+  String get healthTaxOverdue => 'Pajak STNK taunan geus kaliwat jatuh tempo';
+
+  @override
+  String healthTaxDue(String days) {
+    return 'Pajak STNK taunan jatuh tempo dina $days poé';
+  }
+
+  @override
+  String get healthTaxSafe => 'Pajak PKB taunan aktip & aman';
+
+  @override
+  String get healthPlateExpired => 'Masa berlaku pelat 5 taunan geus béak';
+
+  @override
+  String healthPlateDue(String days) {
+    return 'Pelat 5 taunan kedah dianyarkeun dina $days poé';
+  }
+
+  @override
+  String healthScheduleOverdue(String title) {
+    return '$title geus kaliwat';
+  }
+
+  @override
+  String healthScheduleDueSoon(String title) {
+    return '$title ampir ka wates servis';
+  }
+
+  @override
+  String get healthPrime => 'Prima Pisan';
+
+  @override
+  String get healthAttention => 'Perlu Kaperhatian';
+
+  @override
+  String get healthCritical => 'Kritis / Servis Geura-giru';
+
+  @override
+  String get fuelEstTotalCost => 'Estimasi Total Biaya:';
+
+  @override
+  String get fuelTripDistance => 'Jarak Tempuh Trip:';
+
+  @override
+  String get fuelAvgConsumption => 'Konsumsi Rata-rata:';
+
+  @override
+  String get fuelOperatingCost => 'Biaya Operasional:';
+
+  @override
+  String get fuelFullTank => 'Tangki Pinuh';
+
+  @override
+  String get fuelPartial => 'Sabagian';
+
+  @override
+  String fuelPricePerLiterLine(String price, String state) {
+    return '@ $price / L • $state';
+  }
+
+  @override
+  String fuelOdometerValue(String value) {
+    return 'Odo: $value km';
+  }
+
+  @override
+  String fuelKmL(String value) {
+    return '$value km/L';
+  }
+
+  @override
+  String get aboutApplication => 'Aplikasi';
+
+  @override
+  String get aboutVersion => 'Vérsi';
+
+  @override
+  String get aboutArchitecture => 'Arsitéktur';
+
+  @override
+  String get aboutArchitectureValue =>
+      '100% Offline-First (tanpa server, tanpa palacakan)';
+
+  @override
+  String get aboutDomain => 'Domain';
+
+  @override
+  String get aboutPackageId => 'ID Pakét';
+
+  @override
+  String settingsVehicleOdo(String plate, String value) {
+    return '$plate • Odo: $value km';
+  }
+
+  @override
+  String get backupInvalidFile =>
+      'Berkas .grg teu valid atawa strukturna ruksak';
+
+  @override
+  String get filterAll => 'Sadayana';
+
+  @override
+  String get filterAttention => 'Kaperhatian';
+
+  @override
+  String get maintenanceScreenTitle => 'Pangropéa & Servis';
+
+  @override
+  String get serviceTitleHint => 'Contona: Ganti Oli Mesin & Filter';
+
+  @override
+  String get workshopHint => 'Contona: Bengkel Resmi Astra';
+
+  @override
+  String get mustBePositive => 'Kedah langkung ti 0';
+
+  @override
+  String get editScheduleTitle => 'Robih Jadwal Pangropéa';
+
+  @override
+  String get scheduleUpdated => 'Jadwal hasil diperbaharui!';
+
+  @override
+  String get scheduleSaved => 'Jadwal pangropéa hasil disimpen!';
+
+  @override
+  String get updateSchedule => 'Pembaharuan Jadwal';
+
+  @override
+  String get saveSchedule => 'Simpen Jadwal Pangropéa';
+
+  @override
+  String scheduleCompleted(String title) {
+    return '$title hasil réngsé!';
+  }
+
+  @override
+  String kmOverdue(String km) {
+    return 'Kaliwat $km km';
+  }
+
+  @override
+  String kmRemaining(String km) {
+    return 'Sésa $km km deui';
+  }
+
+  @override
+  String kmOverdueShort(String km) {
+    return 'Kaliwat $km km';
+  }
+
+  @override
+  String kmRemainingShort(String km) {
+    return 'Sésa $km km';
+  }
+
+  @override
+  String daysOverdue(String days) {
+    return 'Kaliwat $days poé';
+  }
+
+  @override
+  String daysLeft(String days) {
+    return 'Sésa $days poé deui';
+  }
+
+  @override
+  String scheduleIntervalSummary(
+    String km,
+    String months,
+    String odo,
+    String date,
+  ) {
+    return 'Unggal $km km atawa $months bulan • Panungtungan: $odo km ($date)';
+  }
+
+  @override
+  String get shareVehiclePassport => 'Bagikeun Paspor Kandaraan';
+
+  @override
+  String get shareVehiclePassportSubtitle =>
+      'Bagikeun kartu status, skor kasehatan & riwayat ka média sosial';
+
+  @override
+  String get garageEmptyBody =>
+      'Tambihkeun mobil atawa motor kulawarga munggaran anjeun pikeun ngawitan ngawas servis, oli, jeung BBM.';
+
+  @override
+  String resetOilConfirm(String name, String odo) {
+    return 'Counter ganti oli pikeun $name bakal diatur ulang kana odometer ayeuna ($odo km).';
+  }
+
+  @override
+  String get resetOilServiceNote => 'Reset counter interval oli mesin';
+
+  @override
+  String oilIntervalEvery(String km) {
+    return 'Interval: unggal $km km';
+  }
+
+  @override
+  String garageYear(String year) {
+    return 'Taun $year';
+  }
+
+  @override
+  String get shareDialogTitle => 'Bagikeun Paspor Kandaraan';
+
+  @override
+  String get shareCopySummary => 'Salin Ringkesan';
+
+  @override
+  String get sharePreparing => 'Nyiapkeun…';
+
+  @override
+  String get shareDownloadPassport => 'Undeur Paspor';
+
+  @override
+  String get shareSharePassport => 'Bagikeun Paspor';
+
+  @override
+  String get shareImageFailed => 'Gagal nyieun gambar paspor kandaraan';
+
+  @override
+  String get shareImageDownloaded => 'Paspor kandaraan hasil diundeur';
+
+  @override
+  String get shareSummaryCopied => 'Ringkesan status kandaraan hasil disalin';
+
+  @override
+  String get shareCardHealthHeader => 'STATUS KASEHATAN ARMADA';
+
+  @override
+  String shareCardCondition(String status) {
+    return 'Kondisi $status';
+  }
+
+  @override
+  String get shareCardOdometer => 'ODOMETER';
+
+  @override
+  String get shareCardOil => 'GANTI OLI';
+
+  @override
+  String get shareCardTax => 'PAJAK PKB';
+
+  @override
+  String get shareCardNeedService => 'Kudu Servis';
+
+  @override
+  String shareCardDaysShort(String days) {
+    return '$days poé';
+  }
+
+  @override
+  String shareCardLogbook(String date) {
+    return 'Logbook: $date';
+  }
+
+  @override
+  String shareTextHeader(String name, String plate) {
+    return '🚗 Paspor Pangropéa Kandaraan — $name ($plate)';
+  }
+
+  @override
+  String shareTextHealth(String score, String status) {
+    return '🏆 Skor Kasehatan: $score/100 ($status)';
+  }
+
+  @override
+  String shareTextOdometer(String odo) {
+    return '⚡ Odometer: $odo km';
+  }
+
+  @override
+  String shareTextOil(String km) {
+    return '🛢️ Interval Ganti Oli: $km km deui';
+  }
+
+  @override
+  String get shareTextOilDue => '🛢️ Kudu Ganti Oli Geura-giru';
+
+  @override
+  String shareTextTax(String days) {
+    return '📋 Pajak PKB: $days poé deui';
+  }
+
+  @override
+  String get shareTextFooter =>
+      'Ngatur pangropéa garasi lengkep & offline di GarageGo: https://garagego.faishal.id';
+
+  @override
+  String gloveboxHeader(String name) {
+    return 'Glovebox Digital — $name';
+  }
+
+  @override
+  String gloveboxDocCount(String plate, String count) {
+    return '$plate • $count Dokumén Kadapter';
+  }
+
+  @override
+  String docExpiredAgo(String days) {
+    return 'Kadaluwarsa $days poé kamari';
+  }
+
+  @override
+  String docDueIn(String days) {
+    return 'Jatuh tempo $days poé deui';
+  }
+
+  @override
+  String docDaysLeft(String days) {
+    return '$days poé deui';
+  }
+
+  @override
+  String docValidUntil(String date) {
+    return 'Masa Berlaku: $date';
+  }
+
+  @override
+  String get docEditTitle => 'Robih Dokumén';
+
+  @override
+  String get docAddTitle => 'Tambih Dokumén Garasi';
+
+  @override
+  String get docTitleHint => 'Contona: PKB Taunan / Asuransi All Risk';
+
+  @override
+  String get docNumberHint => 'Contona: B 1234 CD / POL-88902';
+
+  @override
+  String get docCostHint => 'Contona: 3500000';
+
+  @override
+  String get docNotesLabel => 'Catetan & Pituduh Pembaharuan';
+
+  @override
+  String get docNotesHint => 'Contona: Bayar online ngaliwatan Signal';
+
+  @override
+  String get docUpdated => 'Dokumén hasil diperbaharui!';
+
+  @override
+  String get docAdded => 'Dokumén hasil ditambahkeun!';
+
+  @override
+  String get docUpdate => 'Pembaharuan Dokumén';
+
+  @override
+  String get docSave => 'Simpen Dokumén';
+
+  @override
+  String get vehicleNameHint => 'Contona: Honda HR-V / Yamaha NMAX';
+
+  @override
+  String get plateHint => 'B 1234 CD';
+
+  @override
+  String get invalidYear => 'Taun teu valid';
+
+  @override
+  String get taxDueLabel => 'Jatuh Tempo Pajak STNK';
+
+  @override
+  String scheduleDoneNote(String category) {
+    return 'Réngsé nurut jadwal berka ($category)';
+  }
+
+  @override
+  String get backupErrEmpty => 'Data cadangan teu aya eusina.';
+
+  @override
+  String get backupErrRawJson =>
+      'Format JSON atah teu dirojong demi kaamanan. Anggo berkas cadangan resmi.';
+
+  @override
+  String get backupErrFormat =>
+      'Format berkas cadangan teu valid atawa teu dipikanyaho.';
+
+  @override
+  String backupErrWrongApp(String other, String expected) {
+    return 'Berkas cadangan milik aplikasi $other, teu tiasa dipulangkeun ka $expected.';
+  }
+
+  @override
+  String get backupErrCorrupt =>
+      'Data cadangan ruksak atawa format encoding teu sah.';
+
+  @override
+  String get backupErrIntegrity =>
+      'Integritas data cadangan teu valid: data geus dirobih atawa ruksak.';
+
+  @override
+  String get backupErrNotObject =>
+      'Eusi data cadangan sanés objék data anu sah.';
+
+  @override
+  String get mtCatEngine => 'Mesin';
+
+  @override
+  String get mtCatOther => 'Lianna';
+
+  @override
+  String get unitMonthsShort => 'bulan';
+
+  @override
+  String get docNoteTax =>
+      'Bayar ngaliwatan Samsat Digital Nasional (SIGNAL) atawa Samsat pangcaketna';
+
+  @override
+  String get docNotePlate =>
+      'Kedah cék fisik kandaraan langsung di Samsat Induk';
+
+  @override
+  String get docNoteInsurance =>
+      'Nomer klaim darurat atawa towing aya dina polis';
+
+  @override
+  String gamesBadgeCount(String unlocked, String total) {
+    return '$unlocked/$total Lencana Kabuka';
+  }
 }

@@ -21,7 +21,9 @@ class _AddVehicleSheetState extends ConsumerState<AddVehicleSheet> {
   final _nameController = TextEditingController();
   final _plateController = TextEditingController();
   final _odoController = TextEditingController();
-  final _yearController = TextEditingController(text: DateTime.now().year.toString());
+  final _yearController = TextEditingController(
+    text: DateTime.now().year.toString(),
+  );
   final _intervalController = TextEditingController(text: '5000');
 
   VehicleType _selectedType = VehicleType.car;
@@ -54,7 +56,9 @@ class _AddVehicleSheetState extends ConsumerState<AddVehicleSheet> {
 
     final odo = int.parse(_odoController.text.trim());
     final year = int.parse(_yearController.text.trim());
-    final interval = int.tryParse(_intervalController.text.trim()) ?? (_selectedType == VehicleType.car ? 5000 : 2500);
+    final interval =
+        int.tryParse(_intervalController.text.trim()) ??
+        (_selectedType == VehicleType.car ? 5000 : 2500);
 
     final newVehicle = Vehicle(
       id: 'veh_${DateTime.now().millisecondsSinceEpoch}',
@@ -69,16 +73,21 @@ class _AddVehicleSheetState extends ConsumerState<AddVehicleSheet> {
       estimatedAnnualTax: _selectedType == VehicleType.car ? 3500000 : 350000,
     );
 
+    final l10n = AppLocalizations.of(context)!;
     ref.read(vehiclesProvider.notifier).addVehicle(newVehicle);
-    ref.read(maintenanceSchedulesProvider.notifier).loadPresetsForVehicle(newVehicle);
-    final defaultDocs = VehicleDocument.defaultDocumentsFor(newVehicle);
+    ref
+        .read(maintenanceSchedulesProvider.notifier)
+        .loadPresetsForVehicle(newVehicle, l10n);
+    final defaultDocs = VehicleDocument.defaultDocumentsFor(newVehicle, l10n);
     for (final d in defaultDocs) {
       ref.read(vehicleDocumentsProvider.notifier).addDocument(d);
     }
 
     Navigator.pop(context);
     ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(content: Text(AppLocalizations.of(context)!.kendaraanBerhasilDitambahkan(newVehicle.name))),
+      SnackBar(
+        content: Text(l10n.kendaraanBerhasilDitambahkan(newVehicle.name)),
+      ),
     );
   }
 
@@ -120,7 +129,11 @@ class _AddVehicleSheetState extends ConsumerState<AddVehicleSheet> {
                   ),
                   IconButton(
                     onPressed: () => Navigator.pop(context),
-                    icon: Icon(Icons.close_rounded, size: 20, color: context.textSecondary),
+                    icon: Icon(
+                      Icons.close_rounded,
+                      size: 20,
+                      color: context.textSecondary,
+                    ),
                     visualDensity: VisualDensity.compact,
                     splashRadius: 20,
                   ),
@@ -170,12 +183,17 @@ class _AddVehicleSheetState extends ConsumerState<AddVehicleSheet> {
                 style: TextStyle(color: context.textPrimary, fontSize: 14),
                 decoration: InputDecoration(
                   labelText: l10n.namaModelKendaraan,
-                  hintText: Localizations.localeOf(context).languageCode == 'id'
-                      ? 'Misal: Honda HR-V / Yamaha NMAX'
-                      : 'e.g. Honda HR-V / Yamaha NMAX',
-                  prefixIcon: Icon(Icons.drive_file_rename_outline_rounded, size: 18, color: context.textSecondary),
+                  hintText: l10n.vehicleNameHint,
+                  prefixIcon: Icon(
+                    Icons.drive_file_rename_outline_rounded,
+                    size: 18,
+                    color: context.textSecondary,
+                  ),
                 ),
-                validator: (val) => mapValidationError(AppValidators.validateVehicleName(val), l10n),
+                validator: (val) => mapValidationError(
+                  AppValidators.validateVehicleName(val),
+                  l10n,
+                ),
               ),
               const SizedBox(height: 12),
 
@@ -195,10 +213,17 @@ class _AddVehicleSheetState extends ConsumerState<AddVehicleSheet> {
                       ),
                       decoration: InputDecoration(
                         labelText: l10n.nomorPelatPolisi,
-                        hintText: 'B 1234 CD',
-                        prefixIcon: Icon(Icons.badge_outlined, size: 18, color: context.textSecondary),
+                        hintText: l10n.plateHint,
+                        prefixIcon: Icon(
+                          Icons.badge_outlined,
+                          size: 18,
+                          color: context.textSecondary,
+                        ),
                       ),
-                      validator: (val) => mapValidationError(AppValidators.validatePlateNumber(val), l10n),
+                      validator: (val) => mapValidationError(
+                        AppValidators.validatePlateNumber(val),
+                        l10n,
+                      ),
                     ),
                   ),
                   const SizedBox(width: 12),
@@ -211,16 +236,22 @@ class _AddVehicleSheetState extends ConsumerState<AddVehicleSheet> {
                         FilteringTextInputFormatter.digitsOnly,
                         LengthLimitingTextInputFormatter(4),
                       ],
-                      style: TextStyle(color: context.textPrimary, fontSize: 14),
+                      style: TextStyle(
+                        color: context.textPrimary,
+                        fontSize: 14,
+                      ),
                       decoration: InputDecoration(
+                        // No prefixIcon: the 2/5-width field truncates
+                        // "Manufacture Year" to "Manufacture Y..." with one.
                         labelText: l10n.tahunPembuatan,
                         hintText: '2023',
-                        prefixIcon: Icon(Icons.calendar_today_rounded, size: 18, color: context.textSecondary),
                       ),
                       validator: (val) {
                         final y = int.tryParse(val ?? '');
-                        if (y == null || y < 1970 || y > DateTime.now().year + 1) {
-                          return Localizations.localeOf(context).languageCode == 'id' ? 'Tidak valid' : 'Invalid year';
+                        if (y == null ||
+                            y < 1970 ||
+                            y > DateTime.now().year + 1) {
+                          return l10n.invalidYear;
                         }
                         return null;
                       },
@@ -238,14 +269,20 @@ class _AddVehicleSheetState extends ConsumerState<AddVehicleSheet> {
                       controller: _odoController,
                       keyboardType: TextInputType.number,
                       inputFormatters: [FilteringTextInputFormatter.digitsOnly],
-                      style: TextStyle(color: context.textPrimary, fontSize: 14),
+                      style: TextStyle(
+                        color: context.textPrimary,
+                        fontSize: 14,
+                      ),
                       decoration: InputDecoration(
+                        // Icon + "km" suffix squeezed the label into an
+                        // ellipsis; the label already carries the unit.
                         labelText: l10n.odometerSaatIniKm,
                         hintText: '15000',
-                        suffixText: 'km',
-                        prefixIcon: Icon(Icons.speed_rounded, size: 18, color: context.textSecondary),
                       ),
-                      validator: (val) => mapValidationError(AppValidators.validateOdometer(int.tryParse(val ?? '')), l10n),
+                      validator: (val) => mapValidationError(
+                        AppValidators.validateOdometer(int.tryParse(val ?? '')),
+                        l10n,
+                      ),
                     ),
                   ),
                   const SizedBox(width: 12),
@@ -254,12 +291,19 @@ class _AddVehicleSheetState extends ConsumerState<AddVehicleSheet> {
                       controller: _intervalController,
                       keyboardType: TextInputType.number,
                       inputFormatters: [FilteringTextInputFormatter.digitsOnly],
-                      style: TextStyle(color: context.textPrimary, fontSize: 14),
+                      style: TextStyle(
+                        color: context.textPrimary,
+                        fontSize: 14,
+                      ),
                       decoration: InputDecoration(
                         labelText: l10n.intervalOliKm,
                         hintText: '5000',
                         suffixText: 'km',
-                        prefixIcon: Icon(Icons.oil_barrel_rounded, size: 18, color: context.textSecondary),
+                        prefixIcon: Icon(
+                          Icons.oil_barrel_rounded,
+                          size: 18,
+                          color: context.textSecondary,
+                        ),
                       ),
                     ),
                   ),
@@ -272,7 +316,10 @@ class _AddVehicleSheetState extends ConsumerState<AddVehicleSheet> {
                 onTap: _pickTaxDate,
                 borderRadius: BorderRadius.circular(12),
                 child: Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 12),
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 14,
+                    vertical: 12,
+                  ),
                   decoration: BoxDecoration(
                     color: context.surfaceBg,
                     borderRadius: BorderRadius.circular(12),
@@ -286,7 +333,11 @@ class _AddVehicleSheetState extends ConsumerState<AddVehicleSheet> {
                           color: AppColors.primary.withValues(alpha: 0.1),
                           borderRadius: BorderRadius.circular(8),
                         ),
-                        child: const Icon(Icons.event_note_rounded, size: 18, color: AppColors.primary),
+                        child: const Icon(
+                          Icons.event_note_rounded,
+                          size: 18,
+                          color: AppColors.primary,
+                        ),
                       ),
                       const SizedBox(width: 12),
                       Expanded(
@@ -294,9 +345,7 @@ class _AddVehicleSheetState extends ConsumerState<AddVehicleSheet> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              Localizations.localeOf(context).languageCode == 'id'
-                                  ? 'Jatuh Tempo Pajak STNK'
-                                  : 'Annual Tax Expiration',
+                              l10n.taxDueLabel,
                               style: TextStyle(
                                 fontSize: 11,
                                 fontWeight: FontWeight.w500,
@@ -305,7 +354,9 @@ class _AddVehicleSheetState extends ConsumerState<AddVehicleSheet> {
                             ),
                             const SizedBox(height: 2),
                             Text(
-                              '${_taxDueDate.day.toString().padLeft(2, '0')}-${_taxDueDate.month.toString().padLeft(2, '0')}-${_taxDueDate.year}',
+                              MaterialLocalizations.of(
+                                context,
+                              ).formatCompactDate(_taxDueDate),
                               style: TextStyle(
                                 fontSize: 13,
                                 fontWeight: FontWeight.w600,
@@ -315,7 +366,11 @@ class _AddVehicleSheetState extends ConsumerState<AddVehicleSheet> {
                           ],
                         ),
                       ),
-                      Icon(Icons.edit_calendar_rounded, size: 18, color: context.textSecondary),
+                      Icon(
+                        Icons.edit_calendar_rounded,
+                        size: 18,
+                        color: context.textSecondary,
+                      ),
                     ],
                   ),
                 ),
@@ -330,7 +385,10 @@ class _AddVehicleSheetState extends ConsumerState<AddVehicleSheet> {
                   icon: const Icon(Icons.check_circle_rounded, size: 18),
                   label: Text(
                     l10n.simpanKeGarasi,
-                    style: const TextStyle(fontWeight: FontWeight.w700, fontSize: 15),
+                    style: const TextStyle(
+                      fontWeight: FontWeight.w700,
+                      fontSize: 15,
+                    ),
                   ),
                 ),
               ),
@@ -360,7 +418,9 @@ class _AddVehicleSheetState extends ConsumerState<AddVehicleSheet> {
           ),
           padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 16),
           decoration: BoxDecoration(
-            color: isSelected ? AppColors.primary.withValues(alpha: 0.1) : context.surfaceBg,
+            color: isSelected
+                ? AppColors.primary.withValues(alpha: 0.1)
+                : context.surfaceBg,
             borderRadius: BorderRadius.circular(12),
             border: Border.all(
               color: isSelected ? AppColors.primary : context.borderColor,
@@ -381,7 +441,9 @@ class _AddVehicleSheetState extends ConsumerState<AddVehicleSheet> {
                 style: TextStyle(
                   fontSize: 13,
                   fontWeight: isSelected ? FontWeight.w700 : FontWeight.w500,
-                  color: isSelected ? context.readable(AppColors.primary) : context.textPrimary,
+                  color: isSelected
+                      ? context.readable(AppColors.primary)
+                      : context.textPrimary,
                 ),
               ),
             ],

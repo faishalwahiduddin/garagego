@@ -8,22 +8,31 @@
   "banner_ready": false,
   "seo": true,
   "slugs": {
-    "id": "gabungkan-servis-motor-dengan-kebiasaan-lain-harian",
-    "en": "stack-servis-motor-with-other-habits",
-    "ar": "servis-motor-6",
-    "jv": "pandhuan-servis-motor-garagego-6",
-    "su": "pituduh-servis-motor-garagego-6",
-    "zh": "garagego-servis-motor-实用指南-6",
-    "ja": "garagegoservis-motor-ガイド-6"
+    "id": "servis-motor-dan-aplikasi-lain-di-ponsel-anda",
+    "en": "motorbike-service-and-the-other-apps-on-your-phone",
+    "ar": "syana-aldraja-wttbyqat-hatfk-alakhra",
+    "jv": "servis-motor-lan-aplikasi-liya-ing-hp",
+    "su": "servis-motor-jeung-aplikasi-sejen-dina-hp",
+    "zh": "mo-tuo-che-bao-yang-yu-shou-ji-shang-de-qi-ta-ying-yong",
+    "ja": "baiku-seibi-to-sumaho-no-hokano-apuri"
   },
   "titles": {
-    "id": "Gabungkan servis motor dengan Kebiasaan Lain",
-    "en": "Stack servis motor with Other Habits",
-    "ar": "servis motor — دليل GarageGo",
-    "jv": "Pandhuan: Gabungkan servis motor dengan Kebiasaan Lain",
-    "su": "Pituduh: Gabungkan servis motor dengan Kebiasaan Lain",
-    "zh": "GarageGo · servis motor 实用指南",
-    "ja": "GarageGo｜servis motor ガイド"
+    "id": "servis motor dan aplikasi lain di ponsel Anda",
+    "en": "motorbike service and the other apps on your phone",
+    "ar": "صيانة الدراجة وتطبيقات هاتفك الأخرى",
+    "jv": "servis motor lan aplikasi liya ing HP",
+    "su": "servis motor jeung aplikasi séjén dina HP",
+    "zh": "摩托车保养与手机上的其他应用",
+    "ja": "バイク整備とスマホの他のアプリ"
   },
-  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+  "quality_pass": "editorial-v3",
+  "descriptions": {
+    "id": "Servis motor dan aplikasi lain di ponsel Anda: cara menggabungkan catatan, arti praktisnya, versi paling kecil, dan penyimpanan data di perangkat.",
+    "en": "Motorbike service alongside the other apps on your phone: how to bring records together, what it means in practice, and where data lives on device.",
+    "ar": "servis motor مع التطبيقات الأخرى على هاتفك: كيف تجمع السجلات معاً، ومعناه العملي، وأين تعيش البيانات على الجهاز.",
+    "ja": "スマホの他のアプリと一緒に使うservis motor。記録をまとめる方法、実践的な意味、端末内のデータ。",
+    "zh": "与手机上其他应用一起用servis motor：如何整合记录，实际含义，以及数据在设备上的位置。",
+    "jv": "Servis motor bareng aplikasi liya ing HP-mu: carane nggabung cathetan, tegesé ing praktik, versi paling cilik, lan panyimpenan data ing piranti.",
+    "su": "Servis motor bareng aplikasi lianna dina HP anjeun: kumaha ngagabungkeun catetan, harti praktisna, versi pang leutikna, jeung panyimpenan data di alat."
+  }
 }

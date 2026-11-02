@@ -1,0 +1,85 @@
+{
+  "title": "pengingat ganti oli yang tidak bikin malas membuka app",
+  "description": "Pengingat ganti oli yang tidak terasa merepotkan saat dibuka: penyebab rasa enggan, versi paling kecil untuk dibuka, dan cara kembali setelah bolong.",
+  "badge": "produktivitas · offline",
+  "answer": "Jumat sore catatan pengingat ganti oli Anda berisi belasan baris setengah jadi tanpa tanggal yang bisa dibandingkan. GarageGo menyimpan pengingat ganti oli di perangkat, jadi datanya tetap terbuka tanpa kuota dan tanpa akun.",
+  "toc": [
+    "Kenapa mudah putus",
+    "Versi paling kecil",
+    "Setelah bolong"
+  ],
+  "sections": [
+    {
+      "h2": "Kenapa mudah putus",
+      "p": "Jumat sore catatan pengingat ganti oli Anda berisi belasan baris setengah jadi tanpa tanggal yang bisa dibandingkan.",
+      "h3": null,
+      "p3": null
+    },
+    {
+      "h2": "Versi paling kecil",
+      "p": "Tiga isian saja: waktu, status, satu hambatan. Sisanya opsional.",
+      "h3": null,
+      "p3": null
+    },
+    {
+      "h2": "Setelah bolong",
+      "p": "Kalau bolong beberapa hari, jangan hapus riwayat. Lanjut dari bagian terakhir yang sudah dibaca—satu sesi pendek, lalu tutup.",
+      "h3": null,
+      "p3": null
+    }
+  ],
+  "table": {
+    "caption": "Kerangka pengingat ganti oli",
+    "headers": [
+      "Langkah",
+      "Isi minimal",
+      "Selesai bila"
+    ],
+    "rows": [
+      [
+        "Entri harian",
+        "waktu + status",
+        "tersimpan < 2 menit"
+      ],
+      [
+        "Penanda",
+        "posisi terakhir",
+        "bisa dilanjut besok"
+      ],
+      [
+        "Evaluasi minggu",
+        "satu penyesuaian",
+        "diterapkan Senin"
+      ]
+    ]
+  },
+  "list": [
+    "Tetapkan satu waktu tetap, bukan “kapan sempat”.",
+    "Buka GarageGo saat waktu itu tiba, bukan nanti malam.",
+    "Catat satu hambatan, bukan alasan panjang.",
+    "Cadangkan data sebelum ganti ponsel."
+  ],
+  "faqs": [
+    [
+      "Apakah pengingat ganti oli bisa dibuka offline?",
+      "Ya. GarageGo menyimpan semuanya di perangkat, jadi tidak butuh kuota."
+    ],
+    [
+      "Perlu akun dulu?",
+      "Tidak. Mulai tanpa login; cadangkan data secara berkala."
+    ],
+    [
+      "Mulai dari mana?",
+      "Dari bagian terpendek. Tambah cakupan hanya setelah dua minggu stabil."
+    ],
+    [
+      "Kalau bolong beberapa hari?",
+      "Jangan hapus riwayat. Lanjut dari bagian terakhir dan catat satu hambatan."
+    ]
+  ],
+  "cta": [
+    "Mulai pengingat ganti oli hari ini",
+    "Buka GarageGo"
+  ],
+  "slug": "percepat-input-pengingat-ganti-oli-di-garagego-offline"
+}

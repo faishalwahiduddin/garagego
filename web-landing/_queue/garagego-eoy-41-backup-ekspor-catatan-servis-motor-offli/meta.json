@@ -8,22 +8,31 @@
   "banner_ready": false,
   "seo": true,
   "slugs": {
-    "id": "backup-ekspor-catatan-servis-motor-offline",
-    "en": "backup-export-servis-motor-notes",
-    "ar": "servis-motor-5",
-    "jv": "pandhuan-servis-motor-garagego-5",
-    "su": "pituduh-servis-motor-garagego-5",
-    "zh": "garagego-servis-motor-实用指南-5",
-    "ja": "garagegoservis-motor-ガイド-5"
+    "id": "ekspor-data-servis-motor-apa-yang-ikut-tersimpan",
+    "en": "exporting-motorbike-service-what-comes-with-the-file",
+    "ar": "tsdyr-syana-aldraja-ma-aldhy-yhfz-fala",
+    "jv": "ekspor-data-servis-motor-apa-sing-melu-kasimpen",
+    "su": "ekspor-data-servis-motor-naon-anu-milu-kasimpen",
+    "zh": "dao-chu-mo-tuo-che-bao-yang-wen-jian-li-dou-you-shen-me",
+    "ja": "baiku-seibi-no-kakidashi-nani-ga-hozon-sareruka"
   },
   "titles": {
-    "id": "Backup &amp; Ekspor Catatan servis motor",
-    "en": "Backup &amp; Export servis motor Notes",
-    "ar": "servis motor — دليل GarageGo",
-    "jv": "Pandhuan: Backup &amp; Ekspor Catatan servis motor",
-    "su": "Pituduh: Backup &amp; Ekspor Catatan servis motor",
-    "zh": "GarageGo · servis motor 实用指南",
-    "ja": "GarageGo｜servis motor ガイド"
+    "id": "Ekspor data servis motor: apa yang ikut tersimpan",
+    "en": "Exporting motorbike service: what comes with the file",
+    "ar": "تصدير صيانة الدراجة: ما الذي يُحفظ فعلاً",
+    "jv": "Ekspor data servis motor: apa sing melu kasimpen",
+    "su": "Ékspor data servis motor: naon anu milu kasimpen",
+    "zh": "导出摩托车保养：文件里都有什么",
+    "ja": "バイク整備の書き出し：何が保存されるか"
   },
-  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+  "quality_pass": "editorial-v3",
+  "descriptions": {
+    "id": "Ekspor servis motor: apa saja yang ikut dalam file, kapan tinjauan mingguan dilakukan, dan hal yang perlu diingat soal data di perangkat setelah jeda.",
+    "en": "Exporting motorbike service: what comes with the file, when to do your weekly check, and what to keep in mind about on-device data after a gap.",
+    "ar": "تصدير servis motor: ما الذي يأتي مع الملف، ومتى تُجرى المراجعة الأسبوعية، وما يلزم تذكره عن البيانات على الجهاز بعد فجوة.",
+    "ja": "エクスポートの流れ。servis motorのファイルに含まれるもの、毎週の確認、空白後の端末データの注意。",
+    "zh": "导出servis motor：文件里包含什么，何时进行每周检查，以及换机或间隔后关于设备数据要留意的事。",
+    "jv": "Ekspor servis motor: apa wae sing ana ing file, kapan tinjauan saben minggu ditindakaké, lan perkara sing kudu diéling babagan data piranti sawisé jeda.",
+    "su": "Ékspor servis motor: naon waé nu aya dina file, iraha tinjauan mingguan dilakukeun, jeung hal nu kudu diinget ngeunaan data di alat sanggeus eureun."
+  }
 }

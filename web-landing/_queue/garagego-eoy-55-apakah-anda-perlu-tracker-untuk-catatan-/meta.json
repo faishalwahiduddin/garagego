@@ -8,22 +8,31 @@
   "banner_ready": false,
   "seo": true,
   "slugs": {
-    "id": "apakah-anda-perlu-tracker-untuk-catatan-bbm",
-    "en": "do-you-need-a-tracker-for-catatan-bbm",
-    "ar": "catatan-bbm-6",
-    "jv": "pandhuan-catatan-bbm-garagego-6",
-    "su": "pituduh-catatan-bbm-garagego-6",
-    "zh": "garagego-catatan-bbm-实用指南-6",
-    "ja": "garagegocatatan-bbm-ガイド-6"
+    "id": "catatan-bbm-memutuskan-tanpa-overthinking",
+    "en": "daily-records-deciding-without-overthinking",
+    "ar": "alsjlat-alywmya-qrar-bla-tfkyr-zaid",
+    "jv": "catatan-bbm-mutusake-tanpa-mikir-kebangeten",
+    "su": "catatan-bbm-mutuskeun-tanpa-mikir-kaleuleuwihi",
+    "zh": "ri-chang-ji-lu-bu-bi-jiu-jie-de-xuan-ze-fang-fa",
+    "ja": "mainichi-no-kiroku-kangae-sugizuni-kime-ru"
   },
   "titles": {
-    "id": "Apakah Anda Perlu Tracker untuk catatan BBM?",
-    "en": "Do You Need a Tracker for catatan BBM?",
-    "ar": "catatan BBM — دليل GarageGo",
-    "jv": "Pandhuan: Apakah Anda Perlu Tracker untuk catatan BBM?",
-    "su": "Pituduh: Apakah Anda Perlu Tracker untuk catatan BBM?",
-    "zh": "GarageGo · catatan BBM 实用指南",
-    "ja": "GarageGo｜catatan BBM ガイド"
+    "id": "catatan BBM: memutuskan tanpa overthinking",
+    "en": "daily records: deciding without overthinking",
+    "ar": "السجلات اليومية: قرار بلا تفكير زائد",
+    "jv": "catatan BBM: mutusaké tanpa mikir kebangeten",
+    "su": "catatan BBM: mutuskeun tanpa mikir kaleuleuwihi",
+    "zh": "日常记录：不必纠结的选择方法",
+    "ja": "毎日の記録：考えすぎずに決める"
   },
-  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+  "quality_pass": "editorial-v3",
+  "descriptions": {
+    "id": "Catatan BBM: cara memutuskan tanpa terlalu banyak berpikir. Bahas alasan kebiasaan putus, data yang tersimpan di perangkat, dan tinjauan mingguan.",
+    "en": "Daily records: deciding without overthinking. Looks at why habits break, what stays stored on your device, and how a weekly check keeps decisions simple.",
+    "ar": "catatan BBM: كيف تقرر دون إفراط في التفكير. يتناول أسباب الانقطاع، وما يُحفظ على جهازك، وكيف تبسّط المراجعة الأسبوعية القرارات.",
+    "ja": "catatan BBM：考えすぎずに決める方法。習慣が途切れる理由、端末に保存されるもの、毎週の確認。",
+    "zh": "catatan BBM：不必过度思考，轻松做决定。讨论习惯中断的原因、设备上保存的内容与每周检查。",
+    "jv": "Catatan BBM: carane mutusaké tanpa kakehan mikir. Ngrembug sebab kebiasan kepethuk, data sing kasimpen ing piranti, lan tinjauan saben minggu.",
+    "su": "Catatan BBM: kumaha mutuskeun tanpa kebanyakan mikir. Ngabahas sabab kabiasaan putus, data nu disimpen di alat, jeung tinjauan mingguan."
+  }
 }

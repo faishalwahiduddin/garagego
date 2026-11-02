@@ -8,22 +8,31 @@
   "banner_ready": false,
   "seo": true,
   "slugs": {
-    "id": "bangun-kebiasaan-catatan-bbm-21-hari",
-    "en": "build-a-21-day-catatan-bbm-habit",
-    "ar": "catatan-bbm-3",
-    "jv": "pandhuan-catatan-bbm-garagego-3",
-    "su": "pituduh-catatan-bbm-garagego-3",
-    "zh": "garagego-catatan-bbm-实用指南-3",
-    "ja": "garagegocatatan-bbm-ガイド-3"
+    "id": "membangun-kebiasaan-catatan-bbm-tanpa-burnout",
+    "en": "build-a-daily-records-habit-without-burnout",
+    "ar": "bna-aada-alsjlat-alywmya-dwn-inhak",
+    "jv": "mbangun-kebiasan-catatan-bbm-tanpa-kesel",
+    "su": "ngawangun-kabiasaan-catatan-bbm-tanpa-kacape",
+    "zh": "jian-li-ri-chang-ji-lu-xi-guan-you-bu-zhi-yu-pi-bei",
+    "ja": "tsukare-zuni-mainichi-no-kiroku-wo-shuukan-nisuru"
   },
   "titles": {
-    "id": "Bangun Kebiasaan catatan BBM 21 Hari",
-    "en": "Build a 21-Day catatan BBM Habit",
-    "ar": "catatan BBM — دليل GarageGo",
-    "jv": "Pandhuan: Bangun Kebiasaan catatan BBM 21 Hari",
-    "su": "Pituduh: Bangun Kebiasaan catatan BBM 21 Hari",
-    "zh": "GarageGo · catatan BBM 实用指南",
-    "ja": "GarageGo｜catatan BBM ガイド"
+    "id": "Membangun kebiasaan catatan BBM tanpa burnout",
+    "en": "Build a daily records habit without burnout",
+    "ar": "بناء عادة السجلات اليومية دون إنهاك",
+    "jv": "Mbangun kebiasan catatan BBM tanpa kesel",
+    "su": "Ngawangun kabiasaan catatan BBM tanpa kacapé",
+    "zh": "建立日常记录习惯又不至于疲惫",
+    "ja": "疲れずに毎日の記録を習慣にする"
   },
-  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+  "quality_pass": "editorial-v3",
+  "descriptions": {
+    "id": "Membangun kebiasaan catatan BBM tanpa burnout. Bahas mengapa kebiasaan mudah putus, memulai dari versi paling kecil, dan cara kembali setelah bolong.",
+    "en": "Build a daily records habit without burnout: why habits break, starting with the smallest version, and how to return after a gap without starting over.",
+    "ar": "بناء عادة catatan BBM دون إنهاك: لماذا تنقطع العادات، والبدء بأصغر نسخة، والعودة بعد فجوة دون البدء من الصفر.",
+    "ja": "疲れずにcatatan BBMを習慣にする。続かない理由、最小バージョンから始めること、空白後の戻り方。",
+    "zh": "不被倦怠压垮地养成catatan BBM的习惯：习惯为何中断、从最小版本起步，以及空档后如何回来。",
+    "jv": "Mbangun kebiasan catatan BBM tanpa kesel: kenapa kebiasan gampang ilang, miwiti saka versi paling cilik, lan carane bali sawisé bolong.",
+    "su": "Ngawangun kabiasaan catatan BBM tanpa burnout: naha kabiasaan gampang putus, mimitian ti versi pang leutikna, jeung kumaha balik sanggeus bolong."
+  }
 }

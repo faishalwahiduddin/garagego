@@ -1,0 +1,85 @@
+{
+  "title": "Keeping riwayat servis mobil motor going when motivation drops",
+  "description": "Keep riwayat servis mobil motor going when motivation drops: why people stop, a small target to aim for, and how to restart after taking a break.",
+  "badge": "productivity · offline",
+  "answer": "On Friday your riwayat servis mobil motor notes are a dozen half-finished lines with no comparable dates. GarageGo keeps riwayat servis mobil motor on-device, so it stays readable with no data plan and no account.",
+  "toc": [
+    "Why it breaks",
+    "The smallest version",
+    "After a gap"
+  ],
+  "sections": [
+    {
+      "h2": "Why it breaks",
+      "p": "On Friday your riwayat servis mobil motor notes are a dozen half-finished lines with no comparable dates.",
+      "h3": null,
+      "p3": null
+    },
+    {
+      "h2": "The smallest version",
+      "p": "Three fields only: time, status, one blocker. Everything else is optional.",
+      "h3": null,
+      "p3": null
+    },
+    {
+      "h2": "After a gap",
+      "p": "If you miss several days, do not wipe history. Open the last entry, fill in one day, then close.",
+      "h3": null,
+      "p3": null
+    }
+  ],
+  "table": {
+    "caption": "A working frame for riwayat servis mobil motor",
+    "headers": [
+      "Step",
+      "Minimum",
+      "Done when"
+    ],
+    "rows": [
+      [
+        "Daily entry",
+        "time + status",
+        "saved in < 2 min"
+      ],
+      [
+        "Bookmark",
+        "last position",
+        "resumable tomorrow"
+      ],
+      [
+        "Weekly review",
+        "one adjustment",
+        "applied Monday"
+      ]
+    ]
+  },
+  "list": [
+    "Pick one fixed time, not “whenever there is room”.",
+    "Open GarageGo when that time arrives, not later tonight.",
+    "Note one blocker, not a long excuse.",
+    "Back up before you switch phones."
+  ],
+  "faqs": [
+    [
+      "Can I open riwayat servis mobil motor offline?",
+      "Yes. GarageGo keeps everything on-device, so no data plan is needed."
+    ],
+    [
+      "Do I need an account first?",
+      "No. Start without login; export a backup from time to time."
+    ],
+    [
+      "Where do I start?",
+      "With the shortest piece. Add scope only after two steady weeks."
+    ],
+    [
+      "What if I miss a few days?",
+      "Do not wipe history. Resume from the last entry and note one blocker."
+    ]
+  ],
+  "cta": [
+    "Start riwayat servis mobil motor today",
+    "Open GarageGo"
+  ],
+  "slug": "small-winning-targets-for-riwayat-servis-mobil-motor-practical"
+}

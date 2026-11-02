@@ -8,22 +8,31 @@
   "banner_ready": false,
   "seo": true,
   "slugs": {
-    "id": "berapa-lama-ideal-untuk-catatan-bbm-harian",
-    "en": "how-long-should-catatan-bbm-take",
-    "ar": "catatan-bbm-5",
-    "jv": "pandhuan-catatan-bbm-garagego-5",
-    "su": "pituduh-catatan-bbm-garagego-5",
-    "zh": "garagego-catatan-bbm-实用指南-5",
-    "ja": "garagegocatatan-bbm-ガイド-5"
+    "id": "catatan-bbm-saat-waktu-cuma-sedikit",
+    "en": "daily-records-when-you-barely-have-time",
+    "ar": "alsjlat-alywmya-hyn-la-ybqa-wqt-aljz-2",
+    "jv": "catatan-bbm-nalika-wektune-mung-sithik",
+    "su": "catatan-bbm-nalika-waktu-ukur-saeutik",
+    "zh": "shi-jian-hen-shao-shi-zen-me-zuo-ri-chang-ji-lu-di-2-pian",
+    "ja": "jikan-gahotondonai-nichi-no-mainichi-no-kiroku-dai-2-kai"
   },
   "titles": {
-    "id": "Berapa Lama Ideal untuk catatan BBM?",
-    "en": "How Long Should catatan BBM Take?",
-    "ar": "catatan BBM — دليل GarageGo",
-    "jv": "Pandhuan: Berapa Lama Ideal untuk catatan BBM?",
-    "su": "Pituduh: Berapa Lama Ideal untuk catatan BBM?",
-    "zh": "GarageGo · catatan BBM 实用指南",
-    "ja": "GarageGo｜catatan BBM ガイド"
+    "id": "catatan BBM saat waktu cuma sedikit",
+    "en": "daily records when you barely have time",
+    "ar": "السجلات اليومية حين لا يبقى وقت · الجزء 2",
+    "jv": "catatan BBM nalika wektuné mung sithik",
+    "su": "catatan BBM nalika waktu ukur saeutik",
+    "zh": "时间很少时怎么做日常记录 · 第2篇",
+    "ja": "時間がほとんどない日の毎日の記録 · 第2回"
   },
-  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+  "quality_pass": "editorial-v3",
+  "descriptions": {
+    "id": "Catatan BBM saat waktu Anda hampir habis: versi paling kecil yang bisa dijalankan, kapan menjalankannya, dan tinjauan mingguan yang singkat.",
+    "en": "Daily records when you barely have time: a smallest version that asks very little of you, when to do it, and a short weekly check.",
+    "ar": "catatan BBM حين يكون وقتك شحيحاً: أصغر نسخة تتطلب القليل منك، ومتى تنفّذها، ومراجعة أسبوعية قصيرة.",
+    "ja": "時間がほとんどない時のcatatan BBM。数分でできる最小バージョン、実行のタイミング、短い確認。",
+    "zh": "几乎没有时间时的catatan BBM：只需几分钟的最小版本、执行时机，以及简短的每周检查。",
+    "jv": "Catatan BBM nalika wektumu meh ora ana: versi paling cilik sing bisa dilakoni, kapan mlaku, lan tinjauan saben minggu sing cendhak lan ora abot.",
+    "su": "Catatan BBM lamun waktu hampir teu aya: versi pang leutikna nu bisa dijalankeun, iraha ngajalankeunana, jeung tinjauan mingguan nu pondok."
+  }
 }

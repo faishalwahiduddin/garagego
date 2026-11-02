@@ -1,0 +1,85 @@
+{
+  "title": "Template rawat motor siap pakai",
+  "description": "Template rawat motor siap pakai. Berisi versi paling kecil, waktu yang tepat untuk mengisinya, dan kerangka tinjauan mingguan agar mudah diikuti.",
+  "badge": "produktivitas · offline",
+  "answer": "Jumat sore catatan rawat motor Anda berisi belasan baris setengah jadi tanpa tanggal yang bisa dibandingkan. GarageGo menyimpan rawat motor di perangkat, jadi datanya tetap terbuka tanpa kuota dan tanpa akun.",
+  "toc": [
+    "Versi paling kecil",
+    "Kapan menjalankannya",
+    "Tinjauan mingguan"
+  ],
+  "sections": [
+    {
+      "h2": "Versi paling kecil",
+      "p": "Tiga isian saja: waktu, status, satu hambatan. Sisanya opsional.",
+      "h3": null,
+      "p3": null
+    },
+    {
+      "h2": "Kapan menjalankannya",
+      "p": "Buka GarageGo pada jam yang sama tiap hari; jangan menunggu suasana hati.",
+      "h3": null,
+      "p3": null
+    },
+    {
+      "h2": "Tinjauan mingguan",
+      "p": "Sekali seminggu, lihat bagian mana yang paling sering bolong, lalu kecilkan target—bukan menambah semangat.",
+      "h3": null,
+      "p3": null
+    }
+  ],
+  "table": {
+    "caption": "Kerangka rawat motor",
+    "headers": [
+      "Langkah",
+      "Isi minimal",
+      "Selesai bila"
+    ],
+    "rows": [
+      [
+        "Entri harian",
+        "waktu + status",
+        "tersimpan < 2 menit"
+      ],
+      [
+        "Penanda",
+        "posisi terakhir",
+        "bisa dilanjut besok"
+      ],
+      [
+        "Evaluasi minggu",
+        "satu penyesuaian",
+        "diterapkan Senin"
+      ]
+    ]
+  },
+  "list": [
+    "Tetapkan satu waktu tetap, bukan “kapan sempat”.",
+    "Buka GarageGo saat waktu itu tiba, bukan nanti malam.",
+    "Catat satu hambatan, bukan alasan panjang.",
+    "Cadangkan data sebelum ganti ponsel."
+  ],
+  "faqs": [
+    [
+      "Apakah rawat motor bisa dibuka offline?",
+      "Ya. GarageGo menyimpan semuanya di perangkat, jadi tidak butuh kuota."
+    ],
+    [
+      "Perlu akun dulu?",
+      "Tidak. Mulai tanpa login; cadangkan data secara berkala."
+    ],
+    [
+      "Mulai dari mana?",
+      "Dari bagian terpendek. Tambah cakupan hanya setelah dua minggu stabil."
+    ],
+    [
+      "Kalau bolong beberapa hari?",
+      "Jangan hapus riwayat. Lanjut dari bagian terakhir dan catat satu hambatan."
+    ]
+  ],
+  "cta": [
+    "Mulai rawat motor hari ini",
+    "Buka GarageGo"
+  ],
+  "slug": "contoh-log-rawat-motor-7-hari-mingguan"
+}

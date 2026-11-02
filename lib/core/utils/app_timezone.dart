@@ -25,24 +25,53 @@ import 'package:intl/intl.dart';
 import 'package:timezone/data/latest_all.dart' as tzdata;
 import 'package:timezone/timezone.dart' as tz;
 
+// IANA zone identifiers, offset prefixes and intl date patterns: data and
+// format strings, not interface copy, so they never follow the locale.
+const kZoneJakarta = 'Asia/Jakarta';
+const kZoneMakassar = 'Asia/Makassar';
+const kZoneJayapura = 'Asia/Jayapura';
+const kZoneSingapore = 'Asia/Singapore';
+const kZoneKualaLumpur = 'Asia/Kuala_Lumpur';
+const kZoneDubai = 'Asia/Dubai';
+const kZoneLondon = 'Europe/London';
+const kZoneNewYork = 'America/New_York';
+const kZoneUtc = 'Etc/UTC';
+
+const kWibLabel = 'WIB';
+const kWitaLabel = 'WITA';
+const kWitLabel = 'WIT';
+const kGmtPrefix = 'GMT';
+const kTimePrefix = 'T';
+const kSpace = ' ';
+const kComma = ',';
+const kParenOpen = '(';
+const kParenClose = ')';
+const kDotSeparator = ' · ';
+const kIsoDash = '-';
+const kIsoColon = ':';
+const kFmtLongDate = 'EEEE, dd MMMM yyyy';
+const kFmtMonthYear = 'MMMM yyyy';
+const kFmtShortDay = 'E, dd';
+const kErrZoneDateMissing = 'Zone date does not exist';
+
 /// Fallback when the device zone cannot be read and no manual zone is set.
 /// A fallback, not an assumption: most users are in Indonesia, but the app
 /// works anywhere.
-const String kFallbackZoneName = 'Asia/Jakarta';
+const kFallbackZoneName = kZoneJakarta;
 
 /// Zones offered in Settings, in picker order: (IANA name, short label).
 /// The short label is a proper noun (WIB/WITA/WIT) or null — other zones
 /// show their live GMT offset instead, which is DST-aware.
 const List<({String iana, String? shortLabel})> kCuratedZones = [
-  (iana: 'Asia/Jakarta', shortLabel: 'WIB'),
-  (iana: 'Asia/Makassar', shortLabel: 'WITA'),
-  (iana: 'Asia/Jayapura', shortLabel: 'WIT'),
-  (iana: 'Asia/Singapore', shortLabel: null),
-  (iana: 'Asia/Kuala_Lumpur', shortLabel: null),
-  (iana: 'Asia/Dubai', shortLabel: null),
-  (iana: 'Europe/London', shortLabel: null),
-  (iana: 'America/New_York', shortLabel: null),
-  (iana: 'Etc/UTC', shortLabel: null),
+  (iana: kZoneJakarta, shortLabel: kWibLabel),
+  (iana: kZoneMakassar, shortLabel: kWitaLabel),
+  (iana: kZoneJayapura, shortLabel: kWitLabel),
+  (iana: kZoneSingapore, shortLabel: null),
+  (iana: kZoneKualaLumpur, shortLabel: null),
+  (iana: kZoneDubai, shortLabel: null),
+  (iana: kZoneLondon, shortLabel: null),
+  (iana: kZoneNewYork, shortLabel: null),
+  (iana: kZoneUtc, shortLabel: null),
 ];
 
 /// App-specific (non-WIB) zone helper. All state lives in the caller or in
@@ -137,7 +166,8 @@ class AppTimeZone {
   ) {
     if (!_isRealDate(day.year, day.month, day.day)) {
       throw FormatException(
-        'Zone date does not exist: ${day.year}-${day.month}-${day.day}',
+        '$kErrZoneDateMissing$kIsoDash${day.year}$kIsoDash${day.month}'
+        '$kIsoDash${day.day}',
       );
     }
     final start = tz.TZDateTime(loc, day.year, day.month, day.day).toUtc();
@@ -164,8 +194,24 @@ class AppTimeZone {
     final absMinutes = offset.inMinutes.abs();
     final hours = absMinutes ~/ 60;
     final minutes = absMinutes % 60;
-    final mm = minutes == 0 ? '' : ':${_two(minutes)}';
-    return 'GMT$sign$hours$mm';
+    final mm = minutes == 0 ? '' : '$kIsoColon${_two(minutes)}';
+    return '$kGmtPrefix$sign$hours$mm';
+  }
+
+  /// Picker label for a zone: `Asia/Jakarta (WIB)` or, when the zone has no
+  /// short name, `Europe/London (GMT+0)`.
+  static String zoneOptionLabel({
+    required String iana,
+    String? shortLabel,
+    required DateTime utcInstant,
+  }) {
+    final offset = offsetLabel(iana, utcInstant);
+    if (shortLabel == null) {
+      // `Asia/Jakarta (GMT+7)` — matches the shortLabel branch and the doc
+      // comment; without the space the label read `Asia/Jakarta(GMT+7)`.
+      return '$iana$kSpace$kParenOpen$offset$kParenClose';
+    }
+    return '$iana$kSpace$kParenOpen$shortLabel$kComma$kSpace$offset$kParenClose';
   }
 
   /// Short display label for a zone: `WIB`/`WITA`/`WIT`, else the live GMT
@@ -203,9 +249,10 @@ class AppTimeZone {
     String? locale,
   }) {
     final now = nowUtc();
-    return '${formatDate(instant, loc, locale: locale)} '
-        '${formatTime(instant, loc, locale: locale)} '
-        '${zoneShortLabel(ianaName, now)}';
+    final date = formatDate(instant, loc, locale: locale);
+    final time = formatTime(instant, loc, locale: locale);
+    final short = zoneShortLabel(ianaName, now);
+    return '$date$kSpace$time$kSpace$short';
   }
 
   /// Localized long date of the zone day (`EEEE, dd MMMM yyyy`) — the
@@ -215,8 +262,7 @@ class AppTimeZone {
     tz.Location loc, {
     String? locale,
   }) {
-    return DateFormat('EEEE, dd MMMM yyyy', locale)
-        .format(toZoned(instant, loc));
+    return DateFormat(kFmtLongDate, locale).format(toZoned(instant, loc));
   }
 
   /// Month-year label for calendar headers (`MMMM yyyy`).
@@ -225,7 +271,7 @@ class AppTimeZone {
     tz.Location loc, {
     String? locale,
   }) {
-    return DateFormat('MMMM yyyy', locale).format(toZoned(instant, loc));
+    return DateFormat(kFmtMonthYear, locale).format(toZoned(instant, loc));
   }
 
   /// Short day label for rows (`E, dd`).
@@ -234,20 +280,20 @@ class AppTimeZone {
     tz.Location loc, {
     String? locale,
   }) {
-    return DateFormat('E, dd', locale).format(toZoned(instant, loc));
+    return DateFormat(kFmtShortDay, locale).format(toZoned(instant, loc));
   }
 
   /// Month-year label for a (year, month) calendar pair (`MMMM yyyy`).
   /// Fields only — a calendar month is not an instant, so there is no zone
   /// to convert and nothing here may shift the value.
   static String formatCalendarMonth(int year, int month, {String? locale}) {
-    return DateFormat('MMMM yyyy', locale).format(DateTime.utc(year, month));
+    return DateFormat(kFmtMonthYear, locale).format(DateTime.utc(year, month));
   }
 
   /// Short day label for a calendar-day value (`E, dd`). Fields only, never
   /// shifted: the value is a day on a calendar, not a moment in time.
   static String formatCalendarDay(DateTime calendarDay, {String? locale}) {
-    return DateFormat('E, dd', locale).format(
+    return DateFormat(kFmtShortDay, locale).format(
       DateTime.utc(calendarDay.year, calendarDay.month, calendarDay.day),
     );
   }
@@ -284,7 +330,9 @@ class AppTimeZone {
     if (text.isEmpty) return null;
 
     final asEpoch = int.tryParse(text);
-    if (asEpoch != null && !text.contains('-') && !text.contains(':')) {
+    if (asEpoch != null &&
+        !text.contains(kIsoDash) &&
+        !text.contains(kIsoColon)) {
       // Pure digits never fall through to DateTime.tryParse, which accepts
       // compact ISO such as "20260115" as a (local) date. >= 11 digits covers
       // every plausible epoch-ms; anything shorter is rejected, not guessed.
@@ -381,7 +429,7 @@ class AppTimeZone {
   static String utcToZoneInput(DateTime instant, tz.Location loc) {
     final z = toZoned(instant, loc);
     return '${_four(z.year)}-${_two(z.month)}-${_two(z.day)}'
-        'T${_two(z.hour)}:${_two(z.minute)}';
+        '$kTimePrefix${_two(z.hour)}$kIsoColon${_two(z.minute)}';
   }
 
   /// Storage encoding: instant → UTC ISO-8601 `Z` string. Always UTC, in

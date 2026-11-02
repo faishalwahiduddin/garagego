@@ -8,22 +8,31 @@
   "banner_ready": false,
   "seo": true,
   "slugs": {
-    "id": "kenapa-servis-mobil-sulit-konsisten-2026",
+    "id": "kenapa-servis-mobil-sulit-konsisten",
     "en": "why-servis-mobil-habits-break",
-    "ar": "servis-mobil-2",
-    "jv": "pandhuan-servis-mobil-garagego-2",
-    "su": "pituduh-servis-mobil-garagego-2",
-    "zh": "garagego-servis-mobil-实用指南-2",
-    "ja": "garagegoservis-mobil-ガイド-2"
+    "ar": "lmadha-ytathr-alsjlat-alywmya",
+    "jv": "kenapa-servis-mobil-angel-konsisten",
+    "su": "naha-servis-mobil-hese-konsisten",
+    "zh": "wei-shen-me-ri-chang-ji-lu-zong-shi-nan-yi-jian-chi",
+    "ja": "mainichi-no-kiroku-ga-tsuzuka-nai-riyuu"
   },
   "titles": {
-    "id": "Kenapa servis mobil Sulit Konsisten",
-    "en": "Why servis mobil Habits Break",
-    "ar": "servis mobil — دليل GarageGo",
-    "jv": "Pandhuan: Kenapa servis mobil Sulit Konsisten",
-    "su": "Pituduh: Kenapa servis mobil Sulit Konsisten",
-    "zh": "GarageGo · servis mobil 实用指南",
-    "ja": "GarageGo｜servis mobil ガイド"
+    "id": "Kenapa servis mobil sulit konsisten?",
+    "en": "Why servis mobil habits break",
+    "ar": "لماذا يتعثر السجلات اليومية؟",
+    "jv": "Kenapa servis mobil angel konsisten?",
+    "su": "Naha servis mobil hésé konsisten?",
+    "zh": "为什么日常记录总是难以坚持",
+    "ja": "毎日の記録が続かない理由"
   },
-  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+  "quality_pass": "editorial-v3",
+  "descriptions": {
+    "id": "Kenapa servis mobil sulit konsisten? Bahas penyebab kebiasaan putus di tengah jalan, versi paling kecil untuk dicoba, dan cara kembali setelah berhenti.",
+    "en": "Why servis mobil habits break and how to keep them going: the smallest version to try, and a plan for picking up again after you have gone quiet.",
+    "ar": "لماذا تتوقف عادات servis mobil؟ أسباب الانقطاع، وأصغر نسخة تستحق التجربة، وخطة للعودة بعد أن تغيب عن المتابعة.",
+    "ja": "途切れがちな習慣を戻す。servis mobilを試せる最小バージョンと、しばらく離れた後の計画を紹介。",
+    "zh": "若想坚持servis mobil，先从最小版本入手：说明习惯为何中断，以及长时间停下后重新开始的计划。",
+    "jv": "Kenapa kebiasan servis mobil angel konsisten? Ngrembug sebab kebiasan kepethuk ing tengah dalan, versi paling cilik kanggo dicoba, lan carane bali.",
+    "su": "Naha kabiasaan servis mobil hésé konsisten? Ngabahas sabab kabiasaan eureun di tengah, versi pang leutikna pikeun dicoba, jeung kumaha balik sanggeus eureun."
+  }
 }

@@ -8,22 +8,31 @@
   "banner_ready": false,
   "seo": true,
   "slugs": {
-    "id": "7-tips-servis-motor-yang-paling-berdampak-offline",
-    "en": "7-high-impact-servis-motor-tips",
-    "ar": "servis-motor-8",
-    "jv": "pandhuan-servis-motor-garagego-8",
-    "su": "pituduh-servis-motor-garagego-8",
-    "zh": "garagego-servis-motor-实用指南-8",
-    "ja": "garagegoservis-motor-ガイド-8"
+    "id": "servis-motor-daftar-pilihan-yang-masuk-akal",
+    "en": "motorbike-service-a-shortlist-that-makes-sense",
+    "ar": "syana-aldraja-khyarat-qlyla-mntqya",
+    "jv": "servis-motor-pilihan-sing-cukup-masuk-akal",
+    "su": "servis-motor-pilihan-anu-asup-akal",
+    "zh": "mo-tuo-che-bao-yang-zhi-de-kao-lv-de-ji-zhong-xuan-ze",
+    "ja": "baiku-seibi-nattoku-dekiru-sentakushi"
   },
   "titles": {
-    "id": "7 Tips servis motor yang Paling Berdampak",
-    "en": "7 High-Impact servis motor Tips",
-    "ar": "servis motor — دليل GarageGo",
-    "jv": "Pandhuan: 7 Tips servis motor yang Paling Berdampak",
-    "su": "Pituduh: 7 Tips servis motor yang Paling Berdampak",
-    "zh": "GarageGo · servis motor 实用指南",
-    "ja": "GarageGo｜servis motor ガイド"
+    "id": "servis motor: daftar pilihan yang masuk akal",
+    "en": "motorbike service: a shortlist that makes sense",
+    "ar": "صيانة الدراجة: خيارات قليلة منطقية",
+    "jv": "servis motor: pilihan sing cukup masuk akal",
+    "su": "servis motor: pilihan anu asup akal",
+    "zh": "摩托车保养：值得考虑的几种选择",
+    "ja": "バイク整備：納得できる選択肢"
   },
-  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+  "quality_pass": "editorial-v3",
+  "descriptions": {
+    "id": "Servis motor: daftar pilihan yang masuk akal, dari versi paling kecil, kapan menjalankannya, sampai tinjauan mingguan. Ringkas dan mudah diikuti.",
+    "en": "Motorbike service: a shortlist that makes sense, from the smallest version and when to run it through to the weekly check. Short and easy to follow.",
+    "ar": "servis motor: قائمة مختصرة منطقية، من أصغر نسخة ووقت التشغيل وصولاً إلى المراجعة الأسبوعية. موجزة وسهلة المتابعة.",
+    "ja": "厳選した候補の一覧。servis motorの最小バージョン、実行時期、毎週の確認を短く解説します。",
+    "zh": "精选的选项清单：servis motor的最小版本、执行时机，一直到每周检查，简明扼要。",
+    "jv": "Servis motor: dhaftar pilihan sing masuk akal, wiwit saka versi paling cilik lan kapan mlaku, nganti tinjauan saben minggu. Ringkes lan gampang diikuti.",
+    "su": "Servis motor: daptar pilihan nu masuk akal, ti versi pang leutikna jeung iraha ngajalankeunana, nepi ka tinjauan mingguan. Ringkes jeung gampang diturut."
+  }
 }

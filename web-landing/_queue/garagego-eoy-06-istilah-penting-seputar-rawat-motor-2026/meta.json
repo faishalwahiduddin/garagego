@@ -8,22 +8,31 @@
   "banner_ready": false,
   "seo": true,
   "slugs": {
-    "id": "istilah-penting-seputar-rawat-motor-2026",
-    "en": "key-terms-around-rawat-motor",
-    "ar": "rawat-motor",
-    "jv": "pandhuan-rawat-motor-garagego",
-    "su": "pituduh-rawat-motor-garagego",
-    "zh": "garagego-rawat-motor-实用指南",
-    "ja": "garagegorawat-motor-ガイド"
+    "id": "apa-itu-rawat-motor-penjelasan-singkat",
+    "en": "what-is-rawat-motor-a-short-explanation",
+    "ar": "alsjlat-alywmya-fy-2026-ma-aldhy-tghyr",
+    "jv": "apa-iku-rawat-motor-katrangan-cekak",
+    "su": "naon-eta-rawat-motor-katerangan-pondok",
+    "zh": "2026-nian-de-ri-chang-ji-lu-you-shen-me-bian-hua",
+    "ja": "2026-nen-no-mainichi-no-kiroku-nani-ga-kawa-ttaka"
   },
   "titles": {
-    "id": "Istilah Penting seputar rawat motor",
-    "en": "Key Terms Around rawat motor",
-    "ar": "rawat motor — دليل GarageGo",
-    "jv": "Pandhuan: Istilah Penting seputar rawat motor",
-    "su": "Pituduh: Istilah Penting seputar rawat motor",
-    "zh": "GarageGo · rawat motor 实用指南",
-    "ja": "GarageGo｜rawat motor ガイド"
+    "id": "Apa itu rawat motor? Penjelasan singkat",
+    "en": "What is rawat motor? A short explanation",
+    "ar": "السجلات اليومية في 2026: ما الذي تغيّر",
+    "jv": "Apa iku rawat motor? Katrangan cekak",
+    "su": "Naon éta rawat motor? Katerangan pondok",
+    "zh": "2026 年的日常记录：有什么变化",
+    "ja": "2026年の毎日の記録：何が変わったか"
   },
-  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+  "quality_pass": "editorial-v3",
+  "descriptions": {
+    "id": "Arti rawat motor dalam praktik, versi paling kecil untuk memulainya, dan penjelasan bahwa datanya tersimpan di perangkat. Glosarium singkat untuk pemilik motor.",
+    "en": "What rawat motor means in practice, the smallest version to begin with, and how the data is stored on your device. A short glossary for motorbike owners.",
+    "ar": "ما معنى rawat motor عملياً، وأصغر نسخة للبدء بها، وكيف تُحفظ البيانات على جهازك. شرح موجز لمالكي الدراجات النارية.",
+    "ja": "rawat motorを実践の観点で説明。最初に試す最小バージョンと、端末内に保存される仕組みを紹介。",
+    "zh": "从实践角度解释rawat motor，介绍最初可尝试的最小版本，以及数据在设备上的保存方式。",
+    "jv": "Tegesé rawat motor ing praktik, versi paling cilik kanggo miwiti, lan data kasimpen ing piranti. Glosarium cekak kanggo wong sing duwe motor.",
+    "su": "Harti rawat motor dina prakték, versi pang leutikna pikeun mimitian, jeung data disimpen dina alat. Glosarium pondok pikeun nu boga motor."
+  }
 }

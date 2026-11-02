@@ -8,22 +8,31 @@
   "banner_ready": false,
   "seo": true,
   "slugs": {
-    "id": "percepat-input-pengingat-ganti-oli-di-garagego-offline",
-    "en": "speed-up-pengingat-ganti-oli-input-in-garagego",
-    "ar": "pengingat-ganti-oli-6",
-    "jv": "pandhuan-pengingat-ganti-oli-garagego-6",
-    "su": "pituduh-pengingat-ganti-oli-garagego-6",
-    "zh": "garagego-pengingat-ganti-oli-实用指南-6",
-    "ja": "garagegopengingat-ganti-oli-ガイド-6"
+    "id": "pengingat-ganti-oli-yang-tidak-bikin-malas-membuka-app",
+    "en": "pengingat-ganti-oli-that-does-not-feel-like-a-chore-to-open",
+    "ar": "alsjlat-alywmya-la-ythql-fthh-aljz-2",
+    "jv": "pengingat-ganti-oli-sing-ora-males-dibukak",
+    "su": "pengingat-ganti-oli-anu-teu-hoream-dibuka",
+    "zh": "da-kai-bu-fei-jin-de-ri-chang-ji-lu-di-2-pian",
+    "ja": "hiraku-noga-okkuu-ninaranai-mainichi-no-kiroku-dai-2-kai"
   },
   "titles": {
-    "id": "Percepat Input pengingat ganti oli di GarageGo",
-    "en": "Speed Up pengingat ganti oli Input in GarageGo",
-    "ar": "pengingat ganti oli — دليل GarageGo",
-    "jv": "Pandhuan: Percepat Input pengingat ganti oli di GarageGo",
-    "su": "Pituduh: Percepat Input pengingat ganti oli di GarageGo",
-    "zh": "GarageGo · pengingat ganti oli 实用指南",
-    "ja": "GarageGo｜pengingat ganti oli ガイド"
+    "id": "pengingat ganti oli yang tidak bikin malas membuka app",
+    "en": "pengingat ganti oli that does not feel like a chore to open",
+    "ar": "السجلات اليومية لا يثقل فتحه · الجزء 2",
+    "jv": "pengingat ganti oli sing ora males dibukak",
+    "su": "pengingat ganti oli anu teu hoream dibuka",
+    "zh": "打开不费劲的日常记录 · 第2篇",
+    "ja": "開くのが億劫にならない毎日の記録 · 第2回"
   },
-  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+  "quality_pass": "editorial-v3",
+  "descriptions": {
+    "id": "Pengingat ganti oli yang tidak terasa merepotkan saat dibuka: penyebab rasa enggan, versi paling kecil untuk dibuka, dan cara kembali setelah bolong.",
+    "en": "A pengingat ganti oli that does not feel like a chore to open: why it feels heavy, a smallest version to open first, and how to return after a gap.",
+    "ar": "pengingat ganti oli لا يبدو عبئاً عند فتحه: لماذا يثقل الأمر، وأصغر نسخة تُفتح أولاً، وكيف تعود بعد فجوة.",
+    "ja": "開くのが面倒に感じないpengingat ganti oli。負担に感じる理由、最初に開く最小バージョン、戻り方。",
+    "zh": "不觉得打开麻烦的pengingat ganti oli：为何会觉得沉重、先打开的最小版本，以及间隔后如何回来。",
+    "jv": "Pengingat ganti oli sing ora kerasa ngrepotké nalika dibukak: sebab kerasa abot, versi paling cilik kanggo dibukak dhisik, lan carane bali sawisé bolong.",
+    "su": "Pengingat ganti oli nu teu karasa ngarepotkeun pas dibuka: sabab karasa beurat, versi pang leutikna pikeun dibuka heula, jeung kumaha balik sanggeus bolong."
+  }
 }

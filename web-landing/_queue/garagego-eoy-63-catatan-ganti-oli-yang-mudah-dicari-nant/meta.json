@@ -8,22 +8,31 @@
   "banner_ready": false,
   "seo": true,
   "slugs": {
-    "id": "catatan-ganti-oli-yang-mudah-dicari-nanti-harian",
-    "en": "ganti-oli-notes-that-stay-searchable",
-    "ar": "ganti-oli-7",
-    "jv": "pandhuan-ganti-oli-garagego-7",
-    "su": "pituduh-ganti-oli-garagego-7",
-    "zh": "garagego-ganti-oli-实用指南-7",
-    "ja": "garagegoganti-oli-ガイド-7"
+    "id": "menyusun-ganti-oli-yang-enak-dibaca",
+    "en": "writing-ganti-oli-notes-people-can-read",
+    "ar": "ktaba-alsjlat-alywmya-bshkl-yqra-aljz-2",
+    "jv": "nulis-ganti-oli-sing-kepenak-diwaca",
+    "su": "nulis-ganti-oli-anu-genah-dibaca",
+    "zh": "ba-ri-chang-ji-lu-xie-de-rang-ren-du-de-xia-qu-di-2-pian",
+    "ja": "yome-ru-mainichi-no-kiroku-no-kakikata-dai-2-kai"
   },
   "titles": {
-    "id": "Catatan ganti oli yang Mudah Dicari Nanti",
-    "en": "ganti oli Notes That Stay Searchable",
-    "ar": "ganti oli — دليل GarageGo",
-    "jv": "Pandhuan: Catatan ganti oli yang Mudah Dicari Nanti",
-    "su": "Pituduh: Catatan ganti oli yang Mudah Dicari Nanti",
-    "zh": "GarageGo · ganti oli 实用指南",
-    "ja": "GarageGo｜ganti oli ガイド"
+    "id": "Menyusun ganti oli yang enak dibaca",
+    "en": "Writing ganti oli notes people can read",
+    "ar": "كتابة السجلات اليومية بشكل يُقرأ · الجزء 2",
+    "jv": "Nulis ganti oli sing kepénak diwaca",
+    "su": "Nulis ganti oli anu genah dibaca",
+    "zh": "把日常记录写得让人读得下去 · 第2篇",
+    "ja": "読める毎日の記録の書き方 · 第2回"
   },
-  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+  "quality_pass": "editorial-v3",
+  "descriptions": {
+    "id": "Menulis catatan ganti oli yang bisa dibaca orang lain: tinjauan mingguan, penyimpanan di perangkat, dan cara melanjutkan setelah ada jeda.",
+    "en": "Writing ganti oli notes people can read: a weekly check, on-device storage, and how to pick things up again after there has been a gap.",
+    "ar": "كتابة ملاحظات ganti oli يمكن للآخرين قراءتها: مراجعة أسبوعية، وتخزين على الجهاز، وكيف تعاود المتابعة بعد فجوة.",
+    "ja": "読んでもらえるganti oliのメモ。毎週の確認、端末内の保存、空白があった後の再開方法。",
+    "zh": "写出别人也能看懂的ganti oli笔记：每周检查、设备存储，以及空档过后如何重新接续。",
+    "jv": "Nulis cathetan ganti oli sing bisa diwaca wong liya: tinjauan saben minggu, panyimpenan ing piranti, lan carane nerusaké sawisé ana jeda.",
+    "su": "Nulis catetan ganti oli nu bisa dibaca batur: tinjauan mingguan, panyimpenan di alat, jeung kumaha neruskeun sanggeus aya jeda."
+  }
 }

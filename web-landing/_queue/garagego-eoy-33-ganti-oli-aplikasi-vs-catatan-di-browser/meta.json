@@ -8,22 +8,31 @@
   "banner_ready": false,
   "seo": true,
   "slugs": {
-    "id": "ganti-oli-aplikasi-vs-catatan-di-browser-harian",
-    "en": "ganti-oli-app-vs-browser-notes",
-    "ar": "ganti-oli-4",
-    "jv": "pandhuan-ganti-oli-garagego-4",
-    "su": "pituduh-ganti-oli-garagego-4",
-    "zh": "garagego-ganti-oli-实用指南-4",
-    "ja": "garagegoganti-oli-ガイド-4"
+    "id": "ganti-oli-aplikasi-vs-versi-web",
+    "en": "ganti-oli-the-app-vs-the-web-version",
+    "ar": "alsjlat-alywmya-alttbyq-mqabl-nskha-alwyb",
+    "jv": "ganti-oli-aplikasi-utawa-versi-web",
+    "su": "ganti-oli-aplikasi-atawa-versi-web",
+    "zh": "ri-chang-ji-lu-ying-yong-ban-yu-wang-ye-ban",
+    "ja": "mainichi-no-kiroku-apuri-han-to-uebu-han"
   },
   "titles": {
-    "id": "ganti oli: panduan praktis di GarageGo",
-    "en": "ganti oli: App vs Browser Notes",
-    "ar": "ganti oli — دليل GarageGo",
-    "jv": "Pandhuan: ganti oli: panduan praktis di GarageGo",
-    "su": "Pituduh: ganti oli: panduan praktis di GarageGo",
-    "zh": "GarageGo · ganti oli 实用指南",
-    "ja": "GarageGo｜ganti oli ガイド"
+    "id": "ganti oli: aplikasi vs versi web",
+    "en": "ganti oli: the app vs the web version",
+    "ar": "السجلات اليومية: التطبيق مقابل نسخة الويب",
+    "jv": "ganti oli: aplikasi utawa versi web",
+    "su": "ganti oli: aplikasi atawa vérsi web",
+    "zh": "日常记录：应用版与网页版",
+    "ja": "毎日の記録：アプリ版とウェブ版"
   },
-  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+  "quality_pass": "editorial-v3",
+  "descriptions": {
+    "id": "ganti oli: perbedaan aplikasi dan versi web. Bahas kenapa catatan mudah putus, penyimpanan di perangkat, dan tinjauan mingguan untuk memilih yang pas.",
+    "en": "ganti oli: the app versus the web version. Covers why notes break down, storage on your device, and a weekly check to help you choose what fits.",
+    "ar": "ganti oli: تطبيق مقابل نسخة الويب. يتناول سبب تفكك الملاحظات، وحفظها على جهازك، ومراجعة أسبوعية تساعدك على اختيار الأنسب.",
+    "ja": "ganti oliのアプリとウェブ版の違い。メモがばらける理由、端末への保存、毎週の確認から選び方。",
+    "zh": "ganti oli：应用与网页版的对比。说明笔记为何会散乱、设备存储方式，以及每周检查如何帮你选择。",
+    "jv": "ganti oli: bedané aplikasi lan versi web. Ngrembug kenapa cathetan gampang ilang, panyimpenan ing piranti, lan tinjauan saben minggu kanggo milih sing pas.",
+    "su": "ganti oli: béda antara aplikasi jeung versi web. Ngabahas naha catetan gampang berantakan, panyimpenan di alat, jeung tinjauan mingguan pikeun milih nu pas."
+  }
 }

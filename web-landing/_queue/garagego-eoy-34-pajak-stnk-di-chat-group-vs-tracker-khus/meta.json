@@ -8,22 +8,31 @@
   "banner_ready": false,
   "seo": true,
   "slugs": {
-    "id": "pajak-stnk-di-chat-group-vs-tracker-khusus-mingguan",
-    "en": "pajak-stnk-in-chat-groups-vs-dedicated-tracker",
-    "ar": "pajak-stnk-4",
-    "jv": "pandhuan-pajak-stnk-garagego-4",
-    "su": "pituduh-pajak-stnk-garagego-4",
-    "zh": "garagego-pajak-stnk-实用指南-4",
-    "ja": "garagegopajak-stnk-ガイド-4"
+    "id": "pajak-stnk-chat-keluarga-vs-catatan-rapi",
+    "en": "pajak-stnk-family-chat-vs-a-tidy-log",
+    "ar": "alsjlat-alywmya-mhadtha-alaaila-am-sjl-mrtb",
+    "jv": "pajak-stnk-grup-kulawarga-utawa-cathetan-rapi",
+    "su": "pajak-stnk-grup-kulawarga-atawa-catetan-rapih",
+    "zh": "ri-chang-ji-lu-jia-ting-qun-liao-yu-zheng-qi-ji-lu",
+    "ja": "mainichi-no-kiroku-kazoku-chatto-to-totonotsu-ta-kiroku"
   },
   "titles": {
-    "id": "pajak STNK: panduan praktis di GarageGo",
-    "en": "pajak STNK in Chat Groups vs Dedicated Tracker — Offline First",
-    "ar": "pajak STNK — دليل GarageGo",
-    "jv": "Pandhuan: pajak STNK: panduan praktis di GarageGo",
-    "su": "Pituduh: pajak STNK: panduan praktis di GarageGo",
-    "zh": "GarageGo · pajak STNK 实用指南",
-    "ja": "GarageGo｜pajak STNK ガイド"
+    "id": "pajak STNK: chat keluarga vs catatan rapi",
+    "en": "pajak STNK: family chat vs a tidy log",
+    "ar": "السجلات اليومية: محادثة العائلة أم سجل مرتّب",
+    "jv": "pajak STNK: grup kulawarga utawa cathetan rapi",
+    "su": "pajak STNK: grup kulawarga atawa catetan rapih",
+    "zh": "日常记录：家庭群聊与整齐记录",
+    "ja": "毎日の記録：家族チャットと整った記録"
   },
-  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+  "quality_pass": "editorial-v3",
+  "descriptions": {
+    "id": "pajak STNK: membandingkan obrolan keluarga dengan catatan yang rapi. Bahas kenapa informasi tercecer, penyimpanan di perangkat, dan tinjauan mingguan.",
+    "en": "pajak STNK: family chat versus a tidy log. Looks at why details get scattered, what stays on your device, and a weekly check to keep things in order.",
+    "ar": "pajak STNK: مجموعة عائلية مقابل سجل مرتب. ينظر في سبب تشتت التفاصيل، وما يبقى على جهازك، ومراجعة أسبوعية لترتيب الأمور.",
+    "ja": "家族チャットと比べた、pajak STNKの整理された記録。情報が散らばる理由、端末保存、毎週の確認。",
+    "zh": "pajak STNK：家庭聊天与整洁日志的对比。分析细节为何分散、哪些留在设备上，以及每周检查。",
+    "jv": "pajak STNK: obrolan kulawarga lawan log sing rapi. Nerangake kenapa rincian kesebar, apa sing tetep ana ing piranti, lan tinjauan saben minggu.",
+    "su": "pajak STNK: obrolan kulawarga jeung catetan nu rapih. Ngajelaskeun naha rincian nyebar, naon nu tetep aya di alat, jeung tinjauan mingguan."
+  }
 }

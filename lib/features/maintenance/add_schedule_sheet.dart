@@ -31,18 +31,19 @@ class _AddScheduleSheetState extends ConsumerState<AddScheduleSheet> {
   late TextEditingController _intervalMonthsController;
   late TextEditingController _lastOdoController;
   late DateTime _lastDate;
+  bool _initialized = false;
 
-  final List<String> _suggestedCategories = [
-    'Oli & Pelumas',
-    'Oli & Filter',
-    'Pengereman',
-    'Filter & Udara',
-    'Ban & Suspensi',
-    'Pengapian',
-    'Transmisi CVT',
-    'Kelistrikan & Aki',
-    'Cairan & Radiator',
-    'Perawatan Berkala',
+  List<String> _suggestedCategories(AppLocalizations l10n) => [
+    l10n.mtCatOilFluids,
+    l10n.mtCatOilFilter,
+    l10n.mtCatBrakes,
+    l10n.mtCatAirFilter,
+    l10n.mtCatTires,
+    l10n.mtCatIgnition,
+    l10n.mtCatCvt,
+    l10n.mtCatElectrical,
+    l10n.mtCatCoolant,
+    l10n.mtCatGeneral,
   ];
 
   @override
@@ -50,13 +51,31 @@ class _AddScheduleSheetState extends ConsumerState<AddScheduleSheet> {
     super.initState();
     final s = widget.initialSchedule;
     _titleController = TextEditingController(text: s?.title ?? '');
-    _categoryController = TextEditingController(text: s?.category ?? 'Oli & Pelumas');
-    _intervalKmController = TextEditingController(text: s?.intervalKm.toString() ?? '5000');
-    _intervalMonthsController = TextEditingController(text: s?.intervalMonths.toString() ?? '6');
+    _categoryController = TextEditingController(text: s?.category ?? '');
+    _intervalKmController = TextEditingController(
+      text: s?.intervalKm.toString() ?? '5000',
+    );
+    _intervalMonthsController = TextEditingController(
+      text: s?.intervalMonths.toString() ?? '6',
+    );
     _lastOdoController = TextEditingController(
-      text: s?.lastPerformedOdometer.toString() ?? widget.vehicle.currentOdometer.toString(),
+      text:
+          s?.lastPerformedOdometer.toString() ??
+          widget.vehicle.currentOdometer.toString(),
     );
     _lastDate = s?.lastPerformedDate ?? DateTime.now();
+  }
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    if (_initialized) return;
+    _initialized = true;
+    // A new schedule starts on the first suggested category in the user's
+    // language; an edited one keeps the category that was stored with it.
+    if (_categoryController.text.isEmpty) {
+      _categoryController.text = AppLocalizations.of(context)!.mtCatOilFluids;
+    }
   }
 
   @override
@@ -72,6 +91,7 @@ class _AddScheduleSheetState extends ConsumerState<AddScheduleSheet> {
   @override
   Widget build(BuildContext context) {
     final isEditing = widget.initialSchedule != null;
+    final l10n = AppLocalizations.of(context)!;
 
     return Padding(
       padding: EdgeInsets.only(
@@ -83,7 +103,9 @@ class _AddScheduleSheetState extends ConsumerState<AddScheduleSheet> {
       child: Form(
         key: _formKey,
         child: SingleChildScrollView(
-          physics: const BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
+          physics: const BouncingScrollPhysics(
+            parent: AlwaysScrollableScrollPhysics(),
+          ),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -93,8 +115,8 @@ class _AddScheduleSheetState extends ConsumerState<AddScheduleSheet> {
                 children: [
                   Text(
                     isEditing
-                        ? (Localizations.localeOf(context).languageCode == 'id' ? 'Ubah Jadwal Perawatan' : 'Edit Maintenance Schedule')
-                        : AppLocalizations.of(context)!.tambahJadwalPerawatan,
+                        ? l10n.editScheduleTitle
+                        : l10n.tambahJadwalPerawatan,
                     style: TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.w800,
@@ -110,8 +132,12 @@ class _AddScheduleSheetState extends ConsumerState<AddScheduleSheet> {
               ),
               const SizedBox(height: 6),
               Text(
-                AppLocalizations.of(context)!.dualTriggerReminderAlarmAkanAk,
-                style: TextStyle(fontSize: 12, color: context.readable(AppColors.primary), fontWeight: FontWeight.w500),
+                l10n.dualTriggerReminderAlarmAkanAk,
+                style: TextStyle(
+                  fontSize: 12,
+                  color: context.readable(AppColors.primary),
+                  fontWeight: FontWeight.w500,
+                ),
               ),
               const SizedBox(height: 16),
 
@@ -119,31 +145,37 @@ class _AddScheduleSheetState extends ConsumerState<AddScheduleSheet> {
               TextFormField(
                 controller: _titleController,
                 decoration: InputDecoration(
-                  labelText: AppLocalizations.of(context)!.namaPekerjaanKomponen,
-                  hintText: AppLocalizations.of(context)!.misalKurasMinyakRem,
+                  labelText: l10n.namaPekerjaanKomponen,
+                  hintText: l10n.misalKurasMinyakRem,
                 ),
                 validator: (v) => v == null || v.trim().isEmpty
-                    ? AppLocalizations.of(context)!.validationServiceNameRequired
+                    ? l10n.validationServiceNameRequired
                     : null,
               ),
               const SizedBox(height: 14),
 
               // Category Selector Chips
               Text(
-                AppLocalizations.of(context)!.kategori,
-                style: TextStyle(fontSize: 12, fontWeight: FontWeight.w600, color: context.textSecondary),
+                l10n.kategori,
+                style: TextStyle(
+                  fontSize: 12,
+                  fontWeight: FontWeight.w600,
+                  color: context.textSecondary,
+                ),
               ),
               const SizedBox(height: 8),
               Wrap(
                 spacing: 8,
                 runSpacing: 8,
-                children: _suggestedCategories.map((cat) {
+                children: _suggestedCategories(l10n).map((cat) {
                   final isSelected = _categoryController.text == cat;
                   return ChoiceChip(
                     label: Text(cat),
                     labelStyle: TextStyle(
                       fontSize: 11,
-                      fontWeight: isSelected ? FontWeight.w700 : FontWeight.w500,
+                      fontWeight: isSelected
+                          ? FontWeight.w700
+                          : FontWeight.w500,
                       color: isSelected ? Colors.white : context.textSecondary,
                     ),
                     selected: isSelected,
@@ -151,10 +183,16 @@ class _AddScheduleSheetState extends ConsumerState<AddScheduleSheet> {
                     backgroundColor: context.surfaceBg,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(16),
-                      side: BorderSide(color: isSelected ? AppColors.primary : context.borderColor),
+                      side: BorderSide(
+                        color: isSelected
+                            ? AppColors.primary
+                            : context.borderColor,
+                      ),
                     ),
                     onSelected: (selected) {
-                      if (selected) setState(() => _categoryController.text = cat);
+                      if (selected) {
+                        setState(() => _categoryController.text = cat);
+                      }
                     },
                   );
                 }).toList(),
@@ -169,14 +207,14 @@ class _AddScheduleSheetState extends ConsumerState<AddScheduleSheet> {
                       controller: _intervalKmController,
                       keyboardType: TextInputType.number,
                       decoration: InputDecoration(
-                        labelText: AppLocalizations.of(context)!.intervalJarakKm,
+                        labelText: l10n.intervalJarakKm,
                         hintText: '5000',
                         suffixText: 'km',
                       ),
                       validator: (val) {
                         final parsed = int.tryParse(val ?? '');
                         if (parsed == null || parsed <= 0) {
-                          return Localizations.localeOf(context).languageCode == 'id' ? 'Wajib > 0' : 'Must be > 0';
+                          return l10n.mustBePositive;
                         }
                         return null;
                       },
@@ -188,14 +226,14 @@ class _AddScheduleSheetState extends ConsumerState<AddScheduleSheet> {
                       controller: _intervalMonthsController,
                       keyboardType: TextInputType.number,
                       decoration: InputDecoration(
-                        labelText: AppLocalizations.of(context)!.intervalWaktu,
+                        labelText: l10n.intervalWaktu,
                         hintText: '6',
-                        suffixText: 'bln',
+                        suffixText: l10n.unitMonthsShort,
                       ),
                       validator: (val) {
                         final parsed = int.tryParse(val ?? '');
                         if (parsed == null || parsed <= 0) {
-                          return Localizations.localeOf(context).languageCode == 'id' ? 'Wajib > 0' : 'Must be > 0';
+                          return l10n.mustBePositive;
                         }
                         return null;
                       },
@@ -210,10 +248,13 @@ class _AddScheduleSheetState extends ConsumerState<AddScheduleSheet> {
                 controller: _lastOdoController,
                 keyboardType: TextInputType.number,
                 decoration: InputDecoration(
-                  labelText: AppLocalizations.of(context)!.odometerTerakhirDikerjakanKm,
+                  labelText: l10n.odometerTerakhirDikerjakanKm,
                   hintText: '20000',
                 ),
-                validator: (val) => mapValidationError(AppValidators.validateOdometer(int.tryParse(val ?? '')), AppLocalizations.of(context)!),
+                validator: (val) => mapValidationError(
+                  AppValidators.validateOdometer(int.tryParse(val ?? '')),
+                  l10n,
+                ),
               ),
               const SizedBox(height: 14),
 
@@ -232,11 +273,17 @@ class _AddScheduleSheetState extends ConsumerState<AddScheduleSheet> {
                 },
                 child: InputDecorator(
                   decoration: InputDecoration(
-                    labelText: AppLocalizations.of(context)!.tanggalTerakhirDikerjakan,
-                    suffixIcon: Icon(Icons.calendar_today, size: 18, color: context.textSecondary),
+                    labelText: l10n.tanggalTerakhirDikerjakan,
+                    suffixIcon: Icon(
+                      Icons.calendar_today,
+                      size: 18,
+                      color: context.textSecondary,
+                    ),
                   ),
                   child: Text(
-                    '${_lastDate.day}/${_lastDate.month}/${_lastDate.year}',
+                    MaterialLocalizations.of(
+                      context,
+                    ).formatCompactDate(_lastDate),
                     style: TextStyle(color: context.textPrimary, fontSize: 14),
                   ),
                 ),
@@ -251,38 +298,44 @@ class _AddScheduleSheetState extends ConsumerState<AddScheduleSheet> {
                     if (!_formKey.currentState!.validate()) return;
 
                     final schedule = MaintenanceSchedule(
-                      id: widget.initialSchedule?.id ?? 'sched_${DateTime.now().millisecondsSinceEpoch}',
+                      id:
+                          widget.initialSchedule?.id ??
+                          'sched_${DateTime.now().millisecondsSinceEpoch}',
                       vehicleId: widget.vehicle.id,
                       title: _titleController.text.trim(),
                       category: _categoryController.text.trim(),
                       intervalKm: int.parse(_intervalKmController.text.trim()),
-                      intervalMonths: int.parse(_intervalMonthsController.text.trim()),
-                      lastPerformedOdometer: int.parse(_lastOdoController.text.trim()),
+                      intervalMonths: int.parse(
+                        _intervalMonthsController.text.trim(),
+                      ),
+                      lastPerformedOdometer: int.parse(
+                        _lastOdoController.text.trim(),
+                      ),
                       lastPerformedDate: _lastDate,
                       isPreset: widget.initialSchedule?.isPreset ?? false,
                     );
 
                     if (isEditing) {
-                      ref.read(maintenanceSchedulesProvider.notifier).updateSchedule(schedule);
+                      ref
+                          .read(maintenanceSchedulesProvider.notifier)
+                          .updateSchedule(schedule);
                     } else {
-                      ref.read(maintenanceSchedulesProvider.notifier).addSchedule(schedule);
+                      ref
+                          .read(maintenanceSchedulesProvider.notifier)
+                          .addSchedule(schedule);
                     }
 
                     Navigator.pop(context);
                     ScaffoldMessenger.of(context).showSnackBar(
                       SnackBar(
                         content: Text(
-                          isEditing
-                              ? (Localizations.localeOf(context).languageCode == 'id' ? 'Jadwal berhasil diperbarui!' : 'Schedule updated successfully!')
-                              : (Localizations.localeOf(context).languageCode == 'id' ? 'Jadwal perawatan berhasil disimpan!' : 'Maintenance schedule saved successfully!'),
+                          isEditing ? l10n.scheduleUpdated : l10n.scheduleSaved,
                         ),
                       ),
                     );
                   },
                   child: Text(
-                    isEditing
-                        ? (Localizations.localeOf(context).languageCode == 'id' ? 'Perbarui Jadwal' : 'Update Schedule')
-                        : (Localizations.localeOf(context).languageCode == 'id' ? 'Simpan Jadwal Perawatan' : 'Save Maintenance Schedule'),
+                    isEditing ? l10n.updateSchedule : l10n.saveSchedule,
                   ),
                 ),
               ),

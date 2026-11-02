@@ -8,22 +8,31 @@
   "banner_ready": false,
   "seo": true,
   "slugs": {
-    "id": "pengingat-ganti-oli-untuk-orang-sibuk-harian",
-    "en": "pengingat-ganti-oli-for-busy-people",
-    "ar": "pengingat-ganti-oli",
-    "jv": "pandhuan-pengingat-ganti-oli-garagego",
-    "su": "pituduh-pengingat-ganti-oli-garagego",
-    "zh": "garagego-pengingat-ganti-oli-实用指南",
-    "ja": "garagegopengingat-ganti-oli-ガイド"
+    "id": "pengingat-ganti-oli-untuk-orang-yang-waktunya-sempit",
+    "en": "pengingat-ganti-oli-for-people-with-no-spare-time",
+    "ar": "alsjlat-alywmya-lmn-la-ymlk-wqta",
+    "jv": "pengingat-ganti-oli-kanggo-sing-wektune-sempit",
+    "su": "pengingat-ganti-oli-pikeun-anu-waktosna-heureut",
+    "zh": "shi-jian-hen-shao-de-ren-zen-me-zuo-ri-chang-ji-lu",
+    "ja": "jikan-ganai-nin-notameno-mainichi-no-kiroku"
   },
   "titles": {
     "id": "pengingat ganti oli untuk orang yang waktunya sempit",
-    "en": "pengingat ganti oli for Busy People",
-    "ar": "pengingat ganti oli — دليل GarageGo",
-    "jv": "Pandhuan: pengingat ganti oli untuk orang yang waktunya sempit",
-    "su": "Pituduh: pengingat ganti oli untuk orang yang waktunya sempit",
-    "zh": "GarageGo · pengingat ganti oli 实用指南",
-    "ja": "GarageGo｜pengingat ganti oli ガイド"
+    "en": "pengingat ganti oli for people with no spare time",
+    "ar": "السجلات اليومية لمن لا يملك وقتاً",
+    "jv": "pengingat ganti oli kanggo sing wektuné sempit",
+    "su": "pengingat ganti oli pikeun anu waktosna heureut",
+    "zh": "时间很少的人怎么做日常记录",
+    "ja": "時間がない人のための毎日の記録"
   },
-  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+  "quality_pass": "editorial-v3",
+  "descriptions": {
+    "id": "Pengingat ganti oli untuk orang yang waktunya sempit: kapan menjalankannya, versi paling kecil yang masih berguna, dan cara kembali setelah jeda.",
+    "en": "Pengingat ganti oli for people with little spare time: when to run it, the smallest version that still helps, and how to get back on track after a break.",
+    "ar": "pengingat ganti oli لمن لا يملك وقتاً كثيراً: متى يُشغَّل، وأصغر نسخة ما زالت مفيدة، وكيف تعود إلى الروتين بعد انقطاع.",
+    "ja": "時間に余裕がない人のためのganti oliリマインダー。実行のタイミング、最小バージョン、再開方法。",
+    "zh": "写给时间紧张的人：pengingat ganti oli何时执行、哪种最小版本仍然有用，以及中断后如何恢复。",
+    "jv": "Pengingat ganti oli kanggo wong sing wektuné sempit: kapan mlaku, versi paling cilik sing isih migunani, lan carane bali menyang rutinitas sawisé bolong.",
+    "su": "Pengingat ganti oli pikeun nu waktuna heureut: iraha ngajalankeunana, versi pang leutikna anu masih mangpaat, jeung kumaha balik deui sanggeus istirahat."
+  }
 }

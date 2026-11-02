@@ -8,22 +8,31 @@
   "banner_ready": false,
   "seo": true,
   "slugs": {
-    "id": "tanda-sudah-siap-naik-level-rawat-motor-praktis",
-    "en": "signs-you-re-ready-to-level-up-rawat-motor-practical",
-    "ar": "rawat-motor-6",
-    "jv": "pandhuan-rawat-motor-garagego-6",
-    "su": "pituduh-rawat-motor-garagego-6",
-    "zh": "garagego-rawat-motor-实用指南-6",
-    "ja": "garagegorawat-motor-ガイド-6"
+    "id": "rawat-motor-memutuskan-tanpa-overthinking",
+    "en": "rawat-motor-deciding-without-overthinking",
+    "ar": "alsjlat-alywmya-qrar-bla-tfkyr-zaid-aljz-2",
+    "jv": "rawat-motor-mutusake-tanpa-mikir-kebangeten",
+    "su": "rawat-motor-mutuskeun-tanpa-mikir-kaleuleuwihi",
+    "zh": "ri-chang-ji-lu-bu-bi-jiu-jie-de-xuan-ze-fang-fa-di-2-pian",
+    "ja": "mainichi-no-kiroku-kangae-sugizuni-kime-ru-dai-2-kai"
   },
   "titles": {
-    "id": "Tanda Sudah Siap Naik Level rawat motor",
-    "en": "Signs You&#x27;re Ready to Level Up rawat motor (Practical)",
-    "ar": "rawat motor — دليل GarageGo",
-    "jv": "Pandhuan: Tanda Sudah Siap Naik Level rawat motor",
-    "su": "Pituduh: Tanda Sudah Siap Naik Level rawat motor",
-    "zh": "GarageGo · rawat motor 实用指南",
-    "ja": "GarageGo｜rawat motor ガイド"
+    "id": "rawat motor: memutuskan tanpa overthinking",
+    "en": "rawat motor: deciding without overthinking",
+    "ar": "السجلات اليومية: قرار بلا تفكير زائد · الجزء 2",
+    "jv": "rawat motor: mutusaké tanpa mikir kebangeten",
+    "su": "rawat motor: mutuskeun tanpa mikir kaleuleuwihi",
+    "zh": "日常记录：不必纠结的选择方法 · 第2篇",
+    "ja": "毎日の記録：考えすぎずに決める · 第2回"
   },
-  "quality_pass": "article-writing+edit-article+marketing-psychology-v2"
+  "quality_pass": "editorial-v3",
+  "descriptions": {
+    "id": "Rawat motor: cara memutuskan tanpa overthinking. Bahas penyebab kebiasaan berhenti, penyimpanan di perangkat, dan tinjauan mingguan sebagai pegangan.",
+    "en": "Rawat motor: deciding without overthinking. Covers the reasons the habit stops, on-device storage, and a weekly check to lean on when unsure.",
+    "ar": "rawat motor: كيف تقرر دون إرهاق ذهني. يغطي أسباب توقف العادة، والتخزين على الجهاز، ومراجعة أسبوعية تستند إليها عند الحيرة.",
+    "ja": "rawat motor：迷いすぎずに決める。習慣が止まる理由、端末内の保存、迷った時に頼る毎週の確認。",
+    "zh": "rawat motor：不要想太多，轻松做决定。分析习惯停止的原因、设备存储，以及不确定时可依靠的每周检查。",
+    "jv": "Rawat motor: carane mutusaké tanpa overthinking. Ngrembug sebab kebiasan mandheg, panyimpenan ing piranti, lan tinjauan saben minggu minangka sandaran.",
+    "su": "Rawat motor: kumaha mutuskeun tanpa overthinking. Ngabahas sabab kabiasaan eureun, panyimpenan di alat, jeung tinjauan mingguan minangka sandaran."
+  }
 }

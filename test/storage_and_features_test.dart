@@ -1,5 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:garagego/core/models/vehicle.dart';
+import 'package:garagego/l10n/app_localizations_id.dart';
 import 'package:garagego/core/storage/local_storage_service.dart';
 import 'package:garagego/core/utils/backup_file_io.dart';
 import 'package:package_info_plus/package_info_plus.dart';
@@ -88,7 +89,7 @@ void main() {
 
     test('Motorcycle preset schedules have appropriate intervals', () {
       final moto = Vehicle.sampleMotorcycle();
-      final presets = MaintenanceSchedule.defaultPresetsFor(moto);
+      final presets = MaintenanceSchedule.defaultPresetsFor(moto, AppLocalizationsId());
 
       final oilPreset = presets.firstWhere((p) => p.category.contains('Oli'));
       expect(oilPreset.intervalKm, 2500);

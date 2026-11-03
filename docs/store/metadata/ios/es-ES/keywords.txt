@@ -1,1 +1,1 @@
-vehicle,maintenance,fuel,garage
+moto,revisión,taller,repostaje,neumático,mecánico,matrícula,seguro,gasto,kilometraje,libro,vehículo

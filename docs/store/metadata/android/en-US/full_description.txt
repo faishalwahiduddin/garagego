@@ -1,18 +1,20 @@
-GarageGo keeps your cars and motorcycles properly maintained. Log periodic maintenance, track oil change intervals, calculate fuel consumption, and monitor vehicle tax renewal dates with ease.
+GarageGo is a car maintenance log for your cars and motorcycles. Record every service and fill-up, see when the next oil change is due, and keep track of tax, registration, license and insurance dates, all in one place.
 
-Core Features:
-✓ Multi-vehicle management for cars and motorcycles
-✓ Service history logs with parts replacement and garage notes
-✓ Oil change due tracking by odometer mileage or calendar dates, with overdue indicators in the app
-✓ Fuel fill-up tracker with automatic mileage calculations
-✓ Vehicle registration and road tax expiry date tracking
-✓ Cost breakdown of repairs, routine servicing, and fuel expenses
-✓ 100% offline, zero ads, no sign-up required
+What you can do
+✓ Keep several vehicles in one garage and switch the active one: name, plate, make, year, fuel type, odometer and oil capacity
+✓ Service history with date, odometer, cost, workshop and parts notes, plus search across past services
+✓ Maintenance schedules by distance (km) or months, for oil, filters, brakes or any part; each shows what is left and turns to due soon or overdue in the app
+✓ Engine oil life: see how much is left and reset the counter after a change
+✓ Fuel log with liters, price, station and full-tank flag; GarageGo works out km/L, best and average economy and cost per km
+✓ Glovebox for documents: annual tax, 5-year registration, driver's license and insurance, with days remaining and expired items marked
+✓ Total running cost (fuel, service and documents) and cost per km
+✓ Vehicle health score that drops when an oil change is overdue or a document has expired
+✓ 10-point inspection checklist (tires, brakes, oil, lights, battery and more) before a road trip
+✓ Back up everything to a .grg file and restore it, or copy fuel and service logs as CSV for a spreadsheet
 
-Why GarageGo?
-Keeping comprehensive maintenance records preserves your vehicle's resale value and prevents unexpected roadside breakdowns. GarageGo replaces messy glovebox paper receipts with a clear pocket record.
+Why GarageGo
+Popular car apps push accounts, ads or paid tiers. GarageGo has no account, no ads and no trackers, works offline, and keeps your plates and costs on your phone. A clean service record also helps when you sell the car or bike.
 
-Your Privacy:
-All vehicle details, license plate numbers, and expense logs remain stored on your device. Nothing is uploaded to external servers.
+Start with the sample vehicle, then add your own.
 
-Part of the faishal.id personal utility fleet.
+Part of the faishal.id apps.

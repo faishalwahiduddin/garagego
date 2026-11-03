@@ -1,18 +1,20 @@
-GarageGo membantu Anda merawat mobil dan sepeda motor dengan rapi. Catat riwayat servis berkala, jadwal ganti oli, konsumsi bahan bakar (BBM), dan tanggal jatuh tempo pajak STNK agar kendaraan selalu prima.
+GarageGo adalah catatan servis motor dan mobil di HP kamu. Catat tiap servis dan isi bensin, lihat kapan harus ganti oli lagi, dan pantau tanggal pajak STNK, SIM, serta asuransi di satu tempat.
 
-Fitur Utama:
-✓ Kelola beberapa kendaraan sekaligus (mobil dan motor)
-✓ Catat riwayat servis, penggantian suku cadang, dan bengkel
-✓ Pelacakan jadwal ganti oli berdasarkan odometer atau interval bulan, dengan penanda terlambat di aplikasi
-✓ Log pengisian BBM lengkap dengan kalkulator konsumsi per kilometer
-✓ Pencatatan tanggal jatuh tempo pajak tahunan STNK dan lima tahunan
-✓ Ringkasan pengeluaran perawatan bulanan dan tahunan
-✓ 100% offline tanpa iklan dan tanpa perlu registrasi akun
+Yang bisa kamu lakukan
+✓ Simpan beberapa kendaraan di satu garasi dan pilih kendaraan aktif: nama, pelat nomor, merek, tahun, jenis BBM, odometer, dan kapasitas oli
+✓ Riwayat servis lengkap: tanggal, odometer, biaya, bengkel, dan catatan suku cadang, plus pencarian riwayat servis
+✓ Jadwal perawatan per jarak (km) atau per bulan untuk oli, filter, rem, atau komponen apa pun; tiap jadwal menampilkan sisa dan berubah jadi segera atau terlewat di dalam aplikasi
+✓ Umur oli mesin: lihat sisa umur oli dan reset penghitung setelah ganti oli
+✓ Catatan isi BBM: liter, harga, SPBU, dan tanda isi penuh; GarageGo menghitung km/L, efisiensi terbaik dan rata-rata, serta biaya per km
+✓ Laci dokumen (glovebox): pajak tahunan, STNK 5 tahunan, SIM, dan asuransi, dengan sisa hari dan tanda kedaluwarsa
+✓ Total biaya kendaraan (BBM, servis, dan dokumen) dan biaya per km
+✓ Skor kesehatan kendaraan yang turun kalau ganti oli terlewat atau dokumen kedaluwarsa
+✓ Checklist inspeksi 10 poin (ban, rem, oli, lampu, aki, dan lainnya) sebelum mudik atau perjalanan jauh
+✓ Cadangkan semua data ke file .grg lalu pulihkan, atau salin catatan BBM dan servis sebagai CSV untuk Excel
 
-Kenapa GarageGo?
-Riwayat perawatan kendaraan yang terdokumentasi rapi menjaga nilai jual kembali kendaraan dan mencegah kerusakan mendadak di jalan. GarageGo menggantikan buku servis manual dengan catatan praktis di saku Anda.
+Kenapa GarageGo
+Banyak aplikasi kendaraan minta daftar akun, penuh iklan, atau mengunci fitur di versi berbayar. GarageGo tanpa akun, tanpa iklan, tanpa pelacak, bisa dipakai offline, dan data pelat serta biaya tetap di HP kamu. Riwayat servis yang rapi juga bikin harga jual motor atau mobil lebih meyakinkan.
 
-Privasi Anda:
-Semua data kendaraan, pelat nomor, dan catatan biaya disimpan di memori lokal ponsel Anda. Tidak ada data yang dibagikan ke pihak ketiga.
+Mulai dari kendaraan contoh, lalu tambahkan motor atau mobilmu sendiri.
 
-Bagian dari armada aplikasi utilitas faishal.id.
+Bagian dari aplikasi faishal.id.

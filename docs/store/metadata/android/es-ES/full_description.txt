@@ -1,3 +1,20 @@
-GarageGo manages your garage: service, oil changes, fuel logs, and STNK taxes for cars & bikes.
+GarageGo es tu libro de mantenimiento del coche y la moto en el móvil. Apunta cada revisión y cada repostaje, mira cuándo toca el próximo cambio de aceite y controla las fechas de impuestos, permiso de circulación, carné y seguro en un solo sitio.
 
-Parte de la familia de apps faishal.id. Enfoque offline, sin anuncios.
+Qué puedes hacer
+✓ Guarda varios vehículos en un mismo garaje y elige el activo: nombre, matrícula, marca, año, combustible, kilometraje y capacidad de aceite
+✓ Historial de revisiones con fecha, kilómetros, coste, taller y notas de piezas, y buscador de revisiones anteriores
+✓ Planes de mantenimiento por kilómetros o por meses para aceite, filtros, frenos o cualquier pieza; cada uno muestra lo que falta y pasa a «pronto» o «vencido» dentro de la app
+✓ Vida del aceite del motor: mira cuánto le queda y reinicia el contador tras el cambio
+✓ Registro de repostajes con litros, precio, gasolinera y depósito lleno; GarageGo calcula km/l, el mejor consumo, la media y el coste por kilómetro
+✓ Guantera de documentos: impuesto anual, renovación de la matrícula cada 5 años, carné de conducir y seguro, con los días que faltan y lo caducado marcado
+✓ Coste total de uso (combustible, mantenimiento y documentos) y coste por kilómetro
+✓ Nota de salud del vehículo que baja si se pasa un cambio de aceite o caduca un documento
+✓ Lista de revisión de 10 puntos (neumáticos, frenos, aceite, luces, batería y más) antes de un viaje
+✓ Guarda una copia de seguridad en un archivo .grg y restáurala, o copia los repostajes y revisiones en CSV para una hoja de cálculo
+
+Por qué GarageGo
+Las apps de coche más conocidas piden cuenta, meten anuncios o bloquean funciones tras una suscripción. GarageGo no tiene cuenta, ni anuncios, ni rastreadores, funciona sin conexión y tus matrículas y gastos se quedan en tu móvil. Un historial de mantenimiento ordenado también ayuda al vender el coche o la moto.
+
+Empieza con el vehículo de ejemplo y luego añade el tuyo.
+
+Forma parte de las apps de faishal.id.

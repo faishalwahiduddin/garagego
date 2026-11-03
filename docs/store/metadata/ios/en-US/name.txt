@@ -1,1 +1,1 @@
-GarageGo: Car & Bike Garage
+GarageGo: Car Maintenance Log

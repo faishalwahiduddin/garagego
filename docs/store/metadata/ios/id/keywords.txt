@@ -1,1 +1,1 @@
-vehicle,maintenance,fuel,garage
+bengkel,kendaraan,odometer,sim,asuransi,suku cadang,km per liter,bensin,biaya,perawatan,mudik

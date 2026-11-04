@@ -159,14 +159,14 @@ GarageGo سجل صيانة السيارة والدراجة النارية على
 
 **Tagline** (feature graphic)
 
-> Service, oil, fuel & STNK tax — offline.
+> تتبع صيانة المركبات، تغيير الزيت، استهلاك الوقود وضريبة السير.
 
 **Screenshot captions**
 
-1. **Your garage** — Cars & bikes in one place
-2. **Maintenance** — Service, oil, STNK
-3. **Fuel** — Log consumption
-4. **Offline** — No ads, local data
+1. **مرآبك الخاص** — سياراتك ودراجاتك في مكان واحد
+2. **الصيانة الدورية** — الخدمة والزيت وتراخيص السير
+3. **الوقود** — سجل الاستهلاك والتكاليف
+4. **دون اتصال** — بلا إعلانات وبيانات محلية
 
 ---
 
@@ -213,14 +213,14 @@ faishal.idアプリの一つです。
 
 **Tagline** (feature graphic)
 
-> Service, oil, fuel & STNK tax — offline.
+> 愛車の定期点検、オイル交換、燃費記録、車検・税金管理。
 
 **Screenshot captions**
 
-1. **Your garage** — Cars & bikes in one place
-2. **Maintenance** — Service, oil, STNK
-3. **Fuel** — Log consumption
-4. **Offline** — No ads, local data
+1. **マイガレージ** — 車とバイクを一元管理
+2. **メンテナンス** — 点検・オイル・車検の管理
+3. **給油・燃費** — 消費量と燃費の推移を記録
+4. **オフライン** — 広告なし・端末内データ管理
 
 ---
 
@@ -267,14 +267,14 @@ faishal.id 应用之一。
 
 **Tagline** (feature graphic)
 
-> Service, oil, fuel & STNK tax — offline.
+> 记录车辆保养、更换机油、油耗里程与年检税费。
 
 **Screenshot captions**
 
-1. **Your garage** — Cars & bikes in one place
-2. **Maintenance** — Service, oil, STNK
-3. **Fuel** — Log consumption
-4. **Offline** — No ads, local data
+1. **我的车库** — 一站式管理汽车与摩托车
+2. **维修保养** — 常规保养、机油与证照年审
+3. **油耗记录** — 清晰统计每笔加油与里程
+4. **离线安全** — 无广告干扰，数据本地存放
 
 ---
 
@@ -321,12 +321,12 @@ Forma parte de las apps de faishal.id.
 
 **Tagline** (feature graphic)
 
-> Service, oil, fuel & STNK tax — offline.
+> Seguimiento de mantenimiento vehicular, cambio de aceite, combustible e impuestos.
 
 **Screenshot captions**
 
-1. **Your garage** — Cars & bikes in one place
-2. **Maintenance** — Service, oil, STNK
-3. **Fuel** — Log consumption
-4. **Offline** — No ads, local data
+1. **Tu garaje** — Autos y motos en un solo lugar
+2. **Mantenimiento** — Servicio, aceite e impuestos
+3. **Combustible** — Registra consumos y kilometraje
+4. **Sin conexión** — Sin anuncios y datos locales
 

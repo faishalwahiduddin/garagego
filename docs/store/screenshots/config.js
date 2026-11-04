@@ -23,10 +23,10 @@ window.STORE_CONFIG = {
   "tagline": {
     "id": "Catat servis berkala, ganti oli, BBM & pajak STNK kendaraan.",
     "en-US": "Track vehicle service, oil changes, fuel mileage, and road tax.",
-    "ar": "Service, oil, fuel & STNK tax — offline.",
-    "ja-JP": "Service, oil, fuel & STNK tax — offline.",
-    "zh-CN": "Service, oil, fuel & STNK tax — offline.",
-    "es-ES": "Service, oil, fuel & STNK tax — offline."
+    "ar": "تتبع صيانة المركبات، تغيير الزيت، استهلاك الوقود وضريبة السير.",
+    "ja-JP": "愛車の定期点検、オイル交換、燃費記録、車検・税金管理。",
+    "zh-CN": "记录车辆保养、更换机油、油耗里程与年检税费。",
+    "es-ES": "Seguimiento de mantenimiento vehicular, cambio de aceite, combustible e impuestos."
   },
   "slides": {
     "id": [
@@ -67,74 +67,74 @@ window.STORE_CONFIG = {
     ],
     "ar": [
       {
-        "headline": "Your garage",
-        "subtext": "Cars & bikes in one place"
+        "headline": "مرآبك الخاص",
+        "subtext": "سياراتك ودراجاتك في مكان واحد"
       },
       {
-        "headline": "Maintenance",
-        "subtext": "Service, oil, STNK"
+        "headline": "الصيانة الدورية",
+        "subtext": "الخدمة والزيت وتراخيص السير"
       },
       {
-        "headline": "Fuel",
-        "subtext": "Log consumption"
+        "headline": "الوقود",
+        "subtext": "سجل الاستهلاك والتكاليف"
       },
       {
-        "headline": "Offline",
-        "subtext": "No ads, local data"
+        "headline": "دون اتصال",
+        "subtext": "بلا إعلانات وبيانات محلية"
       }
     ],
     "ja-JP": [
       {
-        "headline": "Your garage",
-        "subtext": "Cars & bikes in one place"
+        "headline": "マイガレージ",
+        "subtext": "車とバイクを一元管理"
       },
       {
-        "headline": "Maintenance",
-        "subtext": "Service, oil, STNK"
+        "headline": "メンテナンス",
+        "subtext": "点検・オイル・車検の管理"
       },
       {
-        "headline": "Fuel",
-        "subtext": "Log consumption"
+        "headline": "給油・燃費",
+        "subtext": "消費量と燃費の推移を記録"
       },
       {
-        "headline": "Offline",
-        "subtext": "No ads, local data"
+        "headline": "オフライン",
+        "subtext": "広告なし・端末内データ管理"
       }
     ],
     "zh-CN": [
       {
-        "headline": "Your garage",
-        "subtext": "Cars & bikes in one place"
+        "headline": "我的车库",
+        "subtext": "一站式管理汽车与摩托车"
       },
       {
-        "headline": "Maintenance",
-        "subtext": "Service, oil, STNK"
+        "headline": "维修保养",
+        "subtext": "常规保养、机油与证照年审"
       },
       {
-        "headline": "Fuel",
-        "subtext": "Log consumption"
+        "headline": "油耗记录",
+        "subtext": "清晰统计每笔加油与里程"
       },
       {
-        "headline": "Offline",
-        "subtext": "No ads, local data"
+        "headline": "离线安全",
+        "subtext": "无广告干扰，数据本地存放"
       }
     ],
     "es-ES": [
       {
-        "headline": "Your garage",
-        "subtext": "Cars & bikes in one place"
+        "headline": "Tu garaje",
+        "subtext": "Autos y motos en un solo lugar"
       },
       {
-        "headline": "Maintenance",
-        "subtext": "Service, oil, STNK"
+        "headline": "Mantenimiento",
+        "subtext": "Servicio, aceite e impuestos"
       },
       {
-        "headline": "Fuel",
-        "subtext": "Log consumption"
+        "headline": "Combustible",
+        "subtext": "Registra consumos y kilometraje"
       },
       {
-        "headline": "Offline",
-        "subtext": "No ads, local data"
+        "headline": "Sin conexión",
+        "subtext": "Sin anuncios y datos locales"
       }
     ]
   }

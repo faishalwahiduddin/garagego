@@ -10,7 +10,7 @@
              '<path d="M-50,1660 L4370,1660" stroke="' + AMBER + '" stroke-width="6" stroke-dasharray="60 40" opacity=".6"/>';
   window.STORE_ART = {
     generic: false,
-    theme: { bg: 'linear-gradient(160deg, #334155 0%, #1E293B 55%, #0F172A 100%)', ink: '#FFFFFF' },
+    theme: { bg: 'linear-gradient(180deg, #334155 0%, #1E293B 55%, #0F172A 100%)', ink: '#FFFFFF' },
     panoramaSvg:
       '<svg viewBox="0 0 4320 1920" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">' +
         tachos + road +

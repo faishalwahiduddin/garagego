@@ -1,1 +1,1 @@
-Perbaikan: tombol Aksi Cepat kini berada di atas bilah navigasi bawah, lembar isian tidak lagi tertutup, dan ketukan tombol lebih andal. Kontras teks minimal 4,5:1 di tema terang dan gelap. Peningkatan stabilitas animasi tombol.
+Rilis pembaruan metadata dan aset toko resmi untuk GarageGo.

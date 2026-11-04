@@ -4,7 +4,7 @@
 > files are the split, tool-ready copies of this content.
 > ⚠️ **Non-English drafts (ar, ja-JP, zh-CN, es-ES) need a native-speaker review before publishing.**
 
-- **Package:** `id.faishal.garagego` · **Version:** 1.0.4+5 · **Category:** Lifestyle
+- **Package:** `id.faishal.garagego` · **Version:** 1.0.17+18 · **Category:** Lifestyle
 
 ---
 
@@ -45,7 +45,7 @@ Bagian dari aplikasi faishal.id.
 
 </details>
 
-**Release notes** — versionCode 5 (60/500)
+**Release notes** — versionCode 18 (60/500)
 
 > Rilis pembaruan metadata dan aset toko resmi untuk GarageGo.
 
@@ -99,7 +99,7 @@ Part of the faishal.id apps.
 
 </details>
 
-**Release notes** — versionCode 5 (69/500)
+**Release notes** — versionCode 18 (69/500)
 
 > Official store metadata and presentation update release for GarageGo.
 
@@ -153,7 +153,7 @@ GarageGo سجل صيانة السيارة والدراجة النارية على
 
 </details>
 
-**Release notes** — versionCode 5 (39/500)
+**Release notes** — versionCode 18 (39/500)
 
 > إصدار أولي مع لقطات متجر متعددة اللغات.
 
@@ -207,7 +207,7 @@ faishal.idアプリの一つです。
 
 </details>
 
-**Release notes** — versionCode 5 (27/500)
+**Release notes** — versionCode 18 (27/500)
 
 > 多言語ストア向けスクリーンショット対応の初回リリース。
 
@@ -261,7 +261,7 @@ faishal.id 应用之一。
 
 </details>
 
-**Release notes** — versionCode 5 (15/500)
+**Release notes** — versionCode 18 (15/500)
 
 > 首次发布，支持多语言商店截图。
 
@@ -315,7 +315,7 @@ Forma parte de las apps de faishal.id.
 
 </details>
 
-**Release notes** — versionCode 5 (51/500)
+**Release notes** — versionCode 18 (51/500)
 
 > Primera versión con capturas de tienda multiidioma.
 

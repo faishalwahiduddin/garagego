@@ -349,7 +349,7 @@ class GloveboxScreen extends ConsumerWidget {
                                     Row(
                                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                       children: [
-                                        Text(
+                                        Flexible(child: Text(
                                           l10n.docValidUntil(
                                             AppTimeZone.formatDate(
                                               doc.expiryDate,
@@ -358,7 +358,7 @@ class GloveboxScreen extends ConsumerWidget {
                                             ),
                                           ),
                                           style: TextStyle(fontSize: 12, color: context.textSecondary),
-                                        ),
+                                        )),
                                         if (doc.cost > 0)
                                           Text(
                                             currency.format(doc.cost),

@@ -31,110 +31,164 @@ window.STORE_CONFIG = {
   "slides": {
     "id": [
       {
-        "headline": "Garasi Anda",
-        "subtext": "Mobil & motor dalam satu tempat"
+        "headline": "Semua kendaraan,\ntanpa ribet catatan",
+        "subtext": "Mobil & motor, offline tanpa iklan",
+        "layout": "hero"
       },
       {
-        "headline": "Perawatan",
-        "subtext": "Servis, oli, STNK"
+        "headline": "Tak ada lagi\nlupa ganti oli",
+        "subtext": "Pengingat per km atau per bulan",
+        "layout": "offset-right"
       },
       {
-        "headline": "BBM",
-        "subtext": "Catat konsumsi bahan bakar"
+        "headline": "Riwayat servis & biaya\ndalam satu layar",
+        "subtext": "Tanggal, bengkel, dan biaya",
+        "layout": "zoom"
       },
       {
-        "headline": "Offline",
-        "subtext": "Tanpa iklan, data lokal"
+        "headline": "Tahu bensinmu\nboros atau irit",
+        "subtext": "km/L dan biaya per km",
+        "layout": "offset-left"
+      },
+      {
+        "headline": "Pajak STNK\ntak lagi terlewat",
+        "subtext": "STNK, SIM, asuransi: sisa hari",
+        "layout": "duo"
       }
     ],
     "en-US": [
       {
-        "headline": "Your garage",
-        "subtext": "Cars & bikes in one place"
+        "headline": "Your whole garage,\nwithout the paperwork",
+        "subtext": "Cars & bikes in one offline log",
+        "layout": "hero"
       },
       {
-        "headline": "Maintenance",
-        "subtext": "Service, oil, STNK"
+        "headline": "Never miss\nan oil change again",
+        "subtext": "Reminders by km or by month",
+        "layout": "offset-right"
       },
       {
-        "headline": "Fuel",
-        "subtext": "Log consumption"
+        "headline": "See every service\nand cost at a glance",
+        "subtext": "Dates, shops and what you paid",
+        "layout": "zoom"
       },
       {
-        "headline": "Offline",
-        "subtext": "No ads, local data"
+        "headline": "See what every\nkilometre costs you",
+        "subtext": "km/L and cost per km, per fill-up",
+        "layout": "offset-left"
+      },
+      {
+        "headline": "Never let your\npapers expire",
+        "subtext": "Registration, insurance, licence",
+        "layout": "duo"
       }
     ],
     "ar": [
       {
-        "headline": "مرآبك الخاص",
-        "subtext": "سياراتك ودراجاتك في مكان واحد"
+        "headline": "مركباتك كلها\nبلا أوراق متناثرة",
+        "subtext": "سيارات ودراجات، دون اتصال",
+        "layout": "hero"
       },
       {
-        "headline": "الصيانة الدورية",
-        "subtext": "الخدمة والزيت وتراخيص السير"
+        "headline": "لن تنسى\nتغيير الزيت بعد اليوم",
+        "subtext": "تذكير بالكيلومترات أو بالأشهر",
+        "layout": "offset-right"
       },
       {
-        "headline": "الوقود",
-        "subtext": "سجل الاستهلاك والتكاليف"
+        "headline": "شاهد كل صيانة\nوتكلفتها بنظرة واحدة",
+        "subtext": "التواريخ والورشة والتكلفة",
+        "layout": "zoom"
       },
       {
-        "headline": "دون اتصال",
-        "subtext": "بلا إعلانات وبيانات محلية"
+        "headline": "اعرف استهلاك\nوقودك الحقيقي",
+        "subtext": "كم/لتر وتكلفة الكيلومتر",
+        "layout": "offset-left"
+      },
+      {
+        "headline": "لا تدع أوراقك\nتنتهي صلاحيتها",
+        "subtext": "التأمين والرخصة مع الأيام المتبقية",
+        "layout": "duo"
       }
     ],
     "ja-JP": [
       {
-        "headline": "マイガレージ",
-        "subtext": "車とバイクを一元管理"
+        "headline": "車もバイクも\nまとめて安心管理",
+        "subtext": "広告なし、オフラインで記録",
+        "layout": "hero"
       },
       {
-        "headline": "メンテナンス",
-        "subtext": "点検・オイル・車検の管理"
+        "headline": "オイル交換を\nもう忘れない",
+        "subtext": "走行距離か月数でお知らせ",
+        "layout": "offset-right"
       },
       {
-        "headline": "給油・燃費",
-        "subtext": "消費量と燃費の推移を記録"
+        "headline": "整備履歴と費用が\nひと目でわかる",
+        "subtext": "日付・整備先・金額を記録",
+        "layout": "zoom"
       },
       {
-        "headline": "オフライン",
-        "subtext": "広告なし・端末内データ管理"
+        "headline": "実際の燃費を\n数字で確認",
+        "subtext": "km/Lとkm単価を自動計算",
+        "layout": "offset-left"
+      },
+      {
+        "headline": "書類の期限を\nうっかり忘れない",
+        "subtext": "車検・保険の残り日数を表示",
+        "layout": "duo"
       }
     ],
     "zh-CN": [
       {
-        "headline": "我的车库",
-        "subtext": "一站式管理汽车与摩托车"
+        "headline": "全部车辆\n一个离线车库",
+        "subtext": "汽车摩托，无广告",
+        "layout": "hero"
       },
       {
-        "headline": "维修保养",
-        "subtext": "常规保养、机油与证照年审"
+        "headline": "再也不会\n忘记换机油",
+        "subtext": "按公里或月份提醒",
+        "layout": "offset-right"
       },
       {
-        "headline": "油耗记录",
-        "subtext": "清晰统计每笔加油与里程"
+        "headline": "保养记录和花费\n一目了然",
+        "subtext": "日期、修理厂、费用",
+        "layout": "zoom"
       },
       {
-        "headline": "离线安全",
-        "subtext": "无广告干扰，数据本地存放"
+        "headline": "真实油耗\n每次加油都清楚",
+        "subtext": "自动计算油耗和每公里成本",
+        "layout": "offset-left"
+      },
+      {
+        "headline": "证件到期\n不再错过",
+        "subtext": "保险、证件剩余天数",
+        "layout": "duo"
       }
     ],
     "es-ES": [
       {
-        "headline": "Tu garaje",
-        "subtext": "Autos y motos en un solo lugar"
+        "headline": "Todo tu garaje,\nsin papeleo",
+        "subtext": "Coches y motos, sin conexión",
+        "layout": "hero"
       },
       {
-        "headline": "Mantenimiento",
-        "subtext": "Servicio, aceite e impuestos"
+        "headline": "Nunca más olvides\nun cambio de aceite",
+        "subtext": "Avisos por km o por meses",
+        "layout": "offset-right"
       },
       {
-        "headline": "Combustible",
-        "subtext": "Registra consumos y kilometraje"
+        "headline": "Cada revisión y su coste\nde un vistazo",
+        "subtext": "Fechas, taller e importe",
+        "layout": "zoom"
       },
       {
-        "headline": "Sin conexión",
-        "subtext": "Sin anuncios y datos locales"
+        "headline": "Descubre cuánto\ngasta de verdad",
+        "subtext": "km/L y coste por km",
+        "layout": "offset-left"
+      },
+      {
+        "headline": "Que no caduque\nningún documento",
+        "subtext": "Seguro y permisos, con aviso",
+        "layout": "duo"
       }
     ]
   }

@@ -1,5 +1,7 @@
+import 'dart:convert';
 import 'dart:io';
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
 
@@ -42,7 +44,9 @@ Map<String, List<String>> get _families => {
       'StoreJP': ['$_fleet/NotoSansJP-VF.ttf'],
       'StoreSC': ['$_fleet/NotoSansSC-VF.ttf'],
       'StoreEmoji_ios': ['$_sys/Apple Color Emoji.ttc'],
-      'StoreEmoji_android': ['$_fleet/NotoColorEmoji.ttf'],
+      // NotoColorEmoji is CBDT bitmap, which the test renderer cannot draw
+      // (renders tofu). Apple Color Emoji (sbix) renders; glyph style differs.
+      'StoreEmoji_android': ['$_sys/Apple Color Emoji.ttc'],
       'MaterialIcons': ['$_material/MaterialIcons-Regular.otf'],
     };
 
@@ -68,6 +72,28 @@ Future<void> loadStoreFonts() async {
     }
     await loader.load();
   }
+  await _loadAppFonts();
+}
+
+/// flutter_test only registers its box font, not the app's pubspec fonts
+/// (nor package fonts such as CupertinoIcons). Load everything listed in the
+/// asset FontManifest so app typography and icon fonts render as on device.
+Future<void> _loadAppFonts() async {
+  final String manifest;
+  try {
+    manifest = await rootBundle.loadString('FontManifest.json');
+  } on FlutterError {
+    return; // app declares no fonts
+  }
+  for (final fam in (json.decode(manifest) as List).cast<Map<String, dynamic>>()) {
+    final family = fam['family'] as String;
+    if (family == 'MaterialIcons') continue; // loaded from the SDK above
+    final loader = FontLoader(family);
+    for (final f in (fam['fonts'] as List).cast<Map<String, dynamic>>()) {
+      loader.addFont(rootBundle.load(f['asset'] as String));
+    }
+    await loader.load();
+  }
 }
 
 /// The test engine resolves a null fontFamily to its box font and has no
@@ -88,12 +114,25 @@ class StoreTextStyle {
   final String family;
   final List<String> fallback;
 
-  TextStyle _style(TextStyle? s) => (s ?? const TextStyle()).copyWith(
-        fontFamily: s?.fontFamily ?? family,
-        fontFamilyFallback: fallback,
-      );
+  // Package fonts (e.g. 'packages/cupertino_icons/CupertinoIcons') are icon or
+  // asset fonts loaded under their full name: leave them untouched. Re-applying
+  // copyWith to them re-prefixes the family on every patch pass.
+  static bool _isPackageFont(TextStyle? s) =>
+      s?.fontFamily?.startsWith('packages/') ?? false;
 
-  bool _done(InlineSpan s) => identical(s.style?.fontFamilyFallback, fallback);
+  TextStyle? _style(TextStyle? s) => _isPackageFont(s)
+      ? s
+      : (s ?? const TextStyle()).copyWith(
+          fontFamily: s?.fontFamily ?? family,
+          fontFamilyFallback: fallback,
+        );
+
+  // Compare by content: the fontFamilyFallback getter may return a new list.
+  bool _done(InlineSpan s) {
+    if (_isPackageFont(s.style)) return true;
+    final f = s.style?.fontFamilyFallback;
+    return f != null && listEquals(f, fallback);
+  }
 
   InlineSpan _span(InlineSpan s) {
     if (s is! TextSpan) return s;

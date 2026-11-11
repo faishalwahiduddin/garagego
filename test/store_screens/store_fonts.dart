@@ -5,12 +5,17 @@ import 'package:flutter/services.dart';
 
 import 'store_status_bar.dart';
 
-// Host font files. Roboto ships with the Flutter SDK, SF with macOS,
-// CJK/Arabic with the fleet font folder (tools/gen-store-scaffold/fonts).
+// GENERATED COPY of tools/gen-store-scaffold/flutter_harness/lib/ - edit there,
+// then re-run install-harness.sh.
+//
+// Host font files (macOS only). Roboto ships with the Flutter SDK, SF and
+// Apple emoji with macOS, CJK/Arabic/Noto emoji with the fleet font folder.
 final _flutterRoot =
     Platform.environment['FLUTTER_ROOT'] ?? '/usr/local/share/flutter';
 final _material = '$_flutterRoot/bin/cache/artifacts/material_fonts';
-const _fleet = '../tools/gen-store-scaffold/fonts';
+const _fleetDefine = String.fromEnvironment('STORE_FONTS_DIR');
+const _fleet =
+    _fleetDefine == '' ? '../tools/gen-store-scaffold/fonts' : _fleetDefine;
 const _sys = '/System/Library/Fonts';
 
 List<String> get _roboto => [
@@ -30,10 +35,14 @@ Map<String, List<String>> get _families => {
       'StoreDefault_android': _roboto,
       'StoreDefault_ios': _sf,
       'StoreArabic_ios': ['$_sys/SFArabic.ttf'],
-      'StoreArabic_android': ['$_fleet/Amiri-Regular.ttf', '$_fleet/Amiri-Bold.ttf'],
+      'StoreArabic_android': [
+        '$_fleet/NotoNaskhArabicUI-Regular.ttf',
+        '$_fleet/NotoNaskhArabicUI-Bold.ttf',
+      ],
       'StoreJP': ['$_fleet/NotoSansJP-VF.ttf'],
       'StoreSC': ['$_fleet/NotoSansSC-VF.ttf'],
-      'StoreEmoji': ['$_sys/Apple Color Emoji.ttc'],
+      'StoreEmoji_ios': ['$_sys/Apple Color Emoji.ttc'],
+      'StoreEmoji_android': ['$_fleet/NotoColorEmoji.ttf'],
       'MaterialIcons': ['$_material/MaterialIcons-Regular.otf'],
     };
 
@@ -47,6 +56,12 @@ Future<void> loadStoreFonts() async {
   if (_loaded) return;
   _loaded = true;
   for (final e in _families.entries) {
+    for (final f in e.value) {
+      if (!File(f).existsSync()) {
+        throw StateError('store harness font missing: $f (run from the app root '
+            'or pass --dart-define=STORE_FONTS_DIR=<fleet fonts dir>)');
+      }
+    }
     final loader = FontLoader(e.key);
     for (final f in e.value) {
       loader.addFont(_read(f));
@@ -67,7 +82,7 @@ class StoreTextStyle {
           'StoreJP',
           if (lang != 'zh') 'StoreSC',
           'StoreArabic_${device.name}',
-          'StoreEmoji',
+          'StoreEmoji_${device.name}',
         ]);
 
   final String family;

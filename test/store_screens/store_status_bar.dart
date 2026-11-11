@@ -1,3 +1,5 @@
+// GENERATED COPY of tools/gen-store-scaffold/flutter_harness/lib/ - edit there,
+// then re-run install-harness.sh.
 import 'package:flutter/material.dart';
 
 /// Target capture geometry (matches the real-device raws).

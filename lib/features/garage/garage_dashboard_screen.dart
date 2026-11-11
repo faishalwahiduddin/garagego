@@ -936,31 +936,35 @@ class GarageDashboardScreen extends ConsumerWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Row(
-                  children: [
-                    Container(
-                      padding: const EdgeInsets.all(6),
-                      decoration: BoxDecoration(
-                        color: statusColor.withValues(alpha: 0.12),
-                        borderRadius: BorderRadius.circular(8),
+                Expanded(
+                  child: Row(
+                    children: [
+                      Container(
+                        padding: const EdgeInsets.all(6),
+                        decoration: BoxDecoration(
+                          color: statusColor.withValues(alpha: 0.12),
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                        child: Icon(
+                          Icons.oil_barrel_outlined,
+                          size: 16,
+                          color: statusColor,
+                        ),
                       ),
-                      child: Icon(
-                        Icons.oil_barrel_outlined,
-                        size: 16,
-                        color: statusColor,
+                      const SizedBox(width: 10),
+                      Flexible(
+                        child: Text(
+                          l10n.statusOliMesin,
+                          style: TextStyle(
+                            fontSize: 14,
+                            fontWeight: FontWeight.w700,
+                            color: context.textPrimary,
+                            letterSpacing: -0.3,
+                          ),
+                        ),
                       ),
-                    ),
-                    const SizedBox(width: 10),
-                    Text(
-                      l10n.statusOliMesin,
-                      style: TextStyle(
-                        fontSize: 14,
-                        fontWeight: FontWeight.w700,
-                        color: context.textPrimary,
-                        letterSpacing: -0.3,
-                      ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
                 PressScale(
                   scale: 0.95,
@@ -1068,16 +1072,17 @@ class GarageDashboardScreen extends ConsumerWidget {
                   ),
                 ),
                 const SizedBox(width: 10),
-                Text(
-                  l10n.pajakStnk,
-                  style: TextStyle(
-                    fontSize: 14,
-                    fontWeight: FontWeight.w700,
-                    color: context.textPrimary,
-                    letterSpacing: -0.3,
+                Expanded(
+                  child: Text(
+                    l10n.pajakStnk,
+                    style: TextStyle(
+                      fontSize: 14,
+                      fontWeight: FontWeight.w700,
+                      color: context.textPrimary,
+                      letterSpacing: -0.3,
+                    ),
                   ),
                 ),
-                const Spacer(),
                 PressScale(
                   scale: 0.95,
                   child: TextButton(
@@ -1230,23 +1235,29 @@ class GarageDashboardScreen extends ConsumerWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                _buildTcoItem(
-                  context,
-                  l10n.navFuel,
-                  currency.format(tco.fuelCost),
-                  AppColors.warning,
+                Flexible(
+                  child: _buildTcoItem(
+                    context,
+                    l10n.navFuel,
+                    currency.format(tco.fuelCost),
+                    AppColors.warning,
+                  ),
                 ),
-                _buildTcoItem(
-                  context,
-                  l10n.navMaintenance,
-                  currency.format(tco.serviceCost),
-                  AppColors.accent,
+                Flexible(
+                  child: _buildTcoItem(
+                    context,
+                    l10n.navMaintenance,
+                    currency.format(tco.serviceCost),
+                    AppColors.accent,
+                  ),
                 ),
-                _buildTcoItem(
-                  context,
-                  l10n.pajakStnk,
-                  currency.format(tco.documentCost),
-                  AppColors.primary,
+                Flexible(
+                  child: _buildTcoItem(
+                    context,
+                    l10n.pajakStnk,
+                    currency.format(tco.documentCost),
+                    AppColors.primary,
+                  ),
                 ),
               ],
             ),
@@ -1273,12 +1284,14 @@ class GarageDashboardScreen extends ConsumerWidget {
               decoration: BoxDecoration(color: color, shape: BoxShape.circle),
             ),
             const SizedBox(width: 6),
-            Text(
-              label,
-              style: TextStyle(
-                fontSize: 11,
-                fontWeight: FontWeight.w600,
-                color: context.textSecondary,
+            Flexible(
+              child: Text(
+                label,
+                style: TextStyle(
+                  fontSize: 11,
+                  fontWeight: FontWeight.w600,
+                  color: context.textSecondary,
+                ),
               ),
             ),
           ],

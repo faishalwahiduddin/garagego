@@ -108,7 +108,7 @@ class AppLocalizationsEs extends AppLocalizations {
   String get navGarage => 'Garaje';
 
   @override
-  String get navMaintenance => 'Mantenimiento';
+  String get navMaintenance => 'Servicio';
 
   @override
   String get navFuel => 'Combustible';

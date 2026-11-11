@@ -1706,4 +1706,26 @@ class AppLocalizationsEs extends AppLocalizations {
   String gamesBadgeCount(String unlocked, String total) {
     return '$unlocked/$total insignias desbloqueadas';
   }
+
+  @override
+  String get demoServiceTitle =>
+      'Servicio programado y cambio de aceite sintético 5W-30';
+
+  @override
+  String get demoServiceNotes =>
+      'Cambio de filtro de aceite y filtro de aire de cabina en el taller oficial';
+
+  @override
+  String get demoRotationTitle => 'Rotación de neumáticos y alineación';
+
+  @override
+  String get demoRotationNotes =>
+      'Presión de neumáticos ajustada a 33 psi con nitrógeno';
+
+  @override
+  String get demoInspectionTitle => 'Inspección completa antes del viaje';
+
+  @override
+  String get demoInspectionNotes =>
+      'Vehículo en excelente estado; presión de neumáticos y aceite de motor ideales.';
 }

@@ -1681,4 +1681,24 @@ class AppLocalizationsAr extends AppLocalizations {
   String gamesBadgeCount(String unlocked, String total) {
     return '$unlocked/$total شارة مفتوحة';
   }
+
+  @override
+  String get demoServiceTitle => 'صيانة دورية وتغيير زيت المحرك الصناعي 5W-30';
+
+  @override
+  String get demoServiceNotes =>
+      'تم تغيير فلتر الزيت وفلتر هواء المقصورة في الورشة المعتمدة';
+
+  @override
+  String get demoRotationTitle => 'تدوير الإطارات وضبط الزوايا';
+
+  @override
+  String get demoRotationNotes => 'تم ضبط ضغط الإطارات على 33 psi بالنيتروجين';
+
+  @override
+  String get demoInspectionTitle => 'فحص شامل قبل الرحلة';
+
+  @override
+  String get demoInspectionNotes =>
+      'حالة المركبة ممتازة؛ ضغط الإطارات وزيت المحرك مثاليان.';
 }

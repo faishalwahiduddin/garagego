@@ -563,5 +563,11 @@
   "docNoteTax": "Paga con la app Samsat Digital (SIGNAL) o en la oficina Samsat más cercana",
   "docNotePlate": "El vehículo debe pasar una revisión física en la oficina Samsat principal",
   "docNoteInsurance": "Los teléfonos de urgencia y grúa figuran en la póliza",
-  "gamesBadgeCount": "{unlocked}/{total} insignias desbloqueadas"
+  "gamesBadgeCount": "{unlocked}/{total} insignias desbloqueadas",
+  "demoServiceTitle": "Servicio programado y cambio de aceite sintético 5W-30",
+  "demoServiceNotes": "Cambio de filtro de aceite y filtro de aire de cabina en el taller oficial",
+  "demoRotationTitle": "Rotación de neumáticos y alineación",
+  "demoRotationNotes": "Presión de neumáticos ajustada a 33 psi con nitrógeno",
+  "demoInspectionTitle": "Inspección completa antes del viaje",
+  "demoInspectionNotes": "Vehículo en excelente estado; presión de neumáticos y aceite de motor ideales."
 }

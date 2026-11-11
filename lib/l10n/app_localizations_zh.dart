@@ -1630,4 +1630,22 @@ class AppLocalizationsZh extends AppLocalizations {
   String gamesBadgeCount(String unlocked, String total) {
     return '已解锁 $unlocked/$total 枚徽章';
   }
+
+  @override
+  String get demoServiceTitle => '定期保养及5W-30合成机油更换';
+
+  @override
+  String get demoServiceNotes => '在授权维修厂更换机油滤清器和空调滤清器';
+
+  @override
+  String get demoRotationTitle => '轮胎换位与四轮定位';
+
+  @override
+  String get demoRotationNotes => '轮胎气压用氮气调至33 psi';
+
+  @override
+  String get demoInspectionTitle => '出行前全面检查';
+
+  @override
+  String get demoInspectionNotes => '车辆状况极佳,轮胎气压和发动机机油均处于理想状态。';
 }

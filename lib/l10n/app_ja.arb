@@ -563,5 +563,11 @@
   "docNoteTax": "Samsat Digital（SIGNAL）アプリ、または最寄りの Samsat 窓口で納付してください",
   "docNotePlate": "Samsat 本所での実車確認が必要です",
   "docNoteInsurance": "緊急連絡先とロードサービス番号は保険証券に記載されています",
-  "gamesBadgeCount": "バッジ {unlocked}/{total} 個解除"
+  "gamesBadgeCount": "バッジ {unlocked}/{total} 個解除",
+  "demoServiceTitle": "定期点検と5W-30合成オイル交換",
+  "demoServiceNotes": "正規ワークショップでオイルフィルターとエアコンフィルターを交換",
+  "demoRotationTitle": "タイヤローテーションとホイールアライメント",
+  "demoRotationNotes": "タイヤ空気圧を窒素で33 psiに調整",
+  "demoInspectionTitle": "ロードトリップ前の総合点検",
+  "demoInspectionNotes": "車両の状態は非常に良好で、タイヤ空気圧とエンジンオイルも理想的です。"
 }

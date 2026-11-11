@@ -1698,4 +1698,25 @@ class AppLocalizationsJv extends AppLocalizations {
   String gamesBadgeCount(String unlocked, String total) {
     return '$unlocked/$total Lencana Kabuka';
   }
+
+  @override
+  String get demoServiceTitle =>
+      'Servis Berkala & Ganti Oli Mesin Sintetik 5W-30';
+
+  @override
+  String get demoServiceNotes =>
+      'Ganti filter oli & filter AC kabin di bengkel resmi';
+
+  @override
+  String get demoRotationTitle => 'Rotasi Ban & Spooring Balancing';
+
+  @override
+  String get demoRotationNotes => 'Tekanan ban disetel 33 psi nitrogen';
+
+  @override
+  String get demoInspectionTitle => 'Inspeksi Lengkap Pra-Roadtrip';
+
+  @override
+  String get demoInspectionNotes =>
+      'Kondisi kendaraan sangat prima, tekanan ban dan oli mesin dalam kondisi ideal.';
 }

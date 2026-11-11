@@ -80,7 +80,7 @@ void main() {
 
       final serviceCsv = storage.exportServiceLogsCsv(car.id);
       expect(serviceCsv, contains('ID,Tanggal,Odometer (km),Pekerjaan / Servis,Kategori,Biaya (Rp),Bengkel,Ganti Oli,Catatan'));
-      expect(serviceCsv, contains('Ganti Oli Mesin Sintetik'));
+      expect(serviceCsv, contains('5W-30'));
 
       final fuelCsv = storage.exportFuelLogsCsv(car.id);
       expect(fuelCsv, contains('ID,Tanggal,Odometer (km),Volume (Liter),Harga/L (Rp),Total Biaya (Rp),Jenis BBM,Full Tank,SPBU'));

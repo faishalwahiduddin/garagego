@@ -1695,4 +1695,25 @@ class AppLocalizationsEn extends AppLocalizations {
   String gamesBadgeCount(String unlocked, String total) {
     return '$unlocked/$total badges unlocked';
   }
+
+  @override
+  String get demoServiceTitle =>
+      'Scheduled Service & 5W-30 Synthetic Oil Change';
+
+  @override
+  String get demoServiceNotes =>
+      'Replaced oil filter and cabin air filter at the dealer workshop';
+
+  @override
+  String get demoRotationTitle => 'Tire Rotation & Wheel Alignment';
+
+  @override
+  String get demoRotationNotes => 'Tire pressure set to 33 psi with nitrogen';
+
+  @override
+  String get demoInspectionTitle => 'Full Pre-Roadtrip Inspection';
+
+  @override
+  String get demoInspectionNotes =>
+      'Vehicle in excellent condition; tire pressure and engine oil are ideal.';
 }

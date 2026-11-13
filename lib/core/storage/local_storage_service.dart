@@ -1,8 +1,10 @@
 import 'dart:convert';
+import 'dart:ui' as ui;
 import 'package:flutter/material.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../../l10n/app_localizations.dart';
+import '../demo/store_demo.dart' show kStoreDemoLocale;
 import '../constants/app_constants.dart';
 import '../models/vehicle.dart';
 import '../utils/app_timezone.dart';
@@ -20,9 +22,12 @@ class LocalStorageService {
     final prefs = await SharedPreferences.getInstance();
     final service = LocalStorageService(prefs);
     // First-run demo content is written before the widget tree exists, so it is
-    // seeded in the template language; a reset from Settings re-seeds it in the
+    // seeded in the saved/device language (template language as fallback); a reset from Settings re-seeds it in the
     // language the user has selected.
-    final l10n = await AppLocalizations.delegate.load(const Locale('id'));
+    final saved = prefs.getString('locale');
+    final code = (kStoreDemoLocale.isNotEmpty ? kStoreDemoLocale : saved) ?? ui.PlatformDispatcher.instance.locale.languageCode;
+    final supported = AppLocalizations.supportedLocales.any((l) => l.languageCode == code);
+    final l10n = await AppLocalizations.delegate.load(Locale(supported ? code : 'id'));
     service.seedInitialIfEmpty(l10n);
     return service;
   }
@@ -40,9 +45,9 @@ class LocalStorageService {
           vehicleId: defaultVehicles.first.id,
           date: DateTime.now().subtract(const Duration(days: 45)),
           odometer: 20000,
-          title: kDemoServiceTitle,
+          title: l10n.demoServiceTitle,
           cost: 850000,
-          notes: kDemoServiceNotes,
+          notes: l10n.demoServiceNotes,
           isOilChange: true,
           workshop: kDemoServiceWorkshop,
           category: kOilChangeServiceCategory,
@@ -52,9 +57,9 @@ class LocalStorageService {
           vehicleId: defaultVehicles.first.id,
           date: DateTime.now().subtract(const Duration(days: 120)),
           odometer: 15000,
-          title: kDemoRotationTitle,
+          title: l10n.demoRotationTitle,
           cost: 320000,
-          notes: kDemoRotationNotes,
+          notes: l10n.demoRotationNotes,
           isOilChange: false,
           workshop: kDemoRotationWorkshop,
           category: kTireServiceCategory,
@@ -105,9 +110,9 @@ class LocalStorageService {
         vehicleId: defaultVehicles.first.id,
         date: DateTime.now().subtract(const Duration(days: 2)),
         odometer: 24500,
-        title: kDemoInspectionTitle,
+        title: l10n.demoInspectionTitle,
         items: InspectionChecklist.generateDefaultItems(VehicleType.car, l10n),
-        inspectorNotes: kDemoInspectionNotes,
+        inspectorNotes: l10n.demoInspectionNotes,
       );
       saveInspectionChecklists([sampleInspection]);
     }
@@ -365,20 +370,14 @@ class LocalStorageService {
 }
 
 // --- Demo fixtures and export schema ----------------------------------------
-// Sample content written on first run, plus the CSV column headers. These are
-// data (a demo garage and a stable spreadsheet schema), not interface copy, so
-// they deliberately do not follow the selected locale.
+// Sample content written on first run, plus the CSV column headers. Titles and
+// notes of the demo records live in the ARB files (demo*); the names below are
+// proper nouns, and the CSV headers are a stable spreadsheet schema.
 
 const kBackupAppTag = 'GARAGEGO';
-const kDemoServiceTitle = 'Servis Berkala & Ganti Oli Mesin Sintetik 5W-30';
-const kDemoServiceNotes = 'Ganti filter oli & filter AC kabin di bengkel resmi';
 const kDemoServiceWorkshop = 'Auto2000 BSD City';
-const kDemoRotationTitle = 'Rotasi Ban & Spooring Balancing';
-const kDemoRotationNotes = 'Tekanan ban disetel 33 psi nitrogen';
 const kDemoRotationWorkshop = 'Kios Ban Paramount';
 const kDemoGasStation = 'Pertamina 34.15321 Serpong';
-const kDemoInspectionTitle = 'Inspeksi Lengkap Pra-Roadtrip';
-const kDemoInspectionNotes = 'Kondisi kendaraan sangat prima, tekanan ban dan oli mesin dalam kondisi ideal.';
 const kTireServiceCategory = 'Ban & Suspensi';
 
 const kServiceCsvHeader = 'ID,Tanggal,Odometer (km),Pekerjaan / Servis,Kategori,Biaya (Rp),Bengkel,Ganti Oli,Catatan';

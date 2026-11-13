@@ -563,5 +563,11 @@
   "docNoteTax": "Pay via the national Samsat Digital (SIGNAL) app or your nearest Samsat office",
   "docNotePlate": "The vehicle must pass a physical check at the main Samsat office",
   "docNoteInsurance": "The emergency claim and towing numbers are listed on the policy",
-  "gamesBadgeCount": "{unlocked}/{total} badges unlocked"
+  "gamesBadgeCount": "{unlocked}/{total} badges unlocked",
+  "demoServiceTitle": "Scheduled Service & 5W-30 Synthetic Oil Change",
+  "demoServiceNotes": "Replaced oil filter and cabin air filter at the dealer workshop",
+  "demoRotationTitle": "Tire Rotation & Wheel Alignment",
+  "demoRotationNotes": "Tire pressure set to 33 psi with nitrogen",
+  "demoInspectionTitle": "Full Pre-Roadtrip Inspection",
+  "demoInspectionNotes": "Vehicle in excellent condition; tire pressure and engine oil are ideal."
 }

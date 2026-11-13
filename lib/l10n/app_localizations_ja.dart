@@ -1637,4 +1637,22 @@ class AppLocalizationsJa extends AppLocalizations {
   String gamesBadgeCount(String unlocked, String total) {
     return 'バッジ $unlocked/$total 個解除';
   }
+
+  @override
+  String get demoServiceTitle => '定期点検と5W-30合成オイル交換';
+
+  @override
+  String get demoServiceNotes => '正規ワークショップでオイルフィルターとエアコンフィルターを交換';
+
+  @override
+  String get demoRotationTitle => 'タイヤローテーションとホイールアライメント';
+
+  @override
+  String get demoRotationNotes => 'タイヤ空気圧を窒素で33 psiに調整';
+
+  @override
+  String get demoInspectionTitle => 'ロードトリップ前の総合点検';
+
+  @override
+  String get demoInspectionNotes => '車両の状態は非常に良好で、タイヤ空気圧とエンジンオイルも理想的です。';
 }

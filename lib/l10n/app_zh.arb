@@ -563,5 +563,11 @@
   "docNoteTax": "通过国家 Samsat Digital（SIGNAL）应用或就近的 Samsat 网点缴纳",
   "docNotePlate": "需到 Samsat 主所进行车辆实车查验",
   "docNoteInsurance": "保单内附紧急理赔与拖车电话",
-  "gamesBadgeCount": "已解锁 {unlocked}/{total} 枚徽章"
+  "gamesBadgeCount": "已解锁 {unlocked}/{total} 枚徽章",
+  "demoServiceTitle": "定期保养及5W-30合成机油更换",
+  "demoServiceNotes": "在授权维修厂更换机油滤清器和空调滤清器",
+  "demoRotationTitle": "轮胎换位与四轮定位",
+  "demoRotationNotes": "轮胎气压用氮气调至33 psi",
+  "demoInspectionTitle": "出行前全面检查",
+  "demoInspectionNotes": "车辆状况极佳,轮胎气压和发动机机油均处于理想状态。"
 }

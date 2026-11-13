@@ -47,10 +47,10 @@ final appRouter = GoRouter(
               path: '/maintenance',
               builder: (context, state) => const MaintenanceScreen(),
             ),
-            // Legacy alias
+            // Opens the service-history tab directly (also used by store captures).
             GoRoute(
               path: '/service',
-              builder: (context, state) => const MaintenanceScreen(),
+              builder: (context, state) => const MaintenanceScreen(initialTab: 1),
             ),
           ],
         ),

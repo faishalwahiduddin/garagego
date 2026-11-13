@@ -563,5 +563,11 @@
   "docNoteTax": "ادفع عبر تطبيق سامسات الرقمي الوطني (SIGNAL) أو أقرب مكتب سامسات",
   "docNotePlate": "يلزم فحص المركبة ميدانياً في مكتب سامسات الرئيسي",
   "docNoteInsurance": "أرقام المطالبات الطارئة أو السحب موجودة في الوثيقة",
-  "gamesBadgeCount": "{unlocked}/{total} شارة مفتوحة"
+  "gamesBadgeCount": "{unlocked}/{total} شارة مفتوحة",
+  "demoServiceTitle": "صيانة دورية وتغيير زيت المحرك الصناعي 5W-30",
+  "demoServiceNotes": "تم تغيير فلتر الزيت وفلتر هواء المقصورة في الورشة المعتمدة",
+  "demoRotationTitle": "تدوير الإطارات وضبط الزوايا",
+  "demoRotationNotes": "تم ضبط ضغط الإطارات على 33 psi بالنيتروجين",
+  "demoInspectionTitle": "فحص شامل قبل الرحلة",
+  "demoInspectionNotes": "حالة المركبة ممتازة؛ ضغط الإطارات وزيت المحرك مثاليان."
 }

@@ -14,7 +14,10 @@ import 'add_schedule_sheet.dart';
 import 'inspection_sheet.dart';
 
 class MaintenanceScreen extends ConsumerStatefulWidget {
-  const MaintenanceScreen({super.key});
+  const MaintenanceScreen({super.key, this.initialTab = 0});
+
+  /// Tab shown on open: 0 = schedules, 1 = service history, 2 = inspections.
+  final int initialTab;
 
   @override
   ConsumerState<MaintenanceScreen> createState() => _MaintenanceScreenState();
@@ -46,7 +49,11 @@ class _MaintenanceScreenState extends ConsumerState<MaintenanceScreen> with Sing
   @override
   void initState() {
     super.initState();
-    _tabController = TabController(length: 3, vsync: this);
+    _tabController = TabController(
+      length: 3,
+      vsync: this,
+      initialIndex: widget.initialTab.clamp(0, 2),
+    );
   }
 
   @override
@@ -349,7 +356,7 @@ class _MaintenanceScreenState extends ConsumerState<MaintenanceScreen> with Sing
                     children: [
                       const Icon(Icons.schedule, size: 16),
                       const SizedBox(width: 6),
-                      Text(l10n.jadwalCount(schedules.length.toString())),
+                      Flexible(child: Text(l10n.jadwalCount(schedules.length.toString()))),
                     ],
                   ),
                 ),
@@ -359,7 +366,7 @@ class _MaintenanceScreenState extends ConsumerState<MaintenanceScreen> with Sing
                     children: [
                       const Icon(Icons.history, size: 16),
                       const SizedBox(width: 6),
-                      Text(l10n.riwayatCount(serviceLogs.length.toString())),
+                      Flexible(child: Text(l10n.riwayatCount(serviceLogs.length.toString()))),
                     ],
                   ),
                 ),
@@ -369,7 +376,7 @@ class _MaintenanceScreenState extends ConsumerState<MaintenanceScreen> with Sing
                     children: [
                       const Icon(Icons.fact_check_outlined, size: 16),
                       const SizedBox(width: 6),
-                      Text(l10n.inspeksiCount(inspections.length.toString())),
+                      Flexible(child: Text(l10n.inspeksiCount(inspections.length.toString()))),
                     ],
                   ),
                 ),
@@ -487,10 +494,10 @@ class _MaintenanceScreenState extends ConsumerState<MaintenanceScreen> with Sing
                       children: [
                         const Icon(Icons.add, size: 18, color: AppColors.primary),
                         const SizedBox(width: 8),
-                        Text(
+                        Flexible(child: Text(
                           l10n.tambahJadwalBaru,
                           style: TextStyle(color: context.textPrimary, fontSize: 13, fontWeight: FontWeight.w600),
-                        ),
+                        )),
                       ],
                     ),
                   ),
@@ -500,10 +507,10 @@ class _MaintenanceScreenState extends ConsumerState<MaintenanceScreen> with Sing
                       children: [
                         const Icon(Icons.auto_awesome, size: 18, color: AppColors.accent),
                         const SizedBox(width: 8),
-                        Text(
+                        Flexible(child: Text(
                           l10n.muatStandarPabrik(active.type.getLocalizedLabel(context)),
                           style: TextStyle(color: context.textPrimary, fontSize: 13, fontWeight: FontWeight.w600),
-                        ),
+                        )),
                       ],
                     ),
                   ),
@@ -860,7 +867,7 @@ class _MaintenanceScreenState extends ConsumerState<MaintenanceScreen> with Sing
                               Row(
                                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                 children: [
-                                  Text(l10n.totalBiayaBengkel, style: TextStyle(fontSize: 12, color: context.textSecondary)),
+                                  Flexible(child: Text(l10n.totalBiayaBengkel, style: TextStyle(fontSize: 12, color: context.textSecondary))),
                                   Text(
                                     currency.format(log.cost),
                                     style: TextStyle(

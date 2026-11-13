@@ -160,14 +160,14 @@ class FuelLogsScreen extends ConsumerWidget {
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Text(
+                              Flexible(child: Text(
                                 l10n.fuelEstTotalCost,
                                 style: TextStyle(
                                   fontSize: 12,
                                   fontWeight: FontWeight.w600,
                                   color: context.textSecondary,
                                 ),
-                              ),
+                              )),
                               Text(
                                 currency.format(totalCost.round()),
                                 style: TextStyle(
@@ -183,13 +183,13 @@ class FuelLogsScreen extends ConsumerWidget {
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                Text(
+                                Flexible(child: Text(
                                   l10n.fuelTripDistance,
                                   style: TextStyle(
                                     fontSize: 11,
                                     color: context.textSecondary,
                                   ),
-                                ),
+                                )),
                                 Text(
                                   '$kPlusSign$deltaKm$kSpaceChar$kKmUnit',
                                   style: TextStyle(
@@ -515,7 +515,7 @@ class FuelLogsScreen extends ConsumerWidget {
                                     Row(
                                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                       children: [
-                                        Text(
+                                        Flexible(child: Text(
                                           l10n.fuelOdometerValue(
                                             NumberFormat('#,###', 'id_ID').format(log.odometer),
                                           ),
@@ -525,7 +525,7 @@ class FuelLogsScreen extends ConsumerWidget {
                                             color: context.textPrimary,
                                             letterSpacing: -0.2,
                                           ),
-                                        ),
+                                        )),
                                         Text(
                                           currency.format(log.totalCost),
                                           style: TextStyle(
@@ -540,7 +540,7 @@ class FuelLogsScreen extends ConsumerWidget {
                                     Row(
                                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                       children: [
-                                        Text(
+                                        Flexible(child: Text(
                                           l10n.fuelPricePerLiterLine(
                                             currency.format(log.pricePerLiter),
                                             log.isFullTank
@@ -548,7 +548,7 @@ class FuelLogsScreen extends ConsumerWidget {
                                                 : l10n.fuelPartial,
                                           ),
                                           style: TextStyle(fontSize: 12, color: context.textSecondary),
-                                        ),
+                                        )),
                                         if (pt != null)
                                           Container(
                                             padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),

@@ -1,6 +1,7 @@
 import 'dart:ui' as ui;
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:garagego/core/demo/store_demo.dart' show kStoreDemoLocale;
 import 'app_providers.dart';
 
 const supportedLocales = [
@@ -19,6 +20,7 @@ class LocaleNotifier extends Notifier<Locale> {
 
   @override
   Locale build() {
+    if (kStoreDemoLocale.isNotEmpty) return Locale(kStoreDemoLocale);
     final storage = ref.read(localStorageServiceProvider);
     final saved = storage.prefs.getString(_key);
     if (saved != null) {

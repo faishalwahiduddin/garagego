@@ -142,25 +142,36 @@ class GarageAchievementsCard extends ConsumerWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text(
-                  state.currentLevel.getLocalizedTitle(l10n),
-                  style: TextStyle(
-                    fontSize: 11,
-                    fontWeight: FontWeight.w600,
-                    color: context.textMuted,
+                Flexible(
+                  child: Text(
+                    state.currentLevel.getLocalizedTitle(l10n),
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                    style: TextStyle(
+                      fontSize: 11,
+                      fontWeight: FontWeight.w600,
+                      color: context.textMuted,
+                    ),
                   ),
                 ),
-                Text(
-                  state.nextLevel != null
-                      ? l10n.gamesNextLevel(
-                          state.nextLevel!.getLocalizedTitle(l10n),
-                          numberFmt.format(state.nextLevel!.requiredXp),
-                        )
-                      : l10n.gamesMaxRank,
-                  style: TextStyle(
-                    fontSize: 11,
-                    fontWeight: FontWeight.w600,
-                    color: context.textMuted,
+                const SizedBox(width: 8),
+                Flexible(
+                  flex: 2,
+                  child: Text(
+                    state.nextLevel != null
+                        ? l10n.gamesNextLevel(
+                            state.nextLevel!.getLocalizedTitle(l10n),
+                            numberFmt.format(state.nextLevel!.requiredXp),
+                          )
+                        : l10n.gamesMaxRank,
+                    textAlign: TextAlign.end,
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                    style: TextStyle(
+                      fontSize: 11,
+                      fontWeight: FontWeight.w600,
+                      color: context.textMuted,
+                    ),
                   ),
                 ),
               ],

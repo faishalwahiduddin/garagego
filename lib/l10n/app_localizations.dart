@@ -3126,6 +3126,42 @@ abstract class AppLocalizations {
   /// In id, this message translates to:
   /// **'{unlocked}/{total} Lencana Terbuka'**
   String gamesBadgeCount(String unlocked, String total);
+
+  /// No description provided for @demoServiceTitle.
+  ///
+  /// In id, this message translates to:
+  /// **'Servis Berkala & Ganti Oli Mesin Sintetik 5W-30'**
+  String get demoServiceTitle;
+
+  /// No description provided for @demoServiceNotes.
+  ///
+  /// In id, this message translates to:
+  /// **'Ganti filter oli & filter AC kabin di bengkel resmi'**
+  String get demoServiceNotes;
+
+  /// No description provided for @demoRotationTitle.
+  ///
+  /// In id, this message translates to:
+  /// **'Rotasi Ban & Spooring Balancing'**
+  String get demoRotationTitle;
+
+  /// No description provided for @demoRotationNotes.
+  ///
+  /// In id, this message translates to:
+  /// **'Tekanan ban disetel 33 psi nitrogen'**
+  String get demoRotationNotes;
+
+  /// No description provided for @demoInspectionTitle.
+  ///
+  /// In id, this message translates to:
+  /// **'Inspeksi Lengkap Pra-Roadtrip'**
+  String get demoInspectionTitle;
+
+  /// No description provided for @demoInspectionNotes.
+  ///
+  /// In id, this message translates to:
+  /// **'Kondisi kendaraan sangat prima, tekanan ban dan oli mesin dalam kondisi ideal.'**
+  String get demoInspectionNotes;
 }
 
 class _AppLocalizationsDelegate

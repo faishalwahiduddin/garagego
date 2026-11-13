@@ -65,6 +65,28 @@ flutter build appbundle --release                           # Android App Bundle
 4. **Validasi Wajib (§VAL)**: Nilai odometer tidak boleh negatif atau mundur secara tidak wajar, harga dan liter BBM wajib numerik positif, nama kendaraan tidak boleh kosong.
 5. **Tanpa backend, tanpa akun**: Langsung siap dipakai tanpa registrasi, tanpa iklan berbayar.
 
+## Tech Stack
+**Flutter 3.44.8 · Dart 3.12.2 · Riverpod 3.x · GoRouter · Cloudflare**
+
+## Rules & Conventions
+1. **Architecture: MVVM + Riverpod (feature-first)** di bawah `lib/features/` dan `lib/core/`.
+2. **Offline-first**: Penyimpanan lokal on-device via `shared_preferences`.
+3. **No dev servers**: Jangan jalankan dev server atau build kecuali diminta eksplisit.
+4. **Validasi Wajib (§VAL)**: Setiap input data kendaraan, log servis, catatan bensin, dan tanggal pajak wajib divalidasi dengan jelas di frontend dan backend.
+5. **CLI Wrappers**: Gunakan `gh-faishal` dan `wrangler-faishal`.
+
+### Design Systems
+
+Sistem desain GarageGo terdokumentasi di:
+- **SSOT Desain**: [`DESIGN.md`](./DESIGN.md) (pointer kanonik).
+- **Panduan Token**: [`docs/reference/design-system/`](./docs/reference/design-system/) ([`foundations.md`](./docs/reference/design-system/foundations.md) + [`components.md`](./docs/reference/design-system/components.md)).
+- **Implementasi Token**: [`lib/core/constants/app_colors.dart`](./lib/core/constants/app_colors.dart), [`lib/core/theme/app_theme.dart`](./lib/core/theme/app_theme.dart).
+
+Aturan pengerjaan UI:
+- Dilarang hardcode literal `Color(0x...)` di widget presentation; gunakan token yang terdokumentasi di `foundations.md`.
+- Warna baru ditambahkan sebagai konstanta bernama di berkas token, bukan inline.
+- Pertahankan dukungan tema terang/gelap, kontras WCAG AA, dan Dynamic Type hingga 1.6×.
+
 <!-- jules-design-skills:begin -->
 ## Jules design skills (in-repo)
 

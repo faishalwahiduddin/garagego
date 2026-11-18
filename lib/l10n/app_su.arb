@@ -563,5 +563,10 @@
   "docNoteTax": "Bayar ngaliwatan Samsat Digital Nasional (SIGNAL) atawa Samsat pangcaketna",
   "docNotePlate": "Kedah cék fisik kandaraan langsung di Samsat Induk",
   "docNoteInsurance": "Nomer klaim darurat atawa towing aya dina polis",
-  "gamesBadgeCount": "{unlocked}/{total} Lencana Kabuka"
+  "gamesBadgeCount": "{unlocked}/{total} Lencana Kabuka",
+  "commercialContactTitle": "Pamakéan komérsial",
+  "commercialContactDesc": "Peryogi lisénsi komérsial, white-label, atawa kustomisasi? Hubungi kami.",
+  "acquireAppTitle": "Akuisisi aplikasi ieu",
+  "acquireAppDesc": "Resep ngaakuisisi aplikasi ieu sarta source code jeung asetna? Hayu urang obrolkeun.",
+  "contactEmailCopied": "Alamat surélék disalin: contact@faishal.id"
 }

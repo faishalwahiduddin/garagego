@@ -569,5 +569,10 @@
   "demoRotationTitle": "Rotación de neumáticos y alineación",
   "demoRotationNotes": "Presión de neumáticos ajustada a 33 psi con nitrógeno",
   "demoInspectionTitle": "Inspección completa antes del viaje",
-  "demoInspectionNotes": "Vehículo en excelente estado; presión de neumáticos y aceite de motor ideales."
+  "demoInspectionNotes": "Vehículo en excelente estado; presión de neumáticos y aceite de motor ideales.",
+  "commercialContactTitle": "Uso comercial",
+  "commercialContactDesc": "¿Necesitas una licencia comercial, marca blanca o personalización? Ponte en contacto.",
+  "acquireAppTitle": "Adquirir esta app",
+  "acquireAppDesc": "¿Te interesa adquirir esta app, incluido el código fuente y los recursos? Hablemos.",
+  "contactEmailCopied": "Dirección de correo copiada: contact@faishal.id"
 }

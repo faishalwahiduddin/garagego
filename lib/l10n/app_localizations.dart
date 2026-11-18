@@ -3162,6 +3162,36 @@ abstract class AppLocalizations {
   /// In id, this message translates to:
   /// **'Kondisi kendaraan sangat prima, tekanan ban dan oli mesin dalam kondisi ideal.'**
   String get demoInspectionNotes;
+
+  /// Title of the commercial use contact card in Settings
+  ///
+  /// In id, this message translates to:
+  /// **'Penggunaan komersial'**
+  String get commercialContactTitle;
+
+  /// Description of the commercial use contact card
+  ///
+  /// In id, this message translates to:
+  /// **'Butuh lisensi komersial, white-label, atau kustomisasi? Hubungi kami.'**
+  String get commercialContactDesc;
+
+  /// Title of the app acquisition contact card in Settings
+  ///
+  /// In id, this message translates to:
+  /// **'Akuisisi aplikasi ini'**
+  String get acquireAppTitle;
+
+  /// Description of the app acquisition contact card
+  ///
+  /// In id, this message translates to:
+  /// **'Tertarik mengakuisisi aplikasi ini beserta source code dan asetnya? Mari bicara.'**
+  String get acquireAppDesc;
+
+  /// Snackbar shown when the contact email is copied because no mail app could be opened
+  ///
+  /// In id, this message translates to:
+  /// **'Alamat email disalin: contact@faishal.id'**
+  String get contactEmailCopied;
 }
 
 class _AppLocalizationsDelegate

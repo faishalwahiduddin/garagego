@@ -1716,4 +1716,21 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get demoInspectionNotes =>
       'Vehicle in excellent condition; tire pressure and engine oil are ideal.';
+
+  @override
+  String get commercialContactTitle => 'Commercial use';
+
+  @override
+  String get commercialContactDesc =>
+      'Need a commercial license, white-label, or customization? Get in touch.';
+
+  @override
+  String get acquireAppTitle => 'Acquire this app';
+
+  @override
+  String get acquireAppDesc =>
+      'Interested in acquiring this app, including source code and assets? Let\'s talk.';
+
+  @override
+  String get contactEmailCopied => 'Email address copied: contact@faishal.id';
 }

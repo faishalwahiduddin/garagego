@@ -14,7 +14,9 @@ import '../../core/utils/app_timezone.dart';
 import '../../core/utils/backup_file_io.dart';
 import '../../core/utils/l10n_helpers.dart';
 import '../garage/add_vehicle_sheet.dart';
+import 'widgets/commercial_contact_cards.dart';
 import '../../core/ui/spring_sheet.dart';
+import '../../core/constants/contact_constants.dart';
 
 class SettingsScreen extends ConsumerWidget {
   const SettingsScreen({super.key});
@@ -793,6 +795,8 @@ class SettingsScreen extends ConsumerWidget {
               ),
             ),
           ),
+          const SizedBox(height: 10),
+          CommercialContactCards(appName: kAppBrandName),
           const SizedBox(height: 32),
         ],
       ),

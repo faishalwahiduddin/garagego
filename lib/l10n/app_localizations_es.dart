@@ -1728,4 +1728,22 @@ class AppLocalizationsEs extends AppLocalizations {
   @override
   String get demoInspectionNotes =>
       'Vehículo en excelente estado; presión de neumáticos y aceite de motor ideales.';
+
+  @override
+  String get commercialContactTitle => 'Uso comercial';
+
+  @override
+  String get commercialContactDesc =>
+      '¿Necesitas una licencia comercial, marca blanca o personalización? Ponte en contacto.';
+
+  @override
+  String get acquireAppTitle => 'Adquirir esta app';
+
+  @override
+  String get acquireAppDesc =>
+      '¿Te interesa adquirir esta app, incluido el código fuente y los recursos? Hablemos.';
+
+  @override
+  String get contactEmailCopied =>
+      'Dirección de correo copiada: contact@faishal.id';
 }

@@ -1719,4 +1719,22 @@ class AppLocalizationsJv extends AppLocalizations {
   @override
   String get demoInspectionNotes =>
       'Kondisi kendaraan sangat prima, tekanan ban dan oli mesin dalam kondisi ideal.';
+
+  @override
+  String get commercialContactTitle => 'Panggunaan komersial';
+
+  @override
+  String get commercialContactDesc =>
+      'Butuh lisensi komersial, white-label, utawa kustomisasi? Hubungi kula.';
+
+  @override
+  String get acquireAppTitle => 'Akuisisi aplikasi iki';
+
+  @override
+  String get acquireAppDesc =>
+      'Kepengin ngakuisisi aplikasi iki sakliyane source code lan asete? Ayo rembugan.';
+
+  @override
+  String get contactEmailCopied =>
+      'Alamat email wis disalin: contact@faishal.id';
 }

@@ -569,5 +569,10 @@
   "demoRotationTitle": "تدوير الإطارات وضبط الزوايا",
   "demoRotationNotes": "تم ضبط ضغط الإطارات على 33 psi بالنيتروجين",
   "demoInspectionTitle": "فحص شامل قبل الرحلة",
-  "demoInspectionNotes": "حالة المركبة ممتازة؛ ضغط الإطارات وزيت المحرك مثاليان."
+  "demoInspectionNotes": "حالة المركبة ممتازة؛ ضغط الإطارات وزيت المحرك مثاليان.",
+  "commercialContactTitle": "الاستخدام التجاري",
+  "commercialContactDesc": "هل تحتاج إلى ترخيص تجاري أو علامة بيضاء أو تخصيص؟ تواصل معنا.",
+  "acquireAppTitle": "اقتناء هذا التطبيق",
+  "acquireAppDesc": "هل ترغب في اقتناء هذا التطبيق بما في ذلك الشيفرة المصدرية والأصول؟ لنتحدث.",
+  "contactEmailCopied": "تم نسخ عنوان البريد الإلكتروني: contact@faishal.id"
 }

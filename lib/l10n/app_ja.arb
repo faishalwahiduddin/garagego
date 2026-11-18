@@ -569,5 +569,10 @@
   "demoRotationTitle": "タイヤローテーションとホイールアライメント",
   "demoRotationNotes": "タイヤ空気圧を窒素で33 psiに調整",
   "demoInspectionTitle": "ロードトリップ前の総合点検",
-  "demoInspectionNotes": "車両の状態は非常に良好で、タイヤ空気圧とエンジンオイルも理想的です。"
+  "demoInspectionNotes": "車両の状態は非常に良好で、タイヤ空気圧とエンジンオイルも理想的です。",
+  "commercialContactTitle": "商用利用",
+  "commercialContactDesc": "商用ライセンス、ホワイトレーベル、カスタマイズが必要ですか？お問い合わせください。",
+  "acquireAppTitle": "このアプリの買収",
+  "acquireAppDesc": "ソースコードやアセットを含め、このアプリの買収にご関心がありますか？お気軽にご相談ください。",
+  "contactEmailCopied": "メールアドレスをコピーしました: contact@faishal.id"
 }

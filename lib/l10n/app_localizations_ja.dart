@@ -1655,4 +1655,20 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get demoInspectionNotes => '車両の状態は非常に良好で、タイヤ空気圧とエンジンオイルも理想的です。';
+
+  @override
+  String get commercialContactTitle => '商用利用';
+
+  @override
+  String get commercialContactDesc =>
+      '商用ライセンス、ホワイトレーベル、カスタマイズが必要ですか？お問い合わせください。';
+
+  @override
+  String get acquireAppTitle => 'このアプリの買収';
+
+  @override
+  String get acquireAppDesc => 'ソースコードやアセットを含め、このアプリの買収にご関心がありますか？お気軽にご相談ください。';
+
+  @override
+  String get contactEmailCopied => 'メールアドレスをコピーしました: contact@faishal.id';
 }

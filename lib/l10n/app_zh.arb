@@ -569,5 +569,10 @@
   "demoRotationTitle": "轮胎换位与四轮定位",
   "demoRotationNotes": "轮胎气压用氮气调至33 psi",
   "demoInspectionTitle": "出行前全面检查",
-  "demoInspectionNotes": "车辆状况极佳,轮胎气压和发动机机油均处于理想状态。"
+  "demoInspectionNotes": "车辆状况极佳,轮胎气压和发动机机油均处于理想状态。",
+  "commercialContactTitle": "商业使用",
+  "commercialContactDesc": "需要商业许可、白标或定制？欢迎联系我们。",
+  "acquireAppTitle": "收购此应用",
+  "acquireAppDesc": "有兴趣收购此应用（含源代码和资源）吗？让我们聊聊。",
+  "contactEmailCopied": "邮箱地址已复制：contact@faishal.id"
 }

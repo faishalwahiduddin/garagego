@@ -3,6 +3,8 @@ import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:garagego/features/settings/widgets/commercial_contact_cards.dart';
+import 'package:garagego/core/constants/app_colors.dart';
+import 'package:garagego/core/theme/app_theme.dart';
 import 'package:garagego/l10n/app_localizations.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 import 'package:plugin_platform_interface/plugin_platform_interface.dart';
@@ -27,7 +29,8 @@ class _FakeLauncher extends Fake
   }
 }
 
-Widget _app() => MaterialApp(
+Widget _app({bool isDark = false}) => MaterialApp(
+  theme: isDark ? AppTheme.darkTheme : AppTheme.lightTheme,
   locale: const Locale('en'),
   localizationsDelegates: const [
     AppLocalizations.delegate,
@@ -36,7 +39,7 @@ Widget _app() => MaterialApp(
     GlobalCupertinoLocalizations.delegate,
   ],
   supportedLocales: AppLocalizations.supportedLocales,
-  home: const Scaffold(body: CommercialContactCards(appName: 'GarageGo')),
+  home: Scaffold(body: CommercialContactCards(appName: 'GarageGo')),
 );
 
 void main() {
@@ -174,4 +177,42 @@ void main() {
       expect(find.text('contact@faishal.id'), findsNWidgets(2));
     },
   );
+
+  testWidgets('card is one semantics button with title and description', (
+    tester,
+  ) async {
+    final handle = tester.ensureSemantics();
+    await tester.pumpWidget(_app());
+    expect(find.bySemanticsLabel(RegExp('Commercial use')), findsOneWidget);
+    handle.dispose();
+  });
+
+  for (final isDark in [false, true]) {
+    testWidgets('description and email contrast >= 4.5 (dark: $isDark)', (
+      tester,
+    ) async {
+      await tester.pumpWidget(_app(isDark: isDark));
+      final bg = isDark ? (AppColors.bgCard) : (AppColors.bgLightSurface);
+      double ratio(Color a, Color b) {
+        final la = a.computeLuminance(), lb = b.computeLuminance();
+        return (la > lb ? la + 0.05 : lb + 0.05) /
+            (la > lb ? lb + 0.05 : la + 0.05);
+      }
+
+      final desc = tester.widget<Text>(
+        find.text(
+          'Need a commercial license, white-label, or customization? Get in touch.',
+        ),
+      );
+      final trailing = tester.widget<Text>(find.text('contact@faishal.id'));
+      for (final t in [desc, trailing]) {
+        final style = DefaultTextStyle.of(
+          tester.element(find.byWidget(t)),
+        ).style.merge(t.style);
+        final c = Color.alphaBlend(style.color!, bg);
+        expect(ratio(c, bg), greaterThanOrEqualTo(4.5));
+        expect(style.fontSize, greaterThanOrEqualTo(12));
+      }
+    });
+  }
 }

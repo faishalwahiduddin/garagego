@@ -96,7 +96,8 @@ class _ContactCard extends StatelessWidget {
     final accent = context.readable(AppColors.primary);
     return Semantics(
       button: true,
-      label: title,
+      container: true,
+      label: '$title. $description',
       child: Card(
         margin: EdgeInsets.zero,
         clipBehavior: Clip.antiAlias,
@@ -104,49 +105,58 @@ class _ContactCard extends StatelessWidget {
           onTap: onTap,
           child: Padding(
             padding: const EdgeInsets.all(16),
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Icon(icon, size: 20, color: accent),
-                const SizedBox(width: 10),
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        title,
-                        style: TextStyle(
-                          fontSize: 13,
-                          fontWeight: FontWeight.bold,
-                          color: context.textPrimary,
-                        ),
+            child: ExcludeSemantics(
+              child: ConstrainedBox(
+                constraints: const BoxConstraints(minHeight: 48),
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Icon(icon, size: 20, color: accent),
+                    const SizedBox(width: 10),
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            title,
+                            style: TextStyle(
+                              fontSize: 14,
+                              fontWeight: FontWeight.bold,
+                              color: context.textPrimary,
+                            ),
+                          ),
+                          const SizedBox(height: 6),
+                          Text(
+                            description,
+                            style: TextStyle(
+                              fontSize: 12,
+                              color: context.textSecondary,
+                              height: 1.4,
+                            ),
+                          ),
+                        ],
                       ),
-                      const SizedBox(height: 6),
+                    ),
+                    if (trailingText != null) ...[
+                      const SizedBox(width: 8),
                       Text(
-                        description,
+                        trailingText!,
                         style: TextStyle(
                           fontSize: 12,
-                          color: context.textSecondary,
-                          height: 1.4,
+                          fontWeight: FontWeight.bold,
+                          color: accent,
                         ),
                       ),
                     ],
-                  ),
-                ),
-                if (trailingText != null) ...[
-                  const SizedBox(width: 8),
-                  Text(
-                    trailingText!,
-                    style: TextStyle(
-                      fontSize: 11,
-                      fontWeight: FontWeight.bold,
-                      color: accent,
+                    const SizedBox(width: 4),
+                    Icon(
+                      Icons.chevron_right,
+                      size: 18,
+                      color: context.textMuted,
                     ),
-                  ),
-                ],
-                const SizedBox(width: 4),
-                Icon(Icons.chevron_right, size: 18, color: context.textMuted),
-              ],
+                  ],
+                ),
+              ),
             ),
           ),
         ),

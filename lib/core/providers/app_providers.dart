@@ -36,6 +36,16 @@ class VehiclesNotifier extends Notifier<List<Vehicle>> {
     state = state.where((v) => v.id != id).toList();
     final storage = ref.read(localStorageServiceProvider);
     await storage.saveVehicles(state);
+
+    // Cascade: everything below is only read through the active vehicle, so a
+    // leftover row is invisible in the garage yet still ships in backup
+    // exports (and comes back on import). Drop it with its vehicle.
+    await ref.read(serviceLogsProvider.notifier).purgeVehicle(id);
+    await ref.read(fuelLogsProvider.notifier).purgeVehicle(id);
+    await ref.read(maintenanceSchedulesProvider.notifier).purgeVehicle(id);
+    await ref.read(vehicleDocumentsProvider.notifier).purgeVehicle(id);
+    await ref.read(inspectionChecklistsProvider.notifier).purgeVehicle(id);
+
     final activeId = ref.read(activeVehicleIdProvider);
     if (activeId == id && state.isNotEmpty) {
       ref.read(activeVehicleIdProvider.notifier).setActiveId(state.first.id);
@@ -104,6 +114,14 @@ class ServiceLogsNotifier extends Notifier<List<ServiceLog>> {
     final storage = ref.read(localStorageServiceProvider);
     await storage.saveServiceLogs(state);
   }
+
+  /// Drops every log belonging to a vehicle that is being deleted.
+  Future<void> purgeVehicle(String vehicleId) async {
+    final remaining = state.where((l) => l.vehicleId != vehicleId).toList();
+    if (remaining.length == state.length) return;
+    state = remaining;
+    await ref.read(localStorageServiceProvider).saveServiceLogs(remaining);
+  }
 }
 
 final serviceLogsProvider =
@@ -134,6 +152,14 @@ class FuelLogsNotifier extends Notifier<List<FuelLog>> {
     final storage = ref.read(localStorageServiceProvider);
     await storage.saveFuelLogs(state);
   }
+
+  /// Drops every fill-up belonging to a vehicle that is being deleted.
+  Future<void> purgeVehicle(String vehicleId) async {
+    final remaining = state.where((l) => l.vehicleId != vehicleId).toList();
+    if (remaining.length == state.length) return;
+    state = remaining;
+    await ref.read(localStorageServiceProvider).saveFuelLogs(remaining);
+  }
 }
 
 final fuelLogsProvider =
@@ -163,6 +189,14 @@ class MaintenanceSchedulesNotifier extends Notifier<List<MaintenanceSchedule>> {
     state = state.where((s) => s.id != id).toList();
     final storage = ref.read(localStorageServiceProvider);
     await storage.saveMaintenanceSchedules(state);
+  }
+
+  /// Drops every maintenance schedule belonging to a deleted vehicle.
+  Future<void> purgeVehicle(String vehicleId) async {
+    final remaining = state.where((s) => s.vehicleId != vehicleId).toList();
+    if (remaining.length == state.length) return;
+    state = remaining;
+    await ref.read(localStorageServiceProvider).saveMaintenanceSchedules(remaining);
   }
 
   Future<void> markScheduleDone({
@@ -244,6 +278,14 @@ class VehicleDocumentsNotifier extends Notifier<List<VehicleDocument>> {
     final storage = ref.read(localStorageServiceProvider);
     await storage.saveVehicleDocuments(state);
   }
+
+  /// Drops every document belonging to a deleted vehicle.
+  Future<void> purgeVehicle(String vehicleId) async {
+    final remaining = state.where((d) => d.vehicleId != vehicleId).toList();
+    if (remaining.length == state.length) return;
+    state = remaining;
+    await ref.read(localStorageServiceProvider).saveVehicleDocuments(remaining);
+  }
 }
 
 final vehicleDocumentsProvider =
@@ -268,6 +310,14 @@ class InspectionChecklistsNotifier extends Notifier<List<InspectionChecklist>> {
     state = state.where((c) => c.id != id).toList();
     final storage = ref.read(localStorageServiceProvider);
     await storage.saveInspectionChecklists(state);
+  }
+
+  /// Drops every inspection belonging to a deleted vehicle.
+  Future<void> purgeVehicle(String vehicleId) async {
+    final remaining = state.where((c) => c.vehicleId != vehicleId).toList();
+    if (remaining.length == state.length) return;
+    state = remaining;
+    await ref.read(localStorageServiceProvider).saveInspectionChecklists(remaining);
   }
 }
 

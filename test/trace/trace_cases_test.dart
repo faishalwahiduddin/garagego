@@ -103,6 +103,53 @@ void main() {
       await c.read(activeVehicleIdProvider.notifier).setActiveId('tidak-ada');
       expect(c.read(activeVehicleProvider)!.id, 'v1');
     });
+
+    test('FLOW-GAR-01-T06 menghapus kendaraan ikut menghapus lima koleksi miliknya, kendaraan lain utuh', () async {
+      final c = await _container();
+      final storage = c.read(localStorageServiceProvider);
+      await c.read(vehiclesProvider.notifier).addVehicle(_car());
+      await c.read(vehiclesProvider.notifier).addVehicle(_car(id: 'v2', name: 'Vario'));
+
+      // One row of every collection for the vehicle that will be deleted …
+      await c.read(serviceLogsProvider.notifier).addLog(
+          ServiceLog(id: 's1', vehicleId: 'v1', date: DateTime(2026, 1, 1), odometer: 10000, title: 'Oli', cost: 100000));
+      await c.read(fuelLogsProvider.notifier).addFuelLog(_fuel('f1', 10100, 30));
+      await c.read(maintenanceSchedulesProvider.notifier).addSchedule(_schedule());
+      await c.read(vehicleDocumentsProvider.notifier).addDocument(_doc(10));
+      await c.read(inspectionChecklistsProvider.notifier).addChecklist(InspectionChecklist(
+          id: 'i1', vehicleId: 'v1', date: DateTime(2026, 1, 1), odometer: 10200, title: 'Mudik', items: const []));
+      // … plus rows for the vehicle that stays.
+      await c.read(serviceLogsProvider.notifier).addLog(
+          ServiceLog(id: 's2', vehicleId: 'v2', date: DateTime(2026, 2, 1), odometer: 500, title: 'Servis', cost: 50000));
+      await c.read(fuelLogsProvider.notifier).addFuelLog(
+          FuelLog(id: 'f2', vehicleId: 'v2', date: DateTime(2026, 2, 2), odometer: 600, liters: 5, pricePerLiter: 10000));
+      await c.read(maintenanceSchedulesProvider.notifier).addSchedule(MaintenanceSchedule(
+          id: 'sched-v2', vehicleId: 'v2', title: 'Ganti Oli', category: 'Ganti Oli', intervalKm: 3000,
+          intervalMonths: 6, lastPerformedOdometer: 500, lastPerformedDate: DateTime(2026, 2, 1)));
+      await c.read(vehicleDocumentsProvider.notifier).addDocument(VehicleDocument(
+          id: 'doc-v2', vehicleId: 'v2', title: 'PKB', type: DocumentType.stnkTahunan,
+          documentNumber: 'D 5678 CD', expiryDate: DateTime(2027, 1, 1)));
+      await c.read(inspectionChecklistsProvider.notifier).addChecklist(InspectionChecklist(
+          id: 'insp-v2', vehicleId: 'v2', date: DateTime(2026, 2, 1), odometer: 700, title: 'Berkala', items: const []));
+
+      await c.read(vehiclesProvider.notifier).deleteVehicle('v1');
+
+      // v1's rows are gone from storage …
+      expect(storage.getServiceLogs().map((l) => l.vehicleId), ['v2']);
+      expect(storage.getFuelLogs().map((l) => l.vehicleId), ['v2']);
+      expect(storage.getMaintenanceSchedules().map((s) => s.vehicleId), ['v2']);
+      expect(storage.getVehicleDocuments().map((d) => d.vehicleId), ['v2']);
+      expect(storage.getInspectionChecklists().map((c) => c.vehicleId), ['v2']);
+      // … and from the providers.
+      expect(c.read(serviceLogsProvider).map((l) => l.vehicleId), ['v2']);
+      expect(c.read(fuelLogsProvider).map((l) => l.vehicleId), ['v2']);
+      expect(c.read(maintenanceSchedulesProvider).map((s) => s.vehicleId), ['v2']);
+      expect(c.read(vehicleDocumentsProvider).map((d) => d.vehicleId), ['v2']);
+      expect(c.read(inspectionChecklistsProvider).map((c) => c.vehicleId), ['v2']);
+
+      expect(c.read(vehiclesProvider).map((v) => v.id), ['v2']);
+      expect(c.read(activeVehicleIdProvider), 'v2');
+    });
   });
 
   group('FLOW-SRV-01 servis & jadwal perawatan', () {

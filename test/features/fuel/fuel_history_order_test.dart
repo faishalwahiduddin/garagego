@@ -79,9 +79,9 @@ void main() {
     final newY = tester.getTopLeft(find.textContaining('1.500 km').first).dy;
     expect(newY, lessThan(oldY), reason: 'newest entry must be listed first');
 
-    // Summary cards also print 20.0 km/L; the per-entry chip is the 11pt one.
+    // Summary cards also print 20.0 km/L (15pt); the per-entry value is 13pt.
     final chip = find.byWidgetPredicate(
-      (w) => w is Text && w.data == '20.0 km/L' && w.style?.fontSize == 11,
+      (w) => w is Text && w.data == '20.0 km/L' && w.style?.fontSize == 13,
     );
     expect(chip, findsOneWidget);
     final chipY = tester.getTopLeft(chip).dy;

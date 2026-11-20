@@ -30,6 +30,12 @@ String? mapValidationError(String? error, AppLocalizations l10n) {
       return l10n.validationPlateMaxLength;
     case 'validationOdometerNegative':
       return l10n.validationOdometerNegative;
+    case 'validationOdometerRequired':
+      return l10n.validationOdometerRequired;
+    case 'validationCostRequired':
+      return l10n.validationCostRequired;
+    case 'validationPriceRequired':
+      return l10n.validationPriceRequired;
     case 'validationOdometerTooHigh':
       return l10n.validationOdometerTooHigh;
     case 'validationOdometerLessThanPrevious':
@@ -46,6 +52,29 @@ String? mapValidationError(String? error, AppLocalizations l10n) {
       return l10n.validationDocNameRequired;
     default:
       return error;
+  }
+}
+
+/// Localized message for an [AppValidators.validateOdometerInHistory] code;
+/// [boundKm] is the neighbouring reading already formatted for display.
+String? odometerHistoryMessage(
+  String? code,
+  String boundKm,
+  AppLocalizations l10n,
+) {
+  switch (code) {
+    case null:
+      return null;
+    case 'validationOdometerAbove':
+      return l10n.validationOdometerAbove(boundKm);
+    case 'validationOdometerBelow':
+      return l10n.validationOdometerBelow(boundKm);
+    case 'validationOdometerAtLeast':
+      return l10n.validationOdometerAtLeast(boundKm);
+    case 'validationOdometerAtMost':
+      return l10n.validationOdometerAtMost(boundKm);
+    default:
+      return code;
   }
 }
 

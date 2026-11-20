@@ -9,6 +9,12 @@ final localStorageServiceProvider = Provider<LocalStorageService>((ref) {
   throw UnimplementedError('localStorageServiceProvider must be provided');
 });
 
+/// Re-inserts [item] at [index] (clamped), used by the delete-undo snackbar.
+List<T> _insertAt<T>(List<T> list, T item, int index) {
+  final at = index.clamp(0, list.length);
+  return [...list.sublist(0, at), item, ...list.sublist(at)];
+}
+
 // --- Vehicles Notifier ---
 class VehiclesNotifier extends Notifier<List<Vehicle>> {
   @override
@@ -94,7 +100,24 @@ class ServiceLogsNotifier extends Notifier<List<ServiceLog>> {
     state = [log, ...state];
     final storage = ref.read(localStorageServiceProvider);
     await storage.saveServiceLogs(state);
+    await _syncVehicleOdometers(log);
+  }
 
+  /// Replaces an existing log (edit sheet) and keeps the vehicle's odometers
+  /// at least as high as the edited reading.
+  Future<void> updateLog(ServiceLog log) async {
+    state = state.map((l) => l.id == log.id ? log : l).toList();
+    await ref.read(localStorageServiceProvider).saveServiceLogs(state);
+    await _syncVehicleOdometers(log);
+  }
+
+  /// Puts a just-deleted log back where it was (undo).
+  Future<void> restoreLog(ServiceLog log, int index) async {
+    state = _insertAt(state, log, index);
+    await ref.read(localStorageServiceProvider).saveServiceLogs(state);
+  }
+
+  Future<void> _syncVehicleOdometers(ServiceLog log) async {
     // Update vehicle's current odometer and oil odometer if this log is higher
     final active = ref.read(activeVehicleProvider);
     if (active != null && active.id == log.vehicleId) {
@@ -140,6 +163,23 @@ class FuelLogsNotifier extends Notifier<List<FuelLog>> {
     final storage = ref.read(localStorageServiceProvider);
     await storage.saveFuelLogs(state);
 
+    await _syncVehicleOdometer(log);
+  }
+
+  /// Replaces an existing fill-up (edit sheet).
+  Future<void> updateFuelLog(FuelLog log) async {
+    state = state.map((f) => f.id == log.id ? log : f).toList();
+    await ref.read(localStorageServiceProvider).saveFuelLogs(state);
+    await _syncVehicleOdometer(log);
+  }
+
+  /// Puts a just-deleted fill-up back where it was (undo).
+  Future<void> restoreFuelLog(FuelLog log, int index) async {
+    state = _insertAt(state, log, index);
+    await ref.read(localStorageServiceProvider).saveFuelLogs(state);
+  }
+
+  Future<void> _syncVehicleOdometer(FuelLog log) async {
     // Update odometer if higher
     final active = ref.read(activeVehicleProvider);
     if (active != null && active.id == log.vehicleId && log.odometer > active.currentOdometer) {
@@ -183,6 +223,12 @@ class MaintenanceSchedulesNotifier extends Notifier<List<MaintenanceSchedule>> {
     state = state.map((s) => s.id == updated.id ? updated : s).toList();
     final storage = ref.read(localStorageServiceProvider);
     await storage.saveMaintenanceSchedules(state);
+  }
+
+  /// Puts a just-deleted schedule back where it was (undo).
+  Future<void> restoreSchedule(MaintenanceSchedule schedule, int index) async {
+    state = _insertAt(state, schedule, index);
+    await ref.read(localStorageServiceProvider).saveMaintenanceSchedules(state);
   }
 
   Future<void> deleteSchedule(String id) async {
@@ -273,6 +319,12 @@ class VehicleDocumentsNotifier extends Notifier<List<VehicleDocument>> {
     await storage.saveVehicleDocuments(state);
   }
 
+  /// Puts a just-deleted document back where it was (undo).
+  Future<void> restoreDocument(VehicleDocument doc, int index) async {
+    state = _insertAt(state, doc, index);
+    await ref.read(localStorageServiceProvider).saveVehicleDocuments(state);
+  }
+
   Future<void> deleteDocument(String id) async {
     state = state.where((d) => d.id != id).toList();
     final storage = ref.read(localStorageServiceProvider);
@@ -304,6 +356,12 @@ class InspectionChecklistsNotifier extends Notifier<List<InspectionChecklist>> {
     state = [checklist, ...state];
     final storage = ref.read(localStorageServiceProvider);
     await storage.saveInspectionChecklists(state);
+  }
+
+  /// Puts a just-deleted inspection back where it was (undo).
+  Future<void> restoreChecklist(InspectionChecklist checklist, int index) async {
+    state = _insertAt(state, checklist, index);
+    await ref.read(localStorageServiceProvider).saveInspectionChecklists(state);
   }
 
   Future<void> deleteChecklist(String id) async {

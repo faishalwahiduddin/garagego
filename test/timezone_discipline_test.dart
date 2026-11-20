@@ -148,7 +148,7 @@ final _allowlist = <_AllowlistEntry>[
     '$_idReason -- new vehicle id',
   ),
   _AllowlistEntry(
-    'lib/features/maintenance/maintenance_screen.dart',
+    'lib/features/maintenance/service_log_sheet.dart',
     RegExp(r"'serv_\$\{DateTime\.now\(\)\.millisecondsSinceEpoch\}'"),
     '$_idReason -- new service-log id',
   ),
@@ -163,7 +163,7 @@ final _allowlist = <_AllowlistEntry>[
     '$_idReason -- new inspection id',
   ),
   _AllowlistEntry(
-    'lib/features/fuel/fuel_logs_screen.dart',
+    'lib/features/fuel/fuel_log_sheet.dart',
     RegExp(r"'fuel_\$\{DateTime\.now\(\)\.millisecondsSinceEpoch\}'"),
     '$_idReason -- new fuel-log id',
   ),
@@ -177,11 +177,6 @@ final _allowlist = <_AllowlistEntry>[
     'lib/features/garage/garage_dashboard_screen.dart',
     RegExp(r'date: DateTime\.now\(\),'),
     '$_instantReason -- quick-add log timestamp, encoded as UTC Z on save',
-  ),
-  _AllowlistEntry(
-    'lib/features/maintenance/maintenance_screen.dart',
-    RegExp(r'DateTime serviceDate = DateTime\.now\(\);'),
-    '$_formReason -- add-service dialog initial date',
   ),
   _AllowlistEntry(
     'lib/features/maintenance/maintenance_screen.dart',
@@ -202,11 +197,6 @@ final _allowlist = <_AllowlistEntry>[
     'lib/features/maintenance/inspection_sheet.dart',
     RegExp(r'date: DateTime\.now\(\),'),
     '$_instantReason -- new inspection timestamp, encoded as UTC Z on save',
-  ),
-  _AllowlistEntry(
-    'lib/features/fuel/fuel_logs_screen.dart',
-    RegExp(r'date: DateTime\.now\(\),'),
-    '$_instantReason -- new fuel-log timestamp, encoded as UTC Z on save',
   ),
   // --- Form defaults one year out / validation bounds ----------------------
   _AllowlistEntry(

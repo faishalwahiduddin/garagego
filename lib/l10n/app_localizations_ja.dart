@@ -1671,4 +1671,74 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get contactEmailCopied => 'メールアドレスをコピーしました: contact@faishal.id';
+
+  @override
+  String get validationOdometerRequired => '走行距離計の値を入力してください';
+
+  @override
+  String get validationCostRequired => '合計費用を入力してください（無料なら0）';
+
+  @override
+  String get validationPriceRequired => '1リットルあたりの価格を入力してください';
+
+  @override
+  String validationOdometerAbove(String km) {
+    return '走行距離は$km kmより大きくしてください';
+  }
+
+  @override
+  String validationOdometerBelow(String km) {
+    return '走行距離は$km kmより小さくしてください';
+  }
+
+  @override
+  String validationOdometerAtLeast(String km) {
+    return '走行距離は$km km以上にしてください';
+  }
+
+  @override
+  String validationOdometerAtMost(String km) {
+    return '走行距離は$km km以下にしてください';
+  }
+
+  @override
+  String get itemDeleted => '削除しました';
+
+  @override
+  String get undo => '元に戻す';
+
+  @override
+  String get fuelEditTitle => '給油記録を編集';
+
+  @override
+  String get fuelDate => '給油日';
+
+  @override
+  String get fuelLogUpdated => '給油記録を更新しました';
+
+  @override
+  String get serviceEditTitle => '整備記録を編集';
+
+  @override
+  String get serviceLogUpdated => '整備記録を更新しました';
+
+  @override
+  String timezoneChanged(String zone) {
+    return 'タイムゾーン: $zone';
+  }
+
+  @override
+  String inspectionQuickSubtitle(String count) {
+    return '$count項目の安全点検（遠出・毎日の通勤に）';
+  }
+
+  @override
+  String inspectionEmptyBody(String count) {
+    return '$count項目の点検：タイヤ、ブレーキ、オイル、ライト、バッテリー。';
+  }
+
+  @override
+  String deleteVehicleConfirm(String name) {
+    return '$nameと、そのすべての整備・給油・スケジュール・書類の記録を削除しますか？元に戻せません。';
+  }
 }

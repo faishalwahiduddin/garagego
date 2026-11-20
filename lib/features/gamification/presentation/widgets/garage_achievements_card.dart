@@ -166,7 +166,7 @@ class GarageAchievementsCard extends ConsumerWidget {
                           )
                         : l10n.gamesMaxRank,
                     textAlign: TextAlign.end,
-                    maxLines: 1,
+                    maxLines: 2,
                     overflow: TextOverflow.ellipsis,
                     style: TextStyle(
                       fontSize: 11,
@@ -195,9 +195,9 @@ class GarageAchievementsCard extends ConsumerWidget {
             LayoutBuilder(
               builder: (context, constraints) {
                 final cellWidth = (constraints.maxWidth - 24) / 4;
-                // Fixed cell height so a 2-line badge label + share row fit;
+                // Fixed cell height so a 2-line badge label fits (share lives in the detail sheet);
                 // an aspect ratio overflowed by a fraction of a pixel at 411dp.
-                final cellHeight = 74 + 22 * textScale;
+                final cellHeight = 62 + 22 * textScale;
                 return Wrap(
                   spacing: 8,
                   runSpacing: 8,
@@ -277,31 +277,6 @@ class GarageAchievementsCard extends ConsumerWidget {
                 ),
               ),
             ),
-            if (unlocked)
-              InkWell(
-                onTap: () => shareAchievementText(
-                  buildGarageShareText(
-                    level: state.currentLevel.level,
-                    levelTitle: state.currentLevel.getLocalizedTitle(l10n),
-                    totalXp: state.totalXp,
-                    unlockedCount: state.unlockedCount,
-                    totalBadges: state.badges.length,
-                    highlight: l10n.gamesBadgeUnlockedLine(
-                      badge.getLocalizedTitle(l10n),
-                    ),
-                    l10n: l10n,
-                  ),
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.only(top: 2),
-                  child: Icon(
-                    Icons.share_outlined,
-                    size: 12,
-                    color: AppColors.primary,
-                    semanticLabel: l10n.gamesShare,
-                  ),
-                ),
-              ),
           ],
         ),
       ),

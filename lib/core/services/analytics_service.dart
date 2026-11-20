@@ -36,6 +36,9 @@ class TCOResult {
 }
 
 class FuelEfficiencyPoint {
+  /// Id of the fill-up this interval ends at; rows match on it, never on the
+  /// odometer (two fills can share a reading).
+  final String logId;
   final DateTime date;
   final int odometer;
   final double liters;
@@ -44,6 +47,7 @@ class FuelEfficiencyPoint {
   final double costPerKm;
 
   const FuelEfficiencyPoint({
+    this.logId = '',
     required this.date,
     required this.odometer,
     required this.liters,
@@ -197,8 +201,14 @@ class AnalyticsService {
       );
     }
 
-    // Sort by odometer ascending
-    final sorted = [...fuels]..sort((a, b) => a.odometer.compareTo(b.odometer));
+    // Odometer ascending; equal readings keep date order so the EARLIER fill
+    // owns the interval and a later duplicate (delta 0) is skipped instead of
+    // stealing it.
+    final sorted = [...fuels]
+      ..sort((a, b) {
+        final byOdo = a.odometer.compareTo(b.odometer);
+        return byOdo != 0 ? byOdo : a.date.compareTo(b.date);
+      });
     final List<FuelEfficiencyPoint> points = [];
 
     double totalLiters = 0;
@@ -214,10 +224,13 @@ class AnalyticsService {
       final curr = sorted[i];
 
       final dist = (curr.odometer - prev.odometer).toDouble();
-      if (dist > 0 && curr.liters > 0) {
+      // Defensive against legacy bad rows: no distance, no volume or a
+      // non-finite result never reaches the averages.
+      if (dist > 0 && curr.liters > 0 && curr.pricePerLiter >= 0) {
         final kmL = dist / curr.liters;
         final costKm = curr.totalCost / dist;
         points.add(FuelEfficiencyPoint(
+          logId: curr.id,
           date: curr.date,
           odometer: curr.odometer,
           liters: curr.liters,

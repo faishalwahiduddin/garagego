@@ -8,6 +8,7 @@ import '../../core/models/vehicle.dart';
 import '../../core/providers/app_providers.dart';
 import '../../core/providers/timezone_provider.dart';
 import '../../core/ui/press_scale.dart';
+import '../../core/ui/undo_snackbar.dart';
 import '../../core/utils/app_timezone.dart';
 import 'add_document_sheet.dart';
 import '../../core/ui/fleet_sheet.dart';
@@ -334,17 +335,20 @@ class GloveboxScreen extends ConsumerWidget {
                                             ],
                                           ),
                                         ),
-                                        Container(
-                                          padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-                                          decoration: BoxDecoration(
-                                            color: statusColor.withValues(alpha: 0.12),
-                                            borderRadius: BorderRadius.circular(6),
+                                        // One pill, and only for an exception (expired / due
+                                        // soon); a valid document just shows its date below.
+                                        if (doc.isExpired || doc.isDueSoon)
+                                          Container(
+                                            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                                            decoration: BoxDecoration(
+                                              color: statusColor.withValues(alpha: 0.12),
+                                              borderRadius: BorderRadius.circular(6),
+                                            ),
+                                            child: Text(
+                                              statusText,
+                                              style: TextStyle(fontSize: 11, fontWeight: FontWeight.w700, color: context.textPrimary),
+                                            ),
                                           ),
-                                          child: Text(
-                                            statusText,
-                                            style: TextStyle(fontSize: 11, fontWeight: FontWeight.w700, color: statusColor),
-                                          ),
-                                        ),
                                       ],
                                     ),
                                     const SizedBox(height: 12),
@@ -405,10 +409,17 @@ class GloveboxScreen extends ConsumerWidget {
                                         ),
                                         const SizedBox(width: 8),
                                         IconButton(
-                                          icon: const Icon(Icons.delete_outline, size: 18, color: AppColors.danger),
+                                          icon: Icon(Icons.delete_outline, size: 20, color: context.textSecondary),
+                                          tooltip: l10n.delete,
                                           visualDensity: VisualDensity.compact,
                                           onPressed: () {
-                                            ref.read(vehicleDocumentsProvider.notifier).deleteDocument(doc.id);
+                                            final notifier = ref.read(vehicleDocumentsProvider.notifier);
+                                            final index = ref.read(vehicleDocumentsProvider).indexWhere((d) => d.id == doc.id);
+                                            notifier.deleteDocument(doc.id);
+                                            showUndoSnackBar(
+                                              context,
+                                              onUndo: () => notifier.restoreDocument(doc, index),
+                                            );
                                           },
                                         ),
                                       ],

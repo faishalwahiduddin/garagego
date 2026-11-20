@@ -11,6 +11,7 @@ import '../../core/providers/locale_provider.dart';
 import '../../core/providers/theme_provider.dart';
 import '../../core/providers/timezone_provider.dart';
 import '../../core/utils/app_timezone.dart';
+import '../../core/ui/undo_snackbar.dart';
 import '../../core/utils/backup_file_io.dart';
 import '../../core/utils/l10n_helpers.dart';
 import '../garage/add_vehicle_sheet.dart';
@@ -273,11 +274,10 @@ class SettingsScreen extends ConsumerWidget {
                             color: AppColors.danger,
                             size: 20,
                           ),
-                          onPressed: () {
-                            ref
-                                .read(vehiclesProvider.notifier)
-                                .deleteVehicle(v.id);
-                          },
+                          tooltip: l10n.delete,
+                          // Deleting a vehicle cascades to every log it owns,
+                          // so it needs an explicit confirm (no undo).
+                          onPressed: () => _confirmDeleteVehicle(context, ref, v),
                         )
                       : null,
                 ),
@@ -822,6 +822,72 @@ class SettingsScreen extends ConsumerWidget {
     return '${l10n.timezoneAuto}$kDotSeparator$deviceLabel';
   }
 
+  Future<void> _confirmDeleteVehicle(
+    BuildContext context,
+    WidgetRef ref,
+    Vehicle vehicle,
+  ) async {
+    final l10n = AppLocalizations.of(context)!;
+    final confirmed = await showDialog<bool>(
+      context: context,
+      builder: (ctx) => AlertDialog(
+        content: Text(l10n.deleteVehicleConfirm(vehicle.name)),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(ctx, false),
+            child: Text(l10n.batal),
+          ),
+          TextButton(
+            onPressed: () => Navigator.pop(ctx, true),
+            child: Text(
+              l10n.delete,
+              style: TextStyle(color: context.readable(AppColors.danger)),
+            ),
+          ),
+        ],
+      ),
+    );
+    if (confirmed == true) {
+      await ref.read(vehiclesProvider.notifier).deleteVehicle(vehicle.id);
+    }
+  }
+
+  /// Applies a time-zone choice and confirms it with an undo, so a stray tap
+  /// in the list is visible and reversible.
+  void _applyTimezone(
+    BuildContext context,
+    WidgetRef ref,
+    String? zone,
+    String label,
+  ) {
+    final notifier = ref.read(timezoneProvider.notifier);
+    final previous = ref.read(timezoneProvider);
+    if (previous == zone) return;
+    try {
+      if (zone == null) {
+        // §VAL: resetToAuto drops the key; no raw string stored.
+        notifier.resetToAuto();
+      } else {
+        notifier.setZone(zone);
+      }
+    } on ArgumentError {
+      // Unresolvable IANA name: keep the current choice.
+      return;
+    }
+    final l10n = AppLocalizations.of(context)!;
+    showUndoSnackBar(
+      context,
+      message: l10n.timezoneChanged(label),
+      onUndo: () {
+        if (previous == null) {
+          notifier.resetToAuto();
+        } else {
+          notifier.setZone(previous);
+        }
+      },
+    );
+  }
+
   void _showTimezoneModal(BuildContext context, WidgetRef ref) {
     final l10n = AppLocalizations.of(context)!;
     showSpringSheet(
@@ -887,10 +953,8 @@ class SettingsScreen extends ConsumerWidget {
                                 )
                               : null,
                           onTap: () {
-                            final zone = ref.read(timezoneProvider.notifier);
-                            // §VAL: resetToAuto drops the key; no raw string stored.
-                            zone.resetToAuto();
                             Navigator.pop(ctx);
+                            _applyTimezone(context, ref, null, autoLabel);
                           },
                         ),
                       ),
@@ -923,15 +987,17 @@ class SettingsScreen extends ConsumerWidget {
                                   )
                                 : null,
                             onTap: () {
-                              try {
-                                ref
-                                    .read(timezoneProvider.notifier)
-                                    .setZone(zone.iana);
-                              } on ArgumentError {
-                                // Unresolvable IANA name: keep the current choice.
-                                return;
-                              }
                               Navigator.pop(ctx);
+                              _applyTimezone(
+                                context,
+                                ref,
+                                zone.iana,
+                                AppTimeZone.zoneOptionLabel(
+                                  iana: zone.iana,
+                                  shortLabel: zone.shortLabel,
+                                  utcInstant: now,
+                                ),
+                              );
                             },
                           ),
                         ),

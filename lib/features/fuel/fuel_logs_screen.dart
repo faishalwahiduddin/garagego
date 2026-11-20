@@ -4,300 +4,35 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:intl/intl.dart';
 import '../../core/theme/app_numeric.dart';
 import '../../core/constants/app_colors.dart';
-import '../../core/constants/fuel_brands.dart';
 import '../../core/models/vehicle.dart';
 import '../../core/providers/app_providers.dart';
 import '../../core/providers/timezone_provider.dart';
+import '../../core/services/analytics_service.dart';
 import '../../core/ui/fleet_sheet.dart';
-import '../../core/ui/form_sheet_body.dart';
 import '../../core/ui/press_scale.dart';
+import '../../core/ui/undo_snackbar.dart';
+import 'fuel_log_sheet.dart';
 import '../../core/utils/app_timezone.dart';
-import '../../core/utils/l10n_helpers.dart';
-import '../../core/utils/validators.dart';
 import '../../core/constants/units.dart';
 
 class FuelLogsScreen extends ConsumerWidget {
   const FuelLogsScreen({super.key});
 
-  void _showAddFuelDialog(BuildContext context, WidgetRef ref, Vehicle active) {
-    final l10n = AppLocalizations.of(context)!;
-    final formKey = GlobalKey<FormState>();
-    final odoController = TextEditingController(text: active.currentOdometer.toString());
-    final litersController = TextEditingController();
-    final currency = NumberFormat.currency(
-      locale: 'id_ID',
-      symbol: 'Rp ',
-      decimalDigits: 0,
-    );
-    final priceController = TextEditingController(text: '13700');
-    final stationController = TextEditingController(text: FuelBrands.stationPrefix);
-    bool isFullTank = true;
-    String selectedFuelType = FuelBrands.defaultBrand;
-
-    final fuelTypes = FuelBrands.all;
-
+  void _showFuelSheet(BuildContext context, Vehicle active, {FuelLog? initial}) {
     showFleetSheet<void>(
       context: context,
       isScrollControlled: true,
       backgroundColor: context.cardBg,
-      builder: (ctx) => StatefulBuilder(
-        builder: (context, setState) {
-          final int? inputOdo = int.tryParse(odoController.text.trim());
-          final double? inputLiters = double.tryParse(litersController.text.trim());
-          final double? inputPrice = double.tryParse(priceController.text.trim());
+      builder: (_) => FuelLogSheet(vehicle: active, initial: initial),
+    );
+  }
 
-          final int deltaKm = (inputOdo != null && inputOdo > active.currentOdometer)
-              ? (inputOdo - active.currentOdometer)
-              : 0;
-          final double totalCost = (inputLiters != null && inputPrice != null && inputLiters > 0 && inputPrice > 0)
-              ? (inputLiters * inputPrice)
-              : 0;
-          final double? kmPerLiter = (deltaKm > 0 && inputLiters != null && inputLiters > 0)
-              ? (deltaKm / inputLiters)
-              : null;
-          final double? costPerKm = (deltaKm > 0 && totalCost > 0)
-              ? (totalCost / deltaKm)
-              : null;
-
-          return FormSheetBody(
-          title: Text(
-            l10n.catatPengisianBbm,
-            style: TextStyle(
-              color: context.textPrimary,
-              fontSize: 17,
-              fontWeight: FontWeight.w700,
-              letterSpacing: -0.4,
-            ),
-          ),
-          content: SingleChildScrollView(
-            physics: const BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
-            child: Form(
-              key: formKey,
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [
-                  DropdownButtonFormField<String>(
-                    initialValue: selectedFuelType,
-                    decoration: InputDecoration(labelText: l10n.jenisBahanBakar),
-                    dropdownColor: context.cardBg,
-                    items: fuelTypes
-                        .map((t) => DropdownMenuItem(
-                              value: t,
-                              child: Text(t, style: TextStyle(color: context.textPrimary, fontSize: 13)),
-                            ))
-                        .toList(),
-                    onChanged: (val) {
-                      if (val != null) setState(() => selectedFuelType = val);
-                    },
-                  ),
-                  const SizedBox(height: 12),
-                  TextFormField(
-                    controller: odoController,
-                    keyboardType: TextInputType.number,
-                    onChanged: (_) => setState(() {}),
-                    decoration: InputDecoration(
-                      labelText: l10n.kilometerOdometerKm,
-                      hintText: '25500',
-                    ),
-                    validator: (val) => mapValidationError(AppValidators.validateOdometer(int.tryParse(val ?? '')), l10n),
-                  ),
-                  const SizedBox(height: 12),
-                  TextFormField(
-                    controller: litersController,
-                    keyboardType: const TextInputType.numberWithOptions(decimal: true),
-                    onChanged: (_) => setState(() {}),
-                    decoration: InputDecoration(
-                      labelText: l10n.volumeLiterKwh,
-                      hintText: '35.5',
-                    ),
-                    validator: (val) => mapValidationError(AppValidators.validateFuelLiters(double.tryParse(val ?? '')), l10n),
-                  ),
-                  const SizedBox(height: 12),
-                  TextFormField(
-                    controller: priceController,
-                    keyboardType: TextInputType.number,
-                    onChanged: (_) => setState(() {}),
-                    decoration: InputDecoration(
-                      labelText: l10n.hargaSatuanRpLiter,
-                      hintText: '13700',
-                    ),
-                    validator: (val) => mapValidationError(AppValidators.validateCost(double.tryParse(val ?? '')), l10n),
-                  ),
-                  const SizedBox(height: 12),
-                  TextFormField(
-                    controller: stationController,
-                    decoration: InputDecoration(
-                      labelText: l10n.namaSpbuLokasi,
-                      hintText: FuelBrands.stationHint,
-                    ),
-                  ),
-                  const SizedBox(height: 12),
-                  CheckboxListTile(
-                    contentPadding: EdgeInsets.zero,
-                    title: Text(
-                      l10n.isiTangkiPenuhFullTank,
-                      style: TextStyle(color: context.textPrimary, fontSize: 13, fontWeight: FontWeight.w600),
-                    ),
-                    subtitle: Text(
-                      l10n.diperlukanUntukAkurasiKalkulas,
-                      style: TextStyle(fontSize: 11, color: context.textSecondary),
-                    ),
-                    value: isFullTank,
-                    activeColor: AppColors.primary,
-                    onChanged: (val) => setState(() => isFullTank = val ?? true),
-                  ),
-
-                  // Real-time Fuel Telemetry Live Preview (Drivvo/Fuelio benchmark)
-                  if (totalCost > 0 || deltaKm > 0) ...[
-                    const SizedBox(height: 10),
-                    Container(
-                      padding: const EdgeInsets.all(12),
-                      decoration: BoxDecoration(
-                        color: AppColors.primary.withValues(alpha: 0.08),
-                        borderRadius: BorderRadius.circular(10),
-                        border: Border.all(color: AppColors.primary.withValues(alpha: 0.2)),
-                      ),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Flexible(child: Text(
-                                l10n.fuelEstTotalCost,
-                                style: TextStyle(
-                                  fontSize: 12,
-                                  fontWeight: FontWeight.w600,
-                                  color: context.textSecondary,
-                                ),
-                              )),
-                              Text(
-                                currency.format(totalCost.round()),
-                                style: TextStyle(
-                                  fontSize: 14,
-                                  fontWeight: FontWeight.w800,
-                                  color: context.readable(AppColors.primary),
-                                ),
-                              ),
-                            ],
-                          ),
-                          if (deltaKm > 0) ...[
-                            const SizedBox(height: 6),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Flexible(child: Text(
-                                  l10n.fuelTripDistance,
-                                  style: TextStyle(
-                                    fontSize: 11,
-                                    color: context.textSecondary,
-                                  ),
-                                )),
-                                Text(
-                                  '$kPlusSign$deltaKm$kSpaceChar$kKmUnit',
-                                  style: TextStyle(
-                                    fontSize: 12,
-                                    fontWeight: FontWeight.w700,
-                                    color: context.textPrimary,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ],
-                          if (kmPerLiter != null) ...[
-                            const SizedBox(height: 4),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Text(
-                                  l10n.fuelAvgConsumption,
-                                  style: TextStyle(
-                                    fontSize: 11,
-                                    color: context.textSecondary,
-                                  ),
-                                ),
-                                Text(
-                                  l10n.fuelKmL(kmPerLiter.toStringAsFixed(1)),
-                                  style: const TextStyle(
-                                    fontSize: 12,
-                                    fontWeight: FontWeight.w700,
-                                    color: Color(0xFF16A34A),
-                                    fontFeatures: AppNumeric.tabularFeatures,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ],
-                          if (costPerKm != null) ...[
-                            const SizedBox(height: 4),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Text(
-                                  l10n.fuelOperatingCost,
-                                  style: TextStyle(
-                                    fontSize: 11,
-                                    color: context.textSecondary,
-                                  ),
-                                ),
-                                Text(
-                                  '${currency.format(costPerKm.round())}/km',
-                                  style: TextStyle(
-                                    fontSize: 11,
-                                    fontWeight: FontWeight.w600,
-                                    color: context.textSecondary,
-                                  ).tabular,
-                                ),
-                              ],
-                            ),
-                          ],
-                        ],
-                      ),
-                    ),
-                  ],
-                ],
-              ),
-            ),
-          ),
-          actions: [
-            TextButton(
-              onPressed: () => Navigator.pop(ctx),
-              child: Text(l10n.batal, style: TextStyle(color: context.textSecondary)),
-            ),
-            PressScale(
-              scale: 0.97,
-              child: ElevatedButton(
-                onPressed: () {
-                  if (!formKey.currentState!.validate()) return;
-
-                  final log = FuelLog(
-                    id: 'fuel_${DateTime.now().millisecondsSinceEpoch}',
-                    vehicleId: active.id,
-                    date: DateTime.now(),
-                    odometer: int.parse(odoController.text.trim()),
-                    liters: double.parse(litersController.text.trim()),
-                    pricePerLiter: double.parse(priceController.text.trim()),
-                    isFullTank: isFullTank,
-                    fuelType: selectedFuelType,
-                    gasStation: stationController.text.trim(),
-                  );
-
-                  ref.read(fuelLogsProvider.notifier).addFuelLog(log);
-                  Navigator.pop(ctx);
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(content: Text(l10n.catatanBbmBerhasilDisimpan)),
-                  );
-                },
-                child: Text(l10n.simpan),
-              ),
-            ),
-          ],
-        );
-      },
-    ),
-  );
-}
+  void _deleteWithUndo(BuildContext context, WidgetRef ref, FuelLog log) {
+    final notifier = ref.read(fuelLogsProvider.notifier);
+    final index = ref.read(fuelLogsProvider).indexWhere((f) => f.id == log.id);
+    notifier.deleteFuelLog(log.id);
+    showUndoSnackBar(context, onUndo: () => notifier.restoreFuelLog(log, index));
+  }
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -330,7 +65,7 @@ class FuelLogsScreen extends ConsumerWidget {
                   child: const Icon(Icons.add, color: AppColors.primary, size: 18),
                 ),
                 tooltip: l10n.catatPengisianBbm,
-                onPressed: () => _showAddFuelDialog(context, ref, active),
+                onPressed: () => _showFuelSheet(context, active),
               ),
             ),
           const SizedBox(width: 8),
@@ -390,7 +125,9 @@ class FuelLogsScreen extends ConsumerWidget {
                               context: context,
                               title: l10n.rekorIritTerbaik,
                               value: l10n.fuelKmL(
-                                efficiencySummary.bestKmPerLiter > 0
+                                // A "best" needs at least two measured intervals;
+                                // with one it just repeats the average.
+                                efficiencySummary.points.length >= 2
                                     ? efficiencySummary.bestKmPerLiter.toStringAsFixed(1)
                                     : '—',
                               ),
@@ -453,7 +190,7 @@ class FuelLogsScreen extends ConsumerWidget {
                                 PressScale(
                                   scale: 0.97,
                                   child: ElevatedButton.icon(
-                                    onPressed: () => _showAddFuelDialog(context, ref, active),
+                                    onPressed: () => _showFuelSheet(context, active),
                                     icon: const Icon(Icons.add, size: 16),
                                     label: Text(l10n.catatPengisianPertama),
                                   ),
@@ -464,138 +201,22 @@ class FuelLogsScreen extends ConsumerWidget {
                         )
                       else
                         ...sortFuelLogsNewestFirst(logs).map((log) {
-                          final pt = efficiencySummary.points.where((p) => p.odometer == log.odometer).firstOrNull;
-
+                          final pt = efficiencySummary.points.where((p) => p.logId == log.id).firstOrNull;
+                          final liters = NumberFormat.decimalPatternDigits(locale: localeCode, decimalDigits: 1)
+                              .format(log.liters);
                           return Padding(
                             padding: const EdgeInsets.only(bottom: 12),
-                            child: PressScale(
-                              scale: 0.98,
-                              child: Card(
-                                child: Padding(
-                                  padding: const EdgeInsets.all(16),
-                                  child: Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
-                                    children: [
-                                    Row(
-                                      children: [
-                                        Container(
-                                          padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-                                          decoration: BoxDecoration(
-                                            color: AppColors.warning.withValues(alpha: 0.12),
-                                            borderRadius: BorderRadius.circular(6),
-                                          ),
-                                          child: Text(
-                                            '${log.liters.toStringAsFixed(1)}$kSpaceChar$kLiterUnit',
-                                            style: TextStyle(fontSize: 11, fontWeight: FontWeight.w800, color: context.readable(AppColors.warning)).tabular,
-                                          ),
-                                        ),
-                                        const SizedBox(width: 8),
-                                        Container(
-                                          padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-                                          decoration: BoxDecoration(
-                                            color: context.surfaceBg,
-                                            borderRadius: BorderRadius.circular(6),
-                                            border: Border.all(color: context.borderColor),
-                                          ),
-                                          child: Text(
-                                            log.fuelType,
-                                            style: TextStyle(fontSize: 11, fontWeight: FontWeight.w600, color: context.textPrimary),
-                                          ),
-                                        ),
-                                        const Spacer(),
-                                        Text(
-                                          AppTimeZone.formatDate(log.date, loc, locale: localeCode),
-                                          style: TextStyle(fontSize: 12, color: context.textSecondary).tabular,
-                                        ),
-                                        IconButton(
-                                          icon: const Icon(Icons.delete_outline, size: 18, color: AppColors.danger),
-                                          visualDensity: VisualDensity.compact,
-                                          onPressed: () {
-                                            ref.read(fuelLogsProvider.notifier).deleteFuelLog(log.id);
-                                          },
-                                        ),
-                                      ],
-                                    ),
-                                    const SizedBox(height: 10),
-                                    Row(
-                                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                      children: [
-                                        Flexible(child: Text(
-                                          l10n.fuelOdometerValue(
-                                            NumberFormat('#,###', 'id_ID').format(log.odometer),
-                                          ),
-                                          style: TextStyle(
-                                            fontSize: 15,
-                                            fontWeight: FontWeight.w800,
-                                            color: context.textPrimary,
-                                            letterSpacing: -0.2,
-                                          ).tabular,
-                                        )),
-                                        Text(
-                                          currency.format(log.totalCost),
-                                          style: TextStyle(
-                                            fontSize: 15,
-                                            fontWeight: FontWeight.w800,
-                                            color: context.readable(AppColors.primary),
-                                          ).tabular,
-                                        ),
-                                      ],
-                                    ),
-                                    const SizedBox(height: 6),
-                                    Row(
-                                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                      children: [
-                                        Flexible(child: Text(
-                                          l10n.fuelPricePerLiterLine(
-                                            currency.format(log.pricePerLiter),
-                                            log.isFullTank
-                                                ? l10n.fuelFullTank
-                                                : l10n.fuelPartial,
-                                          ),
-                                          style: TextStyle(fontSize: 12, color: context.textSecondary),
-                                        )),
-                                        if (pt != null)
-                                          Container(
-                                            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
-                                            decoration: BoxDecoration(
-                                              color: AppColors.success.withValues(alpha: 0.12),
-                                              borderRadius: BorderRadius.circular(6),
-                                            ),
-                                            child: Text(
-                                              l10n.fuelKmL(pt.kmPerLiter.toStringAsFixed(1)),
-                                              style: TextStyle(
-                                                fontSize: 11,
-                                                fontWeight: FontWeight.w800,
-                                                color: context.readable(AppColors.success),
-                                              ).tabular,
-                                            ),
-                                          ),
-                                      ],
-                                    ),
-                                    if (log.gasStation.isNotEmpty) ...[
-                                      const SizedBox(height: 8),
-                                      Row(
-                                        children: [
-                                          Icon(Icons.location_on_outlined, size: 14, color: context.textMuted),
-                                          const SizedBox(width: 4),
-                                          Expanded(
-                                            child: Text(
-                                              log.gasStation,
-                                              style: TextStyle(fontSize: 11, color: context.textSecondary),
-                                              maxLines: 1,
-                                              overflow: TextOverflow.ellipsis,
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                    ],
-                                  ],
-                                ),
-                              ),
+                            child: _FuelLogRow(
+                              log: log,
+                              point: pt,
+                              litersLabel: '$liters$kSpaceChar$kLiterUnit$kDotSeparator${log.fuelType}',
+                              dateLabel: AppTimeZone.formatDate(log.date, loc, locale: localeCode),
+                              currency: currency,
+                              onEdit: () => _showFuelSheet(context, active, initial: log),
+                              onDelete: () => _deleteWithUndo(context, ref, log),
                             ),
-                          ),
-                        );
-                      }),
+                          );
+                        }),
                     ],
                   ),
                 ),
@@ -638,7 +259,7 @@ class FuelLogsScreen extends ConsumerWidget {
                         fontWeight: FontWeight.w600,
                         color: context.textSecondary,
                       ),
-                      maxLines: 1,
+                      maxLines: 2,
                       overflow: TextOverflow.ellipsis,
                     ),
                   ),
@@ -653,6 +274,140 @@ class FuelLogsScreen extends ConsumerWidget {
                   color: context.textPrimary,
                   letterSpacing: -0.3,
                 ).tabular,
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+/// One fill-up: volume and fuel type as plain secondary text, km/L as the
+/// only emphasised value (no pills). Tap the row to edit; delete is undoable.
+class _FuelLogRow extends StatelessWidget {
+  const _FuelLogRow({
+    required this.log,
+    required this.point,
+    required this.litersLabel,
+    required this.dateLabel,
+    required this.currency,
+    required this.onEdit,
+    required this.onDelete,
+  });
+
+  final FuelLog log;
+  final FuelEfficiencyPoint? point;
+  final String litersLabel;
+  final String dateLabel;
+  final NumberFormat currency;
+  final VoidCallback onEdit;
+  final VoidCallback onDelete;
+
+  @override
+  Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
+    final pt = point;
+    return Card(
+      clipBehavior: Clip.antiAlias,
+      child: InkWell(
+        onTap: onEdit,
+        child: Padding(
+          padding: const EdgeInsets.fromLTRB(16, 8, 4, 16),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
+                children: [
+                  Expanded(
+                    child: Text(
+                      litersLabel,
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
+                      style: TextStyle(fontSize: 12, color: context.textSecondary).tabular,
+                    ),
+                  ),
+                  const SizedBox(width: 8),
+                  Text(dateLabel, style: TextStyle(fontSize: 12, color: context.textSecondary).tabular),
+                  IconButton(
+                    icon: Icon(Icons.delete_outline, size: 20, color: context.textSecondary),
+                    tooltip: l10n.delete,
+                    onPressed: onDelete,
+                  ),
+                ],
+              ),
+              Padding(
+                padding: const EdgeInsets.only(right: 12),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Flexible(
+                          child: Text(
+                            l10n.fuelOdometerValue(NumberFormat('#,###', 'id_ID').format(log.odometer)),
+                            style: TextStyle(
+                              fontSize: 15,
+                              fontWeight: FontWeight.w800,
+                              color: context.textPrimary,
+                              letterSpacing: -0.2,
+                            ).tabular,
+                          ),
+                        ),
+                        Text(
+                          currency.format(log.totalCost),
+                          style: TextStyle(
+                            fontSize: 15,
+                            fontWeight: FontWeight.w800,
+                            color: context.textPrimary,
+                          ).tabular,
+                        ),
+                      ],
+                    ),
+                    const SizedBox(height: 6),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Flexible(
+                          child: Text(
+                            l10n.fuelPricePerLiterLine(
+                              currency.format(log.pricePerLiter),
+                              log.isFullTank ? l10n.fuelFullTank : l10n.fuelPartial,
+                            ),
+                            style: TextStyle(fontSize: 12, color: context.textSecondary),
+                          ),
+                        ),
+                        if (pt != null)
+                          Text(
+                            l10n.fuelKmL(pt.kmPerLiter.toStringAsFixed(1)),
+                            style: TextStyle(
+                              fontSize: 13,
+                              fontWeight: FontWeight.w800,
+                              color: context.readable(AppColors.success),
+                            ).tabular,
+                          ),
+                      ],
+                    ),
+                    if (log.gasStation.isNotEmpty) ...[
+                      const SizedBox(height: 8),
+                      Row(
+                        children: [
+                          Icon(Icons.location_on_outlined, size: 14, color: context.textMuted),
+                          const SizedBox(width: 4),
+                          Expanded(
+                            child: Text(
+                              log.gasStation,
+                              style: TextStyle(fontSize: 11, color: context.textSecondary),
+                              maxLines: 1,
+                              overflow: TextOverflow.ellipsis,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ],
+                ),
               ),
             ],
           ),

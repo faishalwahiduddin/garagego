@@ -232,13 +232,15 @@ class AppTimeZone {
     return DateFormat('HH:mm', locale).format(toZoned(instant, loc));
   }
 
-  /// Locale-aware calendar date in [loc] (`21/08/2026` for `id`).
+  /// Locale-aware calendar date in [loc] with the month as a word
+  /// (`15 Agu 2026` for `id`, `Aug 15, 2026` for `en`): an all-numeric
+  /// `7/4/2027` reads differently per locale and is easy to misread.
   static String formatDate(
     DateTime instant,
     tz.Location loc, {
     String? locale,
   }) {
-    return DateFormat.yMd(locale).format(toZoned(instant, loc));
+    return DateFormat.yMMMd(locale).format(toZoned(instant, loc));
   }
 
   /// `21/08/2026 13:45 WIB`-style stamp in [loc] for the [ianaName] zone.

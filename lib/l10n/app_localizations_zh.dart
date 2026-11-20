@@ -1663,4 +1663,74 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get contactEmailCopied => '邮箱地址已复制：contact@faishal.id';
+
+  @override
+  String get validationOdometerRequired => '请输入里程表读数';
+
+  @override
+  String get validationCostRequired => '请输入总费用（免费请填 0）';
+
+  @override
+  String get validationPriceRequired => '请输入每升价格';
+
+  @override
+  String validationOdometerAbove(String km) {
+    return '里程须大于 $km km';
+  }
+
+  @override
+  String validationOdometerBelow(String km) {
+    return '里程须小于 $km km';
+  }
+
+  @override
+  String validationOdometerAtLeast(String km) {
+    return '里程不得低于 $km km';
+  }
+
+  @override
+  String validationOdometerAtMost(String km) {
+    return '里程不得高于 $km km';
+  }
+
+  @override
+  String get itemDeleted => '已删除';
+
+  @override
+  String get undo => '撤销';
+
+  @override
+  String get fuelEditTitle => '编辑加油记录';
+
+  @override
+  String get fuelDate => '加油日期';
+
+  @override
+  String get fuelLogUpdated => '加油记录已更新';
+
+  @override
+  String get serviceEditTitle => '编辑保养记录';
+
+  @override
+  String get serviceLogUpdated => '保养记录已更新';
+
+  @override
+  String timezoneChanged(String zone) {
+    return '时区：$zone';
+  }
+
+  @override
+  String inspectionQuickSubtitle(String count) {
+    return '$count 项行车安全检查，适合出行与日常通勤';
+  }
+
+  @override
+  String inspectionEmptyBody(String count) {
+    return '进行 $count 项检查：轮胎、刹车、机油、灯光和电瓶。';
+  }
+
+  @override
+  String deleteVehicleConfirm(String name) {
+    return '删除 $name 及其所有保养、加油、计划和文件记录？此操作无法撤销。';
+  }
 }

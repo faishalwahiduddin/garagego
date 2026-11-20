@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart' show ScrollDirection;
 import 'package:garagego/l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
@@ -110,7 +111,9 @@ class GarageDashboardScreen extends ConsumerWidget {
                     icon: Icons.fact_check_outlined,
                     iconColor: AppColors.success,
                     title: l10n.checklistInspeksiKendaraan,
-                    subtitle: l10n.audit10PoinKeselamatanJalanMud,
+                    subtitle: l10n.inspectionQuickSubtitle(
+                      '${InspectionChecklist.generateDefaultItems(active.type, l10n).length}',
+                    ),
                     onTap: () {
                       Navigator.pop(ctx);
                       showFleetSheet(
@@ -289,7 +292,8 @@ class GarageDashboardScreen extends ConsumerWidget {
       decimalDigits: 0,
     );
 
-    return Scaffold(
+    return _FabScrollScope(
+      child: Scaffold(
       appBar: AppBar(
         title: Row(
           children: [
@@ -388,7 +392,10 @@ class GarageDashboardScreen extends ConsumerWidget {
       ),
       // The shell's NavigationBar (80 px, extendBody) is drawn over this page;
       // lift the FAB above it or it is hidden and untappable.
-      floatingActionButton: Padding(
+      // Slides away while scrolling down so it never sits on the values it
+      // would cover; returns on scroll up and at the end of the page.
+      floatingActionButton: _HidingFab(
+        child: Padding(
         padding: const EdgeInsets.only(bottom: _shellNavHeight),
         child: PressScale(
           scale: 0.95,
@@ -408,6 +415,7 @@ class GarageDashboardScreen extends ConsumerWidget {
             onPressed: () => _showQuickActions(context, ref, activeVehicle),
           ),
         ),
+      ),
       ),
       body: vehicles.isEmpty
           ? Center(
@@ -615,11 +623,29 @@ class GarageDashboardScreen extends ConsumerWidget {
                         ),
                         const SizedBox(height: 14),
 
-                        // Gamification: Maintenance Rank & Discipline Badges
+                        // Owner's priorities first (next service, tax and
+                        // documents), then costs; gamification sits last.
+                        // 3. Oil Status Card with Reset Oil Button
                         StaggerFadeIn(
                           index: 1,
-                          child: const GarageAchievementsCard(),
+                          child: _buildOilStatusCard(
+                            context,
+                            ref,
+                            activeVehicle,
+                          ),
                         ),
+                        const SizedBox(height: 14),
+
+                        // 6. Upcoming Maintenance Alerts
+                        _buildUpcomingMaintenanceCard(
+                          context,
+                          activeVehicle,
+                          schedules,
+                        ),
+                        const SizedBox(height: 14),
+
+                        // 4. Tax & Document Expiry Card
+                        _buildTaxReminderCard(context, activeVehicle),
                         const SizedBox(height: 14),
 
                         // 2. High-Density Metric Grid
@@ -686,31 +712,8 @@ class GarageDashboardScreen extends ConsumerWidget {
                         ),
                         const SizedBox(height: 14),
 
-                        // 3. Oil Status Card with Reset Oil Button
-                        StaggerFadeIn(
-                          index: 4,
-                          child: _buildOilStatusCard(
-                            context,
-                            ref,
-                            activeVehicle,
-                          ),
-                        ),
-                        const SizedBox(height: 14),
-
-                        // 4. Tax & Document Expiry Card
-                        _buildTaxReminderCard(context, activeVehicle),
-                        const SizedBox(height: 14),
-
                         // 5. Total Cost of Ownership (TCO) Breakdown
                         _buildTcoBreakdownCard(context, tco, currency),
-                        const SizedBox(height: 14),
-
-                        // 6. Upcoming Maintenance Alerts
-                        _buildUpcomingMaintenanceCard(
-                          context,
-                          activeVehicle,
-                          schedules,
-                        ),
                         const SizedBox(height: 14),
 
                         // 7. Recent Service List Preview
@@ -720,12 +723,17 @@ class GarageDashboardScreen extends ConsumerWidget {
                           serviceLogs,
                           currency,
                         ),
+                        const SizedBox(height: 14),
+
+                        // Gamification: maintenance rank & discipline badges.
+                        const GarageAchievementsCard(),
                       ],
                     ],
                   ),
                 ),
               ),
             ),
+      ),
     );
   }
 
@@ -1410,7 +1418,8 @@ class GarageDashboardScreen extends ConsumerWidget {
             else
               ...nearest.map((s) {
                 final urgency = s.urgency(v.currentOdometer);
-                final km = s.kmRemaining(v.currentOdometer);
+                final trigger = s.mostUrgentTrigger(v.currentOdometer);
+                final left = trigger.remaining;
                 final c = context.readable(
                   urgency == ScheduleUrgency.overdue
                       ? AppColors.danger
@@ -1456,25 +1465,24 @@ class GarageDashboardScreen extends ConsumerWidget {
                               ),
                             ),
                           ),
-                          Container(
-                            padding: const EdgeInsets.symmetric(
-                              horizontal: 8,
-                              vertical: 2,
-                            ),
-                            decoration: BoxDecoration(
-                              color: c.withValues(alpha: 0.1),
-                              borderRadius: BorderRadius.circular(6),
-                            ),
-                            child: Text(
-                              km < 0
-                                  ? l10n.kmOverdueShort('${-km}')
-                                  : l10n.kmRemainingShort('$km'),
-                              style: TextStyle(
-                                fontSize: 11,
-                                fontWeight: FontWeight.w700,
-                                color: c,
-                              ),
-                            ),
+                          const SizedBox(width: 8),
+                          // Status once, as plain text: the more urgent of
+                          // distance and time (colour stays on the icon).
+                          Text(
+                            trigger.byKm
+                                ? (left < 0
+                                      ? l10n.kmOverdueShort('${-left}')
+                                      : l10n.kmRemainingShort('$left'))
+                                : (left < 0
+                                      ? l10n.daysOverdue('${-left}')
+                                      : l10n.daysLeft('$left')),
+                            style: TextStyle(
+                              fontSize: 11,
+                              fontWeight: FontWeight.w700,
+                              color: urgency == ScheduleUrgency.safe
+                                  ? context.textSecondary
+                                  : context.textPrimary,
+                            ).tabular,
                           ),
                         ],
                       ),
@@ -1688,7 +1696,7 @@ class GarageDashboardScreen extends ConsumerWidget {
                         fontWeight: FontWeight.w600,
                         color: context.textSecondary,
                       ),
-                      maxLines: 1,
+                      maxLines: 2,
                       overflow: TextOverflow.ellipsis,
                     ),
                   ),
@@ -1706,6 +1714,78 @@ class GarageDashboardScreen extends ConsumerWidget {
               ),
             ],
           ),
+        ),
+      ),
+    );
+  }
+}
+
+/// Tracks vertical scrolling below it and tells [_HidingFab] whether the
+/// Quick Actions button should show.
+class _FabScrollScope extends StatefulWidget {
+  const _FabScrollScope({required this.child});
+
+  final Widget child;
+
+  @override
+  State<_FabScrollScope> createState() => _FabScrollScopeState();
+}
+
+class _FabScrollScopeState extends State<_FabScrollScope> {
+  final _visible = ValueNotifier<bool>(true);
+
+  @override
+  void dispose() {
+    _visible.dispose();
+    super.dispose();
+  }
+
+  bool _onScroll(UserScrollNotification n) {
+    if (n.metrics.axis != Axis.vertical) return false;
+    final atEnd = n.metrics.extentAfter <= 0;
+    if (n.direction == ScrollDirection.reverse && !atEnd) {
+      _visible.value = false;
+    } else if (n.direction == ScrollDirection.forward || atEnd) {
+      _visible.value = true;
+    }
+    return false;
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return NotificationListener<UserScrollNotification>(
+      onNotification: _onScroll,
+      child: _FabVisibility(notifier: _visible, child: widget.child),
+    );
+  }
+}
+
+class _FabVisibility extends InheritedNotifier<ValueNotifier<bool>> {
+  const _FabVisibility({required super.notifier, required super.child});
+
+  static bool of(BuildContext context) =>
+      context.dependOnInheritedWidgetOfExactType<_FabVisibility>()?.notifier?.value ?? true;
+}
+
+class _HidingFab extends StatelessWidget {
+  const _HidingFab({required this.child});
+
+  final Widget child;
+
+  @override
+  Widget build(BuildContext context) {
+    final visible = _FabVisibility.of(context);
+    final duration = AppMotion.resolve(context, const Duration(milliseconds: 200));
+    return IgnorePointer(
+      ignoring: !visible,
+      child: AnimatedSlide(
+        offset: visible ? Offset.zero : const Offset(0, 1.5),
+        duration: duration,
+        curve: Curves.easeOutCubic,
+        child: AnimatedOpacity(
+          opacity: visible ? 1 : 0,
+          duration: duration,
+          child: child,
         ),
       ),
     );

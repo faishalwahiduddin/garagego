@@ -1733,4 +1733,74 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get contactEmailCopied => 'Email address copied: contact@faishal.id';
+
+  @override
+  String get validationOdometerRequired => 'Enter the odometer reading';
+
+  @override
+  String get validationCostRequired => 'Enter the total cost (0 if free)';
+
+  @override
+  String get validationPriceRequired => 'Enter the price per litre';
+
+  @override
+  String validationOdometerAbove(String km) {
+    return 'Odometer must be above $km km';
+  }
+
+  @override
+  String validationOdometerBelow(String km) {
+    return 'Odometer must be below $km km';
+  }
+
+  @override
+  String validationOdometerAtLeast(String km) {
+    return 'Odometer must be at least $km km';
+  }
+
+  @override
+  String validationOdometerAtMost(String km) {
+    return 'Odometer must be at most $km km';
+  }
+
+  @override
+  String get itemDeleted => 'Deleted';
+
+  @override
+  String get undo => 'Undo';
+
+  @override
+  String get fuelEditTitle => 'Edit Fuel Log';
+
+  @override
+  String get fuelDate => 'Fill-up Date';
+
+  @override
+  String get fuelLogUpdated => 'Fuel log updated';
+
+  @override
+  String get serviceEditTitle => 'Edit Service Log';
+
+  @override
+  String get serviceLogUpdated => 'Service log updated';
+
+  @override
+  String timezoneChanged(String zone) {
+    return 'Time zone: $zone';
+  }
+
+  @override
+  String inspectionQuickSubtitle(String count) {
+    return '$count-point road safety check for trips and daily commutes';
+  }
+
+  @override
+  String inspectionEmptyBody(String count) {
+    return 'Run a $count-point check: tyres, brakes, oil, lights and battery.';
+  }
+
+  @override
+  String deleteVehicleConfirm(String name) {
+    return 'Delete $name with all its service, fuel, schedule and document records? This cannot be undone.';
+  }
 }

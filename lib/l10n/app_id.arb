@@ -1540,5 +1540,79 @@
   "contactEmailCopied": "Alamat email disalin: contact@faishal.id",
   "@contactEmailCopied": {
     "description": "Snackbar shown when the contact email is copied because no mail app could be opened"
+  },
+  "validationOdometerRequired": "Masukkan angka odometer",
+  "validationCostRequired": "Masukkan total biaya (0 jika gratis)",
+  "validationPriceRequired": "Masukkan harga per liter",
+  "validationOdometerAbove": "Odometer harus di atas {km} km",
+  "@validationOdometerAbove": {
+    "placeholders": {
+      "km": {
+        "type": "String"
+      }
+    }
+  },
+  "validationOdometerBelow": "Odometer harus di bawah {km} km",
+  "@validationOdometerBelow": {
+    "placeholders": {
+      "km": {
+        "type": "String"
+      }
+    }
+  },
+  "validationOdometerAtLeast": "Odometer minimal {km} km",
+  "@validationOdometerAtLeast": {
+    "placeholders": {
+      "km": {
+        "type": "String"
+      }
+    }
+  },
+  "validationOdometerAtMost": "Odometer maksimal {km} km",
+  "@validationOdometerAtMost": {
+    "placeholders": {
+      "km": {
+        "type": "String"
+      }
+    }
+  },
+  "itemDeleted": "Dihapus",
+  "undo": "Urungkan",
+  "fuelEditTitle": "Ubah Catatan BBM",
+  "fuelDate": "Tanggal Pengisian",
+  "fuelLogUpdated": "Catatan BBM diperbarui",
+  "serviceEditTitle": "Ubah Catatan Servis",
+  "serviceLogUpdated": "Catatan servis diperbarui",
+  "timezoneChanged": "Zona waktu: {zone}",
+  "@timezoneChanged": {
+    "placeholders": {
+      "zone": {
+        "type": "String"
+      }
+    }
+  },
+  "inspectionQuickSubtitle": "Cek keselamatan {count} poin untuk mudik & harian",
+  "@inspectionQuickSubtitle": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "inspectionEmptyBody": "Lakukan inspeksi {count} poin: ban, rem, oli, lampu, dan aki.",
+  "@inspectionEmptyBody": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "deleteVehicleConfirm": "Hapus {name} beserta semua catatan servis, BBM, jadwal, dan dokumennya? Tindakan ini tidak bisa dibatalkan.",
+  "@deleteVehicleConfirm": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
   }
 }

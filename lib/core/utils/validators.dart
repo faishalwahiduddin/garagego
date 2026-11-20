@@ -29,7 +29,10 @@ class AppValidators {
 
   /// Validates odometer reading (must be >= 0 and reasonable)
   static String? validateOdometer(int? km, {int? previousKm}) {
-    if (km == null || km < 0) {
+    if (km == null) {
+      return 'validationOdometerRequired';
+    }
+    if (km < 0) {
       return 'validationOdometerNegative';
     }
     if (km > AppConstants.maxOdometerKm) {
@@ -43,7 +46,10 @@ class AppValidators {
 
   /// Validates service cost (must be >= 0)
   static String? validateCost(double? cost) {
-    if (cost == null || cost < 0) {
+    if (cost == null) {
+      return 'validationCostRequired';
+    }
+    if (cost < 0) {
       return 'validationCostNegative';
     }
     return null;
@@ -59,4 +65,64 @@ class AppValidators {
     }
     return null;
   }
+
+  /// Validates a fuel unit price: required and above zero.
+  static String? validateFuelPrice(double? price) {
+    if (price == null || price <= 0) {
+      return 'validationPriceRequired';
+    }
+    return null;
+  }
+
+  /// Odometer readings an entry dated [date] must sit between: the nearest
+  /// earlier and nearest later entries of the same vehicle ([excludeId] is the
+  /// entry being edited). Entries on the same instant count as earlier.
+  static OdometerBounds odometerBounds(
+    Iterable<OdometerEntry> entries,
+    DateTime date, {
+    String? excludeId,
+  }) {
+    OdometerEntry? before;
+    OdometerEntry? after;
+    for (final e in entries) {
+      if (e.id == excludeId) continue;
+      if (!e.date.isAfter(date)) {
+        if (before == null || e.date.isAfter(before.date)) before = e;
+      } else {
+        if (after == null || e.date.isBefore(after.date)) after = e;
+      }
+    }
+    return OdometerBounds(above: before?.odometer, below: after?.odometer);
+  }
+
+  /// Checks [km] against [bounds]. Fill-ups are [strict] (a second fill at the
+  /// same reading would fake a 0 km interval); services may share a reading.
+  /// Returns `validationOdometerAbove` / `validationOdometerBelow` (strict) or
+  /// `validationOdometerAtLeast` / `validationOdometerAtMost`; the caller
+  /// formats the bound into the message.
+  static String? validateOdometerInHistory(
+    int km,
+    OdometerBounds bounds, {
+    bool strict = true,
+  }) {
+    final above = bounds.above;
+    final below = bounds.below;
+    if (above != null && (strict ? km <= above : km < above)) {
+      return strict ? 'validationOdometerAbove' : 'validationOdometerAtLeast';
+    }
+    if (below != null && (strict ? km >= below : km > below)) {
+      return strict ? 'validationOdometerBelow' : 'validationOdometerAtMost';
+    }
+    return null;
+  }
+}
+
+/// One dated odometer reading (fuel or service log) for [AppValidators.odometerBounds].
+typedef OdometerEntry = ({String id, DateTime date, int odometer});
+
+/// Neighbouring readings around a dated entry; null when there is none.
+class OdometerBounds {
+  final int? above;
+  final int? below;
+  const OdometerBounds({this.above, this.below});
 }

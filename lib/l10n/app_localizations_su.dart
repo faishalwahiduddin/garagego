@@ -1737,4 +1737,74 @@ class AppLocalizationsSu extends AppLocalizations {
 
   @override
   String get contactEmailCopied => 'Alamat surélék disalin: contact@faishal.id';
+
+  @override
+  String get validationOdometerRequired => 'Lebetkeun angka odometer';
+
+  @override
+  String get validationCostRequired => 'Lebetkeun total biaya (0 upami gratis)';
+
+  @override
+  String get validationPriceRequired => 'Lebetkeun harga per liter';
+
+  @override
+  String validationOdometerAbove(String km) {
+    return 'Odometer kedah langkung ti $km km';
+  }
+
+  @override
+  String validationOdometerBelow(String km) {
+    return 'Odometer kedah kirang ti $km km';
+  }
+
+  @override
+  String validationOdometerAtLeast(String km) {
+    return 'Odometer sahenteuna $km km';
+  }
+
+  @override
+  String validationOdometerAtMost(String km) {
+    return 'Odometer pangluhurna $km km';
+  }
+
+  @override
+  String get itemDeleted => 'Parantos dihapus';
+
+  @override
+  String get undo => 'Bolaykeun';
+
+  @override
+  String get fuelEditTitle => 'Robih Catetan BBM';
+
+  @override
+  String get fuelDate => 'Tanggal Ngeusian';
+
+  @override
+  String get fuelLogUpdated => 'Catetan BBM parantos diénggalan';
+
+  @override
+  String get serviceEditTitle => 'Robih Catetan Servis';
+
+  @override
+  String get serviceLogUpdated => 'Catetan servis parantos diénggalan';
+
+  @override
+  String timezoneChanged(String zone) {
+    return 'Zona waktos: $zone';
+  }
+
+  @override
+  String inspectionQuickSubtitle(String count) {
+    return 'Cék kasalametan $count poin kanggo mudik & sapopoé';
+  }
+
+  @override
+  String inspectionEmptyBody(String count) {
+    return 'Laksanakeun inspéksi $count poin: ban, rem, oli, lampu, jeung aki.';
+  }
+
+  @override
+  String deleteVehicleConfirm(String name) {
+    return 'Hapus $name sareng sadaya catetan servis, BBM, jadwal, sareng dokumenna? Ieu teu tiasa dibolaykeun.';
+  }
 }

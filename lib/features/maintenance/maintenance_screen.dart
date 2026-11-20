@@ -9,11 +9,14 @@ import '../../core/providers/app_providers.dart';
 import '../../core/providers/timezone_provider.dart';
 import '../../core/ui/form_sheet_body.dart';
 import '../../core/ui/press_scale.dart';
+import '../../core/ui/undo_snackbar.dart';
+import '../../core/utils/number_input.dart';
 import '../../core/utils/app_timezone.dart';
 import '../../core/utils/l10n_helpers.dart';
 import '../../core/utils/validators.dart';
 import 'add_schedule_sheet.dart';
 import 'inspection_sheet.dart';
+import 'service_log_sheet.dart';
 import '../../core/ui/fleet_sheet.dart';
 
 class MaintenanceScreen extends ConsumerStatefulWidget {
@@ -65,167 +68,34 @@ class _MaintenanceScreenState extends ConsumerState<MaintenanceScreen> with Sing
     super.dispose();
   }
 
-  void _showAddServiceDialog(BuildContext context, WidgetRef ref, Vehicle active) {
-    final l10n = AppLocalizations.of(context)!;
-    final formKey = GlobalKey<FormState>();
-    final titleController = TextEditingController();
-    final odoController = TextEditingController(text: active.currentOdometer.toString());
-    final costController = TextEditingController();
-    final notesController = TextEditingController();
-    final workshopController = TextEditingController();
-    String category = l10n.mtCatGeneral;
-    bool isOilChange = true;
-    DateTime serviceDate = DateTime.now();
-
-    final categories = [
-      l10n.mtCatGeneral,
-      l10n.mtCatOilFilter,
-      l10n.mtCatBrakes,
-      l10n.mtCatTires,
-      l10n.mtCatElectrical,
-      l10n.mtCatEngine,
-      l10n.mtCatOther,
-    ];
-
+  void _showServiceSheet(BuildContext context, Vehicle active, {ServiceLog? initial}) {
     showFleetSheet<void>(
       context: context,
       isScrollControlled: true,
       backgroundColor: context.cardBg,
-      builder: (ctx) => StatefulBuilder(
-        builder: (context, setState) => FormSheetBody(
-          title: Text(
-            l10n.catatServisBaru,
-            style: TextStyle(
-              color: context.textPrimary,
-              fontSize: 17,
-              fontWeight: FontWeight.w700,
-              letterSpacing: -0.4,
-            ),
-          ),
-          content: SingleChildScrollView(
-            physics: const BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
-            child: Form(
-              key: formKey,
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [
-                  TextFormField(
-                    controller: titleController,
-                    decoration: InputDecoration(
-                      labelText: l10n.pekerjaanServis,
-                      hintText: l10n.serviceTitleHint,
-                    ),
-                    validator: (val) => val == null || val.trim().isEmpty
-                        ? l10n.validationServiceNameRequired
-                        : null,
-                  ),
-                  const SizedBox(height: 12),
-                  DropdownButtonFormField<String>(
-                    initialValue: category,
-                    decoration: InputDecoration(labelText: l10n.kategori),
-                    dropdownColor: context.cardBg,
-                    items: categories
-                        .map((c) => DropdownMenuItem(
-                              value: c,
-                              child: Text(c, style: TextStyle(color: context.textPrimary, fontSize: 13)),
-                            ))
-                        .toList(),
-                    onChanged: (val) {
-                      if (val != null) {
-                        setState(() {
-                          category = val;
-                          if (val == l10n.mtCatOilFilter) isOilChange = true;
-                        });
-                      }
-                    },
-                  ),
-                  const SizedBox(height: 12),
-                  TextFormField(
-                    controller: odoController,
-                    keyboardType: TextInputType.number,
-                    decoration: InputDecoration(
-                      labelText: l10n.kilometerOdometerKm,
-                      hintText: '25000',
-                    ),
-                    validator: (val) => mapValidationError(AppValidators.validateOdometer(int.tryParse(val ?? '')), l10n),
-                  ),
-                  const SizedBox(height: 12),
-                  TextFormField(
-                    controller: costController,
-                    keyboardType: TextInputType.number,
-                    decoration: InputDecoration(
-                      labelText: l10n.biayaTotalRp,
-                      hintText: '450000',
-                    ),
-                    validator: (val) => mapValidationError(AppValidators.validateCost(double.tryParse(val ?? '')), l10n),
-                  ),
-                  const SizedBox(height: 12),
-                  TextFormField(
-                    controller: workshopController,
-                    decoration: InputDecoration(
-                      labelText: l10n.namaBengkelToko,
-                      hintText: l10n.workshopHint,
-                    ),
-                  ),
-                  const SizedBox(height: 12),
-                  TextFormField(
-                    controller: notesController,
-                    maxLines: 2,
-                    decoration: InputDecoration(
-                      labelText: l10n.catatanSparepartPengerjaan,
-                      hintText: l10n.rincianPartYangDiganti,
-                    ),
-                  ),
-                  const SizedBox(height: 12),
-                  SwitchListTile(
-                    contentPadding: EdgeInsets.zero,
-                    title: Text(
-                      l10n.termasukGantiOli,
-                      style: TextStyle(color: context.textPrimary, fontSize: 13, fontWeight: FontWeight.w600),
-                    ),
-                    value: isOilChange,
-                    activeThumbColor: AppColors.primary,
-                    onChanged: (val) => setState(() => isOilChange = val),
-                  ),
-                ],
-              ),
-            ),
-          ),
-          actions: [
-            TextButton(
-              onPressed: () => Navigator.pop(ctx),
-              child: Text(l10n.batal, style: TextStyle(color: context.textSecondary)),
-            ),
-            ElevatedButton(
-              onPressed: () {
-                if (!formKey.currentState!.validate()) return;
-
-                final log = ServiceLog(
-                  id: 'serv_${DateTime.now().millisecondsSinceEpoch}',
-                  vehicleId: active.id,
-                  date: serviceDate,
-                  odometer: int.parse(odoController.text.trim()),
-                  title: titleController.text.trim(),
-                  cost: double.parse(costController.text.trim()),
-                  notes: notesController.text.trim(),
-                  isOilChange: isOilChange,
-                  workshop: workshopController.text.trim(),
-                  category: category,
-                );
-
-                ref.read(serviceLogsProvider.notifier).addLog(log);
-                Navigator.pop(ctx);
-                ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(content: Text(l10n.catatanServisBerhasilDitambahk)),
-                );
-              },
-              child: Text(l10n.simpan),
-            ),
-          ],
-        ),
-      ),
+      builder: (_) => ServiceLogSheet(vehicle: active, initial: initial),
     );
+  }
+
+  void _deleteServiceLog(BuildContext context, ServiceLog log) {
+    final notifier = ref.read(serviceLogsProvider.notifier);
+    final index = ref.read(serviceLogsProvider).indexWhere((l) => l.id == log.id);
+    notifier.deleteLog(log.id);
+    showUndoSnackBar(context, onUndo: () => notifier.restoreLog(log, index));
+  }
+
+  void _deleteSchedule(BuildContext context, MaintenanceSchedule schedule) {
+    final notifier = ref.read(maintenanceSchedulesProvider.notifier);
+    final index = ref.read(maintenanceSchedulesProvider).indexWhere((s) => s.id == schedule.id);
+    notifier.deleteSchedule(schedule.id);
+    showUndoSnackBar(context, onUndo: () => notifier.restoreSchedule(schedule, index));
+  }
+
+  void _deleteInspection(BuildContext context, InspectionChecklist checklist) {
+    final notifier = ref.read(inspectionChecklistsProvider.notifier);
+    final index = ref.read(inspectionChecklistsProvider).indexWhere((c) => c.id == checklist.id);
+    notifier.deleteChecklist(checklist.id);
+    showUndoSnackBar(context, onUndo: () => notifier.restoreChecklist(checklist, index));
   }
 
   void _showMarkDoneDialog(BuildContext context, WidgetRef ref, MaintenanceSchedule schedule, Vehicle active) {
@@ -266,6 +136,7 @@ class _MaintenanceScreenState extends ConsumerState<MaintenanceScreen> with Sing
                 TextFormField(
                   controller: odoController,
                   keyboardType: TextInputType.number,
+                  inputFormatters: NumberInput.digits,
                   decoration: InputDecoration(labelText: l10n.odometerPengerjaanKm),
                   validator: (val) => mapValidationError(AppValidators.validateOdometer(int.tryParse(val ?? '')), l10n),
                 ),
@@ -273,6 +144,7 @@ class _MaintenanceScreenState extends ConsumerState<MaintenanceScreen> with Sing
                 TextFormField(
                   controller: costController,
                   keyboardType: TextInputType.number,
+                  inputFormatters: NumberInput.digits,
                   decoration: InputDecoration(labelText: l10n.totalBiayaRp),
                   validator: (val) => mapValidationError(AppValidators.validateCost(double.tryParse(val ?? '')), l10n),
                 ),
@@ -583,140 +455,24 @@ class _MaintenanceScreenState extends ConsumerState<MaintenanceScreen> with Sing
                   itemCount: filtered.length,
                   itemBuilder: (context, index) {
                     final item = filtered[index];
-                    final urgency = item.urgency(active.currentOdometer);
-                    final kmLeft = item.kmRemaining(active.currentOdometer);
-                    final daysLeft = item.daysRemaining;
-
-                    Color urgencyColor;
-                    if (urgency == ScheduleUrgency.overdue) {
-                      urgencyColor = context.readable(AppColors.danger);
-                    } else if (urgency == ScheduleUrgency.dueSoon) {
-                      urgencyColor = context.readable(AppColors.warning);
-                    } else {
-                      urgencyColor = context.readable(AppColors.success);
-                    }
-
                     return Padding(
                       padding: const EdgeInsets.only(bottom: 12),
-                      child: PressScale(
-                        scale: 0.98,
-                        child: Card(
-                          child: Padding(
-                            padding: const EdgeInsets.all(16),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Row(
-                                  children: [
-                                    Container(
-                                      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-                                      decoration: BoxDecoration(
-                                        color: urgencyColor.withValues(alpha: 0.12),
-                                        borderRadius: BorderRadius.circular(6),
-                                      ),
-                                      child: Text(
-                                        urgency.getLocalizedLabel(context),
-                                        style: TextStyle(fontSize: 11, fontWeight: FontWeight.w800, color: urgencyColor),
-                                      ),
-                                    ),
-                                    const SizedBox(width: 8),
-                                    Text(
-                                      item.category,
-                                      style: TextStyle(fontSize: 12, fontWeight: FontWeight.w500, color: context.textSecondary),
-                                    ),
-                                    const Spacer(),
-                                    IconButton(
-                                      icon: Icon(Icons.edit_outlined, size: 18, color: context.textSecondary),
-                                      visualDensity: VisualDensity.compact,
-                                      onPressed: () {
-                                        showFleetSheet(
-                                          context: context,
-                                          useRootNavigator: true,
-                                          isScrollControlled: true,
-                                          backgroundColor: context.cardBg,
-                                          shape: const RoundedRectangleBorder(
-                                            borderRadius: BorderRadius.vertical(top: Radius.circular(24)),
-                                          ),
-                                          builder: (_) => AddScheduleSheet(vehicle: active, initialSchedule: item),
-                                        );
-                                      },
-                                    ),
-                                    IconButton(
-                                      icon: const Icon(Icons.delete_outline, size: 18, color: AppColors.danger),
-                                      visualDensity: VisualDensity.compact,
-                                      onPressed: () {
-                                        ref.read(maintenanceSchedulesProvider.notifier).deleteSchedule(item.id);
-                                      },
-                                    ),
-                                  ],
-                                ),
-                                const SizedBox(height: 8),
-                                Text(
-                                  item.title,
-                                  style: TextStyle(
-                                    fontSize: 15,
-                                    fontWeight: FontWeight.w700,
-                                    color: context.textPrimary,
-                                    letterSpacing: -0.3,
-                                  ),
-                                ),
-                                const SizedBox(height: 6),
-                                Row(
-                                  children: [
-                                    Expanded(
-                                      child: Text(
-                                        kmLeft < 0
-                                            ? l10n.kmOverdue('${-kmLeft}')
-                                            : l10n.kmRemaining('$kmLeft'),
-                                        style: TextStyle(fontSize: 12, fontWeight: FontWeight.w700, color: urgencyColor),
-                                      ),
-                                    ),
-                                    Text(
-                                      daysLeft < 0
-                                          ? l10n.daysOverdue('${-daysLeft}')
-                                          : l10n.daysLeft('$daysLeft'),
-                                      style: TextStyle(
-                                        fontSize: 12,
-                                        fontWeight: FontWeight.w600,
-                                        color: daysLeft <= 14 ? urgencyColor : context.textSecondary,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                                const SizedBox(height: 8),
-                                Text(
-                                  l10n.scheduleIntervalSummary(
-                                    NumberFormat('#,###', 'id_ID')
-                                        .format(item.intervalKm),
-                                    '${item.intervalMonths}',
-                                    '${item.lastPerformedOdometer}',
-                                    AppTimeZone.formatDate(
-                                      item.lastPerformedDate,
-                                      loc,
-                                      locale: localeCode,
-                                    ),
-                                  ),
-                                  style: TextStyle(fontSize: 11, color: context.textMuted),
-                                ),
-                                Divider(color: context.borderColor, height: 20),
-                                Align(
-                                  alignment: Alignment.centerRight,
-                                  child: PressScale(
-                                    scale: 0.95,
-                                    child: TextButton.icon(
-                                      onPressed: () => _showMarkDoneDialog(context, ref, item, active),
-                                      icon: const Icon(Icons.check_circle_outline, size: 16, color: AppColors.accent),
-                                      label: Text(
-                                        l10n.tandaiSelesaiReset,
-                                        style: TextStyle(color: context.readable(AppColors.accent), fontSize: 12, fontWeight: FontWeight.w700),
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
+                      child: _ScheduleCard(
+                        schedule: item,
+                        currentOdometer: active.currentOdometer,
+                        lastDoneLabel: AppTimeZone.formatDate(item.lastPerformedDate, loc, locale: localeCode),
+                        onEdit: () => showFleetSheet(
+                          context: context,
+                          useRootNavigator: true,
+                          isScrollControlled: true,
+                          backgroundColor: context.cardBg,
+                          shape: const RoundedRectangleBorder(
+                            borderRadius: BorderRadius.vertical(top: Radius.circular(24)),
                           ),
+                          builder: (_) => AddScheduleSheet(vehicle: active, initialSchedule: item),
                         ),
+                        onDelete: () => _deleteSchedule(context, item),
+                        onMarkDone: () => _showMarkDoneDialog(context, ref, item, active),
                       ),
                     );
                   },
@@ -737,7 +493,9 @@ class _MaintenanceScreenState extends ConsumerState<MaintenanceScreen> with Sing
           l.category.toLowerCase().contains(_serviceSearch.toLowerCase()) ||
           l.workshop.toLowerCase().contains(_serviceSearch.toLowerCase()) ||
           l.notes.toLowerCase().contains(_serviceSearch.toLowerCase());
-    }).toList();
+    }).toList()
+      // Back-dated entries slot into place: newest service first.
+      ..sort((a, b) => b.date.compareTo(a.date));
 
     return Column(
       children: [
@@ -761,7 +519,7 @@ class _MaintenanceScreenState extends ConsumerState<MaintenanceScreen> with Sing
                 child: IconButton.filled(
                   icon: const Icon(Icons.add),
                   tooltip: l10n.catatServisBaru,
-                  onPressed: () => _showAddServiceDialog(context, ref, active),
+                  onPressed: () => _showServiceSheet(context, active),
                 ),
               ),
             ],
@@ -791,7 +549,7 @@ class _MaintenanceScreenState extends ConsumerState<MaintenanceScreen> with Sing
                       PressScale(
                         scale: 0.97,
                         child: ElevatedButton.icon(
-                          onPressed: () => _showAddServiceDialog(context, ref, active),
+                          onPressed: () => _showServiceSheet(context, active),
                           icon: const Icon(Icons.add, size: 16),
                           label: Text(l10n.catatServisBaru),
                         ),
@@ -805,11 +563,16 @@ class _MaintenanceScreenState extends ConsumerState<MaintenanceScreen> with Sing
                   itemCount: filtered.length,
                   itemBuilder: (context, index) {
                     final log = filtered[index];
+                    final meta = log.workshop.isNotEmpty
+                        ? '${log.category}$kDotSeparator${log.workshop}'
+                        : log.category;
                     return Padding(
                       padding: const EdgeInsets.only(bottom: 12),
-                      child: PressScale(
-                        scale: 0.98,
-                        child: Card(
+                      child: Card(
+                        clipBehavior: Clip.antiAlias,
+                        child: InkWell(
+                          // Tap a row to edit it (date, odometer, cost...).
+                          onTap: () => _showServiceSheet(context, active, initial: log),
                           child: Padding(
                             padding: const EdgeInsets.all(16),
                             child: Column(
@@ -817,38 +580,25 @@ class _MaintenanceScreenState extends ConsumerState<MaintenanceScreen> with Sing
                               children: [
                                 Row(
                                   children: [
-                                    Container(
-                                      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-                                      decoration: BoxDecoration(
-                                        color: AppColors.primary.withValues(alpha: 0.1),
-                                        borderRadius: BorderRadius.circular(6),
-                                      ),
+                                    Expanded(
                                       child: Text(
-                                        log.category,
-                                        style: TextStyle(fontSize: 11, fontWeight: FontWeight.w700, color: context.readable(AppColors.primary)),
+                                        meta,
+                                        style: TextStyle(fontSize: 12, color: context.textSecondary),
+                                        maxLines: 2,
+                                        overflow: TextOverflow.ellipsis,
                                       ),
                                     ),
-                                    if (log.workshop.isNotEmpty) ...[
-                                      const SizedBox(width: 8),
-                                      Expanded(
-                                        child: Text(
-                                          log.workshop,
-                                          style: TextStyle(fontSize: 12, color: context.textSecondary),
-                                          maxLines: 1,
-                                          overflow: TextOverflow.ellipsis,
-                                        ),
-                                      ),
-                                    ] else
-                                      const Spacer(),
+                                    const SizedBox(width: 8),
                                     Text(
                                       AppTimeZone.formatDate(log.date, loc, locale: localeCode),
                                       style: TextStyle(fontSize: 12, color: context.textSecondary).tabular,
                                     ),
                                     IconButton(
-                                      icon: const Icon(Icons.delete_outline, size: 18, color: AppColors.danger),
+                                      icon: Icon(Icons.delete_outline, size: 20, color: context.textSecondary),
+                                      tooltip: l10n.delete,
                                       visualDensity: VisualDensity.compact,
                                       onPressed: () {
-                                        ref.read(serviceLogsProvider.notifier).deleteLog(log.id);
+                                        _deleteServiceLog(context, log);
                                       },
                                     ),
                                   ],
@@ -962,7 +712,10 @@ class _MaintenanceScreenState extends ConsumerState<MaintenanceScreen> with Sing
                       ),
                       const SizedBox(height: 4),
                       Text(
-                        l10n.lakukanInspeksi10PoinBanRemOli,
+                        l10n.inspectionEmptyBody(
+                          '${InspectionChecklist.generateDefaultItems(active.type, l10n).length}',
+                        ),
+                        textAlign: TextAlign.center,
                         style: TextStyle(color: context.textSecondary, fontSize: 12),
                       ),
                       const SizedBox(height: 16),
@@ -1017,31 +770,33 @@ class _MaintenanceScreenState extends ConsumerState<MaintenanceScreen> with Sing
                               children: [
                                 Row(
                                   children: [
-                                    Container(
-                                      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-                                      decoration: BoxDecoration(
-                                        color: badgeColor.withValues(alpha: 0.12),
-                                        borderRadius: BorderRadius.circular(6),
-                                      ),
+                                    // Colour lives on the icon; the result reads as neutral text.
+                                    Icon(
+                                      pct >= 90 ? Icons.check_circle_outline : Icons.error_outline,
+                                      size: 18,
+                                      color: badgeColor,
+                                    ),
+                                    const SizedBox(width: 6),
+                                    Expanded(
                                       child: Text(
                                         l10n.inspPassedCount(
                                           pct.toStringAsFixed(0),
                                           '${item.passedCount}',
                                           '${item.totalCount}',
                                         ),
-                                        style: TextStyle(fontSize: 11, fontWeight: FontWeight.w700, color: badgeColor).tabular,
+                                        style: TextStyle(fontSize: 12, fontWeight: FontWeight.w700, color: context.textPrimary).tabular,
                                       ),
                                     ),
-                                    const Spacer(),
                                     Text(
                                       AppTimeZone.formatDate(item.date, loc, locale: localeCode),
                                       style: TextStyle(fontSize: 12, color: context.textSecondary).tabular,
                                     ),
                                     IconButton(
-                                      icon: const Icon(Icons.delete_outline, size: 18, color: AppColors.danger),
+                                      icon: Icon(Icons.delete_outline, size: 20, color: context.textSecondary),
+                                      tooltip: l10n.delete,
                                       visualDensity: VisualDensity.compact,
                                       onPressed: () {
-                                        ref.read(inspectionChecklistsProvider.notifier).deleteChecklist(item.id);
+                                        _deleteInspection(context, item);
                                       },
                                     ),
                                   ],
@@ -1075,6 +830,143 @@ class _MaintenanceScreenState extends ConsumerState<MaintenanceScreen> with Sing
                 ),
         ),
       ],
+    );
+  }
+}
+
+/// Maintenance schedule card: title, category as secondary text, ONE status
+/// line (coloured icon + neutral text), interval summary and a single
+/// "Mark done" action.
+class _ScheduleCard extends StatelessWidget {
+  const _ScheduleCard({
+    required this.schedule,
+    required this.currentOdometer,
+    required this.lastDoneLabel,
+    required this.onEdit,
+    required this.onDelete,
+    required this.onMarkDone,
+  });
+
+  final MaintenanceSchedule schedule;
+  final int currentOdometer;
+  final String lastDoneLabel;
+  final VoidCallback onEdit;
+  final VoidCallback onDelete;
+  final VoidCallback onMarkDone;
+
+  @override
+  Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
+    final urgency = schedule.urgency(currentOdometer);
+    final trigger = schedule.mostUrgentTrigger(currentOdometer);
+    final km = NumberFormat('#,###', 'id_ID');
+    final left = trigger.remaining;
+    final statusText = trigger.byKm
+        ? (left < 0 ? l10n.kmOverdue(km.format(-left)) : l10n.kmRemaining(km.format(left)))
+        : (left < 0 ? l10n.daysOverdue('${-left}') : l10n.daysLeft('$left'));
+    final (IconData icon, Color iconColor) = switch (urgency) {
+      ScheduleUrgency.overdue => (Icons.error_outline, context.readable(AppColors.danger)),
+      ScheduleUrgency.dueSoon => (Icons.schedule, context.readable(AppColors.warning)),
+      ScheduleUrgency.safe => (Icons.check_circle_outline, context.readable(AppColors.success)),
+    };
+    final isAlert = urgency != ScheduleUrgency.safe;
+
+    return Card(
+      child: Padding(
+        padding: const EdgeInsets.fromLTRB(16, 8, 4, 8),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Expanded(
+                  child: Padding(
+                    padding: const EdgeInsets.only(top: 8),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          schedule.title,
+                          style: TextStyle(
+                            fontSize: 15,
+                            fontWeight: FontWeight.w700,
+                            color: context.textPrimary,
+                            letterSpacing: -0.3,
+                          ),
+                        ),
+                        const SizedBox(height: 2),
+                        Text(
+                          schedule.category,
+                          style: TextStyle(fontSize: 12, color: context.textSecondary),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                IconButton(
+                  icon: Icon(Icons.edit_outlined, size: 20, color: context.textSecondary),
+                  tooltip: l10n.edit,
+                  onPressed: onEdit,
+                ),
+                IconButton(
+                  icon: Icon(Icons.delete_outline, size: 20, color: context.textSecondary),
+                  tooltip: l10n.delete,
+                  onPressed: onDelete,
+                ),
+              ],
+            ),
+            const SizedBox(height: 8),
+            Padding(
+              padding: const EdgeInsets.only(right: 12),
+              child: Row(
+                children: [
+                  Icon(icon, size: 18, color: iconColor, semanticLabel: urgency.getLocalizedLabel(context)),
+                  const SizedBox(width: 6),
+                  Expanded(
+                    child: Text(
+                      statusText,
+                      style: TextStyle(
+                        fontSize: 13,
+                        fontWeight: isAlert ? FontWeight.w700 : FontWeight.w500,
+                        color: isAlert ? context.textPrimary : context.textSecondary,
+                      ).tabular,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            const SizedBox(height: 6),
+            Padding(
+              padding: const EdgeInsets.only(right: 12),
+              child: Text(
+                l10n.scheduleIntervalSummary(
+                  km.format(schedule.intervalKm),
+                  '${schedule.intervalMonths}',
+                  km.format(schedule.lastPerformedOdometer),
+                  lastDoneLabel,
+                ),
+                style: TextStyle(fontSize: 11, color: context.textMuted),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(right: 12),
+              child: Divider(color: context.borderColor, height: 16),
+            ),
+            Align(
+              alignment: Alignment.centerRight,
+              child: TextButton.icon(
+                onPressed: onMarkDone,
+                icon: const Icon(Icons.check_circle_outline, size: 16, color: AppColors.accent),
+                label: Text(
+                  l10n.tandaiSelesai,
+                  style: TextStyle(color: context.readable(AppColors.accent), fontSize: 12, fontWeight: FontWeight.w700),
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }

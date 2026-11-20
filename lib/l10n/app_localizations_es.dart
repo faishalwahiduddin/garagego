@@ -1746,4 +1746,76 @@ class AppLocalizationsEs extends AppLocalizations {
   @override
   String get contactEmailCopied =>
       'Dirección de correo copiada: contact@faishal.id';
+
+  @override
+  String get validationOdometerRequired =>
+      'Introduce la lectura del cuentakilómetros';
+
+  @override
+  String get validationCostRequired =>
+      'Introduce el coste total (0 si fue gratis)';
+
+  @override
+  String get validationPriceRequired => 'Introduce el precio por litro';
+
+  @override
+  String validationOdometerAbove(String km) {
+    return 'El cuentakilómetros debe superar $km km';
+  }
+
+  @override
+  String validationOdometerBelow(String km) {
+    return 'El cuentakilómetros debe ser inferior a $km km';
+  }
+
+  @override
+  String validationOdometerAtLeast(String km) {
+    return 'El cuentakilómetros debe ser al menos $km km';
+  }
+
+  @override
+  String validationOdometerAtMost(String km) {
+    return 'El cuentakilómetros debe ser como máximo $km km';
+  }
+
+  @override
+  String get itemDeleted => 'Eliminado';
+
+  @override
+  String get undo => 'Deshacer';
+
+  @override
+  String get fuelEditTitle => 'Editar repostaje';
+
+  @override
+  String get fuelDate => 'Fecha del repostaje';
+
+  @override
+  String get fuelLogUpdated => 'Repostaje actualizado';
+
+  @override
+  String get serviceEditTitle => 'Editar servicio';
+
+  @override
+  String get serviceLogUpdated => 'Servicio actualizado';
+
+  @override
+  String timezoneChanged(String zone) {
+    return 'Zona horaria: $zone';
+  }
+
+  @override
+  String inspectionQuickSubtitle(String count) {
+    return 'Revisión de seguridad de $count puntos para viajes y el día a día';
+  }
+
+  @override
+  String inspectionEmptyBody(String count) {
+    return 'Haz una revisión de $count puntos: neumáticos, frenos, aceite, luces y batería.';
+  }
+
+  @override
+  String deleteVehicleConfirm(String name) {
+    return '¿Eliminar $name con todos sus registros de servicio, combustible, agenda y documentos? No se puede deshacer.';
+  }
 }

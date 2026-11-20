@@ -423,6 +423,31 @@ class MaintenanceSchedule {
     return ScheduleUrgency.safe;
   }
 
+  /// Which of the two triggers (distance or time) a card reports. Cards state
+  /// ONE status: the more urgent trigger (overdue beats due soon beats safe);
+  /// on a tie, the one with less of its interval left.
+  ({bool byKm, int remaining}) mostUrgentTrigger(int currentOdometer) {
+    final kmLeft = kmRemaining(currentOdometer);
+    final daysLeft = daysRemaining;
+    if (intervalKm <= 0) return (byKm: false, remaining: daysLeft);
+    if (intervalMonths <= 0) return (byKm: true, remaining: kmLeft);
+    int level(int left, bool soon) => left <= 0 ? 2 : (soon ? 1 : 0);
+    final kmLevel = level(kmLeft, kmLeft <= (intervalKm * 0.15).round());
+    final dayLevel = level(daysLeft, daysLeft <= 14);
+    if (kmLevel != dayLevel) {
+      return kmLevel > dayLevel
+          ? (byKm: true, remaining: kmLeft)
+          : (byKm: false, remaining: daysLeft);
+    }
+    // Same level: compare the share of the interval left (more negative =
+    // further overdue = more urgent).
+    final kmShare = kmLeft / intervalKm;
+    final dayShare = daysLeft / (intervalMonths * 30);
+    return kmShare <= dayShare
+        ? (byKm: true, remaining: kmLeft)
+        : (byKm: false, remaining: daysLeft);
+  }
+
   MaintenanceSchedule copyWith({
     String? title,
     String? category,

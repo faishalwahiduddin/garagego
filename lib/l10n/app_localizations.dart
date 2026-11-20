@@ -3192,6 +3192,114 @@ abstract class AppLocalizations {
   /// In id, this message translates to:
   /// **'Alamat email disalin: contact@faishal.id'**
   String get contactEmailCopied;
+
+  /// No description provided for @validationOdometerRequired.
+  ///
+  /// In id, this message translates to:
+  /// **'Masukkan angka odometer'**
+  String get validationOdometerRequired;
+
+  /// No description provided for @validationCostRequired.
+  ///
+  /// In id, this message translates to:
+  /// **'Masukkan total biaya (0 jika gratis)'**
+  String get validationCostRequired;
+
+  /// No description provided for @validationPriceRequired.
+  ///
+  /// In id, this message translates to:
+  /// **'Masukkan harga per liter'**
+  String get validationPriceRequired;
+
+  /// No description provided for @validationOdometerAbove.
+  ///
+  /// In id, this message translates to:
+  /// **'Odometer harus di atas {km} km'**
+  String validationOdometerAbove(String km);
+
+  /// No description provided for @validationOdometerBelow.
+  ///
+  /// In id, this message translates to:
+  /// **'Odometer harus di bawah {km} km'**
+  String validationOdometerBelow(String km);
+
+  /// No description provided for @validationOdometerAtLeast.
+  ///
+  /// In id, this message translates to:
+  /// **'Odometer minimal {km} km'**
+  String validationOdometerAtLeast(String km);
+
+  /// No description provided for @validationOdometerAtMost.
+  ///
+  /// In id, this message translates to:
+  /// **'Odometer maksimal {km} km'**
+  String validationOdometerAtMost(String km);
+
+  /// No description provided for @itemDeleted.
+  ///
+  /// In id, this message translates to:
+  /// **'Dihapus'**
+  String get itemDeleted;
+
+  /// No description provided for @undo.
+  ///
+  /// In id, this message translates to:
+  /// **'Urungkan'**
+  String get undo;
+
+  /// No description provided for @fuelEditTitle.
+  ///
+  /// In id, this message translates to:
+  /// **'Ubah Catatan BBM'**
+  String get fuelEditTitle;
+
+  /// No description provided for @fuelDate.
+  ///
+  /// In id, this message translates to:
+  /// **'Tanggal Pengisian'**
+  String get fuelDate;
+
+  /// No description provided for @fuelLogUpdated.
+  ///
+  /// In id, this message translates to:
+  /// **'Catatan BBM diperbarui'**
+  String get fuelLogUpdated;
+
+  /// No description provided for @serviceEditTitle.
+  ///
+  /// In id, this message translates to:
+  /// **'Ubah Catatan Servis'**
+  String get serviceEditTitle;
+
+  /// No description provided for @serviceLogUpdated.
+  ///
+  /// In id, this message translates to:
+  /// **'Catatan servis diperbarui'**
+  String get serviceLogUpdated;
+
+  /// No description provided for @timezoneChanged.
+  ///
+  /// In id, this message translates to:
+  /// **'Zona waktu: {zone}'**
+  String timezoneChanged(String zone);
+
+  /// No description provided for @inspectionQuickSubtitle.
+  ///
+  /// In id, this message translates to:
+  /// **'Cek keselamatan {count} poin untuk mudik & harian'**
+  String inspectionQuickSubtitle(String count);
+
+  /// No description provided for @inspectionEmptyBody.
+  ///
+  /// In id, this message translates to:
+  /// **'Lakukan inspeksi {count} poin: ban, rem, oli, lampu, dan aki.'**
+  String inspectionEmptyBody(String count);
+
+  /// No description provided for @deleteVehicleConfirm.
+  ///
+  /// In id, this message translates to:
+  /// **'Hapus {name} beserta semua catatan servis, BBM, jadwal, dan dokumennya? Tindakan ini tidak bisa dibatalkan.'**
+  String deleteVehicleConfirm(String name);
 }
 
 class _AppLocalizationsDelegate

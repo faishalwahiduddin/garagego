@@ -1719,4 +1719,75 @@ class AppLocalizationsAr extends AppLocalizations {
   @override
   String get contactEmailCopied =>
       'تم نسخ عنوان البريد الإلكتروني: contact@faishal.id';
+
+  @override
+  String get validationOdometerRequired => 'أدخل قراءة عداد المسافات';
+
+  @override
+  String get validationCostRequired =>
+      'أدخل التكلفة الإجمالية (0 إذا كانت مجانية)';
+
+  @override
+  String get validationPriceRequired => 'أدخل السعر لكل لتر';
+
+  @override
+  String validationOdometerAbove(String km) {
+    return 'يجب أن يكون العداد أعلى من $km كم';
+  }
+
+  @override
+  String validationOdometerBelow(String km) {
+    return 'يجب أن يكون العداد أقل من $km كم';
+  }
+
+  @override
+  String validationOdometerAtLeast(String km) {
+    return 'يجب ألا يقل العداد عن $km كم';
+  }
+
+  @override
+  String validationOdometerAtMost(String km) {
+    return 'يجب ألا يزيد العداد عن $km كم';
+  }
+
+  @override
+  String get itemDeleted => 'تم الحذف';
+
+  @override
+  String get undo => 'تراجع';
+
+  @override
+  String get fuelEditTitle => 'تعديل سجل الوقود';
+
+  @override
+  String get fuelDate => 'تاريخ التعبئة';
+
+  @override
+  String get fuelLogUpdated => 'تم تحديث سجل الوقود';
+
+  @override
+  String get serviceEditTitle => 'تعديل سجل الصيانة';
+
+  @override
+  String get serviceLogUpdated => 'تم تحديث سجل الصيانة';
+
+  @override
+  String timezoneChanged(String zone) {
+    return 'المنطقة الزمنية: $zone';
+  }
+
+  @override
+  String inspectionQuickSubtitle(String count) {
+    return 'فحص سلامة من $count نقاط للرحلات والتنقل اليومي';
+  }
+
+  @override
+  String inspectionEmptyBody(String count) {
+    return 'أجرِ فحصًا من $count نقاط: الإطارات والمكابح والزيت والأضواء والبطارية.';
+  }
+
+  @override
+  String deleteVehicleConfirm(String name) {
+    return 'هل تريد حذف $name مع جميع سجلات الصيانة والوقود والجداول والمستندات؟ لا يمكن التراجع عن ذلك.';
+  }
 }

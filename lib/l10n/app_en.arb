@@ -589,5 +589,23 @@
   "contactEmailCopied": "Email address copied: contact@faishal.id",
   "@contactEmailCopied": {
     "description": "Snackbar shown when the contact email is copied because no mail app could be opened"
-  }
+  },
+  "validationOdometerRequired": "Enter the odometer reading",
+  "validationCostRequired": "Enter the total cost (0 if free)",
+  "validationPriceRequired": "Enter the price per litre",
+  "validationOdometerAbove": "Odometer must be above {km} km",
+  "validationOdometerBelow": "Odometer must be below {km} km",
+  "validationOdometerAtLeast": "Odometer must be at least {km} km",
+  "validationOdometerAtMost": "Odometer must be at most {km} km",
+  "itemDeleted": "Deleted",
+  "undo": "Undo",
+  "fuelEditTitle": "Edit Fuel Log",
+  "fuelDate": "Fill-up Date",
+  "fuelLogUpdated": "Fuel log updated",
+  "serviceEditTitle": "Edit Service Log",
+  "serviceLogUpdated": "Service log updated",
+  "timezoneChanged": "Time zone: {zone}",
+  "inspectionQuickSubtitle": "{count}-point road safety check for trips and daily commutes",
+  "inspectionEmptyBody": "Run a {count}-point check: tyres, brakes, oil, lights and battery.",
+  "deleteVehicleConfirm": "Delete {name} with all its service, fuel, schedule and document records? This cannot be undone."
 }

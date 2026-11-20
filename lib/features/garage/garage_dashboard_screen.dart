@@ -20,6 +20,7 @@ import '../maintenance/inspection_sheet.dart';
 import 'add_vehicle_sheet.dart';
 import 'widgets/garage_share_dialog.dart';
 import '../../core/constants/units.dart';
+import '../../core/ui/fleet_sheet.dart';
 
 class GarageDashboardScreen extends ConsumerWidget {
   static const _shellNavHeight = 80.0;
@@ -89,7 +90,7 @@ class GarageDashboardScreen extends ConsumerWidget {
                     subtitle: l10n.setPengingatBerkalaGantiPartKm,
                     onTap: () {
                       Navigator.pop(ctx);
-                      showModalBottomSheet(
+                      showFleetSheet(
                         context: context,
                         useRootNavigator: true,
                         isScrollControlled: true,
@@ -107,7 +108,7 @@ class GarageDashboardScreen extends ConsumerWidget {
                     subtitle: l10n.audit10PoinKeselamatanJalanMud,
                     onTap: () {
                       Navigator.pop(ctx);
-                      showModalBottomSheet(
+                      showFleetSheet(
                         context: context,
                         useRootNavigator: true,
                         isScrollControlled: true,
@@ -140,7 +141,7 @@ class GarageDashboardScreen extends ConsumerWidget {
                   subtitle: l10n.mobilAtauMotorKeluargaBaru,
                   onTap: () {
                     Navigator.pop(ctx);
-                    showModalBottomSheet(
+                    showFleetSheet(
                       context: context,
                       useRootNavigator: true,
                       isScrollControlled: true,
@@ -362,7 +363,7 @@ class GarageDashboardScreen extends ConsumerWidget {
               ),
               tooltip: l10n.tambahKendaraan,
               onPressed: () {
-                showModalBottomSheet(
+                showFleetSheet(
                   context: context,
                   useRootNavigator: true,
                   isScrollControlled: true,
@@ -446,7 +447,7 @@ class GarageDashboardScreen extends ConsumerWidget {
                       scale: 0.97,
                       child: ElevatedButton.icon(
                         onPressed: () {
-                          showModalBottomSheet(
+                          showFleetSheet(
                             context: context,
                             useRootNavigator: true,
                             isScrollControlled: true,

@@ -13,6 +13,7 @@ import '../../core/utils/l10n_helpers.dart';
 import '../../core/utils/validators.dart';
 import 'add_schedule_sheet.dart';
 import 'inspection_sheet.dart';
+import '../../core/ui/fleet_sheet.dart';
 
 class MaintenanceScreen extends ConsumerStatefulWidget {
   const MaintenanceScreen({super.key, this.initialTab = 0});
@@ -476,7 +477,7 @@ class _MaintenanceScreenState extends ConsumerState<MaintenanceScreen> with Sing
                       SnackBar(content: Text(l10n.rekomendasiPabrikBerhasilDimuat(active.type.getLocalizedLabel(context)))),
                     );
                   } else if (val == 'add') {
-                    showModalBottomSheet(
+                    showFleetSheet(
                       context: context,
                       useRootNavigator: true,
                       isScrollControlled: true,
@@ -621,7 +622,7 @@ class _MaintenanceScreenState extends ConsumerState<MaintenanceScreen> with Sing
                                       icon: Icon(Icons.edit_outlined, size: 18, color: context.textSecondary),
                                       visualDensity: VisualDensity.compact,
                                       onPressed: () {
-                                        showModalBottomSheet(
+                                        showFleetSheet(
                                           context: context,
                                           useRootNavigator: true,
                                           isScrollControlled: true,
@@ -914,7 +915,7 @@ class _MaintenanceScreenState extends ConsumerState<MaintenanceScreen> with Sing
                 scale: 0.97,
                 child: ElevatedButton.icon(
                   onPressed: () {
-                    showModalBottomSheet(
+                    showFleetSheet(
                       context: context,
                       useRootNavigator: true,
                       isScrollControlled: true,
@@ -962,7 +963,7 @@ class _MaintenanceScreenState extends ConsumerState<MaintenanceScreen> with Sing
                         scale: 0.97,
                         child: ElevatedButton.icon(
                           onPressed: () {
-                            showModalBottomSheet(
+                            showFleetSheet(
                               context: context,
                               useRootNavigator: true,
                               isScrollControlled: true,

@@ -10,6 +10,7 @@ import '../../core/providers/timezone_provider.dart';
 import '../../core/ui/press_scale.dart';
 import '../../core/utils/app_timezone.dart';
 import 'add_document_sheet.dart';
+import '../../core/ui/fleet_sheet.dart';
 
 class GloveboxScreen extends ConsumerWidget {
   const GloveboxScreen({super.key});
@@ -45,7 +46,7 @@ class GloveboxScreen extends ConsumerWidget {
                 ),
                 tooltip: l10n.tambahDokumen,
                 onPressed: () {
-                  showModalBottomSheet(
+                  showFleetSheet(
                     context: context,
                     useRootNavigator: true,
                     isScrollControlled: true,
@@ -236,7 +237,7 @@ class GloveboxScreen extends ConsumerWidget {
                                   scale: 0.97,
                                   child: ElevatedButton.icon(
                                     onPressed: () {
-                                      showModalBottomSheet(
+                                      showFleetSheet(
                                         context: context,
                                         useRootNavigator: true,
                                         isScrollControlled: true,
@@ -385,7 +386,7 @@ class GloveboxScreen extends ConsumerWidget {
                                             padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
                                           ),
                                           onPressed: () {
-                                            showModalBottomSheet(
+                                            showFleetSheet(
                                               context: context,
                                               useRootNavigator: true,
                                               isScrollControlled: true,

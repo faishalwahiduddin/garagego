@@ -94,7 +94,6 @@ class _AddVehicleSheetState extends ConsumerState<AddVehicleSheet> {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
-    final bottomInset = MediaQuery.of(context).viewInsets.bottom;
 
     return Container(
       decoration: BoxDecoration(
@@ -105,7 +104,7 @@ class _AddVehicleSheetState extends ConsumerState<AddVehicleSheet> {
         left: 20,
         right: 20,
         top: 12,
-        bottom: bottomInset > 0 ? bottomInset + 16 : 28,
+        bottom: 16,
       ),
       child: Form(
         key: _formKey,

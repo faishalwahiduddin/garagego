@@ -17,6 +17,7 @@ import '../garage/add_vehicle_sheet.dart';
 import 'widgets/commercial_contact_cards.dart';
 import '../../core/ui/spring_sheet.dart';
 import '../../core/constants/contact_constants.dart';
+import '../../core/ui/fleet_sheet.dart';
 
 class SettingsScreen extends ConsumerWidget {
   const SettingsScreen({super.key});
@@ -197,7 +198,7 @@ class SettingsScreen extends ConsumerWidget {
               ),
               TextButton.icon(
                 onPressed: () {
-                  showModalBottomSheet(
+                  showFleetSheet(
                     context: context,
                     useRootNavigator: true,
                     isScrollControlled: true,

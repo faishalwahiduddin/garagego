@@ -98,7 +98,7 @@ class _AddScheduleSheetState extends ConsumerState<AddScheduleSheet> {
         left: 20,
         right: 20,
         top: 20,
-        bottom: MediaQuery.of(context).viewInsets.bottom + 24,
+        bottom: 24,
       ),
       child: Form(
         key: _formKey,

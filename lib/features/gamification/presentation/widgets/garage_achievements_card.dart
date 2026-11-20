@@ -6,6 +6,7 @@ import '../../../../l10n/app_localizations.dart';
 import '../../domain/models/garage_gamification.dart';
 import '../../providers/garage_gamification_provider.dart';
 import 'share_achievement.dart';
+import '../../../../core/ui/fleet_sheet.dart';
 
 class GarageAchievementsCard extends ConsumerWidget {
   const GarageAchievementsCard({super.key});
@@ -316,7 +317,7 @@ class GarageAchievementsCard extends ConsumerWidget {
     final badge = item.badge;
     final unlocked = item.isUnlocked;
 
-    showModalBottomSheet<void>(
+    showFleetSheet<void>(
       context: context,
       useRootNavigator: true,
       backgroundColor: context.cardBg,

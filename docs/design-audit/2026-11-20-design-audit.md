@@ -257,7 +257,7 @@ elements with no accessible name — the six trash icons).
 | CRITICAL | Data | `analytics_service.dart:241-244` | One fill-up yields a fabricated "12.5 km/L" average; `test/trace/trace_cases_test.dart:228` enshrines it | Return `—` until ≥2 full-tank fills; show "needs 1 more full tank" |
 | CRITICAL | Data/Validation | `validators.dart:31-40` + 5 call sites | `previousKm` guard never wired; odometer can move backwards against `AGENTS.md:65` | Pass `previousKm: active.currentOdometer` at `fuel_logs_screen.dart:99` and `maintenance_screen.dart:147,265`; surface the ARB message inline |
 | CRITICAL | UX safety | 6 delete sites | Irreversible deletes, no confirm, no undo; vehicle delete cascades 5 collections | Confirm dialog for vehicle/reset; `SnackBarAction('Undo')` for every row delete |
-| CRITICAL | Typography | 259 `TextStyle(`, 242 `fontSize:` | No `TextTheme`; 14-step scale (8→24); 54 declarations below 12sp; 37 per product screen | New `app_typography.dart` (6 steps), map `textTheme`, delete inline sizes |
+| CRITICAL | Typography | 259 `TextStyle(`, 242 `fontSize:` | No `TextTheme`; 14-step scale (8→24); 52 declarations below 12sp; 37 per product screen | New `app_typography.dart` (6 steps), map `textTheme`, delete inline sizes |
 | CRITICAL | Accessibility | 4 of 5 product screens | `Semantics` 0× in dashboard/maintenance/fuel/glovebox; `MergeSemantics` 0× fleet-wide; trash/edit icons unnamed | `Semantics(container:true, label: …)` per row; `tooltip:` on every icon button; `MergeSemantics` on card headers |
 | HIGH | Touch | `tap_target.dart:15`, `garage_achievements_card.dart:107-110`, `:288-305` | `TapTarget` guarantees **44pt**, not Material's 48dp; the achievements share `IconButton` has `padding: zero` + empty `constraints` with an 18dp icon; badge share glyph is 12dp | `minSize: 48`; `constraints: BoxConstraints(minWidth: 48, minHeight: 48)` |
 | HIGH | Layout | `garage_dashboard_screen.dart:481-590` | 40dp-tall switcher, clips at the viewport edge, active pill can be off-screen | Fade + `ensureVisible` on active, min height 48 |
@@ -482,7 +482,7 @@ requires the missing screens in §10, a real chart, and a screen-reader pass on 
 - **Counts:** `grep -rho` over `lib/` with `--include='*.dart'`. `Navigator.push` = **0**
   (`Navigator.pop` excluded as dialog dismissal). `TextStyle(` = **259**; `fontSize: [0-9]` = **242**
   across 14 distinct values (8×3, 9×2, 10×8, 11×39, 12×64, 13×36, 14×43, 15×12, 16×12, 17×6, 18×14,
-  19×1, 22×1, 24×1); 54 declarations below 12sp; 35 at ≥16sp. Per-screen: dashboard 45, settings 41,
+  19×1, 22×1, 24×1); 52 declarations below 12sp; 35 at ≥16sp. Per-screen: dashboard 45, settings 41,
   maintenance 40, fuel 28, glovebox 18 → **172 / 5 = 34.4 per product screen**, 259 / 7 = **37.0**
   across the seven routed screens.
 - **Colours:** 72 `Color(0x…)` total; 32 are declarations in `app_colors.dart`; 40 are literals in

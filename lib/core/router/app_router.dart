@@ -45,12 +45,14 @@ final appRouter = GoRouter(
           routes: [
             GoRoute(
               path: '/maintenance',
-              builder: (context, state) => const MaintenanceScreen(),
+              builder: (context, state) => MaintenanceScreen(
+                initialTab: state.uri.queryParameters['tab'] == 'service' ? 1 : 0,
+              ),
             ),
-            // Opens the service-history tab directly (also used by store captures).
+            // Legacy/store-capture alias: opens the service-history tab.
             GoRoute(
               path: '/service',
-              builder: (context, state) => const MaintenanceScreen(initialTab: 1),
+              redirect: (context, state) => '/maintenance?tab=service',
             ),
           ],
         ),

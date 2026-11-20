@@ -7,6 +7,7 @@ import '../../core/constants/app_colors.dart';
 import '../../core/models/vehicle.dart';
 import '../../core/providers/app_providers.dart';
 import '../../core/providers/timezone_provider.dart';
+import '../../core/ui/form_sheet_body.dart';
 import '../../core/ui/press_scale.dart';
 import '../../core/utils/app_timezone.dart';
 import '../../core/utils/l10n_helpers.dart';
@@ -86,11 +87,12 @@ class _MaintenanceScreenState extends ConsumerState<MaintenanceScreen> with Sing
       l10n.mtCatOther,
     ];
 
-    showDialog(
+    showFleetSheet<void>(
       context: context,
+      isScrollControlled: true,
+      backgroundColor: context.cardBg,
       builder: (ctx) => StatefulBuilder(
-        builder: (context, setState) => AlertDialog(
-          backgroundColor: context.cardBg,
+        builder: (context, setState) => FormSheetBody(
           title: Text(
             l10n.catatServisBaru,
             style: TextStyle(
@@ -234,10 +236,11 @@ class _MaintenanceScreenState extends ConsumerState<MaintenanceScreen> with Sing
     final workshopController = TextEditingController();
     final notesController = TextEditingController();
 
-    showDialog(
+    showFleetSheet<void>(
       context: context,
-      builder: (ctx) => AlertDialog(
-        backgroundColor: context.cardBg,
+      isScrollControlled: true,
+      backgroundColor: context.cardBg,
+      builder: (ctx) => FormSheetBody(
         title: Text(
           l10n.selesaikanJadwal(schedule.title),
           style: TextStyle(
@@ -432,8 +435,12 @@ class _MaintenanceScreenState extends ConsumerState<MaintenanceScreen> with Sing
           ),
           child: Row(
             children: [
-              Wrap(
+              // Expanded so the chips wrap to a second line on narrow phones
+              // instead of overflowing past the menu button (was 16px at 390pt).
+              Expanded(
+                child: Wrap(
                 spacing: 8,
+                runSpacing: 6,
                 children: ScheduleFilterOption.values.map((f) {
                   final isSelected = _scheduleFilter == f;
                   return PressScale(
@@ -460,8 +467,8 @@ class _MaintenanceScreenState extends ConsumerState<MaintenanceScreen> with Sing
                     ),
                   );
                 }).toList(),
+                ),
               ),
-              const Spacer(),
               PopupMenuButton<String>(
                 icon: Icon(Icons.more_vert, color: context.textSecondary),
                 tooltip: l10n.opsiJadwal,

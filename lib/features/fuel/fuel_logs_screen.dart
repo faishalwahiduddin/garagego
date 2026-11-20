@@ -8,6 +8,8 @@ import '../../core/constants/fuel_brands.dart';
 import '../../core/models/vehicle.dart';
 import '../../core/providers/app_providers.dart';
 import '../../core/providers/timezone_provider.dart';
+import '../../core/ui/fleet_sheet.dart';
+import '../../core/ui/form_sheet_body.dart';
 import '../../core/ui/press_scale.dart';
 import '../../core/utils/app_timezone.dart';
 import '../../core/utils/l10n_helpers.dart';
@@ -34,8 +36,10 @@ class FuelLogsScreen extends ConsumerWidget {
 
     final fuelTypes = FuelBrands.all;
 
-    showDialog(
+    showFleetSheet<void>(
       context: context,
+      isScrollControlled: true,
+      backgroundColor: context.cardBg,
       builder: (ctx) => StatefulBuilder(
         builder: (context, setState) {
           final int? inputOdo = int.tryParse(odoController.text.trim());
@@ -55,8 +59,7 @@ class FuelLogsScreen extends ConsumerWidget {
               ? (totalCost / deltaKm)
               : null;
 
-          return AlertDialog(
-          backgroundColor: context.cardBg,
+          return FormSheetBody(
           title: Text(
             l10n.catatPengisianBbm,
             style: TextStyle(

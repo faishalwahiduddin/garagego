@@ -1,1 +1,1 @@
-bengkel,kendaraan,odometer,sim,asuransi,suku cadang,km per liter,bensin,biaya,perawatan,mudik
+servis mobil motor,ganti oli mesin,konsumsi bbm,catatan bensin,odometer jarak,bengkel

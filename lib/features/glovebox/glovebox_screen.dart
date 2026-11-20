@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:garagego/l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:intl/intl.dart';
+import '../../core/theme/app_numeric.dart';
 import '../../core/constants/app_colors.dart';
 import '../../core/models/vehicle.dart';
 import '../../core/providers/app_providers.dart';
@@ -366,7 +367,7 @@ class GloveboxScreen extends ConsumerWidget {
                                               fontSize: 13,
                                               fontWeight: FontWeight.w800,
                                               color: context.readable(AppColors.primary),
-                                            ),
+                                            ).tabular,
                                           ),
                                       ],
                                     ),

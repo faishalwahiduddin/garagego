@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:garagego/l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:intl/intl.dart';
+import '../../core/theme/app_numeric.dart';
 import '../../core/constants/app_colors.dart';
 import '../../core/models/vehicle.dart';
 import '../../core/providers/app_providers.dart';
@@ -833,7 +834,7 @@ class _MaintenanceScreenState extends ConsumerState<MaintenanceScreen> with Sing
                                       const Spacer(),
                                     Text(
                                       AppTimeZone.formatDate(log.date, loc, locale: localeCode),
-                                      style: TextStyle(fontSize: 12, color: context.textSecondary),
+                                      style: TextStyle(fontSize: 12, color: context.textSecondary).tabular,
                                     ),
                                     IconButton(
                                       icon: const Icon(Icons.delete_outline, size: 18, color: AppColors.danger),
@@ -857,7 +858,7 @@ class _MaintenanceScreenState extends ConsumerState<MaintenanceScreen> with Sing
                               const SizedBox(height: 4),
                               Text(
                                 l10n.odometerValue(NumberFormat('#,###', 'id_ID').format(log.odometer)),
-                                style: TextStyle(fontSize: 12, color: context.textSecondary, fontWeight: FontWeight.w600),
+                                style: TextStyle(fontSize: 12, color: context.textSecondary, fontWeight: FontWeight.w600).tabular,
                               ),
                               if (log.notes.isNotEmpty) ...[
                                 const SizedBox(height: 6),
@@ -874,7 +875,7 @@ class _MaintenanceScreenState extends ConsumerState<MaintenanceScreen> with Sing
                                       fontSize: 15,
                                       fontWeight: FontWeight.w800,
                                       color: context.readable(AppColors.primary),
-                                    ),
+                                    ).tabular,
                                   ),
                                 ],
                               ),
@@ -1020,13 +1021,13 @@ class _MaintenanceScreenState extends ConsumerState<MaintenanceScreen> with Sing
                                           '${item.passedCount}',
                                           '${item.totalCount}',
                                         ),
-                                        style: TextStyle(fontSize: 11, fontWeight: FontWeight.w700, color: badgeColor),
+                                        style: TextStyle(fontSize: 11, fontWeight: FontWeight.w700, color: badgeColor).tabular,
                                       ),
                                     ),
                                     const Spacer(),
                                     Text(
                                       AppTimeZone.formatDate(item.date, loc, locale: localeCode),
-                                      style: TextStyle(fontSize: 12, color: context.textSecondary),
+                                      style: TextStyle(fontSize: 12, color: context.textSecondary).tabular,
                                     ),
                                     IconButton(
                                       icon: const Icon(Icons.delete_outline, size: 18, color: AppColors.danger),
@@ -1050,7 +1051,7 @@ class _MaintenanceScreenState extends ConsumerState<MaintenanceScreen> with Sing
                                 const SizedBox(height: 4),
                                 Text(
                                   l10n.odometerValue(NumberFormat('#,###', 'id_ID').format(item.odometer)),
-                                  style: TextStyle(fontSize: 12, color: context.textSecondary),
+                                  style: TextStyle(fontSize: 12, color: context.textSecondary).tabular,
                                 ),
                                 if (item.inspectorNotes.isNotEmpty) ...[
                                   const SizedBox(height: 6),

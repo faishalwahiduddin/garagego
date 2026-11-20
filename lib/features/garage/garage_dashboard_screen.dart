@@ -3,6 +3,7 @@ import 'package:garagego/l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:intl/intl.dart';
+import '../../core/theme/app_numeric.dart';
 import '../../core/constants/app_colors.dart';
 import '../../core/models/vehicle.dart';
 import '../../core/providers/app_providers.dart';
@@ -1002,7 +1003,7 @@ class GarageDashboardScreen extends ConsumerWidget {
                   l10n.oilIntervalEvery(
                     NumberFormat('#,###', 'id_ID').format(v.oilIntervalKm),
                   ),
-                  style: TextStyle(fontSize: 12, color: context.textSecondary),
+                  style: TextStyle(fontSize: 12, color: context.textSecondary).tabular,
                 ),
                 Container(
                   padding: const EdgeInsets.symmetric(
@@ -1021,7 +1022,7 @@ class GarageDashboardScreen extends ConsumerWidget {
                       fontSize: 11,
                       fontWeight: FontWeight.w700,
                       color: statusColor,
-                    ),
+                    ).tabular,
                   ),
                 ),
               ],
@@ -1303,7 +1304,7 @@ class GarageDashboardScreen extends ConsumerWidget {
             fontSize: 13,
             fontWeight: FontWeight.w800,
             color: context.textPrimary,
-          ),
+          ).tabular,
         ),
       ],
     );
@@ -1617,7 +1618,7 @@ class GarageDashboardScreen extends ConsumerWidget {
                                       style: TextStyle(
                                         fontSize: 11,
                                         color: context.textSecondary,
-                                      ),
+                                      ).tabular,
                                     ),
                                   ],
                                 ),
@@ -1628,7 +1629,7 @@ class GarageDashboardScreen extends ConsumerWidget {
                                   fontSize: 13,
                                   fontWeight: FontWeight.w700,
                                   color: context.readable(AppColors.primary),
-                                ),
+                                ).tabular,
                               ),
                             ],
                           ),
@@ -1690,7 +1691,7 @@ class GarageDashboardScreen extends ConsumerWidget {
                   fontWeight: FontWeight.w800,
                   color: context.textPrimary,
                   letterSpacing: -0.3,
-                ),
+                ).tabular,
               ),
             ],
           ),

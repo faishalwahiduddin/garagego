@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:garagego/l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import '../../core/theme/app_numeric.dart';
 import '../../core/constants/app_colors.dart';
 import '../../core/models/vehicle.dart';
 import '../../core/providers/app_providers.dart';
@@ -126,7 +127,7 @@ class _InspectionSheetState extends ConsumerState<InspectionSheet> {
                         fontSize: 14,
                         fontWeight: FontWeight.w900,
                         color: percentage == 1.0 ? context.readable(AppColors.success) : (percentage >= 0.7 ? context.readable(AppColors.warning) : context.readable(AppColors.danger)),
-                      ),
+                      ).tabular,
                     ),
                   ],
                 ),

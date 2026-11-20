@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:garagego/l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:intl/intl.dart';
+import '../../core/theme/app_numeric.dart';
 import '../../core/constants/app_colors.dart';
 import '../../core/constants/fuel_brands.dart';
 import '../../core/models/vehicle.dart';
@@ -219,6 +220,7 @@ class FuelLogsScreen extends ConsumerWidget {
                                     fontSize: 12,
                                     fontWeight: FontWeight.w700,
                                     color: Color(0xFF16A34A),
+                                    fontFeatures: AppNumeric.tabularFeatures,
                                   ),
                                 ),
                               ],
@@ -242,7 +244,7 @@ class FuelLogsScreen extends ConsumerWidget {
                                     fontSize: 11,
                                     fontWeight: FontWeight.w600,
                                     color: context.textSecondary,
-                                  ),
+                                  ).tabular,
                                 ),
                               ],
                             ),
@@ -481,7 +483,7 @@ class FuelLogsScreen extends ConsumerWidget {
                                           ),
                                           child: Text(
                                             '${log.liters.toStringAsFixed(1)}$kSpaceChar$kLiterUnit',
-                                            style: TextStyle(fontSize: 11, fontWeight: FontWeight.w800, color: context.readable(AppColors.warning)),
+                                            style: TextStyle(fontSize: 11, fontWeight: FontWeight.w800, color: context.readable(AppColors.warning)).tabular,
                                           ),
                                         ),
                                         const SizedBox(width: 8),
@@ -500,7 +502,7 @@ class FuelLogsScreen extends ConsumerWidget {
                                         const Spacer(),
                                         Text(
                                           AppTimeZone.formatDate(log.date, loc, locale: localeCode),
-                                          style: TextStyle(fontSize: 12, color: context.textSecondary),
+                                          style: TextStyle(fontSize: 12, color: context.textSecondary).tabular,
                                         ),
                                         IconButton(
                                           icon: const Icon(Icons.delete_outline, size: 18, color: AppColors.danger),
@@ -524,7 +526,7 @@ class FuelLogsScreen extends ConsumerWidget {
                                             fontWeight: FontWeight.w800,
                                             color: context.textPrimary,
                                             letterSpacing: -0.2,
-                                          ),
+                                          ).tabular,
                                         )),
                                         Text(
                                           currency.format(log.totalCost),
@@ -532,7 +534,7 @@ class FuelLogsScreen extends ConsumerWidget {
                                             fontSize: 15,
                                             fontWeight: FontWeight.w800,
                                             color: context.readable(AppColors.primary),
-                                          ),
+                                          ).tabular,
                                         ),
                                       ],
                                     ),
@@ -562,7 +564,7 @@ class FuelLogsScreen extends ConsumerWidget {
                                                 fontSize: 11,
                                                 fontWeight: FontWeight.w800,
                                                 color: context.readable(AppColors.success),
-                                              ),
+                                              ).tabular,
                                             ),
                                           ),
                                       ],
@@ -647,7 +649,7 @@ class FuelLogsScreen extends ConsumerWidget {
                   fontWeight: FontWeight.w800,
                   color: context.textPrimary,
                   letterSpacing: -0.3,
-                ),
+                ).tabular,
               ),
             ],
           ),

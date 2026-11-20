@@ -49,11 +49,12 @@ Future<List<String>> _auditAllScreens(WidgetTester tester, Color base) async {
   appRouter.go('/maintenance');
   await tester.pumpAndSettle();
   audit('/maintenance schedules');
-  for (final (icon, name) in [
-    (Icons.history, 'history'),
-    (Icons.fact_check_outlined, 'inspections'),
+  // Tabs use custom AppIcon glyphs, so tap them by position.
+  for (final (index, name) in [
+    (1, 'history'),
+    (2, 'inspections'),
   ]) {
-    await tester.tap(find.descendant(of: find.byType(TabBar), matching: find.byIcon(icon)));
+    await tester.tap(find.descendant(of: find.byType(TabBar), matching: find.byType(Tab)).at(index));
     await tester.pumpAndSettle();
     audit('/maintenance $name');
   }

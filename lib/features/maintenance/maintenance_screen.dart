@@ -8,6 +8,7 @@ import '../../core/models/vehicle.dart';
 import '../../core/providers/app_providers.dart';
 import '../../core/providers/timezone_provider.dart';
 import '../../core/ui/form_sheet_body.dart';
+import '../../core/ui/app_icon.dart';
 import '../../core/ui/press_scale.dart';
 import '../../core/ui/undo_snackbar.dart';
 import '../../core/utils/number_input.dart';
@@ -231,7 +232,7 @@ class _MaintenanceScreenState extends ConsumerState<MaintenanceScreen> with Sing
                   child: Row(
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      const Icon(Icons.schedule, size: 16),
+                      const AppIcon('service_schedule', size: 16),
                       const SizedBox(width: 6),
                       Flexible(child: Text(l10n.jadwalCount(schedules.length.toString()))),
                     ],
@@ -251,7 +252,7 @@ class _MaintenanceScreenState extends ConsumerState<MaintenanceScreen> with Sing
                   child: Row(
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      const Icon(Icons.fact_check_outlined, size: 16),
+                      const AppIcon('inspection', size: 16),
                       const SizedBox(width: 6),
                       Flexible(child: Text(l10n.inspeksiCount(inspections.length.toString()))),
                     ],
@@ -417,7 +418,7 @@ class _MaintenanceScreenState extends ConsumerState<MaintenanceScreen> with Sing
                             color: AppColors.primary.withValues(alpha: 0.1),
                             shape: BoxShape.circle,
                           ),
-                          child: const Icon(Icons.schedule, size: 32, color: AppColors.primary),
+                          child: const AppIcon('service_schedule', size: 32, color: AppColors.primary),
                         ),
                         const SizedBox(height: 16),
                         Text(
@@ -538,7 +539,7 @@ class _MaintenanceScreenState extends ConsumerState<MaintenanceScreen> with Sing
                           color: AppColors.primary.withValues(alpha: 0.1),
                           shape: BoxShape.circle,
                         ),
-                        child: const Icon(Icons.build_circle_outlined, size: 32, color: AppColors.primary),
+                        child: const AppIcon('wrench', size: 32, color: AppColors.primary),
                       ),
                       const SizedBox(height: 16),
                       Text(
@@ -683,7 +684,7 @@ class _MaintenanceScreenState extends ConsumerState<MaintenanceScreen> with Sing
                       builder: (_) => InspectionSheet(vehicle: active),
                     );
                   },
-                  icon: const Icon(Icons.fact_check_outlined, size: 18),
+                  icon: const AppIcon('inspection', size: 18),
                   label: Text(l10n.mulaiCeklis),
                 ),
               ),
@@ -703,7 +704,7 @@ class _MaintenanceScreenState extends ConsumerState<MaintenanceScreen> with Sing
                           color: AppColors.primary.withValues(alpha: 0.1),
                           shape: BoxShape.circle,
                         ),
-                        child: const Icon(Icons.checklist, size: 32, color: AppColors.primary),
+                        child: const AppIcon('inspection', size: 32, color: AppColors.primary),
                       ),
                       const SizedBox(height: 16),
                       Text(
@@ -734,7 +735,7 @@ class _MaintenanceScreenState extends ConsumerState<MaintenanceScreen> with Sing
                               builder: (_) => InspectionSheet(vehicle: active),
                             );
                           },
-                          icon: const Icon(Icons.fact_check_outlined),
+                          icon: const AppIcon('inspection', size: 18),
                           label: Text(l10n.mulaiInspeksiPertama),
                         ),
                       ),

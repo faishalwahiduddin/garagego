@@ -9,6 +9,7 @@ import '../../core/providers/app_providers.dart';
 import '../../core/providers/timezone_provider.dart';
 import '../../core/services/analytics_service.dart';
 import '../../core/ui/fleet_sheet.dart';
+import '../../core/ui/app_icon.dart';
 import '../../core/ui/press_scale.dart';
 import '../../core/ui/undo_snackbar.dart';
 import 'fuel_log_sheet.dart';
@@ -99,7 +100,7 @@ class FuelLogsScreen extends ConsumerWidget {
                                     ? efficiencySummary.averageKmPerLiter.toStringAsFixed(1)
                                     : '—',
                               ),
-                              icon: Icons.speed_outlined,
+                              svg: 'odometer',
                               color: AppColors.accent,
                             ),
                           ),
@@ -141,7 +142,7 @@ class FuelLogsScreen extends ConsumerWidget {
                               context: context,
                               title: l10n.totalPengeluaranBbm,
                               value: currency.format(efficiencySummary.totalFuelCost),
-                              icon: Icons.local_gas_station_outlined,
+                              svg: 'fuel_pump',
                               color: AppColors.warning,
                             ),
                           ),
@@ -173,7 +174,7 @@ class FuelLogsScreen extends ConsumerWidget {
                                     color: AppColors.warning.withValues(alpha: 0.1),
                                     shape: BoxShape.circle,
                                   ),
-                                  child: const Icon(Icons.local_gas_station_outlined, size: 32, color: AppColors.warning),
+                                  child: const AppIcon('fuel_pump', size: 32, color: AppColors.warning),
                                 ),
                                 const SizedBox(height: 16),
                                 Text(
@@ -229,7 +230,8 @@ class FuelLogsScreen extends ConsumerWidget {
     required BuildContext context,
     required String title,
     required String value,
-    required IconData icon,
+    IconData? icon,
+    String? svg,
     required Color color,
   }) {
     return PressScale(
@@ -248,7 +250,9 @@ class FuelLogsScreen extends ConsumerWidget {
                       color: color.withValues(alpha: 0.12),
                       borderRadius: BorderRadius.circular(6),
                     ),
-                    child: Icon(icon, size: 14, color: color),
+                    child: svg != null
+                        ? AppIcon(svg, size: 14, color: color)
+                        : Icon(icon, size: 14, color: color),
                   ),
                   const SizedBox(width: 8),
                   Expanded(

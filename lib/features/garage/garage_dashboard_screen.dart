@@ -11,6 +11,7 @@ import '../../core/providers/app_providers.dart';
 import '../../core/providers/timezone_provider.dart';
 import '../../core/services/analytics_service.dart';
 import '../../core/theme/app_motion.dart';
+import '../../core/ui/app_icon.dart';
 import '../../core/ui/press_scale.dart';
 import '../../core/ui/spring_sheet.dart';
 import '../../core/ui/stagger_fade_in.dart';
@@ -67,7 +68,7 @@ class GarageDashboardScreen extends ConsumerWidget {
                 const SizedBox(height: 16),
                 _buildQuickActionTile(
                   context: context,
-                  icon: Icons.build_outlined,
+                  svg: 'wrench',
                   iconColor: AppColors.primary,
                   title: l10n.catatServisBaru,
                   subtitle: l10n.simpanRiwayatBengkelDanGantiOl,
@@ -78,7 +79,7 @@ class GarageDashboardScreen extends ConsumerWidget {
                 ),
                 _buildQuickActionTile(
                   context: context,
-                  icon: Icons.local_gas_station_outlined,
+                  svg: 'fuel_pump',
                   iconColor: AppColors.warning,
                   title: l10n.catatPengisianBbm,
                   subtitle: l10n.hitungKonsumsiKmLDanBiayaBensi,
@@ -90,7 +91,7 @@ class GarageDashboardScreen extends ConsumerWidget {
                 if (active != null)
                   _buildQuickActionTile(
                     context: context,
-                    icon: Icons.alarm_outlined,
+                    svg: 'service_schedule',
                     iconColor: AppColors.accent,
                     title: l10n.tambahJadwalPerawatan,
                     subtitle: l10n.setPengingatBerkalaGantiPartKm,
@@ -108,7 +109,7 @@ class GarageDashboardScreen extends ConsumerWidget {
                 if (active != null)
                   _buildQuickActionTile(
                     context: context,
-                    icon: Icons.fact_check_outlined,
+                    svg: 'inspection',
                     iconColor: AppColors.success,
                     title: l10n.checklistInspeksiKendaraan,
                     subtitle: l10n.inspectionQuickSubtitle(
@@ -168,7 +169,8 @@ class GarageDashboardScreen extends ConsumerWidget {
 
   static Widget _buildQuickActionTile({
     required BuildContext context,
-    required IconData icon,
+    IconData? icon,
+    String? svg,
     required Color iconColor,
     required String title,
     required String subtitle,
@@ -185,7 +187,9 @@ class GarageDashboardScreen extends ConsumerWidget {
             color: iconColor.withValues(alpha: 0.12),
             borderRadius: BorderRadius.circular(12),
           ),
-          child: Icon(icon, color: iconColor, size: 22),
+          child: svg != null
+              ? AppIcon(svg, color: iconColor, size: 22)
+              : Icon(icon, color: iconColor, size: 22),
         ),
         title: Text(
           title,
@@ -431,8 +435,8 @@ class GarageDashboardScreen extends ConsumerWidget {
                         color: AppColors.primary.withValues(alpha: 0.1),
                         shape: BoxShape.circle,
                       ),
-                      child: const Icon(
-                        Icons.directions_car_outlined,
+                      child: const AppIcon(
+                        'car',
                         size: 40,
                         color: AppColors.primary,
                       ),
@@ -549,10 +553,8 @@ class GarageDashboardScreen extends ConsumerWidget {
                                   child: Row(
                                     mainAxisSize: MainAxisSize.min,
                                     children: [
-                                      Icon(
-                                        isCar
-                                            ? Icons.directions_car
-                                            : Icons.two_wheeler,
+                                      AppIcon(
+                                        isCar ? 'car' : 'motorbike',
                                         size: 16,
                                         color: isSelected
                                             ? Colors.white
@@ -659,7 +661,7 @@ class GarageDashboardScreen extends ConsumerWidget {
                                   title: l10n.odometer,
                                   value:
                                       '${NumberFormat('#,###', 'id_ID').format(activeVehicle.currentOdometer)} km',
-                                  icon: Icons.speed,
+                                  svg: 'odometer',
                                   iconColor: AppColors.accent,
                                 ),
                               ),
@@ -693,7 +695,7 @@ class GarageDashboardScreen extends ConsumerWidget {
                                               .toStringAsFixed(1)
                                         : '—',
                                   ),
-                                  icon: Icons.local_gas_station_outlined,
+                                  svg: 'fuel_pump',
                                   iconColor: AppColors.warning,
                                 ),
                               ),
@@ -703,7 +705,7 @@ class GarageDashboardScreen extends ConsumerWidget {
                                   context: context,
                                   title: l10n.totalBiayaTco,
                                   value: currency.format(tco.totalCost),
-                                  icon: Icons.account_balance_wallet_outlined,
+                                  svg: 'cost',
                                   iconColor: AppColors.success,
                                 ),
                               ),
@@ -767,8 +769,8 @@ class GarageDashboardScreen extends ConsumerWidget {
                       color: vehicleColor.withValues(alpha: 0.12),
                       borderRadius: BorderRadius.circular(14),
                     ),
-                    child: Icon(
-                      isCar ? Icons.directions_car : Icons.two_wheeler,
+                    child: AppIcon(
+                      isCar ? 'car' : 'motorbike',
                       color: vehicleColor,
                       size: 28,
                     ),
@@ -965,8 +967,8 @@ class GarageDashboardScreen extends ConsumerWidget {
                           color: statusColor.withValues(alpha: 0.12),
                           borderRadius: BorderRadius.circular(8),
                         ),
-                        child: Icon(
-                          Icons.oil_barrel_outlined,
+                        child: AppIcon(
+                          'engine_oil',
                           size: 16,
                           color: statusColor,
                         ),
@@ -1085,8 +1087,8 @@ class GarageDashboardScreen extends ConsumerWidget {
                     color: AppColors.warning.withValues(alpha: 0.12),
                     borderRadius: BorderRadius.circular(8),
                   ),
-                  child: const Icon(
-                    Icons.badge_outlined,
+                  child: const AppIcon(
+                    'registration',
                     size: 16,
                     color: AppColors.warning,
                   ),
@@ -1354,8 +1356,8 @@ class GarageDashboardScreen extends ConsumerWidget {
                         color: AppColors.accent.withValues(alpha: 0.12),
                         borderRadius: BorderRadius.circular(8),
                       ),
-                      child: const Icon(
-                        Icons.alarm,
+                      child: const AppIcon(
+                        'service_schedule',
                         size: 16,
                         color: AppColors.accent,
                       ),
@@ -1448,8 +1450,8 @@ class GarageDashboardScreen extends ConsumerWidget {
                               color: c.withValues(alpha: 0.12),
                               borderRadius: BorderRadius.circular(6),
                             ),
-                            child: Icon(
-                              Icons.build_circle_outlined,
+                            child: AppIcon(
+                              'wrench',
                               size: 16,
                               color: c,
                             ),
@@ -1612,8 +1614,8 @@ class GarageDashboardScreen extends ConsumerWidget {
                                   ),
                                   borderRadius: BorderRadius.circular(8),
                                 ),
-                                child: const Icon(
-                                  Icons.build_outlined,
+                                child: const AppIcon(
+                                  'wrench',
                                   size: 16,
                                   color: AppColors.primary,
                                 ),
@@ -1666,7 +1668,8 @@ class GarageDashboardScreen extends ConsumerWidget {
     required BuildContext context,
     required String title,
     required String value,
-    required IconData icon,
+    IconData? icon,
+    String? svg,
     required Color iconColor,
   }) {
     return PressScale(
@@ -1685,7 +1688,9 @@ class GarageDashboardScreen extends ConsumerWidget {
                       color: iconColor.withValues(alpha: 0.12),
                       borderRadius: BorderRadius.circular(6),
                     ),
-                    child: Icon(icon, size: 14, color: iconColor),
+                    child: svg != null
+                        ? AppIcon(svg, size: 14, color: iconColor)
+                        : Icon(icon, size: 14, color: iconColor),
                   ),
                   const SizedBox(width: 8),
                   Expanded(

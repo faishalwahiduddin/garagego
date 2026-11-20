@@ -7,6 +7,7 @@ import '../../core/constants/app_colors.dart';
 import '../../core/models/vehicle.dart';
 import '../../core/providers/app_providers.dart';
 import '../../core/providers/timezone_provider.dart';
+import '../../core/ui/app_icon.dart';
 import '../../core/ui/press_scale.dart';
 import '../../core/ui/undo_snackbar.dart';
 import '../../core/utils/app_timezone.dart';
@@ -98,7 +99,7 @@ class GloveboxScreen extends ConsumerWidget {
                                       color: AppColors.primary.withValues(alpha: 0.12),
                                       borderRadius: BorderRadius.circular(12),
                                     ),
-                                    child: const Icon(Icons.folder_shared_outlined, color: AppColors.primary, size: 22),
+                                    child: const AppIcon('document', color: AppColors.primary, size: 22),
                                   ),
                                   const SizedBox(width: 12),
                                   Expanded(
@@ -220,7 +221,7 @@ class GloveboxScreen extends ConsumerWidget {
                                     color: AppColors.primary.withValues(alpha: 0.1),
                                     shape: BoxShape.circle,
                                   ),
-                                  child: const Icon(Icons.description_outlined, size: 32, color: AppColors.primary),
+                                  child: const AppIcon('document', size: 32, color: AppColors.primary),
                                 ),
                                 const SizedBox(height: 16),
                                 Text(
@@ -274,26 +275,20 @@ class GloveboxScreen extends ConsumerWidget {
                             statusText = l10n.docDaysLeft('$days');
                           }
 
-                          IconData iconData;
-                          switch (doc.type) {
-                            case DocumentType.stnkTahunan:
-                            case DocumentType.stnkLimaTahunan:
-                              iconData = Icons.badge_outlined;
-                              break;
-                            case DocumentType.asuransi:
-                              iconData = Icons.security_outlined;
-                              break;
-                            case DocumentType.ujiEmisi:
-                              iconData = Icons.eco_outlined;
-                              break;
-                            case DocumentType.sim:
-                              iconData = Icons.card_membership_outlined;
-                              break;
-                            case DocumentType.bpkb:
-                            case DocumentType.lainnya:
-                              iconData = Icons.folder_outlined;
-                              break;
-                          }
+                          final Widget docIcon = switch (doc.type) {
+                            DocumentType.stnkTahunan ||
+                            DocumentType.stnkLimaTahunan =>
+                              AppIcon('registration', size: 20, color: statusColor),
+                            DocumentType.asuransi =>
+                              Icon(Icons.security_outlined, size: 20, color: statusColor),
+                            DocumentType.ujiEmisi =>
+                              Icon(Icons.eco_outlined, size: 20, color: statusColor),
+                            DocumentType.sim =>
+                              Icon(Icons.card_membership_outlined, size: 20, color: statusColor),
+                            DocumentType.bpkb ||
+                            DocumentType.lainnya =>
+                              AppIcon('document', size: 20, color: statusColor),
+                          };
 
                           return Padding(
                             padding: const EdgeInsets.only(bottom: 12),
@@ -312,7 +307,7 @@ class GloveboxScreen extends ConsumerWidget {
                                             color: statusColor.withValues(alpha: 0.12),
                                             borderRadius: BorderRadius.circular(10),
                                           ),
-                                          child: Icon(iconData, size: 20, color: statusColor),
+                                          child: docIcon,
                                         ),
                                         const SizedBox(width: 12),
                                         Expanded(

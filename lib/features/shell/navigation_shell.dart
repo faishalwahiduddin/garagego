@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:garagego/l10n/app_localizations.dart';
 import 'package:go_router/go_router.dart';
 import '../../core/constants/app_colors.dart';
+import '../../core/ui/app_icon.dart';
 import '../../core/ui/glass_bar.dart';
 
 class NavigationShell extends StatelessWidget {
@@ -38,23 +39,23 @@ class NavigationShell extends StatelessWidget {
           onDestinationSelected: _onTap,
           destinations: [
             NavigationDestination(
-              icon: const Icon(Icons.garage_outlined),
-              selectedIcon: const Icon(Icons.garage),
+              icon: const AppIcon('nav_garage'),
+              selectedIcon: const AppIcon('nav_garage_active'),
               label: l10n.navGarage,
             ),
             NavigationDestination(
-              icon: const Icon(Icons.build_outlined),
-              selectedIcon: const Icon(Icons.build),
+              icon: const AppIcon('nav_service'),
+              selectedIcon: const AppIcon('nav_service_active'),
               label: l10n.navMaintenance,
             ),
             NavigationDestination(
-              icon: const Icon(Icons.local_gas_station_outlined),
-              selectedIcon: const Icon(Icons.local_gas_station),
+              icon: const AppIcon('nav_fuel'),
+              selectedIcon: const AppIcon('nav_fuel_active'),
               label: l10n.navFuel,
             ),
             NavigationDestination(
-              icon: const Icon(Icons.folder_shared_outlined),
-              selectedIcon: const Icon(Icons.folder_shared),
+              icon: const AppIcon('nav_glovebox'),
+              selectedIcon: const AppIcon('nav_glovebox_active'),
               label: l10n.navGlovebox,
             ),
             NavigationDestination(

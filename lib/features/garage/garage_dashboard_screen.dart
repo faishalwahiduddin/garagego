@@ -24,6 +24,11 @@ import '../../core/ui/fleet_sheet.dart';
 
 class GarageDashboardScreen extends ConsumerWidget {
   static const _shellNavHeight = 80.0;
+  // Extended FAB height + Scaffold's 16dp end margin; scroll content needs
+  // nav + FAB + margin + breathing room below it to clear the FAB.
+  static const _fabHeight = 56.0;
+  static const _fabMargin = 16.0;
+  static const _contentBottomGap = 16.0;
 
   const GarageDashboardScreen({super.key});
 
@@ -467,11 +472,16 @@ class GarageDashboardScreen extends ConsumerWidget {
               physics: const BouncingScrollPhysics(
                 parent: AlwaysScrollableScrollPhysics(),
               ),
-              padding: const EdgeInsets.only(
+              padding: EdgeInsets.only(
                 left: 16,
                 right: 16,
                 top: 12,
-                bottom: 96,
+                bottom:
+                    _shellNavHeight +
+                    _fabHeight +
+                    _fabMargin +
+                    _contentBottomGap +
+                    MediaQuery.viewPaddingOf(context).bottom,
               ),
               child: Center(
                 child: ConstrainedBox(

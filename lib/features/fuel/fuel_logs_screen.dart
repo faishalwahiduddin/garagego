@@ -463,7 +463,7 @@ class FuelLogsScreen extends ConsumerWidget {
                           ),
                         )
                       else
-                        ...logs.map((log) {
+                        ...sortFuelLogsNewestFirst(logs).map((log) {
                           final pt = efficiencySummary.points.where((p) => p.odometer == log.odometer).firstOrNull;
 
                           return Padding(
@@ -660,4 +660,16 @@ class FuelLogsScreen extends ConsumerWidget {
       ),
     );
   }
+}
+
+/// Display order for the fill-up history: newest date first, ties broken by
+/// higher odometer first. Returns a copy; efficiency is computed elsewhere in
+/// chronological order, so only presentation changes.
+List<FuelLog> sortFuelLogsNewestFirst(List<FuelLog> logs) {
+  final sorted = [...logs];
+  sorted.sort((a, b) {
+    final byDate = b.date.compareTo(a.date);
+    return byDate != 0 ? byDate : b.odometer.compareTo(a.odometer);
+  });
+  return sorted;
 }

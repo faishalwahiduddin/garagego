@@ -11,9 +11,11 @@ import 'core/theme/app_theme.dart';
 import 'core/utils/app_timezone.dart';
 import 'l10n/app_localizations.dart';
 import 'l10n/fallback_framework_delegates.dart';
+import 'package:garagego/core/services/home_widget_service.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await HomeWidgetService.init();
 
   // Timezone database first: every displayed date resolves IANA zones
   // through it. Then the device zone, so "Auto" already knows where the
@@ -67,6 +69,17 @@ class _GarageGoAppState extends ConsumerState<GarageGoApp>
 
   @override
   Widget build(BuildContext context) {
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      HomeWidgetService.bindDeepLinks(appRouter.go);
+      HomeWidgetService.update(
+        androidWidgetName: 'FleetHomeWidgetProvider',
+        data: const {
+          'widget_title': 'GarageGo',
+          'widget_subtitle': 'Vehicle & fleet garage manager',
+          'widget_badge': 'GARAGE',
+        },
+      );
+    });
     final locale = ref.watch(localeProvider);
     final themeMode = ref.watch(themeModeProvider);
 

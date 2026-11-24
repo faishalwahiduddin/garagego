@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:garagego/core/services/quick_action_config.dart';
 import 'package:garagego/l10n/app_localizations.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -929,6 +930,7 @@ class SettingsScreen extends ConsumerWidget {
                   child: ListView(
                     shrinkWrap: true,
                     children: [
+          const QuickActionNotifSwitchTile(),
                       Semantics(
                         button: true,
                         selected: current == null,
